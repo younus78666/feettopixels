@@ -1,0 +1,194 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { navigation, isDropdown } from "@/content/navigation";
+import type { NavDropdown } from "@/content/navigation";
+import { MobileMenu } from "./MobileMenu";
+import { cn } from "@/lib/utils";
+
+function DropdownMenu({ dropdown }: { dropdown: NavDropdown }) {
+  const [open, setOpen] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  /* Close on Escape */
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const columnCount = dropdown.groups.length;
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900"
+        aria-expanded={open}
+        aria-haspopup="true"
+      >
+        {dropdown.label}
+        <svg
+          className={cn(
+            "h-3.5 w-3.5 transition-transform duration-200",
+            open && "rotate-180",
+          )}
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      {open && (
+        <div
+          className={cn(
+            "absolute left-1/2 top-full z-50 mt-1 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-5 shadow-elevated",
+            columnCount >= 3 ? "w-[640px]" : "w-[420px]",
+          )}
+        >
+          <div
+            className="grid gap-6"
+            style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}
+          >
+            {dropdown.groups.map((group) => (
+              <div key={group.heading}>
+                <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  {group.heading}
+                </p>
+                <ul className="space-y-0.5">
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="group block rounded-lg px-2.5 py-2 transition-colors hover:bg-primary-50"
+                        onClick={() => setOpen(false)}
+                      >
+                        <span className="text-sm font-medium text-neutral-700 group-hover:text-primary-700">
+                          {link.label}
+                        </span>
+                        {link.description && (
+                          <span className="mt-0.5 block text-xs text-neutral-400 group-hover:text-neutral-500">
+                            {link.description}
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <>
+      <header
+        className={cn(
+          "sticky top-0 z-40 w-full transition-[background-color,box-shadow] duration-200",
+          scrolled
+            ? "border-b border-neutral-200/60 bg-white/80 shadow-soft backdrop-blur-lg"
+            : "bg-white",
+        )}
+      >
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-lg font-semibold tracking-tight text-neutral-900"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 text-xs font-bold text-white">
+              Ft
+            </span>
+            <span>
+              Feet<span className="text-primary-600">To</span>Pixels
+            </span>
+          </Link>
+
+          {/* Desktop navigation */}
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+            {navigation.map((entry) =>
+              isDropdown(entry) ? (
+                <DropdownMenu key={entry.label} dropdown={entry} />
+              ) : (
+                <Link
+                  key={entry.href}
+                  href={entry.href}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900"
+                >
+                  {entry.label}
+                </Link>
+              ),
+            )}
+          </nav>
+
+          {/* Right actions */}
+          <div className="flex items-center gap-2">
+            {/* Search trigger */}
+            <button
+              className="hidden items-center gap-2 rounded-lg border border-neutral-200 px-3 py-1.5 text-sm text-neutral-400 transition-colors hover:border-neutral-300 hover:text-neutral-600 sm:flex"
+              aria-label="Search (Cmd+K)"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+              <span className="text-xs">Search</span>
+              <kbd className="rounded border border-neutral-200 bg-neutral-100 px-1.5 py-0.5 font-mono text-[10px] text-neutral-500">
+                ⌘K
+              </kbd>
+            </button>
+
+            {/* Mobile hamburger */}
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="inline-flex items-center justify-center rounded-md p-2 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 lg:hidden"
+              aria-label="Open menu"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </>
+  );
+}
