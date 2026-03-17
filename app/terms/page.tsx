@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms of service for FeetToPixels.com. Understand the rules and conditions for using our free online conversion tools.",
+  alternates: {
+    canonical: "/terms",
+  },
   openGraph: {
     title: "Terms of Service — FeetToPixels",
     description: "Terms and conditions for using FeetToPixels.com free conversion tools.",

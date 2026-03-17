@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Social Media Image Sizes 2026 — Complete Platform Guide",
   description:
     "Updated 2026 social media image sizes for Instagram, Facebook, YouTube, LinkedIn, and X (Twitter). Optimal dimensions for posts, stories, covers, and thumbnails.",
+  alternates: {
+    canonical: "/social-media-image-sizes",
+  },
   openGraph: {
     title: "Social Media Image Sizes 2026",
     description: "Complete guide to social media image dimensions for every major platform, updated for 2026.",

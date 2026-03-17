@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "PPI Calculator — Pixels Per Inch for Any Display",
   description:
     "Calculate PPI (pixels per inch) for any screen. Compare pixel density across iPhones, Samsung Galaxy, MacBooks, iPads, and desktop monitors.",
+  alternates: {
+    canonical: "/ppi-calculator",
+  },
   openGraph: {
     title: "PPI Calculator — Pixels Per Inch for Any Display",
     description:
@@ -61,6 +64,7 @@ export default function PpiCalculatorPage() {
     <ConverterLayout
       title="PPI Calculator"
       description="Calculate pixels per inch for any screen and compare across devices."
+      slug="/ppi-calculator"
       extractiveAnswer="PPI (pixels per inch) measures screen pixel density. Calculate it with: PPI = sqrt(width² + height²) / diagonal. An iPhone 15 Pro has 460 PPI, a MacBook Pro 14-inch has 254 PPI, and a 27-inch 4K monitor has 163 PPI."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

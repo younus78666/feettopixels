@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "What Is a Pixel? — Definition, Subpixels, and Megapixels",
   description:
     "Learn what a pixel is, how subpixels (RGB) create colors, what megapixels mean, pixel sizes at different DPIs, and the history of digital pixels.",
+  alternates: {
+    canonical: "/what-is-a-pixel",
+  },
   openGraph: {
     title: "What Is a Pixel? — Definition & History",
     description: "Everything about pixels: subpixels, megapixels, size at various DPIs, and pixel history.",

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Common Screen Resolutions — HD, 4K, 5K, 8K Reference Guide",
   description:
     "Complete reference of common screen resolutions: HD, Full HD, QHD, 4K, 5K, and 8K. Pixel dimensions, aspect ratios, and device comparisons.",
+  alternates: {
+    canonical: "/common-resolutions",
+  },
   openGraph: {
     title: "Common Screen Resolutions — Complete Reference",
     description: "HD, Full HD, QHD, 4K, 5K, and 8K screen resolutions with pixel dimensions and device comparisons.",

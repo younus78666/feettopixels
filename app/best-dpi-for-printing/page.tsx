@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Best DPI for Printing — Recommended DPI by Print Type",
   description:
     "Find the best DPI for printing photos, documents, posters, and large format. DPI recommendations by print type with quality vs file size tradeoffs.",
+  alternates: {
+    canonical: "/best-dpi-for-printing",
+  },
   openGraph: {
     title: "Best DPI for Printing — DPI Recommendations",
     description: "DPI recommendations for photos (300), documents (150), posters (72-100), and large format printing.",

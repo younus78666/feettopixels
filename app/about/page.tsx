@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "About FeetToPixels — Free DPI-Aware Pixel Conversion Tools",
   description:
     "FeetToPixels provides free, accurate pixel conversion tools with DPI awareness. Learn about our mission, commitment to precision, and the team behind the tools.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About FeetToPixels",
     description: "Free, accurate pixel conversion tools with DPI awareness for designers and developers.",

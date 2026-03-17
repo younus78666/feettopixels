@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "PX to VW Converter — Convert Pixels to Viewport Width Units",
   description:
     "Convert pixels to vw (viewport width) units. Auto-detects your viewport width. Essential for fluid responsive design and typography.",
+  alternates: {
+    canonical: "/px-to-vw",
+  },
   openGraph: {
     title: "PX to VW Converter — Convert Pixels to Viewport Width Units",
     description:
@@ -61,6 +64,7 @@ export default function PxToVwPage() {
     <ConverterLayout
       title="PX to VW Converter"
       description="Convert pixels to viewport width units for fluid responsive design."
+      slug="/px-to-vw"
       extractiveAnswer="To convert px to vw, use the formula: vw = (px / viewport width) x 100. On a 1440px viewport: 16px = 1.111vw, 100px = 6.944vw. VW units create fluid layouts that scale with the browser width. Adjust the viewport width to match your design target."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

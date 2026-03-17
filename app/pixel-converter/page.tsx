@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Pixel Converter — Convert Pixels to Any Unit with DPI",
   description:
     "Free all-in-one pixel converter. Convert between pixels, inches, centimeters, millimeters, and feet with adjustable DPI. Instant calculations for web and print design.",
+  alternates: {
+    canonical: "/pixel-converter",
+  },
   openGraph: {
     title: "Pixel Converter — Convert Pixels to Any Unit with DPI",
     description:

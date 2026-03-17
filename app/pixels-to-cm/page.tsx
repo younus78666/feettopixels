@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels to CM Converter — PX to Centimeters with DPI",
   description:
     "Convert pixels to centimeters with adjustable DPI settings. Free online tool for designers converting digital dimensions to metric measurements.",
+  alternates: {
+    canonical: "/pixels-to-cm",
+  },
   openGraph: {
     title: "Pixels to CM Converter — PX to Centimeters with DPI",
     description:
@@ -61,6 +64,7 @@ export default function PixelsToCmPage() {
     <ConverterLayout
       title="Pixels to Centimeters Converter"
       description="Convert pixel dimensions to centimeters with DPI awareness."
+      slug="/pixels-to-cm"
       extractiveAnswer="To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 96 DPI, 960 pixels equals 25.4 cm. At 300 DPI, 960 pixels equals 8.13 cm."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
@@ -92,6 +96,24 @@ export default function PixelsToCmPage() {
             <li><strong>1 pixel at 300 DPI</strong> — 0.0085 cm (about 0.085 mm)</li>
             <li><strong>1080p width (1920 px) at 96 DPI</strong> — 50.8 cm</li>
             <li><strong>4K width (3840 px) at 96 DPI</strong> — 101.6 cm</li>
+          </ul>
+
+          <h2>Why Convert Pixels to Centimeters?</h2>
+          <p>
+            Most countries outside the United States measure in metric units. When a client in Europe asks for a banner that is 30 cm wide, you need to know how many pixels that requires at your target DPI. Working backwards from pixels to cm is equally common: checking whether a 1200-pixel wide image will fill a 15 cm column in a magazine layout. Print shops in metric countries specify dimensions in centimeters, so verifying pixel-to-cm calculations before sending files prevents costly reprints.
+          </p>
+
+          <h2>How Does DPI Affect the Physical Size of Pixels?</h2>
+          <p>
+            A single pixel has no fixed physical size. Its width in centimeters depends entirely on the output DPI. At 96 DPI, each pixel measures 0.0265 cm (about 0.265 mm). At 300 DPI, the same pixel shrinks to just 0.00847 cm (0.085 mm). This 3x reduction in physical size is why 300 DPI prints look sharper than 96 DPI screen displays. The pixel count stays the same, but each pixel occupies less physical space, producing finer detail per centimeter.
+          </p>
+
+          <h2>Common Screen Resolutions in Centimeters</h2>
+          <ul>
+            <li><strong>1280 x 720 (HD)</strong> — 33.87 x 19.05 cm at 96 DPI</li>
+            <li><strong>1920 x 1080 (Full HD)</strong> — 50.8 x 28.58 cm at 96 DPI</li>
+            <li><strong>2560 x 1440 (QHD)</strong> — 67.73 x 38.1 cm at 96 DPI</li>
+            <li><strong>3840 x 2160 (4K)</strong> — 101.6 x 57.15 cm at 96 DPI</li>
           </ul>
         </div>
       }

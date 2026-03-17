@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy policy for FeetToPixels.com. Learn how we handle your data, our use of cookies, and our advertising practices.",
+  alternates: {
+    canonical: "/privacy",
+  },
   openGraph: {
     title: "Privacy Policy — FeetToPixels",
     description: "How FeetToPixels handles your data, cookies, and advertising.",

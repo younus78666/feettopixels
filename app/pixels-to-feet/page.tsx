@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels to Feet Converter — PX to FT with DPI",
   description:
     "Convert pixels to feet with adjustable DPI settings. Free calculator for determining the physical size of digital designs in feet for large-format output.",
+  alternates: {
+    canonical: "/pixels-to-feet",
+  },
   openGraph: {
     title: "Pixels to Feet Converter — PX to FT with DPI",
     description:
@@ -61,6 +64,7 @@ export default function PixelsToFeetPage() {
     <ConverterLayout
       title="Pixels to Feet Converter"
       description="Convert pixel dimensions to feet for large-format design and print."
+      slug="/pixels-to-feet"
       extractiveAnswer="To convert pixels to feet, divide pixels by DPI, then divide by 12. At 96 DPI, 3,456 pixels equals 3 feet. At 150 DPI, 5,400 pixels equals 3 feet."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
@@ -92,6 +96,24 @@ export default function PixelsToFeetPage() {
             <li><strong>3840 x 2160 px</strong> — 2.13 x 1.2 feet (about 25.6 x 14.4 inches)</li>
             <li><strong>7200 x 4800 px</strong> — 4 x 2.67 feet (48 x 32 inches)</li>
             <li><strong>10800 x 7200 px</strong> — 6 x 4 feet (72 x 48 inches)</li>
+          </ul>
+
+          <h2>Can You Print a Smartphone Photo as a Large Banner?</h2>
+          <p>
+            A 12 MP smartphone camera produces images around 4,000 x 3,000 pixels. At 150 DPI (suitable for trade show displays), that prints at 2.22 x 1.67 feet, roughly 26 x 20 inches. At 72 DPI (acceptable for billboards), the same image stretches to 4.63 x 3.47 feet. A 48 MP phone camera captures 8,000 x 6,000 pixels, which prints at 4.44 x 3.33 feet at 150 DPI. Modern high-megapixel phones can produce surprisingly large prints, but quality depends on sensor size, lighting conditions, and image noise.
+          </p>
+
+          <h2>How Do You Calculate Maximum Print Size from Pixel Count?</h2>
+          <p>
+            Take the image width in pixels, divide by your target DPI, then divide by 12 to get feet. For a 6,000-pixel-wide image at 150 DPI: 6,000 / 150 = 40 inches, 40 / 12 = 3.33 feet. If the calculated size is smaller than your desired print, you either need a higher-resolution source image or must accept a lower DPI (which is acceptable for distant viewing). Most print shops can advise on minimum acceptable DPI for specific viewing distances.
+          </p>
+
+          <h2>What Resolution Do Professional Cameras Produce in Feet?</h2>
+          <ul>
+            <li><strong>24 MP DSLR (6000 x 4000)</strong> — 3.33 x 2.22 feet at 150 DPI</li>
+            <li><strong>45 MP mirrorless (8192 x 5464)</strong> — 4.55 x 3.04 feet at 150 DPI</li>
+            <li><strong>61 MP (9504 x 6336)</strong> — 5.28 x 3.52 feet at 150 DPI</li>
+            <li><strong>100 MP medium format (11,648 x 8,736)</strong> — 6.47 x 4.85 feet at 150 DPI</li>
           </ul>
         </div>
       }

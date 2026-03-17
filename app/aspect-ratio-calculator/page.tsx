@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Aspect Ratio Calculator — Calculate Width, Height, or Ratio",
   description:
     "Calculate aspect ratio from width and height, or find missing dimensions from a known ratio. Supports 16:9, 4:3, 1:1, 3:2, 21:9, and custom ratios.",
+  alternates: {
+    canonical: "/aspect-ratio-calculator",
+  },
   openGraph: {
     title: "Aspect Ratio Calculator — Calculate Width, Height, or Ratio",
     description:
@@ -61,6 +64,7 @@ export default function AspectRatioCalculatorPage() {
     <ConverterLayout
       title="Aspect Ratio Calculator"
       description="Calculate width, height, or aspect ratio from any two known values."
+      slug="/aspect-ratio-calculator"
       extractiveAnswer="To find an aspect ratio, divide width and height by their greatest common divisor. For 1920x1080, the GCD is 120, yielding 16:9. To find a missing dimension, lock the ratio and enter one dimension to calculate the other."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

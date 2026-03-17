@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Contact Us — FeetToPixels",
   description:
     "Get in touch with the FeetToPixels team. Send us questions, suggestions, or bug reports through our contact form.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact Us — FeetToPixels",
     description: "Reach out to the FeetToPixels team with questions or feedback.",

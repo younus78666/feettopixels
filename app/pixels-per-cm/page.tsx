@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels Per CM — Pixels Per Centimeter at Different DPIs",
   description:
     "Reference table for pixels per centimeter at 72, 96, 150, 200, 300, and 600 DPI. Formula and calculation method for converting between pixels and centimeters.",
+  alternates: {
+    canonical: "/pixels-per-cm",
+  },
   openGraph: {
     title: "Pixels Per CM — Reference Table & Formula",
     description: "How many pixels per centimeter at standard DPIs. Formula and reference chart.",

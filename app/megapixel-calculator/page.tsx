@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Megapixel Calculator — Convert MP to Pixel Dimensions",
   description:
     "Convert megapixels to pixel dimensions at any aspect ratio, or calculate megapixels from width and height. Presets for 8MP, 12MP, 48MP, and 108MP cameras.",
+  alternates: {
+    canonical: "/megapixel-calculator",
+  },
   openGraph: {
     title: "Megapixel Calculator — Convert MP to Pixel Dimensions",
     description:
@@ -61,6 +64,7 @@ export default function MegapixelCalculatorPage() {
     <ConverterLayout
       title="Megapixel Calculator"
       description="Convert between megapixels and pixel dimensions at any aspect ratio."
+      slug="/megapixel-calculator"
       extractiveAnswer="A megapixel equals 1 million pixels. To find dimensions from megapixels, use the aspect ratio: for 12 MP at 4:3, width = sqrt(12M x 4/3) = 4000px, height = 3000px. To find megapixels from dimensions: MP = (width x height) / 1,000,000."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

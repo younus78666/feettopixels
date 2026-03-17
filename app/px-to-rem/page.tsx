@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "PX to REM Converter — Convert Pixels to REM Units",
   description:
     "Convert pixels to rem units instantly. Bidirectional converter with adjustable base font size (default 16px). Quick reference table for common values.",
+  alternates: {
+    canonical: "/px-to-rem",
+  },
   openGraph: {
     title: "PX to REM Converter — Convert Pixels to REM Units",
     description:
@@ -61,6 +64,7 @@ export default function PxToRemPage() {
     <ConverterLayout
       title="PX to REM Converter"
       description="Convert pixels to rem units with adjustable base font size."
+      slug="/px-to-rem"
       extractiveAnswer="To convert px to rem, divide the pixel value by the base font size. With the default 16px base: 16px = 1rem, 24px = 1.5rem, 32px = 2rem. Adjust the base if your root font size differs from 16px."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
@@ -91,6 +95,21 @@ export default function PxToRemPage() {
           <h3>The 62.5% Trick</h3>
           <p>
             Setting <code>html &#123; font-size: 62.5% &#125;</code> makes 1rem = 10px, simplifying mental math. Then 16px = 1.6rem, 24px = 2.4rem, etc. Remember to set the body font size back to 1.6rem to maintain default text sizing.
+          </p>
+
+          <h2>Why Is REM Better Than PX for Responsive Design?</h2>
+          <p>
+            Pixels create fixed-size elements that ignore user preferences. If someone increases their browser default font from 16px to 20px for readability, rem-based layouts scale up by 25% while px-based layouts stay the same size. This makes rem essential for WCAG 2.1 AA compliance, which requires text to be resizable up to 200% without loss of content. Using rem for font sizes, spacing, and component dimensions creates designs that adapt gracefully to any user's accessibility settings.
+          </p>
+
+          <h2>What Is the Browser Default Font Size?</h2>
+          <p>
+            Every major browser (Chrome, Firefox, Safari, Edge) defaults to a 16px root font size. This means 1rem equals 16px unless you override it. Users can change this default in their browser settings, and some operating systems apply system-wide font scaling. The 16px default has been the standard since the early days of CSS and is the baseline that all rem calculations reference. If your design assumes a different base, set it explicitly on the html element.
+          </p>
+
+          <h2>When Should You Use REM vs EM vs PX?</h2>
+          <p>
+            Use rem for global sizing: page-level typography, layout spacing, container widths, and media queries. Use em for component-internal scaling: button padding that should grow proportionally with button text, icon sizes that match adjacent labels. Use px only for values that should never scale: 1px borders, box shadows, and hairline dividers. This three-tier approach gives you accessible global scaling (rem), self-contained component proportions (em), and precise decorative details (px).
           </p>
         </div>
       }

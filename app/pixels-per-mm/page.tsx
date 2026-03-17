@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels Per MM — Pixels Per Millimeter at Different DPIs",
   description:
     "Reference table for pixels per millimeter at 72, 96, 150, 300, and 600 DPI. Formula for converting between pixels and millimeters.",
+  alternates: {
+    canonical: "/pixels-per-mm",
+  },
   openGraph: {
     title: "Pixels Per MM — Reference Table & Formula",
     description: "How many pixels per millimeter at standard DPIs with formula and reference chart.",

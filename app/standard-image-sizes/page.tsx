@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Standard Image Sizes in Pixels — Photo Print Dimensions",
   description:
     "Reference table for standard photo print sizes in pixels at 150 and 300 DPI. Covers 4x6, 5x7, 8x10, 11x14, 16x20, and 24x36 inch prints.",
+  alternates: {
+    canonical: "/standard-image-sizes",
+  },
   openGraph: {
     title: "Standard Image Sizes in Pixels",
     description: "Photo print sizes (4x6, 5x7, 8x10, 16x20, 24x36) in pixels at 150 and 300 DPI.",

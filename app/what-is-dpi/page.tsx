@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "What Is DPI? — Dots Per Inch Explained for Print & Screen",
   description:
     "Learn what DPI (dots per inch) means, how it affects print and image quality, standard DPI values, and how to check or change DPI in your files.",
+  alternates: {
+    canonical: "/what-is-dpi",
+  },
   openGraph: {
     title: "What Is DPI? — Dots Per Inch Explained",
     description: "Complete guide to DPI: definition, standard values, and how it affects print quality.",

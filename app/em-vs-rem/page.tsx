@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "EM vs REM in CSS — Differences, Examples & Best Practices",
   description:
     "Learn the difference between em and rem CSS units. Code examples, when to use each, and best practices for responsive typography and spacing.",
+  alternates: {
+    canonical: "/em-vs-rem",
+  },
   openGraph: {
     title: "EM vs REM in CSS — Complete Guide",
     description: "Side-by-side comparison of em and rem CSS units with code examples and best practices.",

@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { RelatedTools } from "./RelatedTools";
 import { FAQ } from "./FAQ";
 
@@ -23,6 +24,7 @@ interface FAQItem {
 interface ConverterLayoutProps {
   title: string;
   description: string;
+  slug: string;
   extractiveAnswer: string;
   children: React.ReactNode;
   content: React.ReactNode;
@@ -33,6 +35,8 @@ interface ConverterLayoutProps {
 
 export function ConverterLayout({
   title,
+  description,
+  slug,
   extractiveAnswer,
   children,
   content,
@@ -42,6 +46,22 @@ export function ConverterLayout({
 }: ConverterLayoutProps) {
   return (
     <Container className="py-8 md:py-12">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: title,
+          description: description,
+          url: `https://feettopixels.com${slug}`,
+          applicationCategory: "UtilityApplication",
+          operatingSystem: "Any",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+          },
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
 
       <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">

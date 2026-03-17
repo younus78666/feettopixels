@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "DPI vs PPI: What's the Difference? — Complete Comparison",
   description:
     "Understand the difference between DPI (dots per inch) and PPI (pixels per inch). Side-by-side comparison with practical examples for print and web design.",
+  alternates: {
+    canonical: "/dpi-vs-ppi",
+  },
   openGraph: {
     title: "DPI vs PPI: What's the Difference?",
     description: "Side-by-side comparison of DPI and PPI with practical examples for designers.",

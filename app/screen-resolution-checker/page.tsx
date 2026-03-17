@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Screen Resolution Checker — Detect Your Display Resolution & DPR",
   description:
     "Instantly detect your screen resolution, device pixel ratio, color depth, and compare to HD, Full HD, QHD, and 4K standards. Free online tool.",
+  alternates: {
+    canonical: "/screen-resolution-checker",
+  },
   openGraph: {
     title: "Screen Resolution Checker — Detect Your Display Resolution & DPR",
     description:
@@ -61,6 +64,7 @@ export default function ScreenResolutionCheckerPage() {
     <ConverterLayout
       title="Screen Resolution Checker"
       description="Instantly detect your screen resolution, pixel ratio, and color depth."
+      slug="/screen-resolution-checker"
       extractiveAnswer="This tool auto-detects your screen resolution, device pixel ratio (DPR), color depth, and total megapixels. It compares your display to HD (1280x720), Full HD (1920x1080), QHD (2560x1440), 4K (3840x2160), and higher standards."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

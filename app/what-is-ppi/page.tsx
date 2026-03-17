@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "What Is PPI? — Pixels Per Inch for Screens & Displays",
   description:
     "Learn what PPI (pixels per inch) means, how it measures screen pixel density, PPI values for popular devices, and how to calculate PPI for any display.",
+  alternates: {
+    canonical: "/what-is-ppi",
+  },
   openGraph: {
     title: "What Is PPI? — Pixels Per Inch Explained",
     description: "Understanding PPI: screen pixel density, device comparisons, and how to calculate it.",

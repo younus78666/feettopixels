@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixel Ruler — On-Screen Ruler in Pixels, Inches, and CM",
   description:
     "Display a visual ruler on your screen showing pixels, inches, and centimeters. Calibrate with a credit card for accurate physical measurements.",
+  alternates: {
+    canonical: "/pixel-ruler",
+  },
   openGraph: {
     title: "Pixel Ruler — On-Screen Ruler in Pixels, Inches, and CM",
     description:
@@ -61,6 +64,7 @@ export default function PixelRulerPage() {
     <ConverterLayout
       title="Pixel Ruler"
       description="An on-screen ruler showing pixels, inches, and centimeters."
+      slug="/pixel-ruler"
       extractiveAnswer="This pixel ruler displays measurements in pixels, inches, or centimeters directly on your screen. Calibrate it using a credit card (3.375 inches wide) for accurate physical measurements. Without calibration, it uses the default 96 PPI."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

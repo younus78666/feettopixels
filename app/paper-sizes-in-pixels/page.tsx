@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Paper Sizes in Pixels — A4, Letter, A3 at 72/96/150/300 DPI",
   description:
     "Reference tables for paper sizes in pixels at 72, 96, 150, and 300 DPI. Covers A4, A3, A5, US Letter, Legal, and Tabloid with pixel dimensions.",
+  alternates: {
+    canonical: "/paper-sizes-in-pixels",
+  },
   openGraph: {
     title: "Paper Sizes in Pixels — Complete Reference",
     description: "A4, Letter, A3, A5 paper dimensions in pixels at 72, 96, 150, and 300 DPI.",

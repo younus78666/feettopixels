@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels to Inches Converter — Instant PX to IN with DPI",
   description:
     "Convert pixels to inches instantly with adjustable DPI. Free online calculator for web designers and print professionals. Supports 72, 96, 150, and 300 DPI.",
+  alternates: {
+    canonical: "/pixels-to-inches",
+  },
   openGraph: {
     title: "Pixels to Inches Converter — Instant PX to IN with DPI",
     description:
@@ -61,6 +64,7 @@ export default function PixelsToInchesPage() {
     <ConverterLayout
       title="Pixels to Inches Converter"
       description="Convert pixels to inches with DPI awareness for web and print design."
+      slug="/pixels-to-inches"
       extractiveAnswer="To convert pixels to inches, divide the pixel count by DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
@@ -93,6 +97,29 @@ export default function PixelsToInchesPage() {
             <li><strong>150 DPI</strong> — Medium-quality print, suitable for large-format posters.</li>
             <li><strong>300 DPI</strong> — Professional print quality for brochures, magazines, and photos.</li>
           </ul>
+
+          <h2>How Many Pixels Are in One Inch?</h2>
+          <p>
+            The number of pixels in one inch depends entirely on the DPI setting. At 96 DPI (the web standard used by Windows and most browsers), one inch contains exactly 96 pixels. At 72 DPI (the legacy Mac standard), one inch contains 72 pixels. At 300 DPI (professional print), one inch packs 300 pixels into the same physical space. This means a 300 DPI image appears much sharper than a 96 DPI image when printed at the same size, because each inch contains over 3x more pixel data.
+          </p>
+
+          <h2>Common Pixel Widths Converted to Inches</h2>
+          <p>
+            The table below shows how common pixel dimensions translate to inches at both 96 DPI (web) and 300 DPI (print). These values help you quickly estimate physical sizes without manual calculation.
+          </p>
+          <ul>
+            <li><strong>640 px</strong> — 6.67 inches at 96 DPI, 2.13 inches at 300 DPI</li>
+            <li><strong>800 px</strong> — 8.33 inches at 96 DPI, 2.67 inches at 300 DPI</li>
+            <li><strong>1024 px</strong> — 10.67 inches at 96 DPI, 3.41 inches at 300 DPI</li>
+            <li><strong>1080 px</strong> — 11.25 inches at 96 DPI, 3.6 inches at 300 DPI</li>
+            <li><strong>1920 px</strong> — 20 inches at 96 DPI, 6.4 inches at 300 DPI</li>
+            <li><strong>3840 px</strong> — 40 inches at 96 DPI, 12.8 inches at 300 DPI</li>
+          </ul>
+
+          <h2>When Do You Need to Convert Pixels to Inches?</h2>
+          <p>
+            Pixel-to-inch conversion comes up regularly in four situations. First, print preparation: before sending a digital file to a printer, you need to confirm the image will print at the correct physical dimensions. Second, photo printing: knowing that a 3000x2000 pixel photo prints at 10x6.67 inches at 300 DPI helps you choose the right paper size. Third, large format signage: banner and poster designers use lower DPI values (100-150) because viewers stand farther away, making each pixel stretch across more physical space. Fourth, web-to-print workflows: designers who repurpose web assets for brochures or business cards need to verify that 96 DPI screen graphics have enough resolution for 300 DPI print output.
+          </p>
         </div>
       }
     >

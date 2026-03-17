@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels Per Foot — Large Format Pixel Density Reference",
   description:
     "How many pixels per foot at different DPIs. Reference table for large format printing, banners, and signage. Includes 72, 96, 150, and 300 DPI.",
+  alternates: {
+    canonical: "/pixels-per-foot",
+  },
   openGraph: {
     title: "Pixels Per Foot — Large Format Reference",
     description: "Pixels per foot at various DPIs for banners, signage, and large format printing.",

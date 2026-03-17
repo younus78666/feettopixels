@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Image DPI Checker — Check Image Resolution & Print Quality",
   description:
     "Upload an image to check its pixel dimensions, megapixels, and estimated print quality. See maximum print sizes at 72, 96, 150, and 300 DPI.",
+  alternates: {
+    canonical: "/image-dpi-checker",
+  },
   openGraph: {
     title: "Image DPI Checker — Check Image Resolution & Print Quality",
     description:
@@ -61,6 +64,7 @@ export default function ImageDpiCheckerPage() {
     <ConverterLayout
       title="Image DPI Checker"
       description="Upload an image to check its resolution and print quality."
+      slug="/image-dpi-checker"
       extractiveAnswer="Upload any image to instantly see its pixel dimensions, megapixel count, and maximum print size at 300 DPI (professional), 150 DPI (large format), and 96 DPI (screen). Images of 2+ megapixels are considered print quality at 300 DPI."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

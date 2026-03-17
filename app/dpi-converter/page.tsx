@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "DPI Converter — Convert Between Print and Web DPI Resolutions",
   description:
     "Convert image dimensions between DPI resolutions. Calculate new print sizes when changing from 72 DPI web images to 300 DPI print quality and vice versa.",
+  alternates: {
+    canonical: "/dpi-converter",
+  },
   openGraph: {
     title: "DPI Converter — Convert Between Print and Web DPI Resolutions",
     description:
@@ -61,6 +64,7 @@ export default function DpiConverterPage() {
     <ConverterLayout
       title="DPI Converter"
       description="Convert image dimensions between different DPI resolutions for web and print."
+      slug="/dpi-converter"
       extractiveAnswer="To convert between DPI resolutions, multiply the current size by the current DPI, then divide by the target DPI. For example, a 10-inch image at 72 DPI becomes 2.4 inches at 300 DPI because (10 x 72) / 300 = 2.4."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

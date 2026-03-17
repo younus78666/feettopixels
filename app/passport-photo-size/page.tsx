@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Passport Photo Size in Pixels — US, UK, EU & Canada",
   description:
     "Passport photo pixel dimensions for US (2x2 inches), UK (35x45mm), EU, and Canadian passports at 300 DPI. Plus business card and poster sizes.",
+  alternates: {
+    canonical: "/passport-photo-size",
+  },
   openGraph: {
     title: "Passport Photo Size in Pixels",
     description: "US, UK, EU, and Canadian passport photo dimensions in pixels at 300 DPI.",

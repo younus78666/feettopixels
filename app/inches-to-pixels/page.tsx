@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Inches to Pixels Converter — Instant IN to PX with DPI",
   description:
     "Convert inches to pixels with adjustable DPI settings. Free calculator for designers converting physical measurements to digital dimensions.",
+  alternates: {
+    canonical: "/inches-to-pixels",
+  },
   openGraph: {
     title: "Inches to Pixels Converter — Instant IN to PX with DPI",
     description:
@@ -61,6 +64,7 @@ export default function InchesToPixelsPage() {
     <ConverterLayout
       title="Inches to Pixels Converter"
       description="Convert inches to pixel dimensions with DPI control for web and print design."
+      slug="/inches-to-pixels"
       extractiveAnswer="To convert inches to pixels, multiply the inch value by DPI. At 96 DPI (web standard), 10 inches equals 960 pixels. At 300 DPI (print quality), 10 inches equals 3,000 pixels."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
@@ -92,6 +96,26 @@ export default function InchesToPixelsPage() {
             <li><strong>A4 (8.27 x 11.69 in)</strong> — 794 x 1123 px at 96 DPI, 2481 x 3507 px at 300 DPI</li>
             <li><strong>4 x 6 in photo</strong> — 384 x 576 px at 96 DPI, 1200 x 1800 px at 300 DPI</li>
             <li><strong>5 x 7 in photo</strong> — 480 x 672 px at 96 DPI, 1500 x 2100 px at 300 DPI</li>
+          </ul>
+
+          <h2>Why Does DPI Matter for Inch-to-Pixel Conversion?</h2>
+          <p>
+            DPI directly determines how many pixels fit inside each physical inch. A higher DPI packs more pixels per inch, producing sharper detail at the same physical size. When you convert 8 inches at 96 DPI, the result is 768 pixels. The same 8 inches at 300 DPI yields 2,400 pixels. That difference of 1,632 pixels translates to roughly 4x more image data, which is why print files are significantly larger than web graphics. Choosing the wrong DPI produces images that are either too small (blurry when printed) or unnecessarily large (slow to load on the web).
+          </p>
+
+          <h2>How Do You Set Up a Print-Ready Document?</h2>
+          <p>
+            Start by determining the final print size in inches. Multiply width and height by 300 to get the pixel dimensions for professional quality. A 5x7 inch photo print needs a 1,500 x 2,100 pixel canvas. For large posters viewed from several feet away, 150 DPI is acceptable, so a 24x36 inch poster only needs 3,600 x 5,400 pixels instead of 7,200 x 10,800. Always add 0.125 inches (bleed) to each edge when preparing files for commercial printing, as the trimming process can cut into the design area.
+          </p>
+
+          <h2>Common Inch Measurements Converted to Pixels</h2>
+          <ul>
+            <li><strong>1 inch</strong> — 96 px at 96 DPI, 300 px at 300 DPI</li>
+            <li><strong>2 inches</strong> — 192 px at 96 DPI, 600 px at 300 DPI</li>
+            <li><strong>4 inches</strong> — 384 px at 96 DPI, 1,200 px at 300 DPI</li>
+            <li><strong>6 inches</strong> — 576 px at 96 DPI, 1,800 px at 300 DPI</li>
+            <li><strong>8 inches</strong> — 768 px at 96 DPI, 2,400 px at 300 DPI</li>
+            <li><strong>12 inches</strong> — 1,152 px at 96 DPI, 3,600 px at 300 DPI</li>
           </ul>
         </div>
       }

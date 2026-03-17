@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "PX to EM Converter — Convert Pixels to EM Units",
   description:
     "Convert pixels to em units with adjustable parent font size. Bidirectional conversion with quick reference table for common CSS values.",
+  alternates: {
+    canonical: "/px-to-em",
+  },
   openGraph: {
     title: "PX to EM Converter — Convert Pixels to EM Units",
     description:
@@ -61,6 +64,7 @@ export default function PxToEmPage() {
     <ConverterLayout
       title="PX to EM Converter"
       description="Convert pixels to em units with adjustable parent font size."
+      slug="/px-to-em"
       extractiveAnswer="To convert px to em, divide the pixel value by the parent element's font size. With a 16px parent: 16px = 1em, 24px = 1.5em, 32px = 2em. Unlike rem, em is relative to the parent element, not the root."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

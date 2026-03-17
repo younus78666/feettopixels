@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Image Size Calculator — Pixel Dimensions to Physical Size & File Size",
   description:
     "Calculate the physical print size and estimated file size from pixel dimensions and DPI. Supports inches, centimeters, and millimeters with JPEG and PNG estimates.",
+  alternates: {
+    canonical: "/image-size-calculator",
+  },
   openGraph: {
     title: "Image Size Calculator — Pixel Dimensions to Physical Size & File Size",
     description:
@@ -61,6 +64,7 @@ export default function ImageSizeCalculatorPage() {
     <ConverterLayout
       title="Image Size Calculator"
       description="Calculate the physical print size and file size from pixel dimensions."
+      slug="/image-size-calculator"
       extractiveAnswer="To find an image's physical size, divide pixels by DPI. A 1920x1080 image at 300 DPI prints at 6.4 x 3.6 inches (16.3 x 9.1 cm). At 96 DPI, it prints at 20 x 11.25 inches. File size depends on pixel count, bit depth, and compression format."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

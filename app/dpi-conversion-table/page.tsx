@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "DPI Conversion Table — Pixels Per Inch, CM, MM at All DPIs",
   description:
     "Comprehensive DPI conversion reference table. Pixels per inch, per cm, and per mm at 72, 96, 150, 200, 300, and 600 DPI. One-stop resolution reference.",
+  alternates: {
+    canonical: "/dpi-conversion-table",
+  },
   openGraph: {
     title: "DPI Conversion Table — Complete Reference",
     description: "Pixels per inch, cm, and mm at every standard DPI value. Comprehensive reference table.",

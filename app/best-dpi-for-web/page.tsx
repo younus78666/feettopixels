@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Best DPI for Web Images — Why DPI Doesn't Matter Online",
   description:
     "Learn why DPI doesn't matter for web images. Only pixel dimensions affect how images display in browsers. Tips for optimizing web images for speed and quality.",
+  alternates: {
+    canonical: "/best-dpi-for-web",
+  },
   openGraph: {
     title: "Best DPI for Web Images",
     description: "Why DPI is irrelevant for web images and how to optimize images for the web properly.",

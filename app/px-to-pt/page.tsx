@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "PX to PT Converter — Convert Pixels to Points",
   description:
     "Convert CSS pixels to typographic points. 1pt = 1.333px at 96 DPI. Essential for matching web fonts to print specifications.",
+  alternates: {
+    canonical: "/px-to-pt",
+  },
   openGraph: {
     title: "PX to PT Converter — Convert Pixels to Points",
     description:
@@ -61,6 +64,7 @@ export default function PxToPtPage() {
     <ConverterLayout
       title="PX to PT Converter"
       description="Convert CSS pixels to typographic points for web and print design."
+      slug="/px-to-pt"
       extractiveAnswer="To convert pixels to points, multiply by 0.75 (or 72/96). At 96 DPI: 16px = 12pt, 24px = 18pt, 32px = 24pt. Points are the standard unit in print design (1pt = 1/72 inch), while CSS pixels are defined as 1/96 inch."
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}

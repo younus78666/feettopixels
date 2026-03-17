@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Pixels Per Inch (PPI) Explained — Complete Reference Guide",
   description:
     "Learn what pixels per inch (PPI) means, how to calculate PPI, and reference charts for 72, 96, 150, and 300 DPI. Covers retina displays, print, and web design.",
+  alternates: {
+    canonical: "/pixels-per-inch",
+  },
   openGraph: {
     title: "Pixels Per Inch (PPI) Explained — Complete Reference Guide",
     description:
