@@ -33,23 +33,43 @@ export const toolsDropdown: NavDropdown = {
       links: [
         {
           label: "Pixels to Inches",
-          href: "/tools/pixels-to-inches",
+          href: "/pixels-to-inches",
           description: "Convert px to inches with DPI control",
         },
         {
-          label: "Pixels to Centimeters",
-          href: "/tools/pixels-to-cm",
-          description: "Convert px to cm for print layouts",
+          label: "Inches to Pixels",
+          href: "/inches-to-pixels",
+          description: "Convert inches to px at any DPI",
         },
         {
-          label: "Pixels to Millimeters",
-          href: "/tools/pixels-to-mm",
-          description: "Precise px to mm conversion",
+          label: "CM to Pixels",
+          href: "/cm-to-pixels",
+          description: "Convert centimeters to px",
+        },
+        {
+          label: "Pixels to CM",
+          href: "/pixels-to-cm",
+          description: "Convert px to centimeters",
+        },
+        {
+          label: "MM to Pixels",
+          href: "/mm-to-pixels",
+          description: "Convert millimeters to px",
+        },
+        {
+          label: "Pixels to MM",
+          href: "/pixels-to-mm",
+          description: "Convert px to millimeters",
+        },
+        {
+          label: "Feet to Pixels",
+          href: "/feet-to-pixels",
+          description: "Convert feet to px for large format",
         },
         {
           label: "Pixels to Feet",
-          href: "/tools/pixels-to-feet",
-          description: "Large format px to feet conversion",
+          href: "/pixels-to-feet",
+          description: "Convert px to feet",
         },
       ],
     },
@@ -57,24 +77,24 @@ export const toolsDropdown: NavDropdown = {
       heading: "CSS Converters",
       links: [
         {
-          label: "Pixels to REM",
-          href: "/tools/pixels-to-rem",
-          description: "Convert px to rem units",
+          label: "PX to REM",
+          href: "/px-to-rem",
+          description: "Convert pixels to rem units",
         },
         {
-          label: "Pixels to EM",
-          href: "/tools/pixels-to-em",
-          description: "Convert px to em units",
+          label: "PX to EM",
+          href: "/px-to-em",
+          description: "Convert pixels to em units",
         },
         {
-          label: "Pixels to Points",
-          href: "/tools/pixels-to-pt",
-          description: "Convert px to typographic points",
+          label: "PX to PT",
+          href: "/px-to-pt",
+          description: "Convert pixels to typographic points",
         },
         {
-          label: "Pixels to VW",
-          href: "/tools/pixels-to-vw",
-          description: "Convert px to viewport width units",
+          label: "PX to VW",
+          href: "/px-to-vw",
+          description: "Convert pixels to viewport width",
         },
       ],
     },
@@ -83,23 +103,53 @@ export const toolsDropdown: NavDropdown = {
       links: [
         {
           label: "DPI Calculator",
-          href: "/tools/dpi-calculator",
+          href: "/dpi-calculator",
           description: "Calculate dots per inch",
         },
         {
           label: "PPI Calculator",
-          href: "/tools/ppi-calculator",
+          href: "/ppi-calculator",
           description: "Calculate pixels per inch",
         },
         {
+          label: "DPI Converter",
+          href: "/dpi-converter",
+          description: "Convert between DPI settings",
+        },
+        {
           label: "Aspect Ratio Calculator",
-          href: "/tools/aspect-ratio-calculator",
+          href: "/aspect-ratio-calculator",
           description: "Find and convert aspect ratios",
         },
         {
           label: "Image Size Calculator",
-          href: "/tools/image-size-calculator",
-          description: "Calculate image dimensions and file size",
+          href: "/image-size-calculator",
+          description: "Calculate dimensions and file size",
+        },
+        {
+          label: "Screen Resolution Checker",
+          href: "/screen-resolution-checker",
+          description: "Check your screen resolution",
+        },
+        {
+          label: "Image DPI Checker",
+          href: "/image-dpi-checker",
+          description: "Check DPI of any image",
+        },
+        {
+          label: "Pixel Ruler",
+          href: "/pixel-ruler",
+          description: "Measure pixels on screen",
+        },
+        {
+          label: "Megapixel Calculator",
+          href: "/megapixel-calculator",
+          description: "Convert megapixels to resolution",
+        },
+        {
+          label: "Pixel Converter",
+          href: "/pixel-converter",
+          description: "All-in-one converter hub",
         },
       ],
     },
@@ -114,23 +164,33 @@ export const learnDropdown: NavDropdown = {
       links: [
         {
           label: "What is DPI?",
-          href: "/learn/what-is-dpi",
+          href: "/what-is-dpi",
           description: "Understanding dots per inch",
         },
         {
           label: "What is PPI?",
-          href: "/learn/what-is-ppi",
+          href: "/what-is-ppi",
           description: "Understanding pixels per inch",
         },
         {
           label: "What is a Pixel?",
-          href: "/learn/what-is-a-pixel",
+          href: "/what-is-a-pixel",
           description: "The building block of digital images",
         },
         {
           label: "DPI vs PPI",
-          href: "/learn/dpi-vs-ppi",
+          href: "/dpi-vs-ppi",
           description: "Key differences explained",
+        },
+        {
+          label: "Pixels Per Inch",
+          href: "/pixels-per-inch",
+          description: "Complete PPI reference guide",
+        },
+        {
+          label: "EM vs REM",
+          href: "/em-vs-rem",
+          description: "CSS units comparison guide",
         },
       ],
     },
@@ -138,19 +198,44 @@ export const learnDropdown: NavDropdown = {
       heading: "References",
       links: [
         {
-          label: "CSS Units Guide",
-          href: "/learn/css-units-guide",
-          description: "Complete reference for CSS length units",
+          label: "Best DPI for Printing",
+          href: "/best-dpi-for-printing",
+          description: "Resolution guide for sharp prints",
         },
         {
-          label: "Print Resolution Guide",
-          href: "/learn/print-resolution-guide",
-          description: "Choosing the right resolution for print",
+          label: "Best DPI for Web",
+          href: "/best-dpi-for-web",
+          description: "Web image resolution guide",
         },
         {
-          label: "Screen DPI Database",
-          href: "/learn/screen-dpi-database",
-          description: "DPI values for popular devices",
+          label: "Paper Sizes in Pixels",
+          href: "/paper-sizes-in-pixels",
+          description: "A4, Letter, A3 at every DPI",
+        },
+        {
+          label: "Standard Image Sizes",
+          href: "/standard-image-sizes",
+          description: "4x6, 5x7, 8x10 in pixels",
+        },
+        {
+          label: "Social Media Image Sizes",
+          href: "/social-media-image-sizes",
+          description: "Instagram, Facebook, YouTube sizes",
+        },
+        {
+          label: "Common Resolutions",
+          href: "/common-resolutions",
+          description: "1080p, 4K, 5K explained",
+        },
+        {
+          label: "DPI Conversion Table",
+          href: "/dpi-conversion-table",
+          description: "Quick reference chart",
+        },
+        {
+          label: "Passport Photo Size",
+          href: "/passport-photo-size",
+          description: "Photo sizes for passports and IDs",
         },
       ],
     },
@@ -163,11 +248,8 @@ export const navigation: NavEntry[] = [
   { label: "About", href: "/about" },
 ];
 
-/** Flat list used in the footer */
-export const footerPhysical = toolsDropdown.groups[0].links;
+/** Flat lists used in the footer */
+export const footerPhysical = toolsDropdown.groups[0].links.slice(0, 4);
 export const footerCSS = toolsDropdown.groups[1].links;
-export const footerCalculators = toolsDropdown.groups[2].links;
-export const footerLearn = [
-  ...learnDropdown.groups[0].links,
-  ...learnDropdown.groups[1].links,
-];
+export const footerCalculators = toolsDropdown.groups[2].links.slice(0, 4);
+export const footerLearn = learnDropdown.groups[0].links.slice(0, 4);

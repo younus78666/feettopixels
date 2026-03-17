@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { toolsDropdown } from "@/content/navigation";
 
 export default function Home() {
@@ -25,10 +25,18 @@ export default function Home() {
               Every tool is DPI-aware and built for designers and developers.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button size="lg">Browse All Tools</Button>
-              <Button variant="outline" size="lg">
+              <Link
+                href="/pixel-converter"
+                className="inline-flex items-center justify-center font-medium rounded-lg bg-primary-600 text-white hover:bg-primary-700 shadow-sm h-12 px-6 text-base transition-colors"
+              >
+                Browse All Tools
+              </Link>
+              <Link
+                href="/what-is-dpi"
+                className="inline-flex items-center justify-center font-medium rounded-lg border border-neutral-300 text-neutral-700 hover:border-primary-400 hover:text-primary-700 hover:bg-primary-50 h-12 px-6 text-base transition-colors"
+              >
                 Learn About DPI
-              </Button>
+              </Link>
             </div>
           </div>
         </Container>
