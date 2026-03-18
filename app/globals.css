@@ -278,3 +278,27 @@ h4 { font-size: 1.125rem; }
   font-style: normal;
   border-left-width: 3px;
 }
+
+/* ==========================================================================
+   RTL support (Arabic)
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .prose blockquote {
+  border-left-width: 0;
+  border-right-width: 3px;
+}
+
+[dir="rtl"] .skip-to-content {
+  left: auto;
+  right: -9999px;
+  border-radius: 0 0 0 var(--radius-md);
+}
+
+[dir="rtl"] .skip-to-content:focus {
+  left: auto;
+  right: 0;
+}

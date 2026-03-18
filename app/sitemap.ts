@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site-config";
+import { locales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -62,11 +63,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const allPages = [...staticPages, ...toolPages, ...blogPages];
+  const entries: MetadataRoute.Sitemap = [];
 
-  return allPages.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified,
-    changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1.0 : toolPages.includes(path) ? 0.8 : 0.6,
-  }));
+  for (const locale of locales) {
+    for (const pagePath of allPages) {
+      const localePath = `/${locale}${pagePath}`;
+      entries.push({
+        url: `${baseUrl}${localePath}`,
+        lastModified,
+        changeFrequency: pagePath === "" ? "weekly" : "monthly",
+        priority: pagePath === "" ? 1.0 : toolPages.includes(pagePath) ? 0.8 : 0.6,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((l) => [l, `${baseUrl}/${l}${pagePath}`]),
+          ),
+        },
+      });
+    }
+  }
+
+  return entries;
 }

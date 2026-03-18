@@ -31,6 +31,13 @@ interface ConverterLayoutProps {
   relatedTools: RelatedTool[];
   faqItems: FAQItem[];
   breadcrumbs: BreadcrumbItem[];
+  locale?: string;
+}
+
+function prefixHref(href: string, locale?: string): string {
+  if (!locale) return href;
+  if (href === "/") return `/${locale}`;
+  return `/${locale}${href}`;
 }
 
 export function ConverterLayout({
@@ -43,7 +50,20 @@ export function ConverterLayout({
   relatedTools,
   faqItems,
   breadcrumbs,
+  locale,
 }: ConverterLayoutProps) {
+  const localizedBreadcrumbs = breadcrumbs.map((b) => ({
+    ...b,
+    href: prefixHref(b.href, locale),
+  }));
+
+  const localizedRelatedTools = relatedTools.map((t) => ({
+    ...t,
+    href: prefixHref(t.href, locale),
+  }));
+
+  const localizedSlug = prefixHref(slug, locale);
+
   return (
     <Container className="py-8 md:py-12">
       <JsonLd
@@ -52,7 +72,7 @@ export function ConverterLayout({
           "@type": "WebApplication",
           name: title,
           description: description,
-          url: `https://feettopixels.com${slug}`,
+          url: `https://feettopixels.com${localizedSlug}`,
           applicationCategory: "UtilityApplication",
           operatingSystem: "Any",
           offers: {
@@ -62,7 +82,7 @@ export function ConverterLayout({
           },
         }}
       />
-      <Breadcrumbs items={breadcrumbs} />
+      <Breadcrumbs items={localizedBreadcrumbs} />
 
       <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
         {title}
@@ -76,7 +96,7 @@ export function ConverterLayout({
 
       <div className="prose prose-neutral max-w-none">{content}</div>
 
-      <RelatedTools tools={relatedTools} />
+      <RelatedTools tools={localizedRelatedTools} />
 
       <FAQ items={faqItems} />
     </Container>

@@ -43,6 +43,13 @@ interface BlogLayoutProps {
   datePublished?: string;
   dateModified?: string;
   slug: string;
+  locale?: string;
+}
+
+function prefixHref(href: string, locale?: string): string {
+  if (!locale) return href;
+  if (href === "/") return `/${locale}`;
+  return `/${locale}${href}`;
 }
 
 export function BlogLayout({
@@ -57,7 +64,25 @@ export function BlogLayout({
   datePublished = "2026-03-18",
   dateModified = "2026-03-18",
   slug,
+  locale,
 }: BlogLayoutProps) {
+  const localizedBreadcrumbs = breadcrumbs.map((b) => ({
+    ...b,
+    href: prefixHref(b.href, locale),
+  }));
+
+  const localizedRelatedArticles = relatedArticles.map((a) => ({
+    ...a,
+    href: prefixHref(a.href, locale),
+  }));
+
+  const localizedCta = {
+    ...cta,
+    href: prefixHref(cta.href, locale),
+  };
+
+  const localizedSlug = locale ? `${locale}/${slug}` : slug;
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -65,7 +90,7 @@ export function BlogLayout({
     description: extractiveAnswer,
     datePublished,
     dateModified,
-    url: `${siteConfig.url}/${slug}`,
+    url: `${siteConfig.url}/${localizedSlug}`,
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -73,14 +98,14 @@ export function BlogLayout({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}/${slug}`,
+      "@id": `${siteConfig.url}/${localizedSlug}`,
     },
   };
 
   return (
     <Container className="py-8 md:py-12">
       <JsonLd data={articleJsonLd} />
-      <Breadcrumbs items={breadcrumbs} />
+      <Breadcrumbs items={localizedBreadcrumbs} />
 
       <div className="lg:grid lg:grid-cols-[1fr_220px] lg:gap-12">
         {/* Main content */}
@@ -107,10 +132,10 @@ export function BlogLayout({
               Ready to convert?
             </p>
             <Link
-              href={cta.href}
+              href={localizedCta.href}
               className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-700"
             >
-              {cta.label}
+              {localizedCta.label}
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
@@ -123,7 +148,7 @@ export function BlogLayout({
               Related Articles
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedArticles.map((article) => (
+              {localizedRelatedArticles.map((article) => (
                 <Link
                   key={article.href}
                   href={article.href}
