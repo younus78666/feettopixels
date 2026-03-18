@@ -5,6 +5,7 @@ import Link from "next/link";
 import { navigation, isDropdown } from "@/content/navigation";
 import type { NavDropdown } from "@/content/navigation";
 import { MobileMenu } from "./MobileMenu";
+import { SearchModal } from "./SearchModal";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/translations";
@@ -219,6 +220,11 @@ export function Header({ locale }: { locale: Locale }) {
 
             {/* Search trigger */}
             <button
+              onClick={() => {
+                document.dispatchEvent(
+                  new KeyboardEvent("keydown", { key: "k", metaKey: true }),
+                );
+              }}
               className="hidden items-center gap-2 rounded-lg border border-neutral-200 px-3 py-1.5 text-sm text-neutral-400 transition-colors hover:border-neutral-300 hover:text-neutral-600 sm:flex"
               aria-label={`${dict.nav.search} (Cmd+K)`}
             >
@@ -270,6 +276,8 @@ export function Header({ locale }: { locale: Locale }) {
         onClose={() => setMobileOpen(false)}
         locale={locale}
       />
+
+      <SearchModal locale={locale} />
     </>
   );
 }

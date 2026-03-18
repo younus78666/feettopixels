@@ -34,15 +34,18 @@ export default async function LocaleLayout({
 
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang="${validLocale}";document.documentElement.dir="${dir}";`,
+        }}
+      />
       <SiteSchema />
-      <div lang={validLocale} dir={dir}>
-        <a href="#main-content" className="skip-to-content">
-          {dict.nav.skipToContent}
-        </a>
-        <Header locale={validLocale} />
-        <main id="main-content">{children}</main>
-        <Footer locale={validLocale} />
-      </div>
+      <a href="#main-content" className="skip-to-content">
+        {dict.nav.skipToContent}
+      </a>
+      <Header locale={validLocale} />
+      <main id="main-content">{children}</main>
+      <Footer locale={validLocale} />
     </>
   );
 }

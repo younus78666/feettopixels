@@ -148,7 +148,7 @@ export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-modal animate-slide-in"
+        className="fixed inset-y-0 w-full max-w-sm bg-white shadow-modal ltr:right-0 rtl:left-0"
         style={{ animation: "slideIn 0.25s ease-out" }}
       >
         <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-4">
@@ -204,6 +204,14 @@ export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
         @keyframes slideIn {
           from {
             transform: translateX(100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+        [dir="rtl"] @keyframes slideIn {
+          from {
+            transform: translateX(-100%);
           }
           to {
             transform: translateX(0);

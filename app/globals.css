@@ -302,3 +302,27 @@ h4 { font-size: 1.125rem; }
   left: auto;
   right: 0;
 }
+
+/* Flip flex/grid layouts for RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Footer and nav link alignment */
+[dir="rtl"] ul {
+  padding-right: 0;
+}
+
+/* Mobile menu slide animation for RTL */
+[dir="rtl"] .animate-slide-in {
+  animation-name: slideInRtl !important;
+}
+
+@keyframes slideInRtl {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
