@@ -5,6 +5,7 @@ import Link from "next/link";
 import { navigation, isDropdown } from "@/content/navigation";
 import type { NavDropdown } from "@/content/navigation";
 import { getDictionary } from "@/lib/translations";
+import { getNavLabel } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
 
 interface MobileMenuProps {
@@ -81,7 +82,7 @@ function ExpandableSection({
                       href={`/${locale}${link.href}`}
                       className="block rounded-md px-3 py-2 text-sm text-neutral-600 hover:bg-white hover:text-primary-700"
                     >
-                      {link.label}
+                      {getNavLabel(link, dict)}
                     </Link>
                   </li>
                 ))}

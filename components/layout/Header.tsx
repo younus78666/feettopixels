@@ -8,6 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/translations";
+import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
 
 function localizeHref(href: string, locale: Locale): string {
@@ -116,11 +117,11 @@ function DropdownMenu({
                           onClick={() => setOpen(false)}
                         >
                           <span className="text-sm font-medium text-neutral-700 group-hover:text-primary-700">
-                            {link.label}
+                            {getNavLabel(link, dict)}
                           </span>
                           {link.description && (
                             <span className="mt-0.5 block text-xs text-neutral-400 group-hover:text-neutral-500">
-                              {link.description}
+                              {getNavDescription(link, dict)}
                             </span>
                           )}
                         </Link>

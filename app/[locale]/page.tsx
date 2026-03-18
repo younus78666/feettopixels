@@ -7,6 +7,7 @@ import { toolsDropdown } from "@/content/navigation";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
+import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -83,8 +84,8 @@ export default async function Home({ params }: PageProps) {
             {allTools.map((tool) => (
               <Card
                 key={tool.href}
-                title={tool.label}
-                description={tool.description}
+                title={getNavLabel(tool, dict)}
+                description={getNavDescription(tool, dict)}
                 href={`/${validLocale}${tool.href}`}
               />
             ))}

@@ -7,15 +7,17 @@ import {
 } from "@/content/navigation";
 import { siteConfig } from "@/content/site-config";
 import { getDictionary } from "@/lib/translations";
+import { getNavLabel } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
 
 interface FooterColumnProps {
   title: string;
   links: { label: string; href: string }[];
   locale: Locale;
+  dict: ReturnType<typeof getDictionary>;
 }
 
-function FooterColumn({ title, links, locale }: FooterColumnProps) {
+function FooterColumn({ title, links, locale, dict }: FooterColumnProps) {
   return (
     <div>
       <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-500">
@@ -28,7 +30,7 @@ function FooterColumn({ title, links, locale }: FooterColumnProps) {
               href={`/${locale}${link.href}`}
               className="text-sm text-neutral-500 transition-colors hover:text-primary-600"
             >
-              {link.label}
+              {getNavLabel(link, dict)}
             </Link>
           </li>
         ))}
@@ -49,21 +51,25 @@ export function Footer({ locale }: { locale: Locale }) {
             title={dict.categories.physical}
             links={footerPhysical}
             locale={locale}
+            dict={dict}
           />
           <FooterColumn
             title={dict.categories.css}
             links={footerCSS}
             locale={locale}
+            dict={dict}
           />
           <FooterColumn
             title={dict.categories.calculators}
             links={footerCalculators}
             locale={locale}
+            dict={dict}
           />
           <FooterColumn
             title={dict.nav.learn}
             links={footerLearn}
             locale={locale}
+            dict={dict}
           />
         </div>
 

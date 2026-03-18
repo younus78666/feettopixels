@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/Footer";
 import { SiteSchema } from "@/components/seo/SiteSchema";
 import { siteConfig } from "@/content/site-config";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }

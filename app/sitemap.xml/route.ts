@@ -1,12 +1,16 @@
-import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site-config";
 import { locales } from "@/lib/i18n";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url;
-  const lastModified = new Date();
+export const dynamic = "force-static";
 
-  // Static pages
+function escapeXml(str: string): string {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+export function GET() {
+  const baseUrl = siteConfig.url;
+  const now = new Date().toISOString();
+
   const staticPages = [
     "",
     "/about",
@@ -15,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
   ];
 
-  // Tool pages
   const toolPages = [
     "/pixel-converter",
     "/pixels-to-inches",
@@ -41,7 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/screen-resolution-checker",
   ];
 
-  // Blog / informational pages
   const blogPages = [
     "/pixels-per-inch",
     "/what-is-dpi",
@@ -63,24 +65,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const allPages = [...staticPages, ...toolPages, ...blogPages];
-  const entries: MetadataRoute.Sitemap = [];
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+`;
 
   for (const locale of locales) {
     for (const pagePath of allPages) {
-      const localePath = `/${locale}${pagePath}`;
-      entries.push({
-        url: `${baseUrl}${localePath}`,
-        lastModified,
-        changeFrequency: pagePath === "" ? "weekly" : "monthly",
-        priority: pagePath === "" ? 1.0 : toolPages.includes(pagePath) ? 0.8 : 0.6,
-        alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}${pagePath}`]),
-          ),
-        },
-      });
+      const url = `${baseUrl}/${locale}${pagePath}`;
+      const changefreq = pagePath === "" ? "weekly" : "monthly";
+      const priority = pagePath === ""
+        ? "1.0"
+        : toolPages.includes(pagePath)
+          ? "0.8"
+          : "0.6";
+
+      xml += `  <url>
+    <loc>${escapeXml(url)}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+`;
+      for (const altLocale of locales) {
+        const altUrl = `${baseUrl}/${altLocale}${pagePath}`;
+        xml += `    <xhtml:link rel="alternate" hreflang="${altLocale}" href="${escapeXml(altUrl)}" />\n`;
+      }
+      xml += `  </url>\n`;
     }
   }
 
-  return entries;
+  xml += `</urlset>\n`;
+
+  return new Response(xml, {
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, max-age=86400, s-maxage=86400",
+    },
+  });
 }

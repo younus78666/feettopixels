@@ -412,6 +412,45 @@ export const en = {
       extractive: "",
     },
   },
+
+  navDescriptions: {
+    "pixels-to-inches": "Convert px to inches with DPI control",
+    "inches-to-pixels": "Convert inches to px at any DPI",
+    "cm-to-pixels": "Convert centimeters to px",
+    "pixels-to-cm": "Convert px to centimeters",
+    "mm-to-pixels": "Convert millimeters to px",
+    "pixels-to-mm": "Convert px to millimeters",
+    "feet-to-pixels": "Convert feet to px for large format",
+    "pixels-to-feet": "Convert px to feet",
+    "px-to-rem": "Convert pixels to rem units",
+    "px-to-em": "Convert pixels to em units",
+    "px-to-pt": "Convert pixels to typographic points",
+    "px-to-vw": "Convert pixels to viewport width",
+    "dpi-calculator": "Calculate dots per inch",
+    "ppi-calculator": "Calculate pixels per inch",
+    "dpi-converter": "Convert between DPI settings",
+    "aspect-ratio-calculator": "Find and convert aspect ratios",
+    "image-size-calculator": "Calculate dimensions and file size",
+    "screen-resolution-checker": "Check your screen resolution",
+    "image-dpi-checker": "Check DPI of any image",
+    "pixel-ruler": "Measure pixels on screen",
+    "megapixel-calculator": "Convert megapixels to resolution",
+    "pixel-converter": "All-in-one converter hub",
+    "what-is-dpi": "Understanding dots per inch",
+    "what-is-ppi": "Understanding pixels per inch",
+    "what-is-a-pixel": "The building block of digital images",
+    "dpi-vs-ppi": "Key differences explained",
+    "pixels-per-inch": "Complete PPI reference guide",
+    "em-vs-rem": "CSS units comparison guide",
+    "best-dpi-for-printing": "Resolution guide for sharp prints",
+    "best-dpi-for-web": "Web image resolution guide",
+    "paper-sizes-in-pixels": "A4, Letter, A3 at every DPI",
+    "standard-image-sizes": "4x6, 5x7, 8x10 in pixels",
+    "social-media-image-sizes": "Instagram, Facebook, YouTube sizes",
+    "common-resolutions": "1080p, 4K, 5K explained",
+    "dpi-conversion-table": "Quick reference chart",
+    "passport-photo-size": "Photo sizes for passports and IDs",
+  },
 };
 
 interface PageTranslation {
@@ -492,4 +531,5 @@ export interface Dictionary {
     thankYou: string;
   };
   pages: Record<string, PageTranslation>;
+  navDescriptions: Record<string, string>;
 }

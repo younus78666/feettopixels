@@ -113,10 +113,10 @@ export async function middleware(request: NextRequest) {
     return addSecurityHeaders(NextResponse.next());
   }
 
-  // No locale in path — redirect to /en/...
+  // No locale in path — permanent redirect to /en/...
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(url);
+  return NextResponse.redirect(url, 301);
 }
 
 export const config = {
