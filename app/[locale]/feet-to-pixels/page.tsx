@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/feet-to-pixels`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "feet-to-pixels",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function FeetToPixelsPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Feet to Pixels Converter"
-      description="Convert feet to pixel dimensions with DPI control for large-format design."
+      title={dict.pages["feet-to-pixels"]?.title || "Feet to Pixels Converter"}
+      description={dict.pages["feet-to-pixels"]?.description || "Convert feet to pixel dimensions with DPI control for large-format design."}
       slug="/feet-to-pixels"
-      extractiveAnswer="To convert feet to pixels, multiply feet by 12 (inches per foot) then by DPI. At 96 DPI, 3 feet equals 3,456 pixels. At 150 DPI, 3 feet equals 5,400 pixels."
+      extractiveAnswer={dict.pages["feet-to-pixels"]?.extractive || "To convert feet to pixels, multiply feet by 12 (inches per foot) then by DPI. At 96 DPI, 3 feet equals 3,456 pixels. At 150 DPI, 3 feet equals 5,400 pixels."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How Feet to Pixel Conversion Works</h2>

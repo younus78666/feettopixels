@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixels-per-cm`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixels-per-cm",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -68,13 +73,18 @@ export default async function PixelsPerCmPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Pixels Per Centimeter"
-      extractiveAnswer="At 96 DPI, there are 37.80 pixels per centimeter. At 300 DPI, there are 118.11 pixels per centimeter. The formula is: pixels per cm = DPI / 2.54. One inch equals 2.54 cm, so divide the DPI by 2.54."
+      title={dict.pages["pixels-per-cm"]?.title || "Pixels Per Centimeter"}
+      extractiveAnswer={dict.pages["pixels-per-cm"]?.extractive || "At 96 DPI, there are 37.80 pixels per centimeter. At 300 DPI, there are 118.11 pixels per centimeter. The formula is: pixels per cm = DPI / 2.54. One inch equals 2.54 cm, so divide the DPI by 2.54."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the CM to Pixels Converter", href: "/cm-to-pixels" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="pixels-per-cm"
     >
       <h2 id="formula">Formula</h2>

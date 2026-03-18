@@ -1,0 +1,65 @@
+# FeetToPixels.com
+
+> Free online pixel conversion tools with DPI awareness. Convert between pixels, inches, centimeters, rem, em, and more.
+
+FeetToPixels is a free, ad-free web application that provides accurate pixel-to-physical unit conversions with DPI awareness. Every tool runs client-side in the browser with instant results. No registration, no limits.
+
+## Physical Converters
+- [Pixels to Inches](https://feettopixels.com/en/pixels-to-inches): Convert pixels to inches at any DPI. Formula: inches = pixels / DPI.
+- [Inches to Pixels](https://feettopixels.com/en/inches-to-pixels): Convert inches to pixels at any DPI. Formula: pixels = inches × DPI.
+- [CM to Pixels](https://feettopixels.com/en/cm-to-pixels): Convert centimeters to pixels. Formula: pixels = (cm × DPI) / 2.54.
+- [Pixels to CM](https://feettopixels.com/en/pixels-to-cm): Convert pixels to centimeters. Formula: cm = (pixels × 2.54) / DPI.
+- [MM to Pixels](https://feettopixels.com/en/mm-to-pixels): Convert millimeters to pixels. Formula: pixels = (mm × DPI) / 25.4.
+- [Pixels to MM](https://feettopixels.com/en/pixels-to-mm): Convert pixels to millimeters. Formula: mm = (pixels × 25.4) / DPI.
+- [Feet to Pixels](https://feettopixels.com/en/feet-to-pixels): Convert feet to pixels for large format. Formula: pixels = feet × 12 × DPI.
+- [Pixels to Feet](https://feettopixels.com/en/pixels-to-feet): Convert pixels to feet. Formula: feet = pixels / (12 × DPI).
+
+## CSS Converters
+- [PX to REM](https://feettopixels.com/en/px-to-rem): Convert pixels to rem. Formula: rem = px / rootFontSize (default 16px).
+- [PX to EM](https://feettopixels.com/en/px-to-em): Convert pixels to em. Formula: em = px / parentFontSize.
+- [PX to PT](https://feettopixels.com/en/px-to-pt): Convert pixels to points. Formula: pt = px × 0.75 (at 96 DPI).
+- [PX to VW](https://feettopixels.com/en/px-to-vw): Convert pixels to viewport width. Formula: vw = (px / viewportWidth) × 100.
+
+## Calculators
+- [DPI Calculator](https://feettopixels.com/en/dpi-calculator): Calculate DPI for any screen. Formula: DPI = √(width² + height²) / diagonal.
+- [PPI Calculator](https://feettopixels.com/en/ppi-calculator): Calculate pixels per inch for any display.
+- [DPI Converter](https://feettopixels.com/en/dpi-converter): Convert between different DPI resolutions.
+- [Aspect Ratio Calculator](https://feettopixels.com/en/aspect-ratio-calculator): Calculate and convert aspect ratios.
+- [Image Size Calculator](https://feettopixels.com/en/image-size-calculator): Calculate image dimensions and file size.
+- [Screen Resolution Checker](https://feettopixels.com/en/screen-resolution-checker): Detect your screen resolution and pixel ratio.
+- [Image DPI Checker](https://feettopixels.com/en/image-dpi-checker): Check the DPI of any uploaded image.
+- [Pixel Ruler](https://feettopixels.com/en/pixel-ruler): Measure on-screen elements in pixels.
+- [Megapixel Calculator](https://feettopixels.com/en/megapixel-calculator): Convert megapixels to pixel dimensions.
+- [Pixel Converter](https://feettopixels.com/en/pixel-converter): All-in-one converter for all unit types.
+
+## Guides
+- [What Is DPI?](https://feettopixels.com/en/what-is-dpi): DPI (dots per inch) measures print resolution. Standard: 300 DPI for photos, 150 for documents, 72 for large posters.
+- [What Is PPI?](https://feettopixels.com/en/what-is-ppi): PPI (pixels per inch) measures screen pixel density. Modern phones: 400+ PPI, desktop monitors: 90-160 PPI.
+- [What Is a Pixel?](https://feettopixels.com/en/what-is-a-pixel): A pixel is the smallest addressable element on a digital display, containing RGB sub-pixels.
+- [DPI vs PPI](https://feettopixels.com/en/dpi-vs-ppi): DPI = print resolution (ink dots), PPI = screen resolution (pixels). For conversion math, they're interchangeable.
+- [Pixels Per Inch](https://feettopixels.com/en/pixels-per-inch): Web standard: 96 PPI. Mac legacy: 72 PPI. Retina: 200+ PPI.
+- [EM vs REM](https://feettopixels.com/en/em-vs-rem): EM = relative to parent font-size. REM = relative to root font-size (more predictable).
+
+## References
+- [Best DPI for Printing](https://feettopixels.com/en/best-dpi-for-printing): Photos: 300 DPI. Posters: 150 DPI. Fine art: 600 DPI.
+- [Best DPI for Web](https://feettopixels.com/en/best-dpi-for-web): Web uses pixel dimensions, not DPI. CSS standard is 96 DPI.
+- [Paper Sizes in Pixels](https://feettopixels.com/en/paper-sizes-in-pixels): A4 at 300 DPI = 2480×3508px. Letter at 300 DPI = 2550×3300px.
+- [Standard Image Sizes](https://feettopixels.com/en/standard-image-sizes): 4×6 at 300 DPI = 1200×1800px. 8×10 at 300 DPI = 2400×3000px.
+- [Social Media Image Sizes](https://feettopixels.com/en/social-media-image-sizes): Instagram: 1080×1080px. YouTube thumbnail: 1280×720px.
+- [Common Resolutions](https://feettopixels.com/en/common-resolutions): 1080p = 1920×1080. 4K = 3840×2160. 8K = 7680×4320.
+- [DPI Conversion Table](https://feettopixels.com/en/dpi-conversion-table): At 96 DPI: 1 inch = 96px. At 300 DPI: 1 inch = 300px.
+- [Passport Photo Size](https://feettopixels.com/en/passport-photo-size): US: 2×2 inches = 600×600px at 300 DPI. UK: 35×45mm = 413×531px.
+- [Pixels Per CM](https://feettopixels.com/en/pixels-per-cm): At 96 DPI: 37.8 px/cm. At 300 DPI: 118.1 px/cm.
+- [Pixels Per MM](https://feettopixels.com/en/pixels-per-mm): At 96 DPI: 3.78 px/mm. At 300 DPI: 11.81 px/mm.
+- [Pixels Per Foot](https://feettopixels.com/en/pixels-per-foot): At 96 DPI: 1152 px/ft. At 300 DPI: 3600 px/ft.
+
+## Key Facts
+- All tools are free and run client-side (no server processing)
+- Every physical converter is DPI-aware with presets: 72, 96, 150, 300 DPI
+- Available in 15+ languages
+- No registration or account required
+- No rate limits or usage restrictions
+
+## Contact
+- Website: https://feettopixels.com
+- Contact: https://feettopixels.com/en/contact

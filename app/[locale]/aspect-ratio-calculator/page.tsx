@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/aspect-ratio-calculator`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "aspect-ratio-calculator",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function AspectRatioCalculatorPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Aspect Ratio Calculator"
-      description="Calculate width, height, or aspect ratio from any two known values."
+      title={dict.pages["aspect-ratio-calculator"]?.title || "Aspect Ratio Calculator"}
+      description={dict.pages["aspect-ratio-calculator"]?.description || "Calculate width, height, or aspect ratio from any two known values."}
       slug="/aspect-ratio-calculator"
-      extractiveAnswer="To find an aspect ratio, divide width and height by their greatest common divisor. For 1920x1080, the GCD is 120, yielding 16:9. To find a missing dimension, lock the ratio and enter one dimension to calculate the other."
+      extractiveAnswer={dict.pages["aspect-ratio-calculator"]?.extractive || "To find an aspect ratio, divide width and height by their greatest common divisor. For 1920x1080, the GCD is 120, yielding 16:9. To find a missing dimension, lock the ratio and enter one dimension to calculate the other."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding Aspect Ratios</h2>

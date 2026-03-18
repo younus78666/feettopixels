@@ -47,3 +47,21 @@ export function isRtl(locale: Locale): boolean {
 export function isValidLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
 }
+
+export const ogLocaleMap: Record<Locale, string> = {
+  en: "en_US",
+  es: "es_ES",
+  fr: "fr_FR",
+  de: "de_DE",
+  pt: "pt_BR",
+  hi: "hi_IN",
+  ja: "ja_JP",
+  ko: "ko_KR",
+  it: "it_IT",
+  nl: "nl_NL",
+  ar: "ar_SA",
+  tr: "tr_TR",
+  pl: "pl_PL",
+  id: "id_ID",
+  ru: "ru_RU",
+};

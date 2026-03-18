@@ -32,6 +32,10 @@ interface ConverterLayoutProps {
   faqItems: FAQItem[];
   breadcrumbs: BreadcrumbItem[];
   locale?: string;
+  labels?: {
+    relatedTools: string;
+    faq: string;
+  };
 }
 
 function prefixHref(href: string, locale?: string): string {
@@ -51,6 +55,7 @@ export function ConverterLayout({
   faqItems,
   breadcrumbs,
   locale,
+  labels,
 }: ConverterLayoutProps) {
   const localizedBreadcrumbs = breadcrumbs.map((b) => ({
     ...b,
@@ -70,18 +75,84 @@ export function ConverterLayout({
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
+          "@id": `https://feettopixels.com${localizedSlug}/#tool`,
           name: title,
           description: description,
           url: `https://feettopixels.com${localizedSlug}`,
+          inLanguage: locale || "en",
           applicationCategory: "UtilityApplication",
-          operatingSystem: "Any",
+          applicationSubCategory: "Unit Converter",
+          operatingSystem: "Any (Web Browser)",
+          browserRequirements: "Requires JavaScript",
+          isAccessibleForFree: true,
           offers: {
             "@type": "Offer",
             price: "0",
             priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+          },
+          creator: {
+            "@type": "Organization",
+            "@id": "https://feettopixels.com/#organization",
+            name: "FeetToPixels",
+          },
+          isPartOf: {
+            "@type": "WebSite",
+            "@id": "https://feettopixels.com/#website",
           },
         }}
       />
+      {faqItems.length > 0 && (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqItems.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: [".faq-question", ".faq-answer"],
+            },
+          }}
+        />
+      )}
+      {extractiveAnswer && (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: `How to use ${title}`,
+            description: extractiveAnswer,
+            step: [
+              {
+                "@type": "HowToStep",
+                name: "Enter your value",
+                text: "Type the value you want to convert in the input field.",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Set DPI (if applicable)",
+                text: "Choose your target DPI setting for accurate conversion.",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Get your result",
+                text: "The converted value appears instantly. Click copy to use it.",
+              },
+            ],
+            tool: {
+              "@type": "HowToTool",
+              name: "FeetToPixels Online Converter",
+            },
+          }}
+        />
+      )}
       <Breadcrumbs items={localizedBreadcrumbs} />
 
       <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
@@ -96,9 +167,9 @@ export function ConverterLayout({
 
       <div className="prose prose-neutral max-w-none">{content}</div>
 
-      <RelatedTools tools={localizedRelatedTools} />
+      <RelatedTools tools={localizedRelatedTools} label={labels?.relatedTools} />
 
-      <FAQ items={faqItems} />
+      <FAQ items={faqItems} label={labels?.faq} />
     </Container>
   );
 }

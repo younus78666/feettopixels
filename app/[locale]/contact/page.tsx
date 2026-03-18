@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ContactForm } from "./ContactForm";
@@ -22,6 +22,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/contact`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "Contact Us",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/px-to-em`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "px-to-em",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PxToEmPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="PX to EM Converter"
-      description="Convert pixels to em units with adjustable parent font size."
+      title={dict.pages["px-to-em"]?.title || "PX to EM Converter"}
+      description={dict.pages["px-to-em"]?.description || "Convert pixels to em units with adjustable parent font size."}
       slug="/px-to-em"
-      extractiveAnswer="To convert px to em, divide the pixel value by the parent element's font size. With a 16px parent: 16px = 1em, 24px = 1.5em, 32px = 2em. Unlike rem, em is relative to the parent element, not the root."
+      extractiveAnswer={dict.pages["px-to-em"]?.extractive || "To convert px to em, divide the pixel value by the parent element's font size. With a 16px parent: 16px = 1em, 24px = 1.5em, 32px = 2em. Unlike rem, em is relative to the parent element, not the root."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding PX to EM Conversion</h2>

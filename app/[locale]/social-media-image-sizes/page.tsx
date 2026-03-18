@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/social-media-image-sizes`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "social-media-image-sizes",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -74,13 +79,18 @@ export default async function SocialMediaImageSizesPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Social Media Image Sizes (2026)"
-      extractiveAnswer="Instagram posts should be 1080 x 1080 px (square) or 1080 x 1350 px (portrait). YouTube thumbnails are 1280 x 720 px. Facebook covers are 851 x 315 px. DPI does not matter for social media — only pixel dimensions affect display quality."
+      title={dict.pages["social-media-image-sizes"]?.title || "Social Media Image Sizes (2026)"}
+      extractiveAnswer={dict.pages["social-media-image-sizes"]?.extractive || "Instagram posts should be 1080 x 1080 px (square) or 1080 x 1350 px (portrait). YouTube thumbnails are 1280 x 720 px. Facebook covers are 851 x 315 px. DPI does not matter for social media — only pixel dimensions affect display quality."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the Image Size Calculator", href: "/image-size-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="social-media-image-sizes"
     >
       <h2 id="instagram">Instagram</h2>

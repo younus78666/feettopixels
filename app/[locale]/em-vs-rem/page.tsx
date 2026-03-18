@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/em-vs-rem`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "em-vs-rem",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -73,13 +78,18 @@ export default async function EmVsRemPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="EM vs REM in CSS"
-      extractiveAnswer="REM is relative to the root element's font size (default 16px). EM is relative to the parent element's font size. Use rem for consistent, predictable sizing across your site. Use em for proportional spacing within components."
+      title={dict.pages["em-vs-rem"]?.title || "EM vs REM in CSS"}
+      extractiveAnswer={dict.pages["em-vs-rem"]?.extractive || "REM is relative to the root element's font size (default 16px). EM is relative to the parent element's font size. Use rem for consistent, predictable sizing across your site. Use em for proportional spacing within components."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the PX to REM Converter", href: "/px-to-rem" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="em-vs-rem"
     >
       <h2 id="quick-comparison">Quick Comparison</h2>

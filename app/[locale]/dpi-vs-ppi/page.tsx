@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/dpi-vs-ppi`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "dpi-vs-ppi",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -74,13 +79,18 @@ export default async function DpiVsPpiPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="DPI vs PPI: What's the Difference?"
-      extractiveAnswer="DPI (dots per inch) measures printer resolution — how many ink dots per inch. PPI (pixels per inch) measures screen or image pixel density. DPI applies to physical printing, PPI applies to digital displays. They are related but not identical concepts."
+      title={dict.pages["dpi-vs-ppi"]?.title || "DPI vs PPI: What's the Difference?"}
+      extractiveAnswer={dict.pages["dpi-vs-ppi"]?.extractive || "DPI (dots per inch) measures printer resolution — how many ink dots per inch. PPI (pixels per inch) measures screen or image pixel density. DPI applies to physical printing, PPI applies to digital displays. They are related but not identical concepts."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the DPI Calculator", href: "/dpi-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="dpi-vs-ppi"
     >
       <h2 id="quick-answer">Quick Answer</h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -26,6 +26,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixel-converter`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixel-converter",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }

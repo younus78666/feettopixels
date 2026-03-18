@@ -44,6 +44,11 @@ interface BlogLayoutProps {
   dateModified?: string;
   slug: string;
   locale?: string;
+  labels?: {
+    readyToConvert: string;
+    relatedArticles: string;
+    onThisPage: string;
+  };
 }
 
 function prefixHref(href: string, locale?: string): string {
@@ -65,6 +70,7 @@ export function BlogLayout({
   dateModified = "2026-03-18",
   slug,
   locale,
+  labels,
 }: BlogLayoutProps) {
   const localizedBreadcrumbs = breadcrumbs.map((b) => ({
     ...b,
@@ -91,6 +97,7 @@ export function BlogLayout({
     datePublished,
     dateModified,
     url: `${siteConfig.url}/${localizedSlug}`,
+    inLanguage: locale || "en",
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -129,7 +136,7 @@ export function BlogLayout({
           {/* CTA */}
           <div className="mt-10 rounded-xl border border-primary-200 bg-primary-50 p-6 text-center">
             <p className="mb-3 text-base font-semibold text-neutral-900">
-              Ready to convert?
+              {labels?.readyToConvert || "Ready to convert?"}
             </p>
             <Link
               href={localizedCta.href}
@@ -145,7 +152,7 @@ export function BlogLayout({
           {/* Related articles */}
           <div className="mt-12">
             <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
-              Related Articles
+              {labels?.relatedArticles || "Related Articles"}
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {localizedRelatedArticles.map((article) => (
@@ -173,7 +180,7 @@ export function BlogLayout({
         <aside className="hidden lg:block">
           <nav className="sticky top-24" aria-label="Table of contents">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
-              On this page
+              {labels?.onThisPage || "On this page"}
             </p>
             <ul className="space-y-2 border-l border-neutral-200 pl-4">
               {toc.map((item) => (

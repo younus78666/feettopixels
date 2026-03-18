@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixels-per-foot`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixels-per-foot",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -68,13 +73,18 @@ export default async function PixelsPerFootPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Pixels Per Foot"
-      extractiveAnswer="At 96 DPI, one foot contains 1,152 pixels (96 x 12 inches). At 300 DPI, one foot is 3,600 pixels. At 72 DPI (common for large format), one foot is 864 pixels. Multiply DPI by 12 to get pixels per foot."
+      title={dict.pages["pixels-per-foot"]?.title || "Pixels Per Foot"}
+      extractiveAnswer={dict.pages["pixels-per-foot"]?.extractive || "At 96 DPI, one foot contains 1,152 pixels (96 x 12 inches). At 300 DPI, one foot is 3,600 pixels. At 72 DPI (common for large format), one foot is 864 pixels. Multiply DPI by 12 to get pixels per foot."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the Feet to Pixels Converter", href: "/feet-to-pixels" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="pixels-per-foot"
     >
       <h2 id="formula">Formula</h2>

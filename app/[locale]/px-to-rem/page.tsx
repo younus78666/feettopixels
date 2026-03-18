@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/px-to-rem`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "px-to-rem",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PxToRemPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="PX to REM Converter"
-      description="Convert pixels to rem units with adjustable base font size."
+      title={dict.pages["px-to-rem"]?.title || "PX to REM Converter"}
+      description={dict.pages["px-to-rem"]?.description || "Convert pixels to rem units with adjustable base font size."}
       slug="/px-to-rem"
-      extractiveAnswer="To convert px to rem, divide the pixel value by the base font size. With the default 16px base: 16px = 1rem, 24px = 1.5rem, 32px = 2rem. Adjust the base if your root font size differs from 16px."
+      extractiveAnswer={dict.pages["px-to-rem"]?.extractive || "To convert px to rem, divide the pixel value by the base font size. With the default 16px base: 16px = 1rem, 24px = 1.5rem, 32px = 2rem. Adjust the base if your root font size differs from 16px."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding PX to REM Conversion</h2>

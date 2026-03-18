@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/megapixel-calculator`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "megapixel-calculator",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function MegapixelCalculatorPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Megapixel Calculator"
-      description="Convert between megapixels and pixel dimensions at any aspect ratio."
+      title={dict.pages["megapixel-calculator"]?.title || "Megapixel Calculator"}
+      description={dict.pages["megapixel-calculator"]?.description || "Convert between megapixels and pixel dimensions at any aspect ratio."}
       slug="/megapixel-calculator"
-      extractiveAnswer="A megapixel equals 1 million pixels. To find dimensions from megapixels, use the aspect ratio: for 12 MP at 4:3, width = sqrt(12M x 4/3) = 4000px, height = 3000px. To find megapixels from dimensions: MP = (width x height) / 1,000,000."
+      extractiveAnswer={dict.pages["megapixel-calculator"]?.extractive || "A megapixel equals 1 million pixels. To find dimensions from megapixels, use the aspect ratio: for 12 MP at 4:3, width = sqrt(12M x 4/3) = 4000px, height = 3000px. To find megapixels from dimensions: MP = (width x height) / 1,000,000."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding Megapixels</h2>

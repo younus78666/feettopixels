@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/mm-to-pixels`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "mm-to-pixels",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function MmToPixelsPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Millimeters to Pixels Converter"
-      description="Convert millimeters to pixel dimensions with precise DPI control."
+      title={dict.pages["mm-to-pixels"]?.title || "Millimeters to Pixels Converter"}
+      description={dict.pages["mm-to-pixels"]?.description || "Convert millimeters to pixel dimensions with precise DPI control."}
       slug="/mm-to-pixels"
-      extractiveAnswer="To convert millimeters to pixels, multiply millimeters by DPI and divide by 25.4. At 96 DPI, 100 mm equals 378 pixels. At 300 DPI, 100 mm equals 1,181 pixels."
+      extractiveAnswer={dict.pages["mm-to-pixels"]?.extractive || "To convert millimeters to pixels, multiply millimeters by DPI and divide by 25.4. At 96 DPI, 100 mm equals 378 pixels. At 300 DPI, 100 mm equals 1,181 pixels."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How Millimeter to Pixel Conversion Works</h2>

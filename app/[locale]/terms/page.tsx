@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { Container } from "@/components/ui/Container";
@@ -25,6 +25,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         locales.map((l) => [l, `/${l}/terms`]),
       ),
     },
+    openGraph: {
+      title: pageDict?.title || "Terms of Service",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
+    },
   };
 }
 
@@ -43,7 +48,7 @@ export default async function TermsPage({ params }: PageProps) {
 
       <div className="mx-auto max-w-3xl">
         <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-          Terms of Service
+          {dict.pages["terms"]?.title || "Terms of Service"}
         </h1>
         <p className="mb-8 text-sm text-neutral-500">
           Last updated: March 18, 2026

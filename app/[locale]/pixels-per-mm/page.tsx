@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixels-per-mm`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixels-per-mm",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -68,13 +73,18 @@ export default async function PixelsPerMmPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Pixels Per Millimeter"
-      extractiveAnswer="At 96 DPI, there are 3.78 pixels per millimeter. At 300 DPI, there are 11.81 pixels per millimeter. The formula is: pixels per mm = DPI / 25.4, because one inch contains 25.4 millimeters."
+      title={dict.pages["pixels-per-mm"]?.title || "Pixels Per Millimeter"}
+      extractiveAnswer={dict.pages["pixels-per-mm"]?.extractive || "At 96 DPI, there are 3.78 pixels per millimeter. At 300 DPI, there are 11.81 pixels per millimeter. The formula is: pixels per mm = DPI / 25.4, because one inch contains 25.4 millimeters."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the MM to Pixels Converter", href: "/mm-to-pixels" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="pixels-per-mm"
     >
       <h2 id="formula">Formula</h2>

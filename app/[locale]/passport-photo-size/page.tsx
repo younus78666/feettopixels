@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/passport-photo-size`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "passport-photo-size",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -73,13 +78,18 @@ export default async function PassportPhotoSizePage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Passport Photo Size in Pixels"
-      extractiveAnswer="A US passport photo (2 x 2 inches) at 300 DPI is 600 x 600 pixels. A UK passport photo (35 x 45 mm) at 300 DPI is 413 x 531 pixels. EU standard is 35 x 45 mm (413 x 531 px). Canadian passports require 50 x 70 mm (591 x 827 px)."
+      title={dict.pages["passport-photo-size"]?.title || "Passport Photo Size in Pixels"}
+      extractiveAnswer={dict.pages["passport-photo-size"]?.extractive || "A US passport photo (2 x 2 inches) at 300 DPI is 600 x 600 pixels. A UK passport photo (35 x 45 mm) at 300 DPI is 413 x 531 pixels. EU standard is 35 x 45 mm (413 x 531 px). Canadian passports require 50 x 70 mm (591 x 827 px)."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the Image Size Calculator", href: "/image-size-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="passport-photo-size"
     >
       <h2 id="passport-photos">Passport Photo Sizes by Country</h2>

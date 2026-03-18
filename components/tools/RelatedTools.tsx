@@ -9,13 +9,14 @@ interface RelatedTool {
 
 interface RelatedToolsProps {
   tools: RelatedTool[];
+  label?: string;
 }
 
-export function RelatedTools({ tools }: RelatedToolsProps) {
+export function RelatedTools({ tools, label }: RelatedToolsProps) {
   return (
     <div className="mt-12">
       <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
-        Related Converters
+        {label || "Related Converters"}
       </h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {tools.map((tool) => (

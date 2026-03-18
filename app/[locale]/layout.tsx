@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteSchema } from "@/components/seo/SiteSchema";
 import { siteConfig } from "@/content/site-config";
 
 export function generateStaticParams() {
@@ -31,21 +32,7 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <head>
-        {locales.map((l) => (
-          <link
-            key={l}
-            rel="alternate"
-            hrefLang={l}
-            href={`${siteConfig.url}/${l}`}
-          />
-        ))}
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href={`${siteConfig.url}/en`}
-        />
-      </head>
+      <SiteSchema />
       <div lang={validLocale} dir={dir}>
         <a href="#main-content" className="skip-to-content">
           {dict.nav.skipToContent}

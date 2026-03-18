@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/image-dpi-checker`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "image-dpi-checker",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function ImageDpiCheckerPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Image DPI Checker"
-      description="Upload an image to check its resolution and print quality."
+      title={dict.pages["image-dpi-checker"]?.title || "Image DPI Checker"}
+      description={dict.pages["image-dpi-checker"]?.description || "Upload an image to check its resolution and print quality."}
       slug="/image-dpi-checker"
-      extractiveAnswer="Upload any image to instantly see its pixel dimensions, megapixel count, and maximum print size at 300 DPI (professional), 150 DPI (large format), and 96 DPI (screen). Images of 2+ megapixels are considered print quality at 300 DPI."
+      extractiveAnswer={dict.pages["image-dpi-checker"]?.extractive || "Upload any image to instantly see its pixel dimensions, megapixel count, and maximum print size at 300 DPI (professional), 150 DPI (large format), and 96 DPI (screen). Images of 2+ megapixels are considered print quality at 300 DPI."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How the Image DPI Checker Works</h2>

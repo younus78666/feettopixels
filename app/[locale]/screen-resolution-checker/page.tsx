@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/screen-resolution-checker`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "screen-resolution-checker",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function ScreenResolutionCheckerPage({ params }: PageProps)
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Screen Resolution Checker"
-      description="Instantly detect your screen resolution, pixel ratio, and color depth."
+      title={dict.pages["screen-resolution-checker"]?.title || "Screen Resolution Checker"}
+      description={dict.pages["screen-resolution-checker"]?.description || "Instantly detect your screen resolution, pixel ratio, and color depth."}
       slug="/screen-resolution-checker"
-      extractiveAnswer="This tool auto-detects your screen resolution, device pixel ratio (DPR), color depth, and total megapixels. It compares your display to HD (1280x720), Full HD (1920x1080), QHD (2560x1440), 4K (3840x2160), and higher standards."
+      extractiveAnswer={dict.pages["screen-resolution-checker"]?.extractive || "This tool auto-detects your screen resolution, device pixel ratio (DPR), color depth, and total megapixels. It compares your display to HD (1280x720), Full HD (1920x1080), QHD (2560x1440), 4K (3840x2160), and higher standards."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding Screen Resolution</h2>

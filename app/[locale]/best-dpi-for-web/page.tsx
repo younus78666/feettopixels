@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/best-dpi-for-web`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "best-dpi-for-web",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -69,13 +74,18 @@ export default async function BestDpiForWebPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Best DPI for Web Images"
-      extractiveAnswer="DPI does not affect how images display on the web. Browsers render images based on pixel dimensions only, ignoring the DPI metadata in image files. Focus on pixel dimensions, file format (WebP/AVIF), and compression for web optimization."
+      title={dict.pages["best-dpi-for-web"]?.title || "Best DPI for Web Images"}
+      extractiveAnswer={dict.pages["best-dpi-for-web"]?.extractive || "DPI does not affect how images display on the web. Browsers render images based on pixel dimensions only, ignoring the DPI metadata in image files. Focus on pixel dimensions, file format (WebP/AVIF), and compression for web optimization."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the DPI Calculator", href: "/dpi-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="best-dpi-for-web"
     >
       <h2 id="dpi-irrelevant">Why DPI Is Irrelevant for Web</h2>

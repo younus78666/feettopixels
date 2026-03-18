@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/best-dpi-for-printing`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "best-dpi-for-printing",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -74,13 +79,18 @@ export default async function BestDpiForPrintingPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Best DPI for Printing"
-      extractiveAnswer="The best DPI for printing depends on the output type: 300 DPI for photos and brochures, 150 DPI for documents and newspapers, 72-100 DPI for posters, and 25-72 DPI for billboards. Higher DPI produces sharper prints but increases file size."
+      title={dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing"}
+      extractiveAnswer={dict.pages["best-dpi-for-printing"]?.extractive || "The best DPI for printing depends on the output type: 300 DPI for photos and brochures, 150 DPI for documents and newspapers, 72-100 DPI for posters, and 25-72 DPI for billboards. Higher DPI produces sharper prints but increases file size."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the DPI Calculator", href: "/dpi-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="best-dpi-for-printing"
     >
       <h2 id="dpi-recommendations">DPI Recommendations by Print Type</h2>

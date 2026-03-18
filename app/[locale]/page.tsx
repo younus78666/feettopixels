@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Card } from "@/components/ui/Card";
 import { toolsDropdown } from "@/content/navigation";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 
@@ -25,6 +25,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}`]),
       ),
+    },
+    openGraph: {
+      title: dict.site.name,
+      description: dict.site.description,
+      locale: ogLocaleMap[locale],
     },
   };
 }

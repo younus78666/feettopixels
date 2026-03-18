@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/cm-to-pixels`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "cm-to-pixels",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function CmToPixelsPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Centimeters to Pixels Converter"
-      description="Convert centimeters to pixel dimensions with DPI control."
+      title={dict.pages["cm-to-pixels"]?.title || "Centimeters to Pixels Converter"}
+      description={dict.pages["cm-to-pixels"]?.description || "Convert centimeters to pixel dimensions with DPI control."}
       slug="/cm-to-pixels"
-      extractiveAnswer="To convert centimeters to pixels, multiply centimeters by DPI and divide by 2.54. At 96 DPI, 10 cm equals 378 pixels. At 300 DPI, 10 cm equals 1,181 pixels."
+      extractiveAnswer={dict.pages["cm-to-pixels"]?.extractive || "To convert centimeters to pixels, multiply centimeters by DPI and divide by 2.54. At 96 DPI, 10 cm equals 378 pixels. At 300 DPI, 10 cm equals 1,181 pixels."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How CM to Pixel Conversion Works</h2>

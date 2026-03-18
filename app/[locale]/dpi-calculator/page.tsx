@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/dpi-calculator`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "dpi-calculator",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function DpiCalculatorPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="DPI Calculator"
-      description="Calculate the DPI (dots per inch) of any screen or display."
+      title={dict.pages["dpi-calculator"]?.title || "DPI Calculator"}
+      description={dict.pages["dpi-calculator"]?.description || "Calculate the DPI (dots per inch) of any screen or display."}
       slug="/dpi-calculator"
-      extractiveAnswer="To calculate DPI, use the formula: DPI = sqrt(width² + height²) / diagonal. For example, a 24-inch 1080p monitor (1920x1080) has a DPI of 91.79, while a 27-inch 4K display (3840x2160) has 163.18 DPI."
+      extractiveAnswer={dict.pages["dpi-calculator"]?.extractive || "To calculate DPI, use the formula: DPI = sqrt(width² + height²) / diagonal. For example, a 24-inch 1080p monitor (1920x1080) has a DPI of 91.79, while a 27-inch 4K display (3840x2160) has 163.18 DPI."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding DPI for Screens</h2>

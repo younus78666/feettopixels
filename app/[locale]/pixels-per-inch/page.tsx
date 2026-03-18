@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixels-per-inch`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixels-per-inch",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -84,13 +89,18 @@ export default async function PixelsPerInchPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Pixels Per Inch (PPI) Explained"
-      extractiveAnswer="Pixels per inch (PPI) measures how many pixels fit into one linear inch of a display or image. At 96 PPI (web standard), one inch contains 96 pixels. At 300 PPI (print standard), one inch contains 300 pixels, producing sharper output."
+      title={dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch (PPI) Explained"}
+      extractiveAnswer={dict.pages["pixels-per-inch"]?.extractive || "Pixels per inch (PPI) measures how many pixels fit into one linear inch of a display or image. At 96 PPI (web standard), one inch contains 96 pixels. At 300 PPI (print standard), one inch contains 300 pixels, producing sharper output."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the PPI Calculator", href: "/ppi-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="pixels-per-inch"
     >
       <h2 id="what-is-ppi">What Is PPI?</h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/px-to-pt`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "px-to-pt",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PxToPtPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="PX to PT Converter"
-      description="Convert CSS pixels to typographic points for web and print design."
+      title={dict.pages["px-to-pt"]?.title || "PX to PT Converter"}
+      description={dict.pages["px-to-pt"]?.description || "Convert CSS pixels to typographic points for web and print design."}
       slug="/px-to-pt"
-      extractiveAnswer="To convert pixels to points, multiply by 0.75 (or 72/96). At 96 DPI: 16px = 12pt, 24px = 18pt, 32px = 24pt. Points are the standard unit in print design (1pt = 1/72 inch), while CSS pixels are defined as 1/96 inch."
+      extractiveAnswer={dict.pages["px-to-pt"]?.extractive || "To convert pixels to points, multiply by 0.75 (or 72/96). At 96 DPI: 16px = 12pt, 24px = 18pt, 32px = 24pt. Points are the standard unit in print design (1pt = 1/72 inch), while CSS pixels are defined as 1/96 inch."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding PX to PT Conversion</h2>

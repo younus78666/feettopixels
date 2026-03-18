@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -27,6 +27,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         locales.map((l) => [l, `/${l}/about`]),
       ),
     },
+    openGraph: {
+      title: pageDict?.title || "About FeetToPixels",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
+    },
   };
 }
 
@@ -44,7 +49,7 @@ export default async function AboutPage({ params }: PageProps) {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    description: siteConfig.description,
+    description: dict.site.description,
     logo: `${siteConfig.url}/icon.svg`,
   };
 
@@ -55,7 +60,7 @@ export default async function AboutPage({ params }: PageProps) {
 
       <div className="mx-auto max-w-3xl">
         <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-          About FeetToPixels
+          {dict.pages["about"]?.title || "About FeetToPixels"}
         </h1>
 
         <div className="prose prose-neutral max-w-none">
@@ -96,7 +101,7 @@ export default async function AboutPage({ params }: PageProps) {
               Start converting
             </p>
             <Link
-              href="/pixel-converter"
+              href={`/${validLocale}/pixel-converter`}
               className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-700"
             >
               Explore All Tools

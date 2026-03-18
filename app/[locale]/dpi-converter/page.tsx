@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/dpi-converter`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "dpi-converter",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function DpiConverterPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="DPI Converter"
-      description="Convert image dimensions between different DPI resolutions for web and print."
+      title={dict.pages["dpi-converter"]?.title || "DPI Converter"}
+      description={dict.pages["dpi-converter"]?.description || "Convert image dimensions between different DPI resolutions for web and print."}
       slug="/dpi-converter"
-      extractiveAnswer="To convert between DPI resolutions, multiply the current size by the current DPI, then divide by the target DPI. For example, a 10-inch image at 72 DPI becomes 2.4 inches at 300 DPI because (10 x 72) / 300 = 2.4."
+      extractiveAnswer={dict.pages["dpi-converter"]?.extractive || "To convert between DPI resolutions, multiply the current size by the current DPI, then divide by the target DPI. For example, a 10-inch image at 72 DPI becomes 2.4 inches at 300 DPI because (10 x 72) / 300 = 2.4."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How DPI Conversion Works</h2>

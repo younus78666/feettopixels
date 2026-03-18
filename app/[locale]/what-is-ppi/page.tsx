@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/what-is-ppi`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "what-is-ppi",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -70,13 +75,18 @@ export default async function WhatIsPpiPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="What Is PPI?"
-      extractiveAnswer="PPI (pixels per inch) measures the pixel density of a screen or digital image. It tells you how many pixels are packed into each linear inch. Higher PPI means sharper visuals. Typical values are 96 PPI for desktop monitors and 326-460 PPI for smartphones."
+      title={dict.pages["what-is-ppi"]?.title || "What Is PPI?"}
+      extractiveAnswer={dict.pages["what-is-ppi"]?.extractive || "PPI (pixels per inch) measures the pixel density of a screen or digital image. It tells you how many pixels are packed into each linear inch. Higher PPI means sharper visuals. Typical values are 96 PPI for desktop monitors and 326-460 PPI for smartphones."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the PPI Calculator", href: "/ppi-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="what-is-ppi"
     >
       <h2 id="ppi-definition">PPI Definition</h2>

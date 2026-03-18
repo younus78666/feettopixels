@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/paper-sizes-in-pixels`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "paper-sizes-in-pixels",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -72,13 +77,18 @@ export default async function PaperSizesInPixelsPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Paper Sizes in Pixels"
-      extractiveAnswer="A4 paper at 300 DPI is 2480 x 3508 pixels. US Letter at 300 DPI is 2550 x 3300 pixels. The pixel dimensions of any paper size depend on the DPI: multiply the paper width in inches by the DPI to get the width in pixels."
+      title={dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels"}
+      extractiveAnswer={dict.pages["paper-sizes-in-pixels"]?.extractive || "A4 paper at 300 DPI is 2480 x 3508 pixels. US Letter at 300 DPI is 2550 x 3300 pixels. The pixel dimensions of any paper size depend on the DPI: multiply the paper width in inches by the DPI to get the width in pixels."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the Image Size Calculator", href: "/image-size-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="paper-sizes-in-pixels"
     >
       <h2 id="iso-a-series">ISO A Series Paper Sizes</h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/px-to-vw`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "px-to-vw",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PxToVwPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="PX to VW Converter"
-      description="Convert pixels to viewport width units for fluid responsive design."
+      title={dict.pages["px-to-vw"]?.title || "PX to VW Converter"}
+      description={dict.pages["px-to-vw"]?.description || "Convert pixels to viewport width units for fluid responsive design."}
       slug="/px-to-vw"
-      extractiveAnswer="To convert px to vw, use the formula: vw = (px / viewport width) x 100. On a 1440px viewport: 16px = 1.111vw, 100px = 6.944vw. VW units create fluid layouts that scale with the browser width. Adjust the viewport width to match your design target."
+      extractiveAnswer={dict.pages["px-to-vw"]?.extractive || "To convert px to vw, use the formula: vw = (px / viewport width) x 100. On a 1440px viewport: 16px = 1.111vw, 100px = 6.944vw. VW units create fluid layouts that scale with the browser width. Adjust the viewport width to match your design target."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding PX to VW Conversion</h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/dpi-conversion-table`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "dpi-conversion-table",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -68,13 +73,18 @@ export default async function DpiConversionTablePage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="DPI Conversion Table"
-      extractiveAnswer="At 300 DPI, there are 300 pixels per inch, 118.11 pixels per cm, and 11.81 pixels per mm. At 96 DPI, there are 96 pixels per inch, 37.80 per cm, and 3.78 per mm. Use DPI / 2.54 for cm and DPI / 25.4 for mm."
+      title={dict.pages["dpi-conversion-table"]?.title || "DPI Conversion Table"}
+      extractiveAnswer={dict.pages["dpi-conversion-table"]?.extractive || "At 300 DPI, there are 300 pixels per inch, 118.11 pixels per cm, and 11.81 pixels per mm. At 96 DPI, there are 96 pixels per inch, 37.80 per cm, and 3.78 per mm. Use DPI / 2.54 for cm and DPI / 25.4 for mm."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the DPI Calculator", href: "/dpi-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="dpi-conversion-table"
     >
       <h2 id="master-table">Master DPI Conversion Table</h2>

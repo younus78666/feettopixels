@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/inches-to-pixels`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "inches-to-pixels",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function InchesToPixelsPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Inches to Pixels Converter"
-      description="Convert inches to pixel dimensions with DPI control for web and print design."
+      title={dict.pages["inches-to-pixels"]?.title || "Inches to Pixels Converter"}
+      description={dict.pages["inches-to-pixels"]?.description || "Convert inches to pixel dimensions with DPI control for web and print design."}
       slug="/inches-to-pixels"
-      extractiveAnswer="To convert inches to pixels, multiply the inch value by DPI. At 96 DPI (web standard), 10 inches equals 960 pixels. At 300 DPI (print quality), 10 inches equals 3,000 pixels."
+      extractiveAnswer={dict.pages["inches-to-pixels"]?.extractive || "To convert inches to pixels, multiply the inch value by DPI. At 96 DPI (web standard), 10 inches equals 960 pixels. At 300 DPI (print quality), 10 inches equals 3,000 pixels."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How Inch to Pixel Conversion Works</h2>

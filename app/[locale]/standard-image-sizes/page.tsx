@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/standard-image-sizes`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "standard-image-sizes",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -68,13 +73,18 @@ export default async function StandardImageSizesPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Standard Image Sizes in Pixels"
-      extractiveAnswer="A 4x6 photo at 300 DPI is 1200 x 1800 pixels. An 8x10 at 300 DPI is 2400 x 3000 pixels. A 24x36 poster at 300 DPI is 7200 x 10800 pixels. Multiply inches by DPI to calculate pixel dimensions for any standard print size."
+      title={dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes in Pixels"}
+      extractiveAnswer={dict.pages["standard-image-sizes"]?.extractive || "A 4x6 photo at 300 DPI is 1200 x 1800 pixels. An 8x10 at 300 DPI is 2400 x 3000 pixels. A 24x36 poster at 300 DPI is 7200 x 10800 pixels. Multiply inches by DPI to calculate pixel dimensions for any standard print size."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Try the Image Size Calculator", href: "/image-size-calculator" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="standard-image-sizes"
     >
       <h2 id="photo-print-sizes">Standard Photo Print Sizes</h2>

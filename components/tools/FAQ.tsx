@@ -11,6 +11,7 @@ interface FAQItem {
 
 interface FAQProps {
   items: FAQItem[];
+  label?: string;
 }
 
 function FAQAccordionItem({ item, isOpen, onToggle }: {
@@ -57,7 +58,7 @@ function FAQAccordionItem({ item, isOpen, onToggle }: {
   );
 }
 
-export function FAQ({ items }: FAQProps) {
+export function FAQ({ items, label }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const jsonLd = {
@@ -77,7 +78,7 @@ export function FAQ({ items }: FAQProps) {
     <div className="mt-12">
       <JsonLd data={jsonLd} />
       <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
-        Frequently Asked Questions
+        {label || "Frequently Asked Questions"}
       </h2>
       <div className="rounded-xl border border-neutral-200 bg-white px-6 shadow-soft">
         {items.map((item, index) => (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixel-ruler`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixel-ruler",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PixelRulerPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Pixel Ruler"
-      description="An on-screen ruler showing pixels, inches, and centimeters."
+      title={dict.pages["pixel-ruler"]?.title || "Pixel Ruler"}
+      description={dict.pages["pixel-ruler"]?.description || "An on-screen ruler showing pixels, inches, and centimeters."}
       slug="/pixel-ruler"
-      extractiveAnswer="This pixel ruler displays measurements in pixels, inches, or centimeters directly on your screen. Calibrate it using a credit card (3.375 inches wide) for accurate physical measurements. Without calibration, it uses the default 96 PPI."
+      extractiveAnswer={dict.pages["pixel-ruler"]?.extractive || "This pixel ruler displays measurements in pixels, inches, or centimeters directly on your screen. Calibrate it using a credit card (3.375 inches wide) for accurate physical measurements. Without calibration, it uses the default 96 PPI."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How the Pixel Ruler Works</h2>

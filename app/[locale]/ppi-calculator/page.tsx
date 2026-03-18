@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/ppi-calculator`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "ppi-calculator",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PpiCalculatorPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="PPI Calculator"
-      description="Calculate pixels per inch for any screen and compare across devices."
+      title={dict.pages["ppi-calculator"]?.title || "PPI Calculator"}
+      description={dict.pages["ppi-calculator"]?.description || "Calculate pixels per inch for any screen and compare across devices."}
       slug="/ppi-calculator"
-      extractiveAnswer="PPI (pixels per inch) measures screen pixel density. Calculate it with: PPI = sqrt(width² + height²) / diagonal. An iPhone 15 Pro has 460 PPI, a MacBook Pro 14-inch has 254 PPI, and a 27-inch 4K monitor has 163 PPI."
+      extractiveAnswer={dict.pages["ppi-calculator"]?.extractive || "PPI (pixels per inch) measures screen pixel density. Calculate it with: PPI = sqrt(width² + height²) / diagonal. An iPhone 15 Pro has 460 PPI, a MacBook Pro 14-inch has 254 PPI, and a 27-inch 4K monitor has 163 PPI."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>Understanding Pixels Per Inch</h2>

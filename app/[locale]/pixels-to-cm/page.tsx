@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/pixels-to-cm`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "pixels-to-cm",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -76,13 +81,17 @@ export default async function PixelsToCmPage({ params }: PageProps) {
   return (
     <ConverterLayout
       locale={validLocale}
-      title="Pixels to Centimeters Converter"
-      description="Convert pixel dimensions to centimeters with DPI awareness."
+      title={dict.pages["pixels-to-cm"]?.title || "Pixels to Centimeters Converter"}
+      description={dict.pages["pixels-to-cm"]?.description || "Convert pixel dimensions to centimeters with DPI awareness."}
       slug="/pixels-to-cm"
-      extractiveAnswer="To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 96 DPI, 960 pixels equals 25.4 cm. At 300 DPI, 960 pixels equals 8.13 cm."
+      extractiveAnswer={dict.pages["pixels-to-cm"]?.extractive || "To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 96 DPI, 960 pixels equals 25.4 cm. At 300 DPI, 960 pixels equals 8.13 cm."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faqItems}
+      labels={{
+        relatedTools: dict.tool.relatedTools,
+        faq: dict.tool.faq,
+      }}
       content={
         <div>
           <h2>How Pixel to Centimeter Conversion Works</h2>

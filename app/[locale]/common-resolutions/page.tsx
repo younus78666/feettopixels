@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { locales, isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}/common-resolutions`]),
       ),
+    },
+    openGraph: {
+      title: pageDict?.title || "common-resolutions",
+      description: pageDict?.description || "",
+      locale: ogLocaleMap[locale],
     },
   };
 }
@@ -73,13 +78,18 @@ export default async function CommonResolutionsPage({ params }: PageProps) {
   return (
     <BlogLayout
       locale={validLocale}
-      title="Common Screen Resolutions"
-      extractiveAnswer="Full HD (1920 x 1080) is the most common desktop resolution. 4K UHD is 3840 x 2160 pixels. QHD is 2560 x 1440. 8K is 7680 x 4320. Resolution determines the total number of pixels a display renders."
+      title={dict.pages["common-resolutions"]?.title || "Common Screen Resolutions"}
+      extractiveAnswer={dict.pages["common-resolutions"]?.extractive || "Full HD (1920 x 1080) is the most common desktop resolution. 4K UHD is 3840 x 2160 pixels. QHD is 2560 x 1440. 8K is 7680 x 4320. Resolution determines the total number of pixels a display renders."}
       breadcrumbs={breadcrumbs}
       faqItems={faqItems}
       relatedArticles={relatedArticles}
       cta={{ label: "Check Your Screen Resolution", href: "/screen-resolution-checker" }}
       toc={toc}
+      labels={{
+        readyToConvert: dict.tool.readyToConvert,
+        relatedArticles: dict.tool.relatedArticles,
+        onThisPage: dict.nav.onThisPage,
+      }}
       slug="common-resolutions"
     >
       <h2 id="resolution-table">Common Display Resolutions</h2>
