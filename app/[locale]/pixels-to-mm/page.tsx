@@ -5,6 +5,8 @@ import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { UnitConverter } from "@/components/tools/UnitConverter";
 import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
+import { getPageContent } from "@/lib/content/types";
+import { content } from "@/lib/content/pixels-to-mm";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -33,38 +35,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const faqItems = [
-  {
-    question: "How do I convert pixels to millimeters?",
-    answer:
-      "Multiply the pixel count by 25.4, then divide by DPI. For example, 378 pixels at 96 DPI equals approximately 100 mm (378 x 25.4 / 96 = 100.01).",
-  },
-  {
-    question: "How many millimeters is 1 pixel?",
-    answer:
-      "At 96 DPI, 1 pixel equals approximately 0.265 mm. At 300 DPI, 1 pixel equals approximately 0.085 mm. The physical size of a pixel depends entirely on the DPI setting.",
-  },
-  {
-    question: "How do I find the size of a pixel on my screen?",
-    answer:
-      "Divide your screen's physical width (in mm) by its horizontal pixel resolution. For example, a 27-inch (686 mm wide) display at 2560 pixels has pixels approximately 0.268 mm wide.",
-  },
-  {
-    question: "Why use millimeters instead of centimeters?",
-    answer:
-      "Millimeters provide 10x the precision of centimeters without decimals. In fields like engineering, packaging, and precision printing, specifications are commonly given in millimeters for accuracy.",
-  },
-  {
-    question: "What pixel count do I need for a 100 mm print at 300 DPI?",
-    answer:
-      "For 100 mm at 300 DPI, you need approximately 1,181 pixels (100 x 300 / 25.4 = 1181.1). This ensures sharp, professional-quality output at the specified size.",
-  },
-];
-
 export default async function PixelsToMmPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const pc = getPageContent(content, validLocale);
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
     { slug: "pixel-converter", href: "/pixel-converter" },
     { slug: "pixels-to-mm", href: "/pixels-to-mm" },
@@ -85,54 +60,42 @@ export default async function PixelsToMmPage({ params }: PageProps) {
       extractiveAnswer={dict.pages["pixels-to-mm"]?.extractive || "To convert pixels to millimeters, multiply pixels by 25.4 and divide by DPI. At 96 DPI, 378 pixels equals 100 mm. At 300 DPI, 1,181 pixels equals 100 mm."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
-      faqItems={faqItems}
+      faqItems={pc.faq}
       labels={{
         relatedTools: dict.tool.relatedTools,
         faq: dict.tool.faq,
       }}
       content={
         <div>
-          <h2>How Pixel to Millimeter Conversion Works</h2>
-          <p>
-            Converting pixels to millimeters gives you precise physical measurements from digital dimensions. The formula is:
-          </p>
-          <p>
-            <strong>Millimeters = (Pixels x 25.4) / DPI</strong>
-          </p>
-          <p>
-            This formula converts pixels to inches first (pixels / DPI), then to millimeters (inches x 25.4). The result tells you the exact physical width or height at the given DPI.
-          </p>
+          <h2>{pc.body.heading1}</h2>
+          <p>{pc.body.p1}</p>
+          <p><strong>{pc.body.formula}</strong></p>
+          <p>{pc.body.p2}</p>
 
-          <h3>Common Use Cases</h3>
+          <h3>{pc.body.heading2}</h3>
           <ul>
-            <li><strong>Quality verification:</strong> Check if an image has enough resolution for a specific print size in mm.</li>
-            <li><strong>Manufacturing specs:</strong> Convert digital mockup dimensions to production measurements.</li>
-            <li><strong>Precision layout:</strong> Verify that screen elements correspond to intended physical sizes.</li>
-            <li><strong>Medical imaging:</strong> Convert digital scan dimensions to real-world measurements.</li>
+            <li>{pc.body.li1}</li>
+            <li>{pc.body.li2}</li>
+            <li>{pc.body.li3}</li>
+            <li>{pc.body.li4}</li>
           </ul>
 
-          <h3>Pixel Size Reference</h3>
+          <h3>{pc.body.heading3}</h3>
           <ul>
-            <li><strong>At 72 DPI</strong> — 1 pixel = 0.353 mm (typical older Mac display)</li>
-            <li><strong>At 96 DPI</strong> — 1 pixel = 0.265 mm (standard web/Windows)</li>
-            <li><strong>At 150 DPI</strong> — 1 pixel = 0.169 mm (medium print quality)</li>
-            <li><strong>At 300 DPI</strong> — 1 pixel = 0.085 mm (professional print)</li>
+            <li>{pc.body.li5}</li>
+            <li>{pc.body.li6}</li>
+            <li>{pc.body.li7}</li>
+            <li>{pc.body.li8}</li>
           </ul>
 
-          <h2>How Accurate Is a Pixel in Millimeters?</h2>
-          <p>
-            The physical size of a pixel varies with the display or print device. On a 27-inch 2560x1440 monitor, each pixel measures about 0.233 mm wide. On a 24-inch 1920x1080 display, each pixel is roughly 0.277 mm. These values differ from the DPI-based calculation because monitor specifications define their own pixel density. The formula-based conversion (pixels x 25.4 / DPI) gives you the intended physical size for a specific DPI setting, which is the value printers and design software use.
-          </p>
+          <h2>{pc.body.heading4}</h2>
+          <p>{pc.body.p3}</p>
 
-          <h2>What Pixel Counts Produce Common Millimeter Sizes?</h2>
-          <p>
-            Working backwards from common mm measurements at 300 DPI: a 10 mm element needs 118 pixels, a 25 mm element needs 295 pixels, a 50 mm element needs 591 pixels, and a 100 mm element needs 1,181 pixels. At 96 DPI (web), those same measurements need 38, 94, 189, and 378 pixels respectively. Knowing these benchmarks helps you quickly assess whether an image has enough resolution for a target physical size.
-          </p>
+          <h2>{pc.body.heading5}</h2>
+          <p>{pc.body.p4}</p>
 
-          <h2>When Is Pixel-to-MM Conversion Essential?</h2>
-          <p>
-            Quality control in print production relies heavily on px-to-mm conversion. Before approving a proof, designers verify that text at 300 DPI will be at least 2 mm tall (roughly 24 pixels) for legibility. Product label regulations in the EU specify minimum font heights in millimeters, so converting from your pixel-based design to mm confirms compliance. Medical and scientific imaging also uses mm measurements, where researchers convert scan pixel dimensions to real-world mm for accurate analysis.
-          </p>
+          <h2>{pc.body.heading6}</h2>
+          <p>{pc.body.p5}</p>
         </div>
       }
     >

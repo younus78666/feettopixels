@@ -5,6 +5,8 @@ import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { UnitConverter } from "@/components/tools/UnitConverter";
 import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
+import { getPageContent } from "@/lib/content/types";
+import { content } from "@/lib/content/mm-to-pixels";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -33,38 +35,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const faqItems = [
-  {
-    question: "How do I convert millimeters to pixels?",
-    answer:
-      "Multiply the millimeters by DPI and divide by 25.4 (since there are 25.4 mm per inch). For example, 100 mm at 96 DPI equals about 378 pixels (100 x 96 / 25.4 = 377.95).",
-  },
-  {
-    question: "How many pixels is 1 mm at 96 DPI?",
-    answer:
-      "At 96 DPI, 1 millimeter equals approximately 3.78 pixels (96 / 25.4 = 3.78). This is the standard for web design on most desktop displays.",
-  },
-  {
-    question: "How many pixels is 1 mm at 300 DPI?",
-    answer:
-      "At 300 DPI, 1 millimeter equals approximately 11.81 pixels (300 / 25.4 = 11.81). This precision is standard for high-quality print output.",
-  },
-  {
-    question: "When would I need mm to pixel conversion?",
-    answer:
-      "This conversion is common in precision design work such as product labels, business cards, engineering drawings, and any project where specifications are provided in millimeters but output is digital.",
-  },
-  {
-    question: "What is the relationship between mm and inches for pixel conversion?",
-    answer:
-      "There are exactly 25.4 millimeters in one inch. This constant is used in the conversion formula: pixels = mm x DPI / 25.4. It bridges metric measurements to the inch-based DPI system.",
-  },
-];
-
 export default async function MmToPixelsPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const pc = getPageContent(content, validLocale);
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
     { slug: "pixel-converter", href: "/pixel-converter" },
     { slug: "mm-to-pixels", href: "/mm-to-pixels" },
@@ -85,54 +60,42 @@ export default async function MmToPixelsPage({ params }: PageProps) {
       extractiveAnswer={dict.pages["mm-to-pixels"]?.extractive || "To convert millimeters to pixels, multiply millimeters by DPI and divide by 25.4. At 96 DPI, 100 mm equals 378 pixels. At 300 DPI, 100 mm equals 1,181 pixels."}
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
-      faqItems={faqItems}
+      faqItems={pc.faq}
       labels={{
         relatedTools: dict.tool.relatedTools,
         faq: dict.tool.faq,
       }}
       content={
         <div>
-          <h2>How Millimeter to Pixel Conversion Works</h2>
-          <p>
-            Millimeters provide the highest precision among common metric units. Converting to pixels requires the DPI value and the mm-to-inch constant:
-          </p>
-          <p>
-            <strong>Pixels = (MM x DPI) / 25.4</strong>
-          </p>
-          <p>
-            Since there are 25.4 millimeters in one inch, dividing by 25.4 converts millimeters to inches, which is then multiplied by DPI to get pixel count.
-          </p>
+          <h2>{pc.body.heading1}</h2>
+          <p>{pc.body.p1}</p>
+          <p><strong>{pc.body.formula}</strong></p>
+          <p>{pc.body.p2}</p>
 
-          <h3>Common Use Cases</h3>
+          <h3>{pc.body.heading2}</h3>
           <ul>
-            <li><strong>Business card design:</strong> Standard sizes like 85 x 55 mm converted to pixel dimensions.</li>
-            <li><strong>Product labels:</strong> Small labels where millimeter precision matters.</li>
-            <li><strong>Engineering drawings:</strong> Technical illustrations specified in millimeters.</li>
-            <li><strong>Precision printing:</strong> Fine-detail work requiring exact pixel-to-mm mapping.</li>
+            <li>{pc.body.li1}</li>
+            <li>{pc.body.li2}</li>
+            <li>{pc.body.li3}</li>
+            <li>{pc.body.li4}</li>
           </ul>
 
-          <h3>Common Sizes in Pixels (at 300 DPI)</h3>
+          <h3>{pc.body.heading3}</h3>
           <ul>
-            <li><strong>Business card (85 x 55 mm)</strong> — 1004 x 650 pixels</li>
-            <li><strong>Credit card (85.6 x 53.98 mm)</strong> — 1011 x 638 pixels</li>
-            <li><strong>Postage stamp (25 x 30 mm)</strong> — 295 x 354 pixels</li>
-            <li><strong>SD card label (24 x 32 mm)</strong> — 283 x 378 pixels</li>
+            <li>{pc.body.li5}</li>
+            <li>{pc.body.li6}</li>
+            <li>{pc.body.li7}</li>
+            <li>{pc.body.li8}</li>
           </ul>
 
-          <h2>Why Use Millimeters Instead of Centimeters?</h2>
-          <p>
-            Millimeters provide whole-number precision for small objects. A business card is 85 x 55 mm, not 8.5 x 5.5 cm. In engineering, manufacturing, and precision printing, specs are given in mm to avoid decimal ambiguity. When you specify 3 mm bleed on a print file, the printer knows exactly how much extra area to include. Using centimeters for the same bleed (0.3 cm) introduces potential rounding errors. For any object smaller than about 30 cm, millimeters are the standard unit in most industries worldwide.
-          </p>
+          <h2>{pc.body.heading4}</h2>
+          <p>{pc.body.p3}</p>
 
-          <h2>How Many Pixels Per Millimeter at Different DPIs?</h2>
-          <p>
-            The pixels-per-mm ratio is straightforward to calculate: divide DPI by 25.4. At 72 DPI, each millimeter contains 2.835 pixels. At 96 DPI, the ratio is 3.78 pixels per mm. At 150 DPI, you get 5.906 pixels per mm. At 300 DPI, each millimeter holds 11.811 pixels. For ultra-high quality printing at 600 DPI, that jumps to 23.622 pixels per mm. These fixed ratios make batch conversions simple once you know your target DPI.
-          </p>
+          <h2>{pc.body.heading5}</h2>
+          <p>{pc.body.p4}</p>
 
-          <h2>When Do Designers Need MM-to-Pixel Conversion?</h2>
-          <p>
-            Business card designers work in millimeters because the ISO 7810 standard defines card dimensions as 85.6 x 53.98 mm. Packaging designers receive label specs from manufacturers in mm. Jewelers creating product images need exact mm-to-pixel mapping for catalog layouts. Watch face designers for smartwatches convert the 40 mm or 44 mm display diameter to pixels for UI mockups. Any project where physical precision below one centimeter matters will benefit from mm-to-pixel conversion.
-          </p>
+          <h2>{pc.body.heading6}</h2>
+          <p>{pc.body.p5}</p>
         </div>
       }
     >
