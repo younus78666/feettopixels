@@ -1,19 +1,23 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site-config";
+import { locales } from "@/lib/i18n";
+
+// Generate Allow rules for all locale prefixes: /en/, /es/, /fr/, etc.
+const localeAllowRules = locales.map((l) => `/${l}/`);
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Main rules — allow Googlebot and legitimate crawlers
+      // Main rules — allow only locale-prefixed paths, block non-locale duplicates
       {
         userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/admin/"],
+        allow: [...localeAllowRules, "/sitemap.xml"],
+        disallow: ["/api/", "/admin/", "/"],
       },
       {
         userAgent: "Bingbot",
-        allow: "/",
-        disallow: ["/api/", "/admin/"],
+        allow: [...localeAllowRules, "/sitemap.xml"],
+        disallow: ["/api/", "/admin/", "/"],
       },
       // Block SEO tool crawlers (they consume bandwidth, no benefit)
       {
@@ -86,16 +90,11 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "FacebookBot",
         disallow: "/",
       },
-      // Default rule for all other bots
+      // Default rule for all other bots — only allow locale paths
       {
         userAgent: "*",
-        allow: "/",
-        disallow: [
-          "/api/",
-          "/admin/",
-          "/*?*", // Block URL parameters / search URLs
-          "/search",
-        ],
+        allow: [...localeAllowRules, "/sitemap.xml"],
+        disallow: ["/api/", "/admin/", "/*?*", "/search", "/"],
         crawlDelay: 10,
       },
     ],
