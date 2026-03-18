@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { CssConverter } from "@/app/[locale]/px-to-rem/CssConverter";
+import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -31,20 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-  { label: "PX to VW", href: "/px-to-vw" },
-];
-
-const relatedTools = [
-  { name: "PX to REM", description: "Convert pixels to rem units", href: "/px-to-rem", icon: "🔤" },
-  { name: "PX to EM", description: "Convert pixels to em units", href: "/px-to-em", icon: "📝" },
-  { name: "PX to PT", description: "Convert pixels to points", href: "/px-to-pt", icon: "📏" },
-  { name: "Screen Resolution Checker", description: "Detect your screen resolution", href: "/screen-resolution-checker", icon: "📺" },
-  { name: "Aspect Ratio Calculator", description: "Calculate aspect ratio", href: "/aspect-ratio-calculator", icon: "📐" },
-];
 
 const faqItems = [
   {
@@ -78,6 +65,17 @@ export default async function PxToVwPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "px-to-vw", href: "/px-to-vw" },
+  ]);
+  const relatedTools = getRelatedTools(dict, [
+    { slug: "px-to-rem", href: "/px-to-rem", icon: "🔤" },
+    { slug: "px-to-em", href: "/px-to-em", icon: "📝" },
+    { slug: "px-to-pt", href: "/px-to-pt", icon: "📏" },
+    { slug: "screen-resolution-checker", href: "/screen-resolution-checker", icon: "📺" },
+    { slug: "aspect-ratio-calculator", href: "/aspect-ratio-calculator", icon: "📐" },
+  ]);
   return (
     <ConverterLayout
       locale={validLocale}

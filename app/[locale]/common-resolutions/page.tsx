@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/common-resolutions" },
-  { label: "Common Resolutions", href: "/common-resolutions" },
-];
-
 const toc = [
   { id: "resolution-table", label: "Resolution Table" },
   { id: "by-device-type", label: "By Device Type" },
@@ -64,17 +59,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "Complete PPI reference guide" },
-  { title: "What Is a Pixel?", href: "/what-is-a-pixel", description: "The building block of displays" },
-  { title: "Social Media Image Sizes", href: "/social-media-image-sizes", description: "Platform image dimensions" },
-  { title: "What Is PPI?", href: "/what-is-ppi", description: "Screen pixel density explained" },
-];
-
 export default async function CommonResolutionsPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "common-resolutions", href: "/common-resolutions" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Complete PPI reference guide" },
+    { title: dict.pages["what-is-a-pixel"]?.title || "What Is a Pixel?", href: "/what-is-a-pixel", description: dict.navDescriptions["what-is-a-pixel"] || "The building block of displays" },
+    { title: dict.pages["social-media-image-sizes"]?.title || "Social Media Image Sizes", href: "/social-media-image-sizes", description: dict.navDescriptions["social-media-image-sizes"] || "Platform image dimensions" },
+    { title: dict.pages["what-is-ppi"]?.title || "What Is PPI?", href: "/what-is-ppi", description: dict.navDescriptions["what-is-ppi"] || "Screen pixel density explained" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

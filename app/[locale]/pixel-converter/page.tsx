@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
+import { getBreadcrumbs } from "@/lib/content-utils";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -34,11 +35,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-];
 
 const converterTools = [
   {
@@ -112,6 +108,9 @@ export default async function PixelConverterPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+  ]);
   return (
     <Container className="py-8 md:py-12">
       <JsonLd data={jsonLd} />

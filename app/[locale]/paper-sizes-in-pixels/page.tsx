@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/paper-sizes-in-pixels" },
-  { label: "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels" },
-];
-
 const toc = [
   { id: "iso-a-series", label: "ISO A Series" },
   { id: "us-paper-sizes", label: "US Paper Sizes" },
@@ -63,17 +58,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Standard Image Sizes", href: "/standard-image-sizes", description: "Photo print sizes in pixels" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "DPI recommendations by print type" },
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "Complete PPI reference" },
-  { title: "DPI Conversion Table", href: "/dpi-conversion-table", description: "Comprehensive DPI reference" },
-];
-
 export default async function PaperSizesInPixelsPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "paper-sizes-in-pixels", href: "/paper-sizes-in-pixels" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes", href: "/standard-image-sizes", description: dict.navDescriptions["standard-image-sizes"] || "Photo print sizes in pixels" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "DPI recommendations by print type" },
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Complete PPI reference" },
+    { title: dict.pages["dpi-conversion-table"]?.title || "DPI Conversion Table", href: "/dpi-conversion-table", description: dict.navDescriptions["dpi-conversion-table"] || "Comprehensive DPI reference" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

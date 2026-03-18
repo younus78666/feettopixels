@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/standard-image-sizes" },
-  { label: "Standard Image Sizes", href: "/standard-image-sizes" },
-];
-
 const toc = [
   { id: "photo-print-sizes", label: "Photo Print Sizes" },
   { id: "poster-sizes", label: "Poster Sizes" },
@@ -59,17 +54,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: "A4, Letter, A3 at various DPIs" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "DPI recommendations by print type" },
-  { title: "Passport Photo Size", href: "/passport-photo-size", description: "Passport and ID photo dimensions" },
-  { title: "Social Media Image Sizes", href: "/social-media-image-sizes", description: "Platform-specific image dimensions" },
-];
-
 export default async function StandardImageSizesPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "standard-image-sizes", href: "/standard-image-sizes" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: dict.navDescriptions["paper-sizes-in-pixels"] || "A4, Letter, A3 at various DPIs" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "DPI recommendations by print type" },
+    { title: dict.pages["passport-photo-size"]?.title || "Passport Photo Size", href: "/passport-photo-size", description: dict.navDescriptions["passport-photo-size"] || "Passport and ID photo dimensions" },
+    { title: dict.pages["social-media-image-sizes"]?.title || "Social Media Image Sizes", href: "/social-media-image-sizes", description: dict.navDescriptions["social-media-image-sizes"] || "Platform-specific image dimensions" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

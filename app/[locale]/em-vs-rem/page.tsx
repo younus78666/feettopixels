@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/em-vs-rem" },
-  { label: "EM vs REM", href: "/em-vs-rem" },
-];
-
 const toc = [
   { id: "quick-comparison", label: "Quick Comparison" },
   { id: "what-is-em", label: "What Is EM?" },
@@ -65,16 +60,20 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is a Pixel?", href: "/what-is-a-pixel", description: "The fundamental unit of digital images" },
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "PPI reference guide" },
-  { title: "Common Screen Resolutions", href: "/common-resolutions", description: "Display resolution reference" },
-];
-
 export default async function EmVsRemPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "em-vs-rem", href: "/em-vs-rem" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-a-pixel"]?.title || "What Is a Pixel?", href: "/what-is-a-pixel", description: dict.navDescriptions["what-is-a-pixel"] || "The fundamental unit of digital images" },
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "PPI reference guide" },
+    { title: dict.pages["common-resolutions"]?.title || "Common Screen Resolutions", href: "/common-resolutions", description: dict.navDescriptions["common-resolutions"] || "Display resolution reference" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

@@ -3,6 +3,7 @@ import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
+import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
 import { PixelRulerTool } from "./PixelRulerTool";
 
 interface PageProps {
@@ -31,20 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-  { label: "Pixel Ruler", href: "/pixel-ruler" },
-];
-
-const relatedTools = [
-  { name: "Screen Resolution Checker", description: "Detect your screen resolution", href: "/screen-resolution-checker", icon: "📺" },
-  { name: "PPI Calculator", description: "Calculate pixels per inch", href: "/ppi-calculator", icon: "🖥️" },
-  { name: "Pixels to Inches", description: "Convert pixels to inches", href: "/pixels-to-inches", icon: "📐" },
-  { name: "Pixels to CM", description: "Convert pixels to centimeters", href: "/pixels-to-cm", icon: "📏" },
-  { name: "DPI Calculator", description: "Calculate dots per inch", href: "/dpi-calculator", icon: "🔄" },
-];
 
 const faqItems = [
   {
@@ -78,6 +65,17 @@ export default async function PixelRulerPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "pixel-ruler", href: "/pixel-ruler" },
+  ]);
+  const relatedTools = getRelatedTools(dict, [
+    { slug: "screen-resolution-checker", href: "/screen-resolution-checker", icon: "📺" },
+    { slug: "ppi-calculator", href: "/ppi-calculator", icon: "🖥️" },
+    { slug: "pixels-to-inches", href: "/pixels-to-inches", icon: "📐" },
+    { slug: "pixels-to-cm", href: "/pixels-to-cm", icon: "📏" },
+    { slug: "dpi-calculator", href: "/dpi-calculator", icon: "🔄" },
+  ]);
   return (
     <ConverterLayout
       locale={validLocale}

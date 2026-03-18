@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/best-dpi-for-web" },
-  { label: "Best DPI for Web", href: "/best-dpi-for-web" },
-];
-
 const toc = [
   { id: "dpi-irrelevant", label: "Why DPI Is Irrelevant" },
   { id: "what-matters", label: "What Actually Matters" },
@@ -60,17 +55,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is DPI?", href: "/what-is-dpi", description: "Complete DPI guide" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "DPI recommendations for print" },
-  { title: "Social Media Image Sizes", href: "/social-media-image-sizes", description: "Platform-specific dimensions" },
-  { title: "DPI vs PPI", href: "/dpi-vs-ppi", description: "Understanding the difference" },
-];
-
 export default async function BestDpiForWebPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "best-dpi-for-web", href: "/best-dpi-for-web" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-dpi"]?.title || "What Is DPI?", href: "/what-is-dpi", description: dict.navDescriptions["what-is-dpi"] || "Complete DPI guide" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "DPI recommendations for print" },
+    { title: dict.pages["social-media-image-sizes"]?.title || "Social Media Image Sizes", href: "/social-media-image-sizes", description: dict.navDescriptions["social-media-image-sizes"] || "Platform-specific dimensions" },
+    { title: dict.pages["dpi-vs-ppi"]?.title || "DPI vs PPI", href: "/dpi-vs-ppi", description: dict.navDescriptions["dpi-vs-ppi"] || "Understanding the difference" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

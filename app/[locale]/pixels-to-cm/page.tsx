@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { UnitConverter } from "@/components/tools/UnitConverter";
+import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -31,20 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-  { label: "Pixels to CM", href: "/pixels-to-cm" },
-];
-
-const relatedTools = [
-  { name: "CM to Pixels", description: "Convert centimeters to pixels", href: "/cm-to-pixels", icon: "🔄" },
-  { name: "Pixels to Inches", description: "Convert pixels to inches", href: "/pixels-to-inches", icon: "📐" },
-  { name: "Pixels to MM", description: "Convert pixels to millimeters", href: "/pixels-to-mm", icon: "📎" },
-  { name: "Inches to Pixels", description: "Convert inches to pixels", href: "/inches-to-pixels", icon: "📏" },
-  { name: "Pixels to Feet", description: "Convert pixels to feet", href: "/pixels-to-feet", icon: "📐" },
-];
 
 const faqItems = [
   {
@@ -78,6 +65,17 @@ export default async function PixelsToCmPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "pixels-to-cm", href: "/pixels-to-cm" },
+  ]);
+  const relatedTools = getRelatedTools(dict, [
+    { slug: "cm-to-pixels", href: "/cm-to-pixels", icon: "🔄" },
+    { slug: "pixels-to-inches", href: "/pixels-to-inches", icon: "📐" },
+    { slug: "pixels-to-mm", href: "/pixels-to-mm", icon: "📎" },
+    { slug: "inches-to-pixels", href: "/inches-to-pixels", icon: "📏" },
+    { slug: "pixels-to-feet", href: "/pixels-to-feet", icon: "📐" },
+  ]);
   return (
     <ConverterLayout
       locale={validLocale}

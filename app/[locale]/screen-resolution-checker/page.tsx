@@ -3,6 +3,7 @@ import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
+import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
 import { ScreenChecker } from "./ScreenChecker";
 
 interface PageProps {
@@ -31,20 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-  { label: "Screen Resolution Checker", href: "/screen-resolution-checker" },
-];
-
-const relatedTools = [
-  { name: "PPI Calculator", description: "Calculate pixels per inch", href: "/ppi-calculator", icon: "🖥️" },
-  { name: "DPI Calculator", description: "Calculate dots per inch", href: "/dpi-calculator", icon: "📐" },
-  { name: "PX to VW Converter", description: "Convert pixels to viewport width", href: "/px-to-vw", icon: "📏" },
-  { name: "Aspect Ratio Calculator", description: "Calculate aspect ratio", href: "/aspect-ratio-calculator", icon: "🔄" },
-  { name: "Image Size Calculator", description: "Calculate physical image size", href: "/image-size-calculator", icon: "📷" },
-];
 
 const faqItems = [
   {
@@ -78,6 +65,17 @@ export default async function ScreenResolutionCheckerPage({ params }: PageProps)
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "screen-resolution-checker", href: "/screen-resolution-checker" },
+  ]);
+  const relatedTools = getRelatedTools(dict, [
+    { slug: "ppi-calculator", href: "/ppi-calculator", icon: "🖥️" },
+    { slug: "dpi-calculator", href: "/dpi-calculator", icon: "📐" },
+    { slug: "px-to-vw", href: "/px-to-vw", icon: "📏" },
+    { slug: "aspect-ratio-calculator", href: "/aspect-ratio-calculator", icon: "🔄" },
+    { slug: "image-size-calculator", href: "/image-size-calculator", icon: "📷" },
+  ]);
   return (
     <ConverterLayout
       locale={validLocale}

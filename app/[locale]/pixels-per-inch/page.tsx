@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -31,12 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/pixels-per-inch" },
-  { label: "Pixels Per Inch", href: "/pixels-per-inch" },
-];
 
 const toc = [
   { id: "what-is-ppi", label: "What Is PPI?" },
@@ -74,18 +69,22 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is DPI?", href: "/what-is-dpi", description: "Understanding dots per inch for print and design" },
-  { title: "DPI vs PPI", href: "/dpi-vs-ppi", description: "Key differences between DPI and PPI explained" },
-  { title: "What Is a Pixel?", href: "/what-is-a-pixel", description: "The fundamental building block of digital images" },
-  { title: "Common Screen Resolutions", href: "/common-resolutions", description: "HD, 4K, 5K, and 8K resolution reference" },
-  { title: "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: "A4, Letter, and more at various DPIs" },
-];
-
 export default async function PixelsPerInchPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixels-per-inch", href: "/pixels-per-inch" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-dpi"]?.title || "What Is DPI?", href: "/what-is-dpi", description: dict.navDescriptions["what-is-dpi"] || "Understanding dots per inch for print and design" },
+    { title: dict.pages["dpi-vs-ppi"]?.title || "DPI vs PPI", href: "/dpi-vs-ppi", description: dict.navDescriptions["dpi-vs-ppi"] || "Key differences between DPI and PPI explained" },
+    { title: dict.pages["what-is-a-pixel"]?.title || "What Is a Pixel?", href: "/what-is-a-pixel", description: dict.navDescriptions["what-is-a-pixel"] || "The fundamental building block of digital images" },
+    { title: dict.pages["common-resolutions"]?.title || "Common Screen Resolutions", href: "/common-resolutions", description: dict.navDescriptions["common-resolutions"] || "HD, 4K, 5K, and 8K resolution reference" },
+    { title: dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: dict.navDescriptions["paper-sizes-in-pixels"] || "A4, Letter, and more at various DPIs" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

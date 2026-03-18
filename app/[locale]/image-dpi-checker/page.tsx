@@ -3,6 +3,7 @@ import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
+import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
 import { DpiChecker } from "./DpiChecker";
 
 interface PageProps {
@@ -31,20 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-  { label: "Image DPI Checker", href: "/image-dpi-checker" },
-];
-
-const relatedTools = [
-  { name: "DPI Calculator", description: "Calculate DPI for any screen", href: "/dpi-calculator", icon: "🖥️" },
-  { name: "DPI Converter", description: "Convert between DPI resolutions", href: "/dpi-converter", icon: "🔄" },
-  { name: "Image Size Calculator", description: "Calculate physical size from pixels", href: "/image-size-calculator", icon: "📐" },
-  { name: "Megapixel Calculator", description: "Convert megapixels to dimensions", href: "/megapixel-calculator", icon: "📷" },
-  { name: "Pixels to Inches", description: "Convert pixels to inches", href: "/pixels-to-inches", icon: "📏" },
-];
 
 const faqItems = [
   {
@@ -78,6 +65,17 @@ export default async function ImageDpiCheckerPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "image-dpi-checker", href: "/image-dpi-checker" },
+  ]);
+  const relatedTools = getRelatedTools(dict, [
+    { slug: "dpi-calculator", href: "/dpi-calculator", icon: "🖥️" },
+    { slug: "dpi-converter", href: "/dpi-converter", icon: "🔄" },
+    { slug: "image-size-calculator", href: "/image-size-calculator", icon: "📐" },
+    { slug: "megapixel-calculator", href: "/megapixel-calculator", icon: "📷" },
+    { slug: "pixels-to-inches", href: "/pixels-to-inches", icon: "📏" },
+  ]);
   return (
     <ConverterLayout
       locale={validLocale}

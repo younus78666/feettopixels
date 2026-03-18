@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/dpi-conversion-table" },
-  { label: "DPI Conversion Table", href: "/dpi-conversion-table" },
-];
-
 const toc = [
   { id: "master-table", label: "Master Conversion Table" },
   { id: "paper-at-dpi", label: "Paper Sizes at Each DPI" },
@@ -59,17 +54,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "Complete PPI reference guide" },
-  { title: "Pixels Per CM", href: "/pixels-per-cm", description: "CM-specific pixel density" },
-  { title: "Pixels Per MM", href: "/pixels-per-mm", description: "MM-specific pixel density" },
-  { title: "Pixels Per Foot", href: "/pixels-per-foot", description: "Large format pixel density" },
-];
-
 export default async function DpiConversionTablePage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "dpi-conversion-table", href: "/dpi-conversion-table" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Complete PPI reference guide" },
+    { title: dict.pages["pixels-per-cm"]?.title || "Pixels Per CM", href: "/pixels-per-cm", description: dict.navDescriptions["pixels-per-cm"] || "CM-specific pixel density" },
+    { title: dict.pages["pixels-per-mm"]?.title || "Pixels Per MM", href: "/pixels-per-mm", description: dict.navDescriptions["pixels-per-mm"] || "MM-specific pixel density" },
+    { title: dict.pages["pixels-per-foot"]?.title || "Pixels Per Foot", href: "/pixels-per-foot", description: dict.navDescriptions["pixels-per-foot"] || "Large format pixel density" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

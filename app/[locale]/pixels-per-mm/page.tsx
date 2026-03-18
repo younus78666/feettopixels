@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/pixels-per-mm" },
-  { label: "Pixels Per MM", href: "/pixels-per-mm" },
-];
-
 const toc = [
   { id: "formula", label: "Formula" },
   { id: "reference-table", label: "Reference Table" },
@@ -59,17 +54,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Pixels Per CM", href: "/pixels-per-cm", description: "Pixel density per centimeter" },
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "Complete PPI reference" },
-  { title: "Passport Photo Size", href: "/passport-photo-size", description: "ID photo dimensions in pixels" },
-  { title: "DPI Conversion Table", href: "/dpi-conversion-table", description: "Comprehensive DPI reference" },
-];
-
 export default async function PixelsPerMmPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixels-per-mm", href: "/pixels-per-mm" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["pixels-per-cm"]?.title || "Pixels Per CM", href: "/pixels-per-cm", description: dict.navDescriptions["pixels-per-cm"] || "Pixel density per centimeter" },
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Complete PPI reference" },
+    { title: dict.pages["passport-photo-size"]?.title || "Passport Photo Size", href: "/passport-photo-size", description: dict.navDescriptions["passport-photo-size"] || "ID photo dimensions in pixels" },
+    { title: dict.pages["dpi-conversion-table"]?.title || "DPI Conversion Table", href: "/dpi-conversion-table", description: dict.navDescriptions["dpi-conversion-table"] || "Comprehensive DPI reference" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

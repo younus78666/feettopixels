@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/translations";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { siteConfig } from "@/content/site-config";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -33,15 +34,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Privacy Policy", href: "/privacy" },
-];
-
 export default async function PrivacyPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "privacy", href: "/privacy" },
+  ]);
   return (
     <Container className="py-8 md:py-12">
       <Breadcrumbs items={breadcrumbs} />

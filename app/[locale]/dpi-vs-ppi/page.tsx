@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/dpi-vs-ppi" },
-  { label: "DPI vs PPI", href: "/dpi-vs-ppi" },
-];
-
 const toc = [
   { id: "quick-answer", label: "Quick Answer" },
   { id: "comparison-table", label: "Comparison Table" },
@@ -65,17 +60,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is DPI?", href: "/what-is-dpi", description: "Full DPI guide for print and screen" },
-  { title: "What Is PPI?", href: "/what-is-ppi", description: "PPI for screens and displays" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "DPI recommendations by print type" },
-  { title: "Best DPI for Web", href: "/best-dpi-for-web", description: "Why DPI doesn't matter online" },
-];
-
 export default async function DpiVsPpiPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "dpi-vs-ppi", href: "/dpi-vs-ppi" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-dpi"]?.title || "What Is DPI?", href: "/what-is-dpi", description: dict.navDescriptions["what-is-dpi"] || "Full DPI guide for print and screen" },
+    { title: dict.pages["what-is-ppi"]?.title || "What Is PPI?", href: "/what-is-ppi", description: dict.navDescriptions["what-is-ppi"] || "PPI for screens and displays" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "DPI recommendations by print type" },
+    { title: dict.pages["best-dpi-for-web"]?.title || "Best DPI for Web", href: "/best-dpi-for-web", description: dict.navDescriptions["best-dpi-for-web"] || "Why DPI doesn't matter online" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

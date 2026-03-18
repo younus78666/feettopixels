@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/what-is-dpi" },
-  { label: "What Is DPI?", href: "/what-is-dpi" },
-];
-
 const toc = [
   { id: "dpi-definition", label: "DPI Definition" },
   { id: "dpi-in-printing", label: "DPI in Printing" },
@@ -65,17 +60,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is PPI?", href: "/what-is-ppi", description: "Understanding pixels per inch for screens" },
-  { title: "DPI vs PPI", href: "/dpi-vs-ppi", description: "Key differences explained side by side" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "Recommended DPI for every print type" },
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "Complete PPI reference guide" },
-];
-
 export default async function WhatIsDpiPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "what-is-dpi", href: "/what-is-dpi" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-ppi"]?.title || "What Is PPI?", href: "/what-is-ppi", description: dict.navDescriptions["what-is-ppi"] || "Understanding pixels per inch for screens" },
+    { title: dict.pages["dpi-vs-ppi"]?.title || "DPI vs PPI", href: "/dpi-vs-ppi", description: dict.navDescriptions["dpi-vs-ppi"] || "Key differences explained side by side" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "Recommended DPI for every print type" },
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Complete PPI reference guide" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

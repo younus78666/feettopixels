@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/social-media-image-sizes" },
-  { label: "Social Media Image Sizes", href: "/social-media-image-sizes" },
-];
-
 const toc = [
   { id: "instagram", label: "Instagram" },
   { id: "facebook", label: "Facebook" },
@@ -65,17 +60,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Standard Image Sizes", href: "/standard-image-sizes", description: "Photo print dimensions in pixels" },
-  { title: "Common Screen Resolutions", href: "/common-resolutions", description: "HD to 8K display reference" },
-  { title: "Best DPI for Web", href: "/best-dpi-for-web", description: "Why DPI doesn't matter online" },
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "PPI reference guide" },
-];
-
 export default async function SocialMediaImageSizesPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "social-media-image-sizes", href: "/social-media-image-sizes" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes", href: "/standard-image-sizes", description: dict.navDescriptions["standard-image-sizes"] || "Photo print dimensions in pixels" },
+    { title: dict.pages["common-resolutions"]?.title || "Common Screen Resolutions", href: "/common-resolutions", description: dict.navDescriptions["common-resolutions"] || "HD to 8K display reference" },
+    { title: dict.pages["best-dpi-for-web"]?.title || "Best DPI for Web", href: "/best-dpi-for-web", description: dict.navDescriptions["best-dpi-for-web"] || "Why DPI doesn't matter online" },
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "PPI reference guide" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

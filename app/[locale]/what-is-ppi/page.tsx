@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/what-is-ppi" },
-  { label: "What Is PPI?", href: "/what-is-ppi" },
-];
-
 const toc = [
   { id: "ppi-definition", label: "PPI Definition" },
   { id: "ppi-vs-dpi", label: "PPI vs DPI" },
@@ -61,17 +56,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is DPI?", href: "/what-is-dpi", description: "Dots per inch for print explained" },
-  { title: "DPI vs PPI", href: "/dpi-vs-ppi", description: "Side-by-side comparison" },
-  { title: "Pixels Per Inch Guide", href: "/pixels-per-inch", description: "Comprehensive PPI reference tables" },
-  { title: "Common Screen Resolutions", href: "/common-resolutions", description: "HD to 8K resolution reference" },
-];
-
 export default async function WhatIsPpiPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "what-is-ppi", href: "/what-is-ppi" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-dpi"]?.title || "What Is DPI?", href: "/what-is-dpi", description: dict.navDescriptions["what-is-dpi"] || "Dots per inch for print explained" },
+    { title: dict.pages["dpi-vs-ppi"]?.title || "DPI vs PPI", href: "/dpi-vs-ppi", description: dict.navDescriptions["dpi-vs-ppi"] || "Side-by-side comparison" },
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Guide", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Comprehensive PPI reference tables" },
+    { title: dict.pages["common-resolutions"]?.title || "Common Screen Resolutions", href: "/common-resolutions", description: dict.navDescriptions["common-resolutions"] || "HD to 8K resolution reference" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/passport-photo-size" },
-  { label: "Passport Photo Size", href: "/passport-photo-size" },
-];
-
 const toc = [
   { id: "passport-photos", label: "Passport Photo Sizes" },
   { id: "id-photos", label: "ID & Visa Photos" },
@@ -64,17 +59,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Standard Image Sizes", href: "/standard-image-sizes", description: "Photo print sizes in pixels" },
-  { title: "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: "A4, Letter at various DPIs" },
-  { title: "Pixels Per MM", href: "/pixels-per-mm", description: "Millimeter to pixel conversion" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "DPI recommendations" },
-];
-
 export default async function PassportPhotoSizePage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "passport-photo-size", href: "/passport-photo-size" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes", href: "/standard-image-sizes", description: dict.navDescriptions["standard-image-sizes"] || "Photo print sizes in pixels" },
+    { title: dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: dict.navDescriptions["paper-sizes-in-pixels"] || "A4, Letter at various DPIs" },
+    { title: dict.pages["pixels-per-mm"]?.title || "Pixels Per MM", href: "/pixels-per-mm", description: dict.navDescriptions["pixels-per-mm"] || "Millimeter to pixel conversion" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "DPI recommendations" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

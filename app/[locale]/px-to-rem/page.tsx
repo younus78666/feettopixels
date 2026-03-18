@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { CssConverter } from "./CssConverter";
+import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -31,20 +32,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Pixel Converter", href: "/pixel-converter" },
-  { label: "PX to REM", href: "/px-to-rem" },
-];
-
-const relatedTools = [
-  { name: "PX to EM", description: "Convert pixels to em units", href: "/px-to-em", icon: "🔤" },
-  { name: "PX to PT", description: "Convert pixels to points", href: "/px-to-pt", icon: "📝" },
-  { name: "PX to VW", description: "Convert pixels to viewport width", href: "/px-to-vw", icon: "📏" },
-  { name: "Pixels to Inches", description: "Convert pixels to inches", href: "/pixels-to-inches", icon: "📐" },
-  { name: "Pixels to CM", description: "Convert pixels to centimeters", href: "/pixels-to-cm", icon: "🔄" },
-];
 
 const faqItems = [
   {
@@ -78,6 +65,17 @@ export default async function PxToRemPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "px-to-rem", href: "/px-to-rem" },
+  ]);
+  const relatedTools = getRelatedTools(dict, [
+    { slug: "px-to-em", href: "/px-to-em", icon: "🔤" },
+    { slug: "px-to-pt", href: "/px-to-pt", icon: "📝" },
+    { slug: "px-to-vw", href: "/px-to-vw", icon: "📏" },
+    { slug: "pixels-to-inches", href: "/pixels-to-inches", icon: "📐" },
+    { slug: "pixels-to-cm", href: "/pixels-to-cm", icon: "🔄" },
+  ]);
   return (
     <ConverterLayout
       locale={validLocale}

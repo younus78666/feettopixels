@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/pixels-per-foot" },
-  { label: "Pixels Per Foot", href: "/pixels-per-foot" },
-];
-
 const toc = [
   { id: "formula", label: "Formula" },
   { id: "reference-table", label: "Reference Table" },
@@ -59,17 +54,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "Pixels Per Inch Explained", href: "/pixels-per-inch", description: "Complete PPI reference" },
-  { title: "Pixels Per CM", href: "/pixels-per-cm", description: "Metric pixel density" },
-  { title: "Best DPI for Printing", href: "/best-dpi-for-printing", description: "DPI recommendations by type" },
-  { title: "Standard Image Sizes", href: "/standard-image-sizes", description: "Photo print pixel dimensions" },
-];
-
 export default async function PixelsPerFootPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "pixels-per-foot", href: "/pixels-per-foot" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "Complete PPI reference" },
+    { title: dict.pages["pixels-per-cm"]?.title || "Pixels Per CM", href: "/pixels-per-cm", description: dict.navDescriptions["pixels-per-cm"] || "Metric pixel density" },
+    { title: dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing", href: "/best-dpi-for-printing", description: dict.navDescriptions["best-dpi-for-printing"] || "DPI recommendations by type" },
+    { title: dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes", href: "/standard-image-sizes", description: dict.navDescriptions["standard-image-sizes"] || "Photo print pixel dimensions" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}

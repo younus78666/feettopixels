@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
+import { getBreadcrumbs } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Learn", href: "/best-dpi-for-printing" },
-  { label: "Best DPI for Printing", href: "/best-dpi-for-printing" },
-];
-
 const toc = [
   { id: "dpi-recommendations", label: "DPI Recommendations" },
   { id: "photos", label: "Photos & Fine Art" },
@@ -65,17 +60,21 @@ const faqItems = [
   },
 ];
 
-const relatedArticles = [
-  { title: "What Is DPI?", href: "/what-is-dpi", description: "Complete DPI explainer" },
-  { title: "Best DPI for Web", href: "/best-dpi-for-web", description: "Why DPI doesn't matter for web" },
-  { title: "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: "A4, Letter at various DPIs" },
-  { title: "Standard Image Sizes", href: "/standard-image-sizes", description: "Photo print sizes in pixels" },
-];
-
 export default async function BestDpiForPrintingPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+
+  const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "best-dpi-for-printing", href: "/best-dpi-for-printing" },
+  ]);
+
+  const relatedArticles = [
+    { title: dict.pages["what-is-dpi"]?.title || "What Is DPI?", href: "/what-is-dpi", description: dict.navDescriptions["what-is-dpi"] || "Complete DPI explainer" },
+    { title: dict.pages["best-dpi-for-web"]?.title || "Best DPI for Web", href: "/best-dpi-for-web", description: dict.navDescriptions["best-dpi-for-web"] || "Why DPI doesn't matter for web" },
+    { title: dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels", href: "/paper-sizes-in-pixels", description: dict.navDescriptions["paper-sizes-in-pixels"] || "A4, Letter at various DPIs" },
+    { title: dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes", href: "/standard-image-sizes", description: dict.navDescriptions["standard-image-sizes"] || "Photo print sizes in pixels" },
+  ];
   return (
     <BlogLayout
       locale={validLocale}
