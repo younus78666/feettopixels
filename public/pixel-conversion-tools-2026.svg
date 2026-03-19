@@ -1,0 +1,72 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" rx="32" fill="#F8FAFC"/>
+  <rect x="36" y="36" width="1128" height="603" rx="28" fill="url(#bg)"/>
+  <rect x="72" y="84" width="520" height="182" rx="24" fill="#FFFFFF" fill-opacity="0.96"/>
+  <rect x="72" y="302" width="520" height="182" rx="24" fill="#FFFFFF" fill-opacity="0.96"/>
+  <rect x="628" y="84" width="500" height="400" rx="28" fill="#0F172A"/>
+  <rect x="72" y="520" width="1056" height="82" rx="24" fill="#FFFFFF" fill-opacity="0.9"/>
+
+  <text x="108" y="138" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">
+    Pixel Conversion Tools
+  </text>
+  <text x="108" y="180" fill="#475569" font-family="Arial, sans-serif" font-size="18">
+    Inches ↔ Pixels
+  </text>
+  <text x="108" y="212" fill="#475569" font-family="Arial, sans-serif" font-size="18">
+    CM ↔ Pixels
+  </text>
+  <text x="108" y="244" fill="#475569" font-family="Arial, sans-serif" font-size="18">
+    Feet ↔ Pixels
+  </text>
+
+  <text x="108" y="356" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">
+    DPI and PPI Guides
+  </text>
+  <text x="108" y="398" fill="#475569" font-family="Arial, sans-serif" font-size="18">
+    Print-ready DPI
+  </text>
+  <text x="108" y="430" fill="#475569" font-family="Arial, sans-serif" font-size="18">
+    Screen pixel density
+  </text>
+  <text x="108" y="462" fill="#475569" font-family="Arial, sans-serif" font-size="18">
+    Web and CSS sizing
+  </text>
+
+  <text x="676" y="148" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="38" font-weight="700">
+    1 inch = 96 px
+  </text>
+  <text x="676" y="194" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="22">
+    at 96 DPI
+  </text>
+  <text x="676" y="284" fill="#5EEAD4" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    300 DPI
+  </text>
+  <text x="676" y="318" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="18">
+    High-quality print output
+  </text>
+  <text x="676" y="384" fill="#5EEAD4" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    96 PPI
+  </text>
+  <text x="676" y="418" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="18">
+    Standard web reference
+  </text>
+
+  <text x="108" y="571" fill="#0F172A" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    Pixel conversion tools for web, print, screen resolution, and CSS workflows
+  </text>
+
+  <circle cx="1040" cy="206" r="52" fill="#14B8A6" fill-opacity="0.18"/>
+  <circle cx="976" cy="254" r="22" fill="#2DD4BF"/>
+  <circle cx="1062" cy="324" r="32" fill="#5EEAD4" fill-opacity="0.85"/>
+  <circle cx="982" cy="356" r="14" fill="#99F6E4"/>
+  <path d="M876 190H1012" stroke="#2DD4BF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M876 230H1084" stroke="#5EEAD4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M876 270H1048" stroke="#99F6E4" stroke-width="6" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="bg" x1="36" y1="36" x2="1164" y2="639" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECFEFF"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+</svg>
