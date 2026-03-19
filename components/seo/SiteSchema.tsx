@@ -21,6 +21,8 @@ export function SiteSchema() {
           name: siteConfig.name,
           legalName: "FeetToPixels",
           url: siteConfig.url,
+          logo: `${siteConfig.url}${siteConfig.logo}`,
+          image: `${siteConfig.url}${siteConfig.logo}`,
           description: siteConfig.description,
           foundingDate: "2026",
           sameAs: [

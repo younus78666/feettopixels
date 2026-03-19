@@ -5,6 +5,7 @@ import {
   footerCalculators,
   footerLearn,
 } from "@/content/navigation";
+import { SiteLogo } from "@/components/branding/SiteLogo";
 import { siteConfig } from "@/content/site-config";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel } from "@/lib/nav-utils";
@@ -45,8 +46,24 @@ export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Link columns */}
-        <div className="grid grid-cols-2 gap-8 py-12 sm:py-16 md:grid-cols-4">
+        <div className="grid gap-10 py-12 sm:py-16 lg:grid-cols-[1.35fr_repeat(4,1fr)]">
+          <div className="lg:pr-6">
+            <SiteLogo locale={locale} showTagline={false} />
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-500">
+              {dict.site.description}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
+              {["px", "in", "cm", "mm", "DPI", "PPI"].map((chip) => (
+                <span
+                  key={chip}
+                  className="rounded-full border border-neutral-200 bg-white px-3 py-1"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+
           <FooterColumn
             title={dict.categories.physical}
             links={footerPhysical}
@@ -73,7 +90,6 @@ export function Footer({ locale }: { locale: Locale }) {
           />
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-neutral-200 py-6 sm:flex-row">
           <p className="text-xs text-neutral-400">
             &copy; {new Date().getFullYear()} {siteConfig.name}.{" "}

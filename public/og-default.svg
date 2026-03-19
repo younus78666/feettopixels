@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og_bg" x1="80" y1="70" x2="1120" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECFEFF" />
+      <stop offset="1" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="og_mark" x1="162" y1="150" x2="312" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E" />
+      <stop offset="1" stop-color="#22D3EE" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="#F8FAFC" />
+  <rect x="48" y="48" width="1104" height="534" rx="30" fill="url(#og_bg)" />
+  <rect x="86" y="86" width="1028" height="458" rx="28" fill="#FFFFFF" fill-opacity="0.84" />
+
+  <rect x="122" y="122" width="230" height="230" rx="56" fill="url(#og_mark)" />
+  <rect x="128" y="128" width="218" height="218" rx="50" fill="white" fill-opacity="0.05" />
+  <rect x="160" y="162" width="34" height="34" rx="8" fill="white" />
+  <rect x="206" y="162" width="34" height="34" rx="8" fill="white" fill-opacity="0.7" />
+  <rect x="160" y="208" width="34" height="34" rx="8" fill="white" fill-opacity="0.65" />
+  <path d="M192 282H276" stroke="white" stroke-opacity="0.5" stroke-width="10" stroke-linecap="round" />
+  <path d="M210 304V282M234 304V282M258 304V282" stroke="white" stroke-opacity="0.82" stroke-width="7" stroke-linecap="round" />
+  <path d="M192 266L266 192" stroke="white" stroke-width="12" stroke-linecap="round" />
+  <path d="M238 192H266V220" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text x="404" y="218" fill="#0F172A" font-family="Arial, sans-serif" font-size="68" font-weight="700">FeetToPixels</text>
+  <text x="404" y="286" fill="#334155" font-family="Arial, sans-serif" font-size="30">DPI-aware pixel conversion tools</text>
+
+  <rect x="406" y="344" width="144" height="56" rx="18" fill="#0F172A" />
+  <rect x="568" y="344" width="144" height="56" rx="18" fill="#0F766E" />
+  <rect x="730" y="344" width="144" height="56" rx="18" fill="#14B8A6" />
+  <rect x="892" y="344" width="144" height="56" rx="18" fill="#0F172A" fill-opacity="0.72" />
+
+  <text x="454" y="379" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">px</text>
+  <text x="616" y="379" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">in</text>
+  <text x="774" y="379" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">cm</text>
+  <text x="926" y="379" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">DPI</text>
+
+  <rect x="406" y="434" width="630" height="68" rx="24" fill="#FFFFFF" fill-opacity="0.88" />
+  <text x="448" y="477" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">72 / 150 / 300</text>
+  <path d="M694 468H986" stroke="#14B8A6" stroke-width="10" stroke-linecap="round" />
+  <circle cx="836" cy="468" r="14" fill="#0F766E" />
+</svg>
