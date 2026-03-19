@@ -32,6 +32,76 @@ function translateGroupHeading(
   return map[heading] || heading;
 }
 
+function getGroupTone(heading: string) {
+  const map: Record<
+    string,
+    { icon: string; panelClass: string; badgeClass: string }
+  > = {
+    "Physical Converters": {
+      icon: "PX",
+      panelClass: "border-primary-100 bg-primary-50/55",
+      badgeClass: "bg-primary-100 text-primary-700",
+    },
+    "CSS Converters": {
+      icon: "CSS",
+      panelClass: "border-sky-100 bg-sky-50/60",
+      badgeClass: "bg-sky-100 text-sky-700",
+    },
+    Calculators: {
+      icon: "CALC",
+      panelClass: "border-amber-100 bg-amber-50/55",
+      badgeClass: "bg-amber-100 text-amber-700",
+    },
+    Guides: {
+      icon: "GUIDE",
+      panelClass: "border-violet-100 bg-violet-50/55",
+      badgeClass: "bg-violet-100 text-violet-700",
+    },
+    References: {
+      icon: "REF",
+      panelClass: "border-emerald-100 bg-emerald-50/55",
+      badgeClass: "bg-emerald-100 text-emerald-700",
+    },
+  };
+
+  return (
+    map[heading] || {
+      icon: "GO",
+      panelClass: "border-neutral-200 bg-neutral-50/70",
+      badgeClass: "bg-neutral-200 text-neutral-700",
+    }
+  );
+}
+
+function getLinkBadge(label: string): string {
+  const upper = label.toUpperCase();
+
+  if (upper.includes("DPI")) return "DPI";
+  if (upper.includes("PPI")) return "PPI";
+  if (upper.includes("REM")) return "REM";
+  if (upper.includes("EM")) return "EM";
+  if (upper.includes("VW")) return "VW";
+  if (upper.includes("PT")) return "PT";
+  if (upper.includes("PIXEL") || upper.includes("PX")) return "PX";
+  if (upper.includes("INCH")) return "IN";
+  if (upper.includes("CM")) return "CM";
+  if (upper.includes("MM")) return "MM";
+  if (upper.includes("FEET")) return "FT";
+  if (upper.includes("RATIO")) return "AR";
+  if (upper.includes("IMAGE")) return "IMG";
+  if (upper.includes("SCREEN")) return "SCR";
+  if (upper.includes("RULER")) return "RUL";
+  if (upper.includes("MEGAPIXEL")) return "MP";
+  if (upper.includes("PAPER")) return "A4";
+  if (upper.includes("SOCIAL")) return "SOC";
+  if (upper.includes("PASSPORT")) return "ID";
+  if (upper.includes("PRINT")) return "300";
+  if (upper.includes("WEB")) return "WEB";
+  if (upper.includes("COMMON")) return "4K";
+
+  return upper.replace(/[^A-Z]/g, "").slice(0, 3) || "GO";
+}
+
 function DropdownMenu({
   dropdown,
   locale,
@@ -107,38 +177,68 @@ function DropdownMenu({
       {open && (
         <div
           className={cn(
-            "absolute left-1/2 top-full z-50 mt-2 max-h-[70vh] -translate-x-1/2 overflow-y-auto rounded-2xl border border-neutral-200 bg-white p-4 shadow-elevated",
-            columnCount >= 3 ? "w-[760px] max-w-[calc(100vw-2rem)]" : "w-[520px] max-w-[calc(100vw-2rem)]",
-            isToolsMenu && "max-h-[28rem]",
+            "absolute left-1/2 top-full z-50 mt-2 max-h-[70vh] -translate-x-1/2 overflow-y-auto rounded-2xl border border-neutral-200 bg-white/96 p-3 shadow-elevated backdrop-blur-sm",
+            columnCount >= 3 ? "w-[780px] max-w-[calc(100vw-2rem)]" : "w-[560px] max-w-[calc(100vw-2rem)]",
+            isToolsMenu && "max-h-[24rem]",
           )}
         >
           <div
-            className="grid gap-4"
+            className="grid gap-3"
             style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}
           >
             {dropdown.groups.map((group) => {
               const groupHeading = translateGroupHeading(group.heading, dict);
+              const tone = getGroupTone(group.heading);
               return (
-                <div key={group.heading}>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
-                    {groupHeading}
-                  </p>
+                <div
+                  key={group.heading}
+                  className={cn(
+                    "rounded-xl border p-3",
+                    tone.panelClass,
+                  )}
+                >
+                  <div className="mb-2.5 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span
+                        className={cn(
+                          "inline-flex h-6 min-w-6 items-center justify-center rounded-full px-2 text-[10px] font-semibold uppercase tracking-[0.18em]",
+                          tone.badgeClass,
+                        )}
+                      >
+                        {tone.icon}
+                      </span>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
+                        {groupHeading}
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-neutral-400">
+                      {group.links.length}
+                    </span>
+                  </div>
                   <ul className="space-y-1">
                     {group.links.map((link) => (
                       <li key={link.href}>
                         <Link
                           href={localizeHref(link.href, locale)}
-                          className="group block rounded-lg px-2.5 py-1.5 transition-colors hover:bg-primary-50"
+                          className="group flex items-start gap-2.5 rounded-lg bg-white/72 px-2.5 py-2 transition-colors hover:bg-white"
                           onClick={() => setOpen(false)}
                         >
-                          <span className="block text-sm font-medium leading-5 text-neutral-700 group-hover:text-primary-700">
-                            {getNavLabel(link, dict)}
+                          <span className="mt-0.5 inline-flex h-6 min-w-6 items-center justify-center rounded-md bg-neutral-900 px-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
+                            {getLinkBadge(getNavLabel(link, dict))}
                           </span>
-                          {showDescriptions && link.description && (
-                            <span className="mt-0.5 block text-[11px] leading-4 text-neutral-400 group-hover:text-neutral-500">
-                              {getNavDescription(link, dict)}
+                          <span className="min-w-0 flex-1">
+                            <span className="block text-sm font-medium leading-5 text-neutral-700 group-hover:text-primary-700">
+                              {getNavLabel(link, dict)}
                             </span>
-                          )}
+                            {showDescriptions && link.description && (
+                              <span className="mt-0.5 block text-[11px] leading-4 text-neutral-400 group-hover:text-neutral-500">
+                                {getNavDescription(link, dict)}
+                              </span>
+                            )}
+                          </span>
+                          <span className="pt-0.5 text-xs text-neutral-300 transition-colors group-hover:text-primary-400">
+                            -&gt;
+                          </span>
                         </Link>
                       </li>
                     ))}
