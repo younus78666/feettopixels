@@ -9,6 +9,7 @@ import { MobileMenu } from "./MobileMenu";
 import { SearchModal } from "./SearchModal";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
+import { getHomeLabel } from "@/lib/home-label";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
@@ -62,6 +63,8 @@ function DropdownMenu({
   }, [open]);
 
   const columnCount = dropdown.groups.length;
+  const isToolsMenu = dropdown.label === "Tools";
+  const showDescriptions = dropdown.label === "Learn";
   const label =
     dropdown.label === "Tools"
       ? dict.nav.tools
@@ -104,34 +107,35 @@ function DropdownMenu({
       {open && (
         <div
           className={cn(
-            "absolute left-1/2 top-full z-50 mt-1 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-5 shadow-elevated",
-            columnCount >= 3 ? "w-[640px]" : "w-[420px]",
+            "absolute left-1/2 top-full z-50 mt-2 max-h-[70vh] -translate-x-1/2 overflow-y-auto rounded-2xl border border-neutral-200 bg-white p-4 shadow-elevated",
+            columnCount >= 3 ? "w-[760px] max-w-[calc(100vw-2rem)]" : "w-[520px] max-w-[calc(100vw-2rem)]",
+            isToolsMenu && "max-h-[28rem]",
           )}
         >
           <div
-            className="grid gap-6"
+            className="grid gap-4"
             style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}
           >
             {dropdown.groups.map((group) => {
               const groupHeading = translateGroupHeading(group.heading, dict);
               return (
                 <div key={group.heading}>
-                  <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
                     {groupHeading}
                   </p>
-                  <ul className="space-y-0.5">
+                  <ul className="space-y-1">
                     {group.links.map((link) => (
                       <li key={link.href}>
                         <Link
                           href={localizeHref(link.href, locale)}
-                          className="group block rounded-lg px-2.5 py-2 transition-colors hover:bg-primary-50"
+                          className="group block rounded-lg px-2.5 py-1.5 transition-colors hover:bg-primary-50"
                           onClick={() => setOpen(false)}
                         >
-                          <span className="text-sm font-medium text-neutral-700 group-hover:text-primary-700">
+                          <span className="block text-sm font-medium leading-5 text-neutral-700 group-hover:text-primary-700">
                             {getNavLabel(link, dict)}
                           </span>
-                          {link.description && (
-                            <span className="mt-0.5 block text-xs text-neutral-400 group-hover:text-neutral-500">
+                          {showDescriptions && link.description && (
+                            <span className="mt-0.5 block text-[11px] leading-4 text-neutral-400 group-hover:text-neutral-500">
                               {getNavDescription(link, dict)}
                             </span>
                           )}
@@ -153,6 +157,7 @@ export function Header({ locale }: { locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dict = getDictionary(locale);
+  const homeLabel = getHomeLabel(locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -178,6 +183,12 @@ export function Header({ locale }: { locale: Locale }) {
             className="hidden items-center gap-1 lg:flex"
             aria-label="Main navigation"
           >
+            <Link
+              href={localizeHref("/", locale)}
+              className="rounded-full px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+            >
+              {homeLabel}
+            </Link>
             {navigation.map((entry) =>
               isDropdown(entry) ? (
                 <DropdownMenu

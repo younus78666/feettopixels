@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback, useState } from "react";
 import Link from "next/link";
 import { navigation, isDropdown } from "@/content/navigation";
 import type { NavDropdown } from "@/content/navigation";
+import { getHomeLabel } from "@/lib/home-label";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
@@ -98,6 +99,7 @@ function ExpandableSection({
 export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const dict = getDictionary(locale);
+  const homeLabel = getHomeLabel(locale);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -180,6 +182,12 @@ export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
           className="overflow-y-auto"
           style={{ maxHeight: "calc(100vh - 65px)" }}
         >
+          <Link
+            href={`/${locale}`}
+            className="block border-b border-neutral-100 px-6 py-3.5 text-base font-medium text-neutral-800 hover:bg-neutral-50"
+          >
+            {homeLabel}
+          </Link>
           {navigation.map((entry) =>
             isDropdown(entry) ? (
               <ExpandableSection
