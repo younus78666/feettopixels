@@ -349,7 +349,10 @@ export default async function Home({ params }: PageProps) {
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper id="pixel-conversion-guides" className="relative overflow-hidden bg-neutral-950">
+      <SectionWrapper
+        id="pixel-conversion-guides"
+        className="theme-dark relative overflow-hidden bg-neutral-950 text-neutral-100"
+      >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(20,184,166,0.2),transparent_34%)]" />
         <Container className="relative">
           <div className="max-w-3xl">
