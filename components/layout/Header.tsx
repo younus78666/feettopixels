@@ -165,18 +165,13 @@ export function Header({ locale }: { locale: Locale }) {
     <>
       <header
         className={cn(
-          "sticky top-0 z-40 w-full px-3 pt-3 transition-[padding] duration-200 sm:px-4",
-          scrolled ? "pb-2" : "pb-0",
+          "sticky top-0 z-40 w-full transition-[background-color,box-shadow,border-color] duration-200",
+          scrolled
+            ? "border-b border-neutral-200/80 bg-white/80 shadow-soft backdrop-blur-xl"
+            : "bg-white/0",
         )}
       >
-        <div
-          className={cn(
-            "mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border px-4 sm:px-6 lg:px-8",
-            scrolled
-              ? "border-white/70 bg-white/80 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.5)] backdrop-blur-xl"
-              : "border-transparent bg-white/70 backdrop-blur-md",
-          )}
-        >
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <SiteLogo locale={locale} className="shrink-0" />
 
           <nav

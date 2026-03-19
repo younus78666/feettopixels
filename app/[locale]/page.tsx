@@ -182,8 +182,7 @@ export default async function Home({ params }: PageProps) {
         <div className="absolute right-[6%] top-16 h-64 w-64 rounded-full bg-sky-100 blur-3xl" />
 
         <Container as="article" className="relative">
-          <div className="overflow-hidden rounded-[32px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,250,252,0.78))] p-6 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] sm:p-8 lg:p-10">
-            <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
               <div>
                 <p className="inline-flex rounded-full border border-primary-200 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary-700 shadow-soft">
                   {dict.home.freeOnlineTools}
@@ -245,11 +244,11 @@ export default async function Home({ params }: PageProps) {
                     {updatedDateLabel}
                   </time>
                 </div>
-                <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="mt-10 grid gap-4 border-t border-neutral-200/70 pt-6 sm:grid-cols-2 xl:grid-cols-4">
                   {heroMetrics.map((metric) => (
                     <div
                       key={`${metric.label}-${metric.value}`}
-                      className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-soft"
+                      className="border-l border-neutral-200/80 pl-4"
                     >
                       <p className="mono-display text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">
                         {metric.value}
@@ -265,23 +264,21 @@ export default async function Home({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="relative">
+              <div className="relative lg:pl-8">
                 <div className="absolute inset-6 rounded-full bg-primary-200/50 blur-3xl" />
-                <div className="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/70 p-3 shadow-[0_28px_70px_-40px_rgba(15,23,42,0.7)]">
-                  <Image
-                    src="/home-hero-visual.svg"
-                    alt={heroAltText}
-                    width={1200}
-                    height={900}
-                    priority
-                    className="h-auto w-full rounded-[22px] border border-white/70"
-                  />
-                </div>
+                <Image
+                  src="/home-hero-visual.svg"
+                  alt={heroAltText}
+                  width={1200}
+                  height={900}
+                  priority
+                  className="relative h-auto w-full"
+                />
               </div>
             </div>
 
             {tocItems.length > 0 && (
-              <div className="mt-8 rounded-[28px] border border-white/70 bg-white/70 p-6 shadow-soft">
+              <div className="mt-10 border-t border-neutral-200/70 pt-6">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-700">
                     {dict.nav.onThisPage}
@@ -295,7 +292,7 @@ export default async function Home({ params }: PageProps) {
                     <li key={item.id}>
                       <a
                         href={`#${item.id}`}
-                        className="block rounded-full border border-transparent px-3 py-2 transition-colors hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
+                        className="block rounded-full border border-neutral-200/70 bg-white/55 px-3 py-2 transition-colors hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
                       >
                         {item.label}
                       </a>
@@ -304,7 +301,6 @@ export default async function Home({ params }: PageProps) {
                 </ul>
               </div>
             )}
-          </div>
         </Container>
       </SectionWrapper>
 
