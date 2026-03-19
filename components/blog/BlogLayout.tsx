@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { FAQ } from "@/components/tools/FAQ";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/content/site-config";
+import { getDictionary } from "@/lib/translations";
+import type { Locale } from "@/lib/i18n";
 
 interface BreadcrumbItem {
   label: string;
@@ -43,15 +45,16 @@ interface BlogLayoutProps {
   datePublished?: string;
   dateModified?: string;
   slug: string;
-  locale?: string;
+  locale?: Locale;
   labels?: {
     readyToConvert: string;
     relatedArticles: string;
     onThisPage: string;
+    faq?: string;
   };
 }
 
-function prefixHref(href: string, locale?: string): string {
+function prefixHref(href: string, locale?: Locale): string {
   if (!locale) return href;
   if (href === "/") return `/${locale}`;
   return `/${locale}${href}`;
@@ -72,6 +75,7 @@ export function BlogLayout({
   locale,
   labels,
 }: BlogLayoutProps) {
+  const dict = locale ? getDictionary(locale) : null;
   const localizedBreadcrumbs = breadcrumbs.map((b) => ({
     ...b,
     href: prefixHref(b.href, locale),
@@ -136,7 +140,7 @@ export function BlogLayout({
           {/* CTA */}
           <div className="mt-10 rounded-xl border border-primary-200 bg-primary-50 p-6 text-center">
             <p className="mb-3 text-base font-semibold text-neutral-900">
-              {labels?.readyToConvert || "Ready to convert?"}
+              {labels?.readyToConvert || dict?.tool.readyToConvert || "Ready to convert?"}
             </p>
             <Link
               href={localizedCta.href}
@@ -152,7 +156,7 @@ export function BlogLayout({
           {/* Related articles */}
           <div className="mt-12">
             <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
-              {labels?.relatedArticles || "Related Articles"}
+              {labels?.relatedArticles || dict?.tool.relatedArticles || "Related Articles"}
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {localizedRelatedArticles.map((article) => (
@@ -173,14 +177,17 @@ export function BlogLayout({
           </div>
 
           {/* FAQ */}
-          <FAQ items={faqItems} />
+          <FAQ items={faqItems} label={labels?.faq || dict?.tool.faq} />
         </div>
 
         {/* Table of contents sidebar (desktop) */}
         <aside className="hidden lg:block">
-          <nav className="sticky top-24" aria-label="Table of contents">
+          <nav
+            className="sticky top-24"
+            aria-label={dict?.nav.tableOfContents || "Table of contents"}
+          >
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
-              {labels?.onThisPage || "On this page"}
+              {labels?.onThisPage || dict?.nav.onThisPage || "On this page"}
             </p>
             <ul className="space-y-2 border-l border-neutral-200 pl-4">
               {toc.map((item) => (

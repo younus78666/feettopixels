@@ -105,6 +105,7 @@ export default async function PixelsToFeetPage({ params }: PageProps) {
       }
     >
       <UnitConverter
+        locale={validLocale}
         fromUnit="Pixels"
         toUnit="Feet"
         conversionType="px-to-ft"

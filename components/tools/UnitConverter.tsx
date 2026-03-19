@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { cn } from "@/lib/utils";
-import { formatNumber } from "@/lib/utils";
+import { useCallback, useState } from "react";
+import { cn, formatNumber } from "@/lib/utils";
+import type { Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/translations";
+import { getUnitLabel } from "@/lib/tool-ui";
 
 type ConversionType =
   | "px-to-in"
@@ -55,6 +57,20 @@ const conversions: Record<
   },
 };
 
+const conversionUi: Record<
+  ConversionType,
+  { fromUnit: "px" | "in" | "cm" | "mm" | "ft"; toUnit: "px" | "in" | "cm" | "mm" | "ft"; formula: string }
+> = {
+  "px-to-in": { fromUnit: "px", toUnit: "in", formula: "in = px / DPI" },
+  "in-to-px": { fromUnit: "in", toUnit: "px", formula: "px = in x DPI" },
+  "px-to-cm": { fromUnit: "px", toUnit: "cm", formula: "cm = px x 2.54 / DPI" },
+  "cm-to-px": { fromUnit: "cm", toUnit: "px", formula: "px = cm x DPI / 2.54" },
+  "px-to-mm": { fromUnit: "px", toUnit: "mm", formula: "mm = px x 25.4 / DPI" },
+  "mm-to-px": { fromUnit: "mm", toUnit: "px", formula: "px = mm x DPI / 25.4" },
+  "px-to-ft": { fromUnit: "px", toUnit: "ft", formula: "ft = px / (DPI x 12)" },
+  "ft-to-px": { fromUnit: "ft", toUnit: "px", formula: "px = ft x 12 x DPI" },
+};
+
 interface UnitConverterProps {
   fromUnit: string;
   toUnit: string;
@@ -64,6 +80,7 @@ interface UnitConverterProps {
   defaultDpi?: number;
   dpiPresets?: number[];
   commonValues?: number[];
+  locale?: Locale;
 }
 
 export function UnitConverter({
@@ -75,28 +92,37 @@ export function UnitConverter({
   defaultDpi = 96,
   dpiPresets = [72, 96, 150, 300],
   commonValues = [1, 10, 50, 100, 250, 500, 1000],
+  locale = "en",
 }: UnitConverterProps) {
+  const dict = getDictionary(locale);
+  const ui = dict.tool;
   const { forward: conversionFn, reverse: reverseConversionFn } =
     conversions[conversionType];
+  const config = conversionUi[conversionType];
+  const localizedUnits = {
+    from: getUnitLabel(locale, config?.fromUnit || "px"),
+    to: getUnitLabel(locale, config?.toUnit || "px"),
+  };
+  const displayFormula = config?.formula || formula;
 
   const [fromValue, setFromValue] = useState("100");
   const [toValue, setToValue] = useState(() =>
-    formatNumber(conversionFn(100, defaultDpi), 4)
+    formatNumber(conversionFn(100, defaultDpi), 4),
   );
   const [dpi, setDpi] = useState(defaultDpi);
   const [customDpi, setCustomDpi] = useState("");
   const [reversed, setReversed] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const currentFromUnit = reversed ? toUnit : fromUnit;
-  const currentToUnit = reversed ? fromUnit : toUnit;
+  const currentFromUnit = reversed ? localizedUnits.to : localizedUnits.from;
+  const currentToUnit = reversed ? localizedUnits.from : localizedUnits.to;
 
   const convert = useCallback(
     (
       val: string,
       fromSide: "from" | "to",
       currentDpi: number,
-      isReversed: boolean
+      isReversed: boolean,
     ) => {
       const num = parseFloat(val);
       if (isNaN(num)) {
@@ -113,7 +139,7 @@ export function UnitConverter({
         setFromValue(formatNumber(fn(num, currentDpi), 4));
       }
     },
-    [conversionFn, reverseConversionFn]
+    [conversionFn, reverseConversionFn],
   );
 
   const handleFromChange = (val: string) => {
@@ -155,35 +181,37 @@ export function UnitConverter({
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
-      /* clipboard not available */
+      // Clipboard access is not always available.
     }
   };
 
   const conversionFnForTable = reversed ? reverseConversionFn : conversionFn;
+  const fallbackLabels = {
+    from: reversed ? toUnit : fromUnit,
+    to: reversed ? fromUnit : toUnit,
+  };
 
   return (
     <div className="tool-card space-y-6">
-      {/* Converter inputs */}
       <div className="flex flex-col items-center gap-4 sm:flex-row">
-        {/* From input */}
         <div className="w-full flex-1">
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            {currentFromUnit}
+            {currentFromUnit || fallbackLabels.from}
           </label>
           <input
             type="number"
             value={fromValue}
-            onChange={(e) => handleFromChange(e.target.value)}
+            onChange={(event) => handleFromChange(event.target.value)}
             className="mono-display w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-lg text-neutral-900 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
-            placeholder={`Enter ${currentFromUnit}`}
+            placeholder={`${ui.enterValue} ${currentFromUnit || fallbackLabels.from}`}
           />
         </div>
 
-        {/* Swap button */}
         <button
           onClick={handleSwap}
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-neutral-500 transition-all hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600 sm:mt-5"
-          aria-label="Swap conversion direction"
+          aria-label={ui.swap}
+          title={ui.swap}
         >
           <svg
             className="h-4 w-4"
@@ -200,24 +228,23 @@ export function UnitConverter({
           </svg>
         </button>
 
-        {/* To input */}
         <div className="w-full flex-1">
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            {currentToUnit}
+            {currentToUnit || fallbackLabels.to}
           </label>
           <div className="relative">
             <input
               type="number"
               value={toValue}
-              onChange={(e) => handleToChange(e.target.value)}
+              onChange={(event) => handleToChange(event.target.value)}
               className="mono-display w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 pr-12 text-lg text-neutral-900 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
-              placeholder={`Result in ${currentToUnit}`}
+              placeholder={`${ui.result} ${currentToUnit || fallbackLabels.to}`}
             />
             <button
               onClick={handleCopy}
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
-              aria-label="Copy result"
-              title="Copy result"
+              aria-label={ui.copy}
+              title={copied ? ui.copied : ui.copy}
             >
               {copied ? (
                 <svg
@@ -253,11 +280,10 @@ export function UnitConverter({
         </div>
       </div>
 
-      {/* DPI selector */}
       {showDpiSelector && (
         <div>
           <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            DPI (Dots Per Inch)
+            {ui.dpi}
           </label>
           <div className="flex flex-wrap items-center gap-2">
             {dpiPresets.map((preset) => (
@@ -268,7 +294,7 @@ export function UnitConverter({
                   "rounded-lg border px-3 py-1.5 text-sm font-medium transition-colors",
                   dpi === preset && customDpi === ""
                     ? "border-primary-300 bg-primary-50 text-primary-700"
-                    : "border-neutral-200 bg-white text-neutral-600 hover:border-neutral-300 hover:text-neutral-800"
+                    : "border-neutral-200 bg-white text-neutral-600 hover:border-neutral-300 hover:text-neutral-800",
                 )}
               >
                 {preset}
@@ -277,43 +303,36 @@ export function UnitConverter({
             <input
               type="number"
               value={customDpi}
-              onChange={(e) => handleCustomDpiChange(e.target.value)}
-              placeholder="Custom"
+              onChange={(event) => handleCustomDpiChange(event.target.value)}
+              placeholder={ui.customDpi}
               className="mono-display w-24 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
             />
           </div>
-          <p className="mt-1.5 text-xs text-neutral-400">
-            {dpi === 72 && "Standard for older Mac displays"}
-            {dpi === 96 && "Standard for web and Windows displays"}
-            {dpi === 150 && "Common for medium-quality print"}
-            {dpi === 300 && "Standard for high-quality print"}
-            {![72, 96, 150, 300].includes(dpi) && `Custom: ${dpi} DPI`}
-          </p>
         </div>
       )}
 
-      {/* Formula display */}
       <div className="rounded-lg bg-neutral-50 px-4 py-3">
         <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
-          Formula
+          {ui.formula}
         </p>
-        <p className="mono-display mt-1 text-sm text-neutral-700">{formula}</p>
+        <p className="mono-display mt-1 text-sm text-neutral-700">
+          {displayFormula}
+        </p>
       </div>
 
-      {/* Conversion table */}
       <div>
         <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
-          Common Conversions at {dpi} DPI
+          {ui.conversionTable} ({dpi} {ui.dpi})
         </p>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-neutral-200 bg-neutral-50">
                 <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">
-                  {currentFromUnit}
+                  {currentFromUnit || fallbackLabels.from}
                 </th>
                 <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">
-                  {currentToUnit}
+                  {currentToUnit || fallbackLabels.to}
                 </th>
               </tr>
             </thead>

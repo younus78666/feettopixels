@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { RelatedTools } from "./RelatedTools";
 import { FAQ } from "./FAQ";
+import { getDictionary } from "@/lib/translations";
+import type { Locale } from "@/lib/i18n";
 
 interface BreadcrumbItem {
   label: string;
@@ -31,14 +33,14 @@ interface ConverterLayoutProps {
   relatedTools: RelatedTool[];
   faqItems: FAQItem[];
   breadcrumbs: BreadcrumbItem[];
-  locale?: string;
+  locale?: Locale;
   labels?: {
     relatedTools: string;
     faq: string;
   };
 }
 
-function prefixHref(href: string, locale?: string): string {
+function prefixHref(href: string, locale?: Locale): string {
   if (!locale) return href;
   if (href === "/") return `/${locale}`;
   return `/${locale}${href}`;
@@ -57,6 +59,7 @@ export function ConverterLayout({
   locale,
   labels,
 }: ConverterLayoutProps) {
+  const dict = locale ? getDictionary(locale) : null;
   const localizedBreadcrumbs = breadcrumbs.map((b) => ({
     ...b,
     href: prefixHref(b.href, locale),
@@ -167,9 +170,12 @@ export function ConverterLayout({
 
       <div className="prose prose-neutral max-w-none">{content}</div>
 
-      <RelatedTools tools={localizedRelatedTools} label={labels?.relatedTools} />
+      <RelatedTools
+        tools={localizedRelatedTools}
+        label={labels?.relatedTools || dict?.tool.relatedTools}
+      />
 
-      <FAQ items={faqItems} label={labels?.faq} />
+      <FAQ items={faqItems} label={labels?.faq || dict?.tool.faq} />
     </Container>
   );
 }

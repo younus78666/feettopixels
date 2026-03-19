@@ -107,6 +107,7 @@ export default async function InchesToPixelsPage({ params }: PageProps) {
       }
     >
       <UnitConverter
+        locale={validLocale}
         fromUnit="Inches"
         toUnit="Pixels"
         conversionType="in-to-px"

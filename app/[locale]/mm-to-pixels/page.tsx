@@ -100,6 +100,7 @@ export default async function MmToPixelsPage({ params }: PageProps) {
       }
     >
       <UnitConverter
+        locale={validLocale}
         fromUnit="Millimeters"
         toUnit="Pixels"
         conversionType="mm-to-px"

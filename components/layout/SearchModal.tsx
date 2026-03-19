@@ -73,10 +73,26 @@ export function SearchModal({ locale }: SearchModalProps) {
     );
   }, [query, items]);
 
-  // Reset active index when results change
-  useEffect(() => {
+  const closeModal = useCallback(() => {
+    setOpen(false);
+  }, []);
+
+  const openModal = useCallback(() => {
+    setQuery("");
     setActiveIndex(0);
-  }, [filtered]);
+    setOpen(true);
+    requestAnimationFrame(() => {
+      inputRef.current?.focus();
+    });
+  }, []);
+
+  const toggleModal = useCallback(() => {
+    if (open) {
+      closeModal();
+      return;
+    }
+    openModal();
+  }, [closeModal, open, openModal]);
 
   // Scroll active item into view
   useEffect(() => {
@@ -92,33 +108,27 @@ export function SearchModal({ locale }: SearchModalProps) {
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        setOpen((prev) => !prev);
+        toggleModal();
       }
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, []);
-
-  // Focus input when opened
-  useEffect(() => {
-    if (open) {
-      setQuery("");
-      setActiveIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 50);
-    }
-  }, [open]);
+  }, [toggleModal]);
 
   // Close on route change
   useEffect(() => {
-    setOpen(false);
+    const frame = requestAnimationFrame(() => {
+      setOpen(false);
+    });
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   const navigate = useCallback(
     (href: string) => {
-      setOpen(false);
+      closeModal();
       router.push(href);
     },
-    [router],
+    [closeModal, router],
   );
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -132,7 +142,7 @@ export function SearchModal({ locale }: SearchModalProps) {
       e.preventDefault();
       navigate(filtered[activeIndex].href);
     } else if (e.key === "Escape") {
-      setOpen(false);
+      closeModal();
     }
   };
 
@@ -143,7 +153,7 @@ export function SearchModal({ locale }: SearchModalProps) {
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-neutral-900/40 backdrop-blur-sm"
-        onClick={() => setOpen(false)}
+        onClick={closeModal}
       />
 
       {/* Modal */}
@@ -168,7 +178,10 @@ export function SearchModal({ locale }: SearchModalProps) {
               ref={inputRef}
               type="text"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setActiveIndex(0);
+              }}
               onKeyDown={handleKeyDown}
               placeholder={`${dict.nav.search}...`}
               className="h-14 w-full bg-transparent text-base text-neutral-900 placeholder:text-neutral-400 focus:outline-none"

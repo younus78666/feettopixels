@@ -68,7 +68,10 @@ export function AdminSidebar() {
 
   // Close mobile sidebar on route change
   useEffect(() => {
-    setMobileOpen(false)
+    const frame = requestAnimationFrame(() => {
+      setMobileOpen(false)
+    })
+    return () => cancelAnimationFrame(frame)
   }, [pathname])
 
   // Close on escape key

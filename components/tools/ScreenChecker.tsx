@@ -73,12 +73,6 @@ export function ScreenChecker() {
     );
   }
 
-  const matchedStandard = resolutionStandards.find(
-    (s) =>
-      (info.screenWidth >= s.width && info.screenHeight >= s.height) ||
-      (info.screenWidth >= s.height && info.screenHeight >= s.width)
-  );
-
   const closestStandard = [...resolutionStandards]
     .reverse()
     .find(

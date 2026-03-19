@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
-import Link from "next/link";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 import { getBreadcrumbs } from "@/lib/content-utils";
+import { getPageContent } from "@/lib/content/types";
+import { content } from "@/lib/content/social-media-image-sizes";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -33,57 +34,77 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const toc = [
-  { id: "instagram", label: "Instagram" },
-  { id: "facebook", label: "Facebook" },
-  { id: "youtube", label: "YouTube" },
-  { id: "linkedin", label: "LinkedIn" },
-  { id: "x-twitter", label: "X (Twitter)" },
-];
-
-const faqItems = [
-  {
-    question: "What size should an Instagram post be?",
-    answer: "The recommended size for an Instagram feed post is 1080 x 1080 pixels (square), 1080 x 1350 pixels (portrait, 4:5 ratio), or 1080 x 566 pixels (landscape). Portrait posts take up more screen space and tend to perform best.",
-  },
-  {
-    question: "What is the ideal YouTube thumbnail size?",
-    answer: "YouTube thumbnails should be 1280 x 720 pixels with a 16:9 aspect ratio. The minimum width is 640 pixels. Use JPG, PNG, or GIF format under 2 MB.",
-  },
-  {
-    question: "What resolution should I use for social media images?",
-    answer: "DPI does not matter for social media — only pixel dimensions matter. Social platforms compress and serve images at screen resolution regardless of the DPI metadata in the file.",
-  },
-  {
-    question: "What size is a Facebook cover photo?",
-    answer: "Facebook cover photos should be 820 x 312 pixels on desktop and 640 x 360 pixels on mobile. Upload at 851 x 315 pixels for the best cross-device display.",
-  },
-];
-
 export default async function SocialMediaImageSizesPage({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
+  const pc = getPageContent(content, validLocale);
+  const toc = [
+    { id: "instagram", label: pc.body.heading1 },
+    { id: "facebook", label: pc.body.heading2 },
+    { id: "youtube", label: pc.body.heading3 },
+    { id: "linkedin", label: pc.body.heading4 },
+    { id: "x-twitter", label: pc.body.heading5 },
+  ];
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
     { slug: "social-media-image-sizes", href: "/social-media-image-sizes" },
   ]);
 
   const relatedArticles = [
-    { title: dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes", href: "/standard-image-sizes", description: dict.navDescriptions["standard-image-sizes"] || "Photo print dimensions in pixels" },
-    { title: dict.pages["common-resolutions"]?.title || "Common Screen Resolutions", href: "/common-resolutions", description: dict.navDescriptions["common-resolutions"] || "HD to 8K display reference" },
-    { title: dict.pages["best-dpi-for-web"]?.title || "Best DPI for Web", href: "/best-dpi-for-web", description: dict.navDescriptions["best-dpi-for-web"] || "Why DPI doesn't matter online" },
-    { title: dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained", href: "/pixels-per-inch", description: dict.navDescriptions["pixels-per-inch"] || "PPI reference guide" },
+    {
+      title:
+        dict.pages["standard-image-sizes"]?.title || "Standard Image Sizes",
+      href: "/standard-image-sizes",
+      description:
+        dict.navDescriptions["standard-image-sizes"] ||
+        "Photo print dimensions in pixels",
+    },
+    {
+      title:
+        dict.pages["common-resolutions"]?.title ||
+        "Common Screen Resolutions",
+      href: "/common-resolutions",
+      description:
+        dict.navDescriptions["common-resolutions"] ||
+        "HD to 8K display reference",
+    },
+    {
+      title: dict.pages["best-dpi-for-web"]?.title || "Best DPI for Web",
+      href: "/best-dpi-for-web",
+      description:
+        dict.navDescriptions["best-dpi-for-web"] ||
+        "Why DPI doesn't matter online",
+    },
+    {
+      title:
+        dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch Explained",
+      href: "/pixels-per-inch",
+      description:
+        dict.navDescriptions["pixels-per-inch"] || "PPI reference guide",
+    },
   ];
+
   return (
     <BlogLayout
       locale={validLocale}
-      title={dict.pages["social-media-image-sizes"]?.title || "Social Media Image Sizes (2026)"}
-      extractiveAnswer={dict.pages["social-media-image-sizes"]?.extractive || "Instagram posts should be 1080 x 1080 px (square) or 1080 x 1350 px (portrait). YouTube thumbnails are 1280 x 720 px. Facebook covers are 851 x 315 px. DPI does not matter for social media — only pixel dimensions affect display quality."}
+      title={
+        dict.pages["social-media-image-sizes"]?.title ||
+        "Social Media Image Sizes (2026)"
+      }
+      extractiveAnswer={
+        dict.pages["social-media-image-sizes"]?.extractive ||
+        "Instagram posts should be 1080 x 1080 px (square) or 1080 x 1350 px (portrait). YouTube thumbnails are 1280 x 720 px. Facebook covers are 851 x 315 px. DPI does not matter for social media - only pixel dimensions affect display quality."
+      }
       breadcrumbs={breadcrumbs}
-      faqItems={faqItems}
+      faqItems={pc.faq}
       relatedArticles={relatedArticles}
-      cta={{ label: "Try the Image Size Calculator", href: "/image-size-calculator" }}
+      cta={{
+        label:
+          dict.pages["image-size-calculator"]?.title ||
+          "Image Size Calculator",
+        href: "/image-size-calculator",
+      }}
       toc={toc}
       labels={{
         readyToConvert: dict.tool.readyToConvert,
@@ -92,79 +113,97 @@ export default async function SocialMediaImageSizesPage({ params }: PageProps) {
       }}
       slug="social-media-image-sizes"
     >
-      <h2 id="instagram">Instagram</h2>
+      <h2 id="instagram">{pc.body.heading1}</h2>
       <table>
         <thead>
-          <tr><th>Format</th><th>Dimensions (px)</th><th>Aspect Ratio</th></tr>
+          <tr>
+            <th>{pc.body.tableHead1}</th>
+            <th>{pc.body.tableHead2}</th>
+            <th>{pc.body.tableHead3}</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Feed post (square)</td><td>1080 &times; 1080</td><td>1:1</td></tr>
-          <tr><td>Feed post (portrait)</td><td>1080 &times; 1350</td><td>4:5</td></tr>
-          <tr><td>Feed post (landscape)</td><td>1080 &times; 566</td><td>1.91:1</td></tr>
-          <tr><td>Story / Reel</td><td>1080 &times; 1920</td><td>9:16</td></tr>
-          <tr><td>Profile photo</td><td>320 &times; 320</td><td>1:1</td></tr>
-          <tr><td>Carousel</td><td>1080 &times; 1080</td><td>1:1</td></tr>
+          <tr><td>{pc.body.igRow1}</td><td>{pc.body.igRow1dim}</td><td>{pc.body.igRow1ratio}</td></tr>
+          <tr><td>{pc.body.igRow2}</td><td>{pc.body.igRow2dim}</td><td>{pc.body.igRow2ratio}</td></tr>
+          <tr><td>{pc.body.igRow3}</td><td>{pc.body.igRow3dim}</td><td>{pc.body.igRow3ratio}</td></tr>
+          <tr><td>{pc.body.igRow4}</td><td>{pc.body.igRow4dim}</td><td>{pc.body.igRow4ratio}</td></tr>
+          <tr><td>{pc.body.igRow5}</td><td>{pc.body.igRow5dim}</td><td>{pc.body.igRow5ratio}</td></tr>
+          <tr><td>{pc.body.igRow6}</td><td>{pc.body.igRow6dim}</td><td>{pc.body.igRow6ratio}</td></tr>
         </tbody>
       </table>
 
-      <h2 id="facebook">Facebook</h2>
+      <h2 id="facebook">{pc.body.heading2}</h2>
       <table>
         <thead>
-          <tr><th>Format</th><th>Dimensions (px)</th><th>Aspect Ratio</th></tr>
+          <tr>
+            <th>{pc.body.tableHead1}</th>
+            <th>{pc.body.tableHead2}</th>
+            <th>{pc.body.tableHead3}</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Cover photo</td><td>851 &times; 315</td><td>2.7:1</td></tr>
-          <tr><td>Profile photo</td><td>170 &times; 170</td><td>1:1</td></tr>
-          <tr><td>Feed post (image)</td><td>1200 &times; 630</td><td>1.91:1</td></tr>
-          <tr><td>Story</td><td>1080 &times; 1920</td><td>9:16</td></tr>
-          <tr><td>Event cover</td><td>1920 &times; 1005</td><td>1.91:1</td></tr>
-          <tr><td>Group cover</td><td>1640 &times; 856</td><td>1.91:1</td></tr>
+          <tr><td>{pc.body.fbRow1}</td><td>{pc.body.fbRow1dim}</td><td>{pc.body.fbRow1ratio}</td></tr>
+          <tr><td>{pc.body.fbRow2}</td><td>{pc.body.fbRow2dim}</td><td>{pc.body.fbRow2ratio}</td></tr>
+          <tr><td>{pc.body.fbRow3}</td><td>{pc.body.fbRow3dim}</td><td>{pc.body.fbRow3ratio}</td></tr>
+          <tr><td>{pc.body.fbRow4}</td><td>{pc.body.fbRow4dim}</td><td>{pc.body.fbRow4ratio}</td></tr>
+          <tr><td>{pc.body.fbRow5}</td><td>{pc.body.fbRow5dim}</td><td>{pc.body.fbRow5ratio}</td></tr>
+          <tr><td>{pc.body.fbRow6}</td><td>{pc.body.fbRow6dim}</td><td>{pc.body.fbRow6ratio}</td></tr>
         </tbody>
       </table>
 
-      <h2 id="youtube">YouTube</h2>
+      <h2 id="youtube">{pc.body.heading3}</h2>
       <table>
         <thead>
-          <tr><th>Format</th><th>Dimensions (px)</th><th>Aspect Ratio</th></tr>
+          <tr>
+            <th>{pc.body.tableHead1}</th>
+            <th>{pc.body.tableHead2}</th>
+            <th>{pc.body.tableHead3}</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Thumbnail</td><td>1280 &times; 720</td><td>16:9</td></tr>
-          <tr><td>Channel banner</td><td>2560 &times; 1440</td><td>16:9</td></tr>
-          <tr><td>Channel icon</td><td>800 &times; 800</td><td>1:1</td></tr>
-          <tr><td>Video (1080p)</td><td>1920 &times; 1080</td><td>16:9</td></tr>
-          <tr><td>Video (4K)</td><td>3840 &times; 2160</td><td>16:9</td></tr>
+          <tr><td>{pc.body.ytRow1}</td><td>{pc.body.ytRow1dim}</td><td>{pc.body.ytRow1ratio}</td></tr>
+          <tr><td>{pc.body.ytRow2}</td><td>{pc.body.ytRow2dim}</td><td>{pc.body.ytRow2ratio}</td></tr>
+          <tr><td>{pc.body.ytRow3}</td><td>{pc.body.ytRow3dim}</td><td>{pc.body.ytRow3ratio}</td></tr>
+          <tr><td>{pc.body.ytRow4}</td><td>{pc.body.ytRow4dim}</td><td>{pc.body.ytRow4ratio}</td></tr>
+          <tr><td>{pc.body.ytRow5}</td><td>{pc.body.ytRow5dim}</td><td>{pc.body.ytRow5ratio}</td></tr>
         </tbody>
       </table>
 
-      <h2 id="linkedin">LinkedIn</h2>
+      <h2 id="linkedin">{pc.body.heading4}</h2>
       <table>
         <thead>
-          <tr><th>Format</th><th>Dimensions (px)</th><th>Aspect Ratio</th></tr>
+          <tr>
+            <th>{pc.body.tableHead1}</th>
+            <th>{pc.body.tableHead2}</th>
+            <th>{pc.body.tableHead3}</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Profile banner</td><td>1584 &times; 396</td><td>4:1</td></tr>
-          <tr><td>Profile photo</td><td>400 &times; 400</td><td>1:1</td></tr>
-          <tr><td>Feed post (image)</td><td>1200 &times; 627</td><td>1.91:1</td></tr>
-          <tr><td>Company logo</td><td>300 &times; 300</td><td>1:1</td></tr>
-          <tr><td>Company cover</td><td>1128 &times; 191</td><td>5.9:1</td></tr>
+          <tr><td>{pc.body.liRow1}</td><td>{pc.body.liRow1dim}</td><td>{pc.body.liRow1ratio}</td></tr>
+          <tr><td>{pc.body.liRow2}</td><td>{pc.body.liRow2dim}</td><td>{pc.body.liRow2ratio}</td></tr>
+          <tr><td>{pc.body.liRow3}</td><td>{pc.body.liRow3dim}</td><td>{pc.body.liRow3ratio}</td></tr>
+          <tr><td>{pc.body.liRow4}</td><td>{pc.body.liRow4dim}</td><td>{pc.body.liRow4ratio}</td></tr>
+          <tr><td>{pc.body.liRow5}</td><td>{pc.body.liRow5dim}</td><td>{pc.body.liRow5ratio}</td></tr>
         </tbody>
       </table>
 
-      <h2 id="x-twitter">X (Twitter)</h2>
+      <h2 id="x-twitter">{pc.body.heading5}</h2>
       <table>
         <thead>
-          <tr><th>Format</th><th>Dimensions (px)</th><th>Aspect Ratio</th></tr>
+          <tr>
+            <th>{pc.body.tableHead1}</th>
+            <th>{pc.body.tableHead2}</th>
+            <th>{pc.body.tableHead3}</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Header photo</td><td>1500 &times; 500</td><td>3:1</td></tr>
-          <tr><td>Profile photo</td><td>400 &times; 400</td><td>1:1</td></tr>
-          <tr><td>In-stream image</td><td>1200 &times; 675</td><td>16:9</td></tr>
-          <tr><td>Card image</td><td>1200 &times; 628</td><td>1.91:1</td></tr>
+          <tr><td>{pc.body.twRow1}</td><td>{pc.body.twRow1dim}</td><td>{pc.body.twRow1ratio}</td></tr>
+          <tr><td>{pc.body.twRow2}</td><td>{pc.body.twRow2dim}</td><td>{pc.body.twRow2ratio}</td></tr>
+          <tr><td>{pc.body.twRow3}</td><td>{pc.body.twRow3dim}</td><td>{pc.body.twRow3ratio}</td></tr>
+          <tr><td>{pc.body.twRow4}</td><td>{pc.body.twRow4dim}</td><td>{pc.body.twRow4ratio}</td></tr>
         </tbody>
       </table>
-      <p>
-        All social media platforms compress uploaded images, so start with the recommended pixel dimensions for the best quality after compression. Use our <Link href="/image-size-calculator">Image Size Calculator</Link> to verify your images meet the requirements.
-      </p>
+      <p>{pc.body.p1}</p>
     </BlogLayout>
   );
 }

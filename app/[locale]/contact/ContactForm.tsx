@@ -22,7 +22,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
   const [submitted, setSubmitted] = useState(false);
 
   const breadcrumbs = [
-    { label: "Home", href: `/${locale}` },
+    { label: dict.site.name, href: `/${locale}` },
     { label: dict.contact.title, href: `/${locale}/contact` },
   ];
 

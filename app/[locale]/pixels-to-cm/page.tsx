@@ -105,6 +105,7 @@ export default async function PixelsToCmPage({ params }: PageProps) {
       }
     >
       <UnitConverter
+        locale={validLocale}
         fromUnit="Pixels"
         toUnit="Centimeters"
         conversionType="px-to-cm"

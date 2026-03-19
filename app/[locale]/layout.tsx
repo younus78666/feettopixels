@@ -5,7 +5,6 @@ import { getDictionary } from "@/lib/translations";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SiteSchema } from "@/components/seo/SiteSchema";
-import { siteConfig } from "@/content/site-config";
 
 export const dynamicParams = false;
 
