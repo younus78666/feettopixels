@@ -23,7 +23,7 @@ function FAQAccordionItem({ item, isOpen, onToggle }: {
     <div className="border-b border-neutral-200 last:border-b-0">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-4 text-left text-base font-medium text-neutral-900 transition-colors hover:text-primary-700"
+        className="faq-question flex w-full items-center justify-between py-4 text-left text-base font-medium text-neutral-900 transition-colors hover:text-primary-700"
         aria-expanded={isOpen}
       >
         <span className="pr-4">{item.question}</span>
@@ -50,7 +50,7 @@ function FAQAccordionItem({ item, isOpen, onToggle }: {
           isOpen ? "max-h-96 pb-4" : "max-h-0"
         )}
       >
-        <p className="text-sm leading-relaxed text-neutral-600">
+        <p className="faq-answer text-sm leading-relaxed text-neutral-600">
           {item.answer}
         </p>
       </div>
@@ -60,6 +60,8 @@ function FAQAccordionItem({ item, isOpen, onToggle }: {
 
 export function FAQ({ items, label }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  if (items.length === 0) return null;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -75,7 +77,7 @@ export function FAQ({ items, label }: FAQProps) {
   };
 
   return (
-    <div className="mt-12">
+    <section id="faq" className="mt-12">
       <JsonLd data={jsonLd} />
       <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
         {label || "Frequently Asked Questions"}
@@ -92,6 +94,6 @@ export function FAQ({ items, label }: FAQProps) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

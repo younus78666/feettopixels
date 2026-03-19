@@ -5,7 +5,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "What is a megapixel?",
-        "answer": "A megapixel (MP) equals one million pixels. A 12 MP camera produces images with 12 million total pixels. The actual dimensions depend on the aspect ratio — a 12 MP image at 4:3 is 4000x3000 pixels, while at 16:9 it is 4619x2598 pixels."
+        "answer": "A megapixel (MP) equals one million pixels. A 12 MP camera produces images with 12 million total pixels. The actual dimensions depend on the aspect ratio - a 12 MP image at 4:3 is 4000x3000 pixels, while at 16:9 it is 4619x2598 pixels."
       },
       {
         "question": "Do more megapixels mean better photo quality?",
@@ -98,7 +98,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Was ist ein Megapixel?",
-        "answer": "Ein Megapixel (MP) entspricht einer Million Pixel. Eine 12-MP-Kamera erzeugt Bilder mit insgesamt 12 Millionen Pixeln. Die tatsächlichen Abmessungen hängen vom Seitenverhältnis ab – ein 12-MP-Bild bei 4:3 hat 4000 x 3000 Pixel, während es bei 16:9 4619 x 2598 Pixel hat."
+        "answer": "Ein Megapixel (MP) entspricht einer Million Pixel. Eine 12-MP-Kamera erzeugt Bilder mit insgesamt 12 Millionen Pixeln. Die tatsächlichen Abmessungen hängen vom Seitenverhältnis ab - ein 12-MP-Bild bei 4:3 hat 4000 x 3000 Pixel, während es bei 16:9 4619 x 2598 Pixel hat."
       },
       {
         "question": "Bedeuten mehr Megapixel eine bessere Fotoqualität?",
@@ -114,7 +114,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Wie sind die Megapixel von Telefonkameras im Vergleich zu DSLRs?",
-        "answer": "Moderne Telefone reichen von 12 MP bis 200 MP, während professionelle DSLRs normalerweise 20–60 MP verwenden. Trotz höherer Megapixelzahlen sind Telefonsensoren viel kleiner, sodass jedes Pixel weniger Licht einfängt. DSLR-Bilder haben im Allgemeinen einen besseren Dynamikbereich und eine bessere Leistung bei schlechten Lichtverhältnissen."
+        "answer": "Moderne Telefone reichen von 12 MP bis 200 MP, während professionelle DSLRs normalerweise 20 - 60 MP verwenden. Trotz höherer Megapixelzahlen sind Telefonsensoren viel kleiner, sodass jedes Pixel weniger Licht einfängt. DSLR-Bilder haben im Allgemeinen einen besseren Dynamikbereich und eine bessere Leistung bei schlechten Lichtverhältnissen."
       }
     ],
     "sections": [
@@ -346,7 +346,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Megapiksel nedir?",
-        "answer": "Bir megapiksel (MP) bir milyon piksele eşittir. 12 MP kamera toplam 12 milyon piksellik görüntüler üretir. Gerçek boyutlar en boy oranına bağlıdır — 12 MP'lik bir görüntü 4:3'te 4000x3000 piksel, 16:9'da ise 4619x2598 pikseldir."
+        "answer": "Bir megapiksel (MP) bir milyon piksele eşittir. 12 MP kamera toplam 12 milyon piksellik görüntüler üretir. Gerçek boyutlar en boy oranına bağlıdır - 12 MP'lik bir görüntü 4:3'te 4000x3000 piksel, 16:9'da ise 4619x2598 pikseldir."
       },
       {
         "question": "Daha fazla megapiksel daha iyi fotoğraf kalitesi anlamına mı gelir?",
@@ -377,7 +377,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Co to jest megapiksel?",
-        "answer": "Megapiksel (MP) to milion pikseli. Aparat o rozdzielczości 12 MP tworzy obrazy o łącznej rozdzielczości 12 milionów pikseli. Rzeczywiste wymiary zależą od proporcji — obraz 12 MP w formacie 4:3 to 4000 x 3000 pikseli, a w formacie 16:9 4619 x 2598 pikseli."
+        "answer": "Megapiksel (MP) to milion pikseli. Aparat o rozdzielczości 12 MP tworzy obrazy o łącznej rozdzielczości 12 milionów pikseli. Rzeczywiste wymiary zależą od proporcji - obraz 12 MP w formacie 4:3 to 4000 x 3000 pikseli, a w formacie 16:9 4619 x 2598 pikseli."
       },
       {
         "question": "Czy więcej megapikseli oznacza lepszą jakość zdjęcia?",
@@ -393,7 +393,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Jak megapiksele w aparatach telefonicznych wypadają w porównaniu z lustrzankami cyfrowymi?",
-        "answer": "Nowoczesne telefony mają rozdzielczość od 12 do 200 MP, podczas gdy profesjonalne lustrzanki cyfrowe zwykle korzystają z 20–60 MP. Pomimo większej liczby megapikseli czujniki telefonu są znacznie mniejsze, więc każdy piksel rejestruje mniej światła. Obrazy wykonane lustrzanką cyfrową mają zazwyczaj lepszy zakres dynamiczny i wydajność przy słabym oświetleniu."
+        "answer": "Nowoczesne telefony mają rozdzielczość od 12 do 200 MP, podczas gdy profesjonalne lustrzanki cyfrowe zwykle korzystają z 20 - 60 MP. Pomimo większej liczby megapikseli czujniki telefonu są znacznie mniejsze, więc każdy piksel rejestruje mniej światła. Obrazy wykonane lustrzanką cyfrową mają zazwyczaj lepszy zakres dynamiczny i wydajność przy słabym oświetleniu."
       }
     ],
     "sections": [
@@ -408,7 +408,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Apa itu megapiksel?",
-        "answer": "Satu megapiksel (MP) sama dengan satu juta piksel. Kamera 12 MP menghasilkan gambar dengan total 12 juta piksel. Dimensi sebenarnya bergantung pada rasio aspek — gambar 12 MP pada rasio 4:3 adalah 4000x3000 piksel, sedangkan pada rasio 16:9 adalah 4619x2598 piksel."
+        "answer": "Satu megapiksel (MP) sama dengan satu juta piksel. Kamera 12 MP menghasilkan gambar dengan total 12 juta piksel. Dimensi sebenarnya bergantung pada rasio aspek - gambar 12 MP pada rasio 4:3 adalah 4000x3000 piksel, sedangkan pada rasio 16:9 adalah 4619x2598 piksel."
       },
       {
         "question": "Apakah lebih banyak megapiksel berarti kualitas foto lebih baik?",
@@ -439,7 +439,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Что такое мегапиксель?",
-        "answer": "Мегапиксель (МП) равен одному миллиону пикселей. Камера на 12 МП создает изображения с общим количеством пикселей 12 миллионов. Фактические размеры зависят от соотношения сторон: изображение с разрешением 12 МП при соотношении сторон 4:3 составляет 4000x3000 пикселей, а при 16:9 — 4619x2598 пикселей."
+        "answer": "Мегапиксель (МП) равен одному миллиону пикселей. Камера на 12 МП создает изображения с общим количеством пикселей 12 миллионов. Фактические размеры зависят от соотношения сторон: изображение с разрешением 12 МП при соотношении сторон 4:3 составляет 4000x3000 пикселей, а при 16:9 - 4619x2598 пикселей."
       },
       {
         "question": "Означает ли большее количество мегапикселей лучшее качество фотографий?",
@@ -455,7 +455,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Какое количество мегапикселей в камере телефона по сравнению с зеркальными фотокамерами?",
-        "answer": "Разрешение современных телефонов варьируется от 12 до 200 МП, тогда как в профессиональных зеркалках обычно используется 20–60 МП. Несмотря на большее количество мегапикселей, сенсоры телефонов намного меньше, поэтому каждый пиксель улавливает меньше света. DSLR-изображения обычно имеют лучший динамический диапазон и качество изображения при слабом освещении."
+        "answer": "Разрешение современных телефонов варьируется от 12 до 200 МП, тогда как в профессиональных зеркалках обычно используется 20 - 60 МП. Несмотря на большее количество мегапикселей, сенсоры телефонов намного меньше, поэтому каждый пиксель улавливает меньше света. DSLR-изображения обычно имеют лучший динамический диапазон и качество изображения при слабом освещении."
       }
     ],
     "sections": [

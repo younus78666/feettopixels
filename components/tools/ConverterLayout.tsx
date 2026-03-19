@@ -1,10 +1,13 @@
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { EditorialMeta } from "@/components/seo/EditorialMeta";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ReferenceSources } from "@/components/seo/ReferenceSources";
 import { RelatedTools } from "./RelatedTools";
 import { FAQ } from "./FAQ";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
+import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
 
 interface BreadcrumbItem {
   label: string;
@@ -34,6 +37,8 @@ interface ConverterLayoutProps {
   faqItems: FAQItem[];
   breadcrumbs: BreadcrumbItem[];
   locale?: Locale;
+  datePublished?: string;
+  dateModified?: string;
   labels?: {
     relatedTools: string;
     faq: string;
@@ -57,6 +62,8 @@ export function ConverterLayout({
   faqItems,
   breadcrumbs,
   locale,
+  datePublished = DEFAULT_PAGE_DATE,
+  dateModified = DEFAULT_PAGE_DATE,
   labels,
 }: ConverterLayoutProps) {
   const dict = locale ? getDictionary(locale) : null;
@@ -71,6 +78,19 @@ export function ConverterLayout({
   }));
 
   const localizedSlug = prefixHref(slug, locale);
+  const tocItems =
+    locale === "en" || !locale
+      ? [
+          { id: "calculator", label: "Calculator" },
+          { id: "guide", label: "Guide" },
+          {
+            id: "related-tools",
+            label: labels?.relatedTools || dict?.tool.relatedTools || "Related Tools",
+          },
+          { id: "reference-sources", label: "Reference Sources" },
+          { id: "faq", label: labels?.faq || dict?.tool.faq || "Frequently Asked Questions" },
+        ]
+      : [];
 
   return (
     <Container className="py-8 md:py-12">
@@ -83,6 +103,8 @@ export function ConverterLayout({
           description: description,
           url: `https://feettopixels.com${localizedSlug}`,
           inLanguage: locale || "en",
+          datePublished,
+          dateModified,
           applicationCategory: "UtilityApplication",
           applicationSubCategory: "Unit Converter",
           operatingSystem: "Any (Web Browser)",
@@ -166,14 +188,47 @@ export function ConverterLayout({
         {extractiveAnswer}
       </p>
 
-      <div className="mb-12">{children}</div>
+      <EditorialMeta locale={locale} dateModified={dateModified} />
 
-      <div className="prose prose-neutral max-w-none">{content}</div>
+      {tocItems.length > 0 && (
+        <nav
+          aria-label="On this page"
+          className="mt-8 rounded-2xl border border-neutral-200 bg-neutral-50/70 p-4"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+            On this page
+          </p>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+            {tocItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className="block rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-600 transition-colors hover:border-primary-200 hover:text-primary-700"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <div id="calculator" className="mb-12 mt-8">
+        {children}
+      </div>
+
+      <div id="guide" className="prose prose-neutral max-w-none">
+        {content}
+      </div>
 
       <RelatedTools
         tools={localizedRelatedTools}
         label={labels?.relatedTools || dict?.tool.relatedTools}
       />
+
+      {(locale === "en" || !locale) && (
+        <ReferenceSources sources={getReferenceSources(slug.replace(/^\//, ""))} />
+      )}
 
       <FAQ items={faqItems} label={labels?.faq || dict?.tool.faq} />
     </Container>

@@ -258,7 +258,7 @@ export const es: Dictionary = {
       description:
         "Aprende qué significa DPI, cómo afecta la calidad de impresión e imagen, y los valores estándar de DPI.",
       extractive:
-        "DPI (puntos por pulgada) mide la resolución de impresión — cuántos puntos de tinta coloca una impresora en una pulgada lineal. El DPI estándar de impresión es 300 para fotos, 150 para documentos y 72 para carteles grandes.",
+        "DPI (puntos por pulgada) mide la resolución de impresión - cuántos puntos de tinta coloca una impresora en una pulgada lineal. El DPI estándar de impresión es 300 para fotos, 150 para documentos y 72 para carteles grandes.",
     },
     "what-is-ppi": {
       title: "¿Qué Es PPI?",

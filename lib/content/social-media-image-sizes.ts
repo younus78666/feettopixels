@@ -16,7 +16,7 @@ export const content: PageContentMap = {
       {
         question: "What resolution should I use for social media images?",
         answer:
-          "DPI does not matter for social media — only pixel dimensions matter. Social platforms compress and serve images at screen resolution regardless of the DPI metadata in the file.",
+          "DPI does not matter for social media - only pixel dimensions matter. Social platforms compress and serve images at screen resolution regardless of the DPI metadata in the file.",
       },
       {
         question: "What size is a Facebook cover photo?",
@@ -129,7 +129,7 @@ export const content: PageContentMap = {
       {
         question: "¿Qué resolución debo usar para imágenes de redes sociales?",
         answer:
-          "El DPI no importa para redes sociales — solo importan las dimensiones en píxeles. Las plataformas sociales comprimen y sirven imágenes a resolución de pantalla independientemente de los metadatos DPI del archivo.",
+          "El DPI no importa para redes sociales - solo importan las dimensiones en píxeles. Las plataformas sociales comprimen y sirven imágenes a resolución de pantalla independientemente de los metadatos DPI del archivo.",
       },
       {
         question: "¿Qué tamaño tiene una foto de portada de Facebook?",
@@ -242,7 +242,7 @@ export const content: PageContentMap = {
       {
         question: "Quelle résolution utiliser pour les images des réseaux sociaux ?",
         answer:
-          "Le DPI ne compte pas pour les réseaux sociaux — seules les dimensions en pixels comptent. Les plateformes sociales compressent et servent les images à la résolution d'écran indépendamment des métadonnées DPI du fichier.",
+          "Le DPI ne compte pas pour les réseaux sociaux - seules les dimensions en pixels comptent. Les plateformes sociales compressent et servent les images à la résolution d'écran indépendamment des métadonnées DPI du fichier.",
       },
       {
         question: "Quelle taille fait une photo de couverture Facebook ?",
@@ -355,7 +355,7 @@ export const content: PageContentMap = {
       {
         question: "Welche Auflösung soll ich für Social-Media-Bilder verwenden?",
         answer:
-          "DPI spielt für Social Media keine Rolle — nur die Pixelabmessungen zählen. Soziale Plattformen komprimieren und liefern Bilder in Bildschirmauflösung, unabhängig von den DPI-Metadaten in der Datei.",
+          "DPI spielt für Social Media keine Rolle - nur die Pixelabmessungen zählen. Soziale Plattformen komprimieren und liefern Bilder in Bildschirmauflösung, unabhängig von den DPI-Metadaten in der Datei.",
       },
       {
         question: "Welche Größe hat ein Facebook-Coverbild?",
@@ -457,7 +457,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Qual tamanho deve ter uma publicacao do Instagram?", answer: "O tamanho recomendado para uma publicacao do Instagram e 1080 x 1080 pixels (quadrado), 1080 x 1350 pixels (retrato, proporcao 4:5) ou 1080 x 566 pixels (paisagem). Publicacoes em retrato ocupam mais espaco na tela e tendem a ter melhor desempenho." },
       { question: "Qual o tamanho ideal de miniatura do YouTube?", answer: "Miniaturas do YouTube devem ter 1280 x 720 pixels com proporcao de 16:9. A largura minima e 640 pixels. Use formato JPG, PNG ou GIF com menos de 2 MB." },
-      { question: "Que resolucao devo usar para imagens de redes sociais?", answer: "DPI nao importa para redes sociais — apenas as dimensoes em pixels importam. As plataformas sociais comprimem e servem imagens na resolucao da tela independentemente dos metadados DPI no arquivo." },
+      { question: "Que resolucao devo usar para imagens de redes sociais?", answer: "DPI nao importa para redes sociais - apenas as dimensoes em pixels importam. As plataformas sociais comprimem e servem imagens na resolucao da tela independentemente dos metadados DPI no arquivo." },
       { question: "Qual o tamanho de uma foto de capa do Facebook?", answer: "Fotos de capa do Facebook devem ter 820 x 312 pixels no desktop e 640 x 360 pixels no celular. Envie em 851 x 315 pixels para melhor exibicao entre dispositivos." },
     ],
     body: {
@@ -499,7 +499,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Instagram पोस्ट का आकार कितना होना चाहिए?", answer: "Instagram फीड पोस्ट के लिए अनुशंसित आकार 1080 x 1080 पिक्सेल (वर्गाकार), 1080 x 1350 पिक्सेल (पोर्ट्रेट, 4:5 अनुपात), या 1080 x 566 पिक्सेल (लैंडस्केप) है। पोर्ट्रेट पोस्ट अधिक स्क्रीन स्पेस लेते हैं और बेहतर प्रदर्शन करते हैं।" },
       { question: "YouTube थंबनेल का आदर्श आकार क्या है?", answer: "YouTube थंबनेल 1280 x 720 पिक्सेल होने चाहिए जिसमें 16:9 आस्पेक्ट रेशियो हो। न्यूनतम चौड़ाई 640 पिक्सेल है। 2 MB से कम JPG, PNG या GIF प्रारूप उपयोग करें।" },
-      { question: "सोशल मीडिया इमेज के लिए कौन सा रिज़ॉल्यूशन उपयोग करना चाहिए?", answer: "सोशल मीडिया के लिए DPI मायने नहीं रखता — केवल पिक्सेल आयाम मायने रखते हैं। सोशल प्लेटफ़ॉर्म फ़ाइल में DPI मेटाडेटा की परवाह किए बिना छवियों को स्क्रीन रिज़ॉल्यूशन पर कंप्रेस और सर्व करते हैं।" },
+      { question: "सोशल मीडिया इमेज के लिए कौन सा रिज़ॉल्यूशन उपयोग करना चाहिए?", answer: "सोशल मीडिया के लिए DPI मायने नहीं रखता - केवल पिक्सेल आयाम मायने रखते हैं। सोशल प्लेटफ़ॉर्म फ़ाइल में DPI मेटाडेटा की परवाह किए बिना छवियों को स्क्रीन रिज़ॉल्यूशन पर कंप्रेस और सर्व करते हैं।" },
       { question: "Facebook कवर फोटो का आकार कितना है?", answer: "Facebook कवर फोटो डेस्कटॉप पर 820 x 312 पिक्सेल और मोबाइल पर 640 x 360 पिक्सेल होनी चाहिए। सर्वश्रेष्ठ क्रॉस-डिवाइस डिस्प्ले के लिए 851 x 315 पिक्सेल पर अपलोड करें।" },
     ],
     body: {
@@ -541,7 +541,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Instagramの投稿はどのサイズにすべきですか？", answer: "Instagramフィード投稿の推奨サイズは1080 x 1080ピクセル（正方形）、1080 x 1350ピクセル（縦長、4:5比率）、または1080 x 566ピクセル（横長）です。縦長の投稿はより多くの画面スペースを占め、パフォーマンスが良い傾向があります。" },
       { question: "YouTubeサムネイルの理想的なサイズは？", answer: "YouTubeサムネイルは16:9のアスペクト比で1280 x 720ピクセルであるべきです。最小幅は640ピクセルです。2 MB未満のJPG、PNG、GIF形式を使用してください。" },
-      { question: "ソーシャルメディア画像にはどの解像度を使うべきですか？", answer: "ソーシャルメディアではDPIは関係ありません — ピクセル寸法だけが重要です。ソーシャルプラットフォームはファイルのDPIメタデータに関係なく、画面解像度で画像を圧縮して提供します。" },
+      { question: "ソーシャルメディア画像にはどの解像度を使うべきですか？", answer: "ソーシャルメディアではDPIは関係ありません - ピクセル寸法だけが重要です。ソーシャルプラットフォームはファイルのDPIメタデータに関係なく、画面解像度で画像を圧縮して提供します。" },
       { question: "Facebookのカバー写真のサイズは？", answer: "Facebookのカバー写真はデスクトップで820 x 312ピクセル、モバイルで640 x 360ピクセルです。最適なクロスデバイス表示のために851 x 315ピクセルでアップロードしてください。" },
     ],
     body: {
@@ -583,7 +583,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Instagram 게시물은 어떤 크기여야 하나요?", answer: "Instagram 피드 게시물의 권장 크기는 1080 x 1080 픽셀(정사각형), 1080 x 1350 픽셀(세로, 4:5 비율), 또는 1080 x 566 픽셀(가로)입니다. 세로 게시물이 더 많은 화면 공간을 차지하며 성과가 더 좋은 경향이 있습니다." },
       { question: "YouTube 썸네일의 이상적인 크기는?", answer: "YouTube 썸네일은 16:9 화면비로 1280 x 720 픽셀이어야 합니다. 최소 너비는 640 픽셀입니다. 2 MB 미만의 JPG, PNG 또는 GIF 형식을 사용하세요." },
-      { question: "소셜 미디어 이미지에 어떤 해상도를 사용해야 하나요?", answer: "소셜 미디어에서 DPI는 중요하지 않습니다 — 픽셀 치수만 중요합니다. 소셜 플랫폼은 파일의 DPI 메타데이터에 관계없이 화면 해상도로 이미지를 압축하고 제공합니다." },
+      { question: "소셜 미디어 이미지에 어떤 해상도를 사용해야 하나요?", answer: "소셜 미디어에서 DPI는 중요하지 않습니다 - 픽셀 치수만 중요합니다. 소셜 플랫폼은 파일의 DPI 메타데이터에 관계없이 화면 해상도로 이미지를 압축하고 제공합니다." },
       { question: "Facebook 커버 사진의 크기는?", answer: "Facebook 커버 사진은 데스크톱에서 820 x 312 픽셀, 모바일에서 640 x 360 픽셀이어야 합니다. 최적의 크로스 디바이스 표시를 위해 851 x 315 픽셀로 업로드하세요." },
     ],
     body: {
@@ -625,7 +625,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Quale dimensione deve avere un post Instagram?", answer: "La dimensione raccomandata per un post Instagram e 1080 x 1080 pixel (quadrato), 1080 x 1350 pixel (verticale, rapporto 4:5), o 1080 x 566 pixel (orizzontale). I post verticali occupano piu spazio sullo schermo e tendono a performare meglio." },
       { question: "Qual e la dimensione ideale di una miniatura YouTube?", answer: "Le miniature YouTube devono essere 1280 x 720 pixel con rapporto 16:9. La larghezza minima e 640 pixel. Usa formato JPG, PNG o GIF sotto 2 MB." },
-      { question: "Quale risoluzione usare per le immagini dei social media?", answer: "Il DPI non conta per i social media — contano solo le dimensioni in pixel. Le piattaforme social comprimono e servono le immagini alla risoluzione dello schermo indipendentemente dai metadati DPI nel file." },
+      { question: "Quale risoluzione usare per le immagini dei social media?", answer: "Il DPI non conta per i social media - contano solo le dimensioni in pixel. Le piattaforme social comprimono e servono le immagini alla risoluzione dello schermo indipendentemente dai metadati DPI nel file." },
       { question: "Qual e la dimensione della foto di copertina di Facebook?", answer: "Le foto di copertina Facebook devono essere 820 x 312 pixel su desktop e 640 x 360 pixel su mobile. Carica a 851 x 315 pixel per la migliore visualizzazione tra dispositivi." },
     ],
     body: {
@@ -667,7 +667,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Welk formaat moet een Instagram-post hebben?", answer: "Het aanbevolen formaat voor een Instagram-feedpost is 1080 x 1080 pixels (vierkant), 1080 x 1350 pixels (staand, 4:5 verhouding), of 1080 x 566 pixels (liggend). Staande posts nemen meer schermruimte in en presteren over het algemeen beter." },
       { question: "Wat is het ideale YouTube-thumbnailformaat?", answer: "YouTube-thumbnails moeten 1280 x 720 pixels zijn met een 16:9 beeldverhouding. De minimale breedte is 640 pixels. Gebruik JPG-, PNG- of GIF-formaat onder 2 MB." },
-      { question: "Welke resolutie moet ik gebruiken voor social media-afbeeldingen?", answer: "DPI doet er niet toe voor social media — alleen pixelafmetingen zijn belangrijk. Sociale platformen comprimeren en leveren afbeeldingen op schermresolutie ongeacht de DPI-metadata in het bestand." },
+      { question: "Welke resolutie moet ik gebruiken voor social media-afbeeldingen?", answer: "DPI doet er niet toe voor social media - alleen pixelafmetingen zijn belangrijk. Sociale platformen comprimeren en leveren afbeeldingen op schermresolutie ongeacht de DPI-metadata in het bestand." },
       { question: "Hoe groot is een Facebook-coverfoto?", answer: "Facebook-coverfoto's moeten 820 x 312 pixels zijn op desktop en 640 x 360 pixels op mobiel. Upload op 851 x 315 pixels voor de beste weergave op alle apparaten." },
     ],
     body: {
@@ -709,7 +709,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "ما الحجم المناسب لمنشور Instagram؟", answer: "الحجم الموصى به لمنشور Instagram هو 1080 x 1080 بكسل (مربع)، 1080 x 1350 بكسل (عمودي، نسبة 4:5)، أو 1080 x 566 بكسل (أفقي). المنشورات العمودية تشغل مساحة أكبر على الشاشة وتميل لتحقيق أداء أفضل." },
       { question: "ما الحجم المثالي لصورة YouTube المصغرة؟", answer: "يجب أن تكون صور YouTube المصغرة 1280 x 720 بكسل بنسبة عرض 16:9. الحد الأدنى للعرض 640 بكسل. استخدم تنسيق JPG أو PNG أو GIF بحجم أقل من 2 ميغابايت." },
-      { question: "ما الدقة المناسبة لصور وسائل التواصل الاجتماعي؟", answer: "DPI لا يهم لوسائل التواصل الاجتماعي — فقط أبعاد البكسل مهمة. منصات التواصل الاجتماعي تضغط وتقدم الصور بدقة الشاشة بغض النظر عن بيانات DPI الوصفية في الملف." },
+      { question: "ما الدقة المناسبة لصور وسائل التواصل الاجتماعي؟", answer: "DPI لا يهم لوسائل التواصل الاجتماعي - فقط أبعاد البكسل مهمة. منصات التواصل الاجتماعي تضغط وتقدم الصور بدقة الشاشة بغض النظر عن بيانات DPI الوصفية في الملف." },
       { question: "ما حجم صورة غلاف Facebook؟", answer: "يجب أن تكون صور غلاف Facebook بحجم 820 x 312 بكسل على سطح المكتب و 640 x 360 بكسل على الهاتف. ارفع بحجم 851 x 315 بكسل لأفضل عرض عبر الأجهزة." },
     ],
     body: {
@@ -751,7 +751,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Instagram gonderisi ne boyutta olmali?", answer: "Instagram gonderi icin onerilen boyut 1080 x 1080 piksel (kare), 1080 x 1350 piksel (dikey, 4:5 orani) veya 1080 x 566 piksel (yatay) dir. Dikey gonderiler daha fazla ekran alani kaplar ve daha iyi performans gosterme egilimindedir." },
       { question: "Ideal YouTube kucuk resim boyutu nedir?", answer: "YouTube kucuk resimleri 16:9 en-boy oraninda 1280 x 720 piksel olmalidir. Minimum genislik 640 pikseldir. 2 MB alti JPG, PNG veya GIF formati kullanin." },
-      { question: "Sosyal medya gorselleri icin hangi cozunurlugu kullanmaliyim?", answer: "Sosyal medya icin DPI onemli degil — sadece piksel boyutlari onemlidir. Sosyal platformlar, dosyadaki DPI meta verilerinden bagimsiz olarak gorselleri ekran cozunurlugunde sikistirir ve sunar." },
+      { question: "Sosyal medya gorselleri icin hangi cozunurlugu kullanmaliyim?", answer: "Sosyal medya icin DPI onemli degil - sadece piksel boyutlari onemlidir. Sosyal platformlar, dosyadaki DPI meta verilerinden bagimsiz olarak gorselleri ekran cozunurlugunde sikistirir ve sunar." },
       { question: "Facebook kapak fotografi ne boyuttadir?", answer: "Facebook kapak fotograflari masaustunde 820 x 312 piksel ve mobilde 640 x 360 piksel olmalidir. En iyi cihazlar arasi gorunum icin 851 x 315 pikselde yukleyin." },
     ],
     body: {
@@ -793,7 +793,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Jaki rozmiar powinien miec post na Instagramie?", answer: "Zalecany rozmiar posta na Instagramie to 1080 x 1080 pikseli (kwadrat), 1080 x 1350 pikseli (pionowy, proporcja 4:5) lub 1080 x 566 pikseli (poziomy). Posty pionowe zajmuja wiecej miejsca na ekranie i zwykle osiagaja lepsze wyniki." },
       { question: "Jaki jest idealny rozmiar miniatury YouTube?", answer: "Miniatury YouTube powinny miec 1280 x 720 pikseli z proporcja 16:9. Minimalna szerokosc to 640 pikseli. Uzyj formatu JPG, PNG lub GIF ponizej 2 MB." },
-      { question: "Jaka rozdzielczosc stosowac do obrazow w mediach spolecznosciowych?", answer: "DPI nie ma znaczenia dla mediow spolecznosciowych — liczą sie tylko wymiary pikselowe. Platformy spolecznosciowe kompresuja i serwuja obrazy w rozdzielczosci ekranu niezaleznie od metadanych DPI w pliku." },
+      { question: "Jaka rozdzielczosc stosowac do obrazow w mediach spolecznosciowych?", answer: "DPI nie ma znaczenia dla mediow spolecznosciowych - liczą sie tylko wymiary pikselowe. Platformy spolecznosciowe kompresuja i serwuja obrazy w rozdzielczosci ekranu niezaleznie od metadanych DPI w pliku." },
       { question: "Jaki rozmiar ma zdjecie okladki na Facebooku?", answer: "Zdjecia okladki Facebook powinny miec 820 x 312 pikseli na komputerze i 640 x 360 pikseli na telefonie. Przeslij w rozmiarze 851 x 315 pikseli, aby uzyskac najlepsze wyswietlanie na roznych urzadzeniach." },
     ],
     body: {
@@ -835,7 +835,7 @@ export const content: PageContentMap = {
     faq: [
       { question: "Berapa ukuran yang tepat untuk postingan Instagram?", answer: "Ukuran yang direkomendasikan untuk postingan Instagram adalah 1080 x 1080 piksel (persegi), 1080 x 1350 piksel (potret, rasio 4:5), atau 1080 x 566 piksel (lanskap). Postingan potret menempati lebih banyak ruang layar dan cenderung berkinerja lebih baik." },
       { question: "Berapa ukuran ideal thumbnail YouTube?", answer: "Thumbnail YouTube harus 1280 x 720 piksel dengan rasio aspek 16:9. Lebar minimum adalah 640 piksel. Gunakan format JPG, PNG, atau GIF di bawah 2 MB." },
-      { question: "Resolusi apa yang harus digunakan untuk gambar media sosial?", answer: "DPI tidak penting untuk media sosial — hanya dimensi piksel yang penting. Platform sosial mengompresi dan menyajikan gambar pada resolusi layar tanpa memperhatikan metadata DPI dalam file." },
+      { question: "Resolusi apa yang harus digunakan untuk gambar media sosial?", answer: "DPI tidak penting untuk media sosial - hanya dimensi piksel yang penting. Platform sosial mengompresi dan menyajikan gambar pada resolusi layar tanpa memperhatikan metadata DPI dalam file." },
       { question: "Berapa ukuran foto sampul Facebook?", answer: "Foto sampul Facebook harus 820 x 312 piksel di desktop dan 640 x 360 piksel di ponsel. Unggah pada 851 x 315 piksel untuk tampilan lintas perangkat terbaik." },
     ],
     body: {

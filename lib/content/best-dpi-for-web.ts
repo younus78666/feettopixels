@@ -22,7 +22,7 @@ export const content: LocalizedDocMap = {
         "title": "Why DPI Is Irrelevant for Web",
         "paragraphs": [
           "Web browsers completely ignore the DPI (or PPI) metadata embedded in image files. When a browser renders an image, it uses only the pixel dimensions. A 1200 × 800 image saved at 72 DPI is rendered identically to the same image saved at 300 DPI. The files may differ slightly in metadata size, but the visual output is the same.",
-          "This is a common source of confusion: designers accustomed to print workflows assume they should set web images to 72 or 96 DPI. In reality, you can save at any DPI — it will not affect rendering, file size, or quality."
+          "This is a common source of confusion: designers accustomed to print workflows assume they should set web images to 72 or 96 DPI. In reality, you can save at any DPI - it will not affect rendering, file size, or quality."
         ]
       },
       {
@@ -31,7 +31,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Pixel dimensions: Serve images at the size they will display (or 2× for retina). A hero image displayed at 1200 CSS pixels wide should be 1200 px (standard) or 2400 px (retina).",
           "File format: Use WebP for broad compatibility with excellent compression. Use AVIF for even better compression where supported. Fall back to JPEG for photos and PNG for graphics with transparency.",
-          "Compression: A well-compressed WebP image can be 25–35% smaller than an equivalent JPEG with no visible quality loss.",
+          "Compression: A well-compressed WebP image can be 25 - 35% smaller than an equivalent JPEG with no visible quality loss.",
           "Lazy loading: Add loading=\"lazy\" to images below the fold to defer loading until they enter the viewport."
         ]
       },
@@ -49,7 +49,7 @@ export const content: LocalizedDocMap = {
         "title": "Web Image Optimization Checklist",
         "list": [
           "Resize images to their maximum display size (do not serve a 4000 px image for a 1200 px container).",
-          "Use WebP or AVIF format with quality setting of 75–85%.",
+          "Use WebP or AVIF format with quality setting of 75 - 85%.",
           "Provide 1× and 2× versions via srcset.",
           "Add width and height attributes to prevent layout shift.",
           "Use lazy loading for images below the initial viewport.",
@@ -109,7 +109,7 @@ export const content: LocalizedDocMap = {
         "title": "Lista de verificación de optimización de imágenes web",
         "list": [
           "Cambie el tamaño de las imágenes a su tamaño máximo de visualización (no muestre un Imagen de 4000 px para un contenedor de 1200 px).",
-          "Utilice el formato WebP o AVIF con una configuración de calidad del 75–85%.",
+          "Utilice el formato WebP o AVIF con una configuración de calidad del 75 - 85%.",
           "Proporcione versiones 1× y 2× a través de srcset.",
           "Agregue atributos de ancho y alto para evitar cambios de diseño.",
           "Utilice carga diferida para imágenes debajo de la inicial ventana gráfica.",
@@ -142,7 +142,7 @@ export const content: LocalizedDocMap = {
         "title": "Pourquoi le DPI n'est pas pertinent pour le Web",
         "paragraphs": [
           "Les navigateurs Web ignorent complètement les métadonnées DPI (ou PPI) intégrées dans les fichiers image. Lorsqu'un navigateur restitue une image, il utilise uniquement les dimensions en pixels. Une image 1 200 × 800 enregistrée à 72 DPI est rendue de manière identique à la même image enregistrée à 300 DPI. Les fichiers peuvent différer légèrement en termes de taille de métadonnées, mais le résultat visuel est le même.",
-          "Il s'agit d'une source de confusion courante : les concepteurs habitués aux flux de travail d'impression supposent qu'ils doivent définir les images Web sur 72 ou 96 DPI. En réalité, vous pouvez enregistrer à n'importe quel DPI — cela n'affectera pas le rendu, la taille du fichier ou la qualité."
+          "Il s'agit d'une source de confusion courante : les concepteurs habitués aux flux de travail d'impression supposent qu'ils doivent définir les images Web sur 72 ou 96 DPI. En réalité, vous pouvez enregistrer à n'importe quel DPI - cela n'affectera pas le rendu, la taille du fichier ou la qualité."
         ]
       },
       {
@@ -202,7 +202,7 @@ export const content: LocalizedDocMap = {
         "title": "Warum DPI für das Web irrelevant ist",
         "paragraphs": [
           "Webbrowser ignorieren die in Bilddateien eingebetteten DPI- (oder PPI-)Metadaten vollständig. Wenn ein Browser ein Bild rendert, verwendet er nur die Pixelabmessungen. Ein mit 72 DPI gespeichertes 1200 × 800-Bild wird genauso gerendert wie dasselbe mit 300 DPI gespeicherte Bild. Die Dateien unterscheiden sich möglicherweise geringfügig in der Metadatengröße, aber die visuelle Ausgabe ist dieselbe.",
-          "Dies ist eine häufige Ursache für Verwirrung: Designer, die an Druckworkflows gewöhnt sind, gehen davon aus, dass sie Webbilder auf 72 oder 96 DPI einstellen sollten. In Wirklichkeit können Sie bei jedem DPI-Wert speichern – es hat keinen Einfluss auf das Rendering, die Dateigröße oder die Qualität."
+          "Dies ist eine häufige Ursache für Verwirrung: Designer, die an Druckworkflows gewöhnt sind, gehen davon aus, dass sie Webbilder auf 72 oder 96 DPI einstellen sollten. In Wirklichkeit können Sie bei jedem DPI-Wert speichern - es hat keinen Einfluss auf das Rendering, die Dateigröße oder die Qualität."
         ]
       },
       {
@@ -211,7 +211,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Pixelabmessungen: Stellen Sie Bilder in der Größe bereit, in der sie angezeigt werden (oder 2× für Retina). Ein mit 1200 CSS-Pixeln angezeigtes Heldenbild sollte 1200 Pixel (Standard) oder 2400 Pixel (Retina) groß sein.",
           "Dateiformat: Verwenden Sie WebP für breite Kompatibilität mit hervorragender Komprimierung. Verwenden Sie AVIF für eine noch bessere Komprimierung, sofern dies unterstützt wird. Greifen Sie für Fotos auf JPEG und für Grafiken mit Transparenz auf PNG zurück.",
-          "Komprimierung: Ein gut komprimiertes WebP-Bild kann 25–35 % kleiner als ein entsprechendes JPEG sein, ohne sichtbaren Qualitätsverlust.",
+          "Komprimierung: Ein gut komprimiertes WebP-Bild kann 25 - 35 % kleiner als ein entsprechendes JPEG sein, ohne sichtbaren Qualitätsverlust.",
           "Verzögertes Laden: Fügen Sie „lazy“ zu Bildern unterhalb der Falte hinzu, um das Laden zu verzögern, bis sie in das Ansichtsfenster gelangen."
         ]
       },
@@ -229,7 +229,7 @@ export const content: LocalizedDocMap = {
         "title": "Checkliste für die Optimierung von Web-Bildern",
         "list": [
           "Ändern Sie die Größe von Bildern auf ihre maximale Anzeigegröße (stellen Sie kein Bild bereit). 4000-Pixel-Bild für einen 1200-Pixel-Container).",
-          "Verwenden Sie das WebP- oder AVIF-Format mit einer Qualitätseinstellung von 75–85 %.",
+          "Verwenden Sie das WebP- oder AVIF-Format mit einer Qualitätseinstellung von 75 - 85 %.",
           "Stellen Sie 1×- und 2×-Versionen über srcset bereit.",
           "Fügen Sie Breiten- und Höhenattribute hinzu, um Layoutverschiebungen zu verhindern.",
           "Verwenden Sie Lazy Loading für Bilder unterhalb des Originals viewport.",
@@ -271,7 +271,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Dimensões de pixel: exiba imagens no tamanho que serão exibidas (ou 2× para retina). Uma imagem principal exibida com 1.200 pixels CSS de largura deve ter 1.200 px (padrão) ou 2.400 px (retina).",
           "Formato de arquivo: use WebP para ampla compatibilidade com excelente compactação. Use AVIF para uma compactação ainda melhor quando houver suporte. Use JPEG para fotos e PNG para gráficos com transparência.",
-          "Compressão: uma imagem WebP bem compactada pode ser 25–35% menor que um JPEG equivalente sem perda de qualidade visível.",
+          "Compressão: uma imagem WebP bem compactada pode ser 25 - 35% menor que um JPEG equivalente sem perda de qualidade visível.",
           "Carregamento lento: adicione loading=\"lazy\" às imagens abaixo da dobra para adiar o carregamento até que elas entrem na janela de visualização."
         ]
       },
@@ -289,7 +289,7 @@ export const content: LocalizedDocMap = {
         "title": "Lista de verificação de otimização de imagens da Web",
         "list": [
           "Redimensione as imagens para seu tamanho máximo de exibição (não exiba um Imagem de 4.000 px para um contêiner de 1.200 px).",
-          "Use o formato WebP ou AVIF com configuração de qualidade de 75–85%.",
+          "Use o formato WebP ou AVIF com configuração de qualidade de 75 - 85%.",
           "Forneça versões 1× e 2× via srcset.",
           "Adicione atributos de largura e altura para evitar mudança de layout.",
           "Use carregamento lento para imagens abaixo da inicial. viewport.",
@@ -511,7 +511,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Dimensioni pixel: offri immagini alla dimensione in cui verranno visualizzate (o 2× per Retina). Un'immagine hero visualizzata con una larghezza di 1200 pixel CSS deve essere di 1200 px (standard) o 2400 px (retina).",
           "Formato file: utilizza WebP per un'ampia compatibilità con un'eccellente compressione. Utilizza AVIF per una compressione ancora migliore, ove supportato. Torna a JPEG per le foto e PNG per la grafica con trasparenza.",
-          "Compressione: un'immagine WebP ben compressa può essere più piccola del 25–35% rispetto a un JPEG equivalente senza perdita di qualità visibile.",
+          "Compressione: un'immagine WebP ben compressa può essere più piccola del 25 - 35% rispetto a un JPEG equivalente senza perdita di qualità visibile.",
           "Caricamento lento: aggiungi caricamento=\"pigro\" alle immagini Below the Fold per posticipare il caricamento finché non entrano nell'area visibile."
         ]
       },
@@ -529,7 +529,7 @@ export const content: LocalizedDocMap = {
         "title": "Elenco di controllo per l'ottimizzazione delle immagini Web",
         "list": [
           "Ridimensiona le immagini alla dimensione massima di visualizzazione (non pubblicare un Immagine da 4000 px per un contenitore da 1200 px).",
-          "Utilizza il formato WebP o AVIF con un'impostazione di qualità pari a 75–85%.",
+          "Utilizza il formato WebP o AVIF con un'impostazione di qualità pari a 75 - 85%.",
           "Fornisci versioni 1× e 2× tramite srcset.",
           "Aggiungi attributi di larghezza e altezza per impedire lo spostamento del layout.",
           "Utilizza il caricamento lento per le immagini sotto l'iniziale viewport.",
@@ -622,7 +622,7 @@ export const content: LocalizedDocMap = {
         "title": "لماذا تعتبر DPI غير ذات صلة بالويب",
         "paragraphs": [
           "تتجاهل متصفحات الويب تمامًا البيانات التعريفية DPI (أو PPI) المضمنة في ملفات الصور. عندما يعرض المتصفح صورة، فإنه يستخدم أبعاد البكسل فقط. يتم عرض صورة مقاس 1200 × 800 محفوظة بدقة 72 نقطة لكل بوصة بشكل مماثل لنفس الصورة المحفوظة بدقة 300 نقطة لكل بوصة. قد تختلف الملفات قليلاً في حجم البيانات التعريفية، لكن الإخراج المرئي هو نفسه.",
-          "هذا مصدر شائع للارتباك: يفترض المصممون المعتادون على طباعة سير العمل أنه يجب عليهم ضبط صور الويب على 72 أو 96 نقطة في البوصة. في الواقع، يمكنك الحفظ بأي نقطة لكل بوصة — ولن يؤثر ذلك على العرض أو حجم الملف أو الجودة."
+          "هذا مصدر شائع للارتباك: يفترض المصممون المعتادون على طباعة سير العمل أنه يجب عليهم ضبط صور الويب على 72 أو 96 نقطة في البوصة. في الواقع، يمكنك الحفظ بأي نقطة لكل بوصة - ولن يؤثر ذلك على العرض أو حجم الملف أو الجودة."
         ]
       },
       {
@@ -631,7 +631,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "أبعاد البكسل: قم بعرض الصور بالحجم الذي ستعرضه (أو 2 × لشبكية العين). يجب أن تكون الصورة الرئيسية المعروضة بعرض 1200 بكسل CSS 1200 بكسل (قياسي) أو 2400 بكسل (شبكية العين).",
           "تنسيق الملف: استخدم WebP للتوافق الواسع مع الضغط الممتاز. استخدم AVIF للحصول على ضغط أفضل عندما يكون مدعومًا. ارجع إلى JPEG للصور وPNG للحصول على رسومات ذات شفافية.",
-          "الضغط: يمكن أن تكون صورة WebP المضغوطة جيدًا أصغر بنسبة 25–35% من JPEG المكافئ مع عدم وجود فقدان واضح للجودة.",
+          "الضغط: يمكن أن تكون صورة WebP المضغوطة جيدًا أصغر بنسبة 25 - 35% من JPEG المكافئ مع عدم وجود فقدان واضح للجودة.",
           "التحميل البطيء: أضف التحميل = \"lazy\" إلى الصور الموجودة أسفل الجزء المرئي لتأجيل التحميل حتى تدخل منفذ العرض."
         ]
       },
@@ -649,7 +649,7 @@ export const content: LocalizedDocMap = {
         "title": "قائمة التحقق من تحسين صور الويب",
         "list": [
           "قم بتغيير حجم الصور إلى الحد الأقصى لحجم العرض (قم بذلك لا تعرض صورة بحجم 4000 بكسل لحاوية بحجم 1200 بكسل).",
-          "استخدم تنسيق WebP أو AVIF مع إعداد جودة بنسبة 75–85%.",
+          "استخدم تنسيق WebP أو AVIF مع إعداد جودة بنسبة 75 - 85%.",
           "توفير إصدارات 1× و2× عبر srcset.",
           "أضف سمات العرض والارتفاع لمنع تغيير التخطيط.",
           "استخدم التحميل البطيء للصور الموجودة أسفل الأولي. viewport.",
@@ -691,7 +691,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Piksel boyutları: Görüntüleri görüntüleyecekleri boyutta (veya retina için 2x) sunun. 1200 CSS piksel genişliğinde görüntülenen bir kahraman görseli, 1200 piksel (standart) veya 2400 piksel (retina) olmalıdır.",
           "Dosya formatı: Mükemmel sıkıştırmayla geniş uyumluluk için WebP kullanın. Desteklendiğinde daha da iyi sıkıştırma için AVIF'yi kullanın. Fotoğraflar için JPEG'e ve şeffaflığa sahip grafikler için PNG'ye geri dönün.",
-          "Sıkıştırma: İyi sıkıştırılmış bir WebP görüntüsü, görünür kalite kaybı olmaksızın eşdeğer bir JPEG'den %25–35 daha küçük olabilir.",
+          "Sıkıştırma: İyi sıkıştırılmış bir WebP görüntüsü, görünür kalite kaybı olmaksızın eşdeğer bir JPEG'den %25 - 35 daha küçük olabilir.",
           "Gecik yükleme: Görünüm alanına girene kadar yüklemeyi ertelemek için ekranın alt kısmınaloading=\"lazy\" ekleyin."
         ]
       },
@@ -709,7 +709,7 @@ export const content: LocalizedDocMap = {
         "title": "Web Görüntüsü Optimizasyon Kontrol Listesi",
         "list": [
           "Görüntüleri maksimum görüntüleme boyutlarına göre yeniden boyutlandırın (bir 1200 piksellik bir kapsayıcı için 4000 piksellik resim).",
-          "%75–85 kalite ayarıyla WebP veya AVIF biçimini kullanın.",
+          "%75 - 85 kalite ayarıyla WebP veya AVIF biçimini kullanın.",
           "Srcset aracılığıyla 1× ve 2× versiyonları sağlayın.",
           "Düzen kaymasını önlemek için genişlik ve yükseklik nitelikleri ekleyin.",
           "Başlangıç değerinin altındaki resimler için yavaş yüklemeyi kullanın. görünüm.",
@@ -742,7 +742,7 @@ export const content: LocalizedDocMap = {
         "title": "Dlaczego DPI jest nieistotne w Internecie",
         "paragraphs": [
           "Przeglądarki internetowe całkowicie ignorują metadane DPI (lub PPI) osadzone w plikach obrazów. Kiedy przeglądarka renderuje obraz, używa tylko wymiarów w pikselach. Obraz o rozdzielczości 1200 × 800 zapisany w rozdzielczości 72 DPI jest renderowany identycznie z tym samym obrazem zapisanym w rozdzielczości 300 DPI. Pliki mogą nieznacznie różnić się rozmiarem metadanych, ale efekt wizualny jest taki sam.",
-          "Jest to częste źródło nieporozumień: projektanci przyzwyczajeni do drukowania zakładają, że powinni ustawić rozdzielczość obrazów internetowych na 72 lub 96 DPI. W rzeczywistości możesz zapisywać w dowolnej rozdzielczości DPI — nie ma to wpływu na renderowanie, rozmiar pliku ani jakość."
+          "Jest to częste źródło nieporozumień: projektanci przyzwyczajeni do drukowania zakładają, że powinni ustawić rozdzielczość obrazów internetowych na 72 lub 96 DPI. W rzeczywistości możesz zapisywać w dowolnej rozdzielczości DPI - nie ma to wpływu na renderowanie, rozmiar pliku ani jakość."
         ]
       },
       {
@@ -751,7 +751,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Wymiary w pikselach: udostępniaj obrazy w rozmiarze, w jakim będą wyświetlane (lub 2× w przypadku siatkówki). Obraz główny wyświetlany przy szerokości 1200 pikseli CSS powinien mieć rozmiar 1200 pikseli (standard) lub 2400 pikseli (siatkówka).",
           "Format pliku: Użyj WebP, aby uzyskać szeroką kompatybilność i doskonałą kompresję. Użyj formatu AVIF, aby uzyskać jeszcze lepszą kompresję, jeśli jest obsługiwana. W przypadku zdjęć i PNG wróć do formatu JPEG, aby uzyskać przezroczystą grafikę.",
-          "Kompresja: dobrze skompresowany obraz WebP może być o 25–35% mniejszy niż odpowiednik JPEG bez widocznej utraty jakości.",
+          "Kompresja: dobrze skompresowany obraz WebP może być o 25 - 35% mniejszy niż odpowiednik JPEG bez widocznej utraty jakości.",
           "Leniwe ładowanie: dodaj loading=\"lazy\" do obrazów w dolnej części ekranu, aby opóźnić ładowanie do czasu ich wejścia do rzutni."
         ]
       },
@@ -769,7 +769,7 @@ export const content: LocalizedDocMap = {
         "title": "Lista kontrolna optymalizacji obrazu internetowego",
         "list": [
           "Zmień rozmiar obrazów do maksymalnego rozmiaru wyświetlanego (nie rób tego) udostępnij obraz o rozdzielczości 4000 pikseli dla kontenera o rozdzielczości 1200 pikseli).",
-          "Użyj formatu WebP lub AVIF z ustawieniem jakości 75–85%.",
+          "Użyj formatu WebP lub AVIF z ustawieniem jakości 75 - 85%.",
           "Udostępnij wersje 1× i 2× za pomocą srcset.",
           "Dodaj atrybuty szerokości i wysokości, aby zapobiec zmianie układu.",
           "Użyj leniwego ładowania dla obrazów poniżej początkowego rzutnia.",
@@ -802,7 +802,7 @@ export const content: LocalizedDocMap = {
         "title": "Mengapa DPI Tidak Relevan untuk Web",
         "paragraphs": [
           "Browser web sepenuhnya mengabaikan metadata DPI (atau PPI) yang tertanam dalam file gambar. Saat browser merender gambar, browser hanya menggunakan dimensi piksel. Gambar 1200 × 800 yang disimpan pada 72 DPI dirender secara identik dengan gambar yang sama yang disimpan pada 300 DPI. Ukuran metadata file mungkin sedikit berbeda, namun keluaran visualnya sama.",
-          "Ini adalah sumber kebingungan yang umum: desainer yang terbiasa mencetak alur kerja berasumsi bahwa mereka harus menyetel gambar web ke 72 atau 96 DPI. Pada kenyataannya, Anda dapat menyimpan pada DPI berapa pun — ini tidak akan memengaruhi rendering, ukuran file, atau kualitas."
+          "Ini adalah sumber kebingungan yang umum: desainer yang terbiasa mencetak alur kerja berasumsi bahwa mereka harus menyetel gambar web ke 72 atau 96 DPI. Pada kenyataannya, Anda dapat menyimpan pada DPI berapa pun - ini tidak akan memengaruhi rendering, ukuran file, atau kualitas."
         ]
       },
       {
@@ -811,7 +811,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Dimensi piksel: Menyajikan gambar dengan ukuran yang akan ditampilkan (atau 2× untuk retina). Gambar pahlawan yang ditampilkan dengan lebar 1200 piksel CSS harus berukuran 1200 px (standar) atau 2400 px (retina).",
           "Format file: Gunakan WebP untuk kompatibilitas luas dengan kompresi yang sangat baik. Gunakan AVIF untuk kompresi yang lebih baik jika didukung. Kembali ke JPEG untuk foto dan PNG untuk grafik dengan transparansi.",
-          "Kompresi: Gambar WebP yang dikompresi dengan baik bisa 25–35% lebih kecil dari JPEG setara tanpa kehilangan kualitas yang terlihat.",
+          "Kompresi: Gambar WebP yang dikompresi dengan baik bisa 25 - 35% lebih kecil dari JPEG setara tanpa kehilangan kualitas yang terlihat.",
           "Pemuatan lambat: Tambahkan loading=\"lazy\" ke gambar paro bawah untuk menunda pemuatan hingga memasuki area pandang."
         ]
       },
@@ -829,7 +829,7 @@ export const content: LocalizedDocMap = {
         "title": "Daftar Periksa Pengoptimalan Gambar Web",
         "list": [
           "Ubah ukuran gambar ke ukuran tampilan maksimum (jangan sajikan a Gambar 4000 px untuk container 1200 px).",
-          "Gunakan format WebP atau AVIF dengan pengaturan kualitas 75–85%.",
+          "Gunakan format WebP atau AVIF dengan pengaturan kualitas 75 - 85%.",
           "Sediakan versi 1× dan 2× melalui srcset.",
           "Tambahkan atribut lebar dan tinggi untuk mencegah pergeseran tata letak.",
           "Gunakan pemuatan lambat untuk gambar di bawah viewport awal.",
@@ -862,7 +862,7 @@ export const content: LocalizedDocMap = {
         "title": "Почему DPI не имеет значения для Интернета",
         "paragraphs": [
           "Веб-браузеры полностью игнорируют метаданные DPI (или PPI), встроенные в файлы изображений. Когда браузер отображает изображение, он использует только размеры в пикселях. Изображение размером 1200 × 800, сохраненное с разрешением 72 DPI, визуализируется идентично тому же изображению, сохраненному с разрешением 300 DPI. Файлы могут немного отличаться по размеру метаданных, но визуальный результат один и тот же.",
-          "Это распространенный источник путаницы: дизайнеры, привыкшие к рабочим процессам печати, полагают, что им следует устанавливать веб-изображения с разрешением 72 или 96 точек на дюйм. На самом деле вы можете сохранить любое значение DPI — это не повлияет на рендеринг, размер файла или качество."
+          "Это распространенный источник путаницы: дизайнеры, привыкшие к рабочим процессам печати, полагают, что им следует устанавливать веб-изображения с разрешением 72 или 96 точек на дюйм. На самом деле вы можете сохранить любое значение DPI - это не повлияет на рендеринг, размер файла или качество."
         ]
       },
       {
@@ -871,7 +871,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Размеры в пикселях: подавайте изображения в том размере, в котором они будут отображаться (или в 2 раза для сетчатки). Главное изображение, отображаемое шириной 1200 пикселей CSS, должно иметь размер 1200 пикселей (стандартное) или 2400 пикселей (Retina).",
           "Формат файла: используйте WebP для широкой совместимости с отличным сжатием. Используйте AVIF для еще лучшего сжатия, если это поддерживается. Вернитесь к JPEG для фотографий и PNG для графики с прозрачностью.",
-          "Сжатие: хорошо сжатое изображение WebP может быть на 25–35 % меньше, чем эквивалентное изображение JPEG без видимой потери качества.",
+          "Сжатие: хорошо сжатое изображение WebP может быть на 25 - 35 % меньше, чем эквивалентное изображение JPEG без видимой потери качества.",
           "Отложенная загрузка: добавьте loading=\"lazy\" к изображениям ниже сгиба, чтобы отложить загрузку до тех пор, пока они не войдут в область просмотра."
         ]
       },
@@ -889,7 +889,7 @@ export const content: LocalizedDocMap = {
         "title": "Контрольный список оптимизации веб-изображений",
         "list": [
           "Измените размер изображений до максимального размера дисплея (не показывайте Изображение размером 4000 пикселей для контейнера размером 1200 пикселей).",
-          "Используйте формат WebP или AVIF с настройкой качества 75–85%.",
+          "Используйте формат WebP или AVIF с настройкой качества 75 - 85%.",
           "Предоставьте версии 1× и 2× через srcset.",
           "Добавьте атрибуты ширины и высоты, чтобы предотвратить сдвиг макета.",
           "Используйте отложенную загрузку для изображений ниже начального viewport.",

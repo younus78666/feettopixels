@@ -82,7 +82,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Pixel Size at Different DPIs",
         "paragraphs": [
-          "A pixel has no inherent physical size — its real-world dimensions depend on the display or print density. Here is the physical size of one pixel at common DPI/PPI values:"
+          "A pixel has no inherent physical size - its real-world dimensions depend on the display or print density. Here is the physical size of one pixel at common DPI/PPI values:"
         ],
         "list": [
           "72 PPI: 0.353 mm (0.0139\")",
@@ -96,7 +96,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "History of Pixels",
         "paragraphs": [
-          "The concept of a pixel dates back to the 1960s, with the term first used in the context of early digital image processing. Frederic Billingsley of JPL is often credited with popularizing the word “pixel” in 1965. Early digital displays had very low pixel counts — the Apple II (1977) displayed 280 × 192 pixels, while modern 8K displays render over 33 million pixels.",
+          "The concept of a pixel dates back to the 1960s, with the term first used in the context of early digital image processing. Frederic Billingsley of JPL is often credited with popularizing the word “pixel” in 1965. Early digital displays had very low pixel counts - the Apple II (1977) displayed 280 × 192 pixels, while modern 8K displays render over 33 million pixels.",
           "Today, pixel technology continues to evolve with micro-LED displays, foldable screens, and displays exceeding 1000 PPI for VR headsets. The pixel remains the fundamental building block of every digital visual experience. Explore how pixels map to physical units with our Pixel Converter."
         ]
       }
@@ -385,7 +385,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Pixelgröße bei verschiedenen DPIs",
         "paragraphs": [
-          "Ein Pixel hat keine inhärente physikalische Größe – seine realen Abmessungen hängen von der Anzeige- oder Druckdichte ab. Hier ist die physikalische Größe eines Pixels bei üblichen DPI/PPI-Werten:"
+          "Ein Pixel hat keine inhärente physikalische Größe - seine realen Abmessungen hängen von der Anzeige- oder Druckdichte ab. Hier ist die physikalische Größe eines Pixels bei üblichen DPI/PPI-Werten:"
         ],
         "list": [
           "72 PPI: 0,353 mm (0,0139\")",
@@ -399,7 +399,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Geschichte der Pixel",
         "paragraphs": [
-          "Das Konzept eines Pixels reicht bis in die 1960er Jahre zurück, wobei der Begriff erstmals im Zusammenhang mit der frühen digitalen Bildverarbeitung verwendet wurde. Frederic Billingsley vom JPL wird oft zugeschrieben, dass er das Wort „Pixel“ im Jahr 1965 populär gemacht hat. Frühe digitale Displays hatten eine sehr geringe Pixelzahl – der Apple II (1977) zeigte 280 × 192 Pixel an, während moderne 8K-Displays über 33 Millionen Pixel rendern.",
+          "Das Konzept eines Pixels reicht bis in die 1960er Jahre zurück, wobei der Begriff erstmals im Zusammenhang mit der frühen digitalen Bildverarbeitung verwendet wurde. Frederic Billingsley vom JPL wird oft zugeschrieben, dass er das Wort „Pixel“ im Jahr 1965 populär gemacht hat. Frühe digitale Displays hatten eine sehr geringe Pixelzahl - der Apple II (1977) zeigte 280 × 192 Pixel an, während moderne 8K-Displays über 33 Millionen Pixel rendern.",
           "Heute entwickelt sich die Pixeltechnologie mit Mikro-LED-Displays, faltbaren Bildschirmen und Displays mit mehr als 1000 PPI für VR weiter Headsets. Der Pixel bleibt der grundlegende Baustein jedes digitalen visuellen Erlebnisses. Entdecken Sie mit unserem Pixelkonverter, wie Pixel physikalischen Einheiten zugeordnet werden."
         ]
       }
@@ -486,7 +486,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Tamanho de pixel em diferentes DPIs",
         "paragraphs": [
-          "Um pixel não tem tamanho físico inerente — suas dimensões reais dependem da exibição ou da densidade de impressão. Aqui está o tamanho físico de um pixel em valores comuns de DPI/PPI:"
+          "Um pixel não tem tamanho físico inerente - suas dimensões reais dependem da exibição ou da densidade de impressão. Aqui está o tamanho físico de um pixel em valores comuns de DPI/PPI:"
         ],
         "list": [
           "72 PPI: 0,353 mm (0,0139\")",
@@ -500,7 +500,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "História dos Pixels",
         "paragraphs": [
-          "O conceito de pixel remonta à década de 1960, com o termo usado pela primeira vez no contexto do processamento inicial de imagens digitais. Frederic Billingsley, do JPL, é frequentemente creditado por popularizar a palavra “pixel” em 1965. Os primeiros monitores digitais tinham contagens de pixels muito baixas – o Apple II (1977) exibia 280 × 192 pixels, enquanto os monitores modernos de 8K renderizavam mais de 33 milhões de pixels.",
+          "O conceito de pixel remonta à década de 1960, com o termo usado pela primeira vez no contexto do processamento inicial de imagens digitais. Frederic Billingsley, do JPL, é frequentemente creditado por popularizar a palavra “pixel” em 1965. Os primeiros monitores digitais tinham contagens de pixels muito baixas - o Apple II (1977) exibia 280 × 192 pixels, enquanto os monitores modernos de 8K renderizavam mais de 33 milhões de pixels.",
           "Hoje, a tecnologia de pixel continua a evoluir com telas micro-LED, telas dobráveis ​​e telas que excedem 1.000 PPI para fones de ouvido VR. O pixel continua sendo o alicerce fundamental de toda experiência visual digital. Explore como os pixels são mapeados para unidades físicas com nosso Pixel Converter."
         ]
       }
@@ -1294,7 +1294,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Rozmiar piksela przy różnych DPI",
         "paragraphs": [
-          "Piksel nie ma nieodłącznego rozmiaru fizycznego — jego rzeczywiste wymiary zależą od wyświetlacza lub gęstości druku. Oto fizyczny rozmiar jednego piksela przy typowych wartościach DPI/PPI:"
+          "Piksel nie ma nieodłącznego rozmiaru fizycznego - jego rzeczywiste wymiary zależą od wyświetlacza lub gęstości druku. Oto fizyczny rozmiar jednego piksela przy typowych wartościach DPI/PPI:"
         ],
         "list": [
           "72 PPI: 0,353 mm (0,0139 cala)",
@@ -1308,7 +1308,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Historia pikseli",
         "paragraphs": [
-          "Pojęcie piksela sięga lat 60. XX wieku, a termin ten został po raz pierwszy użyty w kontekście wczesnego cyfrowego przetwarzania obrazu. Fredericowi Billingsleyowi z JPL często przypisuje się spopularyzowanie słowa „piksel” w 1965 r. Wczesne wyświetlacze cyfrowe miały bardzo małą liczbę pikseli — Apple II (1977) wyświetlał obraz w rozdzielczości 280 × 192 piksele, podczas gdy nowoczesne wyświetlacze 8K renderują ponad 33 miliony pikseli.",
+          "Pojęcie piksela sięga lat 60. XX wieku, a termin ten został po raz pierwszy użyty w kontekście wczesnego cyfrowego przetwarzania obrazu. Fredericowi Billingsleyowi z JPL często przypisuje się spopularyzowanie słowa „piksel” w 1965 r. Wczesne wyświetlacze cyfrowe miały bardzo małą liczbę pikseli - Apple II (1977) wyświetlał obraz w rozdzielczości 280 × 192 piksele, podczas gdy nowoczesne wyświetlacze 8K renderują ponad 33 miliony pikseli.",
           "Obecnie technologia pikseli stale ewoluuje dzięki wyświetlaczom mikro-LED, składanym ekranom i wyświetlaczom o rozdzielczości przekraczającej 1000 PPI dla gogli VR. Piksel pozostaje podstawowym elementem każdego cyfrowego doświadczenia wizualnego. Odkryj, w jaki sposób piksele są odwzorowywane na jednostki fizyczne, dzięki naszemu konwerterowi pikseli."
         ]
       }
@@ -1395,7 +1395,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Ukuran Piksel pada DPI Berbeda",
         "paragraphs": [
-          "Sebuah piksel tidak memiliki ukuran fisik yang melekat — dimensi aslinya bergantung pada tampilan atau kepadatan pencetakan satu piksel pada nilai DPI/PPI umum:"
+          "Sebuah piksel tidak memiliki ukuran fisik yang melekat - dimensi aslinya bergantung pada tampilan atau kepadatan pencetakan satu piksel pada nilai DPI/PPI umum:"
         ],
         "list": [
           "72 PPI: 0,353 mm (0,0139\")",
@@ -1409,7 +1409,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Sejarah Piksel",
         "paragraphs": [
-          "Konsep piksel sudah ada sejak tahun 1960-an, dengan istilah ini pertama kali digunakan dalam konteks pemrosesan gambar digital awal. Frederic Billingsley dari JPL sering dianggap mempopulerkan kata “piksel” pada tahun 1965. Layar digital awal memiliki jumlah piksel yang sangat rendah — Apple II (1977) menampilkan 280 × 192 piksel, sedangkan layar 8K modern menampilkan lebih dari 33 juta piksel.",
+          "Konsep piksel sudah ada sejak tahun 1960-an, dengan istilah ini pertama kali digunakan dalam konteks pemrosesan gambar digital awal. Frederic Billingsley dari JPL sering dianggap mempopulerkan kata “piksel” pada tahun 1965. Layar digital awal memiliki jumlah piksel yang sangat rendah - Apple II (1977) menampilkan 280 × 192 piksel, sedangkan layar 8K modern menampilkan lebih dari 33 juta piksel.",
           "Saat ini, teknologi piksel terus berkembang dengan layar mikro-LED, layar yang dapat dilipat, dan layar yang melebihi 1000 PPI untuk headset VR. Piksel tetap menjadi elemen dasar dari setiap pengalaman visual digital. Jelajahi bagaimana piksel dipetakan ke unit fisik dengan Pixel Converter kami."
         ]
       }
@@ -1431,7 +1431,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Являются ли пиксели CSS такими же, как пиксели устройства?",
-        "answer": "Нет. CSS-пиксели — это абстрактная единица, используемая в веб-дизайне. На дисплее Retina с увеличением 2x один пиксель CSS равен четырем пикселям устройства (2x2). Именно из-за этого различия изображения должны иметь 2- или 3-кратное разрешение для четкого рендеринга на экранах HiDPI."
+        "answer": "Нет. CSS-пиксели - это абстрактная единица, используемая в веб-дизайне. На дисплее Retina с увеличением 2x один пиксель CSS равен четырем пикселям устройства (2x2). Именно из-за этого различия изображения должны иметь 2- или 3-кратное разрешение для четкого рендеринга на экранах HiDPI."
       }
     ],
     "sections": [
@@ -1439,7 +1439,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Определение пикселя",
         "paragraphs": [
-          "Пиксель (сокращение от «элемент изображения») — это наименьшая адресуемая единица растрового изображения или цифрового дисплея. Каждая фотография, которую вы просматриваете, каждый значок на экране и каждый кадр видео состоят из тысяч или миллионов отдельных пикселей, расположенных в прямоугольной сетке.",
+          "Пиксель (сокращение от «элемент изображения») - это наименьшая адресуемая единица растрового изображения или цифрового дисплея. Каждая фотография, которую вы просматриваете, каждый значок на экране и каждый кадр видео состоят из тысяч или миллионов отдельных пикселей, расположенных в прямоугольной сетке.",
           "Каждый пиксель хранит информацию о цвете, обычно в виде комбинации значений красного, зеленого и синего (RGB). В 8-битном изображении каждый канал находится в диапазоне от 0 до 255, что дает каждому пикселю возможность представлять один из более чем 16,7 миллионов цветов."
         ]
       },
@@ -1496,7 +1496,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Размер пикселя при различных значениях разрешения",
         "paragraphs": [
-          "Пиксель не имеет собственного физического размера — его реальные размеры зависят от дисплея или плотности печати. Вот физический размер одного пикселя при обычных значениях DPI/PPI:"
+          "Пиксель не имеет собственного физического размера - его реальные размеры зависят от дисплея или плотности печати. Вот физический размер одного пикселя при обычных значениях DPI/PPI:"
         ],
         "list": [
           "72 PPI: 0,353 мм (0,0139\")",
@@ -1510,7 +1510,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "История пикселей",
         "paragraphs": [
-          "Понятие пикселя восходит к 1960-м годам, и этот термин впервые использовался в контексте ранней цифровой обработки изображений. Фредерику Биллингсли из JPL часто приписывают популяризацию слова «пиксель» в 1965 году. Ранние цифровые дисплеи имели очень низкое количество пикселей — Apple II (1977) отображал 280 × 192 пикселей, тогда как современные дисплеи 8K отображают более 33 миллионов пикселей.",
+          "Понятие пикселя восходит к 1960-м годам, и этот термин впервые использовался в контексте ранней цифровой обработки изображений. Фредерику Биллингсли из JPL часто приписывают популяризацию слова «пиксель» в 1965 году. Ранние цифровые дисплеи имели очень низкое количество пикселей - Apple II (1977) отображал 280 × 192 пикселей, тогда как современные дисплеи 8K отображают более 33 миллионов пикселей.",
           "Сегодня пиксельная технология продолжает развиваться с появлением микро-LED-дисплеев, складных экранов и дисплеев с разрешением более 1000 пикселей на дюйм. для VR-гарнитур. Пиксель остается фундаментальным строительным блоком любого цифрового визуального опыта. Узнайте, как пиксели сопоставляются с физическими единицами с помощью нашего конвертера пикселей."
         ]
       }

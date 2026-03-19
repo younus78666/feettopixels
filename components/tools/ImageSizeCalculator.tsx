@@ -140,19 +140,19 @@ export function ImageSizeCalculator() {
             </button>
           </div>
           <p className="mono-display mt-1 text-lg font-bold text-primary-800">
-            {widthInches > 0 ? `${formatNumber(widthInches, 2)}" x ${formatNumber(heightInches, 2)}"` : "—"}
+            {widthInches > 0 ? `${formatNumber(widthInches, 2)}" x ${formatNumber(heightInches, 2)}"` : " - "}
           </p>
         </div>
         <div className="rounded-lg bg-neutral-50 px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Size (CM)</p>
           <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-            {widthCm > 0 ? `${formatNumber(widthCm, 2)} x ${formatNumber(heightCm, 2)}` : "—"}
+            {widthCm > 0 ? `${formatNumber(widthCm, 2)} x ${formatNumber(heightCm, 2)}` : " - "}
           </p>
         </div>
         <div className="rounded-lg bg-neutral-50 px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Size (MM)</p>
           <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-            {widthMm > 0 ? `${formatNumber(widthMm, 1)} x ${formatNumber(heightMm, 1)}` : "—"}
+            {widthMm > 0 ? `${formatNumber(widthMm, 1)} x ${formatNumber(heightMm, 1)}` : " - "}
           </p>
         </div>
       </div>
@@ -166,19 +166,19 @@ export function ImageSizeCalculator() {
           <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3">
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Uncompressed (BMP)</p>
             <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-              {rawMB > 0 ? formatFileSize(rawMB) : "—"}
+              {rawMB > 0 ? formatFileSize(rawMB) : " - "}
             </p>
           </div>
           <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3">
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">JPEG (est. ~10:1)</p>
             <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-              {jpegMB > 0 ? formatFileSize(jpegMB) : "—"}
+              {jpegMB > 0 ? formatFileSize(jpegMB) : " - "}
             </p>
           </div>
           <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3">
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">PNG (est. ~2:1)</p>
             <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-              {pngMB > 0 ? formatFileSize(pngMB) : "—"}
+              {pngMB > 0 ? formatFileSize(pngMB) : " - "}
             </p>
           </div>
         </div>

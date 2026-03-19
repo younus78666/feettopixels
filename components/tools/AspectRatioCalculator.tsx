@@ -134,7 +134,7 @@ export function AspectRatioCalculator() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            Width (px) {solveFor === "width" && "— calculated"}
+            Width (px) {solveFor === "width" && " - calculated"}
           </label>
           <input
             type="number"
@@ -152,7 +152,7 @@ export function AspectRatioCalculator() {
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            Height (px) {solveFor === "height" && "— calculated"}
+            Height (px) {solveFor === "height" && " - calculated"}
           </label>
           <input
             type="number"
@@ -170,7 +170,7 @@ export function AspectRatioCalculator() {
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            Ratio X {solveFor === "ratio" && "— calculated"}
+            Ratio X {solveFor === "ratio" && " - calculated"}
           </label>
           <input
             type="number"
@@ -188,7 +188,7 @@ export function AspectRatioCalculator() {
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            Ratio Y {solveFor === "ratio" && "— calculated"}
+            Ratio Y {solveFor === "ratio" && " - calculated"}
           </label>
           <input
             type="number"
@@ -211,7 +211,7 @@ export function AspectRatioCalculator() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-primary-600">Result</p>
           <p className="mono-display mt-1 text-lg font-bold text-primary-800">
-            {formatNumber(resultWidth, 0)} x {formatNumber(resultHeight, 0)} px — {resultRatioX}:{resultRatioY}
+            {formatNumber(resultWidth, 0)} x {formatNumber(resultHeight, 0)} px - {resultRatioX}:{resultRatioY}
           </p>
         </div>
         <button

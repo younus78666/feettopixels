@@ -77,7 +77,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Code Examples",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -86,8 +86,8 @@ export const content: LocalizedDocMap = {
           "Use rem for font sizes to maintain a consistent typographic scale across your entire site.",
           "Use rem for layout spacing (margins, grid gaps) for predictable, global consistency.",
           "Use em for component padding when you want spacing to scale proportionally with the component’s own font size.",
-          "Avoid deep em nesting — compounding makes values hard to predict and debug.",
-          "Set a clear root font size — either keep the browser default (16px) or use the 62.5% trick for easier math."
+          "Avoid deep em nesting - compounding makes values hard to predict and debug.",
+          "Set a clear root font size - either keep the browser default (16px) or use the 62.5% trick for easier math."
         ],
         "paragraphs": [
           "Convert between pixels and rem or em units instantly with our PX to REM and PX to EM converters."
@@ -171,7 +171,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Ejemplos de código",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -265,7 +265,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Exemples de code",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -359,7 +359,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Codebeispiele",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -368,8 +368,8 @@ export const content: LocalizedDocMap = {
           "Verwenden Sie rem für Schriftgrößen, um auf Ihrer gesamten Website eine einheitliche typografische Skalierung beizubehalten.",
           "Verwenden Sie rem für Layoutabstände (Ränder, Rasterlücken), um eine vorhersehbare, globale Konsistenz zu gewährleisten.",
           "Verwenden Sie em zum Auffüllen von Komponenten, wenn der Abstand proportional zur Schriftgröße der Komponente skaliert werden soll.",
-          "Vermeiden Sie eine tiefe Em-Verschachtelung – die Kombination macht es schwierig, Werte vorherzusagen und zu debuggen.",
-          "Legen Sie eine eindeutige Grundschriftgröße fest – behalten Sie entweder die Browser-Standardgröße (16 Pixel) bei oder verwenden Sie zur einfacheren Berechnung den 62,5-Prozent-Trick."
+          "Vermeiden Sie eine tiefe Em-Verschachtelung - die Kombination macht es schwierig, Werte vorherzusagen und zu debuggen.",
+          "Legen Sie eine eindeutige Grundschriftgröße fest - behalten Sie entweder die Browser-Standardgröße (16 Pixel) bei oder verwenden Sie zur einfacheren Berechnung den 62,5-Prozent-Trick."
         ],
         "paragraphs": [
           "Konvertieren Sie sofort zwischen Pixeln und rem- oder em-Einheiten mit unseren PX-zu-REM- und PX-zu-EM-Konvertern."
@@ -453,7 +453,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Exemplos de código",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -547,7 +547,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "कोड उदाहरण",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -641,7 +641,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "コード例",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -735,7 +735,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "코드 예제",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -829,7 +829,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Esempi di codice",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -923,7 +923,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Codevoorbeelden",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -933,7 +933,7 @@ export const content: LocalizedDocMap = {
           "Gebruik rem voor lay-outafstand (marges, rasteropeningen) voor voorspelbare, globale consistentie.",
           "Gebruik em voor componentopvulling als je wilt dat de afstand proportioneel wordt geschaald met de eigen lettergrootte van de component.",
           "Vermijd diepe em-nesting: samengestelde waarden maken het moeilijk om waarden te voorspellen en fouten op te sporen.",
-          "Stel een duidelijke hoofdlettergrootte in – behoud de standaardinstelling van de browser (16px) of gebruik de 62,5%-truc voor eenvoudiger wiskunde."
+          "Stel een duidelijke hoofdlettergrootte in - behoud de standaardinstelling van de browser (16px) of gebruik de 62,5%-truc voor eenvoudiger wiskunde."
         ],
         "paragraphs": [
           "Converteer direct tussen pixels en rem- of em-eenheden met onze PX naar REM- en PX naar EM-converters."
@@ -1017,7 +1017,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "أمثلة التعليمات البرمجية",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -1111,7 +1111,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Kod Örnekleri",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -1120,7 +1120,7 @@ export const content: LocalizedDocMap = {
           "Tüm yazı tipiniz boyunca tutarlı bir tipografik ölçek sağlamak için yazı tipi boyutları için rem kullanın sitesi.",
           "Tahmin edilebilir, küresel tutarlılık için düzen aralığı (kenar boşlukları, ızgara boşlukları) için rem kullanın.",
           "Boşluğun bileşenin kendi yazı tipi boyutuyla orantılı olarak ölçeklenmesini istediğinizde bileşen dolgusu için bunları kullanın.",
-          "Derin yerleştirmeden kaçının — bileşik oluşturma, değerlerin tahmin edilmesini ve hata ayıklamasını zorlaştırır.",
+          "Derin yerleştirmeden kaçının - bileşik oluşturma, değerlerin tahmin edilmesini ve hata ayıklamasını zorlaştırır.",
           "Net bir kök yazı tipi boyutu ayarlayın - ya tarayıcı varsayılanını koruyun (16 piksel) veya daha kolay matematik için %62,5 numarasını kullanın."
         ],
         "paragraphs": [
@@ -1205,7 +1205,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Przykłady kodu",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -1214,8 +1214,8 @@ export const content: LocalizedDocMap = {
           "Użyj rem do określenia rozmiarów czcionek, aby zachować spójną skalę typograficzną w całym tekście site.",
           "Użyj rem do odstępów w układzie (marginesy, odstępy w siatce), aby uzyskać przewidywalną, globalną spójność.",
           "Użyj em do dopełnienia komponentu, jeśli chcesz, aby odstępy były skalowane proporcjonalnie do rozmiaru czcionki komponentu.",
-          "Unikaj głębokiego zagnieżdżania — składanie utrudnia przewidywanie i debugowanie wartości.",
-          "Ustaw wyraźny rozmiar czcionki głównej — albo pozostaw domyślną przeglądarkę (16px) lub użyj sztuczki 62,5%, aby ułatwić matematykę."
+          "Unikaj głębokiego zagnieżdżania - składanie utrudnia przewidywanie i debugowanie wartości.",
+          "Ustaw wyraźny rozmiar czcionki głównej - albo pozostaw domyślną przeglądarkę (16px) lub użyj sztuczki 62,5%, aby ułatwić matematykę."
         ],
         "paragraphs": [
           "Błyskawicznie konwertuj pomiędzy pikselami i jednostkami rem lub em za pomocą naszych konwerterów PX na REM i PX na EM."
@@ -1299,7 +1299,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Contoh Kode",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -1308,8 +1308,8 @@ export const content: LocalizedDocMap = {
           "Gunakan rem untuk ukuran font guna mempertahankan skala tipografi yang konsisten di seluruh ukuran font Anda situs.",
           "Gunakan rem untuk penspasian tata letak (margin, celah grid) untuk konsistensi global yang dapat diprediksi.",
           "Gunakan em untuk padding komponen bila Anda ingin penskalaan disesuaikan secara proporsional dengan ukuran font komponen itu sendiri.",
-          "Hindari penumpukan em yang dalam — penggabungan membuat nilai sulit diprediksi dan di-debug.",
-          "Tetapkan ukuran font root yang jelas — pertahankan default browser (16 piksel) atau gunakan trik 62,5% untuk matematika yang lebih mudah."
+          "Hindari penumpukan em yang dalam - penggabungan membuat nilai sulit diprediksi dan di-debug.",
+          "Tetapkan ukuran font root yang jelas - pertahankan default browser (16 piksel) atau gunakan trik 62,5% untuk matematika yang lebih mudah."
         ],
         "paragraphs": [
           "Konversi antara piksel dan unit rem atau em secara instan dengan pengonversi PX ke REM dan PX ke EM kami."
@@ -1393,7 +1393,7 @@ export const content: LocalizedDocMap = {
       {
         "id": "code-examples",
         "title": "Примеры кода",
-        "code": "/* REM for font sizes — predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing — proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
+        "code": "/* REM for font sizes - predictable */\nh1  font-size: 2rem;     /* 32px */\nh2  font-size: 1.5rem;   /* 24px */\np   font-size: 1rem;     /* 16px */\n\n/* EM for component spacing - proportional */\n.button \n  font-size: 1rem;\n  padding: 0.5em 1em;  /* scales with button text size */\n\n\n.button--large \n  font-size: 1.25rem;\n  /* padding automatically scales to 10px 20px */\n\n\n/* Common 62.5% trick for easier rem math */\nhtml  font-size: 62.5%;   /* 1rem = 10px */\nbody  font-size: 1.6rem;  /* restore 16px base */"
       },
       {
         "id": "best-practices",
@@ -1402,8 +1402,8 @@ export const content: LocalizedDocMap = {
           "Используйте rem для размеров шрифта, чтобы поддерживать единообразный типографский масштаб по всему вашему изображению. site.",
           "Используйте rem для интервалов макета (полей, пробелов в сетке) для предсказуемой глобальной согласованности.",
           "Используйте em для заполнения компонентов, если вы хотите, чтобы интервал масштабировался пропорционально собственному размеру шрифта компонента.",
-          "Избегайте глубокого вложения em — составные значения затрудняют прогнозирование и отладку.",
-          "Установите чистый корневой размер шрифта — либо оставьте браузер по умолчанию (16 пикселей). или используйте трюк 62,5% для упрощения вычислений."
+          "Избегайте глубокого вложения em - составные значения затрудняют прогнозирование и отладку.",
+          "Установите чистый корневой размер шрифта - либо оставьте браузер по умолчанию (16 пикселей). или используйте трюк 62,5% для упрощения вычислений."
         ],
         "paragraphs": [
           "Мгновенно конвертируйте пиксели в единицы измерения rem или em с помощью наших преобразователей PX в REM и PX в EM."

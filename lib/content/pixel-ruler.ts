@@ -98,7 +98,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Wie genau ist das Bildschirmlineal?",
-        "answer": "Ohne Kalibrierung hängt die Genauigkeit vom gemeldeten PPI Ihres Betriebssystems ab, der möglicherweise nicht mit der physischen Pixeldichte übereinstimmt. Nach der Kalibrierung mit einer Kreditkarte oder einem anderen Objekt bekannter Größe verbessert sich die Genauigkeit bei den meisten Displays deutlich auf 1–2 %."
+        "answer": "Ohne Kalibrierung hängt die Genauigkeit vom gemeldeten PPI Ihres Betriebssystems ab, der möglicherweise nicht mit der physischen Pixeldichte übereinstimmt. Nach der Kalibrierung mit einer Kreditkarte oder einem anderen Objekt bekannter Größe verbessert sich die Genauigkeit bei den meisten Displays deutlich auf 1 - 2 %."
       },
       {
         "question": "Wie kalibriere ich das Lineal?",
@@ -377,7 +377,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Jak dokładna jest linijka ekranowa?",
-        "answer": "Bez kalibracji dokładność zależy od współczynnika PPI zgłaszanego przez system operacyjny, który może nie odpowiadać fizycznej gęstości pikseli. Po kalibracji za pomocą karty kredytowej lub innego obiektu o znanej wielkości dokładność znacznie się poprawia, w przypadku większości wyświetlaczy w granicach 1–2%."
+        "answer": "Bez kalibracji dokładność zależy od współczynnika PPI zgłaszanego przez system operacyjny, który może nie odpowiadać fizycznej gęstości pikseli. Po kalibracji za pomocą karty kredytowej lub innego obiektu o znanej wielkości dokładność znacznie się poprawia, w przypadku większości wyświetlaczy w granicach 1 - 2%."
       },
       {
         "question": "Jak skalibrować linijkę?",
@@ -439,7 +439,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Насколько точна экранная линейка?",
-        "answer": "Без калибровки точность зависит от значения PPI вашей операционной системы, которое может не соответствовать физической плотности пикселей. После калибровки с помощью кредитной карты или другого объекта известного размера точность значительно повышается до 1–2 % для большинства дисплеев."
+        "answer": "Без калибровки точность зависит от значения PPI вашей операционной системы, которое может не соответствовать физической плотности пикселей. После калибровки с помощью кредитной карты или другого объекта известного размера точность значительно повышается до 1 - 2 % для большинства дисплеев."
       },
       {
         "question": "Как откалибровать линейку?",
@@ -447,7 +447,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Почему пиксели не соответствуют реальным измерениям?",
-        "answer": "Пиксели — это цифровые единицы без фиксированного физического размера. Их физический размер зависит от PPI ​​экрана (пикселей на дюйм). Пиксель на 27-дюймовом мониторе 4K намного меньше, чем на 24-дюймовом мониторе 1080p."
+        "answer": "Пиксели - это цифровые единицы без фиксированного физического размера. Их физический размер зависит от PPI ​​экрана (пикселей на дюйм). Пиксель на 27-дюймовом мониторе 4K намного меньше, чем на 24-дюймовом мониторе 1080p."
       },
       {
         "question": "Могу ли я использовать эту линейку для измерения физических объектов?",

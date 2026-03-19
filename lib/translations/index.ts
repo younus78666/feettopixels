@@ -15,6 +15,7 @@ import { pl } from "./pl";
 import { id } from "./id";
 import { ru } from "./ru";
 import type { Locale } from "@/lib/i18n";
+import { englishSeoPageOverrides } from "@/lib/page-seo";
 
 export type { Dictionary };
 
@@ -37,5 +38,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
 };
 
 export function getDictionary(locale: Locale): Dictionary {
-  return dictionaries[locale];
+  const dictionary = dictionaries[locale];
+
+  if (locale !== "en") {
+    return dictionary;
+  }
+
+  return {
+    ...dictionary,
+    pages: {
+      ...dictionary.pages,
+      ...englishSeoPageOverrides,
+    },
+  };
 }

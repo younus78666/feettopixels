@@ -101,12 +101,12 @@ export default async function Home({ params }: PageProps) {
   ];
 
   const tocItems = isEnglish
-    ? [
+      ? [
         { id: "top-pixel-conversion-tools", label: "Top Pixel Conversion Tools" },
         { id: "pixel-conversion-guides", label: "Pixel Conversion Guides" },
-        { id: "pixel-conversion-reference-table", label: "Pixel Conversion Reference Table" },
+        { id: "quick-start-guide", label: "Quick Start Guide" },
         { id: "reference-sources", label: "Reference Sources" },
-        { id: "homepage-faq", label: "Homepage FAQ" },
+        { id: "homepage-faq", label: "FAQ" },
       ]
     : [];
 
@@ -211,8 +211,7 @@ export default async function Home({ params }: PageProps) {
                       Use these tools for fast <strong>pixel conversion</strong> work across inches,
                       centimeters, millimeters, feet, and CSS units. Whether you need a print-ready
                       DPI setting, a screen PPI check, or a quick pixels-to-inches answer, the
-                      homepage links below map directly to the highest-priority tools and guides from
-                      the FeetToPixels topical map.
+                      links below help you jump straight to the right calculator or guide.
                     </>
                   ) : (
                     dict.site.description
@@ -279,12 +278,9 @@ export default async function Home({ params }: PageProps) {
 
             {tocItems.length > 0 && (
               <div className="mt-10 border-t border-neutral-200/70 pt-6">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-2">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-700">
                     {dict.nav.onThisPage}
-                  </p>
-                  <p className="text-xs uppercase tracking-[0.22em] text-neutral-400">
-                    SEO / Homepage
                   </p>
                 </div>
                 <ul className="mt-4 grid gap-2 text-sm text-neutral-600 sm:grid-cols-2 lg:grid-cols-5">
@@ -314,7 +310,7 @@ export default async function Home({ params }: PageProps) {
               <h2 className="mt-3">{isEnglish ? "Top Pixel Conversion Tools" : dict.home.conversionTools}</h2>
               <p className="mt-4 max-w-2xl text-neutral-600">
                 {isEnglish
-                  ? "The keyword research and topical map point to three core hubs: Pixel Converter, Pixels Per Inch, and DPI Calculator. These pages cover the strongest conversion, print, and resolution intents first."
+                  ? "Start with the main tools people use most: the all-in-one converter, the DPI calculator, and the most common physical unit converters."
                   : dict.home.whySub}
               </p>
             </div>
@@ -386,17 +382,16 @@ export default async function Home({ params }: PageProps) {
       </SectionWrapper>
 
       {isEnglish && (
-        <SectionWrapper alt id="pixel-conversion-reference-table">
+        <SectionWrapper alt id="quick-start-guide">
           <Container>
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                Research snapshot
+                Quick start
               </p>
-              <h2 className="mt-3">Pixel Conversion Quick Reference Table</h2>
+              <h2 className="mt-3">Choose the Right Tool</h2>
               <p className="mt-4 max-w-2xl text-neutral-600">
-                These homepage priorities come directly from the FeetToPixels keyword research. They
-                cover the strongest search demand, the best AI-answer potential, and the main
-                conversion intents users have on first visit.
+                Use this practical guide to jump straight to the calculator or reference page that
+                matches your task.
               </p>
             </div>
 
@@ -404,29 +399,14 @@ export default async function Home({ params }: PageProps) {
               <table className="min-w-full divide-y divide-neutral-200 text-left text-sm">
                 <thead className="bg-neutral-50 text-neutral-700">
                   <tr>
-                    <th className="px-5 py-4 font-semibold">Query Cluster</th>
-                    <th className="px-5 py-4 font-semibold">Monthly Volume</th>
+                    <th className="px-5 py-4 font-semibold">Task</th>
                     <th className="px-5 py-4 font-semibold">Best Page</th>
-                    <th className="px-5 py-4 font-semibold">Why It Matters</th>
+                    <th className="px-5 py-4 font-semibold">Best For</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-200 text-neutral-600">
                   <tr>
-                    <td className="px-5 py-4">Pixels per inch</td>
-                    <td className="px-5 py-4 mono-display">90,500</td>
-                    <td className="px-5 py-4">
-                      <Link
-                        href={`/${validLocale}/pixels-per-inch`}
-                        className="font-medium text-primary-700 hover:text-primary-800"
-                      >
-                        {dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch"}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4">Highest-volume informational topic and the main guide hub.</td>
-                  </tr>
-                  <tr>
-                    <td className="px-5 py-4">Pixel to inch conversion</td>
-                    <td className="px-5 py-4 mono-display">22,200</td>
+                    <td className="px-5 py-4">Convert pixels to inches</td>
                     <td className="px-5 py-4">
                       <Link
                         href={`/${validLocale}/pixels-to-inches`}
@@ -435,11 +415,22 @@ export default async function Home({ params }: PageProps) {
                         {dict.pages["pixels-to-inches"]?.title || "Pixels to Inches"}
                       </Link>
                     </td>
-                    <td className="px-5 py-4">Core physical converter intent with strong tool demand.</td>
+                    <td className="px-5 py-4">Print sizing, image exports, and layout checks.</td>
                   </tr>
                   <tr>
-                    <td className="px-5 py-4">Pixels to inches / inches to pixels</td>
-                    <td className="px-5 py-4 mono-display">18,100</td>
+                    <td className="px-5 py-4">Convert inches to pixels</td>
+                    <td className="px-5 py-4">
+                      <Link
+                        href={`/${validLocale}/inches-to-pixels`}
+                        className="font-medium text-primary-700 hover:text-primary-800"
+                      >
+                        {dict.pages["inches-to-pixels"]?.title || "Inches to Pixels"}
+                      </Link>
+                    </td>
+                    <td className="px-5 py-4">Canvas setup, print layouts, and digital signage work.</td>
+                  </tr>
+                  <tr>
+                    <td className="px-5 py-4">Convert between multiple units</td>
                     <td className="px-5 py-4">
                       <Link
                         href={`/${validLocale}/pixel-converter`}
@@ -448,11 +439,10 @@ export default async function Home({ params }: PageProps) {
                         {dict.pages["pixel-converter"]?.title || "Pixel Converter"}
                       </Link>
                     </td>
-                    <td className="px-5 py-4">Best homepage hub for users who have not chosen a unit yet.</td>
+                    <td className="px-5 py-4">Quick switching between px, in, cm, mm, ft, and CSS units.</td>
                   </tr>
                   <tr>
-                    <td className="px-5 py-4">DPI calculator</td>
-                    <td className="px-5 py-4 mono-display">5,400</td>
+                    <td className="px-5 py-4">Check print resolution</td>
                     <td className="px-5 py-4">
                       <Link
                         href={`/${validLocale}/dpi-calculator`}
@@ -461,20 +451,19 @@ export default async function Home({ params }: PageProps) {
                         {dict.pages["dpi-calculator"]?.title || "DPI Calculator"}
                       </Link>
                     </td>
-                    <td className="px-5 py-4">Supports print sizing, screen density, and image prep workflows.</td>
+                    <td className="px-5 py-4">Photo printing, scanned artwork, and image prep workflows.</td>
                   </tr>
                   <tr>
-                    <td className="px-5 py-4">Best DPI for printing</td>
-                    <td className="px-5 py-4 mono-display">Support Topic</td>
+                    <td className="px-5 py-4">Find paper sizes in pixels</td>
                     <td className="px-5 py-4">
                       <Link
-                        href={`/${validLocale}/best-dpi-for-printing`}
+                        href={`/${validLocale}/paper-sizes-in-pixels`}
                         className="font-medium text-primary-700 hover:text-primary-800"
                       >
-                        {dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing"}
+                        {dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels"}
                       </Link>
                     </td>
-                    <td className="px-5 py-4">Turns calculator traffic into practical print guidance.</td>
+                    <td className="px-5 py-4">A4, Letter, A3, A5, and other standard page sizes.</td>
                   </tr>
                 </tbody>
               </table>
@@ -553,7 +542,7 @@ export default async function Home({ params }: PageProps) {
               </p>
               <h2 className="mt-3">Reference Sources</h2>
               <p className="mt-4 max-w-2xl text-neutral-600">
-                These external references support the homepage&apos;s pixel conversion explanations and
+                These external references support this page&apos;s pixel conversion explanations and
                 help users verify DPI, PPI, screen, and CSS sizing concepts.
               </p>
             </div>

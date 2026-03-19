@@ -21,7 +21,7 @@ function validateTracking(data: Record<string, unknown>): boolean {
   return true
 }
 
-// Validate CSP sources — prevent dangerous values
+// Validate CSP sources - prevent dangerous values
 function validateCspSources(sources: unknown[]): boolean {
   if (!Array.isArray(sources)) return false
   const dangerous = ["*", "data:", "blob:", "'unsafe-inline'", "'unsafe-eval'"]

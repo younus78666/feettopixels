@@ -102,7 +102,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Was ist ein guter DPI-Wert für einen Monitor?",
-        "answer": "Für den allgemeinen Desktop-Einsatz auf Armeslänge sind 90–110 DPI angenehm. Für Arbeiten mit hoher Auflösung sorgen 150+ DPI (wie bei Retina-Displays) für schärfere Texte und Bilder. Ein 27-Zoll-4K-Monitor hat etwa 163 DPI, was als ausgezeichnet gilt."
+        "answer": "Für den allgemeinen Desktop-Einsatz auf Armeslänge sind 90 - 110 DPI angenehm. Für Arbeiten mit hoher Auflösung sorgen 150+ DPI (wie bei Retina-Displays) für schärfere Texte und Bilder. Ein 27-Zoll-4K-Monitor hat etwa 163 DPI, was als ausgezeichnet gilt."
       },
       {
         "question": "Was ist der Unterschied zwischen DPI und PPI?",
@@ -443,7 +443,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Какое разрешение является хорошим для монитора?",
-        "answer": "Для обычного использования настольного компьютера на расстоянии вытянутой руки комфортно 90–110 DPI. При работе с высоким разрешением разрешение 150+ DPI (как у дисплеев Retina) обеспечивает более четкий текст и изображения. 27-дюймовый монитор с разрешением 4K имеет около 163 точек на дюйм, что считается превосходным показателем."
+        "answer": "Для обычного использования настольного компьютера на расстоянии вытянутой руки комфортно 90 - 110 DPI. При работе с высоким разрешением разрешение 150+ DPI (как у дисплеев Retina) обеспечивает более четкий текст и изображения. 27-дюймовый монитор с разрешением 4K имеет около 163 точек на дюйм, что считается превосходным показателем."
       },
       {
         "question": "В чем разница между DPI и PPI?",
@@ -455,7 +455,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Как узнать DPI моего текущего экрана?",
-        "answer": "Введите разрешение вашего экрана (ширину и высоту в пикселях) и размер диагонали в дюймах в калькулятор выше. Разрешение можно найти в настройках дисплея, а размер диагонали — в характеристиках вашего монитора или путем измерения угла от угла."
+        "answer": "Введите разрешение вашего экрана (ширину и высоту в пикселях) и размер диагонали в дюймах в калькулятор выше. Разрешение можно найти в настройках дисплея, а размер диагонали - в характеристиках вашего монитора или путем измерения угла от угла."
       }
     ],
     "sections": [

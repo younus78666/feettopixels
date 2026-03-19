@@ -10,11 +10,16 @@ interface RelatedTool {
 interface RelatedToolsProps {
   tools: RelatedTool[];
   label?: string;
+  sectionId?: string;
 }
 
-export function RelatedTools({ tools, label }: RelatedToolsProps) {
+export function RelatedTools({
+  tools,
+  label,
+  sectionId = "related-tools",
+}: RelatedToolsProps) {
   return (
-    <div className="mt-12">
+    <section id={sectionId} className="mt-12">
       <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
         {label || "Related Converters"}
       </h2>
@@ -39,6 +44,6 @@ export function RelatedTools({ tools, label }: RelatedToolsProps) {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

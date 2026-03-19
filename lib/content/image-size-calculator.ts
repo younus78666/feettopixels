@@ -11,7 +11,7 @@ export const content: PageContentMap = {
       {
         question: "How accurate are the file size estimates?",
         answer:
-          "The uncompressed size is exact based on pixel count and bit depth. JPEG and PNG estimates are approximations — actual file size depends on image complexity, compression settings, and content. Simple images compress more than detailed photos.",
+          "The uncompressed size is exact based on pixel count and bit depth. JPEG and PNG estimates are approximations - actual file size depends on image complexity, compression settings, and content. Simple images compress more than detailed photos.",
       },
       {
         question: "What does bit depth mean for image size?",
@@ -31,7 +31,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Understanding Image Size",
-      p1: "Image size encompasses both the pixel dimensions (digital size) and the physical dimensions (print size). The relationship between these depends on DPI — how many pixels are packed into each inch of output.",
+      p1: "Image size encompasses both the pixel dimensions (digital size) and the physical dimensions (print size). The relationship between these depends on DPI - how many pixels are packed into each inch of output.",
       heading2: "Physical Size Formula",
       formula: "Size in inches = Pixels / DPI",
       p2: "To convert to centimeters, multiply inches by 2.54. To convert to millimeters, multiply centimeters by 10.",
@@ -56,7 +56,7 @@ export const content: PageContentMap = {
       {
         question: "¿Qué tan precisas son las estimaciones de tamaño de archivo?",
         answer:
-          "El tamaño sin comprimir es exacto basado en la cantidad de píxeles y profundidad de bits. Las estimaciones de JPEG y PNG son aproximaciones — el tamaño real depende de la complejidad de la imagen, la configuración de compresión y el contenido. Las imágenes simples se comprimen más que las fotos detalladas.",
+          "El tamaño sin comprimir es exacto basado en la cantidad de píxeles y profundidad de bits. Las estimaciones de JPEG y PNG son aproximaciones - el tamaño real depende de la complejidad de la imagen, la configuración de compresión y el contenido. Las imágenes simples se comprimen más que las fotos detalladas.",
       },
       {
         question: "¿Qué significa la profundidad de bits para el tamaño de imagen?",
@@ -76,7 +76,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Comprender el tamaño de imagen",
-      p1: "El tamaño de imagen abarca tanto las dimensiones en píxeles (tamaño digital) como las dimensiones físicas (tamaño de impresión). La relación entre ambos depende del DPI — cuántos píxeles se empaquetan en cada pulgada de salida.",
+      p1: "El tamaño de imagen abarca tanto las dimensiones en píxeles (tamaño digital) como las dimensiones físicas (tamaño de impresión). La relación entre ambos depende del DPI - cuántos píxeles se empaquetan en cada pulgada de salida.",
       heading2: "Fórmula de tamaño físico",
       formula: "Tamaño en pulgadas = Píxeles / DPI",
       p2: "Para convertir a centímetros, multiplica las pulgadas por 2,54. Para convertir a milímetros, multiplica los centímetros por 10.",
@@ -101,7 +101,7 @@ export const content: PageContentMap = {
       {
         question: "Quelle est la précision des estimations de taille de fichier ?",
         answer:
-          "La taille non compressée est exacte, basée sur le nombre de pixels et la profondeur de bits. Les estimations JPEG et PNG sont des approximations — la taille réelle dépend de la complexité de l'image, des paramètres de compression et du contenu. Les images simples se compressent davantage que les photos détaillées.",
+          "La taille non compressée est exacte, basée sur le nombre de pixels et la profondeur de bits. Les estimations JPEG et PNG sont des approximations - la taille réelle dépend de la complexité de l'image, des paramètres de compression et du contenu. Les images simples se compressent davantage que les photos détaillées.",
       },
       {
         question: "Que signifie la profondeur de bits pour la taille d'image ?",
@@ -121,7 +121,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Comprendre la taille d'image",
-      p1: "La taille d'image englobe les dimensions en pixels (taille numérique) et les dimensions physiques (taille d'impression). La relation entre les deux dépend du DPI — combien de pixels sont compressés dans chaque pouce de sortie.",
+      p1: "La taille d'image englobe les dimensions en pixels (taille numérique) et les dimensions physiques (taille d'impression). La relation entre les deux dépend du DPI - combien de pixels sont compressés dans chaque pouce de sortie.",
       heading2: "Formule de taille physique",
       formula: "Taille en pouces = Pixels / DPI",
       p2: "Pour convertir en centimètres, multipliez les pouces par 2,54. Pour convertir en millimètres, multipliez les centimètres par 10.",
@@ -146,7 +146,7 @@ export const content: PageContentMap = {
       {
         question: "Wie genau sind die Dateigrößenschätzungen?",
         answer:
-          "Die unkomprimierte Größe ist exakt basierend auf Pixelanzahl und Farbtiefe. JPEG- und PNG-Schätzungen sind Näherungen — die tatsächliche Dateigröße hängt von der Bildkomplexität, den Kompressionseinstellungen und dem Inhalt ab. Einfache Bilder komprimieren stärker als detaillierte Fotos.",
+          "Die unkomprimierte Größe ist exakt basierend auf Pixelanzahl und Farbtiefe. JPEG- und PNG-Schätzungen sind Näherungen - die tatsächliche Dateigröße hängt von der Bildkomplexität, den Kompressionseinstellungen und dem Inhalt ab. Einfache Bilder komprimieren stärker als detaillierte Fotos.",
       },
       {
         question: "Was bedeutet Farbtiefe für die Bildgröße?",
@@ -166,7 +166,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Bildgröße verstehen",
-      p1: "Bildgröße umfasst sowohl die Pixelmaße (digitale Größe) als auch die physischen Maße (Druckgröße). Die Beziehung zwischen beiden hängt vom DPI ab — wie viele Pixel pro Zoll Ausgabe gepackt werden.",
+      p1: "Bildgröße umfasst sowohl die Pixelmaße (digitale Größe) als auch die physischen Maße (Druckgröße). Die Beziehung zwischen beiden hängt vom DPI ab - wie viele Pixel pro Zoll Ausgabe gepackt werden.",
       heading2: "Formel für physische Größe",
       formula: "Größe in Zoll = Pixel / DPI",
       p2: "Um in Zentimeter umzurechnen, multiplizieren Sie Zoll mit 2,54. Um in Millimeter umzurechnen, multiplizieren Sie Zentimeter mit 10.",
@@ -191,7 +191,7 @@ export const content: PageContentMap = {
       {
         question: "Quão precisas são as estimativas de tamanho de arquivo?",
         answer:
-          "O tamanho descomprimido é exato com base na contagem de pixels e profundidade de bits. As estimativas de JPEG e PNG são aproximações — o tamanho real depende da complexidade da imagem, configurações de compressão e conteúdo. Imagens simples comprimem mais que fotos detalhadas.",
+          "O tamanho descomprimido é exato com base na contagem de pixels e profundidade de bits. As estimativas de JPEG e PNG são aproximações - o tamanho real depende da complexidade da imagem, configurações de compressão e conteúdo. Imagens simples comprimem mais que fotos detalhadas.",
       },
       {
         question: "O que significa profundidade de bits para o tamanho da imagem?",
@@ -211,7 +211,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Entendendo o tamanho da imagem",
-      p1: "O tamanho da imagem abrange tanto as dimensões em pixels (tamanho digital) quanto as dimensões físicas (tamanho de impressão). A relação entre elas depende do DPI — quantos pixels são empacotados em cada polegada de saída.",
+      p1: "O tamanho da imagem abrange tanto as dimensões em pixels (tamanho digital) quanto as dimensões físicas (tamanho de impressão). A relação entre elas depende do DPI - quantos pixels são empacotados em cada polegada de saída.",
       heading2: "Fórmula de tamanho físico",
       formula: "Tamanho em polegadas = Pixels / DPI",
       p2: "Para converter em centímetros, multiplique polegadas por 2,54. Para converter em milímetros, multiplique centímetros por 10.",
@@ -236,7 +236,7 @@ export const content: PageContentMap = {
       {
         question: "फ़ाइल आकार के अनुमान कितने सटीक हैं?",
         answer:
-          "असंपीड़ित आकार पिक्सेल गणना और बिट गहराई पर आधारित सटीक है। JPEG और PNG अनुमान अनुमानित हैं — वास्तविक फ़ाइल आकार इमेज जटिलता, संपीड़न सेटिंग्स और सामग्री पर निर्भर करता है। साधारण इमेज विस्तृत फ़ोटो से अधिक संपीड़ित होती हैं।",
+          "असंपीड़ित आकार पिक्सेल गणना और बिट गहराई पर आधारित सटीक है। JPEG और PNG अनुमान अनुमानित हैं - वास्तविक फ़ाइल आकार इमेज जटिलता, संपीड़न सेटिंग्स और सामग्री पर निर्भर करता है। साधारण इमेज विस्तृत फ़ोटो से अधिक संपीड़ित होती हैं।",
       },
       {
         question: "इमेज आकार के लिए बिट गहराई का क्या मतलब है?",
@@ -256,7 +256,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "इमेज आकार को समझना",
-      p1: "इमेज आकार में पिक्सेल आयाम (डिजिटल आकार) और भौतिक आयाम (प्रिंट आकार) दोनों शामिल हैं। इनके बीच का संबंध DPI पर निर्भर करता है — आउटपुट के प्रत्येक इंच में कितने पिक्सेल पैक किए जाते हैं।",
+      p1: "इमेज आकार में पिक्सेल आयाम (डिजिटल आकार) और भौतिक आयाम (प्रिंट आकार) दोनों शामिल हैं। इनके बीच का संबंध DPI पर निर्भर करता है - आउटपुट के प्रत्येक इंच में कितने पिक्सेल पैक किए जाते हैं।",
       heading2: "भौतिक आकार सूत्र",
       formula: "इंच में आकार = पिक्सेल / DPI",
       p2: "सेंटीमीटर में बदलने के लिए, इंच को 2.54 से गुणा करें। मिलीमीटर में बदलने के लिए, सेंटीमीटर को 10 से गुणा करें।",
@@ -371,7 +371,7 @@ export const content: PageContentMap = {
       {
         question: "Quanto sono accurate le stime della dimensione del file?",
         answer:
-          "La dimensione non compressa è esatta basata sul conteggio dei pixel e la profondità di bit. Le stime JPEG e PNG sono approssimazioni — la dimensione reale dipende dalla complessità dell'immagine, dalle impostazioni di compressione e dal contenuto. Le immagini semplici si comprimono più delle foto dettagliate.",
+          "La dimensione non compressa è esatta basata sul conteggio dei pixel e la profondità di bit. Le stime JPEG e PNG sono approssimazioni - la dimensione reale dipende dalla complessità dell'immagine, dalle impostazioni di compressione e dal contenuto. Le immagini semplici si comprimono più delle foto dettagliate.",
       },
       {
         question: "Cosa significa profondità di bit per la dimensione dell'immagine?",
@@ -391,7 +391,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Capire la dimensione dell'immagine",
-      p1: "La dimensione dell'immagine comprende sia le dimensioni in pixel (dimensione digitale) che le dimensioni fisiche (dimensione di stampa). La relazione tra queste dipende dal DPI — quanti pixel sono compressi in ogni pollice di output.",
+      p1: "La dimensione dell'immagine comprende sia le dimensioni in pixel (dimensione digitale) che le dimensioni fisiche (dimensione di stampa). La relazione tra queste dipende dal DPI - quanti pixel sono compressi in ogni pollice di output.",
       heading2: "Formula della dimensione fisica",
       formula: "Dimensione in pollici = Pixel / DPI",
       p2: "Per convertire in centimetri, moltiplica i pollici per 2,54. Per convertire in millimetri, moltiplica i centimetri per 10.",
@@ -416,7 +416,7 @@ export const content: PageContentMap = {
       {
         question: "Hoe nauwkeurig zijn de schattingen van de bestandsgrootte?",
         answer:
-          "De ongecomprimeerde grootte is exact op basis van pixelaantal en bitdiepte. JPEG- en PNG-schattingen zijn benaderingen — de werkelijke bestandsgrootte hangt af van de complexiteit van het beeld, compressie-instellingen en inhoud. Eenvoudige beelden comprimeren meer dan gedetailleerde foto's.",
+          "De ongecomprimeerde grootte is exact op basis van pixelaantal en bitdiepte. JPEG- en PNG-schattingen zijn benaderingen - de werkelijke bestandsgrootte hangt af van de complexiteit van het beeld, compressie-instellingen en inhoud. Eenvoudige beelden comprimeren meer dan gedetailleerde foto's.",
       },
       {
         question: "Wat betekent bitdiepte voor de afbeeldingsgrootte?",
@@ -436,7 +436,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Afbeeldingsgrootte begrijpen",
-      p1: "Afbeeldingsgrootte omvat zowel de pixeldimensies (digitale grootte) als de fysieke afmetingen (afdrukgrootte). De relatie hiertussen hangt af van DPI — hoeveel pixels er in elke inch output worden gepakt.",
+      p1: "Afbeeldingsgrootte omvat zowel de pixeldimensies (digitale grootte) als de fysieke afmetingen (afdrukgrootte). De relatie hiertussen hangt af van DPI - hoeveel pixels er in elke inch output worden gepakt.",
       heading2: "Formule voor fysieke grootte",
       formula: "Grootte in inches = Pixels / DPI",
       p2: "Om naar centimeters te converteren, vermenigvuldig inches met 2,54. Om naar millimeters te converteren, vermenigvuldig centimeters met 10.",
@@ -461,7 +461,7 @@ export const content: PageContentMap = {
       {
         question: "ما مدى دقة تقديرات حجم الملف؟",
         answer:
-          "الحجم غير المضغوط دقيق بناءً على عدد البكسلات وعمق البت. تقديرات JPEG و PNG هي تقريبية — الحجم الفعلي يعتمد على تعقيد الصورة وإعدادات الضغط والمحتوى. الصور البسيطة تُضغط أكثر من الصور المفصلة.",
+          "الحجم غير المضغوط دقيق بناءً على عدد البكسلات وعمق البت. تقديرات JPEG و PNG هي تقريبية - الحجم الفعلي يعتمد على تعقيد الصورة وإعدادات الضغط والمحتوى. الصور البسيطة تُضغط أكثر من الصور المفصلة.",
       },
       {
         question: "ماذا يعني عمق البت لحجم الصورة؟",
@@ -481,7 +481,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "فهم حجم الصورة",
-      p1: "حجم الصورة يشمل كلاً من أبعاد البكسل (الحجم الرقمي) والأبعاد الفعلية (حجم الطباعة). العلاقة بينهما تعتمد على DPI — كم عدد البكسلات المعبأة في كل بوصة من المخرجات.",
+      p1: "حجم الصورة يشمل كلاً من أبعاد البكسل (الحجم الرقمي) والأبعاد الفعلية (حجم الطباعة). العلاقة بينهما تعتمد على DPI - كم عدد البكسلات المعبأة في كل بوصة من المخرجات.",
       heading2: "صيغة الحجم الفعلي",
       formula: "الحجم بالبوصات = البكسلات / DPI",
       p2: "للتحويل إلى سنتيمترات، اضرب البوصات في 2.54. للتحويل إلى ملليمترات، اضرب السنتيمترات في 10.",
@@ -506,7 +506,7 @@ export const content: PageContentMap = {
       {
         question: "Dosya boyutu tahminleri ne kadar doğru?",
         answer:
-          "Sıkıştırılmamış boyut, piksel sayısı ve bit derinliğine dayalı olarak kesindir. JPEG ve PNG tahminleri yaklaşık değerlerdir — gerçek dosya boyutu görüntü karmaşıklığına, sıkıştırma ayarlarına ve içeriğe bağlıdır. Basit görüntüler detaylı fotoğraflardan daha fazla sıkıştırılır.",
+          "Sıkıştırılmamış boyut, piksel sayısı ve bit derinliğine dayalı olarak kesindir. JPEG ve PNG tahminleri yaklaşık değerlerdir - gerçek dosya boyutu görüntü karmaşıklığına, sıkıştırma ayarlarına ve içeriğe bağlıdır. Basit görüntüler detaylı fotoğraflardan daha fazla sıkıştırılır.",
       },
       {
         question: "Görüntü boyutu için bit derinliği ne anlama gelir?",
@@ -526,7 +526,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Görüntü boyutunu anlamak",
-      p1: "Görüntü boyutu hem piksel boyutlarını (dijital boyut) hem de fiziksel boyutları (baskı boyutu) kapsar. Bunlar arasındaki ilişki DPI'a bağlıdır — çıktının her inçine kaç piksel sığdırıldığına bağlıdır.",
+      p1: "Görüntü boyutu hem piksel boyutlarını (dijital boyut) hem de fiziksel boyutları (baskı boyutu) kapsar. Bunlar arasındaki ilişki DPI'a bağlıdır - çıktının her inçine kaç piksel sığdırıldığına bağlıdır.",
       heading2: "Fiziksel boyut formülü",
       formula: "İnç cinsinden boyut = Piksel / DPI",
       p2: "Santimetreye dönüştürmek için inç'i 2,54 ile çarpın. Milimetreye dönüştürmek için santimetreyi 10 ile çarpın.",
@@ -551,7 +551,7 @@ export const content: PageContentMap = {
       {
         question: "Jak dokładne są szacunki rozmiaru pliku?",
         answer:
-          "Rozmiar nieskompresowany jest dokładny na podstawie liczby pikseli i głębi bitowej. Szacunki JPEG i PNG są przybliżeniami — rzeczywisty rozmiar pliku zależy od złożoności obrazu, ustawień kompresji i zawartości. Proste obrazy kompresują się bardziej niż szczegółowe zdjęcia.",
+          "Rozmiar nieskompresowany jest dokładny na podstawie liczby pikseli i głębi bitowej. Szacunki JPEG i PNG są przybliżeniami - rzeczywisty rozmiar pliku zależy od złożoności obrazu, ustawień kompresji i zawartości. Proste obrazy kompresują się bardziej niż szczegółowe zdjęcia.",
       },
       {
         question: "Co oznacza głębia bitowa dla rozmiaru obrazu?",
@@ -571,7 +571,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Zrozumienie rozmiaru obrazu",
-      p1: "Rozmiar obrazu obejmuje zarówno wymiary w pikselach (rozmiar cyfrowy), jak i wymiary fizyczne (rozmiar wydruku). Zależność między nimi zależy od DPI — ile pikseli jest upakowanych w każdym calu wyjścia.",
+      p1: "Rozmiar obrazu obejmuje zarówno wymiary w pikselach (rozmiar cyfrowy), jak i wymiary fizyczne (rozmiar wydruku). Zależność między nimi zależy od DPI - ile pikseli jest upakowanych w każdym calu wyjścia.",
       heading2: "Wzór na rozmiar fizyczny",
       formula: "Rozmiar w calach = Piksele / DPI",
       p2: "Aby przeliczyć na centymetry, pomnóż cale przez 2,54. Aby przeliczyć na milimetry, pomnóż centymetry przez 10.",
@@ -596,7 +596,7 @@ export const content: PageContentMap = {
       {
         question: "Seberapa akurat perkiraan ukuran file?",
         answer:
-          "Ukuran tidak terkompresi tepat berdasarkan jumlah piksel dan kedalaman bit. Perkiraan JPEG dan PNG adalah perkiraan — ukuran file sebenarnya bergantung pada kompleksitas gambar, pengaturan kompresi, dan konten. Gambar sederhana terkompresi lebih banyak daripada foto detail.",
+          "Ukuran tidak terkompresi tepat berdasarkan jumlah piksel dan kedalaman bit. Perkiraan JPEG dan PNG adalah perkiraan - ukuran file sebenarnya bergantung pada kompleksitas gambar, pengaturan kompresi, dan konten. Gambar sederhana terkompresi lebih banyak daripada foto detail.",
       },
       {
         question: "Apa arti kedalaman bit untuk ukuran gambar?",
@@ -616,7 +616,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Memahami ukuran gambar",
-      p1: "Ukuran gambar mencakup dimensi piksel (ukuran digital) dan dimensi fisik (ukuran cetak). Hubungan antara keduanya bergantung pada DPI — berapa banyak piksel yang dikemas ke setiap inci output.",
+      p1: "Ukuran gambar mencakup dimensi piksel (ukuran digital) dan dimensi fisik (ukuran cetak). Hubungan antara keduanya bergantung pada DPI - berapa banyak piksel yang dikemas ke setiap inci output.",
       heading2: "Rumus ukuran fisik",
       formula: "Ukuran dalam inci = Piksel / DPI",
       p2: "Untuk mengonversi ke sentimeter, kalikan inci dengan 2,54. Untuk mengonversi ke milimeter, kalikan sentimeter dengan 10.",
@@ -641,12 +641,12 @@ export const content: PageContentMap = {
       {
         question: "Насколько точны оценки размера файла?",
         answer:
-          "Несжатый размер точен на основе количества пикселей и глубины цвета. Оценки JPEG и PNG являются приблизительными — фактический размер файла зависит от сложности изображения, настроек сжатия и содержимого. Простые изображения сжимаются сильнее, чем детализированные фотографии.",
+          "Несжатый размер точен на основе количества пикселей и глубины цвета. Оценки JPEG и PNG являются приблизительными - фактический размер файла зависит от сложности изображения, настроек сжатия и содержимого. Простые изображения сжимаются сильнее, чем детализированные фотографии.",
       },
       {
         question: "Что означает глубина цвета для размера изображения?",
         answer:
-          "Глубина цвета определяет, сколько бит хранит каждый пиксель. 8 бит хранит 256 оттенков (градации серого), 24 бита — 16,7 миллиона цветов (RGB), а 32 бита добавляет прозрачность (RGBA). Большая глубина цвета означает больший размер файла.",
+          "Глубина цвета определяет, сколько бит хранит каждый пиксель. 8 бит хранит 256 оттенков (градации серого), 24 бита - 16,7 миллиона цветов (RGB), а 32 бита добавляет прозрачность (RGBA). Большая глубина цвета означает больший размер файла.",
       },
       {
         question: "Какое разрешение мне нужно для определённого размера печати?",
@@ -661,7 +661,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "Понимание размера изображения",
-      p1: "Размер изображения включает как размеры в пикселях (цифровой размер), так и физические размеры (размер печати). Связь между ними зависит от DPI — сколько пикселей упаковано в каждый дюйм вывода.",
+      p1: "Размер изображения включает как размеры в пикселях (цифровой размер), так и физические размеры (размер печати). Связь между ними зависит от DPI - сколько пикселей упаковано в каждый дюйм вывода.",
       heading2: "Формула физического размера",
       formula: "Размер в дюймах = Пиксели / DPI",
       p2: "Для перевода в сантиметры умножьте дюймы на 2,54. Для перевода в миллиметры умножьте сантиметры на 10.",

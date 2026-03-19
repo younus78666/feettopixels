@@ -110,7 +110,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Was ist der Unterschied zwischen Bildern in Web- und Druckqualität?",
-        "answer": "Webbilder benötigen normalerweise nur 72–96 Pixel pro Zoll, da Bildschirme mit einer festen Pixeldichte angezeigt werden. Für eine scharfe Ausgabe benötigen Druckbilder 300 Pixel pro Zoll. Ein 1000x1000-Webbild wird mit nur 3,3x3,3 Zoll in professioneller Qualität gedruckt."
+        "answer": "Webbilder benötigen normalerweise nur 72 - 96 Pixel pro Zoll, da Bildschirme mit einer festen Pixeldichte angezeigt werden. Für eine scharfe Ausgabe benötigen Druckbilder 300 Pixel pro Zoll. Ein 1000x1000-Webbild wird mit nur 3,3x3,3 Zoll in professioneller Qualität gedruckt."
       },
       {
         "question": "Ladet dieses Tool mein Bild auf einen Server hoch?",
@@ -389,7 +389,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Jaka jest różnica między obrazami w jakości internetowej i do druku?",
-        "answer": "Obrazy internetowe zazwyczaj potrzebują tylko 72–96 pikseli na cal, ponieważ ekrany wyświetlają się ze stałą gęstością pikseli. Aby wydruki były ostre, obrazy drukowane wymagają rozdzielczości 300 pikseli na cal. Obraz internetowy o wymiarach 1000 x 1000 jest drukowany w formacie zaledwie 3,3 x 3,3 cala w profesjonalnej jakości."
+        "answer": "Obrazy internetowe zazwyczaj potrzebują tylko 72 - 96 pikseli na cal, ponieważ ekrany wyświetlają się ze stałą gęstością pikseli. Aby wydruki były ostre, obrazy drukowane wymagają rozdzielczości 300 pikseli na cal. Obraz internetowy o wymiarach 1000 x 1000 jest drukowany w formacie zaledwie 3,3 x 3,3 cala w profesjonalnej jakości."
       },
       {
         "question": "Czy to narzędzie przesyła mój obraz na serwer?",
@@ -451,7 +451,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "В чем разница между изображениями веб-качества и качества печати?",
-        "answer": "Веб-изображениям обычно требуется только 72–96 пикселей на дюйм, поскольку экраны отображают с фиксированной плотностью пикселей. Для печати изображений требуется 300 пикселей на дюйм для четкого вывода. Веб-изображение размером 1000x1000 печатается размером всего 3,3x3,3 дюйма с профессиональным качеством."
+        "answer": "Веб-изображениям обычно требуется только 72 - 96 пикселей на дюйм, поскольку экраны отображают с фиксированной плотностью пикселей. Для печати изображений требуется 300 пикселей на дюйм для четкого вывода. Веб-изображение размером 1000x1000 печатается размером всего 3,3x3,3 дюйма с профессиональным качеством."
       },
       {
         "question": "Загружает ли этот инструмент мое изображение на сервер?",

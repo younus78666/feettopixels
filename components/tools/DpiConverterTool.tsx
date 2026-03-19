@@ -97,12 +97,12 @@ export function DpiConverterTool() {
         {/* Current print size */}
         <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
-            Print Size at {srcDpi || "—"} DPI (current)
+            Print Size at {srcDpi || " - "} DPI (current)
           </p>
           <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
             {currentWidthIn > 0
               ? `${formatNumber(currentWidthIn, 2)}" x ${formatNumber(currentHeightIn, 2)}"`
-              : "—"}
+              : " - "}
           </p>
           <p className="mt-0.5 text-xs text-neutral-500">
             {currentWidthIn > 0
@@ -115,7 +115,7 @@ export function DpiConverterTool() {
         <div className="rounded-lg border border-primary-200 bg-primary-50 px-4 py-3">
           <div className="flex items-start justify-between">
             <p className="text-xs font-semibold uppercase tracking-wider text-primary-600">
-              Print Size at {tgtDpi || "—"} DPI (target)
+              Print Size at {tgtDpi || " - "} DPI (target)
             </p>
             <button
               onClick={handleCopy}
@@ -136,7 +136,7 @@ export function DpiConverterTool() {
           <p className="mono-display mt-1 text-lg font-bold text-primary-800">
             {targetWidthIn > 0
               ? `${formatNumber(targetWidthIn, 2)}" x ${formatNumber(targetHeightIn, 2)}"`
-              : "—"}
+              : " - "}
           </p>
           <p className="mt-0.5 text-xs text-primary-600">
             {targetWidthIn > 0

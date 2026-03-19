@@ -129,7 +129,7 @@ export function DpiCalculator() {
           <p className="text-xs font-semibold uppercase tracking-wider text-primary-600">DPI</p>
           <div className="flex items-center gap-2">
             <p className="mono-display mt-1 text-2xl font-bold text-primary-800">
-              {dpi > 0 ? formatNumber(dpi, 2) : "—"}
+              {dpi > 0 ? formatNumber(dpi, 2) : " - "}
             </p>
             <button
               onClick={handleCopy}
@@ -151,19 +151,19 @@ export function DpiCalculator() {
         <div className="rounded-lg bg-neutral-50 px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Total Pixels</p>
           <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-            {totalPixels > 0 ? formatNumber(totalPixels, 0) : "—"}
+            {totalPixels > 0 ? formatNumber(totalPixels, 0) : " - "}
           </p>
         </div>
         <div className="rounded-lg bg-neutral-50 px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Megapixels</p>
           <p className="mono-display mt-1 text-lg font-semibold text-neutral-800">
-            {megapixels > 0 ? formatNumber(megapixels, 2) + " MP" : "—"}
+            {megapixels > 0 ? formatNumber(megapixels, 2) + " MP" : " - "}
           </p>
         </div>
         <div className="rounded-lg bg-neutral-50 px-4 py-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Density</p>
           <p className="mt-1 text-sm font-semibold text-neutral-800">
-            {dpi > 0 ? densityLabel : "—"}
+            {dpi > 0 ? densityLabel : " - "}
           </p>
         </div>
       </div>

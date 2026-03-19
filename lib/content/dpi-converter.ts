@@ -9,7 +9,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Can I increase DPI without losing quality?",
-        "answer": "Simply changing the DPI metadata does not add pixels — it only changes how densely existing pixels are printed. To maintain print size at a higher DPI, you would need to upscale the image, which may reduce quality unless done with AI upscaling tools."
+        "answer": "Simply changing the DPI metadata does not add pixels - it only changes how densely existing pixels are printed. To maintain print size at a higher DPI, you would need to upscale the image, which may reduce quality unless done with AI upscaling tools."
       },
       {
         "question": "What DPI should I use for printing?",
@@ -17,7 +17,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What DPI are web images typically?",
-        "answer": "Web images are typically 72 or 96 DPI. However, DPI does not matter on screen — only pixel dimensions matter for web display. A 1000px wide image appears the same on screen whether it is set to 72, 96, or 300 DPI."
+        "answer": "Web images are typically 72 or 96 DPI. However, DPI does not matter on screen - only pixel dimensions matter for web display. A 1000px wide image appears the same on screen whether it is set to 72, 96, or 300 DPI."
       },
       {
         "question": "How do I convert a web image for print?",
@@ -102,15 +102,15 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Kann ich die DPI erhöhen, ohne an Qualität zu verlieren?",
-        "answer": "Eine einfache Änderung der DPI-Metadaten fügt keine Pixel hinzu – es ändert nur, wie dicht vorhandene Pixel gedruckt werden. Um die Druckgröße bei einer höheren DPI beizubehalten, müssten Sie das Bild hochskalieren, was die Qualität beeinträchtigen kann, sofern dies nicht mit KI-Hochskalierungstools durchgeführt wird."
+        "answer": "Eine einfache Änderung der DPI-Metadaten fügt keine Pixel hinzu - es ändert nur, wie dicht vorhandene Pixel gedruckt werden. Um die Druckgröße bei einer höheren DPI beizubehalten, müssten Sie das Bild hochskalieren, was die Qualität beeinträchtigen kann, sofern dies nicht mit KI-Hochskalierungstools durchgeführt wird."
       },
       {
         "question": "Welche DPI sollte ich zum Drucken verwenden?",
-        "answer": "300 DPI ist der Standard für professionellen Druck (Broschüren, Zeitschriften, Fotos). Für großformatige Poster aus der Ferne sind 150 DPI akzeptabel. Für den Plakatdruck können nur 30–50 DPI verwendet werden."
+        "answer": "300 DPI ist der Standard für professionellen Druck (Broschüren, Zeitschriften, Fotos). Für großformatige Poster aus der Ferne sind 150 DPI akzeptabel. Für den Plakatdruck können nur 30 - 50 DPI verwendet werden."
       },
       {
         "question": "Welche DPI haben Webbilder normalerweise?",
-        "answer": "Webbilder haben normalerweise 72 oder 96 DPI. Allerdings spielt die DPI auf dem Bildschirm keine Rolle – für die Webdarstellung sind nur die Pixelabmessungen von Bedeutung. Ein 1000 Pixel breites Bild erscheint auf dem Bildschirm gleich, egal ob es auf 72, 96 oder 300 DPI eingestellt ist."
+        "answer": "Webbilder haben normalerweise 72 oder 96 DPI. Allerdings spielt die DPI auf dem Bildschirm keine Rolle - für die Webdarstellung sind nur die Pixelabmessungen von Bedeutung. Ein 1000 Pixel breites Bild erscheint auf dem Bildschirm gleich, egal ob es auf 72, 96 oder 300 DPI eingestellt ist."
       },
       {
         "question": "Wie konvertiere ich ein Webbild für den Druck?",
@@ -141,7 +141,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Qual DPI normalmente são as imagens da web?",
-        "answer": "As imagens da web normalmente têm 72 ou 96 DPI. No entanto, o DPI não importa na tela – apenas as dimensões em pixels são importantes para a exibição na web. Uma imagem de 1000 pixels de largura aparece da mesma forma na tela, esteja definida como 72, 96 ou 300 DPI."
+        "answer": "As imagens da web normalmente têm 72 ou 96 DPI. No entanto, o DPI não importa na tela - apenas as dimensões em pixels são importantes para a exibição na web. Uma imagem de 1000 pixels de largura aparece da mesma forma na tela, esteja definida como 72, 96 ou 300 DPI."
       },
       {
         "question": "Como faço para converter uma imagem da web para impressão?",
@@ -381,7 +381,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Czy mogę zwiększyć DPI bez utraty jakości?",
-        "answer": "Zwykła zmiana metadanych DPI nie powoduje dodania pikseli — zmienia jedynie gęstość drukowania istniejących pikseli. Aby zachować rozmiar wydruku przy wyższej rozdzielczości DPI, konieczne byłoby przeskalowanie obrazu, co może obniżyć jakość, jeśli nie zostanie to zrobione za pomocą narzędzi do zwiększania skali AI."
+        "answer": "Zwykła zmiana metadanych DPI nie powoduje dodania pikseli - zmienia jedynie gęstość drukowania istniejących pikseli. Aby zachować rozmiar wydruku przy wyższej rozdzielczości DPI, konieczne byłoby przeskalowanie obrazu, co może obniżyć jakość, jeśli nie zostanie to zrobione za pomocą narzędzi do zwiększania skali AI."
       },
       {
         "question": "Jakiej rozdzielczości DPI powinienem używać do drukowania?",
@@ -389,7 +389,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Jakiego DPI są zazwyczaj obrazy internetowe?",
-        "answer": "Obrazy internetowe mają zazwyczaj rozdzielczość 72 lub 96 DPI. Jednak DPI nie ma znaczenia na ekranie — w przypadku wyświetlania w Internecie liczą się tylko wymiary w pikselach. Obraz o szerokości 1000 pikseli wygląda tak samo na ekranie, niezależnie od tego, czy jest ustawiony na 72, 96 czy 300 DPI."
+        "answer": "Obrazy internetowe mają zazwyczaj rozdzielczość 72 lub 96 DPI. Jednak DPI nie ma znaczenia na ekranie - w przypadku wyświetlania w Internecie liczą się tylko wymiary w pikselach. Obraz o szerokości 1000 pikseli wygląda tak samo na ekranie, niezależnie od tego, czy jest ustawiony na 72, 96 czy 300 DPI."
       },
       {
         "question": "Jak przekonwertować obraz internetowy do druku?",
@@ -412,7 +412,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Dapatkah saya meningkatkan DPI tanpa kehilangan kualitas?",
-        "answer": "Hanya dengan mengubah metadata DPI tidak akan menambah piksel — ini hanya mengubah seberapa padat piksel yang ada yang dicetak. Untuk mempertahankan ukuran cetakan pada DPI yang lebih tinggi, Anda perlu meningkatkan gambar, yang dapat mengurangi kualitas kecuali jika dilakukan dengan alat peningkatan AI."
+        "answer": "Hanya dengan mengubah metadata DPI tidak akan menambah piksel - ini hanya mengubah seberapa padat piksel yang ada yang dicetak. Untuk mempertahankan ukuran cetakan pada DPI yang lebih tinggi, Anda perlu meningkatkan gambar, yang dapat mengurangi kualitas kecuali jika dilakukan dengan alat peningkatan AI."
       },
       {
         "question": "DPI apa yang harus saya gunakan untuk mencetak?",
@@ -420,7 +420,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Berapa DPI yang biasanya digunakan pada gambar web?",
-        "answer": "Gambar web biasanya berukuran 72 atau 96 DPI. Namun, DPI tidak menjadi masalah di layar — hanya dimensi piksel yang penting untuk tampilan web. Gambar dengan lebar 1000 piksel tampak sama di layar, baik diatur ke 72, 96, atau 300 DPI."
+        "answer": "Gambar web biasanya berukuran 72 atau 96 DPI. Namun, DPI tidak menjadi masalah di layar - hanya dimensi piksel yang penting untuk tampilan web. Gambar dengan lebar 1000 piksel tampak sama di layar, baik diatur ke 72, 96, atau 300 DPI."
       },
       {
         "question": "Bagaimana cara mengonversi gambar web untuk dicetak?",
@@ -443,15 +443,15 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Могу ли я увеличить разрешение без потери качества?",
-        "answer": "Простое изменение метаданных DPI не добавляет пикселей — оно только меняет плотность печати существующих пикселей. Чтобы сохранить размер отпечатка с более высоким разрешением, вам потребуется увеличить изображение, что может снизить качество, если это не будет сделано с помощью инструментов масштабирования AI."
+        "answer": "Простое изменение метаданных DPI не добавляет пикселей - оно только меняет плотность печати существующих пикселей. Чтобы сохранить размер отпечатка с более высоким разрешением, вам потребуется увеличить изображение, что может снизить качество, если это не будет сделано с помощью инструментов масштабирования AI."
       },
       {
         "question": "Какое разрешение мне следует использовать для печати?",
-        "answer": "300 DPI — это стандарт для профессиональной печати (брошюр, журналов, фотографий). Разрешение 150 DPI приемлемо для широкоформатных плакатов, просматриваемых на расстоянии. Для печати рекламных щитов можно использовать всего 30–50 точек на дюйм."
+        "answer": "300 DPI - это стандарт для профессиональной печати (брошюр, журналов, фотографий). Разрешение 150 DPI приемлемо для широкоформатных плакатов, просматриваемых на расстоянии. Для печати рекламных щитов можно использовать всего 30 - 50 точек на дюйм."
       },
       {
         "question": "Какое обычно разрешение у веб-изображений?",
-        "answer": "Веб-изображения обычно имеют разрешение 72 или 96 точек на дюйм. Однако DPI не имеет значения на экране — для веб-отображения важны только размеры в пикселях. Изображение шириной 1000 пикселей отображается на экране одинаково независимо от того, установлено ли для него разрешение 72, 96 или 300 точек на дюйм."
+        "answer": "Веб-изображения обычно имеют разрешение 72 или 96 точек на дюйм. Однако DPI не имеет значения на экране - для веб-отображения важны только размеры в пикселях. Изображение шириной 1000 пикселей отображается на экране одинаково независимо от того, установлено ли для него разрешение 72, 96 или 300 точек на дюйм."
       },
       {
         "question": "Как преобразовать веб-изображение для печати?",

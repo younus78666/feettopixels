@@ -58,7 +58,7 @@ export default async function WhatIsDpiPage({ params }: PageProps) {
     <BlogLayout
       locale={validLocale}
       title={dict.pages["what-is-dpi"]?.title || "What Is DPI?"}
-      extractiveAnswer={dict.pages["what-is-dpi"]?.extractive || "DPI (dots per inch) measures print resolution — how many ink dots a printer places in one linear inch. Standard print DPI is 300 for photos, 150 for documents, and 72 for large posters. Higher DPI produces sharper, more detailed prints."}
+      extractiveAnswer={dict.pages["what-is-dpi"]?.extractive || "DPI (dots per inch) measures print resolution - how many ink dots a printer places in one linear inch. Standard print DPI is 300 for photos, 150 for documents, and 72 for large posters. Higher DPI produces sharper, more detailed prints."}
       breadcrumbs={breadcrumbs}
       faqItems={doc.faq}
       relatedArticles={relatedArticles}

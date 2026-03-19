@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { EditorialMeta } from "@/components/seo/EditorialMeta";
 import { FAQ } from "@/components/tools/FAQ";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ReferenceSources } from "@/components/seo/ReferenceSources";
 import { siteConfig } from "@/content/site-config";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
+import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
 
 interface BreadcrumbItem {
   label: string;
@@ -69,8 +72,8 @@ export function BlogLayout({
   cta,
   children,
   toc,
-  datePublished = "2026-03-18",
-  dateModified = "2026-03-18",
+  datePublished = DEFAULT_PAGE_DATE,
+  dateModified = DEFAULT_PAGE_DATE,
   slug,
   locale,
   labels,
@@ -102,6 +105,11 @@ export function BlogLayout({
     dateModified,
     url: `${siteConfig.url}/${localizedSlug}`,
     inLanguage: locale || "en",
+    author: {
+      "@type": "Organization",
+      name: "FeetToPixels Editorial Team",
+      url: `${siteConfig.url}${prefixHref("/about", locale)}`,
+    },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -132,6 +140,8 @@ export function BlogLayout({
             </p>
           </div>
 
+          <EditorialMeta locale={locale} dateModified={dateModified} />
+
           {/* Prose content */}
           <div className="prose prose-neutral max-w-none">
             {children}
@@ -154,7 +164,7 @@ export function BlogLayout({
           </div>
 
           {/* Related articles */}
-          <div className="mt-12">
+          <section id="related-articles" className="mt-12">
             <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
               {labels?.relatedArticles || dict?.tool.relatedArticles || "Related Articles"}
             </h2>
@@ -174,7 +184,9 @@ export function BlogLayout({
                 </Link>
               ))}
             </div>
-          </div>
+          </section>
+
+          {locale === "en" && <ReferenceSources sources={getReferenceSources(slug)} />}
 
           {/* FAQ */}
           <FAQ items={faqItems} label={labels?.faq || dict?.tool.faq} />

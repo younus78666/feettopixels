@@ -5,7 +5,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "What is the difference between em and rem?",
-        "answer": "EM is relative to the parent element's font size, while REM is relative to the root (html) element's font size. EM compounds — if a parent is 2em inside another 2em parent, it becomes 4x the root size. REM always references the root, avoiding compounding."
+        "answer": "EM is relative to the parent element's font size, while REM is relative to the root (html) element's font size. EM compounds - if a parent is 2em inside another 2em parent, it becomes 4x the root size. REM always references the root, avoiding compounding."
       },
       {
         "question": "How do I convert px to em?",
@@ -98,7 +98,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Was ist der Unterschied zwischen em und rem?",
-        "answer": "EM ist relativ zur Schriftgröße des übergeordneten Elements, während REM relativ zur Schriftgröße des Stammelements (HTML) ist. EM-Verbindungen – wenn ein Elternteil 2em innerhalb eines anderen 2em-Elternteils liegt, erhält es die vierfache Wurzelgröße. REM verweist immer auf die Wurzel und vermeidet so Zusammenfügungen."
+        "answer": "EM ist relativ zur Schriftgröße des übergeordneten Elements, während REM relativ zur Schriftgröße des Stammelements (HTML) ist. EM-Verbindungen - wenn ein Elternteil 2em innerhalb eines anderen 2em-Elternteils liegt, erhält es die vierfache Wurzelgröße. REM verweist immer auf die Wurzel und vermeidet so Zusammenfügungen."
       },
       {
         "question": "Wie konvertiere ich px in em?",
@@ -191,7 +191,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "em と rem の違いは何ですか?",
-        "answer": "EM は親要素のフォント サイズを基準とするのに対し、REM はルート (html) 要素のフォント サイズを基準とします。 EM コンパウンド — 親が別の 2em 親の中に 2em ある場合、ルート サイズの 4 倍になります。 REM は常にルートを参照し、複合を回避します。"
+        "answer": "EM は親要素のフォント サイズを基準とするのに対し、REM はルート (html) 要素のフォント サイズを基準とします。 EM コンパウンド - 親が別の 2em 親の中に 2em ある場合、ルート サイズの 4 倍になります。 REM は常にルートを参照し、複合を回避します。"
       },
       {
         "question": "px を em に変換するにはどうすればよいですか?",
@@ -222,7 +222,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "em과 rem의 차이점은 무엇입니까?",
-        "answer": "EM은 상위 요소의 글꼴 크기에 상대적인 반면, REM은 루트(html) 요소의 글꼴 크기에 상대적입니다. EM 화합물 — 상위 항목이 다른 2em 상위 항목 안에 2em인 경우 루트 크기의 4배가 됩니다. REM은 합성을 피하면서 항상 루트를 참조합니다."
+        "answer": "EM은 상위 요소의 글꼴 크기에 상대적인 반면, REM은 루트(html) 요소의 글꼴 크기에 상대적입니다. EM 화합물 - 상위 항목이 다른 2em 상위 항목 안에 2em인 경우 루트 크기의 4배가 됩니다. REM은 합성을 피하면서 항상 루트를 참조합니다."
       },
       {
         "question": "px를 em으로 어떻게 변환합니까?",
@@ -284,7 +284,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Wat is het verschil tussen em en rem?",
-        "answer": "EM is relatief ten opzichte van de lettergrootte van het bovenliggende element, terwijl REM relatief is ten opzichte van de lettergrootte van het hoofdelement (html). EM-verbindingen — als een ouder 2em is binnen een andere 2em-ouder, wordt deze 4x de wortelgrootte. REM verwijst altijd naar de root en vermijdt samengestelde elementen."
+        "answer": "EM is relatief ten opzichte van de lettergrootte van het bovenliggende element, terwijl REM relatief is ten opzichte van de lettergrootte van het hoofdelement (html). EM-verbindingen - als een ouder 2em is binnen een andere 2em-ouder, wordt deze 4x de wortelgrootte. REM verwijst altijd naar de root en vermijdt samengestelde elementen."
       },
       {
         "question": "Hoe converteer ik px naar em?",
@@ -346,7 +346,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Em ve rem arasındaki fark nedir?",
-        "answer": "EM ana öğenin yazı tipi boyutuna göredir, REM ise kök (html) öğenin yazı tipi boyutuna bağlıdır. EM bileşikleri — eğer bir ebeveyn başka bir 2em ebeveynin içinde 2em ise, kök boyutunun 4 katı olur. REM, bileşik oluşturmayı önleyerek her zaman köke başvurur."
+        "answer": "EM ana öğenin yazı tipi boyutuna göredir, REM ise kök (html) öğenin yazı tipi boyutuna bağlıdır. EM bileşikleri - eğer bir ebeveyn başka bir 2em ebeveynin içinde 2em ise, kök boyutunun 4 katı olur. REM, bileşik oluşturmayı önleyerek her zaman köke başvurur."
       },
       {
         "question": "Pxx'i em'ye nasıl dönüştürebilirim?",
@@ -377,7 +377,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Jaka jest różnica między em i rem?",
-        "answer": "EM zależy od rozmiaru czcionki elementu nadrzędnego, podczas gdy REM zależy od rozmiaru czcionki elementu głównego (html). Związki EM — jeśli rodzic ma 2 em w innym 2 em rodzicu, staje się 4-krotnie większy od rozmiaru korzenia. REM zawsze odwołuje się do korzenia, unikając łączenia."
+        "answer": "EM zależy od rozmiaru czcionki elementu nadrzędnego, podczas gdy REM zależy od rozmiaru czcionki elementu głównego (html). Związki EM - jeśli rodzic ma 2 em w innym 2 em rodzicu, staje się 4-krotnie większy od rozmiaru korzenia. REM zawsze odwołuje się do korzenia, unikając łączenia."
       },
       {
         "question": "Jak przekonwertować px na em?",
@@ -408,7 +408,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Apa perbedaan antara em dan rem?",
-        "answer": "EM relatif terhadap ukuran font elemen induk, sedangkan REM relatif terhadap ukuran font elemen root (html). Senyawa EM — jika suatu induk mempunyai 2em di dalam induk 2em yang lain, maka ukuran akarnya menjadi 4x. REM selalu mereferensikan root, menghindari penggabungan."
+        "answer": "EM relatif terhadap ukuran font elemen induk, sedangkan REM relatif terhadap ukuran font elemen root (html). Senyawa EM - jika suatu induk mempunyai 2em di dalam induk 2em yang lain, maka ukuran akarnya menjadi 4x. REM selalu mereferensikan root, menghindari penggabungan."
       },
       {
         "question": "Bagaimana cara mengonversi px ke em?",
@@ -439,7 +439,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "В чем разница между em и rem?",
-        "answer": "EM относится к размеру шрифта родительского элемента, а REM — к размеру шрифта корневого элемента (html). EM-соединения — если родительский элемент имеет размер 2em внутри другого родителя размером 2em, он становится в 4 раза больше размера корня. REM всегда ссылается на корень, избегая объединения."
+        "answer": "EM относится к размеру шрифта родительского элемента, а REM - к размеру шрифта корневого элемента (html). EM-соединения - если родительский элемент имеет размер 2em внутри другого родителя размером 2em, он становится в 4 раза больше размера корня. REM всегда ссылается на корень, избегая объединения."
       },
       {
         "question": "Как преобразовать px в em?",

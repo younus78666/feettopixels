@@ -36,7 +36,7 @@ export const content: LocalizedDocMap = {
               "United States",
               "2 × 2 in (51 × 51 mm)",
               "600 × 600",
-              "600–1200 px square"
+              "600 - 1200 px square"
             ],
             [
               "United Kingdom",
@@ -227,7 +227,7 @@ export const content: LocalizedDocMap = {
               "Estados Unidos Estados",
               "2 × 2 pulg. (51 × 51 mm)",
               "600 × 600",
-              "600–1200 px cuadrados"
+              "600 - 1200 px cuadrados"
             ],
             [
               "Reino Unido",
@@ -418,7 +418,7 @@ export const content: LocalizedDocMap = {
               "États-Unis États",
               "2 × 2 po (51 × 51 mm)",
               "600 × 600",
-              "600–1 200 px carré"
+              "600 - 1 200 px carré"
             ],
             [
               "Royaume-Uni",
@@ -609,7 +609,7 @@ export const content: LocalizedDocMap = {
               "Vereinigte Staaten",
               "2 × 2 Zoll (51 × 51 mm)",
               "600 × 600",
-              "600–1200 px quadratisch"
+              "600 - 1200 px quadratisch"
             ],
             [
               "Vereinigtes Königreich",
@@ -800,7 +800,7 @@ export const content: LocalizedDocMap = {
               "Estados Unidos",
               "2 × 2 pol. (51 × 51 mm)",
               "600 × 600",
-              "Quadrado de 600–1200 px"
+              "Quadrado de 600 - 1200 px"
             ],
             [
               "Reino Unido",
@@ -1564,7 +1564,7 @@ export const content: LocalizedDocMap = {
               "Stato Stati",
               "2 × 2 pollici (51 × 51 mm)",
               "600 × 600",
-              "600–1200 px quadrati"
+              "600 - 1200 px quadrati"
             ],
             [
               "Regno Unito",
@@ -1755,7 +1755,7 @@ export const content: LocalizedDocMap = {
               "Verenigd Staten",
               "2 × 2 in (51 × 51 mm)",
               "600 × 600",
-              "600–1200 px vierkant"
+              "600 - 1200 px vierkant"
             ],
             [
               "Verenigd Koninkrijk",
@@ -1946,7 +1946,7 @@ export const content: LocalizedDocMap = {
               "المتحدة الولايات",
               "2 × 2 بوصة (51 × 51 مم)",
               "600 × 600",
-              "600–1200 بكسل مربع"
+              "600 - 1200 بكسل مربع"
             ],
             [
               "المملكة المتحدة",
@@ -2137,7 +2137,7 @@ export const content: LocalizedDocMap = {
               "Amerika Birleşik Devletleri",
               "2 × 2 inç (51 × 51 mm)",
               "600 × 600",
-              "600–1200 piksel kare"
+              "600 - 1200 piksel kare"
             ],
             [
               "Birleşik Krallık",
@@ -2328,7 +2328,7 @@ export const content: LocalizedDocMap = {
               "Stany Zjednoczone",
               "2 × 2 cale (51 × 51 mm)",
               "600 × 600",
-              "Kwadrat o wymiarach 600–1200 pikseli"
+              "Kwadrat o wymiarach 600 - 1200 pikseli"
             ],
             [
               "Zjednoczone Królestwo",
@@ -2519,7 +2519,7 @@ export const content: LocalizedDocMap = {
               "United Menyatakan",
               "2 × 2 inci (51 × 51 mm)",
               "600 × 600",
-              "600–1200 px persegi"
+              "600 - 1200 px persegi"
             ],
             [
               "Inggris Raya",
@@ -2691,7 +2691,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Каков стандартный размер визитной карточки в пикселях?",
-        "answer": "Стандартная визитная карточка США — 3,5 x 2 дюйма. При разрешении 300 DPI это соответствует 1050 x 600 пикселей. Включите обрез 1/8 дюйма (37 пикселей при разрешении 300 точек на дюйм) с каждой стороны для файлов, готовых к печати."
+        "answer": "Стандартная визитная карточка США - 3,5 x 2 дюйма. При разрешении 300 DPI это соответствует 1050 x 600 пикселей. Включите обрез 1/8 дюйма (37 пикселей при разрешении 300 точек на дюйм) с каждой стороны для файлов, готовых к печати."
       }
     ],
     "sections": [
@@ -2710,7 +2710,7 @@ export const content: LocalizedDocMap = {
               "United Штаты",
               "2 × 2 дюйма (51 × 51 мм)",
               "600 × 600",
-              "600–1200 пикселей квадратные"
+              "600 - 1200 пикселей квадратные"
             ],
             [
               "Великобритания",

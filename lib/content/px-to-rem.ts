@@ -21,7 +21,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Can I use rem for spacing and sizing too?",
-        "answer": "Yes. REM units work for any CSS property — margin, padding, width, height, border-radius, and more. Using rem for spacing alongside font sizes creates a consistently scalable design system."
+        "answer": "Yes. REM units work for any CSS property - margin, padding, width, height, border-radius, and more. Using rem for spacing alongside font sizes creates a consistently scalable design system."
       }
     ],
     "sections": [
@@ -114,7 +114,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Kann ich rem auch für Abstände und Größen verwenden?",
-        "answer": "Ja. REM-Einheiten funktionieren für jede CSS-Eigenschaft – Rand, Innenabstand, Breite, Höhe, Rahmenradius und mehr. Durch die Verwendung von rem für Abstände neben Schriftgrößen entsteht ein konsistent skalierbares Designsystem."
+        "answer": "Ja. REM-Einheiten funktionieren für jede CSS-Eigenschaft - Rand, Innenabstand, Breite, Höhe, Rahmenradius und mehr. Durch die Verwendung von rem für Abstände neben Schriftgrößen entsteht ein konsistent skalierbares Designsystem."
       }
     ],
     "sections": [
@@ -145,7 +145,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Posso usar rem para espaçamento e dimensionamento também?",
-        "answer": "Sim. As unidades REM funcionam para qualquer propriedade CSS – margem, preenchimento, largura, altura, raio da borda e muito mais. Usar rem para espaçamento junto com tamanhos de fonte cria um sistema de design consistentemente escalonável."
+        "answer": "Sim. As unidades REM funcionam para qualquer propriedade CSS - margem, preenchimento, largura, altura, raio da borda e muito mais. Usar rem para espaçamento junto com tamanhos de fonte cria um sistema de design consistentemente escalonável."
       }
     ],
     "sections": [
@@ -393,7 +393,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Czy mogę używać rem również do ustawiania odstępów i zmiany rozmiaru?",
-        "answer": "Tak. Jednostki REM działają dla dowolnej właściwości CSS — marginesu, dopełnienia, szerokości, wysokości, promienia obramowania i innych. Użycie rem do odstępów obok rozmiarów czcionek tworzy spójnie skalowalny system projektowania."
+        "answer": "Tak. Jednostki REM działają dla dowolnej właściwości CSS - marginesu, dopełnienia, szerokości, wysokości, promienia obramowania i innych. Użycie rem do odstępów obok rozmiarów czcionek tworzy spójnie skalowalny system projektowania."
       }
     ],
     "sections": [
@@ -424,7 +424,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Dapatkah saya menggunakan rem untuk spasi dan ukuran juga?",
-        "answer": "Ya. Unit REM berfungsi untuk semua properti CSS — margin, padding, lebar, tinggi, radius batas, dan banyak lagi. Menggunakan rem untuk spasi di samping ukuran font akan menciptakan sistem desain yang dapat diskalakan secara konsisten."
+        "answer": "Ya. Unit REM berfungsi untuk semua properti CSS - margin, padding, lebar, tinggi, radius batas, dan banyak lagi. Menggunakan rem untuk spasi di samping ukuran font akan menciptakan sistem desain yang dapat diskalakan secara konsisten."
       }
     ],
     "sections": [
@@ -439,7 +439,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "В чем разница между px и rem?",
-        "answer": "Пиксели (px) — это единицы фиксированного размера, которые не масштабируются в соответствии с предпочтениями пользователя. Единицы REM относятся к размеру шрифта корневого элемента (обычно 16 пикселей). Использование rem позволяет масштабировать ваш макет, когда пользователи меняют размер шрифта по умолчанию в своем браузере."
+        "answer": "Пиксели (px) - это единицы фиксированного размера, которые не масштабируются в соответствии с предпочтениями пользователя. Единицы REM относятся к размеру шрифта корневого элемента (обычно 16 пикселей). Использование rem позволяет масштабировать ваш макет, когда пользователи меняют размер шрифта по умолчанию в своем браузере."
       },
       {
         "question": "Как преобразовать px в rem?",
@@ -455,7 +455,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Могу ли я также использовать rem для интервалов и размеров?",
-        "answer": "Да. Единицы REM подходят для любого свойства CSS — поля, отступа, ширины, высоты, радиуса границы и т. д. Использование rem для интервалов вместе с размерами шрифтов создает последовательно масштабируемую систему дизайна."
+        "answer": "Да. Единицы REM подходят для любого свойства CSS - поля, отступа, ширины, высоты, радиуса границы и т. д. Использование rem для интервалов вместе с размерами шрифтов создает последовательно масштабируемую систему дизайна."
       }
     ],
     "sections": [

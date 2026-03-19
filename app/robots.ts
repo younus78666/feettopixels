@@ -8,7 +8,7 @@ const localeAllowRules = locales.map((l) => `/${l}/`);
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Main rules — allow only locale-prefixed paths, block non-locale duplicates
+      // Main rules - allow only locale-prefixed paths, block non-locale duplicates
       {
         userAgent: "Googlebot",
         allow: [...localeAllowRules, "/sitemap.xml"],
@@ -90,7 +90,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "FacebookBot",
         disallow: "/",
       },
-      // Default rule for all other bots — only allow locale paths
+      // Default rule for all other bots - only allow locale paths
       {
         userAgent: "*",
         allow: [...localeAllowRules, "/sitemap.xml"],
