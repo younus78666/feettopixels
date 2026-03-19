@@ -2,9 +2,16 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navigation, isDropdown } from "@/content/navigation";
 import type { NavDropdown } from "@/content/navigation";
 import { getHomeLabel } from "@/lib/home-label";
+import {
+  isCurrentPath,
+  isDropdownCurrent,
+  localizeNavHref,
+} from "@/lib/nav-active";
+import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
@@ -36,8 +43,11 @@ function ExpandableSection({
   dropdown: NavDropdown;
   locale: Locale;
 }) {
+  const pathname = usePathname();
+  const isActive = isDropdownCurrent(pathname, dropdown, locale);
   const [expanded, setExpanded] = useState(false);
   const dict = getDictionary(locale);
+  const isExpanded = isActive || expanded;
 
   const label =
     dropdown.label === "Tools"
@@ -49,13 +59,20 @@ function ExpandableSection({
   return (
     <div className="border-b border-neutral-100">
       <button
-        onClick={() => setExpanded(!expanded)}
-        className="flex w-full items-center justify-between px-6 py-3.5 text-left text-base font-medium text-neutral-800 hover:bg-neutral-50"
-        aria-expanded={expanded}
+        onClick={() => {
+          if (!isActive) setExpanded(!expanded);
+        }}
+        className={cn(
+          "flex w-full items-center justify-between px-6 py-3.5 text-left text-base font-medium transition-colors",
+          isActive
+            ? "bg-primary-50 text-primary-700"
+            : "text-neutral-800 hover:bg-neutral-50",
+        )}
+        aria-expanded={isExpanded}
       >
         {label}
         <svg
-          className={`h-4 w-4 text-neutral-400 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+          className={`h-4 w-4 text-neutral-400 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -69,7 +86,7 @@ function ExpandableSection({
         </svg>
       </button>
 
-      {expanded && (
+      {isExpanded && (
         <div className="bg-neutral-50 pb-2">
           {dropdown.groups.map((group) => (
             <div key={group.heading} className="px-6 py-2">
@@ -80,8 +97,18 @@ function ExpandableSection({
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={`/${locale}${link.href}`}
-                      className="block rounded-md px-3 py-2 text-sm text-neutral-600 hover:bg-white hover:text-primary-700"
+                      href={localizeNavHref(link.href, locale)}
+                      className={cn(
+                        "block rounded-md px-3 py-2 text-sm transition-colors",
+                        isCurrentPath(pathname, link.href, locale)
+                          ? "bg-white text-primary-700"
+                          : "text-neutral-600 hover:bg-white hover:text-primary-700",
+                      )}
+                      aria-current={
+                        isCurrentPath(pathname, link.href, locale)
+                          ? "page"
+                          : undefined
+                      }
                     >
                       {getNavLabel(link, dict)}
                     </Link>
@@ -97,6 +124,7 @@ function ExpandableSection({
 }
 
 export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
+  const pathname = usePathname();
   const panelRef = useRef<HTMLDivElement>(null);
   const dict = getDictionary(locale);
   const homeLabel = getHomeLabel(locale);
@@ -183,8 +211,16 @@ export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
           style={{ maxHeight: "calc(100vh - 65px)" }}
         >
           <Link
-            href={`/${locale}`}
-            className="block border-b border-neutral-100 px-6 py-3.5 text-base font-medium text-neutral-800 hover:bg-neutral-50"
+            href={localizeNavHref("/", locale)}
+            className={cn(
+              "block border-b border-neutral-100 px-6 py-3.5 text-base font-medium transition-colors",
+              isCurrentPath(pathname, "/", locale)
+                ? "bg-primary-50 text-primary-700"
+                : "text-neutral-800 hover:bg-neutral-50",
+            )}
+            aria-current={
+              isCurrentPath(pathname, "/", locale) ? "page" : undefined
+            }
           >
             {homeLabel}
           </Link>
@@ -198,8 +234,18 @@ export function MobileMenu({ open, onClose, locale }: MobileMenuProps) {
             ) : (
               <Link
                 key={entry.href}
-                href={`/${locale}${entry.href}`}
-                className="block border-b border-neutral-100 px-6 py-3.5 text-base font-medium text-neutral-800 hover:bg-neutral-50"
+                href={localizeNavHref(entry.href, locale)}
+                className={cn(
+                  "block border-b border-neutral-100 px-6 py-3.5 text-base font-medium transition-colors",
+                  isCurrentPath(pathname, entry.href, locale)
+                    ? "bg-primary-50 text-primary-700"
+                    : "text-neutral-800 hover:bg-neutral-50",
+                )}
+                aria-current={
+                  isCurrentPath(pathname, entry.href, locale)
+                    ? "page"
+                    : undefined
+                }
               >
                 {entry.label === "About" ? dict.nav.about : entry.label}
               </Link>

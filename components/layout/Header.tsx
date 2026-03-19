@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navigation, isDropdown } from "@/content/navigation";
 import type { NavDropdown } from "@/content/navigation";
 import { SiteLogo } from "@/components/branding/SiteLogo";
@@ -10,13 +11,14 @@ import { SearchModal } from "./SearchModal";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { getHomeLabel } from "@/lib/home-label";
+import {
+  isCurrentPath,
+  isDropdownCurrent,
+  localizeNavHref,
+} from "@/lib/nav-active";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
 import type { Locale } from "@/lib/i18n";
-
-function localizeHref(href: string, locale: Locale): string {
-  return `/${locale}${href}`;
-}
 
 function translateGroupHeading(
   heading: string,
@@ -109,6 +111,7 @@ function DropdownMenu({
   dropdown: NavDropdown;
   locale: Locale;
 }) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -135,6 +138,7 @@ function DropdownMenu({
   const columnCount = dropdown.groups.length;
   const isToolsMenu = dropdown.label === "Tools";
   const showDescriptions = dropdown.label === "Learn";
+  const dropdownActive = isDropdownCurrent(pathname, dropdown, locale);
   const label =
     dropdown.label === "Tools"
       ? dict.nav.tools
@@ -151,7 +155,12 @@ function DropdownMenu({
     >
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+        className={cn(
+          "inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+          dropdownActive
+            ? "bg-primary-50 text-primary-700"
+            : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900",
+        )}
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -219,8 +228,18 @@ function DropdownMenu({
                     {group.links.map((link) => (
                       <li key={link.href}>
                         <Link
-                          href={localizeHref(link.href, locale)}
-                          className="group flex items-start gap-2.5 rounded-lg bg-white/72 px-2.5 py-2 transition-colors hover:bg-white"
+                          href={localizeNavHref(link.href, locale)}
+                          className={cn(
+                            "group flex items-start gap-2.5 rounded-lg px-2.5 py-2 transition-colors",
+                            isCurrentPath(pathname, link.href, locale)
+                              ? "bg-white text-primary-700 shadow-soft"
+                              : "bg-white/72 hover:bg-white",
+                          )}
+                          aria-current={
+                            isCurrentPath(pathname, link.href, locale)
+                              ? "page"
+                              : undefined
+                          }
                           onClick={() => setOpen(false)}
                         >
                           <span className="mt-0.5 inline-flex h-6 min-w-6 items-center justify-center rounded-md bg-neutral-900 px-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
@@ -254,6 +273,7 @@ function DropdownMenu({
 }
 
 export function Header({ locale }: { locale: Locale }) {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dict = getDictionary(locale);
@@ -284,8 +304,16 @@ export function Header({ locale }: { locale: Locale }) {
             aria-label="Main navigation"
           >
             <Link
-              href={localizeHref("/", locale)}
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+              href={localizeNavHref("/", locale)}
+              className={cn(
+                "rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                isCurrentPath(pathname, "/", locale)
+                  ? "bg-primary-50 text-primary-700"
+                  : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900",
+              )}
+              aria-current={
+                isCurrentPath(pathname, "/", locale) ? "page" : undefined
+              }
             >
               {homeLabel}
             </Link>
@@ -299,8 +327,18 @@ export function Header({ locale }: { locale: Locale }) {
               ) : (
                 <Link
                   key={entry.href}
-                  href={localizeHref(entry.href, locale)}
-                  className="rounded-full px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+                  href={localizeNavHref(entry.href, locale)}
+                  className={cn(
+                    "rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                    isCurrentPath(pathname, entry.href, locale)
+                      ? "bg-primary-50 text-primary-700"
+                      : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900",
+                  )}
+                  aria-current={
+                    isCurrentPath(pathname, entry.href, locale)
+                      ? "page"
+                      : undefined
+                  }
                 >
                   {entry.label === "About" ? dict.nav.about : entry.label}
                 </Link>
