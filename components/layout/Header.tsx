@@ -186,9 +186,11 @@ function DropdownMenu({
       {open && (
         <div
           className={cn(
-            "absolute left-1/2 top-full z-50 mt-2 max-h-[70vh] -translate-x-1/2 overflow-y-auto rounded-2xl border border-neutral-200 bg-white/96 p-3 shadow-elevated backdrop-blur-sm",
-            columnCount >= 3 ? "w-[780px] max-w-[calc(100vw-2rem)]" : "w-[560px] max-w-[calc(100vw-2rem)]",
-            isToolsMenu && "max-h-[24rem]",
+            "scrollbar-subtle absolute left-1/2 top-full z-50 mt-2 max-h-[70vh] -translate-x-1/2 overflow-x-hidden overflow-y-auto rounded-2xl border border-neutral-200 bg-white/96 p-3 shadow-elevated backdrop-blur-sm",
+            columnCount >= 3
+              ? "w-[min(1280px,calc(100vw-2rem))]"
+              : "w-[min(960px,calc(100vw-2rem))]",
+            isToolsMenu && "max-h-[26rem]",
           )}
         >
           <div
