@@ -119,12 +119,6 @@ export default async function Home({ params }: PageProps) {
       ]
     : [dict.home.dpiAwareDesc, dict.home.instantDesc, dict.home.devFriendlyDesc];
 
-  const heroExamples = [
-    { label: "1 ft @ 96 DPI", value: "1152 px" },
-    { label: "5 ft @ 150 DPI", value: "9000 px" },
-    { label: "10 ft @ 300 DPI", value: "36000 px" },
-  ];
-
   const heroUseCases = [
     "Posters",
     "Signage",
@@ -212,7 +206,7 @@ export default async function Home({ params }: PageProps) {
       <JsonLd data={webPageJsonLd} />
       <JsonLd data={siteNavigationJsonLd} />
 
-      <SectionWrapper className="relative overflow-hidden pb-14 pt-14 sm:pb-20 sm:pt-20 lg:pb-24 lg:pt-24">
+      <SectionWrapper className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 lg:pb-16 lg:pt-18">
         <div className="absolute inset-x-0 top-0 h-[78%] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_58%),radial-gradient(circle_at_left,rgba(20,184,166,0.14),transparent_42%)]" />
         <div className="absolute left-[8%] top-24 h-40 w-40 rounded-full bg-primary-100 blur-3xl" />
         <div className="absolute right-[6%] top-16 h-64 w-64 rounded-full bg-sky-100 blur-3xl" />
@@ -231,14 +225,14 @@ export default async function Home({ params }: PageProps) {
                     ? "Convert feet to pixels instantly with DPI-aware presets for web, print, signage, and large-format layouts."
                     : dict.pages["feet-to-pixels"]?.description || dict.home.heroSub}
                 </p>
-                <p className="mt-4 max-w-xl text-base leading-7 text-neutral-500">
+                <p className="mt-3 max-w-xl text-base leading-7 text-neutral-500">
                   {isEnglish
                     ? "Use the calculator first, then open the dedicated tool page if you want more guidance, conversion tables, or reverse-unit options."
                     : dict.site.description}
                 </p>
 
                 {isEnglish && (
-                  <div className="mt-7 rounded-[28px] border border-neutral-200/80 bg-white/80 p-5 shadow-[0_18px_45px_-36px_rgba(15,23,42,0.3)]">
+                  <div className="mt-5 rounded-[28px] border border-neutral-200/80 bg-white/80 p-5 shadow-[0_18px_45px_-36px_rgba(15,23,42,0.3)]">
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
                       Best for
                     </p>
@@ -255,7 +249,7 @@ export default async function Home({ params }: PageProps) {
                   </div>
                 )}
 
-                <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {heroPoints.map((point, index) => (
                     <div
                       key={point}
@@ -271,7 +265,7 @@ export default async function Home({ params }: PageProps) {
                   ))}
                 </div>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={`/${validLocale}/feet-to-pixels`}
                     className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-6 text-base font-medium text-white shadow-[0_18px_40px_-26px_rgba(15,23,42,0.75)] transition-transform hover:-translate-y-0.5 hover:bg-neutral-900"
@@ -285,7 +279,7 @@ export default async function Home({ params }: PageProps) {
                     {isEnglish ? "Browse all tools" : dict.home.browseTools}
                   </Link>
                 </div>
-                <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-neutral-500">
+                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-neutral-500">
                   <Link
                     href={`/${validLocale}/about`}
                     className="font-medium text-primary-700 hover:text-primary-800"
@@ -306,15 +300,12 @@ export default async function Home({ params }: PageProps) {
                   className="relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,250,252,0.95))] p-5 shadow-[0_28px_80px_-44px_rgba(15,23,42,0.5)] backdrop-blur sm:p-6"
                 >
                   <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_68%)]" />
-                  <div className="border-b border-neutral-200/80 pb-5">
+                  <div className="border-b border-neutral-200/80 pb-4">
                     <div className="max-w-xl">
-                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                        {isEnglish ? "Main tool" : dict.nav.tools}
-                      </p>
-                      <h2 className="mt-3 max-w-lg text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">
+                      <h2 className="max-w-lg text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">
                         {isEnglish ? "Convert Feet to Pixels" : primaryHeroShortLabel}
                       </h2>
-                      <p className="mt-3 max-w-lg text-sm leading-7 text-neutral-600">
+                      <p className="mt-2 max-w-lg text-sm leading-7 text-neutral-600">
                         {isEnglish
                           ? "Enter feet, choose your DPI, and get the pixel value immediately."
                           : dict.pages["feet-to-pixels"]?.description || dict.site.description}
@@ -322,7 +313,7 @@ export default async function Home({ params }: PageProps) {
                     </div>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {heroConverterLinks.map((tool) => {
                       const active = tool.href === "/feet-to-pixels";
                       const compactLabel = getCompactToolLabel(getNavLabel(tool, dict));
@@ -343,7 +334,7 @@ export default async function Home({ params }: PageProps) {
                     })}
                   </div>
 
-                  <div className="mt-6">
+                  <div className="mt-4">
                     <UnitConverter
                       locale={validLocale}
                       fromUnit="Feet"
@@ -351,55 +342,33 @@ export default async function Home({ params }: PageProps) {
                       conversionType="ft-to-px"
                       formula="px = ft x 12 x DPI"
                       defaultDpi={96}
+                      compact
                       showFormulaCard={false}
                       showConversionTable={false}
                       className="border-0 bg-transparent p-0 shadow-none"
                     />
                   </div>
 
-                  <div className="mt-5 grid gap-3 lg:grid-cols-[0.78fr,1.22fr]">
-                    <div className="rounded-[24px] bg-neutral-50 px-4 py-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                        {isEnglish ? "Formula" : dict.tool.formula}
-                      </p>
-                      <p className="mono-display mt-2 text-sm text-neutral-700">
-                        px = ft x 12 x DPI
-                      </p>
-                    </div>
-
-                    <div className="rounded-[24px] bg-neutral-50 px-4 py-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                        {isEnglish ? "Popular feet to pixels examples" : dict.home.conversionTools}
-                      </p>
-                      <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                        {heroExamples.map((example) => (
-                          <div
-                            key={example.label}
-                            className="rounded-[18px] border border-neutral-200 bg-white px-3 py-3"
-                          >
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
-                              {example.label}
-                            </p>
-                            <p className="mono-display mt-2 text-sm font-semibold text-neutral-800">
-                              {example.value}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-neutral-200/80 pt-4 text-sm text-neutral-500">
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                      {isEnglish ? "Formula" : dict.tool.formula}
+                    </span>
+                    <span className="mono-display font-medium text-neutral-700">
+                      px = ft x 12 x DPI
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
             {tocItems.length > 0 && (
-              <div className="mt-10 border-t border-neutral-200/70 pt-6">
+              <div className="mt-6 border-t border-neutral-200/70 pt-4">
                 <div className="flex flex-col gap-2">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-700">
                     {dict.nav.onThisPage}
                   </p>
                 </div>
-                <ul className="mt-4 grid gap-2 text-sm text-neutral-600 sm:grid-cols-2 lg:grid-cols-5">
+                <ul className="mt-3 grid gap-2 text-sm text-neutral-600 sm:grid-cols-2 lg:grid-cols-5">
                   {tocItems.map((item) => (
                     <li key={item.id}>
                       <a

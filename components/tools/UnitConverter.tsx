@@ -76,6 +76,7 @@ interface UnitConverterProps {
   toUnit: string;
   conversionType: ConversionType;
   formula: string;
+  compact?: boolean;
   showDpiSelector?: boolean;
   showFormulaCard?: boolean;
   showConversionTable?: boolean;
@@ -91,6 +92,7 @@ export function UnitConverter({
   toUnit,
   conversionType,
   formula,
+  compact = false,
   showDpiSelector = true,
   showFormulaCard = true,
   showConversionTable = true,
@@ -198,8 +200,8 @@ export function UnitConverter({
   };
 
   return (
-    <div className={cn("tool-card space-y-6", className)}>
-      <div className="flex flex-col items-center gap-4 sm:flex-row">
+    <div className={cn("tool-card", compact ? "space-y-4" : "space-y-6", className)}>
+      <div className={cn("flex flex-col items-center sm:flex-row", compact ? "gap-3" : "gap-4")}>
         <div className="w-full flex-1">
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
             {currentFromUnit || fallbackLabels.from}
