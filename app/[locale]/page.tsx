@@ -205,8 +205,8 @@ export default async function Home({ params }: PageProps) {
         <div className="absolute right-[6%] top-16 h-64 w-64 rounded-full bg-sky-100 blur-3xl" />
 
         <Container as="article" className="relative">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
-              <div className="order-2 max-w-xl lg:ml-auto">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+              <div className="order-2 max-w-2xl">
                 <p className="inline-flex rounded-full border border-primary-200 bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary-700 shadow-soft">
                   {isEnglish ? "Feet to pixels" : dict.pages["feet-to-pixels"]?.title || dict.home.freeOnlineTools}
                 </p>
