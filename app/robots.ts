@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site-config";
 import { locales } from "@/lib/i18n";
 
-// Generate Allow rules for all locale prefixes: /en/, /es/, /fr/, etc.
-const localeAllowRules = locales.map((l) => `/${l}/`);
+// Allow both bare locale roots (/en) and nested locale paths (/en/...)
+const localeAllowRules = locales.flatMap((locale) => [`/${locale}`, `/${locale}/`]);
 
 export default function robots(): MetadataRoute.Robots {
   return {
