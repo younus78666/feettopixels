@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isValidElement } from "react";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
@@ -63,6 +64,17 @@ function prefixHref(href: string, locale?: Locale): string {
   return `/${locale}${href}`;
 }
 
+function hasRenderableArticleContent(content: React.ReactNode): boolean {
+  if (isValidElement<{ sections?: unknown[] }>(content)) {
+    const sections = content.props?.sections;
+    if (Array.isArray(sections)) {
+      return sections.length > 0;
+    }
+  }
+
+  return Boolean(content);
+}
+
 export function BlogLayout({
   title,
   extractiveAnswer,
@@ -101,6 +113,15 @@ export function BlogLayout({
     labels?.onThisPage || dict?.nav.onThisPage || "On this page";
   const readyToConvertLabel =
     labels?.readyToConvert || dict?.tool.readyToConvert || "Ready to convert?";
+  const hasArticleContent = hasRenderableArticleContent(children);
+  const resolvedToc =
+    toc.length > 0
+      ? toc
+      : [
+          { id: "overview", label: "Overview" },
+          { id: "why-this-matters", label: "Why This Matters" },
+          { id: "next-steps", label: "Next Steps" },
+        ];
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -215,7 +236,7 @@ export function BlogLayout({
                 {onThisPageLabel}
               </p>
               <ul className="mt-4 space-y-2 border-l border-neutral-200 pl-4">
-                {toc.map((item) => (
+                {resolvedToc.map((item) => (
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
@@ -257,8 +278,61 @@ export function BlogLayout({
       </section>
 
       <div className="mt-10 min-w-0">
-        <div className="prose prose-neutral max-w-none rounded-[30px] border border-neutral-200/80 bg-white/92 p-6 shadow-[0_18px_48px_-38px_rgba(15,23,42,0.28)] sm:p-8">
-          {children}
+        <div className="rounded-[30px] border border-neutral-200/80 bg-white/92 p-6 shadow-[0_18px_48px_-38px_rgba(15,23,42,0.28)] sm:p-8">
+          <section
+            id="overview"
+            className="rounded-[24px] border border-primary-100 bg-primary-50/70 p-5 shadow-[0_16px_40px_-34px_rgba(20,184,166,0.24)]"
+          >
+            <h2 className="text-2xl font-semibold text-neutral-900">Overview</h2>
+            <p className="mt-3 text-base leading-relaxed text-neutral-700">
+              {extractiveAnswer}
+            </p>
+          </section>
+
+          {hasArticleContent ? (
+            <div className="prose prose-neutral mt-8 max-w-none">
+              {children}
+            </div>
+          ) : (
+            <div className="prose prose-neutral mt-8 max-w-none">
+              <h2 id="why-this-matters">Why This Matters</h2>
+              <p>
+                This page is here to answer the question quickly, then help you
+                move into the right tool, chart, or follow-up guide without having
+                to search around the site. Use the summary above as the short answer
+                and the links below when you need the next practical step.
+              </p>
+
+              <h2 id="next-steps">Next Steps</h2>
+              <ul>
+                <li>
+                  Open the recommended tool for a live calculation or quick check.
+                </li>
+                <li>
+                  Compare the related guides if you need context before choosing a
+                  size, DPI, or unit.
+                </li>
+                <li>
+                  Use the FAQ below for the most common edge cases and follow-up
+                  questions.
+                </li>
+              </ul>
+
+              {localizedRelatedArticles.length > 0 && (
+                <>
+                  <h2 id="related-reading">Related Reading</h2>
+                  <ul>
+                    {localizedRelatedArticles.slice(0, 4).map((article) => (
+                      <li key={article.href}>
+                        <Link href={article.href}>{article.title}</Link>
+                        {article.description ? ` - ${article.description}` : ""}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          )}
         </div>
 
         <section id="related-articles" className="mt-12">
