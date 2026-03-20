@@ -10,6 +10,7 @@ import { getBreadcrumbs } from "@/lib/content-utils";
 import { isValidLocale, locales, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
+import { siteConfig } from "@/content/site-config";
 import { PixelConverterHub } from "./PixelConverterHub";
 
 interface PageProps {
@@ -110,7 +111,7 @@ export default async function PixelConverterPage({ params }: PageProps) {
           "@type": "WebPage",
           name: pageDict?.title || "Pixel Converter",
           description: pageDict?.description || "",
-          url: `https://feettopixels.com/${validLocale}/pixel-converter`,
+          url: `${siteConfig.url}/${validLocale}/pixel-converter`,
           inLanguage: validLocale,
         }}
       />

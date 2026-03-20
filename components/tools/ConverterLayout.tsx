@@ -8,6 +8,7 @@ import { FAQ } from "./FAQ";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
 import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
+import { siteConfig } from "@/content/site-config";
 
 interface BreadcrumbItem {
   label: string;
@@ -98,10 +99,10 @@ export function ConverterLayout({
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          "@id": `https://feettopixels.com${localizedSlug}/#tool`,
+          "@id": `${siteConfig.url}${localizedSlug}/#tool`,
           name: title,
           description: description,
-          url: `https://feettopixels.com${localizedSlug}`,
+          url: `${siteConfig.url}${localizedSlug}`,
           inLanguage: locale || "en",
           datePublished,
           dateModified,
@@ -118,12 +119,12 @@ export function ConverterLayout({
           },
           creator: {
             "@type": "Organization",
-            "@id": "https://feettopixels.com/#organization",
+            "@id": `${siteConfig.url}/#organization`,
             name: "FeetToPixels",
           },
           isPartOf: {
             "@type": "WebSite",
-            "@id": "https://feettopixels.com/#website",
+            "@id": `${siteConfig.url}/#website`,
           },
         }}
       />

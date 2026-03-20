@@ -3,8 +3,8 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
 const COOKIE_NAME = "admin-session";
-const CANONICAL_HOST = "feettopixels.com";
-const WWW_HOST = `www.${CANONICAL_HOST}`;
+const ROOT_HOST = "feettopixels.com";
+const CANONICAL_HOST = `www.${ROOT_HOST}`;
 
 const locales = [
   "en", "es", "fr", "de", "pt", "hi", "ja", "ko",
@@ -62,7 +62,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = requestUrl;
 
   // Force a single public host so the live URL matches the canonical tag.
-  if (requestUrl.hostname === WWW_HOST) {
+  if (requestUrl.hostname === ROOT_HOST) {
     requestUrl.hostname = CANONICAL_HOST;
     return NextResponse.redirect(requestUrl, 308);
   }
