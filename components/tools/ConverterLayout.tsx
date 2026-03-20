@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isValidElement } from "react";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
@@ -70,6 +71,17 @@ function prefixHref(href: string, locale?: Locale): string {
   return `/${locale}${href}`;
 }
 
+function hasRenderableContent(content: React.ReactNode): boolean {
+  if (isValidElement<{ sections?: unknown[] }>(content)) {
+    const sections = content.props?.sections;
+    if (Array.isArray(sections)) {
+      return sections.length > 0;
+    }
+  }
+
+  return Boolean(content);
+}
+
 export function ConverterLayout({
   title,
   description,
@@ -109,6 +121,7 @@ export function ConverterLayout({
       : dict?.categories.calculators || dict?.nav.tools || "Tools";
   const browseToolsHref = prefixHref("/pixel-converter", locale);
   const secondaryHeroTool = localizedRelatedTools[0];
+  const hasGuideContent = hasRenderableContent(content);
   const tocItems =
     locale === "en" || !locale
       ? [
@@ -327,9 +340,46 @@ export function ConverterLayout({
           )}
         </section>
 
-        <div className="prose prose-neutral mt-8 max-w-none empty:hidden">
-          {content}
-        </div>
+        {hasGuideContent ? (
+          <div className="prose prose-neutral mt-8 max-w-none empty:hidden">
+            {content}
+          </div>
+        ) : (
+          <div className="prose prose-neutral mt-8 max-w-none">
+            <h3 id="how-to-use-this-tool">How to use this tool</h3>
+            <p>
+              Start with the calculator above, enter the value you want to convert,
+              choose the DPI or direction that matches your workflow, and review the
+              result instantly. The tool updates in real time so you can test different
+              values without leaving the page.
+            </p>
+
+            <h3 id="what-this-tool-answers">What this page helps you answer</h3>
+            <p>
+              {heroSummary} This page is designed to give you a fast answer first,
+              then help you move into the right related tool or reference page if you
+              need a second step.
+            </p>
+
+            {description && description.trim() !== heroSummary.trim() && (
+              <p>{description}</p>
+            )}
+
+            {localizedRelatedTools.length > 0 && (
+              <>
+                <h3 id="next-steps">Helpful next steps</h3>
+                <ul>
+                  {localizedRelatedTools.slice(0, 4).map((tool) => (
+                    <li key={tool.href}>
+                      <Link href={tool.href}>{tool.name}</Link>
+                      {tool.description ? ` - ${tool.description}` : ""}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        )}
       </div>
 
       <RelatedTools
