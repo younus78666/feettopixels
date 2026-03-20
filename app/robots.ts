@@ -15,6 +15,11 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/admin/"],
       },
       {
+        userAgent: "Google-InspectionTool",
+        allow: [...localeAllowRules, "/sitemap.xml"],
+        disallow: ["/api/", "/admin/"],
+      },
+      {
         userAgent: "Bingbot",
         allow: [...localeAllowRules, "/sitemap.xml"],
         disallow: ["/api/", "/admin/"],
