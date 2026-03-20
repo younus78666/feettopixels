@@ -189,8 +189,8 @@ export default async function Home({ params }: PageProps) {
         <div className="absolute right-[6%] top-16 h-64 w-64 rounded-full bg-sky-100 blur-3xl" />
 
         <Container as="article" className="relative">
-          <div className="grid gap-12 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
-              <div className="max-w-2xl">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+              <div className="order-2 max-w-2xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-700">
                   {isEnglish ? "Feet to pixels" : dict.pages["feet-to-pixels"]?.title || dict.home.freeOnlineTools}
                 </p>
@@ -254,7 +254,7 @@ export default async function Home({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="relative lg:pl-4">
+              <div className="order-1 relative lg:pr-4">
                 <div className="absolute inset-4 rounded-full bg-primary-200/40 blur-3xl" />
                 <div
                   id="start-converting"
