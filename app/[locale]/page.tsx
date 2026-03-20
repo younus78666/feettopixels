@@ -18,9 +18,9 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const englishHomeTitle = "Pixel Conversion Tools: 15+ DPI Calculators [2026]";
+const englishHomeTitle = "Feet to Pixels Converter - Convert ft to px at Any DPI";
 const englishHomeDescription =
-  "Pixel conversion tools for inches, cm, mm, feet, and CSS units. Compare 15+ DPI-aware calculators, PPI guides, and print/web size references for designers.";
+  "Feet to pixels converter with 72, 96, 150, and 300 DPI presets. Convert ft to px instantly for print, signage, screens, and large-format design.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -36,13 +36,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     keywords: isEnglish
       ? [
+          "feet to pixels",
+          "feet to pixels converter",
+          "ft to px",
+          "convert feet to pixels",
           "pixel conversion",
           "pixel converter",
-          "feet to pixels",
           "pixels to inches",
-          "inches to pixels",
           "dpi calculator",
-          "pixels per inch",
         ]
       : undefined,
     alternates: {
@@ -99,11 +100,24 @@ export default async function Home({ params }: PageProps) {
 
   const heroPoints = isEnglish
     ? [
-        "Use 72, 96, 150, or 300 DPI presets instantly.",
-        "Switch to reverse or inch-based converters in one click.",
-        "Get the answer first, then open the full page if needed.",
+        "72, 96, 150, and 300 DPI presets",
+        "Fast ft to px and px to ft workflows",
+        "Built for print, signage, and mockups",
       ]
     : [dict.home.dpiAwareDesc, dict.home.instantDesc, dict.home.devFriendlyDesc];
+
+  const heroExamples = [
+    { label: "1 ft @ 96 DPI", value: "1152 px" },
+    { label: "5 ft @ 150 DPI", value: "9000 px" },
+    { label: "10 ft @ 300 DPI", value: "36000 px" },
+  ];
+
+  const heroUseCases = [
+    "Posters",
+    "Signage",
+    "Stage backdrops",
+    "Large-format print",
+  ];
 
   const homepageValueProps = [
     { count: "01", title: dict.home.dpiAware, desc: dict.home.dpiAwareDesc },
@@ -124,14 +138,14 @@ export default async function Home({ params }: PageProps) {
   const homepageFaqItems = isEnglish
     ? [
         {
-          question: "How do pixel conversion tools work?",
+          question: "How do I convert feet to pixels?",
           answer:
-            "Pixel conversion tools use a simple formula: physical size multiplied by DPI gives pixels, and pixels divided by DPI gives physical size. That is why the same image can have different print dimensions at 72, 96, 150, or 300 DPI.",
+            "Use the formula pixels = feet x 12 x DPI. For example, 1 foot at 96 DPI equals 1152 pixels, while 1 foot at 300 DPI equals 3600 pixels. That is why DPI matters before you size artwork for print or screens.",
         },
         {
-          question: "How many pixels are in 1 inch?",
+          question: "How many pixels are in 1 foot?",
           answer:
-            "The answer depends on DPI. At 96 DPI, 1 inch equals 96 pixels. At 300 DPI, 1 inch equals 300 pixels. For screens you usually use 96 PPI as a reference, while print projects often use 300 DPI.",
+            "It depends on DPI. At 72 DPI, 1 foot equals 864 pixels. At 96 DPI, it equals 1152 pixels. At 150 DPI, it equals 1800 pixels. At 300 DPI, it equals 3600 pixels.",
         },
         {
           question: "What is the difference between DPI and PPI?",
@@ -156,24 +170,26 @@ export default async function Home({ params }: PageProps) {
     dateModified: updatedDateIso,
     inLanguage: validLocale,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
-    about: ["Pixel conversion", "DPI calculator", "PPI guide", "Print and screen sizing"],
+    about: ["Feet to pixels converter", "ft to px conversion", "DPI calculator", "Print and screen sizing"],
   };
 
   const siteNavigationJsonLd = {
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
     name: [
+      dict.pages["feet-to-pixels"]?.title || "Feet to Pixels",
       dict.pages["pixel-converter"]?.title || "Pixel Converter",
       dict.pages["pixels-to-inches"]?.title || "Pixels to Inches",
       dict.pages["dpi-calculator"]?.title || "DPI Calculator",
-      dict.pages["pixels-per-inch"]?.title || "Pixels Per Inch",
+      dict.pages["pixels-to-feet"]?.title || "Pixels to Feet",
       dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing",
     ],
     url: [
+      `${siteConfig.url}/${validLocale}/feet-to-pixels`,
       `${siteConfig.url}/${validLocale}/pixel-converter`,
       `${siteConfig.url}/${validLocale}/pixels-to-inches`,
       `${siteConfig.url}/${validLocale}/dpi-calculator`,
-      `${siteConfig.url}/${validLocale}/pixels-per-inch`,
+      `${siteConfig.url}/${validLocale}/pixels-to-feet`,
       `${siteConfig.url}/${validLocale}/best-dpi-for-printing`,
     ],
   };
@@ -189,12 +205,12 @@ export default async function Home({ params }: PageProps) {
         <div className="absolute right-[6%] top-16 h-64 w-64 rounded-full bg-sky-100 blur-3xl" />
 
         <Container as="article" className="relative">
-          <div className="grid gap-12 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
-              <div className="order-2 max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-700">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+              <div className="order-2 max-w-xl lg:ml-auto">
+                <p className="inline-flex rounded-full border border-primary-200 bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary-700 shadow-soft">
                   {isEnglish ? "Feet to pixels" : dict.pages["feet-to-pixels"]?.title || dict.home.freeOnlineTools}
                 </p>
-                <h1 className="mt-4 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.05em] text-neutral-950 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.02]">
+                <h1 className="mt-5 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.05em] text-neutral-950 sm:text-5xl lg:text-[3.4rem] lg:leading-[1.02]">
                   {isEnglish ? "Feet to Pixels Converter" : dict.pages["feet-to-pixels"]?.title || dict.home.hero}
                 </h1>
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-600">
@@ -204,17 +220,44 @@ export default async function Home({ params }: PageProps) {
                 </p>
                 <p className="mt-4 max-w-xl text-base leading-7 text-neutral-500">
                   {isEnglish
-                    ? "The main calculator is on the right. If you need a different unit, use the quick links below to switch fast."
+                    ? "Use the calculator first, then open the dedicated tool page if you want more guidance, conversion tables, or reverse-unit options."
                     : dict.site.description}
                 </p>
-                <ul className="mt-7 space-y-3 text-sm text-neutral-600">
-                  {heroPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3">
-                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary-500" />
-                      <span>{point}</span>
-                    </li>
+
+                {isEnglish && (
+                  <div className="mt-7 rounded-[28px] border border-neutral-200/80 bg-white/80 p-5 shadow-[0_18px_45px_-36px_rgba(15,23,42,0.3)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+                      Best for
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {heroUseCases.map((useCase) => (
+                        <span
+                          key={useCase}
+                          className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-neutral-600"
+                        >
+                          {useCase}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {heroPoints.map((point, index) => (
+                    <div
+                      key={point}
+                      className="rounded-[24px] border border-neutral-200/80 bg-white/78 p-4 shadow-[0_16px_40px_-36px_rgba(15,23,42,0.32)]"
+                    >
+                      <p className="mono-display text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+                        0{index + 1}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-neutral-600">
+                        {point}
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
+
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={`/${validLocale}/feet-to-pixels`}
@@ -258,8 +301,9 @@ export default async function Home({ params }: PageProps) {
                 <div className="absolute inset-4 rounded-full bg-primary-200/40 blur-3xl" />
                 <div
                   id="start-converting"
-                  className="relative rounded-[32px] border border-neutral-200/80 bg-white/92 p-5 shadow-[0_26px_70px_-42px_rgba(15,23,42,0.45)] backdrop-blur sm:p-6"
+                  className="relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,250,252,0.95))] p-5 shadow-[0_28px_80px_-44px_rgba(15,23,42,0.5)] backdrop-blur sm:p-6"
                 >
+                  <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_68%)]" />
                   <div className="flex flex-col gap-4 border-b border-neutral-200/80 pb-5 sm:flex-row sm:items-start sm:justify-between">
                     <div className="max-w-xl">
                       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
@@ -316,13 +360,36 @@ export default async function Home({ params }: PageProps) {
                     />
                   </div>
 
-                  <div className="mt-5 rounded-2xl bg-neutral-50 px-4 py-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                      {isEnglish ? "Formula" : dict.tool.formula}
-                    </p>
-                    <p className="mono-display mt-1 text-sm text-neutral-700">
-                      px = ft x 12 x DPI
-                    </p>
+                  <div className="mt-5 grid gap-3 lg:grid-cols-[0.78fr,1.22fr]">
+                    <div className="rounded-[24px] bg-neutral-50 px-4 py-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                        {isEnglish ? "Formula" : dict.tool.formula}
+                      </p>
+                      <p className="mono-display mt-2 text-sm text-neutral-700">
+                        px = ft x 12 x DPI
+                      </p>
+                    </div>
+
+                    <div className="rounded-[24px] bg-neutral-50 px-4 py-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                        {isEnglish ? "Popular feet to pixels examples" : dict.home.conversionTools}
+                      </p>
+                      <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                        {heroExamples.map((example) => (
+                          <div
+                            key={example.label}
+                            className="rounded-[18px] border border-neutral-200 bg-white px-3 py-3"
+                          >
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
+                              {example.label}
+                            </p>
+                            <p className="mono-display mt-2 text-sm font-semibold text-neutral-800">
+                              {example.value}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -359,10 +426,10 @@ export default async function Home({ params }: PageProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
                 {dict.nav.tools}
               </p>
-              <h2 className="mt-3">{isEnglish ? "Top Pixel Conversion Tools" : dict.home.conversionTools}</h2>
+              <h2 className="mt-3">{isEnglish ? "Feet to Pixels and Related Tools" : dict.home.conversionTools}</h2>
               <p className="mt-4 max-w-2xl text-neutral-600">
                 {isEnglish
-                  ? "Start with the main tools people use most: the all-in-one converter, the DPI calculator, and the most common physical unit converters."
+                  ? "Start with feet to pixels, then move into reverse conversion, inches, and DPI tools when the same project needs a second step."
                   : dict.home.whySub}
               </p>
             </div>
