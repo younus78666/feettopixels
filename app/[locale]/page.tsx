@@ -63,6 +63,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+function getCompactToolLabel(label: string): string {
+  return label
+    .split(":")[0]
+    .split(" - ")[0]
+    .split(" – ")[0]
+    .split(" — ")[0]
+    .replace(/\s+Converter$/i, "")
+    .trim();
+}
+
 export default async function Home({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
@@ -90,6 +100,9 @@ export default async function Home({ params }: PageProps) {
     .map((href) => toolsDropdown.groups[0].links.find((tool) => tool.href === href))
     .filter((tool): tool is (typeof toolsDropdown.groups)[0]["links"][number] => Boolean(tool));
   const primaryHeroTool = heroConverterLinks[0];
+  const primaryHeroShortLabel = primaryHeroTool
+    ? getCompactToolLabel(getNavLabel(primaryHeroTool, dict))
+    : "Feet to Pixels";
 
   const featuredGuides = getRelatedTools(dict, [
     { slug: "pixels-per-inch", href: "/pixels-per-inch", icon: "PPI" },
@@ -242,7 +255,7 @@ export default async function Home({ params }: PageProps) {
                   </div>
                 )}
 
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {heroPoints.map((point, index) => (
                     <div
                       key={point}
@@ -272,17 +285,6 @@ export default async function Home({ params }: PageProps) {
                     {isEnglish ? "Browse all tools" : dict.home.browseTools}
                   </Link>
                 </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {heroConverterLinks.map((tool) => (
-                    <Link
-                      key={tool.href}
-                      href={`/${validLocale}${tool.href}`}
-                      className="rounded-full border border-neutral-200 bg-white/80 px-3.5 py-1.5 text-sm font-medium text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-700"
-                    >
-                      {getNavLabel(tool, dict)}
-                    </Link>
-                  ))}
-                </div>
                 <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-neutral-500">
                   <Link
                     href={`/${validLocale}/about`}
@@ -304,13 +306,13 @@ export default async function Home({ params }: PageProps) {
                   className="relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,250,252,0.95))] p-5 shadow-[0_28px_80px_-44px_rgba(15,23,42,0.5)] backdrop-blur sm:p-6"
                 >
                   <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_68%)]" />
-                  <div className="flex flex-col gap-4 border-b border-neutral-200/80 pb-5 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="border-b border-neutral-200/80 pb-5">
                     <div className="max-w-xl">
                       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
                         {isEnglish ? "Main tool" : dict.nav.tools}
                       </p>
-                      <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">
-                        {primaryHeroTool ? getNavLabel(primaryHeroTool, dict) : "Feet to Pixels"}
+                      <h2 className="mt-3 max-w-lg text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">
+                        {isEnglish ? "Convert Feet to Pixels" : primaryHeroShortLabel}
                       </h2>
                       <p className="mt-3 max-w-lg text-sm leading-7 text-neutral-600">
                         {isEnglish
@@ -318,17 +320,12 @@ export default async function Home({ params }: PageProps) {
                           : dict.pages["feet-to-pixels"]?.description || dict.site.description}
                       </p>
                     </div>
-                    <Link
-                      href={`/${validLocale}/feet-to-pixels`}
-                      className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
-                    >
-                      {isEnglish ? "View dedicated page" : dict.home.browseTools}
-                    </Link>
                   </div>
 
                   <div className="mt-5 flex flex-wrap gap-2">
                     {heroConverterLinks.map((tool) => {
                       const active = tool.href === "/feet-to-pixels";
+                      const compactLabel = getCompactToolLabel(getNavLabel(tool, dict));
 
                       return (
                         <Link
@@ -340,7 +337,7 @@ export default async function Home({ params }: PageProps) {
                               : "rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
                           }
                         >
-                          {getNavLabel(tool, dict)}
+                          {compactLabel}
                         </Link>
                       );
                     })}
