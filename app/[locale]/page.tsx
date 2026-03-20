@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Card } from "@/components/ui/Card";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQ } from "@/components/tools/FAQ";
+import { UnitConverter } from "@/components/tools/UnitConverter";
 import { toolsDropdown } from "@/content/navigation";
 import { siteConfig } from "@/content/site-config";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
@@ -72,13 +72,23 @@ export default async function Home({ params }: PageProps) {
   const updatedDateLabel = "March 19, 2026";
 
   const featuredTools = getRelatedTools(dict, [
+    { slug: "feet-to-pixels", href: "/feet-to-pixels", icon: "FT" },
     { slug: "pixel-converter", href: "/pixel-converter", icon: "HUB" },
+    { slug: "pixels-to-feet", href: "/pixels-to-feet", icon: "REV" },
     { slug: "pixels-to-inches", href: "/pixels-to-inches", icon: "IN" },
     { slug: "inches-to-pixels", href: "/inches-to-pixels", icon: "OUT" },
     { slug: "dpi-calculator", href: "/dpi-calculator", icon: "DPI" },
-    { slug: "ppi-calculator", href: "/ppi-calculator", icon: "PPI" },
-    { slug: "image-size-calculator", href: "/image-size-calculator", icon: "SIZE" },
   ]);
+
+  const heroConverterLinks = [
+    "/feet-to-pixels",
+    "/pixels-to-feet",
+    "/inches-to-pixels",
+    "/pixels-to-inches",
+  ]
+    .map((href) => toolsDropdown.groups[0].links.find((tool) => tool.href === href))
+    .filter((tool): tool is (typeof toolsDropdown.groups)[0]["links"][number] => Boolean(tool));
+  const primaryHeroTool = heroConverterLinks[0];
 
   const featuredGuides = getRelatedTools(dict, [
     { slug: "pixels-per-inch", href: "/pixels-per-inch", icon: "PPI" },
@@ -167,10 +177,6 @@ export default async function Home({ params }: PageProps) {
     ],
   };
 
-  const heroAltText = isEnglish
-    ? "Abstract pixel conversion workspace with DPI, PPI, and unit cards"
-    : dict.site.description;
-
   return (
     <>
       <JsonLd data={webPageJsonLd} />
@@ -199,7 +205,7 @@ export default async function Home({ params }: PageProps) {
                   ))}
                 </div>
                 <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.045em] text-neutral-950 sm:text-5xl lg:text-[3.65rem] lg:leading-[1.02]">
-                  {dict.home.hero}
+                  {isEnglish ? "Pixel Conversion Tools, Made Simple" : dict.home.hero}
                 </h1>
                 <div className="mt-5 h-1 w-24 rounded-full bg-[linear-gradient(90deg,#0f766e,#22d3ee)]" />
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
@@ -208,10 +214,11 @@ export default async function Home({ params }: PageProps) {
                 <p className="mt-5 max-w-3xl text-base leading-8 text-neutral-600">
                   {isEnglish ? (
                     <>
-                      Use these tools for fast <strong>pixel conversion</strong> work across inches,
-                      centimeters, millimeters, feet, and CSS units. Whether you need a print-ready
-                      DPI setting, a screen PPI check, or a quick pixels-to-inches answer, the
-                      links below help you jump straight to the right calculator or guide.
+                      Use these <strong>pixel conversion tools</strong> for fast work across
+                      inches, centimeters, millimeters, feet, and CSS units. Whether you need a
+                      print-ready DPI setting, a screen PPI check, or a quick pixels-to-inches
+                      answer, the links below help you jump straight to the right calculator or
+                      guide.
                     </>
                   ) : (
                     dict.site.description
@@ -263,16 +270,77 @@ export default async function Home({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="relative lg:pl-8">
-                <div className="absolute inset-6 rounded-full bg-primary-200/50 blur-3xl" />
-                <Image
-                  src="/home-hero-visual.svg"
-                  alt={heroAltText}
-                  width={1200}
-                  height={900}
-                  priority
-                  className="relative h-auto w-full"
-                />
+              <div className="relative lg:pl-4">
+                <div className="absolute inset-4 rounded-full bg-primary-200/40 blur-3xl" />
+                <div
+                  id="start-converting"
+                  className="relative rounded-[32px] border border-neutral-200/80 bg-white/88 p-5 shadow-[0_26px_70px_-42px_rgba(15,23,42,0.45)] backdrop-blur sm:p-6"
+                >
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="max-w-xl">
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+                        {isEnglish ? "Live converter" : dict.nav.tools}
+                      </p>
+                      <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">
+                        {primaryHeroTool ? getNavLabel(primaryHeroTool, dict) : "Feet to Pixels"}
+                      </h2>
+                      <p className="mt-3 text-sm leading-7 text-neutral-600">
+                        {isEnglish
+                          ? "Start converting feet to pixels right on the homepage. Use the same DPI presets as the full calculator, then jump to reverse or inch-based converters if your project changes."
+                          : dict.pages["feet-to-pixels"]?.description || dict.site.description}
+                      </p>
+                    </div>
+                    <Link
+                      href={`/${validLocale}/feet-to-pixels`}
+                      className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
+                    >
+                      {isEnglish ? "View dedicated page" : dict.home.browseTools}
+                    </Link>
+                  </div>
+
+                  <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                    {heroConverterLinks.map((tool) => {
+                      const active = tool.href === "/feet-to-pixels";
+
+                      return (
+                        <Link
+                          key={tool.href}
+                          href={`/${validLocale}${tool.href}`}
+                          className={
+                            active
+                              ? "rounded-[22px] border border-neutral-950 bg-neutral-950 px-4 py-3 text-white transition-colors"
+                              : "rounded-[22px] border border-neutral-200 bg-white px-4 py-3 text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
+                          }
+                        >
+                          <p className="text-sm font-semibold">
+                            {getNavLabel(tool, dict)}
+                          </p>
+                          <p
+                            className={
+                              active
+                                ? "mt-1 text-xs leading-6 text-white/75"
+                                : "mt-1 text-xs leading-6 text-neutral-500"
+                            }
+                          >
+                            {getNavDescription(tool, dict)}
+                          </p>
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-6">
+                    <UnitConverter
+                      locale={validLocale}
+                      fromUnit="Feet"
+                      toUnit="Pixels"
+                      conversionType="ft-to-px"
+                      formula="px = ft x 12 x DPI"
+                      defaultDpi={96}
+                      commonValues={[0.5, 1, 2, 3, 5, 10, 25, 50]}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 

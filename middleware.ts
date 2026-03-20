@@ -3,6 +3,8 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
 const COOKIE_NAME = "admin-session";
+const CANONICAL_HOST = "feettopixels.com";
+const WWW_HOST = `www.${CANONICAL_HOST}`;
 
 const locales = [
   "en", "es", "fr", "de", "pt", "hi", "ja", "ko",
@@ -56,7 +58,14 @@ function addSecurityHeaders(response: NextResponse): NextResponse {
 }
 
 export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const requestUrl = request.nextUrl.clone();
+  const { pathname } = requestUrl;
+
+  // Force a single public host so the live URL matches the canonical tag.
+  if (requestUrl.hostname === WWW_HOST) {
+    requestUrl.hostname = CANONICAL_HOST;
+    return NextResponse.redirect(requestUrl, 308);
+  }
 
   // Skip internal Next.js routes, static files
   if (
@@ -114,9 +123,9 @@ export async function middleware(request: NextRequest) {
   }
 
   // No locale in path — permanent redirect to /en/...
-  const url = request.nextUrl.clone();
-  url.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(url, 301);
+  const localeUrl = request.nextUrl.clone();
+  localeUrl.pathname = `/${defaultLocale}${pathname}`;
+  return NextResponse.redirect(localeUrl, 301);
 }
 
 export const config = {

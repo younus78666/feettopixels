@@ -1,6 +1,10 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import {
+  readImageDensityMetadata,
+  type ImageDensityMetadata,
+} from "@/lib/image-metadata";
 import { cn, formatNumber } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
@@ -12,20 +16,78 @@ interface ImageInfo {
   height: number;
   fileSize: number;
   type: string;
+  densityMetadata: ImageDensityMetadata;
+}
+
+function formatDpiValue(value: number): string {
+  const rounded = Math.round(value * 100) / 100;
+  const decimals = Math.abs(rounded - Math.round(rounded)) < 0.01 ? 0 : 2;
+
+  return formatNumber(rounded, decimals);
+}
+
+function formatEmbeddedDpi(metadata: ImageDensityMetadata, fallback: string): string {
+  const { xDpi, yDpi } = metadata;
+
+  if (xDpi === null && yDpi === null) {
+    return fallback;
+  }
+
+  if (xDpi === null && yDpi !== null) {
+    return `${formatDpiValue(yDpi)} DPI`;
+  }
+
+  if (yDpi === null && xDpi !== null) {
+    return `${formatDpiValue(xDpi)} DPI`;
+  }
+
+  if (xDpi === null || yDpi === null) {
+    return fallback;
+  }
+
+  if (Math.abs(xDpi - yDpi) < 0.01) {
+    return `${formatDpiValue(xDpi)} DPI`;
+  }
+
+  return `${formatDpiValue(xDpi)} x ${formatDpiValue(yDpi)} DPI`;
+}
+
+function loadImageDimensions(file: File): Promise<{ width: number; height: number }> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      resolve({
+        width: img.naturalWidth,
+        height: img.naturalHeight,
+      });
+    };
+
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("Unable to read image dimensions."));
+    };
+
+    img.src = url;
+  });
 }
 
 function getQualityAssessment(width: number, height: number, locale: Locale) {
   const toolUi = getToolUi(locale);
   const totalPixels = width * height;
   const mp = totalPixels / 1_000_000;
+  const longEdgeAt300 = Math.max(width, height) / 300;
+  const shortEdgeAt300 = Math.min(width, height) / 300;
 
   let quality: "high" | "medium" | "low";
   let label: string;
 
-  if (mp >= 2) {
+  if (longEdgeAt300 >= 10 && shortEdgeAt300 >= 8) {
     quality = "high";
     label = toolUi.dpiChecker.printQuality300;
-  } else if (mp >= 0.5) {
+  } else if (longEdgeAt300 >= 6 && shortEdgeAt300 >= 4) {
     quality = "medium";
     label = toolUi.dpiChecker.mediumPrintHighWeb;
   } else {
@@ -50,20 +112,24 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
   const [dragging, setDragging] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const processFile = useCallback((file: File) => {
-    const img = new Image();
-    const url = URL.createObjectURL(file);
-    img.onload = () => {
+  const processFile = useCallback(async (file: File) => {
+    try {
+      const [dimensions, densityMetadata] = await Promise.all([
+        loadImageDimensions(file),
+        readImageDensityMetadata(file),
+      ]);
+
       setImageInfo({
         name: file.name,
-        width: img.naturalWidth,
-        height: img.naturalHeight,
+        width: dimensions.width,
+        height: dimensions.height,
         fileSize: file.size,
         type: file.type,
+        densityMetadata,
       });
-      URL.revokeObjectURL(url);
-    };
-    img.src = url;
+    } catch {
+      setImageInfo(null);
+    }
   }, []);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -88,7 +154,7 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
   const handleCopy = async () => {
     if (!imageInfo) return;
     const assessment = getQualityAssessment(imageInfo.width, imageInfo.height, locale);
-    const text = `${imageInfo.name}: ${imageInfo.width}x${imageInfo.height}px, ${formatNumber(assessment.mp, 2)} MP, ${assessment.label}`;
+    const text = `${imageInfo.name}: ${imageInfo.width}x${imageInfo.height}px, ${formatNumber(assessment.mp, 2)} MP, ${dict.tool.dpi}: ${embeddedDpi}, ${imageInfo.densityMetadata.message}`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
@@ -101,6 +167,9 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
   const assessment = imageInfo
     ? getQualityAssessment(imageInfo.width, imageInfo.height, locale)
     : null;
+  const embeddedDpi = imageInfo
+    ? formatEmbeddedDpi(imageInfo.densityMetadata, toolUi.common.unknown)
+    : toolUi.common.unknown;
 
   return (
     <div className="tool-card space-y-6">
@@ -153,6 +222,12 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
                 <p className="mono-display mt-1 text-2xl font-bold text-primary-800">
                   {imageInfo.width} x {imageInfo.height} px
                 </p>
+                <p className="mt-2 text-sm font-medium text-primary-700">
+                  {dict.tool.dpi}: {embeddedDpi}
+                </p>
+                <p className="mt-1 text-xs text-primary-600">
+                  {imageInfo.densityMetadata.message}
+                </p>
               </div>
               <button
                 onClick={handleCopy}
@@ -193,7 +268,18 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                {dict.tool.dpi}
+              </p>
+              <p className="mono-display mt-1 text-xl font-bold text-neutral-800">
+                {embeddedDpi}
+              </p>
+              <p className="mt-2 text-xs text-neutral-500">
+                {imageInfo.densityMetadata.sourceLabel}
+              </p>
+            </div>
             <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-5 py-4">
               <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
                 {toolUi.common.megapixels}
@@ -233,6 +319,9 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
                 )}
               >
                 {assessment.label}
+              </p>
+              <p className="mt-2 text-xs text-neutral-500">
+                Based on the image size at 300 DPI.
               </p>
             </div>
           </div>
@@ -282,6 +371,9 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
                 </tbody>
               </table>
             </div>
+            <p className="mt-3 text-xs text-neutral-500">
+              Print sizes below are based on pixel dimensions at each target DPI, even when no embedded DPI metadata is present.
+            </p>
           </div>
         </>
       )}

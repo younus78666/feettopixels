@@ -13,31 +13,66 @@ export interface ReferenceSource {
 export const DEFAULT_PAGE_DATE = "2026-03-19";
 
 export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
+  home: {
+    title: "Pixel Conversion Tools: 15+ DPI Calculators [2026]",
+    description:
+      "Pixel conversion tools for inches, cm, mm, feet, and CSS units. Compare 15+ DPI-aware calculators, PPI guides, and print/web size references for designers.",
+    extractive:
+      "Use FeetToPixels to convert between pixels and physical or CSS units with practical DPI context for print sizing, screens, and responsive layouts.",
+  },
+  about: {
+    title: "About FeetToPixels - DPI-Aware Pixel Conversion Tools",
+    description:
+      "Learn how FeetToPixels helps designers and developers convert pixels, inches, cm, mm, feet, and CSS units with practical DPI-aware guidance.",
+    extractive:
+      "FeetToPixels is a focused set of pixel conversion tools built for print sizing, screen measurements, and front-end workflows where DPI and physical dimensions matter.",
+  },
+  contact: {
+    title: "Contact FeetToPixels - Tool Support, Feedback, and Bug Reports",
+    description:
+      "Contact FeetToPixels for tool feedback, bug reports, content suggestions, or partnership questions related to our pixel conversion tools.",
+    extractive:
+      "Use the FeetToPixels contact page to report calculator issues, request new tools, or send feedback about DPI, PPI, print sizing, and conversion workflows.",
+  },
+  privacy: {
+    title: "FeetToPixels Privacy Policy - Data, Cookies, and Analytics",
+    description:
+      "Read the FeetToPixels privacy policy to understand how we handle contact messages, cookies, analytics, advertising, and browser-based tool activity.",
+    extractive:
+      "The FeetToPixels privacy policy explains what information we collect, how browser-based tools work, and how cookies, analytics, and advertising services may be used.",
+  },
+  terms: {
+    title: "FeetToPixels Terms of Service - Use of Our Conversion Tools",
+    description:
+      "Review the FeetToPixels terms of service for rules, limitations, and general conditions related to our pixel conversion tools and site content.",
+    extractive:
+      "The FeetToPixels terms describe how you may use our pixel conversion tools, what limitations apply, and how updates to the service and content are handled.",
+  },
   "pixels-to-inches": {
     title: "Pixels to Inches Converter: Convert PX to Inches at Any DPI",
     description:
-      "Convert pixels to inches instantly with our free tool. Supports 72, 96, 150, and 300 DPI. Perfect for web design, print layouts, and photo sizing. Enter pixels, get inches.",
+      "Convert pixels to inches at 72, 96, 150, and 300 DPI. Free PX to inches calculator for web design, print layouts, and photo sizing.",
     extractive:
       "To convert pixels to inches, divide the pixel count by DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches.",
   },
   "inches-to-pixels": {
     title: "Inches to Pixels Converter: Convert Inches to PX at Any DPI",
     description:
-      "Convert inches to pixels instantly. Supports multiple DPI settings including 72, 96, 150, and 300 DPI for web and print. Free online inches to pixels calculator.",
+      "Convert inches to pixels at 72, 96, 150, and 300 DPI. Free inches to PX calculator for web design, print layouts, and photo sizing.",
     extractive:
       "To convert inches to pixels, multiply inches by DPI. At 96 DPI, 1 inch equals 96 pixels. At 300 DPI, 1 inch equals 300 pixels. The formula is: pixels = inches x DPI.",
   },
   "cm-to-pixels": {
     title: "CM to Pixels Converter: Convert Centimeters to PX Online",
     description:
-      "Convert centimeters to pixels at any DPI. Free CM to PX converter for web design and printing. Supports 72, 96, 150, 300 DPI. One cm equals 37.8 pixels at 96 DPI.",
+      "Convert centimeters to pixels at 72, 96, 150, and 300 DPI. Free CM to PX converter for web design, print layouts, and image sizing.",
     extractive:
       "At 96 DPI, 1 centimeter equals approximately 37.8 pixels. The formula is: pixels = cm x DPI / 2.54. At 300 DPI (print), 1 cm equals about 118 pixels.",
   },
   "pixels-to-cm": {
     title: "Pixels to CM Converter: Convert PX to Centimeters Online",
     description:
-      "Convert pixels to centimeters at any DPI setting. Free PX to CM converter for print design and photo sizing. Enter pixel dimensions, select DPI, get centimeters.",
+      "Convert pixels to centimeters at 72, 96, 150, and 300 DPI. Free PX to CM calculator for print design, photo sizing, and layout work.",
     extractive:
       "To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 96 DPI, 100 pixels equals approximately 2.65 cm. At 300 DPI, 100 pixels equals 0.85 cm.",
   },
@@ -51,14 +86,14 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "pixels-to-mm": {
     title: "Pixels to MM Converter: Convert PX to Millimeters Online",
     description:
-      "Convert pixels to millimeters with adjustable DPI. Free PX to MM converter for print design, manufacturing specs, and precision work. Fast and accurate results.",
+      "Convert pixels to millimeters at 72, 96, 150, and 300 DPI. Free PX to MM converter for print design and precision measurement work.",
     extractive:
       "To convert pixels to millimeters, multiply pixels by 25.4 and divide by DPI. At 96 DPI, 100 pixels equals approximately 26.46 mm. At 300 DPI, 100 pixels equals 8.47 mm.",
   },
   "feet-to-pixels": {
     title: "Feet to Pixels Converter: Convert Feet to PX at Any DPI",
     description:
-      "Convert feet to pixels at any DPI setting. Perfect for large-format displays, digital signage, and banner design. Free feet to pixels calculator with DPI presets.",
+      "Convert feet to pixels at 72, 96, 150, and 300 DPI. Free feet to PX calculator for signage, banners, large-format displays, and print prep.",
     extractive:
       "At 96 DPI, 1 foot equals 1,152 pixels. The formula is: pixels = feet x 12 x DPI. At 300 DPI, 1 foot equals 3,600 pixels. Feet to pixels depends entirely on your DPI setting.",
   },
@@ -72,7 +107,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "dpi-calculator": {
     title: "DPI Calculator: Calculate Dots Per Inch from Image Dimensions",
     description:
-      "Calculate DPI from image dimensions and physical size. Enter width/height in pixels and size in inches to find your DPI. Free online DPI calculator for designers.",
+      "Calculate DPI from pixel dimensions and print size. Free online DPI calculator for designers, printers, and anyone checking image resolution.",
     extractive:
       "DPI equals pixels divided by inches. For an image 3000 pixels wide printed at 10 inches, DPI is 300. Higher DPI means sharper prints. Web standard is 72-96 DPI; print standard is 150-300 DPI.",
   },
@@ -93,7 +128,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "aspect-ratio-calculator": {
     title: "Aspect Ratio Calculator: Calculate Image and Video Ratios",
     description:
-      "Calculate aspect ratio from any width and height. Convert between ratios, resize while maintaining proportions. Free aspect ratio calculator for images and video.",
+      "Calculate aspect ratio from any width and height. Resize proportionally, convert ratios, and find matching dimensions for images and video.",
     extractive:
       "Aspect ratio is the proportional relationship between width and height. 1920x1080 is 16:9. To calculate, divide both by their greatest common divisor. Common ratios: 16:9, 4:3, 1:1, 3:2.",
   },
@@ -107,28 +142,28 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "screen-resolution-checker": {
     title: "Screen Resolution Checker: What Is My Screen Resolution?",
     description:
-      "Check your screen resolution, DPI, PPI, and display size instantly. Auto-detects your monitor settings. Works on all devices including phones, tablets, and desktops.",
+      "Use this tool to answer what is my screen resolution instantly. Check your display size, resolution, device pixel ratio, and screen details in one place.",
     extractive:
-      "Your screen resolution is the number of pixels displayed horizontally and vertically. Common resolutions: 1920x1080 (Full HD), 2560x1440 (QHD), 3840x2160 (4K UHD).",
+      "If you are asking what is my screen resolution, this checker reads your current display settings and reports the pixel dimensions, device pixel ratio, and other useful screen details.",
   },
   "image-dpi-checker": {
-    title: "Image DPI Checker: Check DPI of Any Image Online",
+    title: "Check Image DPI Online: Free Image DPI Checker",
     description:
-      "Check the DPI of any image online. Upload your image to see its resolution, DPI, dimensions, and whether it meets print quality requirements. Free image DPI checker.",
+      "Check image DPI online to see resolution, dimensions, and print quality. Upload an image and find whether it is ready for 300 DPI, 150 DPI, or screen use.",
     extractive:
-      "Image DPI is stored in the file metadata (EXIF). Most cameras save at 72 DPI by default. For print quality, you need 150-300 DPI at your target print size.",
+      "Use this tool to check image DPI, inspect pixel dimensions, and estimate print size at 300 DPI, 150 DPI, and 96 DPI before you export or print.",
   },
   "pixel-ruler": {
     title: "Online Pixel Ruler: Measure Pixels on Your Screen",
     description:
-      "Measure pixels on your screen with our free online pixel ruler. Drag to measure width and height in pixels. Calibrate to your monitor for accurate physical measurements.",
+      "Measure pixels on your screen with a free online pixel ruler. Drag to measure width and height, then calibrate for better accuracy.",
     extractive:
       "A pixel ruler measures distances on your screen in pixels. At 96 DPI, 96 pixels on a ruler equals approximately 1 inch. Calibrate by measuring a physical reference object.",
   },
   "px-to-rem": {
     title: "PX to REM Converter: Convert Pixels to REM Units Online",
     description:
-      "Convert PX to REM instantly. Set your base font size (default 16px) and convert any pixel value to REM. Includes REM to PX reverse conversion. Essential for responsive CSS.",
+      "Convert PX to REM with a custom base font size. Free PX to REM calculator with reverse conversion for responsive CSS.",
     extractive:
       "To convert pixels to REM, divide pixels by the root font size (default 16px). 32px equals 2rem. 24px equals 1.5rem. REM units scale with the root element's font size.",
   },
@@ -149,7 +184,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "px-to-vw": {
     title: "PX to VW Converter: Convert Pixels to Viewport Width Units",
     description:
-      "Convert PX to VW (viewport width) for responsive design. Enter viewport width and pixel value to get VW. Includes VW to PX reverse converter. Free CSS unit tool.",
+      "Convert PX to VW for responsive design. Enter viewport width and pixel value to get VW, with reverse conversion for CSS layouts.",
     extractive:
       "To convert pixels to VW, divide pixels by viewport width and multiply by 100. On a 1920px viewport, 192px equals 10vw. VW units make elements scale proportionally to browser width.",
   },
@@ -161,44 +196,44 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "Pixel conversion depends on DPI for physical units and base font size for CSS units. At 96 DPI: 1 inch = 96px, 1cm = 37.8px. For CSS: 1rem = 16px (default).",
   },
   "megapixel-calculator": {
-    title: "Megapixels to Pixels Calculator: Convert MP to Resolution",
+    title: "Megapixel Calculator: Convert MP to Pixels and Resolution",
     description:
-      "Convert megapixels to pixel dimensions at any aspect ratio. Find image resolution from camera megapixels. Calculate maximum print sizes from megapixel counts.",
+      "Use our megapixel calculator to convert megapixels to pixel dimensions, estimate image resolution, and compare common MP counts for cameras and print work.",
     extractive:
-      "1 megapixel equals 1 million pixels. A 12MP camera at 4:3 ratio produces 4000x3000 pixel images. To calculate: total pixels = width x height. Max print size depends on DPI.",
+      "A megapixel calculator helps you convert MP to pixels by combining total pixel count with aspect ratio. For example, 12 MP at 4:3 is roughly 4000 x 3000 pixels.",
   },
   "pixels-per-inch": {
     title: "Pixels Per Inch Explained: DPI and PPI Guide for Every Resolution",
     description:
-      "How many pixels are in an inch? At 96 DPI: 96 pixels. At 72 DPI: 72 pixels. At 300 DPI: 300 pixels. Complete PPI guide with charts, formulas, and DPI comparison tables.",
+      "See how many pixels fit in an inch at 72, 96, 150, and 300 DPI. Practical PPI guide with formulas, charts, and print/web references.",
     extractive:
       "At 96 DPI (standard web), there are 96 pixels per inch. At 72 DPI (legacy Mac), 72 pixels per inch. At 300 DPI (high-quality print), 300 pixels per inch. DPI determines this relationship.",
   },
   "what-is-dpi": {
     title: "What Is DPI? Dots Per Inch Explained for Print and Digital",
     description:
-      "DPI (Dots Per Inch) measures print resolution. Learn what DPI means, how it affects image quality, standard DPI settings for web and print, and how to change DPI.",
+      "Learn what DPI means, how it affects print quality, and which DPI settings to use for web graphics, photos, documents, and printed output.",
     extractive:
       "DPI (Dots Per Inch) measures how many ink dots a printer places within one inch. Higher DPI means sharper prints. Web standard is 72-96 DPI. Print quality requires 150-300 DPI.",
   },
   "what-is-ppi": {
     title: "What Is PPI? Pixels Per Inch for Screens and Displays",
     description:
-      "PPI (Pixels Per Inch) measures screen pixel density. Learn what PPI means, how it affects display sharpness, PPI values for phones, tablets, monitors, and retina displays.",
+      "Learn what PPI means for screens, how it affects sharpness, and typical pixel density values for phones, tablets, laptops, and monitors.",
     extractive:
       "PPI (Pixels Per Inch) measures screen display density. Higher PPI means sharper text and images. Modern phones reach 400+ PPI. Desktop monitors range 72-163 PPI. Retina displays use 200+ PPI.",
   },
   "what-is-a-pixel": {
     title: "What Is a Pixel? The Building Block of Digital Images",
     description:
-      "A pixel is the smallest unit of a digital display. Learn what pixels are, how they work, pixel size at different DPI, subpixels, megapixels, and how pixels create images.",
+      "Learn what a pixel is, how pixels form digital images, and how subpixels, megapixels, and DPI affect visible detail.",
     extractive:
       "A pixel (picture element) is the smallest addressable unit on a digital display. Each pixel contains subpixels (red, green, blue) that combine to create any visible color.",
   },
   "dpi-vs-ppi": {
     title: "DPI vs PPI: What's the Difference Between Dots and Pixels?",
     description:
-      "DPI vs PPI: DPI measures print resolution (ink dots), PPI measures screen density (digital pixels). Learn the key differences, when each applies, and why they are often confused.",
+      "Learn the difference between DPI and PPI, when each one applies, and why print dots and screen pixels are often confused.",
     extractive:
       "DPI (Dots Per Inch) measures print resolution using physical ink dots. PPI (Pixels Per Inch) measures screen resolution using digital pixels. DPI is for printers; PPI is for screens.",
   },
@@ -210,11 +245,11 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "For photo printing, use 300 DPI. For documents and brochures, 150 DPI is sufficient. For large-format posters viewed from distance, 72-100 DPI works. Higher DPI always means better quality.",
   },
   "paper-sizes-in-pixels": {
-    title: "Paper Sizes in Pixels: A4, Letter, A3, A5 at Every DPI",
+    title: "A4 Size in Pixels and Other Paper Sizes at Every DPI",
     description:
-      "Paper sizes in pixels at 72, 96, 150, and 300 DPI. A4, Letter, A3, A5, Legal, 8.5x11, and more. Complete reference table for digital design and printing.",
+      "Find A4 size in pixels, Letter size in pixels, and other paper dimensions at 72, 96, 150, and 300 DPI for print and layout work.",
     extractive:
-      "A4 size in pixels: 595x842 at 72 DPI, 794x1123 at 96 DPI, 1240x1754 at 150 DPI, 2480x3508 at 300 DPI. US Letter: 612x792 at 72 DPI, 816x1056 at 96 DPI.",
+      "If you need A4 size in pixels, it is 2480 x 3508 at 300 DPI, 1240 x 1754 at 150 DPI, and 794 x 1123 at 96 DPI. This guide also covers Letter, A3, A5, and more.",
   },
   "standard-image-sizes": {
     title: "Standard Image Sizes in Pixels: 4x6, 5x7, 8x10, and More",
@@ -224,25 +259,25 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "4x6 photo at 300 DPI: 1200x1800 pixels. 5x7: 1500x2100. 8x10: 2400x3000. 11x14: 3300x4200. These are minimum pixel dimensions for sharp prints at each size.",
   },
   "social-media-image-sizes": {
-    title: "Social Media Image Sizes in Pixels: Instagram, Facebook, YouTube",
+    title: "Instagram Post Size in Pixels and Other Social Media Image Sizes",
     description:
-      "Social media image sizes in pixels for 2026. Instagram post 1080x1080, Facebook cover 820x312, YouTube thumbnail 1280x720, LinkedIn banner 1584x396, Twitter header 1500x500.",
+      "Find the correct Instagram post size in pixels plus Facebook, YouTube, LinkedIn, and other social media image dimensions in one updated guide.",
     extractive:
-      "Instagram post: 1080x1080px (square), 1080x1350px (portrait). Facebook cover: 820x312px. YouTube thumbnail: 1280x720px. LinkedIn banner: 1584x396px.",
+      "The standard Instagram post size in pixels is 1080 x 1080 for square posts, with 1080 x 1350 for portrait. This reference also covers Facebook covers, YouTube thumbnails, and more.",
   },
   "em-vs-rem": {
     title: "EM vs REM in CSS: When to Use Each Unit (With Converter)",
     description:
-      "EM vs REM in CSS: EM is relative to parent element, REM is relative to root. Learn when to use each, conversion formulas, and best practices for responsive design.",
+      "Learn the difference between EM and REM in CSS, when to use each unit, and how they affect scaling in responsive layouts.",
     extractive:
       "REM is relative to the root (html) font size. EM is relative to the parent element's font size. Use REM for global sizing consistency. Use EM for component-level scaling.",
   },
   "common-resolutions": {
-    title: "Common Screen Resolutions Explained: 1920x1080, 4K, and More",
+    title: "1920x1080 in Inches: Common Screen Resolutions Explained",
     description:
-      "Common screen resolutions explained with physical dimensions. 1920x1080, 2560x1440, 3840x2160 in inches at various screen sizes. Resolution comparison chart.",
+      "Find 1920x1080 in inches, 2560x1440 in inches, and 4K physical screen sizes at different monitor diagonals with a practical resolution reference.",
     extractive:
-      "1920x1080 on a 24-inch monitor spans approximately 20.9x11.8 inches. The same resolution on a 27-inch monitor spans 23.5x13.2 inches. Physical size depends on screen diagonal.",
+      "If you are searching for 1920x1080 in inches, the answer depends on screen size. On a 24-inch monitor, 1920x1080 spans about 20.9 x 11.8 inches, while a 27-inch screen spans about 23.5 x 13.2 inches.",
   },
   "best-dpi-for-web": {
     title: "Best DPI for Web Images: Resolution Guide for Websites",
@@ -259,11 +294,11 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "At 96 DPI, there are approximately 37.8 pixels per centimeter. Formula: pixels per cm = DPI / 2.54. At 72 DPI: 28.35 px/cm. At 300 DPI: 118.11 px/cm.",
   },
   "pixels-per-mm": {
-    title: "Pixels Per MM: How Many Pixels in a Millimeter?",
+    title: "Pixels Per Millimeter: How Many Pixels in a Millimeter?",
     description:
-      "How many pixels per millimeter? At 96 DPI: 3.78 px/mm. At 300 DPI: 11.81 px/mm. Formula and reference table for all DPI values.",
+      "Find pixels per millimeter at 72, 96, 150, and 300 DPI with formulas and a quick reference for print, image prep, and measurement work.",
     extractive:
-      "At 96 DPI, there are approximately 3.78 pixels per millimeter. Formula: pixels per mm = DPI / 25.4. At 300 DPI: 11.81 px/mm. At 72 DPI: 2.83 px/mm.",
+      "Pixels per millimeter depends on DPI. At 96 DPI there are about 3.78 pixels per millimeter, while at 300 DPI there are about 11.81 pixels per millimeter.",
   },
   "pixels-per-foot": {
     title: "Pixels Per Foot: How Many Pixels in a Foot?",
@@ -282,7 +317,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "passport-photo-size": {
     title: "Passport Photo Size in Pixels: 2x2, 35x45mm, and More",
     description:
-      "Passport photo size in pixels: US (2x2 inches) = 600x600px at 300 DPI. UK (35x45mm) = 413x531px. Complete guide to passport and ID photo pixel dimensions worldwide.",
+      "Find passport photo sizes in pixels for US, UK, Schengen, and more, with common dimensions at 300 DPI for passport and ID photos.",
     extractive:
       "US passport photo: 2x2 inches = 600x600 pixels at 300 DPI. UK passport photo: 35x45mm = 413x531 pixels at 300 DPI. Schengen visa: 35x45mm = same as UK.",
   },

@@ -3,6 +3,8 @@ import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
+import { DocSectionNav } from "@/components/content/DocSectionNav";
+import { EditorialMeta } from "@/components/seo/EditorialMeta";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -11,6 +13,7 @@ import { siteConfig } from "@/content/site-config";
 import { getBreadcrumbs } from "@/lib/content-utils";
 import { getLocalizedDoc } from "@/lib/content/doc-types";
 import { content } from "@/lib/content/about";
+import { DEFAULT_PAGE_DATE } from "@/lib/page-seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -44,6 +47,11 @@ export default async function AboutPage({ params }: PageProps) {
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
   const dict = getDictionary(validLocale);
   const doc = getLocalizedDoc(content, validLocale);
+  const pageDict = dict.pages.about;
+  const tocItems = doc.sections.map((section) => ({
+    id: section.id,
+    label: section.title,
+  }));
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
     { slug: "about", href: "/about" },
@@ -56,20 +64,78 @@ export default async function AboutPage({ params }: PageProps) {
     description: dict.site.description,
     logo: `${siteConfig.url}/icon.svg`,
   };
+  const aboutPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: pageDict?.title || "About FeetToPixels",
+    description: pageDict?.description || dict.site.description,
+    url: `${siteConfig.url}/${validLocale}/about`,
+    inLanguage: validLocale,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+  };
 
   return (
     <Container className="py-8 md:py-12">
       <JsonLd data={orgJsonLd} />
+      <JsonLd data={aboutPageJsonLd} />
       <Breadcrumbs items={breadcrumbs} />
 
       <div className="mx-auto max-w-3xl">
         <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-          {dict.pages["about"]?.title || "About FeetToPixels"}
+          {pageDict?.title || "About FeetToPixels"}
         </h1>
+        <p className="max-w-2xl text-base leading-relaxed text-neutral-600">
+          {pageDict?.extractive || dict.site.description}
+        </p>
 
-        <div className="prose prose-neutral max-w-none">
+        <EditorialMeta locale={validLocale} dateModified={DEFAULT_PAGE_DATE} />
+        <DocSectionNav items={tocItems} label={dict.nav.onThisPage} />
+
+        <div className="prose prose-neutral mt-8 max-w-none">
           <StructuredDoc sections={doc.sections} />
         </div>
+
+        <section className="mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+            Core tools
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold text-neutral-900">
+            Start with the tools people use most
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                href: `/${validLocale}/pixel-converter`,
+                title: dict.pages["pixel-converter"]?.title || "Pixel Converter",
+                description: "Switch between pixels, physical units, and CSS units from one tool.",
+              },
+              {
+                href: `/${validLocale}/dpi-calculator`,
+                title: dict.pages["dpi-calculator"]?.title || "DPI Calculator",
+                description: "Check print density before you size or export an image.",
+              },
+              {
+                href: `/${validLocale}/pixels-to-inches`,
+                title: dict.pages["pixels-to-inches"]?.title || "Pixels to Inches",
+                description: "Jump straight into the most common physical conversion workflow.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-neutral-200 bg-white p-4 transition-colors hover:border-primary-200 hover:text-primary-700"
+              >
+                <p className="text-base font-semibold text-neutral-900">{item.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-500">{item.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <div className="mt-8 rounded-xl border border-primary-200 bg-primary-50 p-6 text-center">
           <p className="mb-3 text-base font-semibold text-neutral-900">

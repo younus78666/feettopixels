@@ -5,7 +5,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Can this tool read the DPI metadata from an image?",
-        "answer": "Browser-based tools cannot directly read EXIF DPI metadata. This tool reads the pixel dimensions and calculates maximum print sizes at various DPI settings. For embedded DPI metadata, use desktop software like Photoshop or GIMP."
+        "answer": "Yes, for common formats. This tool reads embedded DPI or density metadata from JPEG, PNG, WebP, and BMP files when that metadata is present. If a file has no usable physical-density metadata, the tool falls back to pixel dimensions and shows print size at common target DPI settings."
       },
       {
         "question": "What resolution is needed for quality printing?",
@@ -21,7 +21,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Does this tool upload my image to a server?",
-        "answer": "No. All processing happens locally in your browser. Your image never leaves your device. The tool uses the browser's Image API to read dimensions and the File API to read the file size."
+        "answer": "No. All processing happens locally in your browser. Your image never leaves your device. The tool uses browser APIs to read image dimensions, file size, and embedded density metadata directly on your device."
       }
     ],
     "sections": [
@@ -36,7 +36,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "¿Puede esta herramienta leer los metadatos de DPI de una imagen?",
-        "answer": "Las herramientas basadas en navegador no pueden leer directamente los metadatos de DPI EXIF. Esta herramienta lee las dimensiones en píxeles y calcula los tamaños máximos de impresión en varias configuraciones de DPI. Para metadatos de DPI integrados, utilice software de escritorio como Photoshop o GIMP."
+        "answer": "Sí, para formatos comunes. Esta herramienta lee metadatos integrados de DPI o densidad en archivos JPEG, PNG, WebP y BMP cuando esos datos están presentes. Si un archivo no tiene metadatos físicos de densidad utilizables, la herramienta usa las dimensiones en píxeles y muestra el tamaño de impresión con ajustes de DPI habituales."
       },
       {
         "question": "¿Qué resolución se necesita para una impresión de calidad?",
@@ -52,7 +52,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "¿Esta herramienta carga mi imagen a un servidor?",
-        "answer": "No. Todo el procesamiento ocurre localmente en su navegador. Tu imagen nunca sale de tu dispositivo. La herramienta utiliza la API de imágenes del navegador para leer las dimensiones y la API de archivos para leer el tamaño del archivo."
+        "answer": "No. Todo el procesamiento ocurre localmente en tu navegador. Tu imagen nunca sale de tu dispositivo. La herramienta usa APIs del navegador para leer las dimensiones de la imagen, el tamaño del archivo y los metadatos de densidad integrados directamente en tu dispositivo."
       }
     ],
     "sections": [
@@ -67,7 +67,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Cet outil peut-il lire les métadonnées DPI d'une image ?",
-        "answer": "Les outils basés sur un navigateur ne peuvent pas lire directement les métadonnées EXIF ​​DPI. Cet outil lit les dimensions des pixels et calcule les tailles d'impression maximales avec différents paramètres DPI. Pour les métadonnées DPI intégrées, utilisez un logiciel de bureau comme Photoshop ou GIMP."
+        "answer": "Oui, pour les formats courants. Cet outil lit les métadonnées DPI ou de densité intégrées dans les fichiers JPEG, PNG, WebP et BMP lorsque ces données sont présentes. Si un fichier ne contient pas de métadonnées physiques de densité exploitables, l'outil se rabat sur les dimensions en pixels et affiche la taille d'impression selon des réglages DPI courants."
       },
       {
         "question": "Quelle résolution est nécessaire pour une impression de qualité ?",
@@ -83,7 +83,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Cet outil télécharge-t-il mon image sur un serveur ?",
-        "answer": "Non. Tout le traitement s'effectue localement dans votre navigateur. Votre image ne quitte jamais votre appareil. L'outil utilise l'API Image du navigateur pour lire les dimensions et l'API File pour lire la taille du fichier."
+        "answer": "Non. Tout le traitement s'effectue localement dans votre navigateur. Votre image ne quitte jamais votre appareil. L'outil utilise les API du navigateur pour lire les dimensions de l'image, la taille du fichier et les métadonnées de densité intégrées directement sur votre appareil."
       }
     ],
     "sections": [
@@ -98,7 +98,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Kann dieses Tool die DPI-Metadaten eines Bildes lesen?",
-        "answer": "Browserbasierte Tools können EXIF-DPI-Metadaten nicht direkt lesen. Dieses Tool liest die Pixelabmessungen und berechnet maximale Druckgrößen bei verschiedenen DPI-Einstellungen. Für eingebettete DPI-Metadaten verwenden Sie Desktop-Software wie Photoshop oder GIMP."
+        "answer": "Ja, für gängige Formate. Dieses Tool liest eingebettete DPI- oder Dichte-Metadaten aus JPEG-, PNG-, WebP- und BMP-Dateien, wenn diese Daten vorhanden sind. Wenn eine Datei keine nutzbaren physischen Dichte-Metadaten enthält, verwendet das Tool die Pixelabmessungen und zeigt Druckgrößen für gängige DPI-Einstellungen an."
       },
       {
         "question": "Welche Auflösung ist für hochwertiges Drucken erforderlich?",
@@ -114,7 +114,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Ladet dieses Tool mein Bild auf einen Server hoch?",
-        "answer": "Nein. Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser. Ihr Bild verlässt nie Ihr Gerät. Das Tool verwendet die Bild-API des Browsers zum Lesen von Abmessungen und die Datei-API zum Lesen der Dateigröße."
+        "answer": "Nein. Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser. Ihr Bild verlässt nie Ihr Gerät. Das Tool verwendet Browser-APIs, um Bildabmessungen, Dateigröße und eingebettete Dichte-Metadaten direkt auf Ihrem Gerät zu lesen."
       }
     ],
     "sections": [
@@ -129,7 +129,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Esta ferramenta pode ler os metadados DPI de uma imagem?",
-        "answer": "As ferramentas baseadas em navegador não podem ler diretamente os metadados EXIF ​​DPI. Esta ferramenta lê as dimensões em pixels e calcula os tamanhos máximos de impressão em várias configurações de DPI. Para metadados de DPI incorporados, use software de desktop como Photoshop ou GIMP."
+        "answer": "Sim, para formatos comuns. Esta ferramenta lê metadados incorporados de DPI ou densidade em arquivos JPEG, PNG, WebP e BMP quando esses dados estão presentes. Se um arquivo não tiver metadados físicos de densidade utilizáveis, a ferramenta usa as dimensões em pixels e mostra o tamanho de impressão com configurações comuns de DPI."
       },
       {
         "question": "Qual resolução é necessária para uma impressão de qualidade?",
@@ -145,7 +145,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Essa ferramenta carrega minha imagem em um servidor?",
-        "answer": "Não. Todo o processamento acontece localmente no seu navegador. Sua imagem nunca sai do seu dispositivo. A ferramenta usa a API Image do navegador para ler as dimensões e a API File para ler o tamanho do arquivo."
+        "answer": "Não. Todo o processamento acontece localmente no seu navegador. Sua imagem nunca sai do seu dispositivo. A ferramenta usa APIs do navegador para ler as dimensões da imagem, o tamanho do arquivo e os metadados de densidade incorporados diretamente no seu dispositivo."
       }
     ],
     "sections": [
@@ -160,7 +160,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "क्या यह उपकरण किसी छवि से DPI मेटाडेटा पढ़ सकता है?",
-        "answer": "ब्राउज़र-आधारित उपकरण सीधे EXIF ​​DPI मेटाडेटा नहीं पढ़ सकते हैं। यह उपकरण पिक्सेल आयामों को पढ़ता है और विभिन्न डीपीआई सेटिंग्स पर अधिकतम प्रिंट आकार की गणना करता है। एम्बेडेड DPI मेटाडेटा के लिए, फ़ोटोशॉप या GIMP जैसे डेस्कटॉप सॉफ़्टवेयर का उपयोग करें।"
+        "answer": "हाँ, सामान्य फ़ॉर्मैट के लिए। यह उपकरण JPEG, PNG, WebP और BMP फ़ाइलों में मौजूद एम्बेडेड DPI या density metadata पढ़ सकता है। यदि किसी फ़ाइल में उपयोगी physical-density metadata नहीं है, तो यह उपकरण pixel dimensions का उपयोग करता है और सामान्य DPI settings पर print size दिखाता है।"
       },
       {
         "question": "गुणवत्ता मुद्रण के लिए किस रिज़ॉल्यूशन की आवश्यकता है?",
@@ -176,7 +176,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "क्या यह उपकरण मेरी छवि को किसी सर्वर पर अपलोड करता है?",
-        "answer": "नहीं। सारी प्रोसेसिंग आपके ब्राउज़र में स्थानीय रूप से होती है। आपकी छवि आपके डिवाइस को कभी नहीं छोड़ती। उपकरण आयामों को पढ़ने के लिए ब्राउज़र की छवि एपीआई और फ़ाइल आकार को पढ़ने के लिए फ़ाइल एपीआई का उपयोग करता है।"
+        "answer": "नहीं। सारी प्रोसेसिंग आपके ब्राउज़र में स्थानीय रूप से होती है। आपकी छवि आपके डिवाइस से कभी बाहर नहीं जाती। यह उपकरण browser APIs का उपयोग करके image dimensions, file size और embedded density metadata सीधे आपके डिवाइस पर पढ़ता है।"
       }
     ],
     "sections": [
@@ -191,7 +191,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "このツールは画像から DPI メタデータを読み取ることができますか?",
-        "answer": "ブラウザベースのツールは EXIF DPI メタデータを直接読み取ることができません。このツールは、ピクセル寸法を読み取り、さまざまな DPI 設定での最大印刷サイズを計算します。埋め込み DPI メタデータの場合は、Photoshop や GIMP などのデスクトップ ソフトウェアを使用してください。"
+        "answer": "はい、一般的な形式であれば可能です。このツールは、JPEG、PNG、WebP、BMP ファイルに埋め込まれた DPI または密度メタデータを、存在する場合に読み取ります。使える物理密度メタデータがない場合は、ピクセル寸法をもとに一般的な DPI 設定での印刷サイズを表示します。"
       },
       {
         "question": "高品質の印刷にはどのくらいの解像度が必要ですか?",
@@ -207,7 +207,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "このツールは画像をサーバーにアップロードしますか?",
-        "answer": "いいえ。すべての処理はブラウザ内でローカルに行われます。画像がデバイスから離れることはありません。このツールはブラウザの画像 API を使用して寸法を読み取り、ファイル API を使用してファイル サイズを読み取ります。"
+        "answer": "いいえ。すべての処理はブラウザ内でローカルに行われます。画像がデバイスから外部に送信されることはありません。このツールはブラウザ API を使って、画像の寸法、ファイルサイズ、埋め込み密度メタデータをデバイス上で直接読み取ります。"
       }
     ],
     "sections": [
@@ -222,7 +222,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "이 도구는 이미지에서 DPI 메타데이터를 읽을 수 있습니까?",
-        "answer": "브라우저 기반 도구는 EXIF ​​DPI 메타데이터를 직접 읽을 수 없습니다. 이 도구는 픽셀 크기를 읽고 다양한 DPI 설정에서 최대 인쇄 크기를 계산합니다. 내장된 DPI 메타데이터의 경우 Photoshop 또는 GIMP와 같은 데스크톱 소프트웨어를 사용하십시오."
+        "answer": "예, 일반적인 형식에서는 가능합니다. 이 도구는 JPEG, PNG, WebP, BMP 파일에 포함된 DPI 또는 밀도 메타데이터가 있을 때 이를 읽습니다. 파일에 사용할 수 있는 물리적 밀도 메타데이터가 없으면 픽셀 크기를 기준으로 일반적인 DPI 설정에서의 인쇄 크기를 보여줍니다."
       },
       {
         "question": "고품질 인쇄를 위해서는 어떤 해상도가 필요합니까?",
@@ -238,7 +238,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "이 도구가 내 이미지를 서버에 업로드합니까?",
-        "answer": "아니요. 모든 처리는 귀하의 브라우저에서 로컬로 이루어집니다. 귀하의 이미지는 귀하의 장치를 떠나지 않습니다. 이 도구는 브라우저의 이미지 API를 사용하여 치수를 읽고 파일 API를 사용하여 파일 크기를 읽습니다."
+        "answer": "아니요. 모든 처리는 브라우저에서 로컬로 이루어집니다. 이미지가 기기를 떠나지 않습니다. 이 도구는 브라우저 API를 사용해 이미지 크기, 파일 크기, 내장된 밀도 메타데이터를 기기에서 직접 읽습니다."
       }
     ],
     "sections": [
@@ -253,7 +253,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Questo strumento può leggere i metadati DPI da un'immagine?",
-        "answer": "Gli strumenti basati su browser non possono leggere direttamente i metadati DPI EXIF. Questo strumento legge le dimensioni in pixel e calcola le dimensioni massime di stampa con varie impostazioni DPI. Per i metadati DPI incorporati, utilizza un software desktop come Photoshop o GIMP."
+        "answer": "Sì, per i formati più comuni. Questo strumento legge i metadati DPI o di densità incorporati nei file JPEG, PNG, WebP e BMP quando questi dati sono presenti. Se un file non contiene metadati fisici di densità utilizzabili, lo strumento usa le dimensioni in pixel e mostra la dimensione di stampa con impostazioni DPI comuni."
       },
       {
         "question": "Quale risoluzione è necessaria per una stampa di qualità?",
@@ -269,7 +269,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Questo strumento carica la mia immagine su un server?",
-        "answer": "No. Tutta l'elaborazione avviene localmente nel tuo browser. La tua immagine non lascia mai il tuo dispositivo. Lo strumento utilizza l'API Image del browser per leggere le dimensioni e l'API File per leggere la dimensione del file."
+        "answer": "No. Tutta l'elaborazione avviene localmente nel tuo browser. La tua immagine non lascia mai il tuo dispositivo. Lo strumento usa le API del browser per leggere le dimensioni dell'immagine, la dimensione del file e i metadati di densità incorporati direttamente sul tuo dispositivo."
       }
     ],
     "sections": [
@@ -284,7 +284,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Kan deze tool de DPI-metagegevens van een afbeelding lezen?",
-        "answer": "Browsergebaseerde tools kunnen de EXIF ​​DPI-metagegevens niet rechtstreeks lezen. Deze tool leest de pixelafmetingen en berekent de maximale printformaten bij verschillende DPI-instellingen. Voor ingebedde DPI-metagegevens gebruikt u desktopsoftware zoals Photoshop of GIMP."
+        "answer": "Ja, voor gangbare bestandsformaten. Deze tool leest ingesloten DPI- of dichtheidsmetadata uit JPEG-, PNG-, WebP- en BMP-bestanden wanneer die gegevens aanwezig zijn. Als een bestand geen bruikbare fysieke dichtheidsmetadata heeft, gebruikt de tool de pixelafmetingen en toont hij afdrukformaten bij veelgebruikte DPI-instellingen."
       },
       {
         "question": "Welke resolutie is nodig voor kwaliteitsafdrukken?",
@@ -300,7 +300,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Uploadt deze tool mijn afbeelding naar een server?",
-        "answer": "Nee. Alle verwerking gebeurt lokaal in uw browser. Uw afbeelding verlaat nooit uw apparaat. De tool gebruikt de Image API van de browser om afmetingen te lezen en de File API om de bestandsgrootte te lezen."
+        "answer": "Nee. Alle verwerking gebeurt lokaal in uw browser. Uw afbeelding verlaat uw apparaat nooit. De tool gebruikt browser-API's om afbeeldingsafmetingen, bestandsgrootte en ingesloten dichtheidsmetadata direct op uw apparaat te lezen."
       }
     ],
     "sections": [
@@ -315,7 +315,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "هل يمكن لهذه الأداة قراءة البيانات التعريفية DPI من الصورة؟",
-        "answer": "لا يمكن للأدوات المستندة إلى المستعرض قراءة البيانات التعريفية EXIF ​​DPI مباشرة. تقرأ هذه الأداة أبعاد البكسل وتحسب الحد الأقصى لأحجام الطباعة في إعدادات DPI المختلفة. بالنسبة للبيانات التعريفية المضمنة لـ DPI، استخدم برامج سطح المكتب مثل Photoshop أو GIMP."
+        "answer": "نعم، بالنسبة إلى التنسيقات الشائعة. تقرأ هذه الأداة بيانات DPI أو بيانات الكثافة المضمنة من ملفات JPEG وPNG وWebP وBMP عندما تكون هذه البيانات موجودة. وإذا لم يحتوي الملف على بيانات كثافة فعلية قابلة للاستخدام، فتعتمد الأداة على أبعاد البكسل وتعرض حجم الطباعة وفق إعدادات DPI الشائعة."
       },
       {
         "question": "ما الدقة المطلوبة للطباعة عالية الجودة؟",
@@ -331,7 +331,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "هل تقوم هذه الأداة بتحميل صورتي إلى خادم؟",
-        "answer": "لا. تتم جميع عمليات المعالجة محليًا في متصفحك. صورتك لا تترك جهازك أبدًا. تستخدم الأداة واجهة برمجة تطبيقات الصور الخاصة بالمتصفح لقراءة الأبعاد وواجهة برمجة تطبيقات الملفات لقراءة حجم الملف."
+        "answer": "لا. تتم جميع عمليات المعالجة محليًا داخل متصفحك. صورتك لا تغادر جهازك أبدًا. تستخدم الأداة واجهات برمجة المتصفح لقراءة أبعاد الصورة وحجم الملف وبيانات الكثافة المضمنة مباشرة على جهازك."
       }
     ],
     "sections": [
@@ -346,7 +346,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Bu araç bir görüntüden DPI meta verilerini okuyabilir mi?",
-        "answer": "Tarayıcı tabanlı araçlar EXIF ​​DPI meta verilerini doğrudan okuyamaz. Bu araç piksel boyutlarını okur ve çeşitli DPI ayarlarında maksimum baskı boyutlarını hesaplar. Gömülü DPI meta verileri için Photoshop veya GIMP gibi masaüstü yazılımlarını kullanın."
+        "answer": "Evet, yaygın dosya biçimleri için okuyabilir. Bu araç, JPEG, PNG, WebP ve BMP dosyalarında yer alan gömülü DPI veya yoğunluk meta verilerini mevcut olduğunda okur. Bir dosyada kullanılabilir fiziksel yoğunluk meta verisi yoksa araç piksel boyutlarını kullanır ve yaygın DPI ayarlarında baskı boyutunu gösterir."
       },
       {
         "question": "Kaliteli baskı için hangi çözünürlük gereklidir?",
@@ -362,7 +362,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Bu araç resmimi bir sunucuya yüklüyor mu?",
-        "answer": "Hayır. Tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Resminiz asla cihazınızdan ayrılmaz. Araç, boyutları okumak için tarayıcının Görüntü API'sini ve dosya boyutunu okumak için Dosya API'sini kullanır."
+        "answer": "Hayır. Tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Görüntünüz cihazınızdan ayrılmaz. Araç, görüntü boyutlarını, dosya boyutunu ve gömülü yoğunluk meta verilerini doğrudan cihazınızda okumak için tarayıcı API'lerini kullanır."
       }
     ],
     "sections": [
@@ -377,7 +377,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Czy to narzędzie może odczytać metadane DPI z obrazu?",
-        "answer": "Narzędzia oparte na przeglądarce nie mogą bezpośrednio odczytać metadanych EXIF ​​​​DPI. To narzędzie odczytuje wymiary w pikselach i oblicza maksymalne rozmiary wydruku przy różnych ustawieniach DPI. W przypadku osadzonych metadanych DPI użyj oprogramowania komputerowego, takiego jak Photoshop lub GIMP."
+        "answer": "Tak, w przypadku popularnych formatów. To narzędzie odczytuje osadzone metadane DPI lub gęstości z plików JPEG, PNG, WebP i BMP, gdy takie dane są dostępne. Jeśli plik nie ma użytecznych fizycznych metadanych gęstości, narzędzie korzysta z wymiarów w pikselach i pokazuje rozmiar wydruku dla typowych ustawień DPI."
       },
       {
         "question": "Jaka rozdzielczość jest potrzebna do drukowania wysokiej jakości?",
@@ -393,7 +393,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Czy to narzędzie przesyła mój obraz na serwer?",
-        "answer": "Nie. Całe przetwarzanie odbywa się lokalnie w Twojej przeglądarce. Twój obraz nigdy nie opuszcza Twojego urządzenia. Narzędzie wykorzystuje interfejs Image API przeglądarki do odczytywania wymiarów oraz File API do odczytywania rozmiaru pliku."
+        "answer": "Nie. Całe przetwarzanie odbywa się lokalnie w Twojej przeglądarce. Twój obraz nigdy nie opuszcza urządzenia. Narzędzie używa interfejsów API przeglądarki do odczytywania wymiarów obrazu, rozmiaru pliku i osadzonych metadanych gęstości bezpośrednio na Twoim urządzeniu."
       }
     ],
     "sections": [
@@ -408,7 +408,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Bisakah alat ini membaca metadata DPI dari suatu gambar?",
-        "answer": "Alat berbasis browser tidak dapat langsung membaca metadata DPI EXIF. Alat ini membaca dimensi piksel dan menghitung ukuran cetak maksimum pada berbagai pengaturan DPI. Untuk metadata DPI yang tersemat, gunakan perangkat lunak desktop seperti Photoshop atau GIMP."
+        "answer": "Ya, untuk format umum. Alat ini membaca metadata DPI atau densitas yang tertanam pada file JPEG, PNG, WebP, dan BMP saat data tersebut tersedia. Jika file tidak memiliki metadata densitas fisik yang bisa digunakan, alat ini memakai dimensi piksel dan menampilkan ukuran cetak pada pengaturan DPI yang umum."
       },
       {
         "question": "Resolusi apa yang diperlukan untuk pencetakan berkualitas?",
@@ -424,7 +424,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Apakah alat ini mengunggah gambar saya ke server?",
-        "answer": "Tidak. Semua pemrosesan terjadi secara lokal di browser Anda. Gambar Anda tidak pernah meninggalkan perangkat Anda. Alat ini menggunakan Image API browser untuk membaca dimensi dan File API untuk membaca ukuran file."
+        "answer": "Tidak. Semua pemrosesan terjadi secara lokal di browser Anda. Gambar Anda tidak pernah meninggalkan perangkat Anda. Alat ini menggunakan API browser untuk membaca dimensi gambar, ukuran file, dan metadata densitas tertanam langsung di perangkat Anda."
       }
     ],
     "sections": [
@@ -439,7 +439,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Может ли этот инструмент читать метаданные DPI из изображения?",
-        "answer": "Инструменты на основе браузера не могут напрямую читать метаданные EXIF ​​DPI. Этот инструмент считывает размеры в пикселях и рассчитывает максимальные размеры печати при различных настройках DPI. Для встроенных метаданных DPI используйте настольное программное обеспечение, например Photoshop или GIMP."
+        "answer": "Да, для распространенных форматов. Этот инструмент считывает встроенные метаданные DPI или плотности из файлов JPEG, PNG, WebP и BMP, когда такие данные присутствуют. Если в файле нет пригодных физических метаданных плотности, инструмент использует размеры в пикселях и показывает размер печати при стандартных настройках DPI."
       },
       {
         "question": "Какое разрешение необходимо для качественной печати?",
@@ -455,7 +455,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Загружает ли этот инструмент мое изображение на сервер?",
-        "answer": "Нет. Вся обработка происходит локально в вашем браузере. Ваше изображение никогда не покидает ваше устройство. Инструмент использует API изображений браузера для чтения размеров и API файлов для чтения размера файла."
+        "answer": "Нет. Вся обработка происходит локально в вашем браузере. Ваше изображение никогда не покидает устройство. Инструмент использует API браузера, чтобы читать размеры изображения, размер файла и встроенные метаданные плотности прямо на вашем устройстве."
       }
     ],
     "sections": [
