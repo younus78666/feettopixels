@@ -351,7 +351,7 @@ export function AspectRatioCalc({ locale = "en" }: { locale?: Locale }) {
         <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
           {toolUi.aspectRatio.commonResolutions}
         </p>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
+        <div className="table-scroll-shell rounded-lg border border-neutral-200">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-neutral-200 bg-neutral-50">

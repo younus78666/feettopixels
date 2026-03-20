@@ -113,7 +113,7 @@ export function ConverterLayout({
     locale === "en" || !locale
       ? [
           { id: "calculator", label: "Calculator" },
-          { id: "guide", label: "Guide" },
+          { id: "overview", label: "Overview" },
           {
             id: "related-tools",
             label: relatedToolLabel,
@@ -309,11 +309,27 @@ export function ConverterLayout({
         </nav>
       )}
 
-      <div
-        id="guide"
-        className="prose prose-neutral mt-10 max-w-none rounded-[30px] border border-neutral-200/80 bg-white/92 p-6 shadow-[0_18px_48px_-38px_rgba(15,23,42,0.28)] sm:p-8"
-      >
-        {content}
+      <div className="mt-10 rounded-[30px] border border-neutral-200/80 bg-white/92 p-6 shadow-[0_18px_48px_-38px_rgba(15,23,42,0.28)] sm:p-8">
+        <section
+          id="overview"
+          className="rounded-[24px] border border-primary-100 bg-primary-50/70 p-5 shadow-[0_16px_40px_-34px_rgba(20,184,166,0.24)]"
+        >
+          <h2 className="text-2xl font-semibold text-neutral-900">
+            {locale === "en" || !locale ? "Overview" : title}
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-neutral-700">
+            {heroSummary}
+          </p>
+          {description && description.trim() !== heroSummary.trim() && (
+            <p className="mt-3 text-sm leading-7 text-neutral-600">
+              {description}
+            </p>
+          )}
+        </section>
+
+        <div className="prose prose-neutral mt-8 max-w-none empty:hidden">
+          {content}
+        </div>
       </div>
 
       <RelatedTools

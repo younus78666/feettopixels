@@ -5,6 +5,7 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Card } from "@/components/ui/Card";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQ } from "@/components/tools/FAQ";
+import { ToolIcon, getToolVisualMeta } from "@/components/tools/ToolIcon";
 import { UnitConverter } from "@/components/tools/UnitConverter";
 import { toolsDropdown } from "@/content/navigation";
 import { siteConfig } from "@/content/site-config";
@@ -414,10 +415,12 @@ export default async function Home({ params }: PageProps) {
                 title={tool.name}
                 description={tool.description}
                 href={`/${validLocale}${tool.href}`}
+                eyebrow={getToolVisualMeta(tool.href, tool.name).label}
+                image={<ToolIcon href={tool.href} name={tool.name} />}
                 className="h-full overflow-hidden border-white/80 bg-white/90 shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)]"
               >
                 <div className="mt-5 flex items-center justify-between border-t border-neutral-100 pt-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
-                  <span>{tool.icon}</span>
+                  <span>{tool.icon || getToolVisualMeta(tool.href, tool.name).label}</span>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                 </div>
               </Card>
@@ -453,9 +456,21 @@ export default async function Home({ params }: PageProps) {
                 href={`/${validLocale}${guide.href}`}
                 className="group rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:border-primary-400/40 hover:bg-white/10"
               >
-                <span className="inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-300">
-                  {guide.icon}
-                </span>
+                <div className="flex items-center gap-3">
+                  <ToolIcon
+                    href={guide.href}
+                    name={guide.name}
+                    className="h-11 w-11 rounded-xl border-white/15 bg-white/8 text-primary-200"
+                  />
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-300">
+                      {getToolVisualMeta(guide.href, guide.name).label}
+                    </p>
+                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                      {guide.icon}
+                    </p>
+                  </div>
+                </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">{guide.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-300">
                   {guide.description}
@@ -480,7 +495,7 @@ export default async function Home({ params }: PageProps) {
               </p>
             </div>
 
-            <div className="mt-10 overflow-x-auto rounded-[28px] border border-neutral-200 bg-white shadow-[0_18px_45px_-36px_rgba(15,23,42,0.42)]">
+            <div className="table-scroll-shell mt-10 rounded-[28px] border border-neutral-200 bg-white shadow-[0_18px_45px_-36px_rgba(15,23,42,0.42)]">
               <table className="min-w-full divide-y divide-neutral-200 text-left text-sm">
                 <thead className="bg-neutral-50 text-neutral-700">
                   <tr>
@@ -611,6 +626,8 @@ export default async function Home({ params }: PageProps) {
                 title={getNavLabel(tool, dict)}
                 description={getNavDescription(tool, dict)}
                 href={`/${validLocale}${tool.href}`}
+                eyebrow={getToolVisualMeta(tool.href, getNavLabel(tool, dict)).label}
+                image={<ToolIcon href={tool.href} name={getNavLabel(tool, dict)} />}
                 className="h-full border-white/80 bg-white/90 shadow-soft"
               />
             ))}

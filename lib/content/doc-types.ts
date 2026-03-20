@@ -24,9 +24,24 @@ export interface LocalizedDoc {
 
 export type LocalizedDocMap = Record<Locale, LocalizedDoc>;
 
+function hasRenderableSection(section: LocalizedSection): boolean {
+  const paragraphs = section.paragraphs?.some((paragraph) => paragraph.trim()) || false;
+  const list = section.list?.some((item) => item.trim()) || false;
+  const table =
+    Boolean(section.table?.headers.length) && Boolean(section.table?.rows.length);
+  const code = Boolean(section.code?.trim());
+
+  return paragraphs || list || table || code;
+}
+
 export function getLocalizedDoc(
   contentMap: LocalizedDocMap,
   locale: Locale,
 ): LocalizedDoc {
-  return contentMap[locale] || contentMap.en;
+  const doc = contentMap[locale] || contentMap.en;
+
+  return {
+    ...doc,
+    sections: doc.sections.filter(hasRenderableSection),
+  };
 }

@@ -330,8 +330,8 @@ export function DpiChecker({ locale = "en" }: { locale?: Locale }) {
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
               {toolUi.dpiChecker.maximumPrintSize}
             </p>
-            <div className="overflow-x-auto rounded-lg border border-neutral-200">
-              <table className="w-full text-sm">
+        <div className="table-scroll-shell rounded-lg border border-neutral-200">
+          <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-neutral-200 bg-neutral-50">
                     <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">

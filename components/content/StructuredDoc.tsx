@@ -29,26 +29,28 @@ export function StructuredDoc({ sections }: StructuredDocProps) {
           ) : null}
 
           {section.table ? (
-            <table>
-              <thead>
-                <tr>
-                  {section.table.headers.map((header, index) => (
-                    <th key={`${section.id}-th-${index}`}>{header}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {section.table.rows.map((row, rowIndex) => (
-                  <tr key={`${section.id}-row-${rowIndex}`}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={`${section.id}-cell-${rowIndex}-${cellIndex}`}>
-                        {cell}
-                      </td>
+            <div className="table-scroll-shell rounded-xl border border-neutral-200">
+              <table>
+                <thead>
+                  <tr>
+                    {section.table.headers.map((header, index) => (
+                      <th key={`${section.id}-th-${index}`}>{header}</th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row, rowIndex) => (
+                    <tr key={`${section.id}-row-${rowIndex}`}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={`${section.id}-cell-${rowIndex}-${cellIndex}`}>
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           ) : null}
 
           {section.code ? (

@@ -6,6 +6,7 @@ interface CardProps {
   description?: string;
   href?: string;
   image?: React.ReactNode;
+  eyebrow?: string;
   children?: React.ReactNode;
   className?: string;
 }
@@ -15,12 +16,18 @@ export function Card({
   description,
   href,
   image,
+  eyebrow,
   children,
   className,
 }: CardProps) {
   const content = (
     <>
       {image && <div className="mb-4">{image}</div>}
+      {eyebrow && (
+        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-700">
+          {eyebrow}
+        </p>
+      )}
       <h3 className="text-lg font-semibold text-neutral-900">{title}</h3>
       {description && (
         <p className="mt-1.5 text-sm leading-relaxed text-neutral-500">
