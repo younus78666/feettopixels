@@ -9,7 +9,7 @@ third-party SEO tool score.
 
 | Slug | Type | Main Keyword | Secondary Keyword | Canonical Query | Research Check | Score | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| home | homepage | pixel conversion tools | pixel converter, dpi calculator, pixels to inches | pixel conversion tools |  | 100 | pass |
+| home | homepage | feet to pixels | feet to pixels converter, ft to px, pixels to feet | feet to pixels |  | 100 | pass |
 | about | about | about feettopixels | pixel conversion tools, dpi-aware converters | about feettopixels |  | 100 | pass |
 | aspect-ratio-calculator | tool | aspect ratio calculator | how to calculate aspect ratio | how to calculate aspect ratio | image aspect ratio calculator | 100 | pass |
 | best-dpi-for-printing | guide | best dpi for printing | what dpi for printing | what dpi for printing |  | 100 | pass |

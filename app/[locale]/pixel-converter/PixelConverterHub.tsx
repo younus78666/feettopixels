@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { cn, formatNumber } from "@/lib/utils";
+import { cn, formatEditableNumber } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { getToolUi, getUnitLabel } from "@/lib/tool-ui";
@@ -52,9 +52,10 @@ export function PixelConverterHub({ locale = "en" }: { locale?: Locale }) {
   const [fromValue, setFromValue] = useState("100");
   const [toValue, setToValue] = useState(() => {
     const px = convertToPixels(100, "px", 96);
-    return formatNumber(convertFromPixels(px, "in", 96), 4);
+    return formatEditableNumber(convertFromPixels(px, "in", 96), 4);
   });
   const [dpi, setDpi] = useState(96);
+  const [lastEditedSide, setLastEditedSide] = useState<"from" | "to">("from");
   const dpiPresets = [72, 96, 150, 300];
 
   const recalculate = useCallback(
@@ -62,34 +63,51 @@ export function PixelConverterHub({ locale = "en" }: { locale?: Locale }) {
       const num = parseFloat(val);
       if (isNaN(num)) return "";
       const px = convertToPixels(num, from, currentDpi);
-      return formatNumber(convertFromPixels(px, to, currentDpi), 4);
+      return formatEditableNumber(convertFromPixels(px, to, currentDpi), 4);
     },
     [],
   );
 
   const handleFromChange = (val: string) => {
+    setLastEditedSide("from");
     setFromValue(val);
     setToValue(recalculate(val, fromUnit, toUnit, dpi));
   };
 
   const handleToChange = (val: string) => {
+    setLastEditedSide("to");
     setToValue(val);
     setFromValue(recalculate(val, toUnit, fromUnit, dpi));
   };
 
   const handleFromUnitChange = (unit: UnitKey) => {
     setFromUnit(unit);
-    setToValue(recalculate(fromValue, unit, toUnit, dpi));
+    if (lastEditedSide === "from") {
+      setToValue(recalculate(fromValue, unit, toUnit, dpi));
+      return;
+    }
+
+    setFromValue(recalculate(toValue, toUnit, unit, dpi));
   };
 
   const handleToUnitChange = (unit: UnitKey) => {
     setToUnit(unit);
-    setToValue(recalculate(fromValue, fromUnit, unit, dpi));
+    if (lastEditedSide === "from") {
+      setToValue(recalculate(fromValue, fromUnit, unit, dpi));
+      return;
+    }
+
+    setFromValue(recalculate(toValue, unit, fromUnit, dpi));
   };
 
   const handleDpiChange = (newDpi: number) => {
     setDpi(newDpi);
-    setToValue(recalculate(fromValue, fromUnit, toUnit, newDpi));
+    if (lastEditedSide === "from") {
+      setToValue(recalculate(fromValue, fromUnit, toUnit, newDpi));
+      return;
+    }
+
+    setFromValue(recalculate(toValue, toUnit, fromUnit, newDpi));
   };
 
   const handleSwap = () => {
@@ -101,6 +119,7 @@ export function PixelConverterHub({ locale = "en" }: { locale?: Locale }) {
     const oldTo = toValue;
     setFromValue(oldTo);
     setToValue(oldFrom);
+    setLastEditedSide("from");
   };
 
   return (

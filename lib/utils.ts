@@ -20,3 +20,15 @@ export function formatNumber(
     maximumFractionDigits: decimals,
   }).format(value);
 }
+
+/**
+ * Format a number for editable form fields.
+ * Keeps decimal precision but avoids locale separators that break number inputs.
+ */
+export function formatEditableNumber(
+  value: number,
+  decimals: number = 2,
+): string {
+  if (!Number.isFinite(value)) return "";
+  return value.toFixed(decimals).replace(/\.?0+$/, "");
+}

@@ -225,8 +225,8 @@ export function ContactForm({ locale }: { locale: Locale }) {
             <section className="mt-10 rounded-2xl border border-neutral-200 bg-white p-6 shadow-soft">
               <h2 className="text-xl font-semibold text-neutral-900">Need a quick answer first?</h2>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                You may find the answer faster in the main tool hub, the DPI calculator, or the
-                most common pixels-to-inches guide.
+                You may find the answer faster in the pixel converter hub, the DPI calculator,
+                or the most common pixels-to-inches guide.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link

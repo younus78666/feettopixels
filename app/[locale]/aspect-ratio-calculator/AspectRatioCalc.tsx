@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cn, formatNumber } from "@/lib/utils";
+import { cn, formatEditableNumber, formatNumber } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { getToolUi } from "@/lib/tool-ui";
@@ -61,7 +61,7 @@ export function AspectRatioCalc({ locale = "en" }: { locale?: Locale }) {
     setLockField("ratio");
     const numericWidth = parseFloat(width);
     if (!isNaN(numericWidth) && numericWidth > 0) {
-      setHeight(formatNumber((numericWidth * preset.y) / preset.x, 0));
+      setHeight(formatEditableNumber((numericWidth * preset.y) / preset.x, 0));
     }
   };
 
@@ -78,7 +78,9 @@ export function AspectRatioCalc({ locale = "en" }: { locale?: Locale }) {
         !isNaN(numericRatioY) &&
         numericRatioX > 0
       ) {
-        setHeight(formatNumber((numericWidth * numericRatioY) / numericRatioX, 0));
+        setHeight(
+          formatEditableNumber((numericWidth * numericRatioY) / numericRatioX, 0),
+        );
       }
     } else if (lockField === "height") {
       const numericHeight = parseFloat(height);
@@ -103,7 +105,9 @@ export function AspectRatioCalc({ locale = "en" }: { locale?: Locale }) {
         !isNaN(numericRatioY) &&
         numericRatioY > 0
       ) {
-        setWidth(formatNumber((numericHeight * numericRatioX) / numericRatioY, 0));
+        setWidth(
+          formatEditableNumber((numericHeight * numericRatioX) / numericRatioY, 0),
+        );
       }
     } else if (lockField === "width") {
       const numericWidth = parseFloat(width);
@@ -133,12 +137,16 @@ export function AspectRatioCalc({ locale = "en" }: { locale?: Locale }) {
     if (lockField === "width") {
       const numericWidth = parseFloat(width);
       if (!isNaN(numericWidth) && numericWidth > 0) {
-        setHeight(formatNumber((numericWidth * numericRatioY) / numericRatioX, 0));
+        setHeight(
+          formatEditableNumber((numericWidth * numericRatioY) / numericRatioX, 0),
+        );
       }
     } else if (lockField === "height") {
       const numericHeight = parseFloat(height);
       if (!isNaN(numericHeight) && numericHeight > 0) {
-        setWidth(formatNumber((numericHeight * numericRatioX) / numericRatioY, 0));
+        setWidth(
+          formatEditableNumber((numericHeight * numericRatioX) / numericRatioY, 0),
+        );
       }
     }
   };

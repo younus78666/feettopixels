@@ -4,6 +4,14 @@ interface ReferenceSourcesProps {
   sources: ReferenceSource[];
 }
 
+function getHostnameLabel(href: string): string {
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
+
 export function ReferenceSources({ sources }: ReferenceSourcesProps) {
   if (sources.length === 0) return null;
 
@@ -25,13 +33,19 @@ export function ReferenceSources({ sources }: ReferenceSourcesProps) {
             href={source.href}
             target="_blank"
             rel="noreferrer"
-            className="tool-card group"
+            className="tool-card group h-full"
           >
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+              {getHostnameLabel(source.href)}
+            </p>
             <h3 className="text-base font-semibold text-neutral-900 group-hover:text-primary-700">
               {source.title}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-neutral-500">
               {source.description}
+            </p>
+            <p className="mt-4 text-sm font-medium text-primary-700">
+              Visit source
             </p>
           </a>
         ))}

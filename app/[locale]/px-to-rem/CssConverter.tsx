@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import { formatNumber } from "@/lib/utils";
+import { formatEditableNumber, formatNumber } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { getCssModeConfig, getToolUi } from "@/lib/tool-ui";
@@ -67,11 +67,12 @@ export function CssConverter({
 
   const [pxValue, setPxValue] = useState("16");
   const [resultValue, setResultValue] = useState(() =>
-    formatNumber(convert(16, initialBase), 4),
+    formatEditableNumber(convert(16, initialBase), 4),
   );
   const [base, setBase] = useState(initialBase);
   const [reversed, setReversed] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [lastEditedSide, setLastEditedSide] = useState<"from" | "to">("from");
 
   const localizedFromLabel = modeUi?.fromLabel || fromLabel;
   const localizedToLabel = modeUi?.toLabel || toLabel;
@@ -96,32 +97,42 @@ export function CssConverter({
   );
 
   const handlePxChange = (val: string) => {
+    setLastEditedSide("from");
     setPxValue(val);
     const num = parseFloat(val);
     if (isNaN(num)) {
       setResultValue("");
       return;
     }
-    setResultValue(formatNumber(doConvert(num, reversed, base), 4));
+    setResultValue(formatEditableNumber(doConvert(num, reversed, base), 4));
   };
 
   const handleResultChange = (val: string) => {
+    setLastEditedSide("to");
     setResultValue(val);
     const num = parseFloat(val);
     if (isNaN(num)) {
       setPxValue("");
       return;
     }
-    setPxValue(formatNumber(doReverse(num, reversed, base), 4));
+    setPxValue(formatEditableNumber(doReverse(num, reversed, base), 4));
   };
 
   const handleBaseChange = (val: string) => {
     const num = parseFloat(val);
     if (isNaN(num) || num <= 0) return;
     setBase(num);
-    const px = parseFloat(pxValue);
-    if (!isNaN(px)) {
-      setResultValue(formatNumber(doConvert(px, reversed, num), 4));
+    if (lastEditedSide === "from") {
+      const px = parseFloat(pxValue);
+      if (!isNaN(px)) {
+        setResultValue(formatEditableNumber(doConvert(px, reversed, num), 4));
+      }
+      return;
+    }
+
+    const result = parseFloat(resultValue);
+    if (!isNaN(result)) {
+      setPxValue(formatEditableNumber(doReverse(result, reversed, num), 4));
     }
   };
 
@@ -131,6 +142,7 @@ export function CssConverter({
     const oldResult = resultValue;
     setPxValue(oldResult);
     setResultValue(oldPx);
+    setLastEditedSide("from");
   };
 
   const handleCopy = async () => {

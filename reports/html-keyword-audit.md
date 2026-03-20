@@ -5,9 +5,9 @@ meta description, H1, and the first part of visible body text.
 
 | Slug | Main Keyword | Title | Meta | H1 | Lead | Score | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| home | pixel conversion tools | yes | yes | yes | yes | 85 | pass |
+| home | feet to pixels | yes | yes | yes | yes | 85 | pass |
 | about | about feettopixels | yes | yes | yes | yes | 85 | pass |
-| aspect-ratio-calculator | aspect ratio calculator | yes | yes | yes | yes | 100 | pass |
+| aspect-ratio-calculator | aspect ratio calculator | yes | no | yes | yes | 80 | pass |
 | best-dpi-for-printing | best dpi for printing | yes | no | yes | yes | 80 | pass |
 | best-dpi-for-web | best dpi for web | yes | no | yes | yes | 80 | pass |
 | cm-to-pixels | cm to pixels | yes | no | yes | yes | 80 | pass |
@@ -16,8 +16,8 @@ meta description, H1, and the first part of visible body text.
 | dpi-calculator | dpi calculator | yes | yes | yes | yes | 100 | pass |
 | dpi-conversion-table | dpi conversion table | yes | yes | yes | yes | 100 | pass |
 | dpi-converter | dpi converter | yes | yes | yes | yes | 100 | pass |
-| dpi-vs-ppi | dpi vs ppi | yes | yes | yes | yes | 100 | pass |
-| em-vs-rem | em vs rem | yes | yes | yes | yes | 100 | pass |
+| dpi-vs-ppi | dpi vs ppi | yes | no | yes | yes | 80 | pass |
+| em-vs-rem | em vs rem | yes | no | yes | yes | 80 | pass |
 | feet-to-pixels | feet to pixels | yes | yes | yes | yes | 100 | pass |
 | image-dpi-checker | check image dpi | yes | yes | yes | yes | 85 | pass |
 | image-size-calculator | image size calculator | yes | no | yes | yes | 80 | pass |

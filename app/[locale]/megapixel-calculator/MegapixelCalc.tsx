@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cn, formatNumber } from "@/lib/utils";
+import { cn, formatEditableNumber, formatNumber } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/translations";
 import { getToolUi } from "@/lib/tool-ui";
@@ -106,7 +106,7 @@ export function MegapixelCalc({ locale = "en" }: { locale?: Locale }) {
       numericWidth > 0 &&
       numericHeight > 0
     ) {
-      setMegapixels(formatNumber(calcMp(numericWidth, numericHeight), 2));
+      setMegapixels(formatEditableNumber(calcMp(numericWidth, numericHeight), 2));
     }
   };
 
@@ -120,7 +120,7 @@ export function MegapixelCalc({ locale = "en" }: { locale?: Locale }) {
       numericWidth > 0 &&
       numericHeight > 0
     ) {
-      setMegapixels(formatNumber(calcMp(numericWidth, numericHeight), 2));
+      setMegapixels(formatEditableNumber(calcMp(numericWidth, numericHeight), 2));
     }
   };
 

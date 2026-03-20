@@ -14,16 +14,16 @@ export const DEFAULT_PAGE_DATE = "2026-03-19";
 
 export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   home: {
-    title: "Pixel Conversion Tools: 15+ DPI Calculators [2026]",
+    title: "Feet to Pixels Converter - Convert ft to px at Any DPI",
     description:
-      "Pixel conversion tools for inches, cm, mm, feet, and CSS units. Compare 15+ DPI-aware calculators, PPI guides, and print/web size references for designers.",
+      "Feet to pixels converter with 72, 96, 150, and 300 DPI presets. Convert ft to px instantly for print, signage, screens, and large-format design.",
     extractive:
-      "Use FeetToPixels to convert between pixels and physical or CSS units with practical DPI context for print sizing, screens, and responsive layouts.",
+      "Use FeetToPixels to convert feet to pixels with practical DPI presets for large-format print, signage, screens, and physical layout planning.",
   },
   about: {
     title: "About FeetToPixels - DPI-Aware Pixel Conversion Tools",
     description:
-      "Learn how FeetToPixels helps designers and developers convert pixels, inches, cm, mm, feet, and CSS units with practical DPI-aware guidance.",
+      "About FeetToPixels: learn how our pixel conversion tools help designers and developers work with inches, cm, mm, feet, and CSS units using practical DPI-aware guidance.",
     extractive:
       "FeetToPixels is a focused set of pixel conversion tools built for print sizing, screen measurements, and front-end workflows where DPI and physical dimensions matter.",
   },
@@ -317,7 +317,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "passport-photo-size": {
     title: "Passport Photo Size in Pixels: 2x2, 35x45mm, and More",
     description:
-      "Find passport photo sizes in pixels for US, UK, Schengen, and more, with common dimensions at 300 DPI for passport and ID photos.",
+      "Passport photo size in pixels for US, UK, Schengen, and more, with common 300 DPI dimensions for passport and ID photos.",
     extractive:
       "US passport photo: 2x2 inches = 600x600 pixels at 300 DPI. UK passport photo: 35x45mm = 413x531 pixels at 300 DPI. Schengen visa: 35x45mm = same as UK.",
   },

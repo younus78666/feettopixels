@@ -18,15 +18,15 @@ KEYWORD_RESEARCH_PATH = (
 MANUAL_PAGES: dict[str, dict[str, str]] = {
     "home": {
         "page_type": "homepage",
-        "primary_keyword": "pixel conversion tools",
-        "secondary_keywords": "pixel converter, dpi calculator, pixels to inches",
-        "canonical_query": "pixel conversion tools",
-        "focus_keyword": "pixel conversion tools",
-        "title": "Pixel Conversion Tools: 15+ DPI Calculators [2026]",
+        "primary_keyword": "feet to pixels",
+        "secondary_keywords": "feet to pixels converter, ft to px, pixels to feet",
+        "canonical_query": "feet to pixels",
+        "focus_keyword": "feet to pixels",
+        "title": "Feet to Pixels Converter - Convert ft to px at Any DPI",
         "description": (
-            "Pixel conversion tools for inches, cm, mm, feet, and CSS units. "
-            "Compare 15+ DPI-aware calculators, PPI guides, and print/web size "
-            "references for designers."
+            "Feet to pixels converter with 72, 96, 150, and 300 DPI presets. "
+            "Convert ft to px instantly for print, signage, screens, and "
+            "large-format design."
         ),
         "source": "manual",
     },
