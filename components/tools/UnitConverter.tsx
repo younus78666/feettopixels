@@ -71,6 +71,13 @@ const conversionUi: Record<
   "ft-to-px": { fromUnit: "ft", toUnit: "px", formula: "px = ft x 12 x DPI" },
 };
 
+function formatEditableNumber(value: number, decimals: number = 4): string {
+  if (!Number.isFinite(value)) return "";
+  return value
+    .toFixed(decimals)
+    .replace(/\.?0+$/, "");
+}
+
 interface UnitConverterProps {
   fromUnit: string;
   toUnit: string;
@@ -115,7 +122,7 @@ export function UnitConverter({
 
   const [fromValue, setFromValue] = useState("100");
   const [toValue, setToValue] = useState(() =>
-    formatNumber(conversionFn(100, defaultDpi), 4),
+    formatEditableNumber(conversionFn(100, defaultDpi), 4),
   );
   const [dpi, setDpi] = useState(defaultDpi);
   const [customDpi, setCustomDpi] = useState("");
@@ -141,10 +148,10 @@ export function UnitConverter({
 
       if (fromSide === "from") {
         const fn = isReversed ? reverseConversionFn : conversionFn;
-        setToValue(formatNumber(fn(num, currentDpi), 4));
+        setToValue(formatEditableNumber(fn(num, currentDpi), 4));
       } else {
         const fn = isReversed ? conversionFn : reverseConversionFn;
-        setFromValue(formatNumber(fn(num, currentDpi), 4));
+        setFromValue(formatEditableNumber(fn(num, currentDpi), 4));
       }
     },
     [conversionFn, reverseConversionFn],
