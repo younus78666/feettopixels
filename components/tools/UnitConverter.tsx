@@ -128,6 +128,7 @@ export function UnitConverter({
   const [customDpi, setCustomDpi] = useState("");
   const [reversed, setReversed] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [lastEditedSide, setLastEditedSide] = useState<"from" | "to">("from");
 
   const currentFromUnit = reversed ? localizedUnits.to : localizedUnits.from;
   const currentToUnit = reversed ? localizedUnits.from : localizedUnits.to;
@@ -158,11 +159,13 @@ export function UnitConverter({
   );
 
   const handleFromChange = (val: string) => {
+    setLastEditedSide("from");
     setFromValue(val);
     convert(val, "from", dpi, reversed);
   };
 
   const handleToChange = (val: string) => {
+    setLastEditedSide("to");
     setToValue(val);
     convert(val, "to", dpi, reversed);
   };
@@ -170,7 +173,8 @@ export function UnitConverter({
   const handleDpiChange = (newDpi: number) => {
     setDpi(newDpi);
     setCustomDpi("");
-    convert(fromValue, "from", newDpi, reversed);
+    const anchorValue = lastEditedSide === "from" ? fromValue : toValue;
+    convert(anchorValue, lastEditedSide, newDpi, reversed);
   };
 
   const handleCustomDpiChange = (val: string) => {
@@ -178,7 +182,8 @@ export function UnitConverter({
     const num = parseInt(val, 10);
     if (!isNaN(num) && num > 0) {
       setDpi(num);
-      convert(fromValue, "from", num, reversed);
+      const anchorValue = lastEditedSide === "from" ? fromValue : toValue;
+      convert(anchorValue, lastEditedSide, num, reversed);
     }
   };
 
@@ -188,6 +193,7 @@ export function UnitConverter({
     const oldTo = toValue;
     setFromValue(oldTo);
     setToValue(oldFrom);
+    setLastEditedSide("from");
   };
 
   const handleCopy = async () => {
