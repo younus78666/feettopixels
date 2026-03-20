@@ -77,10 +77,13 @@ interface UnitConverterProps {
   conversionType: ConversionType;
   formula: string;
   showDpiSelector?: boolean;
+  showFormulaCard?: boolean;
+  showConversionTable?: boolean;
   defaultDpi?: number;
   dpiPresets?: number[];
   commonValues?: number[];
   locale?: Locale;
+  className?: string;
 }
 
 export function UnitConverter({
@@ -89,10 +92,13 @@ export function UnitConverter({
   conversionType,
   formula,
   showDpiSelector = true,
+  showFormulaCard = true,
+  showConversionTable = true,
   defaultDpi = 96,
   dpiPresets = [72, 96, 150, 300],
   commonValues = [1, 10, 50, 100, 250, 500, 1000],
   locale = "en",
+  className,
 }: UnitConverterProps) {
   const dict = getDictionary(locale);
   const ui = dict.tool;
@@ -192,7 +198,7 @@ export function UnitConverter({
   };
 
   return (
-    <div className="tool-card space-y-6">
+    <div className={cn("tool-card space-y-6", className)}>
       <div className="flex flex-col items-center gap-4 sm:flex-row">
         <div className="w-full flex-1">
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-400">
@@ -311,49 +317,53 @@ export function UnitConverter({
         </div>
       )}
 
-      <div className="rounded-lg bg-neutral-50 px-4 py-3">
-        <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
-          {ui.formula}
-        </p>
-        <p className="mono-display mt-1 text-sm text-neutral-700">
-          {displayFormula}
-        </p>
-      </div>
-
-      <div>
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
-          {ui.conversionTable} ({dpi} {ui.dpi})
-        </p>
-        <div className="overflow-x-auto rounded-lg border border-neutral-200">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-neutral-200 bg-neutral-50">
-                <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">
-                  {currentFromUnit || fallbackLabels.from}
-                </th>
-                <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">
-                  {currentToUnit || fallbackLabels.to}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {commonValues.map((val) => (
-                <tr
-                  key={val}
-                  className="border-b border-neutral-100 last:border-b-0"
-                >
-                  <td className="mono-display px-4 py-2 text-neutral-800">
-                    {formatNumber(val)}
-                  </td>
-                  <td className="mono-display px-4 py-2 text-neutral-800">
-                    {formatNumber(conversionFnForTable(val, dpi), 4)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {showFormulaCard && (
+        <div className="rounded-lg bg-neutral-50 px-4 py-3">
+          <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+            {ui.formula}
+          </p>
+          <p className="mono-display mt-1 text-sm text-neutral-700">
+            {displayFormula}
+          </p>
         </div>
-      </div>
+      )}
+
+      {showConversionTable && (
+        <div>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
+            {ui.conversionTable} ({dpi} {ui.dpi})
+          </p>
+          <div className="overflow-x-auto rounded-lg border border-neutral-200">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-neutral-200 bg-neutral-50">
+                  <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">
+                    {currentFromUnit || fallbackLabels.from}
+                  </th>
+                  <th className="px-4 py-2.5 text-left font-semibold text-neutral-600">
+                    {currentToUnit || fallbackLabels.to}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {commonValues.map((val) => (
+                  <tr
+                    key={val}
+                    className="border-b border-neutral-100 last:border-b-0"
+                  >
+                    <td className="mono-display px-4 py-2 text-neutral-800">
+                      {formatNumber(val)}
+                    </td>
+                    <td className="mono-display px-4 py-2 text-neutral-800">
+                      {formatNumber(conversionFnForTable(val, dpi), 4)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
