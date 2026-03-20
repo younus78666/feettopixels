@@ -8,16 +8,16 @@ const localeAllowRules = locales.flatMap((locale) => [`/${locale}`, `/${locale}/
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Main rules - allow only locale-prefixed paths, block non-locale duplicates
+      // Main rules - allow locale-prefixed paths and sitemap, block private areas
       {
         userAgent: "Googlebot",
         allow: [...localeAllowRules, "/sitemap.xml"],
-        disallow: ["/api/", "/admin/", "/"],
+        disallow: ["/api/", "/admin/"],
       },
       {
         userAgent: "Bingbot",
         allow: [...localeAllowRules, "/sitemap.xml"],
-        disallow: ["/api/", "/admin/", "/"],
+        disallow: ["/api/", "/admin/"],
       },
       // Block SEO tool crawlers (they consume bandwidth, no benefit)
       {
@@ -90,11 +90,11 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "FacebookBot",
         disallow: "/",
       },
-      // Default rule for all other bots - only allow locale paths
+      // Default rule for all other bots
       {
         userAgent: "*",
         allow: [...localeAllowRules, "/sitemap.xml"],
-        disallow: ["/api/", "/admin/", "/*?*", "/search", "/"],
+        disallow: ["/api/", "/admin/", "/*?*", "/search"],
         crawlDelay: 10,
       },
     ],
