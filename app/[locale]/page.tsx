@@ -80,8 +80,7 @@ export default async function Home({ params }: PageProps) {
   const dict = getDictionary(validLocale);
   const allTools = toolsDropdown.groups.flatMap((g) => g.links);
   const isEnglish = validLocale === "en";
-  const updatedDateIso = "2026-03-19";
-  const updatedDateLabel = "March 19, 2026";
+  const updatedDateIso = new Date().toISOString().split("T")[0];
 
   const featuredTools = getRelatedTools(dict, [
     { slug: "feet-to-pixels", href: "/feet-to-pixels", icon: "FT" },
@@ -111,21 +110,6 @@ export default async function Home({ params }: PageProps) {
     { slug: "best-dpi-for-printing", href: "/best-dpi-for-printing", icon: "300" },
     { slug: "paper-sizes-in-pixels", href: "/paper-sizes-in-pixels", icon: "A4" },
   ]);
-
-  const heroPoints = isEnglish
-    ? [
-        "72, 96, 150, and 300 DPI presets",
-        "Fast ft to px and px to ft workflows",
-        "Built for print, signage, and mockups",
-      ]
-    : [dict.home.dpiAwareDesc, dict.home.instantDesc, dict.home.devFriendlyDesc];
-
-  const heroUseCases = [
-    "Posters",
-    "Signage",
-    "Stage backdrops",
-    "Large-format print",
-  ];
 
   const homepageValueProps = [
     { count: "01", title: dict.home.dpiAware, desc: dict.home.dpiAwareDesc },
@@ -208,9 +192,7 @@ export default async function Home({ params }: PageProps) {
       <JsonLd data={siteNavigationJsonLd} />
 
       <SectionWrapper className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 lg:pb-16 lg:pt-18">
-        <div className="absolute inset-x-0 top-0 h-[78%] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_58%),radial-gradient(circle_at_left,rgba(20,184,166,0.14),transparent_42%)]" />
-        <div className="absolute left-[8%] top-24 h-40 w-40 rounded-full bg-primary-100 blur-3xl" />
-        <div className="absolute right-[6%] top-16 h-64 w-64 rounded-full bg-sky-100 blur-3xl" />
+        <div className="absolute inset-x-0 top-0 h-[60%] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_60%)]" />
 
         <Container as="article" className="relative">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
@@ -232,46 +214,12 @@ export default async function Home({ params }: PageProps) {
                     : dict.site.description}
                 </p>
 
-                {isEnglish && (
-                  <div className="mt-5 rounded-[28px] border border-neutral-200/80 bg-white/80 p-5 shadow-[0_18px_45px_-36px_rgba(15,23,42,0.3)]">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                      Best for
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {heroUseCases.map((useCase) => (
-                        <span
-                          key={useCase}
-                          className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-neutral-600"
-                        >
-                          {useCase}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                  {heroPoints.map((point, index) => (
-                    <div
-                      key={point}
-                      className="rounded-[24px] border border-neutral-200/80 bg-white/78 p-4 shadow-[0_16px_40px_-36px_rgba(15,23,42,0.32)]"
-                    >
-                      <p className="mono-display text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                        0{index + 1}
-                      </p>
-                      <p className="mt-2 text-sm leading-6 text-neutral-600">
-                        {point}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={`/${validLocale}/feet-to-pixels`}
-                    className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-6 text-base font-medium text-white shadow-[0_18px_40px_-26px_rgba(15,23,42,0.75)] transition-transform hover:-translate-y-0.5 hover:bg-neutral-900"
+                    className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-6 text-base font-medium text-white transition-transform hover:-translate-y-0.5 hover:bg-neutral-900"
                   >
-                    {isEnglish ? "Open full feet to pixels page" : dict.home.browseTools}
+                    {isEnglish ? "Open full converter" : dict.home.browseTools}
                   </Link>
                   <Link
                     href={`/${validLocale}/pixel-converter`}
@@ -280,27 +228,13 @@ export default async function Home({ params }: PageProps) {
                     {isEnglish ? "Browse all tools" : dict.home.browseTools}
                   </Link>
                 </div>
-                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-neutral-500">
-                  <Link
-                    href={`/${validLocale}/about`}
-                    className="font-medium text-primary-700 hover:text-primary-800"
-                  >
-                    FeetToPixels Editorial Team
-                  </Link>
-                  <span aria-hidden="true">/</span>
-                  <time dateTime={updatedDateIso} className="font-medium text-neutral-700">
-                    {updatedDateLabel}
-                  </time>
-                </div>
               </div>
 
               <div className="order-1 relative lg:pr-4">
-                <div className="absolute inset-4 rounded-full bg-primary-200/40 blur-3xl" />
                 <div
                   id="start-converting"
-                  className="relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,250,252,0.95))] p-5 shadow-[0_28px_80px_-44px_rgba(15,23,42,0.5)] backdrop-blur sm:p-6"
+                  className="relative overflow-hidden rounded-[28px] border border-neutral-200 bg-white p-5 shadow-[0_8px_24px_-16px_rgba(15,23,42,0.2)] sm:p-6"
                 >
-                  <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_68%)]" />
                   <div className="border-b border-neutral-200/80 pb-4">
                     <div className="max-w-xl">
                       <h2 className="max-w-lg text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">

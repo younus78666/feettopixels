@@ -27,8 +27,55 @@ export const content: LocalizedDocMap = {
     "sections": [
       {
         "id": "overview",
-        "title": "Overview",
-        "paragraphs": []
+        "title": "What an On-Screen Pixel Ruler Does",
+        "paragraphs": [
+          "An on-screen pixel ruler is a lightweight measuring tool you drag across your display to read pixel distances directly. It behaves like a physical ruler except its unit is screen pixels, with optional conversion to inches, centimeters, or millimeters once you calibrate it against a known physical object.",
+          "This ruler is especially useful for designers, developers, and QA engineers who need to verify spacing, font sizes, button heights, icon dimensions, or layout grids on a live page. Instead of opening dev tools to inspect every element, you can simply drag the ruler across the area in question."
+        ]
+      },
+      {
+        "id": "calibration",
+        "title": "How to Calibrate the Ruler Accurately",
+        "paragraphs": [
+          "Without calibration, the ruler uses your browser's reported pixel density, which is often wrong for modern high-DPI displays. The operating system may report 96 CSS PPI when the physical screen is actually 218 PPI or higher, causing the ruler's inch/cm values to be off.",
+          "For physical accuracy, calibrate with a known-size object held against your screen. The easiest is a standard credit card — it measures exactly 85.60 mm × 53.98 mm (3.370 × 2.125 inches) worldwide. Place the card on the screen, adjust the ruler scale until it matches the card's length, and the ruler is now accurate to your specific display's physical pixel density.",
+          "Other reliable calibration objects: a US quarter (24.26 mm diameter), a UK 1-pound coin (23.43 mm), an iPhone 15 Pro screen width (~71 mm), or a printed ruler itself. Always use something you can measure precisely with a physical ruler first."
+        ]
+      },
+      {
+        "id": "use-cases",
+        "title": "When to Use a Pixel Ruler",
+        "paragraphs": [
+          "Frontend debugging: verify that spacing between elements matches design spec (e.g., 16 px margins, 24 px gutters, 48 px touch targets). Much faster than inspecting each element in dev tools.",
+          "Design review: confirm that actual rendering matches Figma or Sketch mockups, especially at different zoom levels. A 24 px heading in Figma should render as 24 CSS pixels on screen.",
+          "Accessibility audits: verify minimum touch target size (44 px per Apple HIG, 48 dp per Google Material), minimum font size (16 px for body text), and adequate line height (usually 1.5 × font size).",
+          "Print preparation: confirm that a print layout's on-screen representation matches the intended physical size. A 100 mm print preview should measure 100 mm across your calibrated ruler.",
+          "Responsive testing: check that breakpoints fire at the correct widths and that spacing scales proportionally across viewport sizes."
+        ]
+      },
+      {
+        "id": "units",
+        "title": "Supported Units and Conversions",
+        "table": {
+          "headers": ["Unit", "When to Use", "Calibration Needed?"],
+          "rows": [
+            ["Pixels (px)", "Layout, CSS, design spec", "No — native ruler unit"],
+            ["Inches (in)", "US print design, screen size", "Yes — calibrate to physical object"],
+            ["Centimeters (cm)", "Metric print, ISO layouts", "Yes — calibrate to physical object"],
+            ["Millimeters (mm)", "Precision metric, engineering", "Yes — calibrate to physical object"],
+            ["Points (pt)", "Typography, print sizing", "Yes — based on calibrated inches"],
+            ["REM", "Responsive CSS design", "Derived from browser root font size"]
+          ]
+        }
+      },
+      {
+        "id": "accuracy-tips",
+        "title": "Accuracy and Limitations",
+        "paragraphs": [
+          "Browser zoom breaks pixel measurements. Always measure at 100% zoom level. Most browsers show current zoom in the URL bar or via Ctrl+0 to reset.",
+          "Device pixel ratio matters. A Retina display at 2x DPR means 1 CSS pixel = 2 physical pixels. The ruler measures CSS pixels by default because that's what CSS uses. To measure physical pixels, switch mode or multiply by the DPR value.",
+          "External monitors often have different pixel densities than built-in laptop displays. Calibrate the ruler separately on each monitor if you switch between them. Save calibration values for future sessions when possible."
+        ]
       }
     ]
   },

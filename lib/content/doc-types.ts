@@ -39,13 +39,16 @@ export function getLocalizedDoc(
   locale: Locale,
 ): LocalizedDoc {
   const localeDoc = contentMap[locale];
-  const localeHasContent =
-    (localeDoc?.sections.some(hasRenderableSection) ?? false) ||
-    (localeDoc?.faq.length ?? 0) > 0;
-  const doc = localeHasContent ? localeDoc : contentMap.en;
+  const enDoc = contentMap.en;
+
+  const localeFaq = localeDoc?.faq.length ? localeDoc.faq : enDoc.faq;
+  const localeSections = localeDoc?.sections.some(hasRenderableSection)
+    ? localeDoc.sections
+    : enDoc.sections;
 
   return {
-    ...doc,
-    sections: doc.sections.filter(hasRenderableSection),
+    ...(localeDoc ?? enDoc),
+    faq: localeFaq,
+    sections: localeSections.filter(hasRenderableSection),
   };
 }
