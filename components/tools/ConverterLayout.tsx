@@ -35,7 +35,7 @@ interface ConverterLayoutProps {
   slug: string;
   extractiveAnswer: string;
   children: React.ReactNode;
-  content: React.ReactNode;
+  content?: React.ReactNode;
   relatedTools: RelatedTool[];
   faqItems: FAQItem[];
   breadcrumbs: BreadcrumbItem[];
