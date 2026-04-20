@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { CssConverter } from "@/app/[locale]/px-to-rem/CssConverter";
@@ -22,12 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "px-to-em",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/px-to-em`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/px-to-em`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "px-to-em"),
     openGraph: {
       title: pageDict?.title || "px-to-em",
       description: pageDict?.description || "",

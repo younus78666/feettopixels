@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 import { getBreadcrumbs } from "@/lib/content-utils";
@@ -21,12 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "em-vs-rem",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/em-vs-rem`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/em-vs-rem`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "em-vs-rem"),
     openGraph: {
       title: pageDict?.title || "em-vs-rem",
       description: pageDict?.description || "",

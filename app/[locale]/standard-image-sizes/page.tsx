@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 import { getBreadcrumbs } from "@/lib/content-utils";
@@ -21,12 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "standard-image-sizes",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/standard-image-sizes`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/standard-image-sizes`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "standard-image-sizes"),
     openGraph: {
       title: pageDict?.title || "standard-image-sizes",
       description: pageDict?.description || "",

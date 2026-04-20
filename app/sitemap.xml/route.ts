@@ -1,5 +1,6 @@
 import { siteConfig } from "@/content/site-config";
 import { locales } from "@/lib/i18n";
+import { localizedPath } from "@/lib/alternates";
 
 export const dynamic = "force-static";
 
@@ -76,7 +77,8 @@ export function GET() {
 
   for (const locale of locales) {
     for (const pagePath of allPages) {
-      const url = `${baseUrl}/${locale}${pagePath}`;
+      const slug = pagePath.replace(/^\//, "");
+      const url = `${baseUrl}${localizedPath(locale, slug)}`;
       const changefreq = pagePath === "" ? "weekly" : "monthly";
       const priority = pagePath === ""
         ? "1.0"
@@ -91,7 +93,7 @@ export function GET() {
     <priority>${priority}</priority>
 `;
       for (const altLocale of locales) {
-        const altUrl = `${baseUrl}/${altLocale}${pagePath}`;
+        const altUrl = `${baseUrl}${localizedPath(altLocale, slug)}`;
         xml += `    <xhtml:link rel="alternate" hreflang="${altLocale}" href="${escapeXml(altUrl)}" />\n`;
       }
       xml += `  </url>\n`;

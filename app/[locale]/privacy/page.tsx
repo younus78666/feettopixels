@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { DocSectionNav } from "@/components/content/DocSectionNav";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
@@ -28,12 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "privacy",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/privacy`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/privacy`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "privacy"),
     openGraph: {
       title: pageDict?.title || "Privacy Policy",
       description: pageDict?.description || "",
@@ -61,7 +57,7 @@ export default async function PrivacyPage({ params }: PageProps) {
     "@type": "WebPage",
     name: pageDict?.title || "Privacy Policy",
     description: pageDict?.description || "",
-    url: `${siteConfig.url}/${validLocale}/privacy`,
+    url: `${siteConfig.url}${localizedPath(validLocale, "privacy")}`,
     inLanguage: validLocale,
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,

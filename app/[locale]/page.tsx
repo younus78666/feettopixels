@@ -11,6 +11,7 @@ import { toolsDropdown } from "@/content/navigation";
 import { siteConfig } from "@/content/site-config";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
 import { getRelatedTools } from "@/lib/content-utils";
@@ -47,10 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           "dpi calculator",
         ]
       : undefined,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
-    },
+    alternates: buildAlternates(locale, ""),
     openGraph: {
       title: isEnglish ? englishHomeTitle : dict.home.hero,
       description,
@@ -155,8 +153,8 @@ export default async function Home({ params }: PageProps) {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${siteConfig.url}/${validLocale}#webpage`,
-    url: `${siteConfig.url}/${validLocale}`,
+    "@id": `${siteConfig.url}${localizedPath(validLocale, "")}#webpage`,
+    url: `${siteConfig.url}${localizedPath(validLocale, "")}`,
     name: isEnglish ? englishHomeTitle : dict.home.hero,
     description: isEnglish ? englishHomeDescription : dict.site.description,
     dateModified: updatedDateIso,
@@ -177,12 +175,12 @@ export default async function Home({ params }: PageProps) {
       dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing",
     ],
     url: [
-      `${siteConfig.url}/${validLocale}/feet-to-pixels`,
-      `${siteConfig.url}/${validLocale}/pixel-converter`,
-      `${siteConfig.url}/${validLocale}/pixels-to-inches`,
-      `${siteConfig.url}/${validLocale}/dpi-calculator`,
-      `${siteConfig.url}/${validLocale}/pixels-to-feet`,
-      `${siteConfig.url}/${validLocale}/best-dpi-for-printing`,
+      `${siteConfig.url}${localizedPath(validLocale, "feet-to-pixels")}`,
+      `${siteConfig.url}${localizedPath(validLocale, "pixel-converter")}`,
+      `${siteConfig.url}${localizedPath(validLocale, "pixels-to-inches")}`,
+      `${siteConfig.url}${localizedPath(validLocale, "dpi-calculator")}`,
+      `${siteConfig.url}${localizedPath(validLocale, "pixels-to-feet")}`,
+      `${siteConfig.url}${localizedPath(validLocale, "best-dpi-for-printing")}`,
     ],
   };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { DocSectionNav } from "@/components/content/DocSectionNav";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
@@ -26,12 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "terms",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/terms`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/terms`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "terms"),
     openGraph: {
       title: pageDict?.title || "Terms of Service",
       description: pageDict?.description || "",
@@ -72,7 +68,7 @@ export default async function TermsPage({ params }: PageProps) {
     "@type": "WebPage",
     name: pageDict?.title || "Terms of Service",
     description: pageDict?.description || "",
-    url: `${siteConfig.url}/${validLocale}/terms`,
+    url: `${siteConfig.url}${localizedPath(validLocale, "terms")}`,
     inLanguage: validLocale,
     dateModified,
     isPartOf: {

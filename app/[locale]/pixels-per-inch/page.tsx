@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 import { getBreadcrumbs } from "@/lib/content-utils";
@@ -20,12 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "pixels-per-inch",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/pixels-per-inch`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/pixels-per-inch`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "pixels-per-inch"),
     openGraph: {
       title: pageDict?.title || "pixels-per-inch",
       description: pageDict?.description || "",

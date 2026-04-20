@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
@@ -21,12 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "image-size-calculator",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/image-size-calculator`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/image-size-calculator`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "image-size-calculator"),
     openGraph: {
       title: pageDict?.title || "image-size-calculator",
       description: pageDict?.description || "",

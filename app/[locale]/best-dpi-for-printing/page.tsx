@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { BlogLayout } from "@/components/blog/BlogLayout";
 import { getBreadcrumbs } from "@/lib/content-utils";
@@ -20,12 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "best-dpi-for-printing",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/best-dpi-for-printing`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/best-dpi-for-printing`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "best-dpi-for-printing"),
     openGraph: {
       title: pageDict?.title || "best-dpi-for-printing",
       description: pageDict?.description || "",

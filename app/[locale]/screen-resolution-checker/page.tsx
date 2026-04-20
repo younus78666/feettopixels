@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
@@ -22,12 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "screen-resolution-checker",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/screen-resolution-checker`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/screen-resolution-checker`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "screen-resolution-checker"),
     openGraph: {
       title: pageDict?.title || "screen-resolution-checker",
       description: pageDict?.description || "",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { ContactForm } from "./ContactForm";
 
@@ -17,12 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "Contact Us",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/contact`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/contact`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "contact"),
     openGraph: {
       title: pageDict?.title || "Contact Us",
       description: pageDict?.description || "",

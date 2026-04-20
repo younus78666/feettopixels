@@ -12,6 +12,7 @@ import { getLocalizedDoc } from "@/lib/content/doc-types";
 import { getBreadcrumbs } from "@/lib/content-utils";
 import { isValidLocale, locales, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
 import { getDictionary } from "@/lib/translations";
 import { siteConfig } from "@/content/site-config";
@@ -32,12 +33,7 @@ export async function generateMetadata({
   return {
     title: pageDict?.title || "pixel-converter",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/pixel-converter`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/pixel-converter`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "pixel-converter"),
     openGraph: {
       title: pageDict?.title || "pixel-converter",
       description: pageDict?.description || "",
@@ -107,7 +103,7 @@ export default async function PixelConverterPage({ params }: PageProps) {
     { slug: "pixel-converter", href: "/pixel-converter" },
   ]);
   const quickLinks = converterTools.slice(0, 4);
-  const pageUrl = `${siteConfig.url}/${validLocale}/pixel-converter`;
+  const pageUrl = `${siteConfig.url}${localizedPath(validLocale, "pixel-converter")}`;
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -160,7 +156,7 @@ export default async function PixelConverterPage({ params }: PageProps) {
       "@type": "ListItem",
       position: index + 1,
       name: dict.pages[tool.slug]?.title || tool.slug,
-      url: `${siteConfig.url}/${validLocale}${tool.href}`,
+      url: `${siteConfig.url}${localizedPath(validLocale, tool.href.replace(/^\//, ""))}`,
     })),
   };
   const tocItems =

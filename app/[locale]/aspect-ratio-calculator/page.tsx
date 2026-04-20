@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { ConverterLayout } from "@/components/tools/ConverterLayout";
 import { getBreadcrumbs, getRelatedTools } from "@/lib/content-utils";
@@ -22,12 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "aspect-ratio-calculator",
     description: pageDict?.description || "",
-    alternates: {
-      canonical: `/${locale}/aspect-ratio-calculator`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/aspect-ratio-calculator`]),
-      ),
-    },
+    alternates: buildAlternates(locale, "aspect-ratio-calculator"),
     openGraph: {
       title: pageDict?.title || "aspect-ratio-calculator",
       description: pageDict?.description || "",

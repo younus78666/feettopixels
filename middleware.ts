@@ -116,16 +116,26 @@ export async function middleware(request: NextRequest) {
     return addSecurityHeaders(NextResponse.next());
   }
 
-  // --- Public pages: add security headers + locale routing ---
+  // --- Legacy /en/* URLs → permanent redirect to root (English now lives at /)
+  if (pathname === `/${defaultLocale}` || pathname.startsWith(`/${defaultLocale}/`)) {
+    const stripped = pathname.slice(defaultLocale.length + 1) || "/";
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = stripped;
+    return NextResponse.redirect(redirectUrl, 301);
+  }
+
+  // --- Non-default locales (es, fr, …) → serve as-is
   const localeInPath = getLocaleFromPath(pathname);
-  if (localeInPath) {
+  if (localeInPath && localeInPath !== defaultLocale) {
     return addSecurityHeaders(NextResponse.next());
   }
 
-  // No locale in path — permanent redirect to /en/...
-  const localeUrl = request.nextUrl.clone();
-  localeUrl.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(localeUrl, 301);
+  // --- No locale in path → internally rewrite to /en/<path> so the
+  //     [locale] route tree renders English while the user URL stays clean.
+  const rewriteUrl = request.nextUrl.clone();
+  rewriteUrl.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
+  const response = NextResponse.rewrite(rewriteUrl);
+  return addSecurityHeaders(response);
 }
 
 export const config = {

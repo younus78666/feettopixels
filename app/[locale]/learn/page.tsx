@@ -10,6 +10,7 @@ import { getLocalizedDoc } from "@/lib/content/doc-types";
 import { getBreadcrumbs } from "@/lib/content-utils";
 import { isValidLocale, locales, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { buildAlternates, localizedPath } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE } from "@/lib/page-seo";
 import { getDictionary } from "@/lib/translations";
 import { siteConfig } from "@/content/site-config";
@@ -29,10 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
-    alternates: {
-      canonical: `/${locale}/learn`,
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}/learn`])),
-    },
+    alternates: buildAlternates(locale, "learn"),
     openGraph: {
       title,
       description,
@@ -112,7 +110,7 @@ export default async function LearnPage({ params }: PageProps) {
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
     { slug: "learn", href: "/learn" },
   ]);
-  const pageUrl = `${siteConfig.url}/${validLocale}/learn`;
+  const pageUrl = `${siteConfig.url}${localizedPath(validLocale, "learn")}`;
 
   const webPageJsonLd = {
     "@context": "https://schema.org",
@@ -137,7 +135,7 @@ export default async function LearnPage({ params }: PageProps) {
       "@type": "ListItem",
       position: index + 1,
       name: dict.pages[p.slug]?.title || p.slug,
-      url: `${siteConfig.url}/${validLocale}${p.href}`,
+      url: `${siteConfig.url}${localizedPath(validLocale, p.href.replace(/^\//, ""))}`,
     })),
   };
 

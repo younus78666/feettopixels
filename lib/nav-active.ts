@@ -9,7 +9,12 @@ function normalizePath(path: string): string {
   return path;
 }
 
+const DEFAULT_LOCALE: Locale = "en";
+
 export function localizeNavHref(href: string, locale: Locale): string {
+  if (locale === DEFAULT_LOCALE) {
+    return href === "/" ? "/" : href;
+  }
   return href === "/" ? `/${locale}` : `/${locale}${href}`;
 }
 
