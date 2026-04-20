@@ -47,10 +47,22 @@ const cssConverters = [
     formula: "REM = PX / 16",
   },
   {
+    slug: "rem-to-px",
+    href: "/rem-to-px",
+    icon: "REM",
+    formula: "PX = REM x 16",
+  },
+  {
     slug: "px-to-em",
     href: "/px-to-em",
     icon: "EM",
     formula: "EM = PX / parent font size",
+  },
+  {
+    slug: "em-to-px",
+    href: "/em-to-px",
+    icon: "EM",
+    formula: "PX = EM x parent font size",
   },
   {
     slug: "px-to-pt",
@@ -59,10 +71,22 @@ const cssConverters = [
     formula: "PT = PX x 0.75 (at 96 DPI)",
   },
   {
+    slug: "pt-to-px",
+    href: "/pt-to-px",
+    icon: "PT",
+    formula: "PX = PT x 1.333 (at 96 DPI)",
+  },
+  {
     slug: "px-to-vw",
     href: "/px-to-vw",
     icon: "VW",
     formula: "VW = (PX / viewport) x 100",
+  },
+  {
+    slug: "vw-to-px",
+    href: "/vw-to-px",
+    icon: "VW",
+    formula: "PX = VW x viewport / 100",
   },
 ] as const;
 

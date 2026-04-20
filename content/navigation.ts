@@ -82,9 +82,19 @@ export const toolsDropdown: NavDropdown = {
           description: "Convert pixels to rem units",
         },
         {
+          label: "REM to PX",
+          href: "/rem-to-px",
+          description: "Convert rem units back to pixels",
+        },
+        {
           label: "PX to EM",
           href: "/px-to-em",
           description: "Convert pixels to em units",
+        },
+        {
+          label: "EM to PX",
+          href: "/em-to-px",
+          description: "Convert em units back to pixels",
         },
         {
           label: "PX to PT",
@@ -92,9 +102,19 @@ export const toolsDropdown: NavDropdown = {
           description: "Convert pixels to typographic points",
         },
         {
+          label: "PT to PX",
+          href: "/pt-to-px",
+          description: "Convert points back to pixels",
+        },
+        {
           label: "PX to VW",
           href: "/px-to-vw",
           description: "Convert pixels to viewport width",
+        },
+        {
+          label: "VW to PX",
+          href: "/vw-to-px",
+          description: "Convert viewport width back to pixels",
         },
       ],
     },

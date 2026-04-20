@@ -43,6 +43,9 @@ interface CssConverterProps {
   quickRef?: number[];
   autoDetectBase?: boolean;
   locale?: Locale;
+  /** Start with "from" and "to" sides swapped — use for reverse pages
+   *  like rem-to-px, em-to-px, pt-to-px, vw-to-px. */
+  initialReversed?: boolean;
 }
 
 export function CssConverter({
@@ -55,6 +58,7 @@ export function CssConverter({
   quickRef = [8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56, 64],
   autoDetectBase = false,
   locale = "en",
+  initialReversed = false,
 }: CssConverterProps) {
   const dict = getDictionary(locale);
   const toolUi = getToolUi(locale);
@@ -65,12 +69,14 @@ export function CssConverter({
       ? window.innerWidth
       : defaultBase;
 
-  const [pxValue, setPxValue] = useState("16");
+  const [pxValue, setPxValue] = useState(() => (initialReversed ? "1" : "16"));
   const [resultValue, setResultValue] = useState(() =>
-    formatEditableNumber(convert(16, initialBase), 4),
+    initialReversed
+      ? formatEditableNumber(reverse(1, initialBase), 4)
+      : formatEditableNumber(convert(16, initialBase), 4),
   );
   const [base, setBase] = useState(initialBase);
-  const [reversed, setReversed] = useState(false);
+  const [reversed, setReversed] = useState(initialReversed);
   const [copied, setCopied] = useState(false);
   const [lastEditedSide, setLastEditedSide] = useState<"from" | "to">("from");
 
