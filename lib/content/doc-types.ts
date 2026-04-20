@@ -38,7 +38,11 @@ export function getLocalizedDoc(
   contentMap: LocalizedDocMap,
   locale: Locale,
 ): LocalizedDoc {
-  const doc = contentMap[locale] || contentMap.en;
+  const localeDoc = contentMap[locale];
+  const localeHasContent =
+    (localeDoc?.sections.some(hasRenderableSection) ?? false) ||
+    (localeDoc?.faq.length ?? 0) > 0;
+  const doc = localeHasContent ? localeDoc : contentMap.en;
 
   return {
     ...doc,
