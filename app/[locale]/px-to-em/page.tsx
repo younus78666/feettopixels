@@ -43,7 +43,7 @@ export default async function PxToEmPage({ params }: PageProps) {
   const dict = getDictionary(validLocale);
   const doc = getLocalizedDoc(content, validLocale);
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
-    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "css-units", href: "/css-units", label: "CSS Units" },
     { slug: "px-to-em", href: "/px-to-em" },
   ]);
   const relatedTools = getRelatedTools(dict, [

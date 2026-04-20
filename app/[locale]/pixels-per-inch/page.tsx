@@ -48,6 +48,7 @@ export default async function PixelsPerInchPage({ params }: PageProps) {
   ];
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "pixels-per-inch", href: "/pixels-per-inch" },
   ]);
 

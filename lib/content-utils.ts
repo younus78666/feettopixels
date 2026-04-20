@@ -20,7 +20,7 @@ export interface LocalizedRelatedTool {
 export function getBreadcrumbs(
   locale: Locale,
   dict: Dictionary,
-  crumbs: { slug: string; href: string }[],
+  crumbs: { slug: string; href: string; label?: string }[],
 ): LocalizedBreadcrumb[] {
   const home: LocalizedBreadcrumb = {
     label: dict.site.name,
@@ -30,7 +30,7 @@ export function getBreadcrumbs(
   return [
     home,
     ...crumbs.map((crumb) => ({
-      label: dict.pages[crumb.slug]?.title || crumb.slug,
+      label: crumb.label || dict.pages[crumb.slug]?.title || crumb.slug,
       href: crumb.href,
     })),
   ];

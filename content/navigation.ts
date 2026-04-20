@@ -263,6 +263,25 @@ export const navigation: NavEntry[] = [
   { label: "About", href: "/about" },
 ];
 
+/** Hub/pillar pages — surfaced on homepage + cross-links, not in main nav dropdowns */
+export const pillarPages = [
+  {
+    label: "Pixel Converter Hub",
+    href: "/pixel-converter",
+    description: "All-in-one unit conversion",
+  },
+  {
+    label: "Learn Hub",
+    href: "/learn",
+    description: "Guides, comparisons, references",
+  },
+  {
+    label: "CSS Units",
+    href: "/css-units",
+    description: "PX, REM, EM, PT, VW converters",
+  },
+] as const;
+
 /** Flat lists used in the footer */
 export const footerPhysical = toolsDropdown.groups[0].links.slice(0, 4);
 export const footerCSS = toolsDropdown.groups[1].links;

@@ -43,7 +43,7 @@ export default async function PxToVwPage({ params }: PageProps) {
   const dict = getDictionary(validLocale);
   const doc = getLocalizedDoc(content, validLocale);
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
-    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "css-units", href: "/css-units", label: "CSS Units" },
     { slug: "px-to-vw", href: "/px-to-vw" },
   ]);
   const relatedTools = getRelatedTools(dict, [

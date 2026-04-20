@@ -43,7 +43,7 @@ export default async function PxToPtPage({ params }: PageProps) {
   const dict = getDictionary(validLocale);
   const doc = getLocalizedDoc(content, validLocale);
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
-    { slug: "pixel-converter", href: "/pixel-converter" },
+    { slug: "css-units", href: "/css-units", label: "CSS Units" },
     { slug: "px-to-pt", href: "/px-to-pt" },
   ]);
   const relatedTools = getRelatedTools(dict, [

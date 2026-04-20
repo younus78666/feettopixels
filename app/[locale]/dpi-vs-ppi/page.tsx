@@ -48,6 +48,7 @@ export default async function DpiVsPpiPage({ params }: PageProps) {
   ];
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "dpi-vs-ppi", href: "/dpi-vs-ppi" },
   ]);
 

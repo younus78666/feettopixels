@@ -17,6 +17,8 @@ export function GET() {
     "/contact",
     "/privacy",
     "/terms",
+    "/learn",
+    "/css-units",
   ];
 
   const toolPages = [

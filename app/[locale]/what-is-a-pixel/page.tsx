@@ -45,6 +45,7 @@ export default async function WhatIsAPixelPage({ params }: PageProps) {
   const toc = doc.sections.map((section) => ({ id: section.id, label: section.title }));
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "what-is-a-pixel", href: "/what-is-a-pixel" },
   ]);
 
