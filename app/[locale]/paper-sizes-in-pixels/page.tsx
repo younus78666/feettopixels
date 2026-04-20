@@ -41,6 +41,7 @@ export default async function PaperSizesInPixelsPage({ params }: PageProps) {
   const toc = doc.sections.map((section) => ({ id: section.id, label: section.title }));
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "paper-sizes-in-pixels", href: "/paper-sizes-in-pixels" },
   ]);
 

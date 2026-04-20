@@ -44,6 +44,7 @@ export default async function BestDpiForPrintingPage({ params }: PageProps) {
   ];
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "best-dpi-for-printing", href: "/best-dpi-for-printing" },
   ]);
 

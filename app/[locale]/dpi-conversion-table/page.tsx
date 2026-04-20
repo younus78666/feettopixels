@@ -41,6 +41,7 @@ export default async function DpiConversionTablePage({ params }: PageProps) {
   const toc = doc.sections.map((section) => ({ id: section.id, label: section.title }));
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "dpi-conversion-table", href: "/dpi-conversion-table" },
   ]);
 

@@ -43,6 +43,7 @@ export default async function CommonResolutionsPage({ params }: PageProps) {
   ];
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "common-resolutions", href: "/common-resolutions" },
   ]);
 

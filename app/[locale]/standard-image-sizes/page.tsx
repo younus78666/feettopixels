@@ -41,6 +41,7 @@ export default async function StandardImageSizesPage({ params }: PageProps) {
   const toc = doc.sections.map((section) => ({ id: section.id, label: section.title }));
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "standard-image-sizes", href: "/standard-image-sizes" },
   ]);
 

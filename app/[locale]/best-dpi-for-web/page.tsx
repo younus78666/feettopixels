@@ -41,6 +41,7 @@ export default async function BestDpiForWebPage({ params }: PageProps) {
   const toc = doc.sections.map((section) => ({ id: section.id, label: section.title }));
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "best-dpi-for-web", href: "/best-dpi-for-web" },
   ]);
 

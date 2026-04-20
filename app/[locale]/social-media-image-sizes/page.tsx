@@ -44,6 +44,7 @@ export default async function SocialMediaImageSizesPage({ params }: PageProps) {
   ];
 
   const breadcrumbs = getBreadcrumbs(validLocale, dict, [
+    { slug: "learn", href: "/learn", label: dict.nav.learn },
     { slug: "social-media-image-sizes", href: "/social-media-image-sizes" },
   ]);
 
