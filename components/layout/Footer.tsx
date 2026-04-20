@@ -52,16 +52,6 @@ export function Footer({ locale }: { locale: Locale }) {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-500">
               {dict.site.description}
             </p>
-            <div className="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
-              {["px", "in", "cm", "mm", "DPI", "PPI"].map((chip) => (
-                <span
-                  key={chip}
-                  className="rounded-full border border-neutral-200 bg-white px-3 py-1"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
           </div>
 
           <FooterColumn

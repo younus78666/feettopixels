@@ -237,6 +237,21 @@ export const learnDropdown: NavDropdown = {
           href: "/passport-photo-size",
           description: "Photo sizes for passports and IDs",
         },
+        {
+          label: "Pixels Per Foot",
+          href: "/pixels-per-foot",
+          description: "Pixel density per foot at any DPI",
+        },
+        {
+          label: "Pixels Per CM",
+          href: "/pixels-per-cm",
+          description: "Pixel density per centimeter",
+        },
+        {
+          label: "Pixels Per MM",
+          href: "/pixels-per-mm",
+          description: "Pixel density per millimeter",
+        },
       ],
     },
   ],

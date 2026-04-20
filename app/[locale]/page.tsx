@@ -19,9 +19,9 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const englishHomeTitle = "Feet to Pixels Converter - Convert ft to px at Any DPI";
+const englishHomeTitle = "Pixel Converter - Convert Any Unit to Pixels at Any DPI";
 const englishHomeDescription =
-  "Feet to pixels converter with 72, 96, 150, and 300 DPI presets. Convert ft to px instantly for print, signage, screens, and large-format design.";
+  "Pixel converter for feet, inches, centimeters, millimeters, rem, em, and more. DPI-aware presets (72, 96, 150, 300) for print, screens, signage, and large-format design.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -198,19 +198,19 @@ export default async function Home({ params }: PageProps) {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
               <div className="order-2 max-w-2xl">
                 <p className="inline-flex rounded-full border border-primary-200 bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary-700 shadow-soft">
-                  {isEnglish ? "Feet to pixels" : dict.pages["feet-to-pixels"]?.title || dict.home.freeOnlineTools}
+                  {isEnglish ? "Pixel conversion" : dict.pages["pixel-converter"]?.title || dict.home.freeOnlineTools}
                 </p>
                 <h1 className="mt-5 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.05em] text-neutral-950 sm:text-5xl lg:text-[3.4rem] lg:leading-[1.02]">
-                  {isEnglish ? "Feet to Pixels Converter" : dict.pages["feet-to-pixels"]?.title || dict.home.hero}
+                  {isEnglish ? "Pixel Converter" : dict.pages["pixel-converter"]?.title || dict.home.hero}
                 </h1>
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-600">
                   {isEnglish
-                    ? "Convert feet to pixels instantly with DPI-aware presets for web, print, signage, and large-format layouts."
-                    : dict.pages["feet-to-pixels"]?.description || dict.home.heroSub}
+                    ? "Convert feet, inches, centimeters, millimeters, rem, and em to pixels at any DPI. Built for print, screens, signage, and large-format design."
+                    : dict.pages["pixel-converter"]?.description || dict.home.heroSub}
                 </p>
                 <p className="mt-3 max-w-xl text-base leading-7 text-neutral-500">
                   {isEnglish
-                    ? "Use the calculator first, then open the dedicated tool page if you want more guidance, conversion tables, or reverse-unit options."
+                    ? "Pixel, DPI, and PPI are the three entities every designer juggles. This toolkit covers unit conversion, density calculation, and screen-to-print translation in one place \u2014 with the feet-to-pixels calculator shown below as the featured workflow."
                     : dict.site.description}
                 </p>
 
