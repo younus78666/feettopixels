@@ -2,9 +2,9 @@ export const en = {
   // Site-wide
   site: {
     name: "FeetToPixels",
-    tagline: "Free Online Pixel Conversion Tools",
+    tagline: "Free Feet to Pixels and DPI Conversion Tools",
     description:
-      "Free online pixel conversion tools with DPI awareness. Convert between pixels, inches, centimeters, rem, em, and more.",
+      "Free feet to pixels converter and DPI-aware pixel conversion tools for signage, print, screens, CSS units, and image sizing.",
   },
 
   // Navigation
@@ -109,10 +109,11 @@ export const en = {
   // Page-specific titles, descriptions, and extractive answers
   pages: {
     home: {
-      title: "FeetToPixels",
+      title: "Feet to Pixels Converter - FT to PX at Any DPI",
       description:
-        "Free online pixel conversion tools with DPI awareness. Convert between pixels, inches, centimeters, rem, em, and more.",
-      extractive: "",
+        "Convert feet to pixels at 72, 96, 150, and 300 DPI. Free FT to PX calculator for signage, banners, displays, print prep, and layout planning.",
+      extractive:
+        "To convert feet to pixels, multiply feet by 12, then multiply by DPI. At 96 DPI, 1 foot equals 1,152 pixels; at 300 DPI, 1 foot equals 3,600 pixels.",
     },
     "pixels-to-inches": {
       title: "Pixels to Inches Converter - Free Online Calculator",

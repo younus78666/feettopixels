@@ -9,6 +9,7 @@ import { RelatedTools } from "./RelatedTools";
 import { FAQ } from "./FAQ";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
+import { localizeHref } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
 import { siteConfig } from "@/content/site-config";
 
@@ -67,8 +68,7 @@ function normalizeSlug(slug: string): string {
 
 function prefixHref(href: string, locale?: Locale): string {
   if (!locale) return href;
-  if (href === "/") return `/${locale}`;
-  return `/${locale}${href}`;
+  return localizeHref(locale, href);
 }
 
 function hasRenderableContent(content: React.ReactNode): boolean {
@@ -149,7 +149,7 @@ export function ConverterLayout({
       "@id": `${siteConfig.url}/#website`,
     },
     mainEntity: {
-      "@id": `${siteConfig.url}${localizedSlug}/#tool`,
+      "@id": `${siteConfig.url}${localizedSlug}#tool`,
     },
   };
 
@@ -160,7 +160,7 @@ export function ConverterLayout({
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          "@id": `${siteConfig.url}${localizedSlug}/#tool`,
+          "@id": `${siteConfig.url}${localizedSlug}#tool`,
           name: title,
           description: description,
           url: `${siteConfig.url}${localizedSlug}`,

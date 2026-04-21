@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
+import { localizeHref } from "@/lib/alternates";
 
 interface EditorialMetaProps {
   locale?: Locale;
@@ -15,7 +16,7 @@ export function EditorialMeta({ locale, dateModified }: EditorialMetaProps) {
   });
 
   const formattedDate = formatter.format(new Date(`${dateModified}T00:00:00Z`));
-  const aboutHref = locale ? `/${locale}/about` : "/about";
+  const aboutHref = locale ? localizeHref(locale, "/about") : "/about";
 
   return (
     <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-neutral-500">

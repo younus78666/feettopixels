@@ -9,6 +9,7 @@ import { FAQ } from "@/components/tools/FAQ";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { siteConfig } from "@/content/site-config";
+import { localizedPath, localizeHref } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE } from "@/lib/page-seo";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
@@ -28,12 +29,13 @@ export function ContactForm({ locale }: { locale: Locale }) {
   const [submitted, setSubmitted] = useState(false);
   const isEnglish = locale === "en";
   const pageDict = dict.pages.contact;
+  const contactPath = localizedPath(locale, "contact");
   const contactPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: pageDict?.title || dict.contact.title,
     description: pageDict?.description || dict.contact.description,
-    url: `${siteConfig.url}/${locale}/contact`,
+    url: `${siteConfig.url}${contactPath}`,
     inLanguage: locale,
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,
@@ -72,8 +74,8 @@ export function ContactForm({ locale }: { locale: Locale }) {
   ];
 
   const breadcrumbs = [
-    { label: dict.site.name, href: `/${locale}` },
-    { label: dict.contact.title, href: `/${locale}/contact` },
+    { label: dict.site.name, href: localizeHref(locale, "/") },
+    { label: dict.contact.title, href: contactPath },
   ];
 
   function validate(): FormErrors {
@@ -230,19 +232,19 @@ export function ContactForm({ locale }: { locale: Locale }) {
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
-                  href={`/${locale}/pixel-converter`}
+                  href={localizeHref(locale, "/pixel-converter")}
                   className="inline-flex items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
                 >
                   Pixel Converter
                 </Link>
                 <Link
-                  href={`/${locale}/dpi-calculator`}
+                  href={localizeHref(locale, "/dpi-calculator")}
                   className="inline-flex items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
                 >
                   DPI Calculator
                 </Link>
                 <Link
-                  href={`/${locale}/pixels-to-inches`}
+                  href={localizeHref(locale, "/pixels-to-inches")}
                   className="inline-flex items-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
                 >
                   Pixels to Inches

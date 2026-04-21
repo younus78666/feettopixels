@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "FeetToPixels",
   description:
-    "Free online pixel conversion tools with DPI awareness. Convert between pixels, inches, centimeters, rem, em, and more.",
+    "Free feet to pixels converter and DPI-aware pixel conversion tools for signage, print, screens, CSS units, and image sizing.",
   url: "https://www.feettopixels.com",
   ogImage: "/og-default.svg",
   logo: "/brand-mark.svg",

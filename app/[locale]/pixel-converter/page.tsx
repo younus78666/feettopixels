@@ -12,7 +12,7 @@ import { getLocalizedDoc } from "@/lib/content/doc-types";
 import { getBreadcrumbs } from "@/lib/content-utils";
 import { isValidLocale, locales, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
-import { buildAlternates, localizedPath } from "@/lib/alternates";
+import { buildAlternates, localizedPath, localizeHref } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
 import { getDictionary } from "@/lib/translations";
 import { siteConfig } from "@/content/site-config";
@@ -215,7 +215,7 @@ export default async function PixelConverterPage({ params }: PageProps) {
                 {quickLinks.map((tool) => (
                   <Link
                     key={tool.href}
-                    href={`/${validLocale}${tool.href}`}
+                    href={localizeHref(validLocale, tool.href)}
                     className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-neutral-600 transition-colors hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700"
                   >
                     {dict.pages[tool.slug]?.title || tool.slug}
@@ -258,7 +258,7 @@ export default async function PixelConverterPage({ params }: PageProps) {
           {converterTools.map((tool) => (
             <Link
               key={tool.href}
-              href={`/${validLocale}${tool.href}`}
+              href={localizeHref(validLocale, tool.href)}
               className="tool-card group"
             >
               <span className="mono-display mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 text-xs font-semibold uppercase tracking-[0.16em] text-primary-700 transition-colors group-hover:bg-primary-100">

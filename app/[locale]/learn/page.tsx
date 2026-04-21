@@ -10,7 +10,7 @@ import { getLocalizedDoc } from "@/lib/content/doc-types";
 import { getBreadcrumbs } from "@/lib/content-utils";
 import { isValidLocale, locales, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
-import { buildAlternates, localizedPath } from "@/lib/alternates";
+import { buildAlternates, localizedPath, localizeHref } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE } from "@/lib/page-seo";
 import { getDictionary } from "@/lib/translations";
 import { siteConfig } from "@/content/site-config";
@@ -82,7 +82,7 @@ function PageCard({
   const pageDescription = dict.navDescriptions[slug] || "";
   return (
     <Link
-      href={`/${locale}${href}`}
+      href={localizeHref(locale, href)}
       className="group flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white p-4 transition-colors hover:border-primary-200 hover:bg-primary-50/30"
     >
       <span className="mono-display inline-flex h-10 min-w-10 items-center justify-center rounded-lg bg-neutral-900 px-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
@@ -226,19 +226,19 @@ export default async function LearnPage({ params }: PageProps) {
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
-            href={`/${validLocale}/pixel-converter`}
+            href={localizeHref(validLocale, "/pixel-converter")}
             className="inline-flex h-11 items-center rounded-full bg-neutral-950 px-5 text-sm font-medium text-white transition-colors hover:bg-neutral-900"
           >
             Pixel Converter Hub
           </Link>
           <Link
-            href={`/${validLocale}/css-units`}
+            href={localizeHref(validLocale, "/css-units")}
             className="inline-flex h-11 items-center rounded-full border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
           >
             CSS Unit Converters
           </Link>
           <Link
-            href={`/${validLocale}/dpi-calculator`}
+            href={localizeHref(validLocale, "/dpi-calculator")}
             className="inline-flex h-11 items-center rounded-full border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
           >
             DPI Calculator

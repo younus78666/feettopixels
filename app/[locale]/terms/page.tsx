@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
-import { buildAlternates, localizedPath } from "@/lib/alternates";
+import { buildAlternates, localizedPath, localizeHref } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import { DocSectionNav } from "@/components/content/DocSectionNav";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
@@ -152,13 +152,13 @@ export default async function TermsPage({ params }: PageProps) {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
-              href={`/${validLocale}/contact`}
+              href={localizeHref(validLocale, "/contact")}
               className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
             >
               Contact FeetToPixels
             </Link>
             <Link
-              href={`/${validLocale}/privacy`}
+              href={localizeHref(validLocale, "/privacy")}
               className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
             >
               Privacy policy

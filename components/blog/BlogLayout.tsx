@@ -9,6 +9,7 @@ import { ReferenceSources } from "@/components/seo/ReferenceSources";
 import { siteConfig } from "@/content/site-config";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
+import { localizedPath, localizeHref } from "@/lib/alternates";
 import { DEFAULT_PAGE_DATE, getReferenceSources } from "@/lib/page-seo";
 
 interface BreadcrumbItem {
@@ -60,8 +61,7 @@ interface BlogLayoutProps {
 
 function prefixHref(href: string, locale?: Locale): string {
   if (!locale) return href;
-  if (href === "/") return `/${locale}`;
-  return `/${locale}${href}`;
+  return localizeHref(locale, href);
 }
 
 function hasRenderableArticleContent(content: React.ReactNode): boolean {
@@ -106,7 +106,8 @@ export function BlogLayout({
     href: prefixHref(cta.href, locale),
   };
 
-  const localizedSlug = locale ? `${locale}/${slug}` : slug;
+  const pageLocale = locale || "en";
+  const pageUrl = `${siteConfig.url}${localizedPath(pageLocale, slug)}`;
   const relatedArticlesLabel =
     labels?.relatedArticles || dict?.tool.relatedArticles || "Related Articles";
   const onThisPageLabel =
@@ -126,17 +127,17 @@ export function BlogLayout({
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${siteConfig.url}/${localizedSlug}#article`,
+    "@id": `${pageUrl}#article`,
     headline: title,
     description: extractiveAnswer,
     datePublished,
     dateModified,
-    url: `${siteConfig.url}/${localizedSlug}`,
-    inLanguage: locale || "en",
+    url: pageUrl,
+    inLanguage: pageLocale,
     author: {
       "@type": "Organization",
       name: "FeetToPixels Editorial Team",
-      url: `${siteConfig.url}${prefixHref("/about", locale)}`,
+      url: `${siteConfig.url}${localizeHref(pageLocale, "/about")}`,
     },
     publisher: {
       "@type": "Organization",
@@ -145,25 +146,25 @@ export function BlogLayout({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}/${localizedSlug}#webpage`,
+      "@id": `${pageUrl}#webpage`,
     },
   };
 
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${siteConfig.url}/${localizedSlug}#webpage`,
-    url: `${siteConfig.url}/${localizedSlug}`,
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
     name: title,
     description: extractiveAnswer,
-    inLanguage: locale || "en",
+    inLanguage: pageLocale,
     datePublished,
     dateModified,
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,
     },
     mainEntity: {
-      "@id": `${siteConfig.url}/${localizedSlug}#article`,
+      "@id": `${pageUrl}#article`,
     },
   };
 

@@ -163,7 +163,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "px-to-rem": {
     title: "PX to REM Converter: Convert Pixels to REM Units Online",
     description:
-      "Convert PX to REM with a custom base font size. Free PX to REM calculator with reverse conversion for responsive CSS.",
+      "Convert PX to REM with a custom base font size. Free PX to REM calculator with reverse conversion, formula examples, and responsive CSS guidance.",
     extractive:
       "To convert pixels to REM, divide pixels by the root font size (default 16px). 32px equals 2rem. 24px equals 1.5rem. REM units scale with the root element's font size.",
   },
@@ -226,7 +226,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "what-is-a-pixel": {
     title: "What Is a Pixel? The Building Block of Digital Images",
     description:
-      "Learn what a pixel is, how pixels form digital images, and how subpixels, megapixels, and DPI affect visible detail.",
+      "Learn what a pixel is, how pixels form digital images, and how subpixels, megapixels, DPI, PPI, and screen density affect visible detail.",
     extractive:
       "A pixel (picture element) is the smallest addressable unit on a digital display. Each pixel contains subpixels (red, green, blue) that combine to create any visible color.",
   },

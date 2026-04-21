@@ -9,6 +9,7 @@ import { SiteLogo } from "@/components/branding/SiteLogo";
 import { siteConfig } from "@/content/site-config";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel } from "@/lib/nav-utils";
+import { localizeHref } from "@/lib/alternates";
 import type { Locale } from "@/lib/i18n";
 
 interface FooterColumnProps {
@@ -28,7 +29,7 @@ function FooterColumn({ title, links, locale, dict }: FooterColumnProps) {
         {links.map((link) => (
           <li key={link.href}>
             <Link
-              href={`/${locale}${link.href}`}
+              href={localizeHref(locale, link.href)}
               className="text-sm text-neutral-500 transition-colors hover:text-primary-600"
             >
               {getNavLabel(link, dict)}
@@ -87,13 +88,13 @@ export function Footer({ locale }: { locale: Locale }) {
           </p>
           <div className="flex gap-6">
             <Link
-              href={`/${locale}/privacy`}
+              href={localizeHref(locale, "/privacy")}
               className="text-xs text-neutral-400 transition-colors hover:text-neutral-600"
             >
               {dict.footer.privacy}
             </Link>
             <Link
-              href={`/${locale}/terms`}
+              href={localizeHref(locale, "/terms")}
               className="text-xs text-neutral-400 transition-colors hover:text-neutral-600"
             >
               {dict.footer.terms}

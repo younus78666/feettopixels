@@ -60,10 +60,7 @@ export function SiteSchema() {
           name: siteConfig.name,
           url: siteConfig.url,
           description: siteConfig.description,
-          inLanguage: [
-            "en", "es", "fr", "de", "pt", "it", "nl",
-            "ja", "ko", "zh", "ar", "hi", "ur", "ru", "tr",
-          ],
+          inLanguage: "en",
           publisher: {
             "@id": `${siteConfig.url}/#organization`,
           },
@@ -71,7 +68,7 @@ export function SiteSchema() {
             "@type": "SearchAction",
             target: {
               "@type": "EntryPoint",
-              urlTemplate: `${siteConfig.url}/en/pixel-converter?q={search_term_string}`,
+              urlTemplate: `${siteConfig.url}/pixel-converter?q={search_term_string}`,
             },
             "query-input": "required name=search_term_string",
           },
@@ -93,7 +90,7 @@ export function SiteSchema() {
           browserRequirements: "Requires JavaScript",
           softwareVersion: "1.0",
           isAccessibleForFree: true,
-          inLanguage: ["en", "es", "fr", "de", "pt", "ja", "ko", "zh", "ar", "hi", "ur", "ru", "tr"],
+          inLanguage: "en",
           offers: {
             "@type": "Offer",
             price: "0",
@@ -111,9 +108,9 @@ export function SiteSchema() {
             worstRating: "1",
           },
           featureList: [
+            "Feet to pixels conversion at any DPI",
             "DPI-aware pixel to physical unit conversion",
             "Real-time instant calculations",
-            "Support for 15+ languages",
             "CSS unit conversion (px, rem, em, vw, pt)",
             "Physical unit conversion (inches, cm, mm, feet)",
             "DPI/PPI calculator for any screen",
@@ -136,7 +133,7 @@ export function SiteSchema() {
                 itemOffered: {
                   "@type": "SoftwareApplication",
                   name: tool.label,
-                  url: `${siteConfig.url}/en${tool.href}`,
+                  url: `${siteConfig.url}${tool.href}`,
                   applicationCategory: "UtilityApplication",
                   description: tool.description,
                   offers: {
@@ -152,7 +149,7 @@ export function SiteSchema() {
                 itemOffered: {
                   "@type": "SoftwareApplication",
                   name: tool.label,
-                  url: `${siteConfig.url}/en${tool.href}`,
+                  url: `${siteConfig.url}${tool.href}`,
                   applicationCategory: "UtilityApplication",
                   description: tool.description,
                   offers: {
@@ -168,7 +165,7 @@ export function SiteSchema() {
                 itemOffered: {
                   "@type": "SoftwareApplication",
                   name: tool.label,
-                  url: `${siteConfig.url}/en${tool.href}`,
+                  url: `${siteConfig.url}${tool.href}`,
                   applicationCategory: "UtilityApplication",
                   description: tool.description,
                   offers: {
@@ -196,13 +193,13 @@ export function SiteSchema() {
               "@type": "ListItem",
               position: i + 1,
               name: tool.label,
-              url: `${siteConfig.url}/en${tool.href}`,
+              url: `${siteConfig.url}${tool.href}`,
             })),
             ...allGuides.map((guide, i) => ({
               "@type": "ListItem",
               position: allTools.length + i + 1,
               name: guide.label,
-              url: `${siteConfig.url}/en${guide.href}`,
+              url: `${siteConfig.url}${guide.href}`,
             })),
           ],
         }}

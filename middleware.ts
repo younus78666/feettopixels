@@ -51,6 +51,13 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(requestUrl, 308);
   }
 
+  if (pathname === `/${DEFAULT_LOCALE}` || pathname.startsWith(`/${DEFAULT_LOCALE}/`)) {
+    requestUrl.pathname = pathname === `/${DEFAULT_LOCALE}`
+      ? "/"
+      : pathname.slice(DEFAULT_LOCALE.length + 1);
+    return NextResponse.redirect(requestUrl, 308);
+  }
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon") ||
@@ -86,10 +93,6 @@ export async function middleware(request: NextRequest) {
   }
 
   if (pathname.startsWith("/api")) {
-    return addSecurityHeaders(NextResponse.next());
-  }
-
-  if (pathname === `/${DEFAULT_LOCALE}` || pathname.startsWith(`/${DEFAULT_LOCALE}/`)) {
     return addSecurityHeaders(NextResponse.next());
   }
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
-import { buildAlternates, localizedPath } from "@/lib/alternates";
+import { buildAlternates, localizedPath, localizeHref } from "@/lib/alternates";
 import { getDictionary } from "@/lib/translations";
 import Link from "next/link";
 import { DocSectionNav } from "@/components/content/DocSectionNav";
@@ -106,17 +106,17 @@ export default async function AboutPage({ params }: PageProps) {
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
               {
-                href: `/${validLocale}/pixel-converter`,
+                href: localizeHref(validLocale, "/pixel-converter"),
                 title: dict.pages["pixel-converter"]?.title || "Pixel Converter",
                 description: "Switch between pixels, physical units, and CSS units from one tool.",
               },
               {
-                href: `/${validLocale}/dpi-calculator`,
+                href: localizeHref(validLocale, "/dpi-calculator"),
                 title: dict.pages["dpi-calculator"]?.title || "DPI Calculator",
                 description: "Check print density before you size or export an image.",
               },
               {
-                href: `/${validLocale}/pixels-to-inches`,
+                href: localizeHref(validLocale, "/pixels-to-inches"),
                 title: dict.pages["pixels-to-inches"]?.title || "Pixels to Inches",
                 description: "Jump straight into the most common physical conversion workflow.",
               },
@@ -138,7 +138,7 @@ export default async function AboutPage({ params }: PageProps) {
             {dict.tool.readyToConvert}
           </p>
           <Link
-            href={`/${validLocale}/pixel-converter`}
+            href={localizeHref(validLocale, "/pixel-converter")}
             className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-700"
           >
             {dict.pages["pixel-converter"]?.title || "Pixel Converter"}

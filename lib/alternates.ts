@@ -16,6 +16,16 @@ export function localizedPath(locale: Locale, slug: string): string {
 }
 
 /**
+ * Localize an internal href that already starts with "/".
+ * Default English URLs stay at root so internal links match canonicals.
+ */
+export function localizeHref(locale: Locale, href: string): string {
+  if (!href.startsWith("/")) return href;
+  if (href === "/") return localizedPath(locale, "");
+  return localizedPath(locale, href.replace(/^\/+/, ""));
+}
+
+/**
  * Build the Next.js `alternates` block (canonical + hreflang languages)
  * for a page identified by slug ("" for the homepage).
  */

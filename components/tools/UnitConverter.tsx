@@ -87,6 +87,7 @@ interface UnitConverterProps {
   showDpiSelector?: boolean;
   showFormulaCard?: boolean;
   showConversionTable?: boolean;
+  defaultValue?: string;
   defaultDpi?: number;
   dpiPresets?: number[];
   commonValues?: number[];
@@ -103,6 +104,7 @@ export function UnitConverter({
   showDpiSelector = true,
   showFormulaCard = true,
   showConversionTable = true,
+  defaultValue = "100",
   defaultDpi = 96,
   dpiPresets = [72, 96, 150, 300],
   commonValues = [1, 10, 50, 100, 250, 500, 1000],
@@ -120,9 +122,14 @@ export function UnitConverter({
   };
   const displayFormula = config?.formula || formula;
 
-  const [fromValue, setFromValue] = useState("100");
+  const initialFromValue = defaultValue;
+  const initialNumber = parseFloat(initialFromValue);
+  const [fromValue, setFromValue] = useState(initialFromValue);
   const [toValue, setToValue] = useState(() =>
-    formatEditableNumber(conversionFn(100, defaultDpi), 4),
+    formatEditableNumber(
+      conversionFn(Number.isFinite(initialNumber) ? initialNumber : 0, defaultDpi),
+      4,
+    ),
   );
   const [dpi, setDpi] = useState(defaultDpi);
   const [customDpi, setCustomDpi] = useState("");

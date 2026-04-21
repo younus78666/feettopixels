@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
+import { localizeHref } from "@/lib/alternates";
 import { cn } from "@/lib/utils";
 
 interface SiteLogoProps {
@@ -66,7 +67,7 @@ export function SiteLogo({
   className,
   showTagline = true,
 }: SiteLogoProps) {
-  const resolvedHref = href ?? (locale ? `/${locale}` : "/");
+  const resolvedHref = href ?? (locale ? localizeHref(locale, "/") : "/");
 
   const content = (
     <>

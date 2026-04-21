@@ -5,6 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { toolsDropdown, learnDropdown } from "@/content/navigation";
 import { getDictionary } from "@/lib/translations";
 import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
+import { localizeHref } from "@/lib/alternates";
 import type { Locale } from "@/lib/i18n";
 
 interface SearchModalProps {
@@ -37,7 +38,7 @@ export function SearchModal({ locale }: SearchModalProps) {
         result.push({
           label: getNavLabel(link, dict),
           description: getNavDescription(link, dict),
-          href: `/${locale}${link.href}`,
+          href: localizeHref(locale, link.href),
           category: dict.nav.tools,
         });
       }
@@ -48,7 +49,7 @@ export function SearchModal({ locale }: SearchModalProps) {
         result.push({
           label: getNavLabel(link, dict),
           description: getNavDescription(link, dict),
-          href: `/${locale}${link.href}`,
+          href: localizeHref(locale, link.href),
           category: dict.nav.learn,
         });
       }
@@ -56,8 +57,8 @@ export function SearchModal({ locale }: SearchModalProps) {
 
     // Static pages
     result.push(
-      { label: dict.nav.about, href: `/${locale}/about`, category: "Pages", description: undefined },
-      { label: dict.contact.title, href: `/${locale}/contact`, category: "Pages", description: undefined },
+      { label: dict.nav.about, href: localizeHref(locale, "/about"), category: "Pages", description: undefined },
+      { label: dict.contact.title, href: localizeHref(locale, "/contact"), category: "Pages", description: undefined },
     );
 
     return result;

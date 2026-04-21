@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQ } from "@/components/tools/FAQ";
-import { MultiUnitConverter } from "@/components/tools/MultiUnitConverter";
+import { UnitConverter } from "@/components/tools/UnitConverter";
 import { siteConfig } from "@/content/site-config";
 import { isValidLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
@@ -13,12 +13,12 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const homeTitle = "Pixel Converter: Online Pixel Size and Dimension Tool";
+const homeTitle = "Feet to Pixels Converter - Convert FT to PX at Any DPI";
 const homeDescription =
-  "Free online pixel converter. Convert pixels to inches, cm, mm, feet, rem, em, and points at 72, 96, 150, or 300 DPI. Instant, accurate, no signup.";
-const homeHeadline = "Online Pixel Converter";
+  "Convert feet to pixels at 72, 96, 150, and 300 DPI. Free FT to PX calculator for signage, banners, displays, print prep, and layout planning.";
+const homeHeadline = "Feet to Pixels Converter";
 const homeSubheadline =
-  "Convert pixels to inches, centimeters, millimeters, feet, rem, em, and points at any DPI. Instant, accurate, no signup.";
+  "Convert feet to pixels for banners, signage, wall graphics, displays, and print layouts. Choose any DPI and get the exact pixel width instantly.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -28,10 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: { absolute: homeTitle },
     description: homeDescription,
     keywords: [
+      "feet to pixels",
+      "feet to pixels converter",
+      "ft to px",
+      "convert feet to pixels",
       "pixel converter",
-      "online pixel converter",
-      "pixel size converter",
-      "pixel dimension converter",
       "pixels to inches",
       "pixels to cm",
       "pixels to feet",
@@ -58,6 +59,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 const quickConverters = [
   {
+    title: "Feet to Pixels",
+    href: "/feet-to-pixels",
+    description: "Convert feet to px for signage",
+    formula: "px = ft x 12 x DPI",
+  },
+  {
+    title: "Pixels to Feet",
+    href: "/pixels-to-feet",
+    description: "Convert px to feet for large format",
+    formula: "ft = px / (DPI x 12)",
+  },
+  {
     title: "Pixels to Inches",
     href: "/pixels-to-inches",
     description: "Convert px to inches at any DPI",
@@ -74,12 +87,6 @@ const quickConverters = [
     href: "/pixels-to-cm",
     description: "Convert px to centimeters",
     formula: "cm = px x 2.54 / DPI",
-  },
-  {
-    title: "Feet to Pixels",
-    href: "/feet-to-pixels",
-    description: "Convert feet to px for signage",
-    formula: "px = ft x 12 x DPI",
   },
   {
     title: "PX to REM",
@@ -131,56 +138,56 @@ const learnCards = [
 ] as const;
 
 const commonValues96 = [
-  ["1 inch", "96 px"],
-  ["1 cm", "37.80 px"],
-  ["1 mm", "3.78 px"],
-  ["1 foot", "1,152 px"],
-  ["1 rem", "16 px"],
-  ["1 pt", "1.333 px"],
+  ["0.5 ft", "576 px"],
+  ["1 ft", "1,152 px"],
+  ["2 ft", "2,304 px"],
+  ["3 ft", "3,456 px"],
+  ["4 ft", "4,608 px"],
+  ["8 ft", "9,216 px"],
 ];
 
 const commonValues300 = [
-  ["1 inch", "300 px"],
-  ["1 cm", "118.11 px"],
-  ["1 mm", "11.81 px"],
-  ["1 foot", "3,600 px"],
-  ["A4 page (8.27 in)", "2,480 px wide"],
-  ["4x6 photo", "1,200 x 1,800 px"],
+  ["0.5 ft", "1,800 px"],
+  ["1 ft", "3,600 px"],
+  ["2 ft", "7,200 px"],
+  ["3 ft", "10,800 px"],
+  ["4 ft", "14,400 px"],
+  ["8 ft", "28,800 px"],
 ];
 
 const faqItems = [
   {
-    question: "What is an online pixel converter?",
+    question: "How do I convert feet to pixels?",
     answer:
-      "An online pixel converter translates pixel values to physical units (inches, centimeters, millimeters, feet) or CSS units (REM, EM, points) based on a target DPI. FeetToPixels runs entirely in your browser, so conversions are instant and no data leaves your device.",
+      "Multiply feet by 12 to convert feet to inches, then multiply by DPI. The formula is pixels = feet x 12 x DPI. For example, 3 feet at 96 DPI equals 3,456 pixels.",
   },
   {
-    question: "How do I convert pixels to inches?",
+    question: "How many pixels are in 1 foot?",
     answer:
-      "Divide the pixel count by your target DPI. At the web standard of 96 DPI, 960 pixels equals 10 inches. At 300 DPI (professional print), 960 pixels equals 3.2 inches. Use the converter above or the dedicated Pixels to Inches page for more examples.",
+      "It depends on DPI. At 72 DPI, 1 foot equals 864 pixels. At 96 DPI, 1 foot equals 1,152 pixels. At 150 DPI, 1 foot equals 1,800 pixels. At 300 DPI, 1 foot equals 3,600 pixels.",
   },
   {
-    question: "How many pixels are in one inch?",
+    question: "What DPI should I use for banners and signs?",
     answer:
-      "It depends on DPI. At 72 DPI there are 72 pixels per inch. At 96 DPI (Windows and web default) there are 96 pixels per inch. At 300 DPI (print standard) there are 300 pixels per inch. Choose the DPI that matches your output device.",
+      "Use 72-100 DPI for large banners viewed from a distance, 150 DPI for trade show displays and posters viewed a few feet away, and 300 DPI for close-up print work where small text or fine detail must stay sharp.",
   },
   {
-    question: "What is 300 DPI in pixels per inch?",
+    question: "How many pixels wide is a 4 foot banner?",
     answer:
-      "300 DPI means 300 pixels per inch. This is the professional standard for magazines, photo books, and most print marketing materials. A 4 x 6 inch photo at 300 DPI needs a 1,200 x 1,800 pixel image to print sharply.",
+      "A 4 foot banner is 4,608 pixels wide at 96 DPI, 7,200 pixels wide at 150 DPI, and 14,400 pixels wide at 300 DPI. Multiply 4 by 12 and then by your selected DPI.",
   },
   {
-    question: "How do I convert pixels to centimeters?",
+    question: "Is 300 DPI always required for large-format printing?",
     answer:
-      "Use the formula cm = pixels x 2.54 / DPI. At 96 DPI, 100 pixels equals about 2.65 cm. At 300 DPI, 100 pixels equals about 0.85 cm. The converter above shows this value instantly alongside every other unit.",
+      "No. 300 DPI is useful for close viewing, but large-format graphics are often viewed from farther away. A billboard, wall mural, or event backdrop can look clean at 72-150 DPI when viewed from normal distance.",
   },
   {
-    question: "How big is 1920x1080 pixels in inches?",
+    question: "Can I convert pixels back to feet?",
     answer:
-      "On a screen, 1920 x 1080 is a resolution. Its physical size depends on screen diagonal. On a 24-inch monitor, 1920 x 1080 measures about 20.9 x 11.8 inches. On a 27-inch monitor, it measures about 23.5 x 13.2 inches. See our Common Resolutions page for more screen sizes.",
+      "Yes. Use the pixels to feet converter or divide pixels by DPI, then divide by 12. For example, 3,456 pixels at 96 DPI equals 3 feet.",
   },
   {
-    question: "What is the difference between DPI and PPI?",
+    question: "What is the difference between DPI and PPI for this calculator?",
     answer:
       "DPI (dots per inch) measures print resolution, the number of ink dots a printer places per inch. PPI (pixels per inch) measures digital resolution, the number of pixels in one inch of a screen or image. Designers often use the terms interchangeably, but DPI belongs to print and PPI belongs to screens.",
   },
@@ -204,7 +211,7 @@ export default async function Home({ params }: PageProps) {
     url: siteConfig.url,
     logo: `${siteConfig.url}/brand-mark.svg`,
     description:
-      "Free online pixel conversion tools for designers, developers, and print professionals.",
+      "Free feet to pixels and DPI-aware pixel conversion tools for designers, developers, print shops, and sign makers.",
   };
 
   const websiteJsonLd = {
@@ -237,8 +244,9 @@ export default async function Home({ params }: PageProps) {
       availability: "https://schema.org/InStock",
     },
     featureList: [
-      "Convert pixels to inches at any DPI",
-      "Convert pixels to centimeters, millimeters, feet",
+      "Convert feet to pixels at any DPI",
+      "Convert pixels to feet for large-format layouts",
+      "Convert pixels to inches, centimeters, millimeters",
       "Convert pixels to REM, EM, PT, VW",
       "DPI presets: 72, 96, 150, 300, 600",
       "Copy to clipboard",
@@ -298,8 +306,16 @@ export default async function Home({ params }: PageProps) {
           </p>
         </section>
 
-        <section aria-label="Pixel converter" className="mx-auto mt-10 max-w-2xl">
-          <MultiUnitConverter />
+        <section aria-label="Feet to pixels calculator" className="mx-auto mt-10 max-w-2xl">
+          <UnitConverter
+            locale={validLocale}
+            fromUnit="Feet"
+            toUnit="Pixels"
+            conversionType="ft-to-px"
+            formula="pixels = feet x 12 x DPI"
+            defaultValue="1"
+            commonValues={[0.5, 1, 2, 3, 4, 5, 6, 8, 10, 12]}
+          />
         </section>
 
         <section aria-labelledby="quick-converters-heading" className="mt-16">
@@ -308,11 +324,11 @@ export default async function Home({ params }: PageProps) {
               id="quick-converters-heading"
               className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
             >
-              Jump to a Specific Converter
+              Explore Related Pixel Converters
             </h2>
             <p className="mt-3 text-neutral-600">
-              Every unit has its own dedicated page with more examples, tables,
-              and formula explanations.
+              Feet to pixels is the primary calculator. These supporting tools
+              cover reverse conversion, inches, centimeters, CSS units, and DPI.
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -342,23 +358,22 @@ export default async function Home({ params }: PageProps) {
               id="how-it-works-heading"
               className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
             >
-              How Pixel Conversion Works
+              How Feet to Pixels Conversion Works
             </h2>
             <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-neutral-700">
               <p>
-                A pixel is a unit of digital display. Converting pixels into a
-                physical measurement like inches or centimeters depends on DPI
-                (dots per inch), which tells the output device how many pixels
-                fit in one linear inch. At 96 DPI, the modern browser default,
-                one inch of screen space holds 96 pixels. At 300 DPI, the
-                professional print standard, one inch holds 300 pixels.
+                Feet to pixels conversion starts with the physical size in feet,
+                converts that value to inches, then multiplies by DPI. Because
+                one foot equals 12 inches, the formula is pixels = feet x 12 x
+                DPI. At 96 DPI, one foot equals 1,152 pixels. At 300 DPI, one
+                foot equals 3,600 pixels.
               </p>
               <p>
-                CSS units like REM and EM resolve differently. REM is always
-                relative to the root font size (16 pixels by default), so 1 REM
-                equals 16 pixels. EM is relative to the parent element font
-                size. Points (PT) come from typography and are always 72 to the
-                inch, so 1 PT equals 1.333 pixels at 96 DPI.
+                This matters most when a digital layout needs to become a real
+                physical object: a banner, billboard, wall mural, trade show
+                backdrop, room mockup, or display graphic. The same 4-foot
+                design can need 4,608 pixels at 96 DPI, 7,200 pixels at 150 DPI,
+                or 14,400 pixels at 300 DPI.
               </p>
               <p className="text-neutral-600">
                 Read more:{" "}
@@ -394,10 +409,10 @@ export default async function Home({ params }: PageProps) {
               id="common-values-heading"
               className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
             >
-              Common Pixel Conversions
+              Common Feet to Pixels Conversions
             </h2>
             <p className="mt-3 text-neutral-600">
-              Reference values at the two most common DPI settings.
+              Quick reference values for common large-format widths.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-neutral-200 bg-white p-5">
@@ -446,10 +461,11 @@ export default async function Home({ params }: PageProps) {
               id="learn-heading"
               className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
             >
-              Learn the Basics
+              Learn DPI and Pixel Basics
             </h2>
             <p className="mt-3 text-neutral-600">
-              Short guides that make every pixel conversion obvious.
+              Short guides that explain why DPI, PPI, and pixel density change
+              the final result.
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

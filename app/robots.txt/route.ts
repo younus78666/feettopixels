@@ -20,15 +20,20 @@ function buildRobotsTxt() {
     "rogerbot",
     "ia_archiver",
     "MauiBot",
-    "SeznamBot",
     "Xenu",
     "Bytespider",
-    "GPTBot",
     "CCBot",
-    "anthropic-ai",
-    "ClaudeBot",
-    "Google-Extended",
     "FacebookBot",
+  ];
+  const aiDiscoveryAgents = [
+    "GPTBot",
+    "ChatGPT-User",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
   ];
 
   const sections = [
@@ -36,6 +41,10 @@ function buildRobotsTxt() {
       agents: ["Googlebot", "Google-InspectionTool", "Bingbot", "*"],
       rules: [...sharedAllowRules, ...sharedDisallowRules],
     },
+    ...aiDiscoveryAgents.map((agent) => ({
+      agents: [agent],
+      rules: [...sharedAllowRules, ...sharedDisallowRules],
+    })),
     ...blockedAgents.map((agent) => ({
       agents: [agent],
       rules: ["Disallow: /"],
