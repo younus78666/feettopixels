@@ -8,7 +8,6 @@ import type { NavDropdown } from "@/content/navigation";
 import { SiteLogo } from "@/components/branding/SiteLogo";
 import { MobileMenu } from "./MobileMenu";
 import { SearchModal } from "./SearchModal";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { getHomeLabel } from "@/lib/home-label";
 import {
@@ -349,8 +348,6 @@ export function Header({ locale }: { locale: Locale }) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <LanguageSwitcher locale={locale} />
-
             <button
               onClick={() => {
                 document.dispatchEvent(

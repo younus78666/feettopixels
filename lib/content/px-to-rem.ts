@@ -26,9 +26,65 @@ export const content: LocalizedDocMap = {
     ],
     "sections": [
       {
-        "id": "overview",
-        "title": "Overview",
-        "paragraphs": []
+        "id": "how-it-works",
+        "title": "How the PX to REM Converter Works",
+        "paragraphs": [
+          "REM stands for root em - a CSS length unit equal to the font-size of the root (html) element. Every browser defaults the root to 16 pixels, so 1rem equals 16px out of the box. Converting a pixel value to rem is division: rem = px / root-font-size. With the default base, 24px becomes 24/16 = 1.5rem, 12px becomes 0.75rem, and 48px becomes 3rem. The converter above performs this calculation and also supports the '10px base' convention, where setting html { font-size: 62.5%; } makes 1rem = 10px so the mental math simplifies to 'shift the decimal one place'.",
+          "The crucial difference from EM is that REM is not affected by nesting. A 1.5rem margin on a deeply nested div is exactly 24px regardless of any font-size inheritance chain. This removes the compounding problem described in em-vs-rem and makes REM the preferred unit in modern design systems, including Tailwind CSS and MUI. You keep the responsive-to-user-preference advantage (REM scales when users change their browser's default font size) without the unpredictability of cascading sizes.",
+          "For component-scoped scaling where you do want the compound behavior, use EM instead - see our px-to-em converter. For viewport-relative responsive units, combine REM with clamp() and vw, covered in px-to-vw."
+        ]
+      },
+      {
+        "id": "when-to-use",
+        "title": "When to Use REM",
+        "paragraphs": [
+          "REM is the default-safe choice for most layout and typography sizing on modern websites. Use it whenever predictability and accessibility both matter."
+        ],
+        "list": [
+          "Base typography scale - body, paragraph, heading sizes expressed in rem will scale together when users zoom.",
+          "Margin, padding, and gap values in a design system that should respect user font preferences.",
+          "Container max-widths like max-width: 72rem which stay proportional to text.",
+          "Responsive breakpoints in media queries, so 'tablet' triggers at the same user-perceived width regardless of root font size.",
+          "Icon sizing tied to typography scale, keeping icons in balance with headings and body copy.",
+          "Form field heights and widths, so input controls scale with accessibility settings."
+        ]
+      },
+      {
+        "id": "practical-examples",
+        "title": "Practical Examples",
+        "paragraphs": [
+          "Below is the most-referenced conversion table for web developers: pixels to REM with the default 16px root, and the alternative 10px root that many developers enable for cleaner numbers."
+        ],
+        "table": {
+          "headers": ["Pixels", "REM (16px root)", "REM (10px root)", "Common Use"],
+          "rows": [
+            ["4px", "0.25rem", "0.4rem", "Tight internal spacing"],
+            ["8px", "0.5rem", "0.8rem", "Small gap, compact padding"],
+            ["12px", "0.75rem", "1.2rem", "Caption text"],
+            ["14px", "0.875rem", "1.4rem", "Secondary body text"],
+            ["16px", "1rem", "1.6rem", "Body text baseline"],
+            ["20px", "1.25rem", "2rem", "Lead paragraph"],
+            ["24px", "1.5rem", "2.4rem", "Subheading (H4)"],
+            ["32px", "2rem", "3.2rem", "Section heading (H2/H3)"],
+            ["48px", "3rem", "4.8rem", "Hero heading (H1)"],
+            ["64px", "4rem", "6.4rem", "Display heading"]
+          ]
+        }
+      },
+      {
+        "id": "common-mistakes",
+        "title": "Common Mistakes to Avoid",
+        "paragraphs": [
+          "REM conversions are straightforward, but a few common missteps can quietly break accessibility and responsive behavior."
+        ],
+        "list": [
+          "Setting html { font-size: 16px } - this overrides user preferences and defeats REM's accessibility benefit. Use a percentage like 100% or 62.5% instead.",
+          "Mixing px for some values and rem for others inconsistently, creating a layout that only partially scales with user zoom.",
+          "Forgetting that REM always ignores nesting - if you need component-scoped scaling, reach for EM.",
+          "Using 1rem when you mean 16px without documenting the assumption, making refactors risky if someone changes the root.",
+          "Over-converting - 1px borders and hairline dividers are fine as px because they should not scale with text.",
+          "Using REM in media queries without considering that some browsers historically ignored root font changes in media query context - em is slightly safer there."
+        ]
       }
     ]
   },
