@@ -13,7 +13,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What is the difference between printer DPI and image DPI?",
-        "answer": "Printer DPI is a hardware specification — how many ink dots the printer can physically place in one inch. Most inkjets run at 1200-4800 DPI, laser printers at 600-2400 DPI. Image DPI is metadata in the file that tells the printer 'render this image at X pixels per inch'. When you save a file at '300 DPI' in Photoshop, you are actually setting PPI (pixels per inch). The printer then uses many of its own DPI dots to reproduce each image pixel."
+        "answer": "Printer DPI is a hardware specification, how many ink dots the printer can physically place in one inch. Most inkjets run at 1200-4800 DPI, laser printers at 600-2400 DPI. Image DPI is metadata in the file that tells the printer 'render this image at X pixels per inch'. When you save a file at '300 DPI' in Photoshop, you are actually setting PPI (pixels per inch). The printer then uses many of its own DPI dots to reproduce each image pixel."
       },
       {
         "question": "Does DPI matter for websites and mobile apps?",
@@ -21,7 +21,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Why do image editors default to 72 or 96 DPI?",
-        "answer": "72 DPI is a legacy value from early Apple Macintosh displays. 96 DPI is the Windows default reference. Both exist purely as a print-size calculation basis — if you save a 1200x900 image at 96 DPI and print it at 'actual size', it will come out 12.5 x 9.4 inches. The DPI setting has zero effect on screen display."
+        "answer": "72 DPI is a legacy value from early Apple Macintosh displays. 96 DPI is the Windows default reference. Both exist purely as a print-size calculation basis, if you save a 1200x900 image at 96 DPI and print it at 'actual size', it will come out 12.5 x 9.4 inches. The DPI setting has zero effect on screen display."
       },
       {
         "question": "How do I check the DPI of a photo or scan?",
@@ -38,8 +38,8 @@ export const content: LocalizedDocMap = {
         "title": "What Is DPI?",
         "paragraphs": [
           "DPI stands for dots per inch. It is a measurement of print resolution that tells you how many individual ink, toner, or laser dots a printer deposits into each linear inch of paper. The higher the DPI, the finer those dots are, and the smoother and more detailed the final print appears.",
-          "DPI is strictly a print-world unit. Screens do not have DPI — they have PPI (pixels per inch). The two terms often get used interchangeably in casual conversation, but in professional printing, graphic design, and photography, precision matters. Misusing the term can lead to files that print badly or images that waste storage for no visible benefit.",
-          "A typical home inkjet prints at 1200 to 4800 DPI. Commercial offset presses run at 1800 to 3600 DPI. Consumer laser printers average 600 to 2400 DPI. These numbers describe the hardware's physical capability, not how your image will look — for that, you also need enough pixel data to fill each inch at the desired output size."
+          "DPI is strictly a print-world unit. Screens do not have DPI, they have PPI (pixels per inch). The two terms often get used interchangeably in casual conversation, but in professional printing, graphic design, and photography, precision matters. Misusing the term can lead to files that print badly or images that waste storage for no visible benefit.",
+          "A typical home inkjet prints at 1200 to 4800 DPI. Commercial offset presses run at 1800 to 3600 DPI. Consumer laser printers average 600 to 2400 DPI. These numbers describe the hardware's physical capability, not how your image will look, for that, you also need enough pixel data to fill each inch at the desired output size."
         ]
       },
       {
@@ -47,7 +47,7 @@ export const content: LocalizedDocMap = {
         "title": "How DPI Works Inside a Printer",
         "paragraphs": [
           "Printers reproduce color and shading using a technique called halftoning. They cannot blend ink continuously like a screen blends pixels, so they simulate shades of gray and color by clustering tiny dots in varying density. A light gray area has few, spread-out dots. A dark area has many, tightly packed dots. Your eye blends these patterns at normal viewing distance into what looks like smooth tone.",
-          "The DPI value determines how small and closely spaced those dots can be. At 300 DPI, there are 90,000 possible dot positions per square inch. At 1200 DPI, that jumps to 1,440,000 — sixteen times more precision in the same area. Higher DPI lets the printer produce finer gradients, crisper type, and cleaner edges, which is why a 1200 DPI photo print looks obviously sharper than a 300 DPI draft.",
+          "The DPI value determines how small and closely spaced those dots can be. At 300 DPI, there are 90,000 possible dot positions per square inch. At 1200 DPI, that jumps to 1,440,000, sixteen times more precision in the same area. Higher DPI lets the printer produce finer gradients, crisper type, and cleaner edges, which is why a 1200 DPI photo print looks obviously sharper than a 300 DPI draft.",
           "Importantly, one image pixel does not equal one printer dot. A single pixel at 300 PPI sent to a 1200 DPI printer gets reproduced using roughly 16 printer dots of different ink combinations to achieve the exact color. This is why high-DPI printers produce such smooth output even from moderate-resolution source images."
         ]
       },
@@ -56,7 +56,7 @@ export const content: LocalizedDocMap = {
         "title": "DPI vs PPI: Why People Confuse Them",
         "paragraphs": [
           "The confusion between DPI and PPI is industry-wide, and it traces back to software. Photoshop, Illustrator, and most image editors label their resolution field 'DPI' even though an image file contains pixels, not ink dots. A more accurate label would be PPI, but the DPI terminology stuck for historical reasons and never got corrected.",
-          "Here is the clean distinction: PPI describes pixel density in a digital image or on a screen. DPI describes ink dot density produced by a printer. When you save an image at '300 DPI' in Photoshop, you are setting PPI — telling any future printer to lay out this image at 300 pixels per inch. The printer then uses its own DPI (say, 1200 DPI) to physically reproduce each of those pixels using multiple ink dots.",
+          "Here is the clean distinction: PPI describes pixel density in a digital image or on a screen. DPI describes ink dot density produced by a printer. When you save an image at '300 DPI' in Photoshop, you are setting PPI, telling any future printer to lay out this image at 300 pixels per inch. The printer then uses its own DPI (say, 1200 DPI) to physically reproduce each of those pixels using multiple ink dots.",
           "For practical purposes, most designers and photographers use DPI loosely to mean both. That is fine in conversation, but understand the distinction when specifying print jobs or troubleshooting quality issues. A file at 300 PPI sent to a 600 DPI printer will still print beautifully; a 72 PPI file sent to the same printer will look pixelated regardless of the printer's DPI capacity."
         ]
       },
@@ -66,8 +66,8 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "The 300 DPI rule is a starting point, not a commandment. The right DPI depends on three variables: the paper type, the intended viewing distance, and the content being reproduced.",
           "For photographs on glossy photo paper viewed at reading distance (8-12 inches), 300 PPI is the professional standard. The eye can distinguish detail up to roughly 300 PPI at this distance, so going higher rarely produces visible improvement. For newsprint or coarser uncoated paper, 150 PPI is enough because the paper texture itself limits detail reproduction.",
-          "Large-format output changes the math entirely. A 4-foot trade-show banner viewed from 6 feet away does not need 300 PPI — the viewer cannot resolve that detail at distance. 150 PPI is often plenty. Billboards viewed from 100 feet can work beautifully at 20-40 PPI. The farther the viewer, the lower the PPI you can get away with without visible quality loss.",
-          "For fine art reproductions, archival photo prints, or highly detailed technical drawings viewed under close inspection, 600 PPI is worth the extra file size and processing time. For screen-only delivery (web, social media, email), PPI metadata is irrelevant — only pixel dimensions matter."
+          "Large-format output changes the math entirely. A 4-foot trade-show banner viewed from 6 feet away does not need 300 PPI, the viewer cannot resolve that detail at distance. 150 PPI is often plenty. Billboards viewed from 100 feet can work beautifully at 20-40 PPI. The farther the viewer, the lower the PPI you can get away with without visible quality loss.",
+          "For fine art reproductions, archival photo prints, or highly detailed technical drawings viewed under close inspection, 600 PPI is worth the extra file size and processing time. For screen-only delivery (web, social media, email), PPI metadata is irrelevant, only pixel dimensions matter."
         ]
       },
       {
@@ -93,7 +93,7 @@ export const content: LocalizedDocMap = {
         "id": "common-mistakes",
         "title": "Common DPI Mistakes That Ruin Prints",
         "paragraphs": [
-          "The most frequent mistake is upscaling a low-resolution image and assuming it will print sharply. Increasing a 72 PPI web image to 300 PPI in Photoshop without resampling just reduces the print size — the total pixel count stays the same. Resampling (adding pixels with interpolation) adds soft, invented detail but cannot recover information that was never captured.",
+          "The most frequent mistake is upscaling a low-resolution image and assuming it will print sharply. Increasing a 72 PPI web image to 300 PPI in Photoshop without resampling just reduces the print size, the total pixel count stays the same. Resampling (adding pixels with interpolation) adds soft, invented detail but cannot recover information that was never captured.",
           "Another mistake is oversaving. Someone hears '300 DPI' and saves every web image at 300, bloating file size with no visible benefit. For web, save at whatever pixel dimensions you need and ignore DPI entirely. A 1200x800 photo at 72 DPI is identical to a 1200x800 photo at 3000 DPI when displayed on a screen.",
           "Finally, many users confuse the printer's DPI with the file's required PPI and ship files that are either under-spec (blurry prints) or over-spec (massive files that clog the RIP). The printer's hardware DPI is the printer's job; your job is to deliver enough pixels to fill the print at an appropriate PPI for the output size and viewing distance."
         ]

@@ -9,7 +9,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What DPI should I use for a 4x6 inch photo print?",
-        "answer": "300 DPI is the professional standard for 4x6 photo prints — it requires a 1200 x 1800 pixel image. 240 DPI is a good minimum and still looks sharp under normal viewing. Below 200 DPI starts showing visible pixelation at arm's length."
+        "answer": "300 DPI is the professional standard for 4x6 photo prints, it requires a 1200 x 1800 pixel image. 240 DPI is a good minimum and still looks sharp under normal viewing. Below 200 DPI starts showing visible pixelation at arm's length."
       },
       {
         "question": "Does printing at higher DPI always take longer?",
@@ -17,11 +17,11 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What happens if I print a 72 DPI image at 300 DPI target?",
-        "answer": "The print will look pixelated — roughly 4x more visible pixel edges than a native 300 DPI image. Your printer hardware produces 300 PPI output, but it's interpolating (duplicating) the original 72 DPI pixels to fill in. Better to resize the source image or reduce the print dimensions."
+        "answer": "The print will look pixelated, roughly 4x more visible pixel edges than a native 300 DPI image. Your printer hardware produces 300 PPI output, but it's interpolating (duplicating) the original 72 DPI pixels to fill in. Better to resize the source image or reduce the print dimensions."
       },
       {
         "question": "Is there a simple way to check what DPI my image needs?",
-        "answer": "Yes. Divide your image's pixel width by the target print width in inches. A 3000 pixel wide image for a 10-inch wide print gives 300 PPI — professional print quality. For a 20-inch wide print, the same file gives 150 PPI — still acceptable for posters viewed at distance. Our Image Size Calculator automates this calculation instantly."
+        "answer": "Yes. Divide your image's pixel width by the target print width in inches. A 3000 pixel wide image for a 10-inch wide print gives 300 PPI, professional print quality. For a 20-inch wide print, the same file gives 150 PPI, still acceptable for posters viewed at distance. Our Image Size Calculator automates this calculation instantly."
       }
     ],
     "sections": [
@@ -49,7 +49,7 @@ export const content: LocalizedDocMap = {
             ["16 x 20 (poster)", "1152 x 1440", "1536 x 1920", "2400 x 3000", "4800 x 6000", "9600 x 12000"],
             ["20 x 24 (large print)", "1440 x 1728", "1920 x 2304", "3000 x 3600", "6000 x 7200", "12000 x 14400"],
             ["24 x 36 (big poster)", "1728 x 2592", "2304 x 3456", "3600 x 5400", "7200 x 10800", "14400 x 21600"],
-            ["40 x 60 (trade show)", "2880 x 4320", "3840 x 5760", "6000 x 9000", "12000 x 18000", "—"]
+            ["40 x 60 (trade show)", "2880 x 4320", "3840 x 5760", "6000 x 9000", "12000 x 18000", "-"]
           ]
         }
       },

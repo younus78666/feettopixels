@@ -13,7 +13,7 @@ interface StructuredDocProps {
 
 /**
  * First occurrence (per document render) of key entity terms is
- * converted into a link to its definition page. Koray Gap 5 —
+ * converted into a link to its definition page. Koray Gap 5 -
  * in-prose entity hyperlinking improves semantic connectivity.
  */
 interface EntityDefinition {
@@ -85,7 +85,7 @@ export function StructuredDoc({
   locale = "en",
   currentSlug = "",
 }: StructuredDocProps) {
-  // Shared set across the whole doc — each entity links only once per render.
+  // Shared set across the whole doc, each entity links only once per render.
   const linkedTerms = new Set<string>();
 
   return (

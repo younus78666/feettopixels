@@ -9,11 +9,11 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Why is pixels per foot useful?",
-        "answer": "It's the critical measurement for large-format design — banners, stage backdrops, trade show displays, building wraps, murals. When your design spans feet rather than inches, you need to know how many pixels each foot requires so you don't end up with a pixelated blowup at print time."
+        "answer": "It's the critical measurement for large-format design, banners, stage backdrops, trade show displays, building wraps, murals. When your design spans feet rather than inches, you need to know how many pixels each foot requires so you don't end up with a pixelated blowup at print time."
       },
       {
         "question": "What DPI should I use for a 10-foot banner?",
-        "answer": "For a trade show banner viewed from 6-10 feet away, 100-150 DPI is plenty — it would need 12000-18000 pixels wide. For a retail banner viewed closer, 200 DPI gives sharp text and graphics. You rarely need 300 DPI for anything over 6 feet long — the viewing distance hides the extra detail."
+        "answer": "For a trade show banner viewed from 6-10 feet away, 100-150 DPI is plenty, it would need 12000-18000 pixels wide. For a retail banner viewed closer, 200 DPI gives sharp text and graphics. You rarely need 300 DPI for anything over 6 feet long, the viewing distance hides the extra detail."
       },
       {
         "question": "Is there an easy way to calculate the pixel count for any size?",
@@ -21,7 +21,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Can I print a small image on a huge banner without quality loss?",
-        "answer": "Sometimes, yes — if the viewing distance is far enough. A 1920 × 1080 image stretched across a 20-foot wide billboard prints at 8 PPI, which is terrible up close but perfectly sharp from 100+ feet away. The eye cannot resolve detail smaller than 1/60th of a degree at typical viewing angles, so ultra-large prints can use surprisingly low PPI."
+        "answer": "Sometimes, yes, if the viewing distance is far enough. A 1920 × 1080 image stretched across a 20-foot wide billboard prints at 8 PPI, which is terrible up close but perfectly sharp from 100+ feet away. The eye cannot resolve detail smaller than 1/60th of a degree at typical viewing angles, so ultra-large prints can use surprisingly low PPI."
       }
     ],
     "sections": [
@@ -41,7 +41,7 @@ export const content: LocalizedDocMap = {
           "rows": [
             ["30 DPI", "360", "Building wraps, large billboards", "50+ feet"],
             ["50 DPI", "600", "Highway billboards, bus wraps", "30+ feet"],
-            ["72 DPI", "864", "Legacy screen reference (rarely used for print)", "—"],
+            ["72 DPI", "864", "Legacy screen reference (rarely used for print)", "-"],
             ["96 DPI", "1152", "Windows screen reference, low-quality large prints", "15+ feet"],
             ["100 DPI", "1200", "Outdoor banners, stage backdrops", "10+ feet"],
             ["150 DPI", "1800", "Trade show graphics, retail signage", "6-10 feet"],
@@ -83,7 +83,7 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "For any foot-based dimension: total pixels = feet × 12 × DPI. Always multiply by 12 first because a foot contains 12 inches. Examples:",
           "4 feet at 150 DPI = 4 × 12 × 150 = 7,200 pixels. 8 feet at 200 DPI = 8 × 12 × 200 = 19,200 pixels. 20 feet at 50 DPI = 20 × 12 × 50 = 12,000 pixels. 100 feet at 20 DPI (billboard) = 100 × 12 × 20 = 24,000 pixels.",
-          "Our Feet to Pixels Converter handles this calculation instantly with DPI presets. For quick reverse calculation — finding the max foot-size from a given pixel count — use the Pixels to Feet Converter."
+          "Our Feet to Pixels Converter handles this calculation instantly with DPI presets. For quick reverse calculation, finding the max foot-size from a given pixel count, use the Pixels to Feet Converter."
         ]
       }
     ]

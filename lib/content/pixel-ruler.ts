@@ -38,7 +38,7 @@ export const content: LocalizedDocMap = {
         "title": "How to Calibrate the Ruler Accurately",
         "paragraphs": [
           "Without calibration, the ruler uses your browser's reported pixel density, which is often wrong for modern high-DPI displays. The operating system may report 96 CSS PPI when the physical screen is actually 218 PPI or higher, causing the ruler's inch/cm values to be off.",
-          "For physical accuracy, calibrate with a known-size object held against your screen. The easiest is a standard credit card — it measures exactly 85.60 mm × 53.98 mm (3.370 × 2.125 inches) worldwide. Place the card on the screen, adjust the ruler scale until it matches the card's length, and the ruler is now accurate to your specific display's physical pixel density.",
+          "For physical accuracy, calibrate with a known-size object held against your screen. The easiest is a standard credit card, it measures exactly 85.60 mm × 53.98 mm (3.370 × 2.125 inches) worldwide. Place the card on the screen, adjust the ruler scale until it matches the card's length, and the ruler is now accurate to your specific display's physical pixel density.",
           "Other reliable calibration objects: a US quarter (24.26 mm diameter), a UK 1-pound coin (23.43 mm), an iPhone 15 Pro screen width (~71 mm), or a printed ruler itself. Always use something you can measure precisely with a physical ruler first."
         ]
       },
@@ -59,11 +59,11 @@ export const content: LocalizedDocMap = {
         "table": {
           "headers": ["Unit", "When to Use", "Calibration Needed?"],
           "rows": [
-            ["Pixels (px)", "Layout, CSS, design spec", "No — native ruler unit"],
-            ["Inches (in)", "US print design, screen size", "Yes — calibrate to physical object"],
-            ["Centimeters (cm)", "Metric print, ISO layouts", "Yes — calibrate to physical object"],
-            ["Millimeters (mm)", "Precision metric, engineering", "Yes — calibrate to physical object"],
-            ["Points (pt)", "Typography, print sizing", "Yes — based on calibrated inches"],
+            ["Pixels (px)", "Layout, CSS, design spec", "No, native ruler unit"],
+            ["Inches (in)", "US print design, screen size", "Yes, calibrate to physical object"],
+            ["Centimeters (cm)", "Metric print, ISO layouts", "Yes, calibrate to physical object"],
+            ["Millimeters (mm)", "Precision metric, engineering", "Yes, calibrate to physical object"],
+            ["Points (pt)", "Typography, print sizing", "Yes, based on calibrated inches"],
             ["REM", "Responsive CSS design", "Derived from browser root font size"]
           ]
         }

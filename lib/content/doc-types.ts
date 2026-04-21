@@ -22,7 +22,10 @@ export interface LocalizedDoc {
   ui?: Record<string, unknown>;
 }
 
-export type LocalizedDocMap = Record<Locale, LocalizedDoc>;
+export type LocalizedDocMap = {
+  en: LocalizedDoc;
+  [locale: string]: LocalizedDoc;
+};
 
 function hasRenderableSection(section: LocalizedSection): boolean {
   const paragraphs = section.paragraphs?.some((paragraph) => paragraph.trim()) || false;

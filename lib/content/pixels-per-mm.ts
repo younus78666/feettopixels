@@ -13,15 +13,15 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What's the simplest formula for mm-based design?",
-        "answer": "pixels = mm × DPI / 25.4. A 100 mm wide design at 300 DPI needs 100 × 300 / 25.4 = 1181 pixels. A 210 mm wide A4 document at 300 DPI needs 210 × 300 / 25.4 = 2480 pixels. Keep 25.4 as your conversion constant — it's exact."
+        "answer": "pixels = mm × DPI / 25.4. A 100 mm wide design at 300 DPI needs 100 × 300 / 25.4 = 1181 pixels. A 210 mm wide A4 document at 300 DPI needs 210 × 300 / 25.4 = 2480 pixels. Keep 25.4 as your conversion constant, it's exact."
       },
       {
         "question": "Is 300 DPI the same as 11.81 pixels per mm?",
-        "answer": "Yes — they're the same density expressed in different units. Some software and regional standards report density in pixels/mm rather than DPI. ISO 216 and most European print shops think natively in pixels/mm. The conversion factor is always 25.4."
+        "answer": "Yes, they're the same density expressed in different units. Some software and regional standards report density in pixels/mm rather than DPI. ISO 216 and most European print shops think natively in pixels/mm. The conversion factor is always 25.4."
       },
       {
         "question": "Do cameras record pixel density in mm terms?",
-        "answer": "Sometimes. EXIF metadata usually stores resolution as DPI, but scientific cameras and microscope cameras often record pixel density in pixels/μm (micrometers) or pixels/mm because their work is metric. Converting: 1 pixel/μm = 1000 pixels/mm = 25,400 DPI — typical for microscopy."
+        "answer": "Sometimes. EXIF metadata usually stores resolution as DPI, but scientific cameras and microscope cameras often record pixel density in pixels/μm (micrometers) or pixels/mm because their work is metric. Converting: 1 pixel/μm = 1000 pixels/mm = 25,400 DPI, typical for microscopy."
       }
     ],
     "sections": [
@@ -75,8 +75,8 @@ export const content: LocalizedDocMap = {
         "id": "scientific-use",
         "title": "Pixels Per mm in Scientific and Medical Imaging",
         "paragraphs": [
-          "Microscopy expresses pixel density in pixels/micrometer (μm) rather than pixels/mm because sample features are measured in micrometers. A typical 10x objective captures roughly 0.7 pixels/μm, which equals 700 pixels/mm, equivalent to about 17,780 DPI in print terms — vastly higher than standard print resolution because microscopic features demand it.",
-          "DICOM medical imaging records pixel spacing in mm per pixel — the inverse of pixels/mm. A chest X-ray might report 0.143 mm per pixel, which equals 7 pixels/mm, equivalent to about 178 DPI. MRI slices often store 1.0 mm per pixel (1 pixel/mm, 25.4 DPI) for thick anatomical sections.",
+          "Microscopy expresses pixel density in pixels/micrometer (μm) rather than pixels/mm because sample features are measured in micrometers. A typical 10x objective captures roughly 0.7 pixels/μm, which equals 700 pixels/mm, equivalent to about 17,780 DPI in print terms, vastly higher than standard print resolution because microscopic features demand it.",
+          "DICOM medical imaging records pixel spacing in mm per pixel, the inverse of pixels/mm. A chest X-ray might report 0.143 mm per pixel, which equals 7 pixels/mm, equivalent to about 178 DPI. MRI slices often store 1.0 mm per pixel (1 pixel/mm, 25.4 DPI) for thick anatomical sections.",
           "Scientific publishing often demands minimum DPI for illustrations: Nature and Cell require 300 DPI at final column width, PLOS One accepts 300 DPI minimum, while IEEE journals specify 1200 DPI for line art. Knowing pixels/mm natively avoids rounding errors when preparing figures at specific metric column widths."
         ]
       },

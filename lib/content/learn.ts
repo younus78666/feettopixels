@@ -9,11 +9,11 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What's the difference between the Guides and References in this hub?",
-        "answer": "Guides explain concepts — what DPI is, what PPI is, how pixels work, and how CSS units compare. References are quick-lookup pages — print sizes in pixels, social media image dimensions, paper sizes, common resolutions. Use Guides when you're learning; use References when you already know the concept and need a number."
+        "answer": "Guides explain concepts, what DPI is, what PPI is, how pixels work, and how CSS units compare. References are quick-lookup pages, print sizes in pixels, social media image dimensions, paper sizes, common resolutions. Use Guides when you're learning; use References when you already know the concept and need a number."
       },
       {
         "question": "Are these guides updated regularly?",
-        "answer": "Yes. Each page covers evergreen fundamentals (DPI math, pixel concepts, CSS unit rules) but we refresh reference data — social media image sizes, standard screen resolutions, device PPIs — as platforms and devices change."
+        "answer": "Yes. Each page covers evergreen fundamentals (DPI math, pixel concepts, CSS unit rules) but we refresh reference data, social media image sizes, standard screen resolutions, device PPIs, as platforms and devices change."
       },
       {
         "question": "Do the guides cover international measurements?",
@@ -39,8 +39,8 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "Start here if pixel conversion, DPI, or PPI are new concepts. Each page builds on the previous one.",
           "What is a Pixel: the smallest addressable unit on a digital display, composed of red/green/blue subpixels. Understanding this anchor unit is the prerequisite for everything else.",
-          "What is DPI: dots per inch — the print-world measure of ink dot density. Applies exclusively to printers, not screens.",
-          "What is PPI: pixels per inch — the digital-world measure of display density. Applies to screens, camera sensors, and image files.",
+          "What is DPI: dots per inch, the print-world measure of ink dot density. Applies exclusively to printers, not screens.",
+          "What is PPI: pixels per inch, the digital-world measure of display density. Applies to screens, camera sensors, and image files.",
           "Pixels Per Inch: the deep-dive reference on PPI math, including the Pythagorean formula for calculating PPI from any resolution and screen size."
         ]
       },
@@ -49,8 +49,8 @@ export const content: LocalizedDocMap = {
         "title": "Comparison Guides",
         "paragraphs": [
           "These pages clarify concepts that designers and developers commonly confuse.",
-          "DPI vs PPI: the canonical comparison. DPI is print (ink dots), PPI is screen (pixels). Photoshop labels image resolution as DPI even though it's technically PPI — this is a historical quirk that confuses most people until they see the side-by-side table.",
-          "EM vs REM: the CSS equivalent — both are relative length units, but REM is relative to the root element's font size while EM is relative to the parent element's. Use REM for global consistency, EM for component-level scaling."
+          "DPI vs PPI: the canonical comparison. DPI is print (ink dots), PPI is screen (pixels). Photoshop labels image resolution as DPI even though it's technically PPI, this is a historical quirk that confuses most people until they see the side-by-side table.",
+          "EM vs REM: the CSS equivalent, both are relative length units, but REM is relative to the root element's font size while EM is relative to the parent element's. Use REM for global consistency, EM for component-level scaling."
         ]
       },
       {
@@ -59,7 +59,7 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "These pages answer specific, high-intent lookup questions. Bookmark them if you work with print specs, social media design, or photo sizing frequently.",
           "Best DPI for Printing: 300 for photos and magazines, 150 for newspapers and large posters, 72 for screen-only, 600 for fine art. The viewing distance rule explains why.",
-          "Best DPI for Web: none — or rather, pixel dimensions are what matter; DPI metadata is ignored by browsers. This page explains why.",
+          "Best DPI for Web: none, or rather, pixel dimensions are what matter; DPI metadata is ignored by browsers. This page explains why.",
           "Paper Sizes in Pixels: A4, A3, A5, A0, Letter, Legal, Tabloid all at 96/150/300 DPI.",
           "Standard Image Sizes: 4x6, 5x7, 8x10, 11x14, 16x20, 24x36 in pixels at professional print DPI.",
           "Social Media Image Sizes: current Instagram, Facebook, YouTube, LinkedIn, and Twitter image specs.",

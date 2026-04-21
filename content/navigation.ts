@@ -283,7 +283,7 @@ export const navigation: NavEntry[] = [
   { label: "About", href: "/about" },
 ];
 
-/** Hub/pillar pages — surfaced on homepage + cross-links, not in main nav dropdowns */
+/** Hub/pillar pages, surfaced on homepage + cross-links, not in main nav dropdowns */
 export const pillarPages = [
   {
     label: "Pixel Converter Hub",

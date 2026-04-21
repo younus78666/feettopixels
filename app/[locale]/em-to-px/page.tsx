@@ -38,7 +38,7 @@ const faq = [
   {
     question: "Why does EM compound in nested elements?",
     answer:
-      "Because each EM resolves against its parent, nested components multiply. A 1.2em font on a child of a 1.2em parent renders at 1.44x the root size (1.2 × 1.2). This makes EM powerful for modular scaling but tricky for global consistency — use REM when you want predictable site-wide sizing.",
+      "Because each EM resolves against its parent, nested components multiply. A 1.2em font on a child of a 1.2em parent renders at 1.44x the root size (1.2 × 1.2). This makes EM powerful for modular scaling but tricky for global consistency, use REM when you want predictable site-wide sizing.",
   },
   {
     question: "When should I use EM over REM or PX?",
@@ -53,7 +53,7 @@ const faq = [
   {
     question: "How is EM different from PX in responsive design?",
     answer:
-      "PX is absolute — 16px is always 16 physical pixels (adjusted for device pixel ratio). EM is relative — 16em is 16 times the parent's font-size, which may itself scale with user preferences or media queries. EM makes typography more accessible and responsive; PX is predictable but rigid.",
+      "PX is absolute, 16px is always 16 physical pixels (adjusted for device pixel ratio). EM is relative, 16em is 16 times the parent's font-size, which may itself scale with user preferences or media queries. EM makes typography more accessible and responsive; PX is predictable but rigid.",
   },
 ];
 

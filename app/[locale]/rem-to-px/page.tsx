@@ -48,7 +48,7 @@ const faq = [
   {
     question: "Does changing html font-size break existing REM values?",
     answer:
-      "Yes — and that is why you tune it at the project root. If you set html { font-size: 10px } mid-project, every rem-based measurement on the page rescales. This is useful for simplifying math but requires caution when adopting a new design system.",
+      "Yes, and that is why you tune it at the project root. If you set html { font-size: 10px } mid-project, every rem-based measurement on the page rescales. This is useful for simplifying math but requires caution when adopting a new design system.",
   },
   {
     question: "What is the difference between REM and EM?",

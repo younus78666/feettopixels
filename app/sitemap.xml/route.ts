@@ -1,5 +1,4 @@
 import { siteConfig } from "@/content/site-config";
-import { locales } from "@/lib/i18n";
 import { localizedPath } from "@/lib/alternates";
 
 export const dynamic = "force-static";
@@ -75,33 +74,26 @@ export function GET() {
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `;
 
-  for (const locale of locales) {
-    for (const pagePath of allPages) {
-      const slug = pagePath.replace(/^\//, "");
-      const url = `${baseUrl}${localizedPath(locale, slug)}`;
-      const changefreq = pagePath === "" ? "weekly" : "monthly";
-      const priority = pagePath === ""
-        ? "1.0"
-        : toolPages.includes(pagePath)
-          ? "0.8"
-          : "0.6";
+  for (const pagePath of allPages) {
+    const slug = pagePath.replace(/^\//, "");
+    const url = `${baseUrl}${localizedPath("en", slug)}`;
+    const changefreq = pagePath === "" ? "weekly" : "monthly";
+    const priority = pagePath === ""
+      ? "1.0"
+      : toolPages.includes(pagePath)
+        ? "0.8"
+        : "0.6";
 
-      xml += `  <url>
+    xml += `  <url>
     <loc>${escapeXml(url)}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
+  </url>
 `;
-      for (const altLocale of locales) {
-        const altUrl = `${baseUrl}${localizedPath(altLocale, slug)}`;
-        xml += `    <xhtml:link rel="alternate" hreflang="${altLocale}" href="${escapeXml(altUrl)}" />\n`;
-      }
-      xml += `  </url>\n`;
-    }
   }
 
   xml += `</urlset>\n`;

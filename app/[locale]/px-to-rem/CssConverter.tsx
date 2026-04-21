@@ -43,7 +43,7 @@ interface CssConverterProps {
   quickRef?: number[];
   autoDetectBase?: boolean;
   locale?: Locale;
-  /** Start with "from" and "to" sides swapped — use for reverse pages
+  /** Start with "from" and "to" sides swapped, use for reverse pages
    *  like rem-to-px, em-to-px, pt-to-px, vw-to-px. */
   initialReversed?: boolean;
 }

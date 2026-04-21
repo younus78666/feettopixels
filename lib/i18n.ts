@@ -1,44 +1,14 @@
 export const defaultLocale = "en";
 
-export const locales = [
-  "en",
-  "es",
-  "fr",
-  "de",
-  "pt",
-  "hi",
-  "ja",
-  "ko",
-  "it",
-  "nl",
-  "ar",
-  "tr",
-  "pl",
-  "id",
-  "ru",
-] as const;
+export const locales = ["en"] as const;
 
 export type Locale = (typeof locales)[number];
 
 export const localeNames: Record<Locale, string> = {
   en: "English",
-  es: "Español",
-  fr: "Français",
-  de: "Deutsch",
-  pt: "Português",
-  hi: "हिन्दी",
-  ja: "日本語",
-  ko: "한국어",
-  it: "Italiano",
-  nl: "Nederlands",
-  ar: "العربية",
-  tr: "Türkçe",
-  pl: "Polski",
-  id: "Indonesia",
-  ru: "Русский",
 };
 
-export const rtlLocales: Locale[] = ["ar"];
+export const rtlLocales: Locale[] = [];
 
 export function isRtl(locale: Locale): boolean {
   return rtlLocales.includes(locale);
@@ -50,18 +20,4 @@ export function isValidLocale(value: string): value is Locale {
 
 export const ogLocaleMap: Record<Locale, string> = {
   en: "en_US",
-  es: "es_ES",
-  fr: "fr_FR",
-  de: "de_DE",
-  pt: "pt_BR",
-  hi: "hi_IN",
-  ja: "ja_JP",
-  ko: "ko_KR",
-  it: "it_IT",
-  nl: "nl_NL",
-  ar: "ar_SA",
-  tr: "tr_TR",
-  pl: "pl_PL",
-  id: "id_ID",
-  ru: "ru_RU",
 };

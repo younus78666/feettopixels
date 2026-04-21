@@ -10,11 +10,11 @@ export interface PageContent {
   body: Record<string, string>;
 }
 
-export type PageContentMap = Record<Locale, PageContent>;
+export type PageContentMap = {
+  en: PageContent;
+  [locale: string]: PageContent;
+};
 
-/**
- * Get localized page content, falling back to English.
- */
 export function getPageContent(
   contentMap: PageContentMap,
   locale: Locale,

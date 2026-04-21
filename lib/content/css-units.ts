@@ -13,15 +13,15 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What's the difference between REM, EM, and root-relative units?",
-        "answer": "REM is relative to the ROOT element (html) font size only. EM is relative to the PARENT element's font size (or the element's own font size for the font-size property itself). This makes REM predictable across the site while EM compounds through nested components — useful for modular scaling, tricky for global consistency."
+        "answer": "REM is relative to the ROOT element (html) font size only. EM is relative to the PARENT element's font size (or the element's own font size for the font-size property itself). This makes REM predictable across the site while EM compounds through nested components, useful for modular scaling, tricky for global consistency."
       },
       {
         "question": "When does VW cause layout problems?",
-        "answer": "VW scales to viewport width, so on ultra-wide monitors (3440px+) text set in VW can grow absurdly large. The fix is clamp(): clamp(1rem, 2vw, 1.5rem) gives VW fluidity with a floor and ceiling. Similarly, pure VW fonts can become illegibly small on phones — use clamp() or CSS locks to constrain."
+        "answer": "VW scales to viewport width, so on ultra-wide monitors (3440px+) text set in VW can grow absurdly large. The fix is clamp(): clamp(1rem, 2vw, 1.5rem) gives VW fluidity with a floor and ceiling. Similarly, pure VW fonts can become illegibly small on phones, use clamp() or CSS locks to constrain."
       },
       {
         "question": "Is there a performance difference between CSS units?",
-        "answer": "Negligible for paint/layout — the browser resolves all units to pixels before rendering. The real performance consideration is HOW units interact with reflow: VW changes on every viewport resize, EM cascades through nested components, REM only responds to root font-size changes. REM is generally the most performance-predictable choice."
+        "answer": "Negligible for paint/layout, the browser resolves all units to pixels before rendering. The real performance consideration is HOW units interact with reflow: VW changes on every viewport resize, EM cascades through nested components, REM only responds to root font-size changes. REM is generally the most performance-predictable choice."
       }
     ],
     "sections": [
@@ -30,7 +30,7 @@ export const content: LocalizedDocMap = {
         "title": "CSS Unit Converters: REM, EM, PT, VW, and Pixel",
         "paragraphs": [
           "CSS gives you several length units for controlling size: pixels (px), REM, EM, points (pt), viewport width (vw) and height (vh), percent (%), and more. Each unit has a specific use case, and picking the wrong one makes layouts either rigid or chaotic. This hub covers the four most-used CSS unit converters plus the conceptual explainer guides.",
-          "The underlying truth: every CSS unit ultimately resolves to pixels at render time. Browsers compute REM, EM, VW, and PT back to pixel values based on context (root font size, parent font size, viewport width, display DPI). Understanding the conversion both ways — setting sizes in CSS units, debugging in computed pixels — is what makes a designer or developer fluent in layout."
+          "The underlying truth: every CSS unit ultimately resolves to pixels at render time. Browsers compute REM, EM, VW, and PT back to pixel values based on context (root font size, parent font size, viewport width, display DPI). Understanding the conversion both ways, setting sizes in CSS units, debugging in computed pixels, is what makes a designer or developer fluent in layout."
         ]
       },
       {

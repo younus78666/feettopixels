@@ -53,7 +53,7 @@ const faq = [
   {
     question: "Is VH different from VW?",
     answer:
-      "Yes — VH is based on viewport HEIGHT, VW on viewport WIDTH. 50vh on a 1080px-tall window = 540px. VH is useful for full-screen sections; VW for horizontal layout. Most designs use VW more often because width-based responsiveness is more common than height-based.",
+      "Yes, VH is based on viewport HEIGHT, VW on viewport WIDTH. 50vh on a 1080px-tall window = 540px. VH is useful for full-screen sections; VW for horizontal layout. Most designs use VW more often because width-based responsiveness is more common than height-based.",
   },
 ];
 

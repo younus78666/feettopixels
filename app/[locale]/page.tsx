@@ -66,8 +66,8 @@ function getCompactToolLabel(label: string): string {
   return label
     .split(":")[0]
     .split(" - ")[0]
-    .split(" – ")[0]
-    .split(" — ")[0]
+    .split(", ")[0]
+    .split(", ")[0]
     .replace(/\s+Converter$/i, "")
     .trim();
 }

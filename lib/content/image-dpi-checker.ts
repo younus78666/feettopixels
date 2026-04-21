@@ -30,7 +30,7 @@ export const content: LocalizedDocMap = {
         "title": "What an Image DPI Checker Does",
         "paragraphs": [
           "An image DPI checker inspects an image file and reports its pixel dimensions, file size, aspect ratio, and embedded DPI metadata (when present). It tells you immediately whether a file has enough pixels for a specific print size at a specific quality level.",
-          "This tool works entirely in your browser. Your images never leave your device — no upload, no server storage, no third-party processing. The browser's built-in Image and File APIs read the pixel dimensions and file structure locally, which means it works offline once the page has loaded and respects your privacy completely."
+          "This tool works entirely in your browser. Your images never leave your device, no upload, no server storage, no third-party processing. The browser's built-in Image and File APIs read the pixel dimensions and file structure locally, which means it works offline once the page has loaded and respects your privacy completely."
         ]
       },
       {
@@ -38,14 +38,14 @@ export const content: LocalizedDocMap = {
         "title": "What Metadata This Tool Reads",
         "paragraphs": [
           "Every uploaded image is analyzed for pixel width, pixel height, megapixel count (width × height ÷ 1,000,000), file size in bytes, file type (JPEG, PNG, WebP, BMP), and aspect ratio (simplified via greatest common divisor).",
-          "When the file includes density metadata — the EXIF or APP0 JFIF tags in JPEGs, the pHYs chunk in PNGs, the VP8X chunk in WebPs — the tool reads the embedded DPI directly. Files without density metadata fall back to showing print-size estimates at common DPI values (72, 150, 300, 600)."
+          "When the file includes density metadata, the EXIF or APP0 JFIF tags in JPEGs, the pHYs chunk in PNGs, the VP8X chunk in WebPs, the tool reads the embedded DPI directly. Files without density metadata fall back to showing print-size estimates at common DPI values (72, 150, 300, 600)."
         ]
       },
       {
         "id": "print-size-table",
         "title": "How to Read the Print Size Results",
         "paragraphs": [
-          "After analysis, the tool shows the maximum clean print size at each common DPI tier. At 300 DPI (professional print), divide the pixel width by 300 to get inches — e.g. 3000 pixels = 10 inches at professional quality. At 150 DPI (large posters), the same 3000 pixels prints 20 inches wide. At 72 DPI (screen/web-only), the same file prints 41 inches wide but looks pixelated when printed.",
+          "After analysis, the tool shows the maximum clean print size at each common DPI tier. At 300 DPI (professional print), divide the pixel width by 300 to get inches, e.g. 3000 pixels = 10 inches at professional quality. At 150 DPI (large posters), the same 3000 pixels prints 20 inches wide. At 72 DPI (screen/web-only), the same file prints 41 inches wide but looks pixelated when printed.",
           "Below the maximum sizes, the tool flags which print sizes your image can handle confidently and which are too ambitious. A 2-megapixel image is print-quality at 4x6 inch but struggles beyond 8x10 at 300 DPI. A 12-megapixel image handles prints up to 13x19 at 300 DPI, or 26x38 at 150 DPI for posters."
         ]
       },
@@ -74,7 +74,7 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "The most common issue: someone downloads a web image and tries to print it poster-sized. A 1200 x 800 image fills a screen beautifully but prints only 4 x 2.7 inches at professional quality. Stretched larger, it pixelates visibly.",
           "Another common issue: high-megapixel camera files where the embedded DPI reads 72 instead of 300. The pixels are there, but the metadata tells print software to lay the image out huge. Most print workflows read image size from pixel count anyway, so this is usually fixable in export settings.",
-          "Finally, many images from stock photo sites are served at web-optimized dimensions. Before buying or licensing, use this tool to verify the file has enough pixels for your intended use — 2000 pixels is rarely enough for print, even if it looks fine on a screen."
+          "Finally, many images from stock photo sites are served at web-optimized dimensions. Before buying or licensing, use this tool to verify the file has enough pixels for your intended use, 2000 pixels is rarely enough for print, even if it looks fine on a screen."
         ]
       },
       {
@@ -82,7 +82,7 @@ export const content: LocalizedDocMap = {
         "title": "Privacy and Local Processing",
         "paragraphs": [
           "Your image data stays on your device. This tool uses the browser's standard File and Image APIs to read pixel dimensions and metadata locally. Nothing is uploaded to any server. Nothing is cached in external services. Nothing is logged by analytics. You can run this tool offline after the page loads.",
-          "For sensitive images — medical scans, confidential design mockups, client work under NDA — this local-only processing is essential. Competing online DPI checkers often upload images to a server for processing, which makes them unsuitable for confidential material."
+          "For sensitive images, medical scans, confidential design mockups, client work under NDA, this local-only processing is essential. Competing online DPI checkers often upload images to a server for processing, which makes them unsuitable for confidential material."
         ]
       }
     ]

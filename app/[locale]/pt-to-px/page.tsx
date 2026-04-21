@@ -38,12 +38,12 @@ const faq = [
   {
     question: "What is 12pt in pixels?",
     answer:
-      "12pt equals 16 pixels at 96 DPI, which is the standard for modern browsers. 12pt is also the default body font size in most print documents, which is why 16px is the default browser font size — they were deliberately aligned.",
+      "12pt equals 16 pixels at 96 DPI, which is the standard for modern browsers. 12pt is also the default body font size in most print documents, which is why 16px is the default browser font size, they were deliberately aligned.",
   },
   {
     question: "When should I use PT instead of PX?",
     answer:
-      "Use PT for print-specific stylesheets (via @media print) or when importing print typography specs into a web project. For screen display, stick with PX, REM, or EM — PT metadata gets rasterized to pixels by the browser anyway.",
+      "Use PT for print-specific stylesheets (via @media print) or when importing print typography specs into a web project. For screen display, stick with PX, REM, or EM, PT metadata gets rasterized to pixels by the browser anyway.",
   },
   {
     question: "Why is 1pt equal to 1.333px?",
@@ -53,7 +53,7 @@ const faq = [
   {
     question: "Does PT scale with device pixel ratio (DPR)?",
     answer:
-      "No — PT resolves to CSS pixels first, then the browser applies DPR scaling to physical pixels at render time. 12pt on a 1x display and a 2x Retina display both compute to 16 CSS pixels, rendered with 16 or 32 physical pixels respectively.",
+      "No, PT resolves to CSS pixels first, then the browser applies DPR scaling to physical pixels at render time. 12pt on a 1x display and a 2x Retina display both compute to 16 CSS pixels, rendered with 16 or 32 physical pixels respectively.",
   },
 ];
 
