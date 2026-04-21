@@ -1,662 +1,489 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { Card } from "@/components/ui/Card";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQ } from "@/components/tools/FAQ";
-import { ToolIcon, getToolVisualMeta } from "@/components/tools/ToolIcon";
-import { UnitConverter } from "@/components/tools/UnitConverter";
-import { toolsDropdown } from "@/content/navigation";
+import { MultiUnitConverter } from "@/components/tools/MultiUnitConverter";
 import { siteConfig } from "@/content/site-config";
-import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
+import { isValidLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { buildAlternates, localizedPath } from "@/lib/alternates";
-import { getDictionary } from "@/lib/translations";
-import { getNavLabel, getNavDescription } from "@/lib/nav-utils";
-import { getRelatedTools } from "@/lib/content-utils";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const englishHomeTitle = "Pixel Converter - Convert Any Unit to Pixels at Any DPI";
-const englishHomeDescription =
-  "Pixel converter for feet, inches, centimeters, millimeters, rem, em, and more. DPI-aware presets (72, 96, 150, 300) for print, screens, signage, and large-format design.";
+const homeTitle = "Pixel Converter: Online Pixel Size and Dimension Tool";
+const homeDescription =
+  "Free online pixel converter. Convert pixels to inches, cm, mm, feet, rem, em, and points at 72, 96, 150, or 300 DPI. Instant, accurate, no signup.";
+const homeHeadline = "Online Pixel Converter";
+const homeSubheadline =
+  "Convert pixels to inches, centimeters, millimeters, feet, rem, em, and points at any DPI. Instant, accurate, no signup.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
-  const dict = getDictionary(locale);
-  const isEnglish = locale === "en";
-  const description = isEnglish
-    ? englishHomeDescription
-    : `${dict.site.description} ${dict.navDescriptions["pixel-converter"] || ""}`.trim();
 
   return {
-    title: isEnglish ? { absolute: englishHomeTitle } : dict.home.hero,
-    description,
-    keywords: isEnglish
-      ? [
-          "feet to pixels",
-          "feet to pixels converter",
-          "ft to px",
-          "convert feet to pixels",
-          "pixel conversion",
-          "pixel converter",
-          "pixels to inches",
-          "dpi calculator",
-        ]
-      : undefined,
+    title: { absolute: homeTitle },
+    description: homeDescription,
+    keywords: [
+      "pixel converter",
+      "online pixel converter",
+      "pixel size converter",
+      "pixel dimension converter",
+      "pixels to inches",
+      "pixels to cm",
+      "pixels to feet",
+      "px to rem",
+      "dpi calculator",
+      "ppi calculator",
+    ],
     alternates: buildAlternates(locale, ""),
     openGraph: {
-      title: isEnglish ? englishHomeTitle : dict.home.hero,
-      description,
-      locale: ogLocaleMap[locale],
+      title: homeTitle,
+      description: homeDescription,
+      locale: "en_US",
+      type: "website",
+      url: siteConfig.url,
+      siteName: "FeetToPixels",
     },
     twitter: {
       card: "summary_large_image",
-      title: isEnglish ? englishHomeTitle : dict.home.hero,
-      description,
+      title: homeTitle,
+      description: homeDescription,
     },
   };
 }
 
-function getCompactToolLabel(label: string): string {
-  return label
-    .split(":")[0]
-    .split(" - ")[0]
-    .split(", ")[0]
-    .split(", ")[0]
-    .replace(/\s+Converter$/i, "")
-    .trim();
-}
+const quickConverters = [
+  {
+    title: "Pixels to Inches",
+    href: "/pixels-to-inches",
+    description: "Convert px to inches at any DPI",
+    formula: "in = px / DPI",
+  },
+  {
+    title: "Inches to Pixels",
+    href: "/inches-to-pixels",
+    description: "Convert inches to px for print",
+    formula: "px = in x DPI",
+  },
+  {
+    title: "Pixels to CM",
+    href: "/pixels-to-cm",
+    description: "Convert px to centimeters",
+    formula: "cm = px x 2.54 / DPI",
+  },
+  {
+    title: "Feet to Pixels",
+    href: "/feet-to-pixels",
+    description: "Convert feet to px for signage",
+    formula: "px = ft x 12 x DPI",
+  },
+  {
+    title: "PX to REM",
+    href: "/px-to-rem",
+    description: "Convert pixels to REM for CSS",
+    formula: "rem = px / 16",
+  },
+  {
+    title: "DPI Calculator",
+    href: "/dpi-calculator",
+    description: "Calculate screen or image DPI",
+    formula: "sqrt(W^2 + H^2) / diag",
+  },
+  {
+    title: "PPI Calculator",
+    href: "/ppi-calculator",
+    description: "Find pixels per inch for any display",
+    formula: "Same as DPI, for screens",
+  },
+  {
+    title: "Aspect Ratio Calculator",
+    href: "/aspect-ratio-calculator",
+    description: "Resize and compare aspect ratios",
+    formula: "W : H with GCD simplification",
+  },
+] as const;
+
+const learnCards = [
+  {
+    title: "What is a Pixel?",
+    href: "/what-is-a-pixel",
+    description: "The building block of every digital image.",
+  },
+  {
+    title: "What is DPI?",
+    href: "/what-is-dpi",
+    description: "How print resolution works and when 300 DPI matters.",
+  },
+  {
+    title: "What is PPI?",
+    href: "/what-is-ppi",
+    description: "Screen pixel density explained with real device numbers.",
+  },
+  {
+    title: "Pixels Per Inch",
+    href: "/pixels-per-inch",
+    description: "Complete PPI reference with formula and device table.",
+  },
+] as const;
+
+const commonValues96 = [
+  ["1 inch", "96 px"],
+  ["1 cm", "37.80 px"],
+  ["1 mm", "3.78 px"],
+  ["1 foot", "1,152 px"],
+  ["1 rem", "16 px"],
+  ["1 pt", "1.333 px"],
+];
+
+const commonValues300 = [
+  ["1 inch", "300 px"],
+  ["1 cm", "118.11 px"],
+  ["1 mm", "11.81 px"],
+  ["1 foot", "3,600 px"],
+  ["A4 page (8.27 in)", "2,480 px wide"],
+  ["4x6 photo", "1,200 x 1,800 px"],
+];
+
+const faqItems = [
+  {
+    question: "What is an online pixel converter?",
+    answer:
+      "An online pixel converter translates pixel values to physical units (inches, centimeters, millimeters, feet) or CSS units (REM, EM, points) based on a target DPI. FeetToPixels runs entirely in your browser, so conversions are instant and no data leaves your device.",
+  },
+  {
+    question: "How do I convert pixels to inches?",
+    answer:
+      "Divide the pixel count by your target DPI. At the web standard of 96 DPI, 960 pixels equals 10 inches. At 300 DPI (professional print), 960 pixels equals 3.2 inches. Use the converter above or the dedicated Pixels to Inches page for more examples.",
+  },
+  {
+    question: "How many pixels are in one inch?",
+    answer:
+      "It depends on DPI. At 72 DPI there are 72 pixels per inch. At 96 DPI (Windows and web default) there are 96 pixels per inch. At 300 DPI (print standard) there are 300 pixels per inch. Choose the DPI that matches your output device.",
+  },
+  {
+    question: "What is 300 DPI in pixels per inch?",
+    answer:
+      "300 DPI means 300 pixels per inch. This is the professional standard for magazines, photo books, and most print marketing materials. A 4 x 6 inch photo at 300 DPI needs a 1,200 x 1,800 pixel image to print sharply.",
+  },
+  {
+    question: "How do I convert pixels to centimeters?",
+    answer:
+      "Use the formula cm = pixels x 2.54 / DPI. At 96 DPI, 100 pixels equals about 2.65 cm. At 300 DPI, 100 pixels equals about 0.85 cm. The converter above shows this value instantly alongside every other unit.",
+  },
+  {
+    question: "How big is 1920x1080 pixels in inches?",
+    answer:
+      "On a screen, 1920 x 1080 is a resolution. Its physical size depends on screen diagonal. On a 24-inch monitor, 1920 x 1080 measures about 20.9 x 11.8 inches. On a 27-inch monitor, it measures about 23.5 x 13.2 inches. See our Common Resolutions page for more screen sizes.",
+  },
+  {
+    question: "What is the difference between DPI and PPI?",
+    answer:
+      "DPI (dots per inch) measures print resolution, the number of ink dots a printer places per inch. PPI (pixels per inch) measures digital resolution, the number of pixels in one inch of a screen or image. Designers often use the terms interchangeably, but DPI belongs to print and PPI belongs to screens.",
+  },
+  {
+    question: "Is the FeetToPixels converter free and do I need to sign up?",
+    answer:
+      "Every tool on FeetToPixels is free, requires no signup, and works entirely in your browser. Nothing is uploaded or stored on a server.",
+  },
+];
 
 export default async function Home({ params }: PageProps) {
   const { locale } = await params;
   const validLocale = (isValidLocale(locale) ? locale : "en") as Locale;
-  const dict = getDictionary(validLocale);
-  const allTools = toolsDropdown.groups.flatMap((g) => g.links);
-  const isEnglish = validLocale === "en";
-  const updatedDateIso = new Date().toISOString().split("T")[0];
+  const homeUrl = `${siteConfig.url}${localizedPath(validLocale, "")}`;
 
-  const featuredTools = getRelatedTools(dict, [
-    { slug: "feet-to-pixels", href: "/feet-to-pixels", icon: "FT" },
-    { slug: "pixel-converter", href: "/pixel-converter", icon: "HUB" },
-    { slug: "pixels-to-feet", href: "/pixels-to-feet", icon: "REV" },
-    { slug: "pixels-to-inches", href: "/pixels-to-inches", icon: "IN" },
-    { slug: "inches-to-pixels", href: "/inches-to-pixels", icon: "OUT" },
-    { slug: "dpi-calculator", href: "/dpi-calculator", icon: "DPI" },
-  ]);
-
-  const heroConverterLinks = [
-    "/feet-to-pixels",
-    "/pixels-to-feet",
-    "/inches-to-pixels",
-    "/pixels-to-inches",
-  ]
-    .map((href) => toolsDropdown.groups[0].links.find((tool) => tool.href === href))
-    .filter((tool): tool is (typeof toolsDropdown.groups)[0]["links"][number] => Boolean(tool));
-  const primaryHeroTool = heroConverterLinks[0];
-  const primaryHeroShortLabel = primaryHeroTool
-    ? getCompactToolLabel(getNavLabel(primaryHeroTool, dict))
-    : "Feet to Pixels";
-
-  const featuredGuides = getRelatedTools(dict, [
-    { slug: "pixels-per-inch", href: "/pixels-per-inch", icon: "PPI" },
-    { slug: "what-is-dpi", href: "/what-is-dpi", icon: "DPI" },
-    { slug: "best-dpi-for-printing", href: "/best-dpi-for-printing", icon: "300" },
-    { slug: "paper-sizes-in-pixels", href: "/paper-sizes-in-pixels", icon: "A4" },
-  ]);
-
-  const homepageValueProps = [
-    { count: "01", title: dict.home.dpiAware, desc: dict.home.dpiAwareDesc },
-    { count: "02", title: dict.home.instant, desc: dict.home.instantDesc },
-    { count: "03", title: dict.home.devFriendly, desc: dict.home.devFriendlyDesc },
-  ];
-
-  const tocItems = isEnglish
-      ? [
-        { id: "top-pixel-conversion-tools", label: "Top Pixel Conversion Tools" },
-        { id: "pixel-conversion-guides", label: "Pixel Conversion Guides" },
-        { id: "quick-start-guide", label: "Quick Start Guide" },
-        { id: "reference-sources", label: "Reference Sources" },
-        { id: "homepage-faq", label: "FAQ" },
-      ]
-    : [];
-
-  const homepageFaqItems = isEnglish
-    ? [
-        {
-          question: "How do I convert feet to pixels?",
-          answer:
-            "Use the formula pixels = feet x 12 x DPI. For example, 1 foot at 96 DPI equals 1152 pixels, while 1 foot at 300 DPI equals 3600 pixels. That is why DPI matters before you size artwork for print or screens.",
-        },
-        {
-          question: "How many pixels are in 1 foot?",
-          answer:
-            "It depends on DPI. At 72 DPI, 1 foot equals 864 pixels. At 96 DPI, it equals 1152 pixels. At 150 DPI, it equals 1800 pixels. At 300 DPI, it equals 3600 pixels.",
-        },
-        {
-          question: "What is the difference between DPI and PPI?",
-          answer:
-            "PPI describes pixel density on screens, while DPI describes print dots on paper. People often use them interchangeably in everyday searches, but for accurate screen and print planning it helps to know which one applies to your project.",
-        },
-        {
-          question: "Which page should I use first on FeetToPixels?",
-          answer:
-            "Start with the Pixel Converter hub if you need a quick answer, the DPI Calculator if you need density calculations, or the Pixels Per Inch guide if you want the highest-volume reference topic explained clearly before converting anything.",
-        },
-      ]
-    : [];
-
-  const webPageJsonLd = {
+  const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${siteConfig.url}${localizedPath(validLocale, "")}#webpage`,
-    url: `${siteConfig.url}${localizedPath(validLocale, "")}`,
-    name: isEnglish ? englishHomeTitle : dict.home.hero,
-    description: isEnglish ? englishHomeDescription : dict.site.description,
-    dateModified: updatedDateIso,
-    inLanguage: validLocale,
-    isPartOf: { "@id": `${siteConfig.url}/#website` },
-    about: ["Feet to pixels converter", "ft to px conversion", "DPI calculator", "Print and screen sizing"],
+    "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
+    name: "FeetToPixels",
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/brand-mark.svg`,
+    description:
+      "Free online pixel conversion tools for designers, developers, and print professionals.",
   };
 
-  const siteNavigationJsonLd = {
+  const websiteJsonLd = {
     "@context": "https://schema.org",
-    "@type": "SiteNavigationElement",
-    name: [
-      dict.pages["feet-to-pixels"]?.title || "Feet to Pixels",
-      dict.pages["pixel-converter"]?.title || "Pixel Converter",
-      dict.pages["pixels-to-inches"]?.title || "Pixels to Inches",
-      dict.pages["dpi-calculator"]?.title || "DPI Calculator",
-      dict.pages["pixels-to-feet"]?.title || "Pixels to Feet",
-      dict.pages["best-dpi-for-printing"]?.title || "Best DPI for Printing",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: "FeetToPixels",
+    description: homeDescription,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    inLanguage: "en",
+  };
+
+  const webApplicationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": `${siteConfig.url}/#app`,
+    name: homeHeadline,
+    url: homeUrl,
+    description: homeDescription,
+    applicationCategory: "UtilityApplication",
+    applicationSubCategory: "Unit Converter",
+    operatingSystem: "Any (Web Browser)",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    featureList: [
+      "Convert pixels to inches at any DPI",
+      "Convert pixels to centimeters, millimeters, feet",
+      "Convert pixels to REM, EM, PT, VW",
+      "DPI presets: 72, 96, 150, 300, 600",
+      "Copy to clipboard",
+      "Works offline after first load",
+      "No signup required",
     ],
-    url: [
-      `${siteConfig.url}${localizedPath(validLocale, "feet-to-pixels")}`,
-      `${siteConfig.url}${localizedPath(validLocale, "pixel-converter")}`,
-      `${siteConfig.url}${localizedPath(validLocale, "pixels-to-inches")}`,
-      `${siteConfig.url}${localizedPath(validLocale, "dpi-calculator")}`,
-      `${siteConfig.url}${localizedPath(validLocale, "pixels-to-feet")}`,
-      `${siteConfig.url}${localizedPath(validLocale, "best-dpi-for-printing")}`,
+    creator: { "@id": `${siteConfig.url}/#organization` },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
     ],
   };
 
   return (
     <>
-      <JsonLd data={webPageJsonLd} />
-      <JsonLd data={siteNavigationJsonLd} />
+      <JsonLd data={organizationJsonLd} />
+      <JsonLd data={websiteJsonLd} />
+      <JsonLd data={webApplicationJsonLd} />
+      <JsonLd data={faqJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
 
-      <SectionWrapper className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 lg:pb-16 lg:pt-18">
-        <div className="absolute inset-x-0 top-0 h-[60%] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_60%)]" />
+      <Container className="py-10 md:py-14">
+        <section aria-labelledby="hero-heading" className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
+            Free online tool
+          </p>
+          <h1
+            id="hero-heading"
+            className="mt-4 text-balance text-4xl font-semibold tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl"
+          >
+            {homeHeadline}
+          </h1>
+          <p className="mt-5 text-balance text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            {homeSubheadline}
+          </p>
+        </section>
 
-        <Container as="article" className="relative">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-              <div className="order-2 max-w-2xl">
-                <p className="inline-flex rounded-full border border-primary-200 bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary-700 shadow-soft">
-                  {isEnglish ? "Pixel conversion" : dict.pages["pixel-converter"]?.title || dict.home.freeOnlineTools}
-                </p>
-                <h1 className="mt-5 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.05em] text-neutral-950 sm:text-5xl lg:text-[3.4rem] lg:leading-[1.02]">
-                  {isEnglish ? "Pixel Converter" : dict.pages["pixel-converter"]?.title || dict.home.hero}
-                </h1>
-                <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-600">
-                  {isEnglish
-                    ? "Convert feet, inches, centimeters, millimeters, rem, and em to pixels at any DPI. Built for print, screens, signage, and large-format design."
-                    : dict.pages["pixel-converter"]?.description || dict.home.heroSub}
-                </p>
-                <p className="mt-3 max-w-xl text-base leading-7 text-neutral-500">
-                  {isEnglish
-                    ? "Pixel, DPI, and PPI are the three entities every designer juggles. This toolkit covers unit conversion, density calculation, and screen-to-print translation in one place \u2014 with the feet-to-pixels calculator shown below as the featured workflow."
-                    : dict.site.description}
-                </p>
+        <section aria-label="Pixel converter" className="mx-auto mt-10 max-w-2xl">
+          <MultiUnitConverter />
+        </section>
 
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href={`/${validLocale}/feet-to-pixels`}
-                    className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-6 text-base font-medium text-white transition-transform hover:-translate-y-0.5 hover:bg-neutral-900"
-                  >
-                    {isEnglish ? "Open full converter" : dict.home.browseTools}
-                  </Link>
-                  <Link
-                    href={`/${validLocale}/pixel-converter`}
-                    className="inline-flex h-12 items-center justify-center rounded-full border border-neutral-300 bg-white/70 px-6 text-base font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
-                  >
-                    {isEnglish ? "Browse all tools" : dict.home.browseTools}
-                  </Link>
-                </div>
-              </div>
-
-              <div className="order-1 relative lg:pr-4">
-                <div
-                  id="start-converting"
-                  className="relative overflow-hidden rounded-[28px] border border-neutral-200 bg-white p-5 shadow-[0_8px_24px_-16px_rgba(15,23,42,0.2)] sm:p-6"
-                >
-                  <div className="border-b border-neutral-200/80 pb-4">
-                    <div className="max-w-xl">
-                      <h2 className="max-w-lg text-2xl font-semibold tracking-[-0.03em] text-neutral-950 sm:text-[2rem]">
-                        {isEnglish ? "Convert Feet to Pixels" : primaryHeroShortLabel}
-                      </h2>
-                      <p className="mt-2 max-w-lg text-sm leading-7 text-neutral-600">
-                        {isEnglish
-                          ? "Enter feet, choose your DPI, and get the pixel value immediately."
-                          : dict.pages["feet-to-pixels"]?.description || dict.site.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {heroConverterLinks.map((tool) => {
-                      const active = tool.href === "/feet-to-pixels";
-                      const compactLabel = getCompactToolLabel(getNavLabel(tool, dict));
-
-                      return (
-                        <Link
-                          key={tool.href}
-                          href={`/${validLocale}${tool.href}`}
-                          className={
-                            active
-                              ? "rounded-full border border-neutral-950 bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition-colors"
-                              : "rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
-                          }
-                        >
-                          {compactLabel}
-                        </Link>
-                      );
-                    })}
-                  </div>
-
-                  <div className="mt-4">
-                    <UnitConverter
-                      locale={validLocale}
-                      fromUnit="Feet"
-                      toUnit="Pixels"
-                      conversionType="ft-to-px"
-                      formula="px = ft x 12 x DPI"
-                      defaultDpi={96}
-                      compact
-                      showFormulaCard={false}
-                      showConversionTable={false}
-                      className="border-0 bg-transparent p-0 shadow-none"
-                    />
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-neutral-200/80 pt-4 text-sm text-neutral-500">
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                      {isEnglish ? "Formula" : dict.tool.formula}
-                    </span>
-                    <span className="mono-display font-medium text-neutral-700">
-                      px = ft x 12 x DPI
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {tocItems.length > 0 && (
-              <div className="mt-6 border-t border-neutral-200/70 pt-4">
-                <div className="flex flex-col gap-2">
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-700">
-                    {dict.nav.onThisPage}
-                  </p>
-                </div>
-                <ul className="mt-3 grid gap-2 text-sm text-neutral-600 sm:grid-cols-2 lg:grid-cols-5">
-                  {tocItems.map((item) => (
-                    <li key={item.id}>
-                      <a
-                        href={`#${item.id}`}
-                        className="block rounded-full border border-neutral-200/70 bg-white/55 px-3 py-2 transition-colors hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-        </Container>
-      </SectionWrapper>
-
-      <SectionWrapper id="top-pixel-conversion-tools" className="pt-8 sm:pt-10">
-        <Container>
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                {dict.nav.tools}
-              </p>
-              <h2 className="mt-3">{isEnglish ? "Feet to Pixels and Related Tools" : dict.home.conversionTools}</h2>
-              <p className="mt-4 max-w-2xl text-neutral-600">
-                {isEnglish
-                  ? "Start with feet to pixels, then move into reverse conversion, inches, and DPI tools when the same project needs a second step."
-                  : dict.home.whySub}
-              </p>
-            </div>
-            <Link
-              href={`/${validLocale}/pixel-converter`}
-              className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-300 bg-white px-5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700"
+        <section aria-labelledby="quick-converters-heading" className="mt-16">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2
+              id="quick-converters-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
             >
-              {dict.home.browseTools}
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {featuredTools.map((tool, index) => (
-              <Card
-                key={tool.href}
-                title={tool.name}
-                description={tool.description}
-                href={`/${validLocale}${tool.href}`}
-                eyebrow={getToolVisualMeta(tool.href, tool.name).label}
-                image={<ToolIcon href={tool.href} name={tool.name} />}
-                className="h-full overflow-hidden border-white/80 bg-white/90 shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)]"
-              >
-                <div className="mt-5 flex items-center justify-between border-t border-neutral-100 pt-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
-                  <span>{tool.icon || getToolVisualMeta(tool.href, tool.name).label}</span>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </SectionWrapper>
-
-      <SectionWrapper
-        id="pixel-conversion-guides"
-        className="theme-dark relative overflow-hidden bg-neutral-950 text-neutral-100"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(20,184,166,0.2),transparent_34%)]" />
-        <Container className="relative">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-300">
-              DPI / PPI
-            </p>
-            <h2 className="mt-3 text-white">
-              {isEnglish ? "Pixel Conversion Guides for DPI, PPI, and Print" : dict.home.learnDpi}
+              Jump to a Specific Converter
             </h2>
-            <p className="mt-4 max-w-2xl text-neutral-300">
-              {isEnglish
-                ? "Informational guides support the tool pages by explaining what DPI means, how PPI affects screens, and which print settings to choose before you convert dimensions."
-                : dict.site.description}
+            <p className="mt-3 text-neutral-600">
+              Every unit has its own dedicated page with more examples, tables,
+              and formula explanations.
             </p>
           </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {featuredGuides.map((guide) => (
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {quickConverters.map((tool) => (
               <Link
-                key={guide.href}
-                href={`/${validLocale}${guide.href}`}
-                className="group rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:border-primary-400/40 hover:bg-white/10"
+                key={tool.href}
+                href={tool.href}
+                className="group flex flex-col gap-2 rounded-xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900/10"
               >
-                <div className="flex items-center gap-3">
-                  <ToolIcon
-                    href={guide.href}
-                    name={guide.name}
-                    className="h-11 w-11 rounded-xl border-white/15 bg-white/8 text-primary-200"
-                  />
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-300">
-                      {getToolVisualMeta(guide.href, guide.name).label}
-                    </p>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-white/60">
-                      {guide.icon}
-                    </p>
-                  </div>
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-white">{guide.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                  {guide.description}
-                </p>
+                <span className="text-sm font-semibold text-neutral-900 group-hover:text-neutral-950">
+                  {tool.title}
+                </span>
+                <span className="text-xs leading-relaxed text-neutral-500">
+                  {tool.description}
+                </span>
+                <span className="mt-auto font-mono text-[11px] uppercase tracking-[0.1em] text-neutral-400">
+                  {tool.formula}
+                </span>
               </Link>
             ))}
           </div>
-        </Container>
-      </SectionWrapper>
+        </section>
 
-      {isEnglish && (
-        <SectionWrapper alt id="quick-start-guide">
-          <Container>
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                Quick start
+        <section aria-labelledby="how-it-works-heading" className="mt-16">
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="how-it-works-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
+            >
+              How Pixel Conversion Works
+            </h2>
+            <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-neutral-700">
+              <p>
+                A pixel is a unit of digital display. Converting pixels into a
+                physical measurement like inches or centimeters depends on DPI
+                (dots per inch), which tells the output device how many pixels
+                fit in one linear inch. At 96 DPI, the modern browser default,
+                one inch of screen space holds 96 pixels. At 300 DPI, the
+                professional print standard, one inch holds 300 pixels.
               </p>
-              <h2 className="mt-3">Choose the Right Tool</h2>
-              <p className="mt-4 max-w-2xl text-neutral-600">
-                Use this practical guide to jump straight to the calculator or reference page that
-                matches your task.
+              <p>
+                CSS units like REM and EM resolve differently. REM is always
+                relative to the root font size (16 pixels by default), so 1 REM
+                equals 16 pixels. EM is relative to the parent element font
+                size. Points (PT) come from typography and are always 72 to the
+                inch, so 1 PT equals 1.333 pixels at 96 DPI.
               </p>
-            </div>
-
-            <div className="table-scroll-shell mt-10 rounded-[28px] border border-neutral-200 bg-white shadow-[0_18px_45px_-36px_rgba(15,23,42,0.42)]">
-              <table className="min-w-full divide-y divide-neutral-200 text-left text-sm">
-                <thead className="bg-neutral-50 text-neutral-700">
-                  <tr>
-                    <th className="px-5 py-4 font-semibold">Task</th>
-                    <th className="px-5 py-4 font-semibold">Best Page</th>
-                    <th className="px-5 py-4 font-semibold">Best For</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-200 text-neutral-600">
-                  <tr>
-                    <td className="px-5 py-4">Convert pixels to inches</td>
-                    <td className="px-5 py-4">
-                      <Link
-                        href={`/${validLocale}/pixels-to-inches`}
-                        className="font-medium text-primary-700 hover:text-primary-800"
-                      >
-                        {dict.pages["pixels-to-inches"]?.title || "Pixels to Inches"}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4">Print sizing, image exports, and layout checks.</td>
-                  </tr>
-                  <tr>
-                    <td className="px-5 py-4">Convert inches to pixels</td>
-                    <td className="px-5 py-4">
-                      <Link
-                        href={`/${validLocale}/inches-to-pixels`}
-                        className="font-medium text-primary-700 hover:text-primary-800"
-                      >
-                        {dict.pages["inches-to-pixels"]?.title || "Inches to Pixels"}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4">Canvas setup, print layouts, and digital signage work.</td>
-                  </tr>
-                  <tr>
-                    <td className="px-5 py-4">Convert between multiple units</td>
-                    <td className="px-5 py-4">
-                      <Link
-                        href={`/${validLocale}/pixel-converter`}
-                        className="font-medium text-primary-700 hover:text-primary-800"
-                      >
-                        {dict.pages["pixel-converter"]?.title || "Pixel Converter"}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4">Quick switching between px, in, cm, mm, ft, and CSS units.</td>
-                  </tr>
-                  <tr>
-                    <td className="px-5 py-4">Check print resolution</td>
-                    <td className="px-5 py-4">
-                      <Link
-                        href={`/${validLocale}/dpi-calculator`}
-                        className="font-medium text-primary-700 hover:text-primary-800"
-                      >
-                        {dict.pages["dpi-calculator"]?.title || "DPI Calculator"}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4">Photo printing, scanned artwork, and image prep workflows.</td>
-                  </tr>
-                  <tr>
-                    <td className="px-5 py-4">Find paper sizes in pixels</td>
-                    <td className="px-5 py-4">
-                      <Link
-                        href={`/${validLocale}/paper-sizes-in-pixels`}
-                        className="font-medium text-primary-700 hover:text-primary-800"
-                      >
-                        {dict.pages["paper-sizes-in-pixels"]?.title || "Paper Sizes in Pixels"}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4">A4, Letter, A3, A5, and other standard page sizes.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </Container>
-        </SectionWrapper>
-      )}
-
-      <SectionWrapper>
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-[0.92fr,1.08fr] lg:items-start">
-            <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                {dict.home.whyTitle}
-              </p>
-              <h2 className="mt-3">{dict.home.whyTitle}</h2>
-              <p className="mt-4 text-neutral-600">
-                {dict.home.whySub}
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {homepageValueProps.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[28px] border border-neutral-200 bg-white p-6 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)]"
+              <p className="text-neutral-600">
+                Read more:{" "}
+                <Link
+                  href="/what-is-a-pixel"
+                  className="font-medium text-neutral-900 underline underline-offset-4 hover:no-underline"
                 >
-                  <p className="mono-display text-xs font-semibold uppercase tracking-[0.24em] text-primary-700">
-                    {item.count}
-                  </p>
-                  <h3 className="mt-4 text-lg font-semibold text-neutral-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+                  What is a Pixel
+                </Link>
+                ,{" "}
+                <Link
+                  href="/what-is-dpi"
+                  className="font-medium text-neutral-900 underline underline-offset-4 hover:no-underline"
+                >
+                  What is DPI
+                </Link>
+                , and{" "}
+                <Link
+                  href="/what-is-ppi"
+                  className="font-medium text-neutral-900 underline underline-offset-4 hover:no-underline"
+                >
+                  What is PPI
+                </Link>
+                .
+              </p>
             </div>
           </div>
-        </Container>
-      </SectionWrapper>
+        </section>
 
-      <SectionWrapper alt>
-        <Container>
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                {dict.nav.tools}
+        <section aria-labelledby="common-values-heading" className="mt-16">
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="common-values-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
+            >
+              Common Pixel Conversions
+            </h2>
+            <p className="mt-3 text-neutral-600">
+              Reference values at the two most common DPI settings.
             </p>
-            <h2 className="mt-3">{dict.home.conversionTools}</h2>
-            <p className="mt-4 max-w-2xl text-neutral-600">
-              {dict.site.description}
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-neutral-200 bg-white p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                  At 96 DPI (web)
+                </p>
+                <dl className="mt-4 divide-y divide-neutral-100">
+                  {commonValues96.map(([label, value]) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-between py-2 text-sm"
+                    >
+                      <dt className="text-neutral-700">{label}</dt>
+                      <dd className="font-mono font-medium text-neutral-950">
+                        {value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <div className="rounded-xl border border-neutral-200 bg-white p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                  At 300 DPI (print)
+                </p>
+                <dl className="mt-4 divide-y divide-neutral-100">
+                  {commonValues300.map(([label, value]) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-between py-2 text-sm"
+                    >
+                      <dt className="text-neutral-700">{label}</dt>
+                      <dd className="font-mono font-medium text-neutral-950">
+                        {value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="learn-heading" className="mt-16">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2
+              id="learn-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
+            >
+              Learn the Basics
+            </h2>
+            <p className="mt-3 text-neutral-600">
+              Short guides that make every pixel conversion obvious.
             </p>
           </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {allTools.map((tool) => (
-              <Card
-                key={tool.href}
-                title={getNavLabel(tool, dict)}
-                description={getNavDescription(tool, dict)}
-                href={`/${validLocale}${tool.href}`}
-                eyebrow={getToolVisualMeta(tool.href, getNavLabel(tool, dict)).label}
-                image={<ToolIcon href={tool.href} name={getNavLabel(tool, dict)} />}
-                className="h-full border-white/80 bg-white/90 shadow-soft"
-              />
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {learnCards.map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group flex flex-col gap-2 rounded-xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900/10"
+              >
+                <span className="text-sm font-semibold text-neutral-900 group-hover:text-neutral-950">
+                  {card.title}
+                </span>
+                <span className="text-xs leading-relaxed text-neutral-500">
+                  {card.description}
+                </span>
+              </Link>
             ))}
           </div>
-        </Container>
-      </SectionWrapper>
+        </section>
 
-      {isEnglish && (
-        <SectionWrapper id="reference-sources">
-          <Container>
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-                Sources
-              </p>
-              <h2 className="mt-3">Reference Sources</h2>
-              <p className="mt-4 max-w-2xl text-neutral-600">
-                These external references support this page&apos;s pixel conversion explanations and
-                help users verify DPI, PPI, screen, and CSS sizing concepts.
-              </p>
+        <section aria-labelledby="faq-heading" className="mt-16">
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="faq-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="mt-6">
+              <FAQ items={faqItems} label="Frequently Asked Questions" />
             </div>
-
-            <div className="mt-10 grid gap-4 md:grid-cols-3">
-              <a
-                href="https://en.wikipedia.org/wiki/Pixel"
-                target="_blank"
-                rel="noreferrer"
-                className="tool-card group"
-              >
-                <h3 className="text-lg font-semibold text-neutral-900">Pixel</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500">
-                  Background on what a pixel is and how digital image dimensions work.
-                </p>
-              </a>
-              <a
-                href="https://en.wikipedia.org/wiki/Dots_per_inch"
-                target="_blank"
-                rel="noreferrer"
-                className="tool-card group"
-              >
-                <h3 className="text-lg font-semibold text-neutral-900">Dots Per Inch</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500">
-                  A reference source for print resolution, output quality, and DPI terminology.
-                </p>
-              </a>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units"
-                target="_blank"
-                rel="noreferrer"
-                className="tool-card group"
-              >
-                <h3 className="text-lg font-semibold text-neutral-900">CSS Units</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500">
-                  MDN guide to px, rem, em, viewport units, and layout sizing basics.
-                </p>
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
-              <span className="font-medium text-neutral-700">Share this page:</span>
-              <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${siteConfig.url}/en`)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-neutral-300 px-3 py-1.5 text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-700"
-              >
-                LinkedIn
-              </a>
-              <a
-                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${siteConfig.url}/en`)}&text=${encodeURIComponent(englishHomeTitle)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-neutral-300 px-3 py-1.5 text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-700"
-              >
-                X
-              </a>
-              <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${siteConfig.url}/en`)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-neutral-300 px-3 py-1.5 text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-700"
-              >
-                Facebook
-              </a>
-            </div>
-          </Container>
-        </SectionWrapper>
-      )}
-
-      {homepageFaqItems.length > 0 && (
-        <SectionWrapper id="homepage-faq" className="pt-0">
-          <Container>
-            <div className="rounded-[32px] border border-neutral-200 bg-white p-6 shadow-[0_18px_48px_-38px_rgba(15,23,42,0.4)] sm:p-8">
-              <FAQ items={homepageFaqItems} label={dict.tool.faq} />
-            </div>
-          </Container>
-        </SectionWrapper>
-      )}
+          </div>
+        </section>
+      </Container>
     </>
   );
 }
