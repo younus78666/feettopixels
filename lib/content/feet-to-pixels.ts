@@ -32,7 +32,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "How Feet to Pixel Conversion Works",
-      p1: "Converting feet to pixels is essential for large-format design projects like banners, signage, and wall graphics. The formula is:",
+      p1: "Designers use feet to pixels conversion for large-format projects such as banners, signage, wall graphics, and room-scale mockups. The formula is:",
       formula: "Pixels = Feet x 12 x DPI",
       p2: "Since there are 12 inches in a foot, you first convert feet to inches, then multiply by DPI to get the pixel count.",
       heading2: "Common Use Cases",

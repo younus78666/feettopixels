@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ReferenceSources } from "@/components/seo/ReferenceSources";
+import { HelpfulContentNotes } from "@/components/content/HelpfulContentNotes";
 import { RelatedTools } from "./RelatedTools";
 import { FAQ } from "./FAQ";
 import { getDictionary } from "@/lib/translations";
@@ -343,6 +344,14 @@ export function ConverterLayout({
         {hasGuideContent ? (
           <div className="prose prose-neutral mt-8 max-w-none empty:hidden">
             {content}
+            {(locale === "en" || !locale) && (
+              <HelpfulContentNotes
+                title={title}
+                summary={heroSummary}
+                slug={normalizedSlug}
+                type="tool"
+              />
+            )}
           </div>
         ) : (
           <div className="prose prose-neutral mt-8 max-w-none">
@@ -377,6 +386,14 @@ export function ConverterLayout({
                   ))}
                 </ul>
               </>
+            )}
+            {(locale === "en" || !locale) && (
+              <HelpfulContentNotes
+                title={title}
+                summary={heroSummary}
+                slug={normalizedSlug}
+                type="tool"
+              />
             )}
           </div>
         )}

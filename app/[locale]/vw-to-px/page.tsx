@@ -80,6 +80,61 @@ export default async function VwToPxPage({ params }: PageProps) {
       description={description}
       slug="/vw-to-px"
       extractiveAnswer={extractive}
+      content={
+        <>
+          <h3 id="how-vw-resolves">How VW resolves in the browser</h3>
+          <p>
+            VW is based on viewport width. One VW equals one percent of the
+            browser&apos;s current viewport width, so 10vw equals 10 percent of
+            the visible page width. Resize the window and the pixel value changes
+            immediately.
+          </p>
+          <p>
+            This makes VW useful for fluid layouts, but it also means a design
+            can become too small on narrow phones or too large on ultra-wide
+            monitors. Convert VW to pixels when you need to check the real output
+            at specific breakpoints.
+          </p>
+          <h3 id="common-vw-values">Common VW to PX values</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>VW</th>
+                <th>375px phone</th>
+                <th>768px tablet</th>
+                <th>1440px desktop</th>
+                <th>1920px desktop</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>5vw</td><td>18.75px</td><td>38.4px</td><td>72px</td><td>96px</td></tr>
+              <tr><td>10vw</td><td>37.5px</td><td>76.8px</td><td>144px</td><td>192px</td></tr>
+              <tr><td>25vw</td><td>93.75px</td><td>192px</td><td>360px</td><td>480px</td></tr>
+              <tr><td>50vw</td><td>187.5px</td><td>384px</td><td>720px</td><td>960px</td></tr>
+              <tr><td>100vw</td><td>375px</td><td>768px</td><td>1440px</td><td>1920px</td></tr>
+            </tbody>
+          </table>
+          <h3 id="where-vw-is-useful">Where VW is useful</h3>
+          <p>
+            VW works well for full-bleed blocks, viewport-based spacing, large
+            image treatments, and fluid type that needs to respond to the whole
+            browser width rather than a parent container. For component layouts
+            inside a fixed parent, percentages are usually more predictable.
+          </p>
+          <ul>
+            <li>Use VW for full-browser width decisions.</li>
+            <li>Use percent when the size should follow the parent container.</li>
+            <li>Use clamp() when VW controls typography or spacing.</li>
+          </ul>
+          <h3 id="clamp-vw-safely">Use clamp() for safer VW typography</h3>
+          <p>
+            Pure VW typography can grow too aggressively. A heading set to 5vw is
+            about 19px on a 375px phone, 72px on a 1440px desktop, and 172px on a
+            3440px ultra-wide monitor. CSS clamp() keeps the fluid behavior while
+            setting practical bounds, for example clamp(2rem, 5vw, 4.5rem).
+          </p>
+        </>
+      }
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faq}

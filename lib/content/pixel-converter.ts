@@ -24,11 +24,48 @@ export const content: LocalizedDocMap = {
         ]
       },
       {
+        "id": "choose-the-right-dpi",
+        "title": "Choose the Right DPI Before You Convert",
+        "paragraphs": [
+          "Pixel conversion becomes reliable only after the output context is clear. Screen work usually starts from CSS pixels and viewport dimensions. Print work starts from physical size, viewing distance, and the print shop's DPI requirement. Large signage sits between those two worlds because a banner viewed from 12 feet away does not need the same pixel density as a photo book held in your hand.",
+          "Use 96 DPI when you need a CSS or screen-reference value, 150 DPI for posters and trade show graphics viewed from a few feet away, and 300 DPI for close-up print pieces such as brochures, labels, and photo prints. For billboards and large wall graphics, 30 to 100 DPI can be acceptable when the viewing distance is long."
+        ]
+      },
+      {
+        "id": "conversion-examples",
+        "title": "Worked Conversion Examples",
+        "table": {
+          "headers": ["Task", "Formula", "Result"],
+          "rows": [
+            ["3 ft banner at 150 DPI", "3 x 12 x 150", "5,400 px wide"],
+            ["2400 px image at 300 DPI", "2400 / 300", "8 inches wide"],
+            ["10 cm label at 300 DPI", "10 x 300 / 2.54", "1,181 px wide"],
+            ["1920 px layout at 96 DPI", "1920 / 96", "20 inches wide"],
+            ["24px CSS text to rem", "24 / 16", "1.5rem"]
+          ]
+        }
+      },
+      {
         "id": "when-to-use-each-converter",
         "title": "When to Use Each Converter",
         "paragraphs": [
           "Use the physical-unit converters when you know the print or real-world size you need. Use the reverse converters when you already have pixel dimensions and want to know how large the output will be at a chosen DPI.",
           "For web and front-end work, the CSS converters help translate pixel values into rem, em, pt, and viewport-based units so the same spacing and typography can scale more predictably across devices."
+        ]
+      },
+      {
+        "id": "quality-checks",
+        "title": "Quality Checks Before Export",
+        "paragraphs": [
+          "After converting, check three things before exporting the file. First, confirm the DPI matches the output type. Second, compare the final pixel dimensions against the largest image or artwork placed in the design. Third, make sure the aspect ratio has not changed during resizing.",
+          "A 4 x 8 foot banner at 150 DPI needs 7,200 x 14,400 pixels. If the main photo in that file is only 2,000 pixels wide, the document size may be correct while the photo still prints soft. The converter gives the target canvas; source image quality still has to match that target.",
+          "For handoff, write down both the converted value and the assumption behind it: 300 DPI for a close-view print, 150 DPI for a poster, 96 DPI for a screen reference, or a specific base font size for CSS. That note saves time when another designer, developer, or print vendor needs to reproduce the same pixel conversion later. It also makes QA easier because the reviewer can test the same source value against the same output requirement."
+        ],
+        "list": [
+          "Confirm the intended output: screen, close-view print, poster, banner, or billboard.",
+          "Use the printer's requested DPI when available instead of guessing.",
+          "Keep the original aspect ratio unless the design is meant to crop.",
+          "Check the largest placed image, not only the final canvas size."
         ]
       }
     ]

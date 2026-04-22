@@ -9,7 +9,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Do pixels still matter in CSS when we have REM and VW?",
-        "answer": "Yes. Pixels remain the underlying reference for all absolute sizing. 1rem defaults to 16px. 1pt equals 1.333px at 96 DPI. Every REM, EM, or VW value is computed back to pixels by the browser before rendering. Understanding pixel-level behavior is essential for debugging layout issues and converting design specs to code."
+        "answer": "Yes. Pixels remain the underlying reference for all absolute sizing. 1rem defaults to 16px. 1pt equals 1.333px at 96 DPI. Every REM, EM, or VW value is computed back to pixels by the browser before rendering. Pixel-level behavior helps you debug layout issues and convert design specs to code."
       },
       {
         "question": "What's the difference between REM, EM, and root-relative units?",

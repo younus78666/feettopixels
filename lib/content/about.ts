@@ -37,6 +37,36 @@ export const content: LocalizedDocMap = {
           "The formulas on FeetToPixels use standard measurement relationships such as 1 inch = 25.4 millimeters and 1 foot = 12 inches. We aim to keep the tools fast, practical, and easy to verify.",
           "Most interactive tools run directly in the browser, which helps keep image checks and calculations private while also making the site fast to use."
         ]
+      },
+      {
+        "id": "editorial-method",
+        "title": "How We Build and Review the Tools",
+        "paragraphs": [
+          "Each conversion page starts with a short answer, then shows the formula, examples, and related tools that help validate the result. For physical conversions, the site keeps DPI visible because pixels only become inches, centimeters, millimeters, or feet after a resolution value is defined. For CSS conversions, the relevant context is the root font size, parent font size, viewport width, or point-to-pixel relationship.",
+          "We review calculator pages for three practical questions: can a reader reproduce the math, does the page explain when the result changes, and does it point to the next useful page without forcing the reader to search again? That is why many pages include conversion tables, worked examples, FAQs, and links between DPI, PPI, image sizing, and CSS units."
+        ],
+        "list": [
+          "Formulas must be visible or explained in plain language.",
+          "Tables should use values that a designer, developer, printer, or student might actually need.",
+          "Content should distinguish screen preview, print output, social upload, and CSS layout assumptions.",
+          "Reference pages are updated when official platform guidance, browser behavior, or common device data changes."
+        ]
+      },
+      {
+        "id": "who-it-helps",
+        "title": "Who FeetToPixels Is For",
+        "paragraphs": [
+          "Designers use FeetToPixels to decide whether an image has enough pixels for a print size. Developers use the CSS unit tools to convert between px, rem, em, pt, and vw while keeping responsive layouts predictable. Print teams use the DPI and large-format references to estimate whether a banner, poster, or sign will hold up at its viewing distance.",
+          "The site is also meant for quick checks. A photographer can test whether a 3000 x 2000 image is enough for an 8 x 10 print. A student can convert A4 dimensions to pixels before making a document cover. A front-end developer can convert a design token from 24px to 1.5rem and confirm the root font-size assumption before shipping CSS."
+        ]
+      },
+      {
+        "id": "what-we-avoid",
+        "title": "What We Avoid",
+        "paragraphs": [
+          "FeetToPixels avoids treating one DPI value as correct for every job. A web image, a passport-style upload, a 4 x 6 photo print, a storefront banner, and a CSS layout token all need different context. The goal is to make that context visible so the result can be checked instead of blindly copied.",
+          "We also avoid padding tool pages with unrelated topics. When a page needs more explanation, the extra content should help the visitor understand the formula, pick the right DPI, avoid a common mistake, or move to the next calculator."
+        ]
       }
     ]
   },

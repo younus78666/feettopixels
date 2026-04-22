@@ -21,7 +21,7 @@ export const content: PageContentMap = {
       {
         question: "Why are centimeters useful for pixel conversion?",
         answer:
-          "Most countries outside the US use the metric system. Knowing pixel-to-cm conversion is essential for international print design, product packaging, and any project with metric specifications.",
+          "Most countries outside the US use the metric system. Pixel-to-cm conversion helps with international print design, product packaging, and projects that arrive with metric specifications.",
       },
       {
         question: "What is the difference between PPI and DPI?",

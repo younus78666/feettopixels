@@ -13,11 +13,11 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What DPI should I use for passport photos?",
-        "answer": "Use 300 DPI for passport photos. This is the standard for all government photo submissions. Lower DPI may result in a blurry or rejected photo."
+        "answer": "Use 300 DPI when scanning or printing passport photos because it converts a 2 x 2 inch US photo to 600 x 600 pixels. For online applications, follow the official pixel dimensions, file size, background, framing, and quality rules first; DPI metadata alone will not make a photo acceptable."
       },
       {
-        "question": "What is the standard business card size in pixels?",
-        "answer": "A standard US business card is 3.5 x 2 inches. At 300 DPI, that equals 1050 x 600 pixels. Include 1/8 inch bleed (37 pixels at 300 DPI) on each side for print-ready files."
+        "question": "Do passport photo pixel requirements vary by country?",
+        "answer": "Yes. The physical photo size, digital minimum size, file-size limit, background rule, and head-size requirement can vary by issuing authority. Use this table for pixel math, then confirm the final rules on the official passport or visa site before submitting."
       }
     ],
     "sections": [
@@ -115,6 +115,36 @@ export const content: LocalizedDocMap = {
             ]
           ]
         }
+      },
+      {
+        "id": "conversion-method",
+        "title": "How to Convert Passport Photo Sizes to Pixels",
+        "paragraphs": [
+          "Passport and visa pages often mix physical sizes, pixel minimums, and file-size limits. The physical-to-pixel math is simple, but it is only one part of approval. Convert the document size first, then check the official rules for head height, background color, shadows, expression, crop, compression, and file size.",
+          "For inch-based sizes, multiply inches by DPI. A 2 x 2 inch US passport or visa photo at 300 DPI becomes 600 x 600 pixels. For metric sizes, multiply millimeters by DPI and divide by 25.4. A 35 x 45 mm photo at 300 DPI becomes about 413 x 531 pixels because 35 x 300 / 25.4 = 413 and 45 x 300 / 25.4 = 531.",
+          "If an online application gives an exact pixel range, use that range over a generic DPI rule. For example, a file can be 600 x 600 pixels and still fail if the head is too large, the image is over-compressed, the background is patterned, or the photo has been digitally altered."
+        ],
+        "list": [
+          "Use the official pixel minimum or range when one is provided.",
+          "Use 300 DPI when scanning a printed passport photo or preparing a print.",
+          "Keep the original image sharp before cropping; do not upscale a blurry source.",
+          "Check file size after export because JPEG compression can change upload eligibility."
+        ]
+      },
+      {
+        "id": "upload-checklist",
+        "title": "Passport Photo Upload Checklist",
+        "paragraphs": [
+          "Before submitting a passport or visa image, verify the measurable parts first: canvas size, aspect ratio, file type, and file size. Then inspect the human parts: face position, eye visibility, neutral expression, plain background, and absence of strong shadows. These non-pixel rules are often the reason a technically correct image still gets rejected.",
+          "A practical workflow is to crop from a high-resolution original, export a copy at the official pixel dimensions, and keep an untouched backup. If the application portal recompresses the image, check the preview before final submission. A photo that looks acceptable in your editor can become soft after repeated saves."
+        ],
+        "list": [
+          "Confirm country and document type before choosing dimensions.",
+          "Use a square 600 x 600 to 1200 x 1200 file for US digital visa-style requirements.",
+          "Use at least 600 x 750 pixels for UK digital passport-style submissions when that rule applies.",
+          "Avoid beauty filters, background edits, artificial sharpening, and heavy compression.",
+          "Re-check the official passport or visa page on the day you submit."
+        ]
       },
       {
         "id": "business-cards",

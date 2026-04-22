@@ -6,6 +6,7 @@ import { EditorialMeta } from "@/components/seo/EditorialMeta";
 import { FAQ } from "@/components/tools/FAQ";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ReferenceSources } from "@/components/seo/ReferenceSources";
+import { HelpfulContentNotes } from "@/components/content/HelpfulContentNotes";
 import { siteConfig } from "@/content/site-config";
 import { getDictionary } from "@/lib/translations";
 import type { Locale } from "@/lib/i18n";
@@ -293,6 +294,14 @@ export function BlogLayout({
           {hasArticleContent ? (
             <div className="prose prose-neutral mt-8 max-w-none">
               {children}
+              {locale === "en" && (
+                <HelpfulContentNotes
+                  title={title}
+                  summary={extractiveAnswer}
+                  slug={slug}
+                  type="article"
+                />
+              )}
             </div>
           ) : (
             <div className="prose prose-neutral mt-8 max-w-none">
@@ -331,6 +340,14 @@ export function BlogLayout({
                     ))}
                   </ul>
                 </>
+              )}
+              {locale === "en" && (
+                <HelpfulContentNotes
+                  title={title}
+                  summary={extractiveAnswer}
+                  slug={slug}
+                  type="article"
+                />
               )}
             </div>
           )}

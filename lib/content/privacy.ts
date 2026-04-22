@@ -40,6 +40,22 @@ export const content: LocalizedDocMap = {
         ]
       },
       {
+        "id": "browser-based-tools",
+        "title": "Browser-Based Tools and Image Checks",
+        "paragraphs": [
+          "Several FeetToPixels tools are designed to run calculations directly in your browser. For example, unit conversions can be calculated locally from the numbers you enter, and image-dimension checks can often read file properties in the browser without needing to upload the image to a server.",
+          "If a tool or future feature requires server-side processing, the page should make that workflow clear. As a general rule, avoid sending sensitive files, private documents, or confidential artwork through any public web tool unless the page explicitly explains how that upload is handled."
+        ]
+      },
+      {
+        "id": "data-retention-and-security",
+        "title": "Data Retention and Security",
+        "paragraphs": [
+          "Contact messages may be retained long enough to answer the request, investigate tool problems, prevent abuse, and maintain basic business records. Analytics and advertising data are generally handled in aggregated or partner-managed systems rather than as a profile of individual calculator activity.",
+          "No public website can guarantee perfect security, but we aim to limit collection, use standard platform protections, and avoid asking for information that is unnecessary for a pixel conversion or support request."
+        ]
+      },
+      {
         "id": "your-rights",
         "title": "Your Rights and Contact",
         "paragraphs": [

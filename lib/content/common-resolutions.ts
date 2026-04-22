@@ -3,7 +3,7 @@ import type { PageContentMap } from "./types";
 export const content: PageContentMap = {
   en: {
     faq: [
-      { question: "What is the most common screen resolution?", answer: "As of 2026, 1920 x 1080 (Full HD) remains the most common desktop resolution worldwide, used by approximately 55% of desktop users. 2560 x 1440 (QHD) is the second most common at around 15%." },
+      { question: "What is the most common screen resolution?", answer: "StatCounter's March 2026 desktop screen-resolution data lists 1920 x 1080 (Full HD) as the top worldwide resolution at 21.16%. The next largest desktop buckets are 1536 x 864 at 9.22%, 1366 x 768 at 7.05%, 1280 x 720 at 4.06%, and 2560 x 1440 at 3.73%." },
       { question: "What is 4K resolution in pixels?", answer: "4K (also called UHD) is 3840 x 2160 pixels, exactly four times the pixel count of Full HD (1920 x 1080). Cinema 4K (DCI 4K) is slightly wider at 4096 x 2160 pixels." },
       { question: "Is QHD the same as 2K?", answer: "Not exactly. QHD is 2560 x 1440 pixels. True 2K (DCI 2K) is 2048 x 1080 pixels. However, QHD is commonly (if inaccurately) marketed as '2K' because its horizontal resolution is close to 2560." },
       { question: "How many pixels does 8K have?", answer: "8K resolution (7680 x 4320) contains 33.2 million pixels - 16 times the pixel count of Full HD. 8K displays are primarily used for professional video production and large-format commercial displays." },

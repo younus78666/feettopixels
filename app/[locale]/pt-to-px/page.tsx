@@ -80,6 +80,59 @@ export default async function PtToPxPage({ params }: PageProps) {
       description={description}
       slug="/pt-to-px"
       extractiveAnswer={extractive}
+      content={
+        <>
+          <h3 id="point-unit-basics">What a point means</h3>
+          <p>
+            A point is a print typography unit. There are 72 points in one inch.
+            Browsers map one CSS inch to 96 CSS pixels, so the web conversion at
+            the standard CSS reference density is 1pt = 96 / 72 = 1.333px.
+          </p>
+          <p>
+            This conversion is about CSS pixels, not the tiny physical pixels on
+            a Retina or high-DPI display. The browser calculates CSS pixels
+            first, then the device maps those CSS pixels to physical device
+            pixels based on device pixel ratio.
+          </p>
+          <h3 id="common-pt-values">Common PT to PX values</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Point size</th>
+                <th>Pixels at 96 DPI</th>
+                <th>Typical use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>9pt</td><td>12px</td><td>Small captions, dense print tables</td></tr>
+              <tr><td>10.5pt</td><td>14px</td><td>Compact body text</td></tr>
+              <tr><td>12pt</td><td>16px</td><td>Default document body text</td></tr>
+              <tr><td>18pt</td><td>24px</td><td>Small headings</td></tr>
+              <tr><td>24pt</td><td>32px</td><td>Display headings</td></tr>
+            </tbody>
+          </table>
+          <h3 id="print-to-web-typography">Print-to-web typography workflow</h3>
+          <p>
+            When translating a print style guide to CSS, convert the point size
+            first, then decide whether the result should remain in pixels or move
+            into REM. For example, a 12pt body font converts to 16px. In most web
+            projects that becomes 1rem. An 18pt subheading converts to 24px,
+            which becomes 1.5rem on a 16px root.
+          </p>
+          <ul>
+            <li>Use PT in print stylesheets and PDF-focused design specs.</li>
+            <li>Use PX or REM in screen CSS after converting the point value.</li>
+            <li>Use the actual print DPI only when calculating raster image output, not CSS type.</li>
+          </ul>
+          <h3 id="common-pt-mistake">Common mistake</h3>
+          <p>
+            Do not assume a 12pt web font and a 12px web font are the same size.
+            At the CSS reference density, 12pt becomes 16px. That is why text
+            copied directly from a print document often looks too small on the
+            web when the point value is treated as a pixel value.
+          </p>
+        </>
+      }
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faq}

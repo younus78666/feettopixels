@@ -138,6 +138,30 @@ export function ContactForm({ locale }: { locale: Locale }) {
                 </div>
               ))}
             </div>
+            <div className="mt-6 border-t border-neutral-200 pt-5">
+              <h3 className="text-lg font-semibold text-neutral-900">
+                How to get the clearest answer
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                A useful FeetToPixels support message gives enough context to
+                reproduce the issue. For calculator feedback, include the page
+                URL, the input value, the selected DPI or base font size, the
+                result shown on the page, and the result you expected. For content
+                feedback, mention the exact heading, table, or FAQ answer that
+                needs clarification.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                We prioritize reports that affect calculation accuracy, indexing,
+                mobile usability, accessibility, or a current reference table. If
+                you are sending a new tool idea, describe the real workflow behind
+                it, such as print sizing, signage, CSS conversion, image export,
+                screen-density comparison, or official ID image preparation.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                Please do not send private documents, sensitive images, passwords,
+                or account credentials through the contact form.
+              </p>
+            </div>
           </section>
         )}
 

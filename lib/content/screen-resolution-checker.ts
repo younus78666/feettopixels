@@ -38,7 +38,7 @@ export const content: LocalizedDocMap = {
         "title": "Why These Numbers Matter",
         "paragraphs": [
           "Physical resolution tells you the display hardware's native pixel count. 1920×1080 is Full HD, 2560×1440 is QHD, 3840×2160 is 4K UHD, 5120×2880 is 5K. Higher resolution on a larger screen gives sharper text and more workspace; on a smaller screen, it gives Retina-class smoothness.",
-          "Device pixel ratio (DPR) is the scaling multiplier browsers use to make UI elements readable on high-density screens. A DPR of 1 is standard density. DPR 2 means every CSS pixel renders as 2×2 physical pixels (total 4× detail). DPR 3 is common on flagship phones. Understanding DPR is essential for responsive image serving, you need 2x or 3x assets for high-DPR devices.",
+          "Device pixel ratio (DPR) is the scaling multiplier browsers use to make UI elements readable on high-density screens. A DPR of 1 is standard density. DPR 2 means every CSS pixel renders as 2 by 2 physical pixels (total 4x detail). DPR 3 is common on flagship phones. DPR guides responsive image serving because high-DPR devices need 2x or 3x assets.",
           "Color depth describes how many distinct colors your display can show. 24-bit (8 bits per RGB channel) is the universal standard, giving 16.7 million colors. 30-bit (10 bits per channel) gives 1.07 billion colors, professional monitors for photo editing, HDR content, and color grading. Color depth affects gradients: 24-bit displays show visible banding in smooth gradients, while 30-bit displays render them smoothly."
         ]
       },

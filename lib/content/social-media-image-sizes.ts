@@ -11,12 +11,12 @@ export const content: PageContentMap = {
       {
         question: "What is the ideal YouTube thumbnail size?",
         answer:
-          "YouTube thumbnails should be 1280 x 720 pixels with a 16:9 aspect ratio. The minimum width is 640 pixels. Use JPG, PNG, or GIF format under 2 MB.",
+          "YouTube now recommends uploading thumbnails as large as possible, with 3840 x 2160 pixels as the high-resolution 16:9 target and 640 pixels as the minimum width. The older 1280 x 720 size is still a common working size, but 4K thumbnails give YouTube more source detail.",
       },
       {
         question: "What resolution should I use for social media images?",
         answer:
-          "DPI does not matter for social media - only pixel dimensions matter. Social platforms compress and serve images at screen resolution regardless of the DPI metadata in the file.",
+          "DPI does not matter for social media. Pixel dimensions, aspect ratio, file format, and compression matter more because platforms resample uploads for screen delivery regardless of DPI metadata.",
       },
       {
         question: "What size is a Facebook cover photo?",
@@ -68,7 +68,7 @@ export const content: PageContentMap = {
       fbRow6ratio: "1.91:1",
       heading3: "YouTube",
       ytRow1: "Thumbnail",
-      ytRow1dim: "1280 x 720",
+      ytRow1dim: "3840 x 2160 recommended; 640 px minimum width",
       ytRow1ratio: "16:9",
       ytRow2: "Channel banner",
       ytRow2dim: "2560 x 1440",
@@ -93,11 +93,11 @@ export const content: PageContentMap = {
       liRow3dim: "1200 x 627",
       liRow3ratio: "1.91:1",
       liRow4: "Company logo",
-      liRow4dim: "300 x 300",
+      liRow4dim: "400 x 400",
       liRow4ratio: "1:1",
-      liRow5: "Company cover",
-      liRow5dim: "1128 x 191",
-      liRow5ratio: "5.9:1",
+      liRow5: "LinkedIn Page cover",
+      liRow5dim: "4200 x 700",
+      liRow5ratio: "6:1",
       heading5: "X (Twitter)",
       twRow1: "Header photo",
       twRow1dim: "1500 x 500",
@@ -111,7 +111,7 @@ export const content: PageContentMap = {
       twRow4: "Card image",
       twRow4dim: "1200 x 628",
       twRow4ratio: "1.91:1",
-      p1: "All social media platforms compress uploaded images, so start with the recommended pixel dimensions for the best quality after compression. Use our Image Size Calculator to verify your images meet the requirements.",
+      p1: "Social media platforms compress uploaded images and may crop previews differently across feed, profile, mobile, and desktop placements. Treat these values as production targets, keep important text away from edges, and re-check platform help docs before a major campaign. Use our Image Size Calculator to verify your export dimensions.",
     },
   },
   es: {

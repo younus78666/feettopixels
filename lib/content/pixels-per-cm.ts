@@ -95,6 +95,14 @@ export const content: LocalizedDocMap = {
           "Scientific publications: Figure dimensions are often required in centimeters at a specific DPI.",
           "Product packaging: Label dimensions use metric measurements that need conversion to pixel dimensions for design software."
         ]
+      },
+      {
+        "id": "accuracy-checks",
+        "title": "How to Check a Pixels-Per-CM Result",
+        "paragraphs": [
+          "A pixels-per-centimeter value is a density, not a finished canvas size. After finding px/cm, multiply it by the number of centimeters in the final width or height. For example, 12 cm at 300 DPI uses 118.11 px/cm, so the target width is about 1,417 pixels.",
+          "If the result is for a screen mockup, 96 DPI is usually the CSS reference point. If the result is for a printed file, use the DPI requested by the printer or publisher. Keeping that DPI note beside the px/cm value prevents the same number from being reused in the wrong production context."
+        ]
       }
     ]
   },

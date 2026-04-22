@@ -80,6 +80,63 @@ export default async function RemToPxPage({ params }: PageProps) {
       description={description}
       slug="/rem-to-px"
       extractiveAnswer={extractive}
+      content={
+        <>
+          <h3 id="how-rem-resolves">How REM resolves in CSS</h3>
+          <p>
+            REM means root em. Every REM value is calculated from the computed
+            font size of the root html element, not from the parent component.
+            In a default browser setup, that root size is 16px, so 1rem equals
+            16px and 2rem equals 32px.
+          </p>
+          <p>
+            Projects sometimes change the root size. A common legacy pattern is
+            html {"{ font-size: 62.5%; }"}, which makes 1rem equal 10px when the
+            browser default remains 16px. That makes mental math easy, but it
+            can surprise users who increase their default font size for
+            accessibility. Check the computed html font size before converting.
+          </p>
+          <h3 id="common-rem-values">Common REM to PX values</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>REM</th>
+                <th>16px root</th>
+                <th>18px root</th>
+                <th>20px root</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>0.5rem</td><td>8px</td><td>9px</td><td>10px</td></tr>
+              <tr><td>0.875rem</td><td>14px</td><td>15.75px</td><td>17.5px</td></tr>
+              <tr><td>1rem</td><td>16px</td><td>18px</td><td>20px</td></tr>
+              <tr><td>1.5rem</td><td>24px</td><td>27px</td><td>30px</td></tr>
+              <tr><td>2rem</td><td>32px</td><td>36px</td><td>40px</td></tr>
+            </tbody>
+          </table>
+          <h3 id="when-to-convert-rem">When designers need the pixel value</h3>
+          <p>
+            REM is the right unit for scalable CSS, but pixels are still useful
+            when communicating with designers, comparing browser output, or
+            matching screenshots. A design token such as 1.25rem is clearer to
+            an engineer; the equivalent 20px value is clearer in a Figma spec or
+            bug report.
+          </p>
+          <ul>
+            <li>Use REM for type size, spacing tokens, layout width, and component rhythm.</li>
+            <li>Convert to PX when checking computed browser output or comparing screenshots.</li>
+            <li>Keep root-size changes documented, because every REM value depends on it.</li>
+          </ul>
+          <h3 id="accessibility-note">Accessibility note</h3>
+          <p>
+            REM respects the root font size, so it responds better to user
+            preferences than hard-coded pixel typography. If a user increases
+            default text size, REM-based type and spacing can scale together.
+            That is usually better than forcing a fixed 14px or 16px size
+            everywhere.
+          </p>
+        </>
+      }
       breadcrumbs={breadcrumbs}
       relatedTools={relatedTools}
       faqItems={faq}

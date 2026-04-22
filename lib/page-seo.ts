@@ -242,7 +242,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
     description:
       "What DPI should you use for printing? 300 DPI for photos, 150 DPI for general documents, 72 DPI for web only. Complete DPI printing guide with size charts.",
     extractive:
-      "For photo printing, use 300 DPI. For documents and brochures, 150 DPI is sufficient. For large-format posters viewed from distance, 72-100 DPI works. Higher DPI always means better quality.",
+      "For photo printing viewed up close, use about 300 DPI. For documents and brochures, 150-200 DPI is often enough. For large-format posters viewed from distance, 72-150 DPI can work if the source image is clean.",
   },
   "paper-sizes-in-pixels": {
     title: "A4 Size in Pixels and Other Paper Sizes at Every DPI",
@@ -284,7 +284,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
     description:
       "What DPI should web images be? 72 DPI is the traditional standard, but pixel dimensions matter more than DPI for web. Learn why, plus image optimization tips.",
     extractive:
-      "For web images, DPI does not matter - only pixel dimensions matter. A 1200x800 image displays identically whether saved at 72 or 300 DPI. Save at 72 DPI for smaller file sizes.",
+      "For web images, DPI metadata does not control browser display size - pixel dimensions do. A 1200x800 image displays the same on a page whether the file metadata says 72 DPI, 96 DPI, or 300 DPI.",
   },
   "pixels-per-cm": {
     title: "Pixels Per CM: How Many Pixels in a Centimeter?",
@@ -362,6 +362,39 @@ const imageSources: ReferenceSource[] = [
   },
 ];
 
+const slugSpecificSources: Record<string, ReferenceSource[]> = {
+  "common-resolutions": [
+    {
+      title: "StatCounter: Desktop Screen Resolution Stats Worldwide",
+      href: "https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide/2025",
+      description:
+        "Current desktop screen-resolution market-share data used to verify common resolution claims.",
+    },
+  ],
+  "passport-photo-size": [
+    {
+      title: "U.S. Department of State: Digital Image Requirements",
+      href: "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html",
+      description:
+        "Official U.S. digital photo dimensions, file format, color, and scan requirements.",
+    },
+    {
+      title: "GOV.UK: Passport Photo Guidance for Photographers",
+      href: "https://www.gov.uk/government/publications/passport-photos-guide-for-photographers/guidance-for-photographers",
+      description:
+        "UK passport-photo quality and framing guidance for paper and digital photos.",
+    },
+  ],
+  "social-media-image-sizes": [
+    {
+      title: "YouTube Help: Custom Thumbnail Size and Resolution",
+      href: "https://support.google.com/youtube/answer/72431",
+      description:
+        "Official YouTube custom thumbnail guidance, including resolution, aspect ratio, file type, and upload limits.",
+    },
+  ],
+};
+
 const cssSlugs = new Set([
   "px-to-rem",
   "px-to-em",
@@ -414,6 +447,8 @@ export function getReferenceSources(slug: string): ReferenceSource[] {
   if (imageSlugs.has(slug) || !cssSlugs.has(slug)) {
     sources.push(...imageSources);
   }
+
+  sources.push(...(slugSpecificSources[slug] || []));
 
   return dedupeSources(sources);
 }

@@ -33,7 +33,7 @@ export const content: PageContentMap = {
       heading1: "How CM to Pixel Conversion Works",
       p1: "Converting centimeters to pixels requires an intermediate step through inches, since DPI is defined as dots per inch. The formula is:",
       formula: "Pixels = (CM x DPI) / 2.54",
-      p2: "The constant 2.54 represents the number of centimeters in one inch. This conversion is essential for designers in countries using the metric system who need to create digital assets at specific physical sizes.",
+      p2: "The constant 2.54 represents the number of centimeters in one inch. This conversion helps designers working in metric specs create digital assets at specific physical sizes.",
       heading2: "Common Use Cases",
       li1: "International print design: Convert metric specifications to pixel dimensions for digital production.",
       li2: "Product packaging: Calculate pixel dimensions for labels and packaging measured in centimeters.",

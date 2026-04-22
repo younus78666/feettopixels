@@ -455,6 +455,91 @@ export default async function Home({ params }: PageProps) {
           </div>
         </section>
 
+        <section aria-labelledby="dpi-choice-heading" className="mt-16">
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="dpi-choice-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
+            >
+              Which DPI Should You Use?
+            </h2>
+            <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-neutral-700">
+              <p>
+                Choose DPI from viewing distance, not from habit. A close-up
+                photo print needs more pixel density than a wall graphic or
+                event banner because the viewer can see smaller detail. A large
+                sign seen from across a room can look sharp at a lower DPI,
+                which keeps the file manageable.
+              </p>
+              <p>
+                For screen planning and CSS-style estimates, 96 DPI is the most
+                useful reference. For posters, trade show panels, and indoor
+                signs, 150 DPI is a practical starting point. For small print,
+                fine text, product labels, and photo-quality output, use 300 DPI
+                unless your printer gives a different specification.
+              </p>
+            </div>
+            <div className="mt-6 overflow-x-auto rounded-xl border border-neutral-200 bg-white">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-neutral-200 bg-neutral-50 text-left text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                    <th className="px-4 py-3">DPI</th>
+                    <th className="px-4 py-3">Best for</th>
+                    <th className="px-4 py-3">1 foot equals</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["72", "large banners, wall graphics, distance viewing", "864 px"],
+                    ["96", "screen reference, layout planning, rough mockups", "1,152 px"],
+                    ["150", "posters, trade show displays, indoor signs", "1,800 px"],
+                    ["300", "close-up print, small text, photo-quality output", "3,600 px"],
+                  ].map(([dpi, use, pixels]) => (
+                    <tr key={dpi} className="border-b border-neutral-100 last:border-b-0">
+                      <td className="px-4 py-3 font-mono font-semibold text-neutral-950">{dpi}</td>
+                      <td className="px-4 py-3 text-neutral-700">{use}</td>
+                      <td className="px-4 py-3 font-mono text-neutral-700">{pixels}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="export-check-heading" className="mt-16">
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="export-check-heading"
+              className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl"
+            >
+              Check the Pixel Size Before You Export
+            </h2>
+            <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-neutral-700">
+              <p>
+                The calculator tells you the target canvas size, but it does not
+                magically add detail to a low-resolution image. If a 4 x 8 foot
+                banner at 150 DPI needs 7,200 x 14,400 pixels, the images placed
+                inside that design should also have enough resolution for their
+                printed size.
+              </p>
+              <p>
+                A practical export check is to convert the final physical size,
+                confirm the document pixel dimensions, then inspect the largest
+                photo, logo, or texture in the file. Vector logos scale cleanly.
+                Raster photos need enough pixels for the size they occupy in the
+                final design.
+              </p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>Use the printer&apos;s requested DPI when it is available.</li>
+                <li>Keep the same aspect ratio unless the design intentionally crops.</li>
+                <li>Check placed images separately from the final canvas size.</li>
+                <li>Use lower DPI for distant viewing to avoid oversized files.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section aria-labelledby="learn-heading" className="mt-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2
