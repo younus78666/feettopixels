@@ -12,6 +12,8 @@ interface FAQItem {
 interface FAQProps {
   items: FAQItem[];
   label?: string;
+  showHeading?: boolean;
+  includeJsonLd?: boolean;
 }
 
 function FAQAccordionItem({ item, isOpen, onToggle }: {
@@ -58,7 +60,12 @@ function FAQAccordionItem({ item, isOpen, onToggle }: {
   );
 }
 
-export function FAQ({ items, label }: FAQProps) {
+export function FAQ({
+  items,
+  label,
+  showHeading = true,
+  includeJsonLd = true,
+}: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   if (items.length === 0) return null;
@@ -76,12 +83,20 @@ export function FAQ({ items, label }: FAQProps) {
     })),
   };
 
+  const sectionLabel = label || "Frequently Asked Questions";
+
   return (
-    <section id="faq" className="mt-12">
-      <JsonLd data={jsonLd} />
-      <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
-        {label || "Frequently Asked Questions"}
-      </h2>
+    <section
+      id="faq"
+      className="mt-12"
+      aria-label={showHeading ? undefined : sectionLabel}
+    >
+      {includeJsonLd && <JsonLd data={jsonLd} />}
+      {showHeading && (
+        <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
+          {sectionLabel}
+        </h2>
+      )}
       <div className="rounded-xl border border-neutral-200 bg-white px-6 shadow-soft">
         {items.map((item, index) => (
           <FAQAccordionItem

@@ -495,7 +495,12 @@ export default async function Home({ params }: PageProps) {
               Frequently Asked Questions
             </h2>
             <div className="mt-6">
-              <FAQ items={faqItems} label="Frequently Asked Questions" />
+              <FAQ
+                items={faqItems}
+                label="Frequently Asked Questions"
+                showHeading={false}
+                includeJsonLd={false}
+              />
             </div>
           </div>
         </section>

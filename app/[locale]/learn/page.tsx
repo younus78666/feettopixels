@@ -159,7 +159,7 @@ export default async function LearnPage({ params }: PageProps) {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold text-neutral-900">Foundational Guides</h2>
+        <h2 className="text-2xl font-semibold text-neutral-900">Start With the Foundations</h2>
         <p className="mt-2 max-w-2xl text-neutral-600">
           Core concepts: what pixels are, what DPI means, what PPI means, and how they relate.
         </p>
@@ -178,7 +178,7 @@ export default async function LearnPage({ params }: PageProps) {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold text-neutral-900">Comparison Guides</h2>
+        <h2 className="text-2xl font-semibold text-neutral-900">Compare Key Concepts</h2>
         <p className="mt-2 max-w-2xl text-neutral-600">
           Clarify the concepts that confuse most designers and developers.
         </p>
@@ -197,7 +197,7 @@ export default async function LearnPage({ params }: PageProps) {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold text-neutral-900">Reference Pages</h2>
+        <h2 className="text-2xl font-semibold text-neutral-900">Browse Reference Tables</h2>
         <p className="mt-2 max-w-2xl text-neutral-600">
           Quick-lookup tables for print sizes, social media, paper, resolutions, and metric density.
         </p>

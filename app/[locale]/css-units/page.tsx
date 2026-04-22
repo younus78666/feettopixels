@@ -174,7 +174,7 @@ export default async function CssUnitsPage({ params }: PageProps) {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold text-neutral-900">Concept Guides</h2>
+        <h2 className="text-2xl font-semibold text-neutral-900">CSS Concept Resources</h2>
         <p className="mt-2 max-w-2xl text-neutral-600">
           Understand the fundamentals before converting.
         </p>
