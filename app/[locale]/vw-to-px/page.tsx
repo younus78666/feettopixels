@@ -13,7 +13,7 @@ interface PageProps {
 
 const title = "VW to PX Converter: Convert Viewport Width Units to Pixels";
 const description =
-  "Convert VW to pixels for responsive design. Enter viewport width and vw value to get the computed pixel width. Includes formula examples. Free VW to PX calculator.";
+  "Convert VW to pixels for responsive design. Enter viewport width and vw value to get the computed pixel width. Includes formula. Free VW to PX calculator.";
 const extractive =
   "To convert VW to pixels, multiply the vw value by the viewport width and divide by 100. On a 1920px viewport: 10vw = 192px, 50vw = 960px, 100vw = 1920px. VW units scale proportionally as the viewport resizes.";
 
