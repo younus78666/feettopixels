@@ -254,7 +254,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   "standard-image-sizes": {
     title: "Standard Image Sizes in Pixels: 4x6, 5x7, 8x10, and More",
     description:
-      "Standard photo print sizes in pixels for 4x6, 5x7, 8x10, 11x14, 16x20, and 24x36. Pixel dimensions at 150 and 300 DPI. Complete size reference chart.",
+      "Standard photo print sizes in pixels for 4x6, 5x7, 8x10, 11x14, 16x20, and 24x36. Pixel dimensions at 150 and 300 DPI. Complete print size reference chart.",
     extractive:
       "4x6 photo at 300 DPI: 1200x1800 pixels. 5x7: 1500x2100. 8x10: 2400x3000. 11x14: 3300x4200. These are minimum pixel dimensions for sharp prints at each size.",
   },

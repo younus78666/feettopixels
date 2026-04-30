@@ -120,6 +120,11 @@ export default async function PixelConverterPage({ params }: PageProps) {
       "@id": `${pageUrl}#tool`,
     },
     dateModified: DEFAULT_PAGE_DATE,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: "FeetToPixels",
+    },
   };
   const webAppJsonLd = {
     "@context": "https://schema.org",
