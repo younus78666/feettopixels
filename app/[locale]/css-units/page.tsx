@@ -19,7 +19,7 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const title = "CSS Unit Converters: PX to REM, EM, PT, and VW";
+const title = "CSS Unit Converters: PX to REM, EM, PT, and VW Online";
 const description =
   "CSS unit conversion hub for pixels, REM, EM, PT, and VW. Interactive converters plus explainer guides for responsive web design and front-end development.";
 

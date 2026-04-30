@@ -28,7 +28,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "FeetToPixels is a focused set of pixel conversion tools built for print sizing, screen measurements, and front-end workflows where DPI and physical dimensions matter.",
   },
   contact: {
-    title: "Contact FeetToPixels - Tool Support, Feedback, and Bug Reports",
+    title: "Contact FeetToPixels: Support, Feedback, and Bug Reports",
     description:
       "Contact FeetToPixels for tool feedback, bug reports, feature requests, content suggestions, or partnership questions about our free pixel conversion tools.",
     extractive:
@@ -105,7 +105,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "To convert pixels to feet, divide pixels by (DPI x 12). At 96 DPI, 1152 pixels equals 1 foot. At 300 DPI, 3600 pixels equals 1 foot.",
   },
   "dpi-calculator": {
-    title: "DPI Calculator: Calculate Dots Per Inch from Image Dimensions",
+    title: "DPI Calculator: Calculate Dots Per Inch for Any Image",
     description:
       "Calculate DPI from pixel dimensions and print size. Free online DPI calculator for designers, photographers, printers, and anyone checking image resolution.",
     extractive:
@@ -133,7 +133,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "Aspect ratio is the proportional relationship between width and height. 1920x1080 is 16:9. To calculate, divide both by their greatest common divisor. Common ratios: 16:9, 4:3, 1:1, 3:2.",
   },
   "image-size-calculator": {
-    title: "Image Size Calculator: Calculate Dimensions for Print and Web",
+    title: "Image Size Calculator: Find Dimensions for Print and Web",
     description:
       "Calculate image size in pixels, inches, or cm at any DPI. Find optimal dimensions for print and web. Estimate file size from resolution and color depth.",
     extractive:
@@ -147,14 +147,14 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "If you are asking what is my screen resolution, this checker reads your current display settings and reports the pixel dimensions, device pixel ratio, and other useful screen details.",
   },
   "image-dpi-checker": {
-    title: "Check Image DPI Online: Free Image DPI Checker",
+    title: "Check Image DPI: Free Online Image DPI Checker Tool",
     description:
       "Check image DPI online to see resolution, dimensions, and print quality. Upload an image and find whether it is ready for 300 DPI, 150 DPI, or screen use.",
     extractive:
       "Use this tool to check image DPI, inspect pixel dimensions, and estimate print size at 300 DPI, 150 DPI, and 96 DPI before you export or print.",
   },
   "pixel-ruler": {
-    title: "Online Pixel Ruler: Measure Pixels on Your Screen",
+    title: "Online Pixel Ruler: Measure Pixels Accurately on Screen",
     description:
       "Measure pixels directly on your screen with a free online pixel ruler. Drag to measure width and height, then calibrate for more accurate measurements.",
     extractive:
@@ -189,7 +189,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "To convert pixels to VW, divide pixels by viewport width and multiply by 100. On a 1920px viewport, 192px equals 10vw. VW units make elements scale proportionally to browser width.",
   },
   "pixel-converter": {
-    title: "Pixel Converter: All-in-One Unit Conversion Tool",
+    title: "Pixel Converter: All-in-One Unit Conversion Tool Online",
     description:
       "Convert pixels to inches, cm, mm, feet, rem, em, pt, vw, and more. All-in-one pixel converter with DPI settings. The only pixel conversion tool you need.",
     extractive:
@@ -231,7 +231,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "A pixel (picture element) is the smallest addressable unit on a digital display. Each pixel contains subpixels (red, green, blue) that combine to create any visible color.",
   },
   "dpi-vs-ppi": {
-    title: "DPI vs PPI: What's the Difference Between Dots and Pixels?",
+    title: "DPI vs PPI: Difference Between Dots Per Inch and Pixels",
     description:
       "Learn the key differences between DPI and PPI, when each measurement applies, why they are often confused, and how to choose the right setting for your work.",
     extractive:
@@ -259,7 +259,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "4x6 photo at 300 DPI: 1200x1800 pixels. 5x7: 1500x2100. 8x10: 2400x3000. 11x14: 3300x4200. These are minimum pixel dimensions for sharp prints at each size.",
   },
   "social-media-image-sizes": {
-    title: "Instagram Post Size in Pixels and Other Social Media Image Sizes",
+    title: "Social Media Image Sizes and Instagram Post Size Guide",
     description:
       "Find the correct Instagram post size in pixels plus Facebook, YouTube, Twitter/X, LinkedIn, and other social media image dimensions in one updated 2026 guide.",
     extractive:
@@ -287,7 +287,7 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "For web images, DPI metadata does not control browser display size - pixel dimensions do. A 1200x800 image displays the same on a page whether the file metadata says 72 DPI, 96 DPI, or 300 DPI.",
   },
   "pixels-per-cm": {
-    title: "Pixels Per CM: How Many Pixels in a Centimeter?",
+    title: "Pixels Per CM: How Many Pixels Are in a Centimeter?",
     description:
       "How many pixels per centimeter? At 96 DPI: 37.8 px/cm. At 72 DPI: 28.35 px/cm. At 300 DPI: 118.11 px/cm. Complete pixels per cm reference with formula.",
     extractive:
@@ -301,14 +301,14 @@ export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
       "Pixels per millimeter depends on DPI. At 96 DPI there are about 3.78 pixels per millimeter, while at 300 DPI there are about 11.81 pixels per millimeter.",
   },
   "pixels-per-foot": {
-    title: "Pixels Per Foot: How Many Pixels in a Foot?",
+    title: "Pixels Per Foot: How Many Pixels Fit in One Foot at Any DPI",
     description:
       "How many pixels per foot? At 96 DPI: 1,152 pixels. At 72 DPI: 864 pixels. At 300 DPI: 3,600 pixels. Pixel per foot reference for large format and signage.",
     extractive:
       "At 96 DPI, there are 1,152 pixels per foot (96 x 12 inches). At 300 DPI, there are 3,600 pixels per foot. At 72 DPI, there are 864 pixels per foot.",
   },
   "dpi-conversion-table": {
-    title: "DPI Conversion Table: Quick Reference Chart for All Resolutions",
+    title: "DPI Conversion Table: Reference Chart for All Resolutions",
     description:
       "DPI conversion table showing pixels per inch, per cm, and per mm at 72, 96, 150, 200, 300, and 600 DPI. Quick reference chart for designers and printers.",
     extractive:

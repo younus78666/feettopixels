@@ -19,7 +19,7 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const title = "Learn Pixel Conversion, DPI, PPI, and CSS Units";
+const title = "Learn Pixel Conversion: DPI, PPI, and CSS Units Guide";
 const description =
   "The complete educational hub for pixel, DPI, PPI, and CSS unit concepts. Guides, comparisons, and reference tables for print, screens, and web design.";
 
