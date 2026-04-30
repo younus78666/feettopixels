@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: pageDict?.title || "dpi-vs-ppi",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageDict?.title || "dpi-vs-ppi" }],
     },
   };
 }

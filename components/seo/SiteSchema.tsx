@@ -21,6 +21,7 @@ export function SiteSchema() {
           name: siteConfig.name,
           legalName: "FeetToPixels",
           url: siteConfig.url,
+          email: "contact@feettopixels.com",
           logo: `${siteConfig.url}${siteConfig.logo}`,
           image: `${siteConfig.url}${siteConfig.logo}`,
           description: siteConfig.description,
@@ -28,6 +29,7 @@ export function SiteSchema() {
           sameAs: [
             siteConfig.links.twitter,
             siteConfig.links.github,
+            siteConfig.url,
           ].filter(Boolean),
           knowsAbout: [
             "Pixel conversion and unit calculation",

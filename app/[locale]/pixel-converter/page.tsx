@@ -38,6 +38,7 @@ export async function generateMetadata({
       title: pageDict?.title || "pixel-converter",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageDict?.title || "pixel-converter" }],
     },
   };
 }

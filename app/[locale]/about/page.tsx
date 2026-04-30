@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: pageDict?.title || "About FeetToPixels",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: "About FeetToPixels" }],
     },
   };
 }
@@ -55,8 +56,11 @@ export default async function AboutPage({ params }: PageProps) {
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
+    email: "contact@feettopixels.com",
+    sameAs: [siteConfig.url],
     description: dict.site.description,
     logo: `${siteConfig.url}/icon.svg`,
   };

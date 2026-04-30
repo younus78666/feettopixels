@@ -29,11 +29,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "privacy",
     description: pageDict?.description || "",
+    robots: { index: false, follow: false },
     alternates: buildAlternates(locale, "privacy"),
     openGraph: {
       title: pageDict?.title || "Privacy Policy",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: "FeetToPixels Privacy Policy" }],
     },
   };
 }
@@ -59,6 +61,11 @@ export default async function PrivacyPage({ params }: PageProps) {
     description: pageDict?.description || "",
     url: `${siteConfig.url}${localizedPath(validLocale, "privacy")}`,
     inLanguage: validLocale,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: "FeetToPixels",
+    },
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,
     },

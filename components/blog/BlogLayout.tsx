@@ -131,6 +131,7 @@ export function BlogLayout({
     "@id": `${pageUrl}#article`,
     headline: title,
     description: extractiveAnswer,
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
     datePublished,
     dateModified,
     url: pageUrl,
@@ -161,6 +162,11 @@ export function BlogLayout({
     inLanguage: pageLocale,
     datePublished,
     dateModified,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: "FeetToPixels",
+    },
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,
     },

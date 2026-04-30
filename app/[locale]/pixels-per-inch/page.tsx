@@ -15,7 +15,7 @@ interface PageProps {
 
 const pageTitle = "Pixels Per Inch (PPI): Calculator, Formula, and Reference";
 const pageDescription =
-  "Calculate pixels per inch for any screen. Free PPI calculator with formula, device reference table, 1920x1080 and 4K values, retina thresholds, and PPI vs DPI explained.";
+  "Calculate pixels per inch for any screen. Free PPI calculator with formula, device reference table, 4K and retina thresholds, and PPI vs DPI explained.";
 const pageHeadline = "Pixels Per Inch";
 const pageSubheadline =
   "Calculate screen PPI, compare pixel density across devices, and see every PPI value that matters for web, print, and UI work.";
@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       url: `${siteConfig.url}/pixels-per-inch`,
       siteName: "FeetToPixels",
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageTitle }],
     },
     twitter: {
       card: "summary_large_image",

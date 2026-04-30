@@ -27,11 +27,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: pageDict?.title || "terms",
     description: pageDict?.description || "",
+    robots: { index: false, follow: false },
     alternates: buildAlternates(locale, "terms"),
     openGraph: {
       title: pageDict?.title || "Terms of Service",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: "FeetToPixels Terms of Service" }],
     },
   };
 }
@@ -71,6 +73,11 @@ export default async function TermsPage({ params }: PageProps) {
     url: `${siteConfig.url}${localizedPath(validLocale, "terms")}`,
     inLanguage: validLocale,
     dateModified,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: "FeetToPixels",
+    },
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,
     },

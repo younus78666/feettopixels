@@ -13,7 +13,7 @@ interface PageProps {
 
 const title = "EM to PX Converter: Convert EM Units to Pixels Online";
 const description =
-  "Convert EM to pixels for CSS. Set parent font size and convert em values to absolute pixel widths. Free online EM to PX calculator.";
+  "Convert EM to pixels for CSS. Set the parent font size and convert em values to absolute pixel widths with formula examples. Free online EM to PX calculator.";
 const extractive =
   "To convert EM to pixels, multiply the em value by the parent element's font size. If the parent is 16px: 1em = 16px, 1.5em = 24px, 2em = 32px. Unlike REM, EM is relative to the parent, not the root.";
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: buildAlternates(locale, "em-to-px"),
-    openGraph: { title, description, locale: ogLocaleMap[locale] },
+    openGraph: { title, description, locale: ogLocaleMap[locale], images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: title }] },
   };
 }
 

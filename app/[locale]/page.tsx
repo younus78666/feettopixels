@@ -15,7 +15,7 @@ interface PageProps {
 
 const homeTitle = "Feet to Pixels Converter - Convert FT to PX at Any DPI";
 const homeDescription =
-  "Convert feet to pixels at 72, 96, 150, and 300 DPI. Free FT to PX calculator for signage, banners, displays, print prep, and layout planning.";
+  "Convert feet to pixels at 72, 96, 150, and 300 DPI. Free FT to PX calculator for signage, banners, large-format displays, print prep, and layout work.";
 const homeHeadline = "Feet to Pixels Converter";
 const homeSubheadline =
   "Convert feet to pixels for banners, signage, wall graphics, displays, and print layouts. Choose any DPI and get the exact pixel width instantly.";
@@ -48,11 +48,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       url: siteConfig.url,
       siteName: "FeetToPixels",
+      images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: homeTitle }],
     },
     twitter: {
       card: "summary_large_image",
       title: homeTitle,
       description: homeDescription,
+      images: [siteConfig.ogImage],
     },
   };
 }
@@ -209,7 +211,9 @@ export default async function Home({ params }: PageProps) {
     "@id": `${siteConfig.url}/#organization`,
     name: "FeetToPixels",
     url: siteConfig.url,
+    email: "contact@feettopixels.com",
     logo: `${siteConfig.url}/brand-mark.svg`,
+    sameAs: [siteConfig.url],
     description:
       "Free feet to pixels and DPI-aware pixel conversion tools for designers, developers, print shops, and sign makers.",
   };
@@ -223,6 +227,14 @@ export default async function Home({ params }: PageProps) {
     description: homeDescription,
     publisher: { "@id": `${siteConfig.url}/#organization` },
     inLanguage: "en",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/pixel-converter?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   const webApplicationJsonLd = {

@@ -21,7 +21,7 @@ interface PageProps {
 
 const title = "CSS Unit Converters: PX to REM, EM, PT, and VW";
 const description =
-  "CSS unit conversion hub for pixels, REM, EM, PT, and VW. Interactive converters plus explainer guides for modern responsive web design.";
+  "CSS unit conversion hub for pixels, REM, EM, PT, and VW. Interactive converters plus explainer guides for responsive web design and front-end development.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       locale: ogLocaleMap[locale],
+      images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: title }],
     },
   };
 }

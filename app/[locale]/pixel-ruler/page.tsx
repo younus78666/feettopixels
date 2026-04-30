@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: pageDict?.title || "pixel-ruler",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageDict?.title || "pixel-ruler" }],
     },
   };
 }

@@ -13,7 +13,7 @@ interface PageProps {
 
 const title = "VW to PX Converter: Convert Viewport Width Units to Pixels";
 const description =
-  "Convert VW to pixels for responsive design. Enter viewport width and vw value to get the computed pixel width. Free VW to PX calculator.";
+  "Convert VW to pixels for responsive design. Enter viewport width and vw value to get the computed pixel width. Includes formula and common examples. Free VW to PX calculator.";
 const extractive =
   "To convert VW to pixels, multiply the vw value by the viewport width and divide by 100. On a 1920px viewport: 10vw = 192px, 50vw = 960px, 100vw = 1920px. VW units scale proportionally as the viewport resizes.";
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: buildAlternates(locale, "vw-to-px"),
-    openGraph: { title, description, locale: ogLocaleMap[locale] },
+    openGraph: { title, description, locale: ogLocaleMap[locale], images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: title }] },
   };
 }
 

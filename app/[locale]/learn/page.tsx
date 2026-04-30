@@ -21,7 +21,7 @@ interface PageProps {
 
 const title = "Learn Pixel Conversion, DPI, PPI, and CSS Units";
 const description =
-  "The complete educational hub for pixel, DPI, PPI, and CSS unit concepts. Guides, comparisons, and reference tables for print, screen, and web design.";
+  "The complete educational hub for pixel, DPI, PPI, and CSS unit concepts. Guides, comparisons, and reference tables for print, screens, and web design.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       locale: ogLocaleMap[locale],
+      images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: title }],
     },
   };
 }

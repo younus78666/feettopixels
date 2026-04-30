@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: pageDict?.title || "feet-to-pixels",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
+      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageDict?.title || "feet-to-pixels" }],
     },
   };
 }

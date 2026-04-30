@@ -146,6 +146,11 @@ export function ConverterLayout({
     inLanguage: locale || "en",
     datePublished,
     dateModified,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: "FeetToPixels",
+    },
     isPartOf: {
       "@id": `${siteConfig.url}/#website`,
     },
@@ -201,6 +206,7 @@ export function ConverterLayout({
             "@type": "HowTo",
             name: `How to use ${title}`,
             description: heroSummary,
+            totalTime: "PT1M",
             step: [
               {
                 "@type": "HowToStep",
