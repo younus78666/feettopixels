@@ -137,6 +137,28 @@ export const content: LocalizedDocMap = {
           "16 × 20: 28.8 MP (high-end smartphones, most mirrorless cameras)",
           "24 × 36: 77.8 MP at 300 DPI, or 17.3 MP at 200 DPI (practical for most cameras)"
         ]
+      },
+      {
+        "id": "choosing-dpi",
+        "title": "Choosing the Right DPI for Your Print Size",
+        "paragraphs": [
+          "Not every print needs 300 DPI. The required resolution depends on the viewing distance. A billboard viewed from 30 feet needs far fewer pixels per inch than a greeting card held at arm's length.",
+          "Use 300 DPI for prints viewed within 18 inches: photo prints, brochures, business cards, and book covers. This is the standard for sharpest reproduction at close distances.",
+          "Use 150 to 200 DPI for prints viewed from 2 to 4 feet: posters, retail signage, and trade show banners. Quality is visually indistinguishable at those distances.",
+          "Use 72 to 100 DPI for large format prints viewed from 10 or more feet: outdoor banners, billboards, and building wraps. Pixel dimensions are still large because the physical size is enormous.",
+          "If you have a low-resolution image, divide the pixel width by the DPI to find the largest print size without quality loss. For example, a 3000-pixel-wide image at 200 DPI prints cleanly at 15 inches wide."
+        ]
+      },
+      {
+        "id": "print-mistakes",
+        "title": "Common Mistakes When Sizing Images for Print",
+        "list": [
+          "Upsizing in Photoshop: enlarging a small image by resampling creates soft, blurry prints. Always start with the largest available original file.",
+          "Confusing file size with DPI: a large file size does not mean high DPI. A 10 MB JPEG might be saved at 72 DPI. Check Image > Image Size in Photoshop.",
+          "Ignoring color mode: print requires CMYK color mode. RGB images may shift colors when converted at the print shop. Convert to CMYK before finalizing.",
+          "Forgetting bleed: most professional printers require 0.125 inch (3 mm) of bleed on each side. Add this to your canvas size before sending to print.",
+          "Using screen screenshots for print: a 1920 x 1080 screenshot at 96 DPI prints at only 6.4 x 3.6 inches at 300 DPI, far too small for most print uses."
+        ]
       }
     ]
   },

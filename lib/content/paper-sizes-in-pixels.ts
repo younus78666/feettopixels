@@ -160,6 +160,36 @@ export const content: LocalizedDocMap = {
           "For example, A4 width: 210 mm / 25.4 = 8.27 inches × 300 DPI = 2480 pixels.",
           "Use our Image Size Calculator for quick conversions, or browse our Inches to Pixels converter for custom dimensions."
         ]
+      },
+      {
+        "id": "design-software-setup",
+        "title": "Setting Up Paper Size Documents in Design Software",
+        "paragraphs": [
+          "Most design applications include preset paper sizes. Knowing the underlying pixel dimensions helps you avoid resolution problems when switching between applications or sending files to print.",
+          "In Photoshop: File > New. Choose a preset (A4, Letter, etc.) from the panel, then set Resolution to 300 pixels/inch. Photoshop automatically calculates the correct pixel canvas dimensions.",
+          "In Illustrator: New Document > Print category. Select A4, Letter, or any other preset. Illustrator uses 72 points per inch internally but the artboard matches your paper dimensions accurately.",
+          "In Canva: search for 'A4' or 'Letter' when creating a new design. Canva sets proportional canvas dimensions. Export as Print PDF with bleeds enabled for professional print output.",
+          "In InDesign: File > New Document. Select page size from the preset dropdown. InDesign is purpose-built for print production and handles DPI, bleed zones, and margins natively without manual calculation."
+        ]
+      },
+      {
+        "id": "bleed-and-margins",
+        "title": "Print Bleed and Safety Margins in Pixels",
+        "paragraphs": [
+          "Professional printing requires adding bleed and maintaining safety margins. Bleed is extra content beyond the trim edge that prevents white gaps after cutting. Safety margins keep important elements away from the trim zone.",
+          "Standard bleed is 3 mm (0.118 inches) on each side. At 300 DPI, that adds 35 pixels per edge. For A4 at 300 DPI (2480 x 3508 px), the full canvas with bleed becomes 2550 x 3578 pixels.",
+          "Safety margins are typically 3 to 5 mm inside the trim edge. Keep text, logos, and key graphics within this inner safe zone. At 300 DPI, a 5 mm margin equals about 59 pixels from each edge."
+        ],
+        "table": {
+          "headers": ["Paper Size", "300 DPI (trim size)", "With 3mm Bleed (300 DPI)"],
+          "rows": [
+            ["A4", "2480 x 3508 px", "2550 x 3578 px"],
+            ["A5", "1748 x 2480 px", "1819 x 2550 px"],
+            ["US Letter", "2550 x 3300 px", "2621 x 3371 px"],
+            ["A3", "3508 x 4961 px", "3579 x 5031 px"],
+            ["US Legal", "2550 x 4200 px", "2621 x 4271 px"]
+          ]
+        }
       }
     ]
   },

@@ -67,6 +67,19 @@ export const content: LocalizedDocMap = {
           "FeetToPixels avoids treating one DPI value as correct for every job. A web image, a passport-style upload, a 4 x 6 photo print, a storefront banner, and a CSS layout token all need different context. The goal is to make that context visible so the result can be checked instead of blindly copied.",
           "We also avoid padding tool pages with unrelated topics. When a page needs more explanation, the extra content should help the visitor understand the formula, pick the right DPI, avoid a common mistake, or move to the next calculator."
         ]
+      },
+      {
+        "id": "tool-categories",
+        "title": "Tool Categories on FeetToPixels",
+        "paragraphs": [
+          "FeetToPixels organizes its tools into four categories to help visitors find the right converter for their workflow."
+        ],
+        "list": [
+          "Physical unit converters: pixels to inches, cm, mm, and feet, plus the reverse direction. These are the core tools for print and physical design work where DPI is the key variable.",
+          "Screen and density tools: DPI calculator, PPI calculator, screen resolution checker, pixel ruler, and image DPI checker. These tools answer questions about display quality and pixel density.",
+          "CSS unit converters: px to rem, rem to px, px to em, em to px, px to pt, pt to px, px to vw, and vw to px. These tools support responsive front-end development and design token workflows.",
+          "Reference guides: explanations of DPI vs PPI, pixel definitions, best DPI settings for web and print, standard image sizes, paper sizes, and common resolutions. These pages give context for the numbers the converters produce."
+        ]
       }
     ]
   },

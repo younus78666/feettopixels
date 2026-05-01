@@ -99,6 +99,36 @@ export const content: LocalizedDocMap = {
           "The concept of a pixel dates back to the 1960s, with the term first used in the context of early digital image processing. Frederic Billingsley of JPL is often credited with popularizing the word “pixel” in 1965. Early digital displays had very low pixel counts - the Apple II (1977) displayed 280 × 192 pixels, while modern 8K displays render over 33 million pixels.",
           "Today, pixel technology continues to evolve with micro-LED displays, foldable screens, and displays exceeding 1000 PPI for VR headsets. The pixel remains the fundamental building block of every digital visual experience. Explore how pixels map to physical units with our Pixel Converter."
         ]
+      },
+      {
+        "id": "css-vs-device-pixels",
+        "title": "CSS Pixels vs Device Pixels",
+        "paragraphs": [
+          "Web development distinguishes between two types of pixels: CSS pixels and device pixels (also called physical pixels or hardware pixels).",
+          "A CSS pixel is an abstract unit used in CSS and HTML. When you write width: 300px in CSS, you are specifying 300 CSS pixels. On a standard 1x display, one CSS pixel equals one device pixel. On a 2x retina display, one CSS pixel equals four device pixels (2 wide by 2 tall).",
+          "The ratio between device pixels and CSS pixels is called the device pixel ratio (DPR). A MacBook Pro Retina has a DPR of 2. An iPhone 15 Pro has a DPR of 3. You can read this value in JavaScript with window.devicePixelRatio.",
+          "This distinction matters for images. If you display an image at 300 CSS pixels wide on a 2x display, the browser needs 600 device pixels of image data for a sharp result. Serving a 300-pixel image on a retina display produces a blurry, upscaled appearance."
+        ],
+        "table": {
+          "headers": ["DPR", "Device Type", "CSS px 100x100", "Device pixels needed"],
+          "rows": [
+            ["1x", "Standard monitor", "100 x 100", "100 x 100"],
+            ["2x", "MacBook Retina, most iPhones", "100 x 100", "200 x 200"],
+            ["3x", "iPhone 15 Pro, Galaxy S24", "100 x 100", "300 x 300"],
+            ["4x", "Some Android flagships", "100 x 100", "400 x 400"]
+          ]
+        }
+      },
+      {
+        "id": "pixel-types",
+        "title": "Types of Pixels in Practice",
+        "list": [
+          "Raster pixels: the individual color squares in images like JPEG, PNG, WebP, and BMP. Image editing software (Photoshop, GIMP) works at this level.",
+          "Screen pixels (device pixels): the physical light-emitting elements on a display. Each screen pixel contains RGB subpixels. The total count determines native screen resolution.",
+          "CSS pixels: the abstract unit used in web browsers. Defined by the W3C and scaled by device pixel ratio to maintain consistent perceived sizes across screens.",
+          "Print pixels: a pixel in a print context is defined by DPI. At 300 DPI, each pixel is 1/300 of an inch. The same image file can produce very different physical sizes at different DPI settings.",
+          "Video pixels: in video production, pixels follow frame size standards. 1080p is 1920x1080 pixels per frame, while 4K UHD is 3840x2160 pixels per frame."
+        ]
       }
     ]
   },

@@ -92,6 +92,34 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "Convert between pixels and rem or em units instantly with our PX to REM and PX to EM converters."
         ]
+      },
+      {
+        "id": "accessibility",
+        "title": "EM, REM, and Browser Accessibility",
+        "paragraphs": [
+          "One important reason to prefer rem over px is user-controlled browser font size. Many users with low vision increase their browser's base font size above 16px through browser settings or operating system accessibility features.",
+          "If you set all your font sizes in px, they are fixed regardless of the user's preference. If you use rem, your font sizes scale automatically when the user increases their browser base size. This is a key accessibility benefit.",
+          "The WCAG 2.1 Success Criterion 1.4.4 (Resize Text) requires that text can be resized up to 200% without loss of content or functionality. Using rem for font sizes makes this trivial to satisfy. Using px for font sizes means you need to test and verify that zoom does not break your layout.",
+          "For this reason, many style guides and design systems recommend rem for all typographic sizes and font-size-dependent spacing. The em unit can still be used safely for component-internal padding where scaling with font size is the intended behavior."
+        ]
+      },
+      {
+        "id": "decision-guide",
+        "title": "Quick Decision Guide: EM vs REM vs PX",
+        "paragraphs": [
+          "Choosing between em, rem, and px comes down to the scope of the value and whether you want it to respond to font-size changes."
+        ],
+        "table": {
+          "headers": ["What you are sizing", "Recommended unit", "Reason"],
+          "rows": [
+            ["Body and heading font sizes", "rem", "Consistent scale, responds to user preferences"],
+            ["Button or component padding", "em", "Scales proportionally with component font size"],
+            ["Border widths", "px", "Should not scale with font size"],
+            ["Layout grid gaps", "rem", "Consistent spacing regardless of context"],
+            ["Line height", "unitless (e.g. 1.5)", "Scales with local font size automatically"],
+            ["Media query breakpoints", "rem", "Responds to user font size changes"]
+          ]
+        }
       }
     ]
   },

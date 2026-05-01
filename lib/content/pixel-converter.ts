@@ -67,6 +67,26 @@ export const content: LocalizedDocMap = {
           "Keep the original aspect ratio unless the design is meant to crop.",
           "Check the largest placed image, not only the final canvas size."
         ]
+      },
+      {
+        "id": "unit-quick-reference",
+        "title": "Unit Quick Reference",
+        "paragraphs": [
+          "Different professions use different units as their starting point. This table maps common input units to the converters most useful for each workflow."
+        ],
+        "table": {
+          "headers": ["Starting unit", "Common workflow", "Best converter"],
+          "rows": [
+            ["Pixels", "Resize for print or social upload", "Pixels to Inches, Pixels to CM"],
+            ["Inches", "Set canvas for US print projects", "Inches to Pixels"],
+            ["Centimeters", "Set canvas for EU or A-series paper", "CM to Pixels"],
+            ["Millimeters", "Label design, packaging, product specs", "MM to Pixels"],
+            ["Feet", "Large format: banners, signage, backdrops", "Feet to Pixels"],
+            ["rem / em", "CSS responsive typography", "PX to REM, PX to EM"],
+            ["pt", "InDesign, Word, presentation software", "PT to PX"],
+            ["vw", "Full-width responsive sections", "VW to PX"]
+          ]
+        }
       }
     ]
   },

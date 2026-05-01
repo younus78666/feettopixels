@@ -58,6 +58,35 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "Calculate the exact pixel dimensions you need for any layout with our Image Size Calculator."
         ]
+      },
+      {
+        "id": "web-image-dimensions",
+        "title": "Common Web Image Sizes by Use Case",
+        "paragraphs": [
+          "Unlike print, web image sizing is driven by layout requirements, not DPI. The table below shows recommended pixel dimensions for typical web image placements. For retina screens, double the pixel width to avoid blurry output on high-density displays."
+        ],
+        "table": {
+          "headers": ["Use Case", "Standard Width", "Retina (2x)", "Notes"],
+          "rows": [
+            ["Hero / banner", "1920 px", "3840 px", "Full-width background"],
+            ["Blog post header", "1200 px", "2400 px", "16:9 or 3:2 ratio"],
+            ["Thumbnail", "400 px", "800 px", "Square or 4:3"],
+            ["Product image", "800 px", "1600 px", "1:1 for consistency"],
+            ["Open Graph share image", "1200 x 630 px", "N/A", "Fixed aspect ratio"],
+            ["Favicon", "32 x 32 px", "N/A", "SVG preferred"]
+          ]
+        }
+      },
+      {
+        "id": "export-for-web",
+        "title": "Exporting Images for Web in Design Software",
+        "paragraphs": [
+          "When exporting from Photoshop, Illustrator, or Figma, the DPI setting in the export dialog does not affect how the image renders in a browser. What matters is the pixel dimensions and the output format.",
+          "In Photoshop: use Image > Export > Export As and choose WebP or JPEG. Set quality to 75-85%. The resolution field only affects print output and can be ignored for web.",
+          "In Figma: export at 1x for standard screens and 2x for retina. The DPI property is irrelevant; only the multiplier changes the final pixel dimensions.",
+          "In Illustrator: use Export > Export for Screens. Select pixels as the unit and match the target container size in your CSS layout.",
+          "In Canva: download as WebP or JPEG. Canva automatically sets an appropriate resolution. The download size slider controls compression, not DPI."
+        ]
       }
     ]
   },
