@@ -116,18 +116,18 @@ export const en = {
         "To convert feet to pixels, multiply feet by 12, then multiply by DPI. At 96 DPI, 1 foot equals 1,152 pixels; at 300 DPI, 1 foot equals 3,600 pixels.",
     },
     "pixels-to-inches": {
-      title: "Pixels to Inches Converter - Free Online Calculator",
+      title: "Pixels to Inches Converter - Free PX to Inches Calculator",
       description:
-        "Convert pixels to inches at any DPI setting. Free online PX to inches calculator for web designers and print professionals.",
+        "Convert pixels to inches at any DPI. At 96 DPI (web), 960 pixels = 10 inches. At 300 DPI (print), 960 pixels = 3.2 inches. Free PX to inches calculator.",
       extractive:
-        "To convert pixels to inches, divide the pixel count by DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches.",
+        "To convert pixels to inches, divide pixels by DPI. At 96 DPI: 960 pixels = 10 inches. At 300 DPI: 960 pixels = 3.2 inches. Formula: inches = pixels / DPI.",
     },
     "inches-to-pixels": {
       title: "Inches to Pixels Converter - Any DPI, Instant Results",
       description:
-        "Convert inches to pixels at any DPI. Free online calculator for web and print design.",
+        "Convert inches to pixels at any DPI. At 300 DPI: 1 inch = 300px, 8.5 inches = 2550px. At 96 DPI: 1 inch = 96px. Free inches to pixels calculator.",
       extractive:
-        "To convert inches to pixels, multiply the inch value by DPI. At 96 DPI, 10 inches equals 960 pixels. At 300 DPI, 10 inches equals 3000 pixels.",
+        "To convert inches to pixels, multiply inches by DPI. At 300 DPI: 1 inch = 300 pixels, 8.5 inches = 2550 pixels. At 96 DPI: 1 inch = 96 pixels. Formula: pixels = inches x DPI.",
     },
     "pixels-to-cm": {
       title: "Pixels to CM Converter - DPI-Aware Calculator",
@@ -272,9 +272,9 @@ export const en = {
     "what-is-dpi": {
       title: "What Is DPI? - Dots Per Inch Explained Simply",
       description:
-        "Learn what DPI means, how it affects print and image quality, standard DPI values, and how to check or change DPI.",
+        "DPI (dots per inch) measures print resolution. Standard print DPI is 300 for photos, 150 for posters, and 72-100 for large banners. Learn what DPI means.",
       extractive:
-        "DPI (dots per inch) measures print resolution - how many ink dots a printer places in one linear inch. Standard print DPI is 300 for photos, 150 for documents, and 72 for large posters.",
+        "DPI stands for dots per inch. It measures how many ink dots a printer places in one linear inch. 300 DPI is the standard for photo prints. 72 DPI is the web/screen reference. Higher DPI means sharper prints at smaller physical sizes.",
     },
     "what-is-ppi": {
       title: "What Is PPI? - Pixels Per Inch for Screens",

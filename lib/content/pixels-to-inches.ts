@@ -6,7 +6,7 @@ export const content: PageContentMap = {
       {
         question: "How do I convert pixels to inches?",
         answer:
-          "Divide the pixel value by DPI. The formula is: inches = pixels / DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches. The DPI setting determines the physical size — the pixel count stays the same.",
+          "Divide the pixel value by DPI. The formula is: inches = pixels / DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches. The DPI setting determines the physical size; the pixel count stays the same.",
       },
       {
         question: "What DPI should I use for web design?",
@@ -52,12 +52,22 @@ export const content: PageContentMap = {
       {
         question: "How many pixels is 1 inch at 96 DPI?",
         answer:
-          "At 96 DPI, 1 inch equals 96 pixels. This is the standard CSS reference density for web design — 1 CSS inch equals exactly 96 CSS pixels. At this density, a 960-pixel-wide layout is 10 inches wide. Most monitors display at 90-110 actual PPI, which is close enough to 96 that the difference is rarely visible.",
+          "At 96 DPI, 1 inch equals 96 pixels. This is the standard CSS reference density for web design. 1 CSS inch equals exactly 96 CSS pixels. At this density, a 960-pixel-wide layout is 10 inches wide. Most monitors display at 90-110 actual PPI, which is close enough to 96 that the difference is rarely visible.",
+      },
+      {
+        question: "How do I convert pixels to inches for printing?",
+        answer:
+          "For printing, divide the pixel count by 300 (the standard print DPI). A 3000-pixel-wide image divided by 300 equals 10 inches. For large-format prints viewed from a distance, 150 DPI doubles the physical size for the same pixel count. Most photo labs and commercial printers expect 300 DPI files for sharp output.",
+      },
+      {
+        question: "What is the formula for pixels to inches?",
+        answer:
+          "The formula is: inches = pixels / DPI. Divide the pixel dimension by the DPI of your output device. At 96 DPI (web): 960 pixels / 96 = 10 inches. At 300 DPI (print): 960 pixels / 300 = 3.2 inches. The pixel count stays fixed; only the DPI changes the physical size.",
       },
     ],
     body: {
       heading1: "How Pixel to Inch Conversion Works",
-      p1: "Converting pixels to inches requires knowing the DPI (dots per inch) of your target output. DPI defines how many pixels are packed into each physical inch. The formula is straightforward:",
+      p1: "To convert pixels to inches, divide the pixel value by DPI. The formula is: inches = pixels / DPI. DPI (dots per inch) defines how many pixels are packed into each physical inch and is the only variable that changes the output size.",
       formula: "Inches = Pixels / DPI",
       p2: "For web design, the standard is 96 DPI. For professional print, 300 DPI is the norm. Choosing the right DPI ensures your designs display at the intended physical size.",
       heading2: "Common Use Cases",

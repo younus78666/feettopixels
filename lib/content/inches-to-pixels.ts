@@ -19,9 +19,29 @@ export const content: PageContentMap = {
           "At 300 DPI, 1 inch equals 300 pixels. This is the standard resolution for professional print output, including magazines, brochures, and high-quality photo prints.",
       },
       {
-        question: "What size in pixels is an 8.5 x 11 inch document?",
+        question: "How many pixels is 8.5 inches at 300 DPI?",
         answer:
-          "At 96 DPI (web), it is 816 x 1056 pixels. At 300 DPI (print), it is 2550 x 3300 pixels. The pixel dimensions scale directly with the DPI setting.",
+          "8.5 inches at 300 DPI equals 2550 pixels (8.5 x 300 = 2550). This is the pixel width of a standard US Letter page when set up for professional print output.",
+      },
+      {
+        question: "How many pixels is an A4 page at 300 DPI?",
+        answer:
+          "An A4 page at 300 DPI is 2480 x 3508 pixels (8.27 in x 300 = 2481 width, 11.69 in x 300 = 3507 height, commonly cited as 2480 x 3508). Use these dimensions when setting up A4 print documents in Photoshop, Illustrator, or InDesign.",
+      },
+      {
+        question: "How many pixels is 4 inches at 300 DPI?",
+        answer:
+          "4 inches at 300 DPI equals 1200 pixels (4 x 300 = 1200). At 96 DPI the same 4 inches equals 384 pixels. Use 300 DPI for print and 96 DPI for standard web and screen work.",
+      },
+      {
+        question: "What DPI should I use when converting inches to pixels for print?",
+        answer:
+          "Use 300 DPI for standard print output such as brochures, photos, and business cards. Use 150 DPI for large-format items like posters and banners viewed from a distance. Screen and web work uses 96 DPI on most displays.",
+      },
+      {
+        question: "How do I convert inches to pixels in Photoshop?",
+        answer:
+          "In Photoshop, go to Image > Canvas Size or File > New and enter your dimensions in inches with the resolution set to 300 PPI for print. Photoshop multiplies the inch value by the PPI setting to calculate the pixel dimensions automatically.",
       },
       {
         question: "Does changing DPI change the number of pixels?",

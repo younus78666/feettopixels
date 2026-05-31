@@ -4,8 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What does DPI actually stand for?",
-        "answer": "DPI stands for dots per inch. It measures how many tiny ink or toner dots a printer places into one linear inch of paper. A 1200 DPI printer lays down 1,440,000 dots per square inch, which is why high-DPI prints look smooth and sharp compared to the visible halftone patterns on low-DPI output."
+        "question": "What does DPI stand for?",
+        "answer": "DPI stands for dots per inch. It measures how many ink dots a printer places in one linear inch. A 300 DPI printer produces 300 dots per inch, giving smooth, sharp output for photos and documents. Higher DPI printers pack more dots into each inch, producing finer detail and smoother gradients."
+      },
+      {
+        "question": "What is DPI on a printer?",
+        "answer": "On a printer, DPI is a hardware specification that describes how many individual ink or toner dots the print head can place in one linear inch. A printer rated at 1200 DPI can deposit 1,440,000 dots per square inch. This is different from file DPI or PPI, which is metadata in your image file telling the printer how large to render the image. Printer DPI is fixed by hardware; file DPI is set by you in your image editor."
+      },
+      {
+        "question": "What is 300 DPI in pixels?",
+        "answer": "300 DPI means 300 pixels per inch of printed output. To calculate pixels from a print size at 300 DPI, multiply inches by 300. A 10-inch wide print at 300 DPI requires 3,000 pixels of width. A 4x6 inch photo at 300 DPI requires a 1,200x1,800 pixel file. The formula is: pixels = inches x DPI."
       },
       {
         "question": "Is 300 DPI always the right choice for printing?",
@@ -14,6 +22,10 @@ export const content: LocalizedDocMap = {
       {
         "question": "What is the difference between printer DPI and image DPI?",
         "answer": "Printer DPI is a hardware specification: how many ink dots the printer can physically place in one inch. Most inkjets run at 1200-4800 DPI, laser printers at 600-2400 DPI. Image DPI is metadata in the file that tells the printer to render the image at X pixels per inch. When you save a file at 300 DPI in Photoshop, you are actually setting PPI (pixels per inch). The printer then uses many of its own DPI dots to reproduce each image pixel."
+      },
+      {
+        "question": "Does DPI affect image quality on screen?",
+        "answer": "No. Browsers and operating systems ignore the DPI metadata embedded in image files. Screen rendering is controlled entirely by pixel dimensions, not by DPI values. A 1920x1080 image displays identically at 72 DPI or 300 DPI. DPI only matters when the image goes to a physical printer. For screen quality, focus on pixel count, not DPI."
       },
       {
         "question": "Does DPI matter for websites and mobile apps?",
@@ -37,7 +49,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What is a good DPI for scanning old photos?",
-        "answer": "600 DPI is the recommended minimum for scanning old photos you plan to archive or print. At 600 DPI, a standard 4x6 photo produces a 2400x3600 pixel file — enough to print cleanly at 8x12 inches at 300 DPI. For damaged or very small originals, 1200 DPI gives more flexibility for restoration and enlargement."
+        "answer": "600 DPI is the recommended minimum for scanning old photos you plan to archive or print. At 600 DPI, a standard 4x6 photo produces a 2400x3600 pixel file, which is enough to print cleanly at 8x12 inches at 300 DPI. For damaged or very small originals, 1200 DPI gives more flexibility for restoration and enlargement."
       },
       {
         "question": "What DPI is high resolution?",
@@ -45,7 +57,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What is the difference between 72 DPI and 300 DPI?",
-        "answer": "72 DPI and 300 DPI differ in how many pixels they pack into one inch of printed output. At 72 DPI, a 720-pixel image prints 10 inches wide. At 300 DPI, that same 720-pixel image prints only 2.4 inches wide. The pixel data is identical — DPI just controls how those pixels are distributed across physical space. For screen display, DPI values have no effect whatsoever."
+        "answer": "72 DPI and 300 DPI differ in how many pixels they pack into one inch of printed output. At 72 DPI, a 720-pixel image prints 10 inches wide. At 300 DPI, that same 720-pixel image prints only 2.4 inches wide. The pixel data is identical; DPI just controls how those pixels are distributed across physical space. For screen display, DPI values have no effect whatsoever."
       }
     ],
     "sections": [
@@ -53,7 +65,7 @@ export const content: LocalizedDocMap = {
         "id": "overview",
         "title": "What Is DPI?",
         "paragraphs": [
-          "DPI stands for dots per inch, and it measures how many individual ink, toner, or laser dots a printer deposits into each linear inch of paper. The higher the DPI, the finer those dots are, and the smoother and more detailed the final print looks.",
+          "DPI stands for dots per inch. It is a measurement of print resolution that tells you how many ink dots a printer places in one linear inch of paper. The higher the DPI, the finer those dots are, and the smoother and more detailed the final print looks.",
           "DPI is strictly a print-world unit. Screens don\'t have DPI. They have PPI (pixels per inch). The two terms get used interchangeably in casual conversation, but in professional printing, graphic design, and photography, the distinction matters. Misusing the term leads to files that print badly or images that waste storage for no visible benefit.",
           "A typical home inkjet prints at 1200 to 4800 DPI. Commercial offset presses run at 1800 to 3600 DPI. Consumer laser printers average 600 to 2400 DPI. These numbers describe the hardware\'s physical capability, not how your image will look. For that, you also need enough pixel data to fill each inch at the desired output size."
         ]
