@@ -335,7 +335,7 @@ export function ConverterLayout({
           className="rounded-[24px] border border-primary-100 bg-primary-50/70 p-5 shadow-[0_16px_40px_-34px_rgba(20,184,166,0.24)]"
         >
           <h2 className="text-2xl font-semibold text-neutral-900">
-            {locale === "en" || !locale ? "Overview" : title}
+            {locale === "en" || !locale ? (title.includes(" - ") ? title.split(" - ")[0] : title) : title}
           </h2>
           <p className="mt-3 text-base leading-relaxed text-neutral-700">
             {heroSummary}

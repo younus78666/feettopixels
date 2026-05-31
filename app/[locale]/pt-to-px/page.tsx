@@ -13,7 +13,7 @@ interface PageProps {
 
 const title = "PT to PX Converter: Convert Points to Pixels for Typography";
 const description =
-  "Convert typographic points to pixels. At 96 DPI: 1pt = 1.333px, 12pt = 16px, 18pt = 24px. Free PT to PX calculator for print-to-screen type and layout work.";
+  "Convert typographic points to pixels. At 96 DPI: 1pt = 1.333px, 12pt = 16px, 18pt = 24px. Free PT to PX calculator for type and layout work.";
 const extractive =
   "At 96 DPI, 1 point equals 1.333 pixels. The formula is: px = pt x DPI / 72. A 12pt font equals 16 pixels at standard screen DPI. Points are absolute print-world units; pixels vary by display density.";
 

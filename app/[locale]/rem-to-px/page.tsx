@@ -13,7 +13,7 @@ interface PageProps {
 
 const title = "REM to PX Converter: Convert REM Units to Pixels Online";
 const description =
-  "Convert REM to pixels with a custom base font size. Free REM to PX calculator with reverse conversion, formula examples, and responsive CSS layout guidance.";
+  "Convert REM to pixels with a custom base font size. Free REM to PX calculator with reverse conversion, formula examples, and CSS guidance.";
 const extractive =
   "To convert REM to pixels, multiply the rem value by the root font size (default 16px). 1rem = 16px. 2rem = 32px. 1.5rem = 24px. Change the base font size if your project uses a different root.";
 

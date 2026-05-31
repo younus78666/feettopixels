@@ -124,9 +124,9 @@ export function PixelConverterHub({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <div className="tool-card space-y-5">
-      <h2 className="text-lg font-semibold text-neutral-900">
+      <p className="text-lg font-semibold text-neutral-900">
         {toolUi.pixelConverterHub.quickConverter}
-      </h2>
+      </p>
 
       <div className="flex flex-col items-center gap-4 sm:flex-row">
         <div className="w-full flex-1 space-y-2">
