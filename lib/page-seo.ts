@@ -10,7 +10,7 @@ export interface ReferenceSource {
   description: string;
 }
 
-export const DEFAULT_PAGE_DATE = "2026-03-19";
+export const DEFAULT_PAGE_DATE = "2026-05-31";
 
 export const englishSeoPageOverrides: Record<string, SeoPageOverride> = {
   home: {

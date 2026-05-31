@@ -125,9 +125,28 @@ export function BlogLayout({
           { id: "next-steps", label: "Next Steps" },
         ];
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      ...localizedBreadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 2,
+        name: crumb.label,
+        item: `${siteConfig.url}${crumb.href}`,
+      })),
+    ],
+  };
+
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "TechArticle",
     "@id": `${pageUrl}#article`,
     headline: title,
     description: extractiveAnswer,
@@ -193,6 +212,7 @@ export function BlogLayout({
     <Container className="py-8 md:py-12">
       <JsonLd data={webPageJsonLd} />
       <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {relatedArticlesJsonLd && <JsonLd data={relatedArticlesJsonLd} />}
       <Breadcrumbs items={localizedBreadcrumbs} />
 

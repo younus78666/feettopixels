@@ -52,6 +52,59 @@ interface ConverterLayoutProps {
 
 const cssToolSlugs = new Set(["px-to-rem", "px-to-em", "px-to-pt", "px-to-vw"]);
 
+const reverseConverterSlugs = new Set(["rem-to-px", "em-to-px", "pt-to-px", "vw-to-px"]);
+
+const calculatorSlugs = new Set([
+  "dpi-calculator", "ppi-calculator", "megapixel-calculator",
+  "image-size-calculator", "aspect-ratio-calculator",
+]);
+
+const checkerSlugs = new Set(["screen-resolution-checker", "image-dpi-checker", "pixel-ruler"]);
+
+function getHowToSteps(slug: string): Array<{ "@type": string; name: string; text: string }> {
+  if (cssToolSlugs.has(slug) || reverseConverterSlugs.has(slug)) {
+    return [
+      { "@type": "HowToStep", name: "Enter your pixel value", text: "Type the pixel value you want to convert into the input field." },
+      { "@type": "HowToStep", name: "Set the base font size", text: "Enter the root font size (default 16px for rem) or parent font size for em conversions." },
+      { "@type": "HowToStep", name: "Copy the CSS value", text: "The converted CSS unit appears instantly. Copy it directly into your stylesheet." },
+    ];
+  }
+  if (slug === "dpi-calculator" || slug === "ppi-calculator") {
+    return [
+      { "@type": "HowToStep", name: "Enter screen resolution", text: "Type the horizontal and vertical pixel resolution of your screen or image." },
+      { "@type": "HowToStep", name: "Enter the diagonal size", text: "Enter the physical screen diagonal size in inches." },
+      { "@type": "HowToStep", name: "Read your DPI result", text: "The pixel density calculates instantly. Use the presets for common monitor sizes." },
+    ];
+  }
+  if (slug === "aspect-ratio-calculator") {
+    return [
+      { "@type": "HowToStep", name: "Enter current dimensions", text: "Type the width and height of your image or video." },
+      { "@type": "HowToStep", name: "Choose lock mode", text: "Lock the ratio to scale proportionally, or lock width or height to calculate the other dimension." },
+      { "@type": "HowToStep", name: "Copy the result", text: "Get the simplified ratio or calculated dimensions instantly and copy them to your project." },
+    ];
+  }
+  if (calculatorSlugs.has(slug)) {
+    return [
+      { "@type": "HowToStep", name: "Enter your values", text: "Type the pixel dimensions, file size, or megapixel count into the input fields." },
+      { "@type": "HowToStep", name: "Select DPI if needed", text: "Choose a DPI setting to calculate print dimensions or quality estimates." },
+      { "@type": "HowToStep", name: "Review your results", text: "Get file size, print dimensions, or megapixel equivalents instantly." },
+    ];
+  }
+  if (checkerSlugs.has(slug)) {
+    return [
+      { "@type": "HowToStep", name: "Load the tool", text: "The tool detects or reads your screen or file information automatically." },
+      { "@type": "HowToStep", name: "Calibrate if needed", text: "Adjust calibration settings for more accurate physical measurements." },
+      { "@type": "HowToStep", name: "Read and copy your results", text: "See resolution, DPI, or measurement results and copy them to your workflow." },
+    ];
+  }
+  // Default: physical unit converter
+  return [
+    { "@type": "HowToStep", name: "Enter your value", text: "Type the pixel or physical measurement value in the input field." },
+    { "@type": "HowToStep", name: "Set your DPI", text: "Choose 96 DPI for screen or web, 300 DPI for professional print, or enter a custom DPI." },
+    { "@type": "HowToStep", name: "Copy your result", text: "The converted value updates instantly. Click copy to use it in your design or document." },
+  ];
+}
+
 const physicalToolSlugs = new Set([
   "pixels-to-inches",
   "inches-to-pixels",
@@ -159,9 +212,29 @@ export function ConverterLayout({
     },
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      ...localizedBreadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 2,
+        name: crumb.label,
+        item: `${siteConfig.url}${crumb.href}`,
+      })),
+    ],
+  };
+
   return (
     <Container className="py-8 md:py-12">
       <JsonLd data={webPageJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -207,23 +280,7 @@ export function ConverterLayout({
             name: `How to use ${title}`,
             description: heroSummary,
             totalTime: "PT1M",
-            step: [
-              {
-                "@type": "HowToStep",
-                name: "Enter your value",
-                text: "Type the value you want to convert in the input field.",
-              },
-              {
-                "@type": "HowToStep",
-                name: "Set DPI (if applicable)",
-                text: "Choose your target DPI setting for accurate conversion.",
-              },
-              {
-                "@type": "HowToStep",
-                name: "Get your result",
-                text: "The converted value appears instantly. Click copy to use it.",
-              },
-            ],
+            step: getHowToSteps(normalizedSlug),
             tool: {
               "@type": "HowToTool",
               name: "FeetToPixels Online Converter",
