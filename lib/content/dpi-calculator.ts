@@ -31,7 +31,7 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "DPI (dots per inch) on a display is calculated with the Pythagorean theorem. The calculator takes three inputs - horizontal pixel count, vertical pixel count, and the physical diagonal size in inches - and returns pixel density. The formula is: DPI = sqrt(width-in-pixels squared + height-in-pixels squared) divided by diagonal-in-inches. The numerator is the diagonal of the pixel grid, and dividing it by the physical diagonal gives pixels per inch along the diagonal axis.",
           "Here is a worked example. A 27-inch 4K monitor has a 3840x2160 native resolution. The pixel diagonal is sqrt(3840^2 + 2160^2) = sqrt(14,745,600 + 4,665,600) = sqrt(19,411,200) which equals about 4406 pixels. Dividing 4406 by 27 inches yields approximately 163 DPI. That is why 27-inch 4K displays feel noticeably sharper than 27-inch 1440p panels, which work out to about 109 DPI. For the print-focused counterpart of this math, see what-is-dpi and pixels-per-inch.",
-          "It is important to remember that DPI only tells you density along the diagonal. Because modern displays use square pixels, horizontal DPI and vertical DPI equal the diagonal DPI. On non-square-pixel or anamorphic formats you would need to compute each axis separately, but that case is vanishingly rare on modern hardware."
+          "DPI only tells you density along the diagonal. Because modern displays use square pixels, horizontal DPI and vertical DPI equal the diagonal DPI. On non-square-pixel or anamorphic formats you\'d need to compute each axis separately, but that case is vanishingly rare on modern hardware."
         ]
       },
       {

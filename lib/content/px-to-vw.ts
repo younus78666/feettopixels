@@ -29,8 +29,8 @@ export const content: LocalizedDocMap = {
         "id": "how-it-works",
         "title": "How the PX to VW Converter Works",
         "paragraphs": [
-          "The CSS viewport-width unit (vw) equals 1% of the current viewport's width. If the browser is 1440px wide, 1vw equals 14.4px; if it narrows to 768px, 1vw becomes 7.68px. Because the browser recomputes this on every resize, vw-based sizing is fluid by nature - no media queries required. The PX to VW converter uses the formula: vw = (px / viewport-width) x 100. For a 24px value on a 1440px design canvas, that is 24/1440 x 100 = 1.667vw.",
-          "The design-canvas width matters enormously. A developer using a Figma canvas at 1440px gets different vw values than one designing at 1920px or 1280px. The converter lets you pick the canvas width so the generated vw maps correctly to your design. Once deployed, the element will grow and shrink continuously between min and max viewport widths. For an even smoother approach that avoids the extremes, combine vw with clamp() - for example clamp(1rem, 2vw + 1rem, 2.5rem) scales fluidly but clamps at both ends.",
+          "The CSS viewport-width unit (vw) equals 1% of the current viewport's width. If the browser is 1440px wide, 1vw equals 14.4px. Narrow it to 768px and 1vw becomes 7.68px. Because the browser recomputes this on every resize, vw-based sizing is fluid by nature. No media queries required. The PX to VW converter uses the formula: vw = (px / viewport-width) x 100. For a 24px value on a 1440px design canvas, that is 24/1440 x 100 = 1.667vw.",
+          "The design-canvas width matters enormously. A developer working on a Figma canvas at 1440px gets different vw values than one designing at 1920px or 1280px. The converter lets you pick the canvas width so the generated vw maps correctly to your design. Once deployed, the element grows and shrinks continuously between min and max viewport widths. For a smoother approach that avoids the extremes, combine vw with clamp(). For example, clamp(1rem, 2vw + 1rem, 2.5rem) scales fluidly but caps at both ends.",
           "VW is the go-to unit for fluid typography and hero section sizing. For spacing-scale sizing tied to user preferences, see px-to-rem. For component-internal sizing, see px-to-em."
         ]
       },
@@ -73,13 +73,13 @@ export const content: LocalizedDocMap = {
         "id": "common-mistakes",
         "title": "Common Mistakes to Avoid",
         "paragraphs": [
-          "VW is powerful but introduces its own set of gotchas, especially around accessibility and scrollbar handling."
+          "VW is powerful but comes with its own set of gotchas, especially around accessibility and scrollbar handling."
         ],
         "list": [
-          "Using 100vw for full-width elements on Windows - 100vw includes the scrollbar width and can trigger horizontal scrolling. Use width: 100% on a non-absolutely-positioned element instead.",
-          "Setting pure vw font sizes - headings become unreadable on small phones (too tiny) and comically large on ultrawide monitors. Wrap them in clamp().",
-          "Ignoring the difference between vw and svw/lvw/dvw - on mobile, browser chrome can resize the viewport mid-scroll, and the dynamic variants account for this.",
-          "Forgetting that vw does not scale with user zoom the same way rem does, reducing accessibility.",
+          "Using 100vw for full-width elements on Windows. 100vw includes the scrollbar width and can trigger horizontal scrolling. Use width: 100% on a non-absolutely-positioned element instead.",
+          "Setting pure vw font sizes. Headings become unreadable on small phones (too tiny) and comically large on ultrawide monitors. Wrap them in clamp().",
+          "Ignoring the difference between vw and svw/lvw/dvw. On mobile, browser chrome can resize the viewport mid-scroll, and the dynamic variants account for this.",
+          "Forgetting that vw doesn't scale with user zoom the same way rem does, which reduces accessibility.",
           "Mixing vw with fixed px widths inside a flex container, producing unpredictable wrapping.",
           "Hard-coding vw values for a single canvas width and watching them break when the design later supports 1920px or 4K displays."
         ]

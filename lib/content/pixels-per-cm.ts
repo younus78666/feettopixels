@@ -85,13 +85,14 @@ export const content: LocalizedDocMap = {
       },
       {
         "id": "practical-use",
-        "title": "Practical Use Cases",
+        "title": "When You Actually Need to Think in Pixels Per CM",
         "paragraphs": [
-          "Pixels-per-centimeter conversion is especially useful in countries using the metric system for design and print specifications. Common scenarios include:",
+          "Most web designers never think in pixels per centimeter because CSS works in pixels, REM, and VW. You'll need pixels-per-cm conversion in specific situations: you're setting up a print file in Photoshop, Illustrator, or GIMP and the output dimensions are specified in centimeters; you're matching a web design to a physical object (a business card, a label, a packaging mockup) and the client's brief uses metric measurements; or you're preparing figures for an academic journal that specifies image size in centimeters at 300 DPI.",
+          "Outside those print and publishing workflows, pixel-per-cm math rarely comes up. Screen design tools work in pixels. CSS works in CSS units. If a client hands you a brief in centimeters and you need to produce a web asset, use 96 DPI as the screen reference. If they want a print file, use 300 DPI for professional results.",
           "Convert specific centimeter values to pixels with our CM to Pixels Converter, or see the full conversion matrix in our DPI Conversion Table."
         ],
         "list": [
-          "European print design: Paper and image dimensions are specified in centimeters (A4 is 21 × 29.7 cm).",
+          "European print design: Paper and image dimensions are specified in centimeters (A4 is 21 x 29.7 cm).",
           "Scientific publications: Figure dimensions are often required in centimeters at a specific DPI.",
           "Product packaging: Label dimensions use metric measurements that need conversion to pixel dimensions for design software."
         ]
@@ -100,8 +101,8 @@ export const content: LocalizedDocMap = {
         "id": "accuracy-checks",
         "title": "How to Check a Pixels-Per-CM Result",
         "paragraphs": [
-          "A pixels-per-centimeter value is a density, not a finished canvas size. After finding px/cm, multiply it by the number of centimeters in the final width or height. For example, 12 cm at 300 DPI uses 118.11 px/cm, so the target width is about 1,417 pixels.",
-          "If the result is for a screen mockup, 96 DPI is usually the CSS reference point. If the result is for a printed file, use the DPI requested by the printer or publisher. Keeping that DPI note beside the px/cm value prevents the same number from being reused in the wrong production context."
+          "A pixels-per-centimeter value is a density, not a finished canvas size. After finding px/cm, multiply it by the number of centimeters in the final width or height. For example, 12 cm at 300 DPI uses 118.11 px/cm, so the target width is roughly 1,417 pixels.",
+          "For a screen mockup, 96 DPI is usually the CSS reference point. For a printed file, use the DPI requested by the printer or publisher. Keeping that DPI note beside the px/cm value prevents the same number from being reused in the wrong production context."
         ]
       },
       {
@@ -126,7 +127,7 @@ export const content: LocalizedDocMap = {
         "id": "design-software-cm",
         "title": "Setting Up a CM-Based Canvas in Design Software",
         "paragraphs": [
-          "Most design tools accept centimeters as a unit and convert to pixels internally based on the document DPI. Here is how to configure this correctly:",
+          "Most design tools accept centimeters as a unit and convert to pixels internally based on the document DPI. Here's how to configure this correctly:",
           "In Photoshop: File > New. Set width and height units to Centimeters, then set Resolution to 300 pixels/inch for print or 96 pixels/inch for screen mockups. Photoshop calculates pixel dimensions automatically.",
           "In Illustrator: New Document dialog, set units to Centimeters. Illustrator uses 72 points per inch internally, but displays artboard dimensions in your chosen unit.",
           "In GIMP: Image > Canvas Size. Select centimeters as the unit. Set the print resolution under Image > Print Size. Use 300 ppi for print, 96 ppi for web.",

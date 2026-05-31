@@ -74,7 +74,7 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "The most common issue: someone downloads a web image and tries to print it poster-sized. A 1200 x 800 image fills a screen beautifully but prints only 4 x 2.7 inches at professional quality. Stretched larger, it pixelates visibly.",
           "Another common issue: high-megapixel camera files where the embedded DPI reads 72 instead of 300. The pixels are there, but the metadata tells print software to lay the image out huge. Most print workflows read image size from pixel count anyway, so this is usually fixable in export settings.",
-          "Finally, many images from stock photo sites are served at web-optimized dimensions. Before buying or licensing, use this tool to verify the file has enough pixels for your intended use, 2000 pixels is rarely enough for print, even if it looks fine on a screen."
+          "Stock photo sites often serve images at web-optimized dimensions. Before buying or licensing, use this tool to verify the file has enough pixels for your intended use. 2000 pixels is rarely enough for print, even if it looks fine on a screen."
         ]
       },
       {

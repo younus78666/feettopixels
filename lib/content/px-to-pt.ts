@@ -29,8 +29,8 @@ export const content: LocalizedDocMap = {
         "id": "how-it-works",
         "title": "How the PX to PT Converter Works",
         "paragraphs": [
-          "The conversion between CSS pixels and typographic points hinges on the two units' physical definitions. A point (pt) is exactly 1/72 of an inch - a five-century-old typographic unit. A CSS pixel (px) is defined by the CSS specification as 1/96 of an inch at the reference viewing distance. Since 72/96 simplifies to 0.75, the conversion formula is: points = pixels x 0.75, or equivalently pixels = points x (4/3) or about 1.333. A 16px CSS value becomes 12pt, and a 12pt font matches 16px on screen.",
-          "Here is why that specific ratio exists. Early Windows systems adopted 96 DPI as the logical screen resolution, while most printers and typesetting standards still used the 72 DPI print reference. To keep a 12-point font visually similar whether printed or shown on a 96 DPI screen, browsers normalized CSS px to 1/96 inch. That historical compromise gives us today's 4:3 relationship. The general formula works at any DPI: pt = px x 72 / DPI. At 96 DPI, 12pt = 16px. At 150 DPI, 12pt = 25px. At 300 DPI print output, 12pt = 50 actual dots.",
+          "The conversion between CSS pixels and typographic points depends on the two units' physical definitions. A point (pt) is exactly 1/72 of an inch, a five-century-old typographic unit. A CSS pixel (px) is defined by the CSS specification as 1/96 of an inch at the reference viewing distance. Since 72/96 simplifies to 0.75, the conversion formula is: points = pixels x 0.75, or equivalently pixels = points x (4/3), which is about 1.333. A 16px CSS value becomes 12pt, and a 12pt font matches 16px on screen.",
+          "That specific ratio has a historical reason. Early Windows systems adopted 96 DPI as the logical screen resolution, while printers and typesetting standards used the 72 DPI print reference. To keep a 12-point font visually similar whether printed or shown on a 96 DPI screen, browsers normalized CSS px to 1/96 inch. That historical compromise gives us today's 4:3 relationship. The general formula works at any DPI: pt = px x 72 / DPI. At 96 DPI, 12pt = 16px. At 150 DPI, 12pt = 25px. At 300 DPI print output, 12pt = 50 actual dots.",
           "Use this converter whenever you move between design tools (which often default to points or picas for typography) and web CSS (which uses pixels). For related typography unit conversions see px-to-em and px-to-rem."
         ]
       },
@@ -75,12 +75,12 @@ export const content: LocalizedDocMap = {
         "id": "common-mistakes",
         "title": "Common Mistakes to Avoid",
         "paragraphs": [
-          "Point-pixel conversions are mostly mechanical, but a few conceptual mistakes cause subtle problems in production."
+          "Point-pixel conversions are mostly mechanical. A few conceptual mistakes cause subtle problems in production, though."
         ],
         "list": [
-          "Assuming 1pt always equals 1px - that only holds at 72 DPI, not the 96 DPI CSS reference.",
-          "Using points in screen stylesheets where browser rendering introduces rounding - pixels are the safer default for screens.",
-          "Treating point sizes in Word or InDesign as identical to CSS pt - they match mathematically but display size depends on the device DPI.",
+          "Assuming 1pt always equals 1px. That only holds at 72 DPI, not the 96 DPI CSS reference.",
+          "Using points in screen stylesheets where browser rendering introduces rounding. Pixels are the safer default for screens.",
+          "Treating point sizes in Word or InDesign as identical to CSS pt. They match mathematically, but display size depends on the device DPI.",
           "Forgetting that Windows high-DPI scaling changes how operating systems interpret point sizes in legacy apps.",
           "Hard-coding the 0.75 multiplier in code without documenting the assumption that CSS pixels are at 96 DPI.",
           "Mixing pt and px within the same stylesheet, which makes consistent vertical rhythm harder to maintain."

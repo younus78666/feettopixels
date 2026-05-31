@@ -97,7 +97,7 @@ export const content: LocalizedDocMap = {
         "id": "accessibility",
         "title": "EM, REM, and Browser Accessibility",
         "paragraphs": [
-          "One important reason to prefer rem over px is user-controlled browser font size. Many users with low vision increase their browser's base font size above 16px through browser settings or operating system accessibility features.",
+          "User-controlled browser font size is the key accessibility reason to prefer rem over px. Many users with low vision increase their browser's base font size above 16px through browser settings or operating system accessibility features.",
           "If you set all your font sizes in px, they are fixed regardless of the user's preference. If you use rem, your font sizes scale automatically when the user increases their browser base size. This is a key accessibility benefit.",
           "The WCAG 2.1 Success Criterion 1.4.4 (Resize Text) requires that text can be resized up to 200% without loss of content or functionality. Using rem for font sizes makes this trivial to satisfy. Using px for font sizes means you need to test and verify that zoom does not break your layout.",
           "For this reason, many style guides and design systems recommend rem for all typographic sizes and font-size-dependent spacing. The em unit can still be used safely for component-internal padding where scaling with font size is the intended behavior."

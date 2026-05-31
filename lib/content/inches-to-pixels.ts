@@ -26,7 +26,7 @@ export const content: PageContentMap = {
       {
         question: "Does changing DPI change the number of pixels?",
         answer:
-          "When converting from inches to pixels, yes \u2014 a higher DPI produces more pixels for the same physical size. When an image already exists, changing DPI in metadata only changes its print size, not the actual pixel count.",
+          "When converting from inches to pixels, yes: a higher DPI produces more pixels for the same physical size. When an image already exists, changing DPI in metadata only changes its print size, not the actual pixel count.",
       },
     ],
     body: {

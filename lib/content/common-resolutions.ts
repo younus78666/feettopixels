@@ -28,7 +28,7 @@ export const content: PageContentMap = {
       li5: "4:3 - Legacy (1024 x 768), still used in some tablets",
       li6: "3:2 - Surface devices, some Chromebooks (2256 x 1504)",
       heading4: "Choosing the Right Resolution",
-      p1: "For general productivity, QHD (2560 x 1440) on a 27-inch monitor offers an excellent balance of screen real estate and text clarity at 109 PPI. For photo and video editing, 4K (3840 x 2160) provides the detail needed to evaluate fine image quality. For gaming, resolution should match your GPU capability - 1080p for budget setups, 1440p for mid-range, and 4K for high-end systems.",
+      p1: "If you're buying a monitor today and aren't sure which resolution to pick: QHD (2560 x 1440) on a 27-inch panel is the practical sweet spot for most people. It delivers 109 PPI, which means sharp text without needing display scaling tricks. For photo and video editing, 4K (3840 x 2160) gives you the detail needed to evaluate fine image quality. For gaming, match resolution to your GPU: 1080p for budget setups, 1440p for mid-range cards, and 4K for high-end systems. For office work on a laptop, anything at 1920 x 1200 or higher at your screen size will look comfortable.",
       p2: "Check your current display resolution with our Screen Resolution Checker, or calculate pixel density with the PPI Calculator.",
     },
   },

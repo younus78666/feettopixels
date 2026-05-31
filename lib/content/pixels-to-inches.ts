@@ -56,7 +56,7 @@ export const content: PageContentMap = {
       li13: "1920 px - 20 inches at 96 DPI, 6.4 inches at 300 DPI",
       li14: "3840 px - 40 inches at 96 DPI, 12.8 inches at 300 DPI",
       heading6: "When Do You Need to Convert Pixels to Inches?",
-      p5: "Pixel-to-inch conversion comes up regularly in four situations. First, print preparation: before sending a digital file to a printer, you need to confirm the image will print at the correct physical dimensions. Second, photo printing: knowing that a 3000x2000 pixel photo prints at 10x6.67 inches at 300 DPI helps you choose the right paper size. Third, large format signage: banner and poster designers use lower DPI values (100-150) because viewers stand farther away, making each pixel stretch across more physical space. Fourth, web-to-print workflows: designers who repurpose web assets for brochures or business cards need to verify that 96 DPI screen graphics have enough resolution for 300 DPI print output.",
+      p5: "Pixel-to-inch conversion comes up regularly across several workflows. Print preparation is the most common: before sending a digital file to a printer, you need to confirm the image will print at the correct physical dimensions. Photo printing follows the same logic: knowing that a 3000x2000 pixel photo prints at 10x6.67 inches at 300 DPI helps you choose the right paper size. Large format signage works differently, as banner and poster designers use lower DPI values (100-150) because viewers stand farther away, making each pixel stretch across more physical space. In web-to-print workflows, designers who repurpose web assets for brochures or business cards need to verify that 96 DPI screen graphics have enough resolution for 300 DPI print output.",
     },
   },
 

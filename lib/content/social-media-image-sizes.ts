@@ -111,7 +111,8 @@ export const content: PageContentMap = {
       twRow4: "Card image",
       twRow4dim: "1200 x 628",
       twRow4ratio: "1.91:1",
-      p1: "Social media platforms compress uploaded images and may crop previews differently across feed, profile, mobile, and desktop placements. Treat these values as production targets, keep important text away from edges, and re-check platform help docs before a major campaign. Use our Image Size Calculator to verify your export dimensions.",
+      p1: "If you're only going to get one size right, get your Instagram feed dimensions correct at 1080 x 1350 (portrait 4:5). Portrait posts take up the most vertical screen space in the feed, which directly affects how much attention they pull before a user scrolls past. After that, a correctly sized YouTube thumbnail (the largest you can upload) matters most for click-through rate since it appears everywhere a video is surfaced.",
+      p2: "Social media platforms compress uploaded images and may crop previews differently across feed, profile, mobile, and desktop placements. Treat these values as production targets, keep important text away from edges, and re-check platform help docs before a major campaign. Use our Image Size Calculator to verify your export dimensions.",
     },
   },
   es: {

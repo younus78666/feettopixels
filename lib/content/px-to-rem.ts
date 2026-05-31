@@ -29,9 +29,9 @@ export const content: LocalizedDocMap = {
         "id": "how-it-works",
         "title": "How the PX to REM Converter Works",
         "paragraphs": [
-          "REM stands for root em - a CSS length unit equal to the font-size of the root (html) element. Every browser defaults the root to 16 pixels, so 1rem equals 16px out of the box. Converting a pixel value to rem is division: rem = px / root-font-size. With the default base, 24px becomes 24/16 = 1.5rem, 12px becomes 0.75rem, and 48px becomes 3rem. The converter above performs this calculation and also supports the '10px base' convention, where setting html { font-size: 62.5%; } makes 1rem = 10px so the mental math simplifies to 'shift the decimal one place'.",
-          "The crucial difference from EM is that REM is not affected by nesting. A 1.5rem margin on a deeply nested div is exactly 24px regardless of any font-size inheritance chain. This removes the compounding problem described in em-vs-rem and makes REM the preferred unit in modern design systems, including Tailwind CSS and MUI. You keep the responsive-to-user-preference advantage (REM scales when users change their browser's default font size) without the unpredictability of cascading sizes.",
-          "For component-scoped scaling where you do want the compound behavior, use EM instead - see our px-to-em converter. For viewport-relative responsive units, combine REM with clamp() and vw, covered in px-to-vw."
+          "REM stands for root em, a CSS length unit equal to the font-size of the root (html) element. Every browser defaults the root to 16 pixels, so 1rem equals 16px out of the box. Converting a pixel value to rem is simple division: rem = px / root-font-size. With the default base, 24px becomes 24/16 = 1.5rem, 12px becomes 0.75rem, and 48px becomes 3rem. The converter above handles this calculation and also supports the '10px base' convention, where setting html { font-size: 62.5%; } makes 1rem = 10px so the mental math simplifies to shifting the decimal one place.",
+          "The key difference from EM is that REM ignores nesting. A 1.5rem margin on a deeply nested div is exactly 24px regardless of any font-size inheritance chain. This removes the compounding problem described in em-vs-rem and makes REM the preferred unit in modern design systems, including Tailwind CSS and MUI. You get the accessibility advantage (REM scales when users change their browser's default font size) without the unpredictability of cascading sizes.",
+          "For component-scoped scaling where you do want the compound behavior, use EM instead. See our px-to-em converter. For viewport-relative responsive units, combine REM with clamp() and vw, covered in px-to-vw."
         ]
       },
       {
@@ -75,15 +75,15 @@ export const content: LocalizedDocMap = {
         "id": "common-mistakes",
         "title": "Common Mistakes to Avoid",
         "paragraphs": [
-          "REM conversions are straightforward, but a few common missteps can quietly break accessibility and responsive behavior."
+          "REM conversions are straightforward. A few common missteps can quietly break accessibility and responsive behavior, though."
         ],
         "list": [
-          "Setting html { font-size: 16px } - this overrides user preferences and defeats REM's accessibility benefit. Use a percentage like 100% or 62.5% instead.",
-          "Mixing px for some values and rem for others inconsistently, creating a layout that only partially scales with user zoom.",
-          "Forgetting that REM always ignores nesting - if you need component-scoped scaling, reach for EM.",
-          "Using 1rem when you mean 16px without documenting the assumption, making refactors risky if someone changes the root.",
-          "Over-converting - 1px borders and hairline dividers are fine as px because they should not scale with text.",
-          "Using REM in media queries without considering that some browsers historically ignored root font changes in media query context - em is slightly safer there."
+          "Setting html { font-size: 16px } overrides user preferences and defeats REM's accessibility benefit. Use a percentage like 100% or 62.5% instead.",
+          "Mixing px for some values and rem for others without a clear rule creates a layout that only partially scales with user zoom.",
+          "REM always ignores nesting. If you need component-scoped scaling, reach for EM instead.",
+          "Using 1rem when you mean 16px without documenting the assumption makes refactors risky if someone changes the root size later.",
+          "Don't over-convert. Borders at 1px and hairline dividers are fine as px because they shouldn't scale with text.",
+          "Using REM in media queries without considering that some browsers historically ignored root font changes in media query context. EM is slightly safer there."
         ]
       }
     ]

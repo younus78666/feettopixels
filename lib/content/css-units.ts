@@ -13,7 +13,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "What's the difference between REM, EM, and root-relative units?",
-        "answer": "REM is relative to the ROOT element (html) font size only. EM is relative to the PARENT element's font size (or the element's own font size for the font-size property itself). This makes REM predictable across the site while EM compounds through nested components, useful for modular scaling, tricky for global consistency."
+        "answer": "REM is relative to the ROOT element (html) font size only. EM is relative to the PARENT element's font size (or the element's own font size for the font-size property itself). This makes REM predictable across the site, while EM compounds through nested components. That compounding is useful for modular scaling but tricky for global consistency."
       },
       {
         "question": "When does VW cause layout problems?",
@@ -21,7 +21,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Is there a performance difference between CSS units?",
-        "answer": "Negligible for paint/layout, the browser resolves all units to pixels before rendering. The real performance consideration is HOW units interact with reflow: VW changes on every viewport resize, EM cascades through nested components, REM only responds to root font-size changes. REM is generally the most performance-predictable choice."
+        "answer": "Negligible for paint and layout. The browser resolves all units to pixels before rendering. The real performance consideration is how units interact with reflow: VW changes on every viewport resize, EM cascades through nested components, and REM only responds to root font-size changes. REM is generally the most performance-predictable choice."
       }
     ],
     "sections": [
@@ -29,8 +29,9 @@ export const content: LocalizedDocMap = {
         "id": "overview",
         "title": "CSS Unit Converters: REM, EM, PT, VW, and Pixel",
         "paragraphs": [
-          "CSS gives you several length units for controlling size: pixels (px), REM, EM, points (pt), viewport width (vw) and height (vh), percent (%), and more. Each unit has a specific use case, and picking the wrong one makes layouts either rigid or chaotic. This hub covers the four most-used CSS unit converters plus the conceptual explainer guides.",
-          "The underlying truth: every CSS unit ultimately resolves to pixels at render time. Browsers compute REM, EM, VW, and PT back to pixel values based on context (root font size, parent font size, viewport width, display DPI). Understanding the conversion both ways, setting sizes in CSS units, debugging in computed pixels, is what makes a designer or developer fluent in layout."
+          "For 80% of CSS sizing decisions, REM is the right default. Use it for typography, spacing, and container widths. Use PX for borders and shadows where you want exact values that don't scale. Use VW with clamp() for fluid type and hero sections. EM belongs in component-level spacing where you want padding and sizing to track the element's own font size. That covers most real-world CSS.",
+          "CSS gives you several length units: pixels (px), REM, EM, points (pt), viewport width (vw) and height (vh), percent (%), and more. Each has a specific use case. Picking the wrong one makes layouts either rigid or chaotic. This hub covers the four most-used CSS unit converters plus the conceptual explainer guides.",
+          "Every CSS unit ultimately resolves to pixels at render time. Browsers compute REM, EM, VW, and PT back to pixel values based on context: root font size, parent font size, viewport width, and display DPI. Understanding the conversion in both directions, setting sizes in CSS units and debugging in computed pixels, is what makes a developer fluent in layout."
         ]
       },
       {
@@ -70,6 +71,15 @@ export const content: LocalizedDocMap = {
           "EM from PX: EM = PX / parent font size. If parent is 16px, 24px = 1.5em. If parent is 20px (e.g., a card component with h2 parent), 24px = 1.2em.",
           "PT from PX: PT = PX × 72 / 96 = PX × 0.75 (at 96 DPI). 16px = 12pt, 24px = 18pt.",
           "VW from PX: VW = (PX / viewport width) × 100. On a 1920px viewport, 192px = 10vw, 480px = 25vw. On a 375px mobile viewport, 150px = 40vw."
+        ]
+      },
+      {
+        "id": "common-unit-mistakes",
+        "title": "What Goes Wrong When You Pick the Wrong Unit",
+        "paragraphs": [
+          "Using PX everywhere is the most common mistake, and it silently breaks accessibility. When a user sets their browser default font to 20px for readability, every PX value on the page stays fixed. Headings don't grow. Spacing doesn't breathe. The layout ignores the user's preference entirely. Switching typography and spacing to REM fixes this because REM scales with the root font size.",
+          "Using EM for global sizing creates a compounding problem that catches developers off guard. A section set to 1.2em inside a component that's also 1.2em produces 1.44em relative to the root. Nest another level and the values snowball. EM is useful specifically for component-level spacing where you want padding to track the element's own font size. For anything site-wide, use REM instead.",
+          "Forgetting clamp() with VW breaks layouts on both ends of the viewport range. A heading set to 3vw looks fine at 1440px but shrinks to unreadable on a phone and grows comically large on a 3440px ultrawide monitor. Wrapping VW in clamp() gives you the fluid scaling in the middle with a sensible floor and ceiling: clamp(1.25rem, 3vw, 2.5rem) works at every screen size."
         ]
       },
       {

@@ -219,6 +219,48 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "Calculate pixel dimensions for any custom size with our Image Size Calculator or Inches to Pixels Converter."
         ]
+      },
+      {
+        "id": "rejection-causes",
+        "title": "What Causes Passport Photo Rejections?",
+        "paragraphs": [
+          "Most passport photo rejections come from one of four causes: wrong pixel dimensions, wrong file size, biometric framing failures, or background issues. Fixing the pixel count won't help if the other three aren't right.",
+          "Pixel dimension errors happen when the photo doesn't meet the official minimum or maximum range. For US digital submissions, a file under 600 x 600 pixels or over 1200 x 1200 pixels will be rejected outright. UK digital submissions require at least 600 x 750 pixels. Always verify the exact range for the country and document type you're applying for.",
+          "Biometric framing failures are the most common cause of rejection after the technical specs look correct. Each country specifies how large the face must appear relative to the total frame height. For US passports, the head (chin to top of hair, not top of frame) must be between 1 inch and 1 3/8 inches in the physical 2 x 2 inch print, or 50% to 69% of the total frame height digitally. Crop too tight or too loose and the system flags it.",
+          "Background problems include shadows on the white or off-white background, patterns, other people in the frame, and colored backgrounds. A plain white or light gray wall with no shadows directly behind the head is the safest choice.",
+          "File size and compression rejections occur when the exported JPEG is too small or too large. Many portals have a maximum file size (often 10 MB) and a minimum quality floor. Saving a photo at very low JPEG quality to hit a file size target can degrade it below the system's quality threshold even if the pixel dimensions are correct."
+        ]
+      },
+      {
+        "id": "home-vs-professional",
+        "title": "Can You Take a Passport Photo at Home?",
+        "paragraphs": [
+          "Yes, you can take a compliant passport photo at home with a modern smartphone. Many countries now accept digital photos taken by the applicant, provided all technical and biometric requirements are met.",
+          "To shoot at home, use a plain white or off-white wall as your background. Natural window light from the side works better than direct overhead light, which creates shadows on the background and under the chin. Avoid flash if it causes red-eye or washes out skin tone. The camera should be at eye level, about 3 to 4 feet from the subject.",
+          "After shooting, use a passport photo cropping tool to frame the head correctly to the official ratio. Don't rely on auto-crop features unless the tool is specifically calibrated for passport biometric standards. Export as a JPEG and check the pixel dimensions and file size before uploading.",
+          "A professional photo booth or pharmacy service is the safer option if you're not confident about the framing or lighting. These services guarantee compliance with official specs, and many offer a reprint if the photo is rejected. For countries with strict biometric standards (like the US, UK, and Schengen zone), professional photos reduce the chance of rejection significantly.",
+          "Camera settings for home photos: shoot in the highest resolution your phone or camera allows. Use portrait mode only if it doesn't add artificial background blur (blurred backgrounds can be flagged as doctored). Disable beauty filters and HDR modes that might alter skin tone or apply smoothing. JPEGs work fine; you don't need RAW files for passport photos."
+        ]
+      },
+      {
+        "id": "requirements-checklist",
+        "title": "How Do You Know If Your Photo Meets Requirements?",
+        "paragraphs": [
+          "Run through this checklist before submitting. A photo that passes all these checks will meet requirements for most passport and visa applications."
+        ],
+        "list": [
+          "Pixel dimensions: confirm the width and height are within the official range for the country and document type.",
+          "File size: check that the exported file falls within the portal's minimum and maximum file size limits.",
+          "File format: most portals accept JPEG only. Confirm the format before uploading.",
+          "Head size: the face should fill 70% to 80% of the frame height from chin to crown (exact percentage varies by country).",
+          "Eye position: eyes must be open, clearly visible, and centered in the upper half of the frame.",
+          "Expression: neutral expression, mouth closed. Smiling is not accepted for biometric passports in most countries.",
+          "Background: plain white or off-white with no patterns, no shadows, and no other objects.",
+          "Lighting: even lighting with no strong shadows on the face or background.",
+          "No glasses: since 2016, glasses are not permitted in US passport photos. Most EU countries and the UK follow the same rule.",
+          "No head coverings, except for religious reasons (and a letter may be required).",
+          "Photo recency: most countries require the photo to have been taken within the last 6 months."
+        ]
       }
     ]
   },

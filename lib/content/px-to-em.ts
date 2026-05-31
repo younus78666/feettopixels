@@ -29,9 +29,9 @@ export const content: LocalizedDocMap = {
         "id": "how-it-works",
         "title": "How the PX to EM Converter Works",
         "paragraphs": [
-          "The EM unit in CSS is relative to the font-size of the element itself (or its parent when used for properties other than font-size). The conversion formula is simple: em = px / parent-font-size. With a default parent font-size of 16px, 24px becomes 24/16 = 1.5em, 12px becomes 0.75em, and 32px becomes 2em. The PX to EM converter does this division for you and also lets you override the parent size to match a specific component context.",
-          "The catch with EM is that it cascades. If a div has font-size: 1.5em and contains a span with font-size: 1.5em, the span ends up at 1.5 x 1.5 = 2.25em relative to the root. This cascading behavior is useful when you want a component to scale proportionally with its container, but it also creates the compounding problem that led developers to adopt REM for root-consistent sizing. Our em-vs-rem comparison goes deeper, and the px-to-rem tool covers the root-based alternative.",
-          "EM shines for component-relative spacing. Setting button padding to 0.5em 1em guarantees the padding scales with the button's own font size. Increase the button from 14px to 18px and the padding grows proportionally without any extra code. This is why design systems like Bootstrap and Tailwind use EM for many internal spacing tokens."
+          "The EM unit in CSS is relative to the font-size of the element itself (or its parent when used for properties other than font-size). The conversion formula is: em = px / parent-font-size. With a default parent font-size of 16px, 24px becomes 24/16 = 1.5em, 12px becomes 0.75em, and 32px becomes 2em. The PX to EM converter handles this division and lets you override the parent size to match a specific component context.",
+          "The catch with EM is that it cascades. If a div has font-size: 1.5em and contains a span with font-size: 1.5em, the span ends up at 1.5 x 1.5 = 2.25em relative to the root. This cascading behavior helps when you want a component to scale proportionally with its container, but it's also the compounding problem that pushed developers toward REM for root-consistent sizing. Our em-vs-rem comparison goes deeper, and the px-to-rem tool covers the root-based alternative.",
+          "EM works well for component-relative spacing. Setting button padding to 0.5em 1em guarantees the padding scales with the button's own font size. Increase the button from 14px to 18px and the padding grows proportionally without any extra code. That's why design systems like Bootstrap and Tailwind use EM for many internal spacing tokens."
         ]
       },
       {
@@ -74,12 +74,12 @@ export const content: LocalizedDocMap = {
         "id": "common-mistakes",
         "title": "Common Mistakes to Avoid",
         "paragraphs": [
-          "The compounding behavior of EM makes it powerful but error-prone. Watch for these traps when refactoring px values to em."
+          "EM's compounding behavior makes it powerful but error-prone. Watch for these traps when refactoring px values to em."
         ],
         "list": [
-          "Assuming 1em always equals 16px - it only does when the parent's computed font-size is 16px, which is not guaranteed inside nested components.",
+          "Assuming 1em always equals 16px. It only does when the parent's computed font-size is 16px, which isn't guaranteed inside nested components.",
           "Using EM for deeply nested text where compounding makes the innermost element surprisingly large or small.",
-          "Mixing EM and REM without a clear rule - inconsistent usage makes sizing drift unpredictably.",
+          "Mixing EM and REM without a clear rule. Inconsistent usage makes sizing drift unpredictably across the codebase.",
           "Forgetting that EM on the font-size property is relative to the parent, while EM on other properties is relative to the element's own font-size.",
           "Hard-coding pixel equivalents in comments that go stale when someone changes the parent font-size.",
           "Using EM for layout widths where the cascading behavior produces hard-to-debug sizing."

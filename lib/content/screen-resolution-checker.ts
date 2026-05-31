@@ -5,23 +5,23 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "What is the difference between screen resolution and CSS pixels?",
-        "answer": "Screen resolution is the physical pixel count of your display. CSS pixels are the logical pixels used by browsers. On a device with 2x pixel ratio (like Retina displays), 1 CSS pixel equals 4 physical pixels (2x2). This is why CSS pixel dimensions are often half the physical resolution."
+        "answer": "Screen resolution is the physical pixel count of your display. CSS pixels are the logical pixels used by browsers. On a device with a 2x pixel ratio (like Retina displays), 1 CSS pixel equals 4 physical pixels (2x2). That's why CSS pixel dimensions are often half the physical resolution number you see in your OS display settings."
       },
       {
         "question": "What is Device Pixel Ratio (DPR)?",
-        "answer": "Device Pixel Ratio is the ratio between physical pixels and CSS pixels. A DPR of 1 means each CSS pixel maps to one physical pixel. A DPR of 2 (Retina) means each CSS pixel uses a 2x2 grid of physical pixels for sharper rendering."
+        "answer": "Device Pixel Ratio is the ratio between physical pixels and CSS pixels. A DPR of 1 means each CSS pixel maps to one physical pixel. A DPR of 2 (Retina) means each CSS pixel uses a 2x2 grid of physical pixels for sharper rendering. High-DPR screens look cleaner but require larger image assets to stay crisp."
       },
       {
         "question": "Why does my screen show a different resolution than expected?",
-        "answer": "Your operating system may be using display scaling (e.g., 125% or 150% on Windows). This changes the effective CSS resolution while the physical resolution stays the same. The reported values reflect your current scaling settings."
+        "answer": "Your operating system is most likely using display scaling (such as 125% or 150% on Windows). Scaling changes the effective CSS resolution while the physical resolution stays the same. The values this tool reports reflect your current scaling settings, not the raw hardware resolution."
       },
       {
         "question": "What is color depth?",
-        "answer": "Color depth indicates how many bits are used to represent each pixel's color. 24-bit (8 bits per channel) supports 16.7 million colors and is standard. 30-bit (10 bits per channel) supports 1.07 billion colors for HDR content."
+        "answer": "Color depth indicates how many bits are used to represent each pixel's color. 24-bit (8 bits per channel) supports 16.7 million colors and is the standard for most displays. 30-bit (10 bits per channel) supports 1.07 billion colors, used in professional monitors for photo editing, HDR content, and color grading."
       },
       {
         "question": "How do I check my actual monitor resolution?",
-        "answer": "This tool detects the resolution reported by your browser. For the true physical resolution, check your monitor specifications or operating system display settings. If scaling is applied, multiply the CSS resolution by the device pixel ratio."
+        "answer": "This tool detects the resolution reported by your browser. For the true physical resolution, check your monitor's specifications or your operating system's display settings. If scaling is applied, multiply the CSS resolution by the device pixel ratio to get the physical pixel count."
       }
     ],
     "sections": [
@@ -29,17 +29,26 @@ export const content: LocalizedDocMap = {
         "id": "overview",
         "title": "What the Screen Resolution Checker Reports",
         "paragraphs": [
-          "This tool auto-detects five critical metrics about your current display: physical screen resolution (width × height in pixels), device pixel ratio (DPR, the multiplier between CSS pixels and physical pixels), color depth (bits per channel × 3 channels = total bits), viewport size (browser window dimensions excluding scrollbars), and refresh rate where available.",
-          "All detection happens through standard browser APIs, `window.screen`, `window.devicePixelRatio`, `window.matchMedia`, and viewport measurements. The tool runs entirely in your browser with no external calls, so your device details stay private."
+          "This tool auto-detects five display metrics in your browser: physical screen resolution (width x height in pixels), device pixel ratio (DPR), color depth (bits per channel x 3 channels = total bits), viewport size (browser window dimensions excluding scrollbars), and refresh rate where available.",
+          "All detection happens through standard browser APIs: window.screen, window.devicePixelRatio, window.matchMedia, and viewport measurements. The tool runs entirely in your browser with no external calls, so your device details stay private."
+        ]
+      },
+      {
+        "id": "what-knowing-your-resolution-helps-you-do",
+        "title": "What Knowing Your Screen Resolution Helps You Do",
+        "paragraphs": [
+          "For developers, knowing the DPR tells you what image sizes to serve. A DPR-2 screen needs 2x image assets to display crisp graphics. A DPR-1 screen doesn't need them, so serving them wastes bandwidth. Run this tool on a test device before writing your srcset breakpoints.",
+          "For designers, the physical resolution confirms whether your mockup canvas matches the real device. A design built at 1440px wide won't look the same on a 1280px display. For content creators, the pixel count tells you the exact dimensions for wallpapers, thumbnails, and recorded video exports at native quality.",
+          "For buyers evaluating a new display, this tool shows what your current screen actually delivers so you can compare it honestly against the specs of an upgrade."
         ]
       },
       {
         "id": "what-matters",
         "title": "Why These Numbers Matter",
         "paragraphs": [
-          "Physical resolution tells you the display hardware's native pixel count. 1920×1080 is Full HD, 2560×1440 is QHD, 3840×2160 is 4K UHD, 5120×2880 is 5K. Higher resolution on a larger screen gives sharper text and more workspace; on a smaller screen, it gives Retina-class smoothness.",
-          "Device pixel ratio (DPR) is the scaling multiplier browsers use to make UI elements readable on high-density screens. A DPR of 1 is standard density. DPR 2 means every CSS pixel renders as 2 by 2 physical pixels (total 4x detail). DPR 3 is common on flagship phones. DPR guides responsive image serving because high-DPR devices need 2x or 3x assets.",
-          "Color depth describes how many distinct colors your display can show. 24-bit (8 bits per RGB channel) is the universal standard, giving 16.7 million colors. 30-bit (10 bits per channel) gives 1.07 billion colors, professional monitors for photo editing, HDR content, and color grading. Color depth affects gradients: 24-bit displays show visible banding in smooth gradients, while 30-bit displays render them smoothly."
+          "Physical resolution tells you the display hardware's native pixel count. 1920x1080 is Full HD, 2560x1440 is QHD, 3840x2160 is 4K UHD, 5120x2880 is 5K. Higher resolution on a larger screen gives sharper text and more workspace. On a smaller screen, it gives Retina-class smoothness.",
+          "Device pixel ratio (DPR) is the scaling multiplier browsers use to keep UI elements readable on high-density screens. DPR 1 is standard density. DPR 2 means every CSS pixel renders as 2x2 physical pixels (four times the detail). DPR 3 is common on flagship phones. Knowing the DPR guides responsive image serving: high-DPR devices need 2x or 3x assets to display clearly.",
+          "Color depth describes how many distinct colors your display can show. 24-bit (8 bits per RGB channel) is the universal standard, giving 16.7 million colors. 30-bit (10 bits per channel) gives 1.07 billion colors, found on professional monitors for photo editing, HDR content, and color grading. Color depth affects gradients: 24-bit displays show visible banding in smooth gradients, while 30-bit displays render them cleanly."
         ]
       },
       {
@@ -65,24 +74,24 @@ export const content: LocalizedDocMap = {
         "id": "dpr-implications",
         "title": "Device Pixel Ratio Implications for Developers",
         "paragraphs": [
-          "When you specify `width: 100px` in CSS, the browser renders 100 CSS pixels, but on a DPR-2 screen, those are 200 physical pixels. The same CSS code produces sharper output on high-DPR devices automatically.",
-          "For images, this means serving a raw 1× image (e.g., 400px wide) looks fine on DPR-1 but appears soft on DPR-2 because the browser stretches the 400 physical pixels to fill 800 physical pixels. Use `srcset` or `<picture>` to serve 2× and 3× variants (800px and 1200px for the same slot) so high-DPR devices get crisp output.",
-          "For canvas-rendered content (charts, games), multiply the canvas's actual pixel count by DPR while keeping the CSS size constant. Without this, canvas graphics look blurry on Retina displays. The pattern is: `canvas.width = cssWidth × devicePixelRatio; context.scale(devicePixelRatio, devicePixelRatio);`"
+          "When you write `width: 100px` in CSS, the browser renders 100 CSS pixels. On a DPR-2 screen, those map to 200 physical pixels. The same CSS produces sharper output on high-DPR devices automatically, with no extra work on layout.",
+          "For images, a 1x image (say, 400px wide) looks fine on DPR-1 but appears soft on DPR-2 because the browser stretches 400 physical pixels to fill 800. Use `srcset` or `<picture>` to serve 2x and 3x variants (800px and 1200px for the same slot) so high-DPR devices get crisp output.",
+          "For canvas-rendered content (charts, games), multiply the canvas's actual pixel count by DPR while keeping the CSS size constant. Without this step, canvas graphics look blurry on Retina displays. The pattern is: `canvas.width = cssWidth x devicePixelRatio; context.scale(devicePixelRatio, devicePixelRatio);`"
         ]
       },
       {
         "id": "refresh-rate",
         "title": "Refresh Rate and Motion Clarity",
         "paragraphs": [
-          "Refresh rate measures how many times per second your display redraws the image. 60 Hz is the classic standard, adequate for text and static UI. 120 Hz is the new baseline for modern phones and gaming monitors, producing noticeably smoother scrolling and animations. 144 Hz, 165 Hz, 240 Hz, and higher appear on gaming displays where input latency matters.",
-          "Whether you notice the difference depends on what you do. For email, docs, and browsing, 60 Hz feels fine. For fast scrolling, gaming, and animation, 120+ Hz is visibly smoother, once you adapt to it, 60 Hz feels choppy. Variable refresh rate (VRR) technologies like FreeSync and G-Sync dynamically match the refresh rate to content, reducing stutter and tearing at any frame rate."
+          "Refresh rate measures how many times per second your display redraws the image. 60 Hz is the classic standard, adequate for text and static UI. 120 Hz is the new baseline for modern phones and gaming monitors, producing noticeably smoother scrolling and animations. 144 Hz, 165 Hz, and 240 Hz appear on gaming displays where input latency matters.",
+          "Whether the difference is noticeable depends on what you're doing. For email, docs, and browsing, 60 Hz feels fine. For fast scrolling, gaming, and animation, 120+ Hz is visibly smoother. Variable refresh rate (VRR) technologies like FreeSync and G-Sync dynamically match the refresh rate to content, reducing stutter and tearing at any frame rate."
         ]
       },
       {
         "id": "use-cases",
         "title": "When to Use This Tool",
         "paragraphs": [
-          "Buying a new display: compare its specs against what your current screen reports to know whether the upgrade is worth it.",
+          "Buying a new display: compare its specs against what your current screen reports to know whether the upgrade delivers a meaningful difference.",
           "Web development QA: quickly verify a test device's DPR, resolution, and viewport before filing a cross-device bug.",
           "Asset preparation: know the real pixel count required to fill your display at crisp quality before exporting wallpapers, screenshots, or recorded videos.",
           "Accessibility: confirm that users with high-DPR or low-resolution devices see your content at intended sizes, since CSS scales differently across densities."
