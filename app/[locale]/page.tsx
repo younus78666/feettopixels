@@ -13,12 +13,12 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const homeTitle = "Feet to Pixels Converter - Convert FT to PX at Any DPI";
+const homeTitle = "Pixel Converter - Pixels to Inches, Feet, CM and More";
 const homeDescription =
-  "Convert feet to pixels at 72, 96, 150, and 300 DPI. Free FT to PX calculator for signage, banners, large-format displays, print prep, and layout work.";
-const homeHeadline = "Feet to Pixels Converter";
+  "Free pixel converter for designers and developers. Convert pixels to inches, cm, mm, feet, and rem at any DPI. DPI-aware tools for print, web, CSS, and signage.";
+const homeHeadline = "Pixel Converter";
 const homeSubheadline =
-  "Convert feet to pixels for banners, signage, wall graphics, displays, and print layouts. Choose any DPI and get the exact pixel width instantly.";
+  "Convert pixels to inches, feet, centimeters, rem, em, and more at any DPI. Every tool is DPI-aware and free — built for designers, photographers, and developers.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -28,12 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: { absolute: homeTitle },
     description: homeDescription,
     keywords: [
-      "feet to pixels",
-      "feet to pixels converter",
-      "ft to px",
-      "convert feet to pixels",
-      "pixel converter",
       "pixels to inches",
+      "pixel converter",
+      "px to inches",
+      "pixels to inches converter",
+      "dpi converter",
+      "feet to pixels",
+      "ft to px",
       "pixels to cm",
       "pixels to feet",
       "px to rem",
@@ -61,18 +62,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 const quickConverters = [
   {
-    title: "Feet to Pixels",
-    href: "/feet-to-pixels",
-    description: "Convert feet to px for signage",
-    formula: "px = ft x 12 x DPI",
-  },
-  {
-    title: "Pixels to Feet",
-    href: "/pixels-to-feet",
-    description: "Convert px to feet for large format",
-    formula: "ft = px / (DPI x 12)",
-  },
-  {
     title: "Pixels to Inches",
     href: "/pixels-to-inches",
     description: "Convert px to inches at any DPI",
@@ -85,16 +74,28 @@ const quickConverters = [
     formula: "px = in x DPI",
   },
   {
+    title: "Feet to Pixels",
+    href: "/feet-to-pixels",
+    description: "Convert feet to px for signage",
+    formula: "px = ft x 12 x DPI",
+  },
+  {
+    title: "Pixels to Feet",
+    href: "/pixels-to-feet",
+    description: "Convert px to feet for large format",
+    formula: "ft = px / (DPI x 12)",
+  },
+  {
     title: "Pixels to CM",
     href: "/pixels-to-cm",
     description: "Convert px to centimeters",
     formula: "cm = px x 2.54 / DPI",
   },
   {
-    title: "PX to REM",
-    href: "/px-to-rem",
-    description: "Convert pixels to REM for CSS",
-    formula: "rem = px / 16",
+    title: "DPI Converter",
+    href: "/dpi-converter",
+    description: "Convert between DPI settings online",
+    formula: "scale = new DPI / old DPI",
   },
   {
     title: "DPI Calculator",
@@ -103,10 +104,10 @@ const quickConverters = [
     formula: "sqrt(W^2 + H^2) / diag",
   },
   {
-    title: "PPI Calculator",
-    href: "/ppi-calculator",
-    description: "Find pixels per inch for any display",
-    formula: "Same as DPI, for screens",
+    title: "PX to REM",
+    href: "/px-to-rem",
+    description: "Convert pixels to REM for CSS",
+    formula: "rem = px / 16",
   },
   {
     title: "Aspect Ratio Calculator",
@@ -194,6 +195,21 @@ const faqItems = [
       "DPI (dots per inch) measures print resolution, the number of ink dots a printer places per inch. PPI (pixels per inch) measures digital resolution, the number of pixels in one inch of a screen or image. Designers often use the terms interchangeably, but DPI belongs to print and PPI belongs to screens.",
   },
   {
+    question: "How do I convert pixels to inches?",
+    answer:
+      "Divide the pixel value by DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches. Use the Pixels to Inches converter for any DPI combination instantly.",
+  },
+  {
+    question: "What is a DPI converter and when do I need one?",
+    answer:
+      "A DPI converter helps you change the resolution of an image from one DPI setting to another, for example from 72 DPI (web) to 300 DPI (print). When you increase DPI, the physical print size shrinks but detail improves. When you decrease DPI, the print size grows but resolution drops. The DPI Converter on this site shows the size change instantly.",
+  },
+  {
+    question: "What tools does FeetToPixels include?",
+    answer:
+      "FeetToPixels includes converters for pixels to inches, feet, centimeters, and millimeters, plus CSS converters for rem, em, pt, and vw. It also includes a DPI converter, DPI calculator, PPI calculator, image size calculator, aspect ratio calculator, megapixel calculator, screen resolution checker, image DPI checker, and pixel ruler. All tools are free and require no login.",
+  },
+  {
     question: "Is the FeetToPixels converter free and do I need to sign up?",
     answer:
       "Every tool on FeetToPixels is free, requires no signup, and works entirely in your browser. Nothing is uploaded or stored on a server.",
@@ -215,7 +231,7 @@ export default async function Home({ params }: PageProps) {
     logo: `${siteConfig.url}/brand-mark.svg`,
     sameAs: [siteConfig.url],
     description:
-      "Free feet to pixels and DPI-aware pixel conversion tools for designers, developers, print shops, and sign makers.",
+      "Free DPI-aware pixel converter. Convert pixels to inches, cm, mm, feet, and CSS units. Tools for designers, developers, print shops, and photographers.",
   };
 
   const websiteJsonLd = {
@@ -256,14 +272,14 @@ export default async function Home({ params }: PageProps) {
       availability: "https://schema.org/InStock",
     },
     featureList: [
-      "Convert feet to pixels at any DPI",
-      "Convert pixels to feet for large-format layouts",
-      "Convert pixels to inches, centimeters, millimeters",
-      "Convert pixels to REM, EM, PT, VW",
+      "Convert pixels to inches at any DPI",
+      "Convert pixels to centimeters and millimeters",
+      "Convert feet to pixels for large-format layouts",
+      "DPI converter: change between 72, 96, 150, 300 DPI",
+      "Convert pixels to REM, EM, PT, VW for CSS",
+      "DPI and PPI calculator for screens and print",
       "DPI presets: 72, 96, 150, 300, 600",
-      "Copy to clipboard",
-      "Works offline after first load",
-      "No signup required",
+      "No signup required, works in browser",
     ],
     creator: { "@id": `${siteConfig.url}/#organization` },
   };
@@ -339,8 +355,7 @@ export default async function Home({ params }: PageProps) {
               Explore Related Pixel Converters
             </h2>
             <p className="mt-3 text-neutral-600">
-              Feet to pixels is the primary calculator. These supporting tools
-              cover reverse conversion, inches, centimeters, CSS units, and DPI.
+              Convert pixels to inches, feet, centimeters, and CSS units. Every tool is DPI-aware — enter a value and get the result instantly.
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
