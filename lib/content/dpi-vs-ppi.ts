@@ -23,6 +23,21 @@ export const content: PageContentMap = {
         answer:
           "72 DPI was the legacy Mac screen resolution, and 96 DPI is the Windows default. These defaults have no impact on how the image appears on screen - they only affect the default print size calculation.",
       },
+      {
+        question: "Is 300 DPI the same as 300 PPI?",
+        answer:
+          "For practical purposes, yes. When you set 300 DPI in Photoshop or Illustrator, you're actually setting 300 PPI (pixels per inch) in the image metadata. The printer then uses its own DPI (often 1200-4800) to reproduce each pixel using multiple ink dots. Technically, DPI belongs to printers and PPI belongs to images and screens — but both describe density in the same unit (per inch) and the numbers are equivalent when specifying image resolution.",
+      },
+      {
+        question: "When should I use DPI vs PPI?",
+        answer:
+          "Use PPI when talking about screens, monitors, phone displays, and image file resolution. Use DPI when talking about physical printer output and ink dot density. In practice, most designers use DPI for both because image editing software labels the resolution field 'DPI' even when it technically means PPI. For professional print specs, use PPI. For casual conversation, either term works.",
+      },
+      {
+        question: "What is 72 DPI vs 300 DPI — what is the difference?",
+        answer:
+          "72 DPI and 300 DPI differ in pixel density per inch. At 72 DPI, a 720-pixel-wide image prints at 10 inches. At 300 DPI, the same 720 pixels prints at 2.4 inches. The pixel data is identical — only the print size changes. For screen display, neither matters because browsers ignore DPI metadata. For print, 300 DPI produces sharper output at reading distance while 72 DPI is only appropriate for large-format work viewed from a distance.",
+      },
     ],
     body: {
       heading1: "Quick Answer",

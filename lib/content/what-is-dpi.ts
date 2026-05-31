@@ -30,6 +30,22 @@ export const content: LocalizedDocMap = {
       {
         "question": "Can I increase DPI without reprinting from the original file?",
         "answer": "You can change the DPI number in a file\'s metadata, but that alone does not add detail. If the image only has 600x400 pixels, setting it to 600 DPI just makes it print smaller (1x0.67 inch) instead of sharper. True DPI increase requires either a higher-resolution original, AI upscaling, or rescanning at a higher optical resolution."
+      },
+      {
+        "question": "What DPI should I scan photos?",
+        "answer": "Scan photos at 600 DPI to preserve full detail for printing or archiving. If you only need digital viewing or social sharing, 300 DPI is sufficient. For small originals you plan to enlarge (slides, negatives, old wallet-size photos), scan at 1200-2400 DPI so the enlarged print has enough pixels. The rule: scan DPI x original size in inches = total pixels available for output."
+      },
+      {
+        "question": "What is a good DPI for scanning old photos?",
+        "answer": "600 DPI is the recommended minimum for scanning old photos you plan to archive or print. At 600 DPI, a standard 4x6 photo produces a 2400x3600 pixel file — enough to print cleanly at 8x12 inches at 300 DPI. For damaged or very small originals, 1200 DPI gives more flexibility for restoration and enlargement."
+      },
+      {
+        "question": "What DPI is high resolution?",
+        "answer": "For print, 300 DPI or higher is considered high resolution. Images below 150 DPI start showing visible pixelation at reading distance. For screens, 220+ PPI is considered high-resolution (Retina-class), where individual pixels are invisible to the naked eye at typical viewing distance. For scanning, 600 DPI is a high-resolution baseline for most photo preservation work."
+      },
+      {
+        "question": "What is the difference between 72 DPI and 300 DPI?",
+        "answer": "72 DPI and 300 DPI differ in how many pixels they pack into one inch of printed output. At 72 DPI, a 720-pixel image prints 10 inches wide. At 300 DPI, that same 720-pixel image prints only 2.4 inches wide. The pixel data is identical — DPI just controls how those pixels are distributed across physical space. For screen display, DPI values have no effect whatsoever."
       }
     ],
     "sections": [

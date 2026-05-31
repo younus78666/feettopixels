@@ -14,6 +14,18 @@ export const content: LocalizedDocMap = {
       {
         "question": "How do I optimize images for web performance?",
         "answer": "Use modern formats like WebP or AVIF. Resize to the actual display dimensions (no larger than needed). Compress with tools like Squoosh or ImageOptim. Use responsive images with srcset for different screen sizes."
+      },
+      {
+        "question": "What does 72 DPI mean for web images?",
+        "answer": "72 DPI is a legacy web standard that has no effect on how images display in browsers. Browsers ignore DPI metadata in image files and only use pixel dimensions. A 1920x1080 image at 72 DPI displays identically to the same image at 300 DPI on any screen. The 72 DPI convention originated from early Mac monitors in the 1980s and has no practical relevance for modern web design."
+      },
+      {
+        "question": "Should I save web images at 72 DPI or 96 DPI?",
+        "answer": "It doesn't matter for web display. Browsers ignore DPI metadata and render images based solely on pixel dimensions. Save at 72 or 96 DPI — the choice has zero effect on how the image appears on screen or on file size. What actually matters for web images is pixel dimensions, compression quality, and file format (WebP over JPEG where supported)."
+      },
+      {
+        "question": "Does DPI affect image file size?",
+        "answer": "No. DPI metadata has no effect on file size. A 1200x800 JPEG at 72 DPI is the same file size as the same image at 300 DPI, with identical quality. File size depends only on pixel dimensions, compression level, and color depth. This is a common misconception — changing DPI in an image editor without resampling changes nothing except the default print size."
       }
     ],
     "sections": [

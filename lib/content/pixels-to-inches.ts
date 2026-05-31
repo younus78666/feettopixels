@@ -6,7 +6,7 @@ export const content: PageContentMap = {
       {
         question: "How do I convert pixels to inches?",
         answer:
-          "Divide the number of pixels by the DPI (dots per inch). For example, 960 pixels at 96 DPI equals 10 inches (960 / 96 = 10). The DPI determines how many pixels fit in one inch.",
+          "Divide the pixel value by DPI. The formula is: inches = pixels / DPI. At 96 DPI (web standard), 960 pixels equals 10 inches. At 300 DPI (print quality), 960 pixels equals 3.2 inches. The DPI setting determines the physical size — the pixel count stays the same.",
       },
       {
         question: "What DPI should I use for web design?",
@@ -28,6 +28,31 @@ export const content: PageContentMap = {
         question: "How many pixels are in one inch?",
         answer:
           "It depends on the DPI setting. At 96 DPI (web standard), one inch equals 96 pixels. At 72 DPI, one inch equals 72 pixels. At 300 DPI (print standard), one inch equals 300 pixels.",
+      },
+      {
+        question: "How many inches is 1920 pixels?",
+        answer:
+          "It depends on DPI. At 96 DPI, 1920 pixels equals 20 inches. At 300 DPI, 1920 pixels equals 6.4 inches. At 72 DPI, 1920 pixels equals 26.7 inches. Divide the pixel count by DPI to get inches. For a 1920x1080 monitor at 24 inches diagonal, the pixel density is about 91.8 PPI.",
+      },
+      {
+        question: "How many inches is 1200 pixels?",
+        answer:
+          "At 96 DPI, 1200 pixels equals 12.5 inches. At 300 DPI, 1200 pixels equals 4 inches. At 150 DPI, 1200 pixels equals 8 inches. Use the formula: inches = pixels / DPI. A 1200-pixel image submitted to a 300 DPI print job will produce a 4-inch print.",
+      },
+      {
+        question: "How do I change pixels to inches in Photoshop?",
+        answer:
+          "In Photoshop, go to Image > Image Size. Uncheck Resample to keep the pixel count fixed, then change the Resolution field (which is PPI). The Width and Height fields in inches will update automatically. At 300 PPI, a 3000-pixel-wide canvas shows as 10 inches. At 96 PPI, the same 3000 pixels shows as 31.25 inches.",
+      },
+      {
+        question: "How many pixels is 1 inch at 300 DPI?",
+        answer:
+          "At 300 DPI, 1 inch equals 300 pixels. This is the standard for professional photo printing and commercial print work. At 96 DPI (web), 1 inch equals 96 pixels. At 72 DPI, 1 inch equals 72 pixels. The formula: pixels = inches x DPI.",
+      },
+      {
+        question: "How many pixels is 1 inch at 96 DPI?",
+        answer:
+          "At 96 DPI, 1 inch equals 96 pixels. This is the standard CSS reference density for web design — 1 CSS inch equals exactly 96 CSS pixels. At this density, a 960-pixel-wide layout is 10 inches wide. Most monitors display at 90-110 actual PPI, which is close enough to 96 that the difference is rarely visible.",
       },
     ],
     body: {

@@ -8,6 +8,10 @@ export const content: PageContentMap = {
       { question: "Is PPI the same as DPI?", answer: "Not exactly. PPI (pixels per inch) refers to screen pixel density, while DPI (dots per inch) refers to print resolution. They are often used interchangeably, but technically PPI applies to screens and DPI applies to printers." },
       { question: "What PPI do retina displays use?", answer: "Apple Retina displays typically have 218-264 PPI for laptops and 326-460 PPI for iPhones. The term 'retina' means pixels are small enough that the human eye cannot distinguish individual pixels at normal viewing distance." },
       { question: "Does higher PPI mean better quality?", answer: "Higher PPI means more pixels packed into each inch, resulting in sharper, more detailed images. However, beyond about 300 PPI for print or 220+ PPI for screens at normal viewing distance, the human eye cannot perceive further improvement." },
+      { question: "How many pixels are in one inch?", answer: "The number of pixels per inch equals the DPI setting. At 96 DPI (web standard), one inch contains exactly 96 pixels. At 300 DPI (print quality), one inch contains 300 pixels. At 72 DPI, one inch contains 72 pixels. The formula is always: pixels = inches x DPI." },
+      { question: "How many pixels per inch is considered high resolution?", answer: "For print, 300 pixels per inch (300 PPI) is the professional standard for photos, brochures, and marketing materials viewed at reading distance. 600 PPI is used for fine art and archival prints. For screens, 220-300 PPI is considered Retina-class, meaning individual pixels are invisible at typical viewing distance. Anything above 300 PPI on a screen provides no visible benefit at normal use distance." },
+      { question: "Is 72 PPI the same as 72 DPI?", answer: "In everyday use, yes. PPI (pixels per inch) describes digital pixel density in screens and image files, while DPI (dots per inch) describes printer ink dot density. When image editors like Photoshop label their resolution field 'DPI', they actually mean PPI. Both 72 PPI and 72 DPI refer to 72 units per linear inch — the difference is only in the physical medium (screen vs. paper)." },
+      { question: "What is 1920x1080 in pixels per inch?", answer: "A 1920x1080 display has different PPI depending on screen size. A 24-inch monitor at 1920x1080 has 91.8 PPI. A 27-inch monitor has 81.6 PPI. A 15.6-inch laptop screen has 141.2 PPI. Use the PPI formula: PPI = sqrt(1920² + 1080²) / screen diagonal in inches." },
     ],
     body: {
       heading1: "What Is PPI?",
@@ -45,6 +49,10 @@ export const content: PageContentMap = {
       heading7: "Which PPI Is Right for Your Project?",
       p11: "Match your output medium. For anything held in hand, use 300 PPI as your floor. For screens, design in CSS pixels and let the browser handle density scaling. For large-format work viewed from a distance, you can drop to 72 to 150 PPI without visible loss. If you're uncertain, 300 PPI works for every use case except billboards and banners, and gives you room to downsize without quality loss.",
       p12: "Use our PPI Calculator to compute the exact pixel density of any screen, or the DPI Calculator to determine the right resolution for your print project.",
+      heading8: "How Many Pixels Are in One Inch?",
+      p13: "The answer depends entirely on DPI. One inch contains exactly as many pixels as the DPI value. At 96 DPI (the web standard), one inch equals 96 pixels. At 300 DPI (professional print), one inch equals 300 pixels. At 72 DPI (legacy screen reference), one inch equals 72 pixels.",
+      p14: "This is why DPI matters so much when converting between digital and physical measurements. The same 960-pixel image prints at 10 inches at 96 DPI, but only 3.2 inches at 300 DPI. The pixel count never changes — only the physical size does, based on how densely those pixels are packed into each inch.",
+      p15: "For web design, DPI metadata in image files is ignored by browsers. Only pixel dimensions matter. For print, getting the DPI right is critical: a 960-pixel image submitted to a printer expecting 300 DPI will print at just 3.2 inches, not 10 inches.",
     },
   },
   es: {

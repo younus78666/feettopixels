@@ -22,6 +22,22 @@ export const content: LocalizedDocMap = {
       {
         "question": "Is there a simple way to check what DPI my image needs?",
         "answer": "Yes. Divide your image's pixel width by the target print width in inches. A 3,000-pixel wide image for a 10-inch wide print gives 300 PPI: professional quality. For a 20-inch wide print, the same file gives 150 PPI, still acceptable for posters viewed at distance. Our Image Size Calculator automates this calculation instantly."
+      },
+      {
+        "question": "What is 300 DPI in pixels?",
+        "answer": "300 DPI means 300 pixels per inch. To find the pixel count for any dimension, multiply inches by 300. A 4-inch wide image at 300 DPI needs 1,200 pixels. A 10-inch wide image needs 3,000 pixels. An A4 page (8.27 inches wide) at 300 DPI needs 2,480 pixels of width."
+      },
+      {
+        "question": "What is 150 DPI in pixels?",
+        "answer": "150 DPI means 150 pixels per inch. A 10-inch print at 150 DPI needs 1,500 pixels wide. A 20-inch banner at 150 DPI needs 3,000 pixels. This resolution works well for posters and trade show displays viewed from 3-10 feet away, where the eye can't resolve the lower pixel density."
+      },
+      {
+        "question": "What is 72 DPI in pixels per inch?",
+        "answer": "72 DPI means 72 pixels per inch — a legacy value from early Mac displays. A 10-inch image at 72 DPI is 720 pixels wide. At 72 DPI, a standard 1920-pixel-wide image prints at about 26.7 inches. This DPI is acceptable only for very large prints viewed from a significant distance, such as billboards or building wraps."
+      },
+      {
+        "question": "How do I calculate pixels from DPI and inches?",
+        "answer": "Multiply the measurement in inches by the DPI value. The formula is: pixels = inches x DPI. For example, a 5-inch width at 300 DPI = 5 x 300 = 1,500 pixels. A 24-inch poster at 150 DPI = 24 x 150 = 3,600 pixels. To reverse it (find inches from pixels): inches = pixels / DPI."
       }
     ],
     "sections": [
