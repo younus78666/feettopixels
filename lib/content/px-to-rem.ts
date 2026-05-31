@@ -37,8 +37,8 @@ export const content: LocalizedDocMap = {
         "id": "how-it-works",
         "title": "How the PX to REM Converter Works",
         "paragraphs": [
-          "REM stands for root em, a CSS length unit equal to the font-size of the root (html) element. Every browser defaults the root to 16 pixels, so 1rem equals 16px out of the box. Converting a pixel value to rem is simple division: rem = px / root-font-size. With the default base, 24px becomes 24/16 = 1.5rem, 12px becomes 0.75rem, and 48px becomes 3rem. The converter above handles this calculation and also supports the '10px base' convention, where setting html { font-size: 62.5%; } makes 1rem = 10px so the mental math simplifies to shifting the decimal one place.",
-          "The key difference from EM is that REM ignores nesting. A 1.5rem margin on a deeply nested div is exactly 24px regardless of any font-size inheritance chain. This removes the compounding problem described in em-vs-rem and makes REM the preferred unit in modern design systems, including Tailwind CSS and MUI. You get the accessibility advantage (REM scales when users change their browser's default font size) without the unpredictability of cascading sizes.",
+          "REM stands for root em, a CSS length unit equal to the font-size of the root (html) element. Every browser defaults the root to 16 pixels, so 1rem equals 16px out of the box. Converting pixels to rem is simple division: rem = px / root-font-size. With the default base, 24px becomes 24/16 = 1.5rem, 12px becomes 0.75rem, and 48px becomes 3rem. The converter above handles this calculation and also supports the '10px base' convention, where setting html { font-size: 62.5%; } makes 1rem = 10px so the mental math simplifies to shifting the decimal one place.",
+          "The key difference from EM is that REM ignores nesting. A 1.5rem margin on a deeply nested div is exactly 24px regardless of any font-size inheritance chain. This removes the compounding problem described in em-vs-rem and makes REM the preferred unit in scalable CSS design systems, including Tailwind CSS and MUI. You get the accessibility advantage of browser font size scaling without the unpredictability of cascading sizes.",
           "For component-scoped scaling where you do want the compound behavior, use EM instead. See our px-to-em converter. For viewport-relative responsive units, combine REM with clamp() and vw, covered in px-to-vw."
         ]
       },
@@ -46,7 +46,7 @@ export const content: LocalizedDocMap = {
         "id": "when-to-use",
         "title": "When to Use REM",
         "paragraphs": [
-          "REM is the default-safe choice for most layout and typography sizing on modern websites. Use it whenever predictability and accessibility both matter."
+          "REM is the default-safe choice for responsive typography and layout sizing on modern websites. Use it whenever predictability and accessibility scaling both matter."
         ],
         "list": [
           "Base typography scale - body, paragraph, heading sizes expressed in rem will scale together when users zoom.",

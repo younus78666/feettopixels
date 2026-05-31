@@ -67,7 +67,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "How Pixel to Inch Conversion Works",
-      p1: "To convert pixels to inches, divide the pixel value by DPI. The formula is: inches = pixels / DPI. DPI (dots per inch) defines how many pixels are packed into each physical inch and is the only variable that changes the output size.",
+      p1: "To convert pixels to inches, divide the pixel value by DPI. The formula is: inches = pixels / DPI. DPI (dots per inch) defines how many pixels are packed into each physical inch, making it the variable that controls the physical size of any digital image or screen display measurement.",
       formula: "Inches = Pixels / DPI",
       p2: "For web design, the standard is 96 DPI. For professional print, 300 DPI is the norm. Choosing the right DPI ensures your designs display at the intended physical size.",
       heading2: "Common Use Cases",
@@ -81,7 +81,7 @@ export const content: PageContentMap = {
       li7: "150 DPI - Medium-quality print, suitable for large-format posters.",
       li8: "300 DPI - Professional print quality for brochures, magazines, and photos.",
       heading4: "How Many Pixels Are in One Inch?",
-      p3: "The number of pixels in one inch depends entirely on the DPI setting. At 96 DPI (the web standard used by Windows and most browsers), one inch contains exactly 96 pixels. At 72 DPI (the legacy Mac standard), one inch contains 72 pixels. At 300 DPI (professional print), one inch packs 300 pixels into the same physical space. This means a 300 DPI image appears much sharper than a 96 DPI image when printed at the same size, because each inch contains over 3x more pixel data.",
+      p3: "The number of pixels in one inch depends entirely on the DPI setting. At 96 DPI (the web standard used by Windows and most browsers), one inch contains exactly 96 pixels. At 72 DPI (the legacy Mac standard), one inch contains 72 pixels. At 300 DPI (professional print), one inch packs 300 pixels into the same physical space. This is why pixel density is central to any DPI-aware conversion: the same pixel count produces radically different print dimensions depending on the resolution you choose.",
       heading5: "Common Pixel Widths Converted to Inches",
       p4: "The table below shows how common pixel dimensions translate to inches at both 96 DPI (web) and 300 DPI (print). These values help you quickly estimate physical sizes without manual calculation.",
       li9: "640 px - 6.67 inches at 96 DPI, 2.13 inches at 300 DPI",
@@ -91,7 +91,7 @@ export const content: PageContentMap = {
       li13: "1920 px - 20 inches at 96 DPI, 6.4 inches at 300 DPI",
       li14: "3840 px - 40 inches at 96 DPI, 12.8 inches at 300 DPI",
       heading6: "When Do You Need to Convert Pixels to Inches?",
-      p5: "Pixel-to-inch conversion comes up regularly across several workflows. Print preparation is the most common: before sending a digital file to a printer, you need to confirm the image will print at the correct physical dimensions. Photo printing follows the same logic: knowing that a 3000x2000 pixel photo prints at 10x6.67 inches at 300 DPI helps you choose the right paper size. Large format signage works differently, as banner and poster designers use lower DPI values (100-150) because viewers stand farther away, making each pixel stretch across more physical space. In web-to-print workflows, designers who repurpose web assets for brochures or business cards need to verify that 96 DPI screen graphics have enough resolution for 300 DPI print output.",
+      p5: "Pixel-to-inch conversion comes up regularly across several workflows. Print preparation is the most common: before sending a digital image file to a printer, you need to confirm the raster dimensions will produce the correct print-ready output size. Photo printing follows the same logic: knowing that a 3000x2000 pixel photo prints at 10x6.67 inches at 300 DPI helps you choose the right paper size. Large format signage works differently, as banner and poster designers use lower DPI values (100-150) because viewers stand farther away, making each pixel stretch across more physical space. In web-to-print workflows, designers who repurpose web assets for brochures or business cards need to verify that 96 DPI screen graphics have enough resolution for 300 DPI print output.",
     },
   },
 

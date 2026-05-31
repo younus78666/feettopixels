@@ -71,7 +71,7 @@ export const content: LocalizedDocMap = {
         "id": "what-is-rem",
         "title": "What Is REM?",
         "paragraphs": [
-          "The rem unit (root em) is always relative to the root element's font size (<html>), which defaults to 16px in all major browsers. Unlike em, rem does not compound with nesting. 1.5rem is always 24px (assuming the default root), regardless of where it appears in the DOM tree."
+          "The rem unit (root em) is always relative to the root element's font size (<html>), which defaults to 16px in all major browsers. Unlike em, rem does not compound with nesting. 1.5rem is always 24px (assuming the default root), regardless of where it appears in the DOM tree. This root-relative sizing is what makes rem predictable across a fluid type scale."
         ]
       },
       {
@@ -97,17 +97,17 @@ export const content: LocalizedDocMap = {
         "id": "accessibility",
         "title": "EM, REM, and Browser Accessibility",
         "paragraphs": [
-          "User-controlled browser font size is the key accessibility reason to prefer rem over px. Many users with low vision increase their browser's base font size above 16px through browser settings or operating system accessibility features.",
+          "User-controlled browser font size is the key accessibility reason to prefer rem over px. Many users with low vision increase their browser's base font size above 16px through browser settings or operating system accessibility features. Accessible font sizing starts with choosing the right CSS unit.",
           "If you set all your font sizes in px, they are fixed regardless of the user's preference. If you use rem, your font sizes scale automatically when the user increases their browser base size. This is a key accessibility benefit.",
           "The WCAG 2.1 Success Criterion 1.4.4 (Resize Text) requires that text can be resized up to 200% without loss of content or functionality. Using rem for font sizes makes this trivial to satisfy. Using px for font sizes means you need to test and verify that zoom does not break your layout.",
-          "For this reason, many style guides and design systems recommend rem for all typographic sizes and font-size-dependent spacing. The em unit can still be used safely for component-internal padding where scaling with font size is the intended behavior."
+          "For this reason, design system typography guidelines broadly recommend rem for all typographic sizes and font-size-dependent spacing. The em unit can still be used safely for component-internal padding where scaling with font size is the intended behavior."
         ]
       },
       {
         "id": "decision-guide",
         "title": "Quick Decision Guide: EM vs REM vs PX",
         "paragraphs": [
-          "Choosing between em, rem, and px comes down to the scope of the value and whether you want it to respond to font-size changes."
+          "Choosing between em, rem, and px comes down to the scope of the value and whether you want it to respond to font-size changes. Em gives you parent-relative sizing; rem gives you root-relative sizing; px gives you a fixed value that ignores user preferences."
         ],
         "table": {
           "headers": ["What you are sizing", "Recommended unit", "Reason"],

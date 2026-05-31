@@ -25,7 +25,7 @@ export const content: LocalizedDocMap = {
         "id": "photo-print-sizes",
         "title": "Standard Photo Print Sizes",
         "paragraphs": [
-          "The table below lists common photo print sizes with pixel dimensions at 150 DPI (acceptable quality) and 300 DPI (professional quality). Use 300 DPI for anything that will be viewed at arm's length or closer."
+          "The table below lists standard photo print sizes with pixel dimensions at 150 DPI (acceptable quality) and 300 DPI (professional quality). Use this print size guide for anything that will be viewed at arm's length or closer."
         ],
         "table": {
           "headers": [
@@ -146,7 +146,7 @@ export const content: LocalizedDocMap = {
         "id": "choosing-dpi",
         "title": "Choosing the Right DPI for Your Print Size",
         "paragraphs": [
-          "Not every print needs 300 DPI. The required resolution depends on the viewing distance. A billboard viewed from 30 feet needs far fewer pixels per inch than a greeting card held at arm's length.",
+          "Not every print needs 300 DPI. The required photo print dimensions depend on the viewing distance. A billboard viewed from 30 feet needs far fewer pixels per inch than a greeting card held at arm's length.",
           "Use 300 DPI for prints viewed within 18 inches: photo prints, brochures, business cards, and book covers. This is the standard for sharpest reproduction at close distances.",
           "Use 150 to 200 DPI for prints viewed from 2 to 4 feet: posters, retail signage, and trade show banners. Quality is visually indistinguishable at those distances.",
           "Use 72 to 100 DPI for large format prints viewed from 10 or more feet: outdoor banners, billboards, and building wraps. Pixel dimensions are still large because the physical size is enormous.",
@@ -170,7 +170,7 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "Web, print, and social media each use different sizing logic. Knowing which system applies to your project prevents the most common resizing and quality mistakes.",
           "Web images are measured in pixels only. DPI doesn't affect how a browser renders an image; what matters is the pixel width and height relative to the layout container. A hero image might need to be 2560 pixels wide to look sharp on a 4K monitor, while a blog thumbnail works fine at 600 pixels wide. File size matters for web because large images slow page load times. Use JPEG for photos (compress to 60 to 80 quality), WebP for better compression, and PNG only when transparency is required.",
-          "Print images are measured in pixels at a specific DPI. A 300 DPI standard applies to anything viewed close-up: photo prints, brochures, business cards, and packaging. The actual pixel dimensions scale with the physical size of the print. A 4 x 6 inch photo at 300 DPI needs 1200 x 1800 pixels. A 16 x 20 inch print at 300 DPI needs 4800 x 6000 pixels. Use CMYK color mode for print files.",
+          "Print images are measured in pixels at a specific DPI. A 300 DPI standard applies to anything viewed close-up: photo prints, brochures, business cards, and packaging. Common photo print dimensions scale with the physical size of the print -- a 4 x 6 inch photo at 300 DPI needs 1200 x 1800 pixels, and a 16 x 20 inch print needs 4800 x 6000 pixels. Use CMYK color mode for print files.",
           "Social media platforms use their own pixel specs that change periodically. Each platform compresses uploads differently, so the goal is to match the platform's preferred dimensions exactly so the platform's compression doesn't crop or distort your image. A Facebook post image performs best at 1200 x 630 pixels. An Instagram square post is 1080 x 1080 pixels. A YouTube thumbnail is 1280 x 720 pixels. Upload at the recommended dimensions rather than oversizing, which triggers heavier compression.",
           "The key difference: web sizing is flexible and adapts to container widths; print sizing is fixed by physical dimensions and DPI; social sizing is platform-specific and compression-sensitive. Use the right standard for each output from the start rather than trying to repurpose one file across all three."
         ]
