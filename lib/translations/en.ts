@@ -132,14 +132,14 @@ export const en = {
     "pixels-to-cm": {
       title: "Pixels to CM Converter - DPI-Aware Calculator",
       description:
-        "Convert pixels to centimeters at any DPI. At 300 DPI: 300 px = 2.54 cm, 2480 px = 21 cm (A4 width). Formula: cm = pixels x 2.54 / DPI. Free PX to CM calculator.",
+        "Convert pixels to centimeters at any DPI. At 300 DPI: 300 px = 2.54 cm, 2480 px = 21 cm. Formula: cm = pixels x 2.54 / DPI. Free PX to CM calculator.",
       extractive:
         "To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 300 DPI: 300 pixels = 2.54 cm, 2480 pixels = 21 cm (A4 width). At 96 DPI: 96 pixels = 2.54 cm. Formula: cm = pixels x 2.54 / DPI.",
     },
     "cm-to-pixels": {
       title: "CM to Pixels Converter - Centimeters to PX Calculator",
       description:
-        "Convert centimeters to pixels at any DPI. At 300 DPI: 1 cm = 118 px, A4 width (21 cm) = 2,480 px. Formula: pixels = cm x DPI / 2.54. Free CM to PX calculator.",
+        "Convert centimeters to pixels at any DPI. At 300 DPI: 1 cm = 118 px, 21 cm = 2,480 px. Formula: pixels = cm x DPI / 2.54. Free CM to PX calculator.",
       extractive:
         "To convert centimeters to pixels, multiply cm by DPI and divide by 2.54. At 300 DPI: 1 cm = 118.1 pixels, 21 cm (A4 width) = 2,480 pixels. At 96 DPI: 1 cm = 37.8 pixels. Formula: pixels = cm x DPI / 2.54.",
     },
@@ -167,7 +167,7 @@ export const en = {
     "pixels-to-feet": {
       title: "Pixels to Feet Converter - PX to FT Calculator",
       description:
-        "Convert pixels to feet for large-format output. At 96 DPI: 1,152 px = 1 foot. At 150 DPI: 1,800 px = 1 foot. Formula: feet = pixels / (DPI x 12). Free PX to feet calculator.",
+        "Convert pixels to feet for large-format output. At 96 DPI: 1,152 px = 1 foot. At 150 DPI: 1,800 px = 1 foot. Formula: feet = pixels / (DPI x 12).",
       extractive:
         "To convert pixels to feet, divide pixels by DPI then by 12. At 96 DPI: 1,152 pixels = 1 foot. At 150 DPI: 1,800 pixels = 1 foot. At 300 DPI: 3,600 pixels = 1 foot. Formula: feet = pixels / (DPI x 12).",
     },
@@ -195,21 +195,21 @@ export const en = {
     "px-to-vw": {
       title: "PX to VW Converter - Viewport Width Calculator",
       description:
-        "Convert pixels to viewport width units. Formula: vw = (px / viewport width) x 100. On 1920px screen: 192px = 10vw. Always use clamp() to prevent extreme sizes. Free PX to VW converter.",
+        "Convert pixels to viewport width. Formula: vw = (px / viewport) x 100. On 1920px screen: 192px = 10vw. Use clamp() to bound sizes. Free PX to VW converter.",
       extractive:
         "To convert pixels to vw, divide the pixel value by the viewport width and multiply by 100. On a 1920px viewport, 192px equals 10vw.",
     },
     "dpi-calculator": {
       title: "DPI Calculator - Find Dots Per Inch for Any Screen",
       description:
-        "Calculate DPI for any screen using its resolution and physical size. A 27-inch 1080p monitor is 81.6 DPI. A 27-inch 4K monitor is 163 DPI. Free online DPI calculator.",
+        "Calculate DPI for any screen using its resolution and physical size. A 27-inch 1080p monitor is 81.6 DPI. A 27-inch 4K monitor is 163 DPI. Free DPI calculator.",
       extractive:
         "To calculate DPI, use: DPI = sqrt(width² + height²) / diagonal in inches. A 1920x1080 monitor at 24 inches = 91.4 DPI. A 3840x2160 monitor at 27 inches = 163 DPI.",
     },
     "ppi-calculator": {
       title: "PPI Calculator - Screen Pixel Density Calculator",
       description:
-        "Calculate PPI (pixels per inch) for any display. Enter resolution and screen size to get pixel density. 27-inch 1080p = 81.6 PPI. 27-inch 4K = 163 PPI. Free PPI calculator.",
+        "Calculate PPI (pixels per inch) for any display. 27-inch 1080p = 81.6 PPI, 27-inch 4K = 163 PPI. Enter screen size and resolution. Free PPI calculator.",
       extractive:
         "PPI = sqrt(width² + height²) / diagonal in inches. A 27-inch 1440p display = 108.8 PPI. A 27-inch 4K display = 163 PPI. A 6.1-inch iPhone at 2532x1170 = 460 PPI.",
     },
@@ -237,7 +237,7 @@ export const en = {
     "screen-resolution-checker": {
       title: "Screen Resolution Checker - Detect Your Display",
       description:
-        "Check your screen resolution, device pixel ratio (DPR), and viewport size instantly. Detect whether you're on a Retina display. Shows CSS and physical pixel dimensions.",
+        "Check your screen resolution, device pixel ratio (DPR), and viewport size instantly. Detects Retina displays. Shows CSS and physical pixel dimensions.",
       extractive:
         "This tool detects your screen resolution, device pixel ratio, and available viewport dimensions using browser APIs.",
     },
@@ -251,7 +251,7 @@ export const en = {
     "pixel-ruler": {
       title: "Pixel Ruler - Measure Screen Elements in Pixels",
       description:
-        "Measure screen elements in CSS pixels with a virtual ruler overlay. Calibrate to your physical display for accurate measurements. Useful for UI development and design QA.",
+        "Measure screen elements in pixels with a virtual ruler overlay. Calibrate to your display for accurate measurements. Good for UI development and design QA.",
       extractive:
         "The pixel ruler lets you measure on-screen elements in pixels. Calibrate it to your monitor for accurate physical measurements.",
     },
@@ -279,7 +279,7 @@ export const en = {
     "what-is-ppi": {
       title: "What Is PPI? - Pixels Per Inch for Screens",
       description:
-        "PPI (pixels per inch) measures screen and image pixel density. Flagship phones run 400+ PPI. 300 PPI is the print standard. Calculate PPI for any display using our free PPI calculator.",
+        "PPI (pixels per inch) measures screen and image pixel density. Flagship phones run 400+ PPI. 300 PPI is the print standard. Use our free PPI calculator.",
       extractive:
         "PPI stands for pixels per inch. It measures pixel density on screens and in images. Modern phones run 400-500 PPI. Desktop monitors average 90-110 PPI. For print, 300 PPI is the professional standard.",
     },
@@ -300,7 +300,7 @@ export const en = {
     "pixels-per-inch": {
       title: "Pixels Per Inch (PPI) - Complete Reference Guide",
       description:
-        "Pixels per inch reference guide. At 96 DPI: 96 PPI (web standard). At 300 DPI: 300 PPI (print standard). Formula: PPI = DPI. Calculate for any screen or print resolution.",
+        "Pixels per inch reference guide. At 96 DPI: 96 PPI (web). At 300 DPI: 300 PPI (print). Formula: PPI = DPI. Covers screens, print, and scanning.",
       extractive:
         "Pixels per inch (PPI) determines display sharpness. Web standard is 96 PPI, Mac legacy is 72 PPI, and Retina displays exceed 200 PPI.",
     },
@@ -391,25 +391,25 @@ export const en = {
     about: {
       title: "About FeetToPixels - Free Pixel Conversion Tools",
       description:
-        "FeetToPixels provides free, accurate pixel conversion tools with DPI awareness for designers and developers.",
+        "FeetToPixels offers free, DPI-aware pixel conversion tools for designers and developers. Converts pixels to inches, cm, feet, rem, em, and more. No signup required.",
       extractive: "",
     },
     privacy: {
       title: "Privacy Policy - How We Protect Your Data",
       description:
-        "Privacy policy for FeetToPixels.com. Learn how we handle your data.",
+        "Privacy policy for FeetToPixels.com. We do not sell or share your data. No tracking cookies are used. No personal data is collected to use our free tools.",
       extractive: "",
     },
     terms: {
       title: "Terms of Service - Usage Rules & Policies",
       description:
-        "Terms of service for FeetToPixels.com. Understand the rules for using our tools.",
+        "Terms of service for FeetToPixels.com. Our tools are free for personal and commercial use. By using this site you agree to the terms outlined here.",
       extractive: "",
     },
     contact: {
       title: "Contact Us - Get in Touch with FeetToPixels",
       description:
-        "Get in touch with the FeetToPixels team. Questions, suggestions, and bug reports welcome.",
+        "Get in touch with the FeetToPixels team. We welcome questions about our tools, bug reports, and feature suggestions. Usually reply within 48 hours.",
       extractive: "",
     },
   },
