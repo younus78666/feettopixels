@@ -29,7 +29,7 @@ export const content: LocalizedDocMap = {
         "id": "iso-a-series",
         "title": "ISO A Series Paper Sizes",
         "paragraphs": [
-          "ISO 216 defines the A series paper sizes used in most countries outside North America. Each size is exactly half the next larger size along its longer dimension, so A5 is half of A4, A4 is half of A3, and so on. All values below are in pixels (width x height)."
+          "ISO 216 defines the A series paper sizes, the dominant ISO paper standard used in most countries outside North America. Each size is exactly half the next larger size along its longer dimension, so A5 is half of A4, A4 is half of A3, and so on. All values below show the paper format in pixels (width x height), covering every common document layout pixel dimension."
         ],
         "table": {
           "headers": [
@@ -160,8 +160,8 @@ export const content: LocalizedDocMap = {
         "id": "how-to-calculate",
         "title": "How to Calculate Paper Size in Pixels",
         "paragraphs": [
-          "The formula is: pixels = inches x DPI. For metric measurements, divide millimeters by 25.4 to get inches, then multiply by DPI.",
-          "For example, A4 width: 210 mm / 25.4 = 8.27 inches x 300 DPI = 2480 pixels.",
+          "The formula is: pixels = inches x DPI. For metric measurements, divide millimeters by 25.4 to get inches, then multiply by DPI. This gives you the exact paper resolution pixels needed to set up any print design canvas size correctly.",
+          "For example, A4 pixel dimensions at 300 DPI: 210 mm / 25.4 = 8.27 inches x 300 = 2480 px wide. US Letter dimensions at 300 DPI: 8.5 x 300 = 2550 px wide.",
           "Use our Image Size Calculator for quick conversions, or browse our Inches to Pixels converter for custom dimensions."
         ]
       },
@@ -201,7 +201,7 @@ export const content: LocalizedDocMap = {
         "id": "design-software-setup",
         "title": "Setting Up Paper Size Documents in Design Software",
         "paragraphs": [
-          "Most design applications include preset paper sizes. Knowing the pixel dimensions behind those presets helps you catch resolution problems before they reach the printer.",
+          "Most design applications include preset paper sizes. Knowing the printing canvas dimensions behind those presets helps you catch paper resolution pixels problems before they reach the printer.",
           "In Photoshop: File > New. Choose a preset (A4, Letter, etc.) from the panel, then set Resolution to 300 pixels/inch. Photoshop calculates the correct pixel canvas dimensions automatically.",
           "In Illustrator: New Document > Print category. Select A4, Letter, or any other preset. Illustrator uses 72 points per inch internally, but the artboard matches your paper dimensions accurately.",
           "In Canva: search for 'A4' or 'Letter' when creating a new design. Canva sets proportional canvas dimensions. Export as Print PDF with bleeds enabled for professional print output.",

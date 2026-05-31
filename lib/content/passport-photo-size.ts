@@ -124,7 +124,7 @@ export const content: LocalizedDocMap = {
         "id": "conversion-method",
         "title": "How to Convert Passport Photo Sizes to Pixels",
         "paragraphs": [
-          "Passport and visa pages often mix physical sizes, pixel minimums, and file-size limits. The physical-to-pixel math is simple, but it is only one part of approval. Convert the document size first, then check the official rules for head height, background color, shadows, expression, crop, compression, and file size.",
+          "Passport and visa pages often mix physical sizes, pixel minimums, and file-size limits. The physical-to-pixel math is simple, but meeting biometric photo requirements is only one part of approval. Convert the passport photo dimensions first, then check the government photo specification for head height, background color, shadows, expression, crop, compression, and file size.",
           "For inch-based sizes, multiply inches by DPI. A 2 x 2 inch US passport or visa photo at 300 DPI becomes 600 x 600 pixels. For metric sizes, multiply millimeters by DPI and divide by 25.4. A 35 x 45 mm photo at 300 DPI becomes about 413 x 531 pixels because 35 x 300 / 25.4 = 413 and 45 x 300 / 25.4 = 531.",
           "If an online application gives an exact pixel range, use that range over a generic DPI rule. For example, a file can be 600 x 600 pixels and still fail if the head is too large, the image is over-compressed, the background is patterned, or the photo has been digitally altered."
         ],
@@ -139,7 +139,7 @@ export const content: LocalizedDocMap = {
         "id": "upload-checklist",
         "title": "Passport Photo Upload Checklist",
         "paragraphs": [
-          "Before submitting a passport or visa image, verify the measurable parts first: canvas size, aspect ratio, file type, and file size. Then inspect the human parts: face position, eye visibility, neutral expression, plain background, and absence of strong shadows. These non-pixel rules are often the reason a technically correct image still gets rejected.",
+          "Before submitting any official ID photo or visa photo size file, verify the measurable parts first: canvas size, aspect ratio, file type, and file size. Then inspect the human parts: face position, eye visibility, neutral expression, plain background, and absence of strong shadows. These non-pixel rules are often the reason a technically correct identity document photo still gets rejected.",
           "A practical workflow is to crop from a high-resolution original, export a copy at the official pixel dimensions, and keep an untouched backup. If the application portal recompresses the image, check the preview before final submission. A photo that looks acceptable in your editor can become soft after repeated saves."
         ],
         "list": [
@@ -228,7 +228,7 @@ export const content: LocalizedDocMap = {
         "id": "rejection-causes",
         "title": "What Causes Passport Photo Rejections?",
         "paragraphs": [
-          "Most passport photo rejections come from one of four causes: wrong pixel dimensions, wrong file size, biometric framing failures, or background issues. Fixing the pixel count won't help if the other three aren't right.",
+          "Most passport photo rejections come from one of four causes: wrong passport portrait dimensions, wrong file size, biometric framing failures, or background issues. Knowing the photo ID requirements for your specific document type upfront prevents most of these problems.",
           "Pixel dimension errors happen when the photo doesn't meet the official minimum or maximum range. For US digital submissions, a file under 600 x 600 pixels or over 1200 x 1200 pixels will be rejected outright. UK digital submissions require at least 600 x 750 pixels. Always verify the exact range for the country and document type you're applying for.",
           "Biometric framing failures are the most common cause of rejection after the technical specs look correct. Each country specifies how large the face must appear relative to the total frame height. For US passports, the head (chin to top of hair, not top of frame) must be between 1 inch and 1 3/8 inches in the physical 2 x 2 inch print, or 50% to 69% of the total frame height digitally. Crop too tight or too loose and the system flags it.",
           "Background problems include shadows on the white or off-white background, patterns, other people in the frame, and colored backgrounds. A plain white or light gray wall with no shadows directly behind the head is the safest choice.",

@@ -29,15 +29,15 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Pixel Definition",
         "paragraphs": [
-          "A pixel (short for \"picture element\") is the smallest addressable unit of a raster image or digital display. Every photo you view, every icon on your screen, and every frame of video is composed of thousands or millions of individual pixels arranged in a rectangular grid.",
-          "Each pixel stores color information as a combination of red, green, and blue values (RGB). In an 8-bit-per-channel image, each channel ranges from 0 to 255, giving each pixel the ability to represent one of over 16.7 million colors. Pixels are discrete color units: they divide a continuous visual scene into a fixed grid of addressable points, which is what makes digital images editable, scalable, and transmittable."
+          "A pixel (short for \"picture element\") is the smallest addressable digital image unit of a raster image or digital display. Every photo you view, every icon on your screen, and every frame of video is composed of thousands or millions of individual raster graphics pixels arranged in a rectangular image grid element.",
+          "Each pixel stores color information as a combination of red, green, and blue values (RGB). In an 8-bit-per-channel image, each channel ranges from 0 to 255, giving each display pixel element the ability to represent one of over 16.7 million colors. Pixels are discrete digital color units: they divide a continuous visual scene into a fixed grid of addressable points, which is what makes digital images editable, scalable, and transmittable."
         ]
       },
       {
         "id": "subpixels",
         "title": "Subpixels (RGB)",
         "paragraphs": [
-          "On LCD and OLED screens, each visible pixel is composed of three subpixels: one red, one green, and one blue. These subpixels are too small to see individually at normal viewing distance. The display adjusts the brightness of each subpixel independently to create the full color range you perceive.",
+          "On LCD and OLED screens, each visible screen image element is composed of three RGB subpixels: one red, one green, and one blue. These subpixels are too small to see individually at normal viewing distance. The display rendering unit adjusts the brightness of each subpixel independently to create the full color range you perceive.",
           "Some display technologies use different subpixel arrangements. Samsung's PenTile layout uses an RGBG pattern, while some LCDs add a white subpixel (RGBW) to improve brightness efficiency."
         ]
       },
@@ -101,7 +101,7 @@ export const content: LocalizedDocMap = {
         "title": "History of Pixels",
         "paragraphs": [
           "The concept of a pixel dates back to the 1960s, with the term first appearing in the context of early digital image processing. Frederic Billingsley of JPL is credited with popularizing the word \"pixel\" in 1965. Early digital displays had very low pixel counts: the Apple II (1977) displayed 280 x 192 pixels, while modern 8K displays render over 33 million pixels.",
-          "Pixel technology keeps evolving. Micro-LED displays, foldable screens, and VR headsets exceeding 1000 PPI are pushing what the format can do. The pixel remains the fundamental unit of every digital visual experience. Explore how pixels map to physical units with our Pixel Converter."
+          "Pixel technology keeps evolving. Micro-LED displays, foldable screens, and VR headsets exceeding 1000 PPI are pushing what the format can do. The pixel remains the fundamental picture element of every digital visual experience. Explore how pixels map to physical units with our Pixel Converter."
         ]
       },
       {

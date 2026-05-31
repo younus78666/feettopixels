@@ -44,7 +44,7 @@ export const content: PageContentMap = {
       heading1: "How Millimeter to Pixel Conversion Works",
       p1: "Millimeters provide the highest precision among common metric units. Converting to pixels requires the DPI value and the mm-to-inch constant:",
       formula: "Pixels = (MM x DPI) / 25.4",
-      p2: "Since there are 25.4 millimeters in one inch, dividing by 25.4 converts millimeters to inches, which is then multiplied by DPI to get pixel count.",
+      p2: "Since there are 25.4 millimeters in one inch, dividing by 25.4 converts millimeters to inches, which is then multiplied by DPI to get pixel count. This millimeter-based design approach is standard for business card dimensions, packaging design pixels, and any technical illustration that starts from a metric print specification.",
       heading2: "Common Use Cases",
       li1: "Business card design: Standard sizes like 85 x 55 mm converted to pixel dimensions.",
       li2: "Product labels: Small labels where millimeter precision matters.",
@@ -60,7 +60,7 @@ export const content: PageContentMap = {
       heading5: "How Many Pixels Per Millimeter at Different DPIs?",
       p4: "The pixels-per-mm ratio is straightforward to calculate: divide DPI by 25.4. At 72 DPI, each millimeter contains 2.835 pixels. At 96 DPI, the ratio is 3.78 pixels per mm. At 150 DPI, you get 5.906 pixels per mm. At 300 DPI, each millimeter holds 11.811 pixels. For ultra-high quality printing at 600 DPI, that jumps to 23.622 pixels per mm. These fixed ratios make batch conversions simple once you know your target DPI.",
       heading6: "When Do Designers Need MM-to-Pixel Conversion?",
-      p5: "Business card designers work in millimeters because the ISO 7810 standard defines card dimensions as 85.6 x 53.98 mm. Packaging designers receive label specs from manufacturers in mm. Jewelers creating product images need exact mm-to-pixel mapping for catalog layouts. Watch face designers for smartwatches convert the 40 mm or 44 mm display diameter to pixels for UI mockups. Any project where physical precision below one centimeter matters will benefit from mm-to-pixel conversion.",
+      p5: "Business card designers work in millimeters because the ISO 7810 standard defines card dimensions as 85.6 x 53.98 mm, making millimeters to pixels the default conversion for that workflow. Packaging designers receive label specs from manufacturers in mm, and precision measurement matters for every element. Jewelers and product photographers need exact mm-to-pixel mapping for catalog layouts. Watch face designers convert the 40 mm or 44 mm display diameter to pixels for UI mockups. Any project where physical precision below one centimeter matters will benefit from this conversion.",
     },
   },
   es: {

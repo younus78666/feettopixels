@@ -41,15 +41,15 @@ export const content: LocalizedDocMap = {
         "id": "how-it-works",
         "title": "How the PPI Calculator Works",
         "paragraphs": [
-          "PPI (pixels per inch) measures how tightly physical pixels are packed into a display. The calculator uses the Pythagorean theorem: PPI = sqrt(width-in-pixels squared + height-in-pixels squared) divided by the physical diagonal in inches. The square-root term gives the pixel-space diagonal of the panel, and dividing by the real diagonal converts that into pixels per inch. Because consumer displays use square pixels, the horizontal, vertical, and diagonal PPI values match, so a single number captures density across the screen.",
-          "A worked example: an iPhone 15 Pro has a 2556 x 1179 screen at 6.1 inches diagonal. Plugging into the formula, sqrt(2556^2 + 1179^2) = sqrt(6,533,136 + 1,390,041) = sqrt(7,923,177), or roughly 2815 pixels along the diagonal. Divide by 6.1 inches and you get about 461 PPI - comfortably within Apple's Retina threshold for phones. Compare this to a 27-inch 4K monitor at 3840 x 2160, which works out to 163 PPI, or a 24-inch 1080p monitor at 92 PPI. See the dpi-calculator for the same math applied to print terminology, and what-is-dpi plus pixels-per-inch for more context on the distinction between PPI and DPI."
+          "Screen PPI (pixels per inch) measures how tightly physical pixels are packed into a display. This screen density calculator uses the Pythagorean theorem: PPI = sqrt(width-in-pixels squared + height-in-pixels squared) divided by the physical diagonal in inches. The square-root term gives the pixel-space diagonal of the panel, and dividing by the real diagonal converts that into a display pixel density value. Because consumer displays use square pixels, the horizontal, vertical, and diagonal PPI values match, so a single number captures density across the screen.",
+          "A worked example: an iPhone 15 Pro has a 2556 x 1179 screen at 6.1 inches diagonal. Plugging into the formula, sqrt(2556^2 + 1179^2) = sqrt(6,533,136 + 1,390,041) = sqrt(7,923,177), or roughly 2815 pixels along the diagonal. Divide by 6.1 inches and you get about 461 PPI - comfortably past the retina threshold for phones. Compare this to a high PPI monitor like a 27-inch 4K at 163 PPI, or a 24-inch 1080p panel at 92 PPI. See the dpi-calculator for the same math applied to print terminology, and what-is-dpi plus pixels-per-inch for more context on the distinction between PPI and DPI."
         ]
       },
       {
         "id": "when-to-use",
         "title": "When to Use the PPI Calculator",
         "paragraphs": [
-          "PPI drives the perceived sharpness of any display. Calculate it whenever pixel density will affect your buying, designing, or troubleshooting decisions."
+          "Display pixel density drives the perceived sharpness of any display. Calculate it whenever monitor sharpness or display quality measurement will affect your buying, designing, or troubleshooting decisions."
         ],
         "list": [
           "Comparing two laptops where one is 1080p and the other is 2.5K at the same panel size.",
@@ -64,7 +64,7 @@ export const content: LocalizedDocMap = {
         "id": "practical-examples",
         "title": "Practical Examples",
         "paragraphs": [
-          "The table below lists PPI for popular devices, calculated directly from the formula above. Higher PPI values feel sharper at close viewing distances."
+          "The table below lists screen PPI for popular devices, calculated directly from the formula above. Higher PPI values produce a sharper display at close viewing distances, illustrating why a sharp display matters more on phones than desktop monitors."
         ],
         "table": {
           "headers": ["Device", "Resolution", "Diagonal", "PPI"],

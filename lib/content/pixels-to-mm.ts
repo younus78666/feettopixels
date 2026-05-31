@@ -43,7 +43,7 @@ export const content: PageContentMap = {
       heading1: "How Pixel to Millimeter Conversion Works",
       p1: "Converting pixels to millimeters gives you precise physical measurements from digital dimensions. The formula is:",
       formula: "Millimeters = (Pixels x 25.4) / DPI",
-      p2: "This formula converts pixels to inches first (pixels / DPI), then to millimeters (inches x 25.4). The result tells you the exact physical width or height at the given DPI.",
+      p2: "This formula converts pixels to inches first (pixels / DPI), then to millimeters (inches x 25.4). The result gives you the digital size in mm, expressing your raster pixel in physical units that print layout measurement workflows and technical drawing dimensions require.",
       heading2: "Common Use Cases",
       li1: "Quality verification: Check if an image has enough resolution for a specific print size in mm.",
       li2: "Manufacturing specs: Convert digital mockup dimensions to production measurements.",
@@ -59,7 +59,7 @@ export const content: PageContentMap = {
       heading5: "What Pixel Counts Produce Common Millimeter Sizes?",
       p4: "Working backwards from common mm measurements at 300 DPI: a 10 mm element needs 118 pixels, a 25 mm element needs 295 pixels, a 50 mm element needs 591 pixels, and a 100 mm element needs 1,181 pixels. At 96 DPI (web), those same measurements need 38, 94, 189, and 378 pixels respectively. Knowing these benchmarks helps you quickly assess whether an image has enough resolution for a target physical size.",
       heading6: "When Is Pixel-to-MM Conversion Essential?",
-      p5: "Quality control in print production relies heavily on px-to-mm conversion. Before approving a proof, designers verify that text at 300 DPI will be at least 2 mm tall (roughly 24 pixels) for legibility. Product label regulations in the EU specify minimum font heights in millimeters, so converting from your pixel-based design to mm confirms compliance. Medical and scientific imaging also uses mm measurements, where researchers convert scan pixel dimensions to real-world mm for accurate analysis.",
+      p5: "Quality control in print production relies heavily on pixel dimension to millimeters conversion. Before approving a proof, designers verify that text at 300 DPI will be at least 2 mm tall for legibility, confirming the metric output size matches the brief. Product label regulations in the EU specify minimum font heights in millimeters, so knowing your pixel-based design in mm confirms compliance. Medical and scientific imaging also depends on mm measurements, where researchers convert scan pixel dimensions to real-world mm for accurate analysis.",
     },
   },
   es: {
