@@ -174,44 +174,44 @@ export const en = {
     "px-to-rem": {
       title: "PX to REM Converter - Responsive CSS Unit Calculator",
       description:
-        "Convert pixels to rem units for responsive CSS. Free online PX to REM calculator.",
+        "Convert pixels to rem units. At 16px root: 16px = 1rem, 24px = 1.5rem, 32px = 2rem. Formula: rem = px / root font size. Free PX to REM converter.",
       extractive:
         "To convert pixels to rem, divide the pixel value by the root font size (usually 16px). So 32px equals 2rem at 16px base.",
     },
     "px-to-em": {
       title: "PX to EM Converter - Relative CSS Unit Calculator",
       description:
-        "Convert pixels to em units for relative CSS sizing. Free online PX to EM calculator.",
+        "Convert pixels to em units. At 16px parent: 16px = 1em, 24px = 1.5em. Formula: em = px / parent font size. Rem vs em explained. Free PX to EM converter.",
       extractive:
         "To convert pixels to em, divide the pixel value by the parent element's font size. At 16px parent, 24px equals 1.5em.",
     },
     "px-to-pt": {
       title: "PX to PT Converter - Pixels to Points Calculator",
       description:
-        "Convert pixels to typographic points. Free online PX to PT calculator.",
+        "Convert pixels to typographic points. Formula: pt = px x 0.75 at 96 DPI. 16px = 12pt. Free PX to PT calculator for web and print.",
       extractive:
         "To convert pixels to points, multiply pixels by 0.75 (at 96 DPI). So 16px equals 12pt. Points are used in print typography.",
     },
     "px-to-vw": {
       title: "PX to VW Converter - Viewport Width Calculator",
       description:
-        "Convert pixels to viewport width units. Free online PX to VW calculator.",
+        "Convert pixels to viewport width units. Formula: vw = (px / viewport width) x 100. On 1920px screen: 192px = 10vw. Always use clamp() to prevent extreme sizes. Free PX to VW converter.",
       extractive:
         "To convert pixels to vw, divide the pixel value by the viewport width and multiply by 100. On a 1920px viewport, 192px equals 10vw.",
     },
     "dpi-calculator": {
       title: "DPI Calculator - Find Dots Per Inch for Any Screen",
       description:
-        "Calculate DPI (dots per inch) for any screen by entering width, height, and diagonal size.",
+        "Calculate DPI for any screen using its resolution and physical size. A 27-inch 1080p monitor is 81.6 DPI. A 27-inch 4K monitor is 163 DPI. Free online DPI calculator.",
       extractive:
-        "To calculate DPI, use the formula: DPI = sqrt(width² + height²) / diagonal. For example, a 24-inch 1080p monitor (1920x1080) has a DPI of 91.79.",
+        "To calculate DPI, use: DPI = sqrt(width² + height²) / diagonal in inches. A 1920x1080 monitor at 24 inches = 91.4 DPI. A 3840x2160 monitor at 27 inches = 163 DPI.",
     },
     "ppi-calculator": {
       title: "PPI Calculator - Screen Pixel Density Calculator",
       description:
-        "Calculate PPI (pixels per inch) for any display. Enter resolution and screen size to get pixel density.",
+        "Calculate PPI (pixels per inch) for any display. Enter resolution and screen size to get pixel density. 27-inch 1080p = 81.6 PPI. 27-inch 4K = 163 PPI. Free PPI calculator.",
       extractive:
-        "PPI is calculated the same way as DPI for screens: PPI = sqrt(width² + height²) / diagonal. A 27-inch 4K display has 163 PPI.",
+        "PPI = sqrt(width² + height²) / diagonal in inches. A 27-inch 1440p display = 108.8 PPI. A 27-inch 4K display = 163 PPI. A 6.1-inch iPhone at 2532x1170 = 460 PPI.",
     },
     "dpi-converter": {
       title: "DPI Converter - Change Image Resolution Online",

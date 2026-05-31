@@ -33,7 +33,7 @@ const faq = [
   {
     question: "How do I convert REM to pixels?",
     answer:
-      "Multiply the rem value by the root font size. Most browsers default to 16px, so 1rem = 16px, 2rem = 32px, 0.5rem = 8px. If your CSS changes the root font-size (e.g., html { font-size: 10px } for a 1rem = 10px setup), use that value as the base.",
+      "Multiply the rem value by the root font size (default 16px). Formula: px = rem x 16. Examples: 1rem = 16px, 1.5rem = 24px, 2rem = 32px, 0.5rem = 8px. If your CSS changes the root font-size (e.g., html { font-size: 10px }), use that value as the base instead.",
   },
   {
     question: "Is REM always equal to 16px?",

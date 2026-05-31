@@ -9,11 +9,19 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "How do I convert px to rem?",
-        "answer": "Divide the pixel value by the root font size. With the default 16px base: 24px / 16 = 1.5rem. If the root font size is changed to 10px for easier math: 24px / 10 = 2.4rem."
+        "answer": "Divide the pixel value by the root font size (default 16px). Formula: rem = px / 16. Examples: 32px = 2rem, 24px = 1.5rem, 12px = 0.75rem, 8px = 0.5rem."
       },
       {
-        "question": "Why should I use rem instead of px?",
-        "answer": "REM units respect user accessibility settings. If a user sets their browser default font to 20px (for better readability), rem-based layouts scale accordingly while px-based layouts remain fixed. This improves accessibility compliance."
+        "question": "What is 16px in rem?",
+        "answer": "1rem (assuming default 16px root font size). 16px is the browser default body font size, which is why 1rem = 16px in most projects."
+      },
+      {
+        "question": "What is 24px in rem?",
+        "answer": "1.5rem at 16px root. Formula: 24 / 16 = 1.5rem. If the root is 10px (common for easier math): 24px = 2.4rem."
+      },
+      {
+        "question": "Why use rem instead of px?",
+        "answer": "Rem scales with user browser font preferences, improving accessibility. If a user increases their browser font size, rem-based layouts scale proportionally. Px is absolute and won't scale, which can make text too small for users with accessibility needs."
       },
       {
         "question": "What is the default root font size?",

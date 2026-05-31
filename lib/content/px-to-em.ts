@@ -5,11 +5,15 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "What is the difference between em and rem?",
-        "answer": "EM is relative to the parent element's font size, while REM is relative to the root (html) element's font size. EM compounds - if a parent is 2em inside another 2em parent, it becomes 4x the root size. REM always references the root, avoiding compounding."
+        "answer": "Rem is always relative to the ROOT element (html) font size. Em is relative to the PARENT element's font size. Rem is predictable and consistent sitewide. Em compounds through nesting, which can cause unexpected sizes in deeply nested elements."
       },
       {
         "question": "How do I convert px to em?",
-        "answer": "Divide the pixel value by the parent element's font size. If the parent is 16px: 24px / 16 = 1.5em. If the parent is 20px: 24px / 20 = 1.2em. The parent context matters for em calculations."
+        "answer": "Divide the pixel value by the parent element's font size. Formula: em = px / parent font size. If the parent is 16px: 24px = 1.5em. If the parent is 20px: 24px = 1.2em."
+      },
+      {
+        "question": "What is 16px in em?",
+        "answer": "1em when the parent font size is 16px. But if the parent is 20px, 16px = 0.8em. Em is always relative to the parent, not the root."
       },
       {
         "question": "When should I use em instead of rem?",

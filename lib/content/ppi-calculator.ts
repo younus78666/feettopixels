@@ -4,12 +4,20 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
+        "question": "How do I calculate PPI of a screen?",
+        "answer": "Use the formula: PPI = sqrt(width² + height²) / diagonal in inches. For a 2560x1440 display at 27 inches: sqrt(2560² + 1440²) = sqrt(8,627,200) = 2,937. Divide by 27 = 108.8 PPI."
+      },
+      {
         "question": "What is PPI and how does it differ from DPI?",
         "answer": "PPI (pixels per inch) measures the pixel density of a display screen. DPI (dots per inch) traditionally refers to print resolution. For screens, PPI and DPI are often used interchangeably, though PPI is the technically correct term for displays."
       },
       {
-        "question": "What PPI makes a display 'Retina'?",
-        "answer": "Apple's Retina standard means pixels are indistinguishable at typical viewing distance. For phones (held at 10-12 inches), this is about 300+ PPI. For laptops (18-24 inches), around 220+ PPI. For desktop monitors (24-30 inches), roughly 110+ PPI."
+        "question": "What PPI is Retina quality?",
+        "answer": "Apple defines Retina as the PPI where pixels are invisible at the typical viewing distance. For iPhones (10-12 inches): 326+ PPI. For iPads (14-18 inches): 264+ PPI. For MacBook displays (20-24 inches): 220+ PPI. For iMacs (24-28 inches): 218+ PPI."
+      },
+      {
+        "question": "What is a good PPI for a laptop screen?",
+        "answer": "200+ PPI is excellent for laptops. 13-14 inch 4K laptops hit 300-330 PPI. Most quality 1080p laptops at 14-15 inches deliver 141-157 PPI, which is acceptable. Below 120 PPI on a laptop starts to show visible pixels."
       },
       {
         "question": "Why do phones have higher PPI than monitors?",
@@ -18,6 +26,10 @@ export const content: LocalizedDocMap = {
       {
         "question": "Does higher PPI always mean better display quality?",
         "answer": "Not necessarily. Beyond the point where individual pixels become invisible at your typical viewing distance, higher PPI provides diminishing returns. Other factors like color accuracy, contrast ratio, and brightness also determine display quality."
+      },
+      {
+        "question": "Does higher PPI drain more battery?",
+        "answer": "Yes. A higher-density display requires more GPU work to render the same interface. Most operating systems scale HiDPI displays at 2x, which means the GPU renders 4x as many pixels. This is why many phones and laptops offer display resolution settings to balance sharpness and battery life."
       },
       {
         "question": "How do I find my device's PPI?",

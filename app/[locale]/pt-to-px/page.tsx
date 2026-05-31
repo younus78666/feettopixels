@@ -33,7 +33,7 @@ const faq = [
   {
     question: "How do I convert points (pt) to pixels?",
     answer:
-      "Multiply the pt value by DPI and divide by 72. At the web-standard 96 DPI: 1pt = 1.333px. At 72 DPI (legacy Mac): 1pt = 1px exactly. The formula: px = pt × DPI / 72.",
+      "Multiply pt by DPI and divide by 72. Formula: px = pt x DPI / 72. At 96 DPI: 1pt = 1.333px, 12pt = 16px, 18pt = 24px. At 72 DPI (legacy Mac): 1pt = 1px exactly.",
   },
   {
     question: "What is 12pt in pixels?",

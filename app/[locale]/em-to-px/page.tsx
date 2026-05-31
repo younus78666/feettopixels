@@ -33,7 +33,7 @@ const faq = [
   {
     question: "How do I convert EM to pixels?",
     answer:
-      "Multiply the em value by the parent element's computed font size. If the parent is 16px: 1em = 16px, 2em = 32px. If the parent is 18px: 1em = 18px, 2em = 36px. EM is always relative to its immediate parent (or its own font-size when used on the font-size property itself).",
+      "Multiply the em value by the parent element's computed font size. If the parent is 16px: 1em = 16px, 1.5em = 24px, 2em = 32px. If the parent is 18px: 1em = 18px, 2em = 36px. EM is always relative to its immediate parent (or its own font-size when used on the font-size property itself).",
   },
   {
     question: "Why does EM compound in nested elements?",

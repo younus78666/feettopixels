@@ -9,11 +9,19 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "How do I convert px to vw?",
-        "answer": "Divide the pixel value by the viewport width, then multiply by 100. For example, on a 1440px viewport: 100px / 1440 x 100 = 6.944vw. The result changes based on the viewport width you design for."
+        "answer": "Divide the pixel value by the viewport width and multiply by 100. Formula: vw = (px / viewport width) x 100. On a 1920px viewport: 192px = 10vw, 480px = 25vw. On a 375px mobile viewport: 150px = 40vw."
       },
       {
-        "question": "Should I use vw for font sizes?",
-        "answer": "Pure vw font sizes can be too small on mobile or too large on wide screens. Best practice is to use CSS clamp(): clamp(1rem, 2.5vw, 2rem). This sets minimum and maximum sizes while scaling fluidly between breakpoints."
+        "question": "What is 100vw in pixels?",
+        "answer": "It equals the full viewport width. On a 1920px wide screen: 100vw = 1920px. On a 375px mobile: 100vw = 375px. Vw always equals 1% of the viewport width."
+      },
+      {
+        "question": "When should I use vw instead of px?",
+        "answer": "Use vw for elements that should scale proportionally with the viewport: hero sections, large headings, full-bleed containers. Use clamp() to add minimum and maximum limits: clamp(1rem, 4vw, 2rem) scales with viewport but stays within readable bounds."
+      },
+      {
+        "question": "What is the problem with using vw for font sizes?",
+        "answer": "On very wide screens (3440px+), vw fonts become huge. On small mobile screens, they can become illegibly tiny. Always pair vw with clamp(): clamp(1rem, 2.5vw, 1.5rem) gives fluid scaling with floor and ceiling."
       },
       {
         "question": "What is the difference between vw and percentage?",

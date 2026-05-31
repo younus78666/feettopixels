@@ -33,7 +33,7 @@ const faq = [
   {
     question: "How do I convert VW to pixels?",
     answer:
-      "Multiply the vw value by the viewport width and divide by 100. Formula: px = vw × viewport / 100. On a 1440px viewport: 5vw = 72px, 25vw = 360px, 100vw = 1440px.",
+      "Multiply vw by the viewport width and divide by 100. Formula: px = vw x viewport width / 100. On a 1920px screen: 10vw = 192px, 50vw = 960px.",
   },
   {
     question: "What is 100vw in pixels?",

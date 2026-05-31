@@ -5,7 +5,11 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "How do I convert pixels to points?",
-        "answer": "Multiply the pixel value by 72/96 (which equals 0.75). For example, 16px x 0.75 = 12pt. This assumes the standard 96 DPI screen resolution. Points are 1/72 of an inch, while CSS pixels are 1/96 of an inch."
+        "answer": "Multiply pixels by 0.75. Formula: pt = px x 0.75 (at 96 DPI). 16px = 12pt, 24px = 18pt, 32px = 24pt. Points are a print typography unit: 1 inch = 72 points."
+      },
+      {
+        "question": "What is 16px in points?",
+        "answer": "12pt. At the 96 DPI CSS reference density: 16 x 0.75 = 12. Default browser body text is 16px = 12pt, which is why 12pt is the default document font size in Word and Google Docs."
       },
       {
         "question": "Why are pixels and points different sizes?",

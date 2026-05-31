@@ -4,12 +4,24 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What is DPI and how is it calculated?",
-        "answer": "DPI (dots per inch) measures pixel density on a screen. It is calculated using the formula: DPI = sqrt(width² + height²) / diagonal. This gives you the number of pixels packed into each inch of the display diagonal."
+        "question": "How do I calculate DPI?",
+        "answer": "Use the formula: DPI = sqrt(horizontal pixels squared + vertical pixels squared) / diagonal in inches. For a 1920x1080 monitor at 24 inches: sqrt(1920² + 1080²) = sqrt(4,809,600) = 2,193. Divide by 24 = 91.4 DPI."
       },
       {
-        "question": "What is a good DPI for a monitor?",
-        "answer": "For general desktop use at arm's length, 90-110 DPI is comfortable. For high-resolution work, 150+ DPI (like Retina displays) provides sharper text and images. A 27-inch 4K monitor has about 163 DPI, which is considered excellent."
+        "question": "What is the DPI of a 27-inch 1080p monitor?",
+        "answer": "81.6 DPI. Formula: sqrt(1920² + 1080²) / 27 = 2,202 / 27 = 81.6. This is considered adequate for desktop use at arm's length."
+      },
+      {
+        "question": "What is the DPI of a 27-inch 4K monitor?",
+        "answer": "163 DPI. Formula: sqrt(3840² + 2160²) / 27 = 4,405 / 27 = 163.2. This is a sharp, Retina-class display for desktop use."
+      },
+      {
+        "question": "What DPI is good for a monitor?",
+        "answer": "For desktop use (24-28 inches viewed at arm's length): 90-110 DPI is comfortable. 4K monitors at 27 inches reach 163 DPI, which is excellent for design work. Above 220 DPI on a desktop monitor is diminishing returns at typical viewing distance."
+      },
+      {
+        "question": "What is the difference between DPI and resolution?",
+        "answer": "Resolution describes total pixel count (e.g., 1920x1080). DPI describes pixel density per inch. Two monitors can share the same resolution but have different DPI if one is physically larger. A 24-inch 1080p monitor has higher DPI than a 32-inch 1080p monitor."
       },
       {
         "question": "What is the difference between DPI and PPI?",
