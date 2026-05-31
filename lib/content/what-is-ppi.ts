@@ -132,18 +132,18 @@ export const content: LocalizedDocMap = {
       }
     ]
   },
-  "es": { "faq": [], "sections": [{ "id": "overview", "title": "Descripción general", "paragraphs": [] }] },
-  "fr": { "faq": [], "sections": [{ "id": "overview", "title": "Aperçu", "paragraphs": [] }] },
-  "de": { "faq": [], "sections": [{ "id": "overview", "title": "Überblick", "paragraphs": [] }] },
-  "pt": { "faq": [], "sections": [{ "id": "overview", "title": "Visão geral", "paragraphs": [] }] },
-  "hi": { "faq": [], "sections": [{ "id": "overview", "title": "सिंहावलोकन", "paragraphs": [] }] },
-  "ja": { "faq": [], "sections": [{ "id": "overview", "title": "概要", "paragraphs": [] }] },
-  "ko": { "faq": [], "sections": [{ "id": "overview", "title": "개요", "paragraphs": [] }] },
-  "it": { "faq": [], "sections": [{ "id": "overview", "title": "Panoramica", "paragraphs": [] }] },
-  "nl": { "faq": [], "sections": [{ "id": "overview", "title": "Overzicht", "paragraphs": [] }] },
-  "ar": { "faq": [], "sections": [{ "id": "overview", "title": "ملخص", "paragraphs": [] }] },
-  "tr": { "faq": [], "sections": [{ "id": "overview", "title": "Genel Bakış", "paragraphs": [] }] },
-  "pl": { "faq": [], "sections": [{ "id": "overview", "title": "Przegląd", "paragraphs": [] }] },
-  "id": { "faq": [], "sections": [{ "id": "overview", "title": "Ringkasan", "paragraphs": [] }] },
-  "ru": { "faq": [], "sections": [{ "id": "overview", "title": "Обзор", "paragraphs": [] }] }
+  "es": { "faq": [], "sections": [] },
+  "fr": { "faq": [], "sections": [] },
+  "de": { "faq": [], "sections": [] },
+  "pt": { "faq": [], "sections": [] },
+  "hi": { "faq": [], "sections": [] },
+  "ja": { "faq": [], "sections": [] },
+  "ko": { "faq": [], "sections": [] },
+  "it": { "faq": [], "sections": [] },
+  "nl": { "faq": [], "sections": [] },
+  "ar": { "faq": [], "sections": [] },
+  "tr": { "faq": [], "sections": [] },
+  "pl": { "faq": [], "sections": [] },
+  "id": { "faq": [], "sections": [] },
+  "ru": { "faq": [], "sections": [] }
 };
