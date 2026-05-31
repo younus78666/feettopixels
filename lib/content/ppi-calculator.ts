@@ -124,7 +124,7 @@ export const content: LocalizedDocMap = {
         "answer": "Le PPI (pixels par pouce) mesure la densité de pixels d'un écran d'affichage. DPI (points par pouce) fait traditionnellement référence à la résolution d'impression. Pour les écrans, PPI et DPI sont souvent utilisés de manière interchangeable, bien que PPI soit le terme techniquement correct pour désigner les écrans."
       },
       {
-        "question": "Qu'est-ce que le PPI rend un écran " Retina " ?",
+        "question": "Qu'est-ce que le PPI rend un écran \" Retina \" ?",
         "answer": "La norme Retina d'Apple signifie que les pixels sont impossibles à distinguer à une distance de visualisation typique. Pour les téléphones (entre 10 et 12 pouces), cela représente environ 300+ PPI. Pour les ordinateurs portables (18-24 pouces), environ 220+ PPI. Pour les moniteurs de bureau (24 à 30 pouces), environ 110+ PPI."
       },
       {
@@ -496,7 +496,7 @@ export const content: LocalizedDocMap = {
         "answer": "PPI (пикселей на дюйм) измеряет плотность пикселей на экране дисплея. DPI (точек на дюйм) традиционно относится к разрешению печати. Для экранов PPI и DPI часто используются как синонимы, хотя PPI - это технически правильный термин для дисплеев."
       },
       {
-        "question": "Какой PPI делает дисплей "Retina"?",
+        "question": "Какой PPI делает дисплей \"Retina\"?",
         "answer": "Стандарт Apple Retina означает, что пиксели неразличимы на обычном расстоянии просмотра. Для телефонов (держатся на 10-12 дюймах) это около 300+ PPI. Для ноутбуков (18-24 дюйма) около 220+ PPI. Для настольных мониторов (24 - 30 дюймов) - примерно 110+ PPI."
       },
       {

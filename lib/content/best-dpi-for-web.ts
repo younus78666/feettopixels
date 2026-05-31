@@ -195,7 +195,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Pourquoi certaines personnes recommandent-elles 72 DPI pour le Web ?",
-        "answer": "Il s'agit d'un mythe persistant issu des premiers écrans Mac, qui avaient des écrans de 72 PPI. En réglant les images à 72 DPI, les " points " et les " pixels " correspondaient à 1:1 dans les premiers logiciels de conception. Les navigateurs modernes s'affichent en fonction du nombre de pixels et non du DPI."
+        "answer": "Il s'agit d'un mythe persistant issu des premiers écrans Mac, qui avaient des écrans de 72 PPI. En réglant les images à 72 DPI, les \" points \" et les \" pixels \" correspondaient à 1:1 dans les premiers logiciels de conception. Les navigateurs modernes s'affichent en fonction du nombre de pixels et non du DPI."
       },
       {
         "question": "Comment optimiser les images pour les performances Web ?",
@@ -915,7 +915,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Почему некоторые люди рекомендуют 72 точки на дюйм для Интернета?",
-        "answer": "Это устойчивый миф, возникший в ранних дисплеях Mac, которые имели экраны с 72 точками на дюйм. Установка для изображений разрешения 72 точек на дюйм приводила к тому, что "точки" и "пиксели" совпадали 1:1 в ранних версиях программного обеспечения для проектирования. Современные браузеры визуализируют по количеству пикселей, а не по DPI."
+        "answer": "Это устойчивый миф, возникший в ранних дисплеях Mac, которые имели экраны с 72 точками на дюйм. Установка для изображений разрешения 72 точек на дюйм приводила к тому, что \"точки\" и \"пиксели\" совпадали 1:1 в ранних версиях программного обеспечения для проектирования. Современные браузеры визуализируют по количеству пикселей, а не по DPI."
       },
       {
         "question": "Как оптимизировать изображения для веб-производительности?",
