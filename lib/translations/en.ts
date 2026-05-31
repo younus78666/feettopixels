@@ -290,6 +290,13 @@ export const en = {
       extractive:
         "A pixel is the smallest addressable element on a digital display. Each pixel contains red, green, and blue sub-pixels that combine to produce any visible color.",
     },
+    "what-is-aspect-ratio": {
+      title: "What Is Aspect Ratio? - W:H Ratios Explained",
+      description:
+        "Aspect ratio is the proportional width-to-height relationship. 16:9 = widescreen video. 1:1 = square. 9:16 = portrait mobile. Learn to calculate ratios and resize without distortion.",
+      extractive:
+        "Aspect ratio is the proportional relationship between width and height, expressed as W:H. 16:9 means 16 units wide for every 9 tall. Calculate it by dividing both dimensions by their GCD. 1920x1080 / GCD(120) = 16:9.",
+    },
     "dpi-vs-ppi": {
       title: "DPI vs PPI - Key Differences Explained (2026)",
       description:
@@ -324,6 +331,13 @@ export const en = {
         "DPI doesn't matter for web images -- only pixel dimensions do. Learn why 72 DPI is a myth and the best file formats for web.",
       extractive:
         "Web images should be optimized by pixel dimensions, not DPI. Browsers render based on pixel count. 96 DPI is the CSS standard.",
+    },
+    "best-dpi-for-scanning": {
+      title: "Best DPI for Scanning - Photos, Slides & Documents",
+      description:
+        "What DPI to scan photos, slides, and documents. Scan photos at 600 DPI for archiving. 35mm slides at 2400-4000 DPI. Documents at 300 DPI for OCR. Complete scanning guide.",
+      extractive:
+        "Scan standard photos at 600 DPI for archiving or 300 DPI for digital sharing. 35mm slides need 2400-4000 DPI for useful print sizes. Scan documents at 300 DPI for OCR. Doubling scan DPI quadruples file size.",
     },
     "paper-sizes-in-pixels": {
       title: "Paper Sizes in Pixels - A4, Letter & More at Any DPI",
@@ -440,11 +454,13 @@ export const en = {
     "what-is-dpi": "Understanding dots per inch",
     "what-is-ppi": "Understanding pixels per inch",
     "what-is-a-pixel": "The building block of digital images",
+    "what-is-aspect-ratio": "Aspect ratio explained with common ratios",
     "dpi-vs-ppi": "Key differences explained",
     "pixels-per-inch": "Complete PPI reference guide",
     "em-vs-rem": "CSS units comparison guide",
     "best-dpi-for-printing": "Resolution guide for sharp prints",
     "best-dpi-for-web": "Web image resolution guide",
+    "best-dpi-for-scanning": "Scan DPI guide for photos and documents",
     "paper-sizes-in-pixels": "A4, Letter, A3 at every DPI",
     "standard-image-sizes": "4x6, 5x7, 8x10 in pixels",
     "social-media-image-sizes": "Instagram, Facebook, YouTube sizes",

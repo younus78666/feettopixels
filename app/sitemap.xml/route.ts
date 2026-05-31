@@ -63,11 +63,13 @@ export function GET() {
     "/em-vs-rem",
     "/common-resolutions",
     "/best-dpi-for-web",
+    "/best-dpi-for-scanning",
     "/pixels-per-cm",
     "/pixels-per-mm",
     "/pixels-per-foot",
     "/dpi-conversion-table",
     "/passport-photo-size",
+    "/what-is-aspect-ratio",
   ];
 
   const allPages = [...staticPages, ...toolPages, ...blogPages];
