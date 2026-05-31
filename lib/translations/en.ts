@@ -286,7 +286,7 @@ export const en = {
     "what-is-a-pixel": {
       title: "What Is a Pixel? - Digital Display Basics Explained",
       description:
-        "Learn what a pixel is, how pixels work in digital displays, and why pixel dimensions matter.",
+        "A pixel is the smallest unit in a digital image or display. Each pixel stores RGB color values. CSS pixels differ from device pixels on Retina screens.",
       extractive:
         "A pixel is the smallest addressable element on a digital display. Each pixel contains red, green, and blue sub-pixels that combine to produce any visible color.",
     },
@@ -307,63 +307,63 @@ export const en = {
     "em-vs-rem": {
       title: "EM vs REM - CSS Units Comparison Guide (2026)",
       description:
-        "Compare em and rem CSS units. Understand when to use each and how they differ.",
+        "Em is relative to parent font size. Rem is relative to root font size. Rem is recommended for most sizing. Em suits component-level scaling. With examples.",
       extractive:
         "EM is relative to the parent element's font size, while REM is relative to the root font size. REM is more predictable for layout sizing.",
     },
     "best-dpi-for-printing": {
       title: "Best DPI for Printing - Photos, Posters & More",
       description:
-        "Find the recommended DPI for every print type: photos, posters, business cards, and more.",
+        "Recommended DPI for every print type. 300 DPI for photos and brochures. 150 DPI for posters. 72-100 DPI for banners. Pixel counts for all common sizes.",
       extractive:
         "Use 300 DPI for standard photo prints and brochures, 150 DPI for large posters, and 600 DPI for fine art reproduction.",
     },
     "best-dpi-for-web": {
       title: "Best DPI for Web - Image Resolution Guide (2026)",
       description:
-        "Guide to web image resolution and DPI. Learn why 72 and 96 DPI are web standards.",
+        "DPI doesn't matter for web images -- only pixel dimensions do. Learn why 72 DPI is a myth and the best file formats for web.",
       extractive:
         "Web images should be optimized by pixel dimensions, not DPI. Browsers render based on pixel count. 96 DPI is the CSS standard.",
     },
     "paper-sizes-in-pixels": {
       title: "Paper Sizes in Pixels - A4, Letter & More at Any DPI",
       description:
-        "Find A4, Letter, A3, and all standard paper sizes in pixels at every DPI.",
+        "A4 at 300 DPI = 2,480 x 3,508 px. US Letter = 2,550 x 3,300 px. Find every ISO and US paper size in pixels at 96, 150, and 300 DPI.",
       extractive:
         "A4 paper (210x297mm) at 300 DPI is 2480x3508 pixels. US Letter (8.5x11 inches) at 300 DPI is 2550x3300 pixels.",
     },
     "standard-image-sizes": {
       title: "Standard Image Sizes - Photo Print Dimensions in PX",
       description:
-        "Reference for standard photo print sizes (4x6, 5x7, 8x10) in pixels at every DPI.",
+        "Standard photo sizes in pixels. 4x6 at 300 DPI = 1,200x1,800 px. 8x10 = 2,400x3,000 px. Print size reference for all common photo formats.",
       extractive:
         "A 4x6 photo at 300 DPI is 1200x1800 pixels. A 5x7 at 300 DPI is 1500x2100 pixels. An 8x10 at 300 DPI is 2400x3000 pixels.",
     },
     "social-media-image-sizes": {
       title: "Social Media Image Sizes - 2026 Complete Guide",
       description:
-        "Complete guide to image dimensions for Instagram, Facebook, YouTube, Twitter/X, and LinkedIn.",
+        "Social media image dimensions: Instagram post 1080x1080, portrait 1080x1350. YouTube thumbnail 1280x720. Facebook cover 820x312. 2026 guide.",
       extractive:
         "Instagram posts are 1080x1080px, Stories are 1080x1920px. Facebook cover photos are 820x312px. YouTube thumbnails are 1280x720px.",
     },
     "common-resolutions": {
       title: "Common Screen Resolutions - HD to 8K Reference",
       description:
-        "Reference guide to common display resolutions: 720p, 1080p, 1440p, 4K, 5K, and 8K.",
+        "Common display resolutions: 1080p = 1920x1080, 1440p = 2560x1440, 4K = 3840x2160. HD, QHD, UHD, 5K, and 8K specs in one reference.",
       extractive:
         "1080p (Full HD) is 1920x1080 pixels. 4K (UHD) is 3840x2160 pixels. 5K is 5120x2880 pixels. 8K is 7680x4320 pixels.",
     },
     "dpi-conversion-table": {
       title: "DPI Conversion Table - Quick Reference Chart",
       description:
-        "Quick reference chart for pixel-to-physical conversions at common DPI values.",
+        "DPI conversion table. At 300 DPI: 1 inch = 300 px, 1 cm = 118 px. At 96 DPI: 1 inch = 96 px. Quick reference for print size calculations.",
       extractive:
         "At 96 DPI: 1 inch = 96px, 1 cm = 37.8px. At 300 DPI: 1 inch = 300px, 1 cm = 118.1px.",
     },
     "passport-photo-size": {
       title: "Passport Photo Size in Pixels - US, UK & More",
       description:
-        "Photo size requirements for passports and IDs in pixels at every DPI.",
+        "Passport photo sizes by country. US: 2x2 inches (600x600 px at 300 DPI). UK: 35x45 mm (413x531 px). Find requirements for 20+ countries.",
       extractive:
         "US passport photos must be 2x2 inches. At 300 DPI that is 600x600 pixels. UK passport photos are 35x45mm (413x531 pixels at 300 DPI).",
     },

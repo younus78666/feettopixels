@@ -4,8 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "How big is a pixel?",
-        "answer": "A pixel has no fixed physical size. Its size depends on the display's PPI. At 96 PPI, one pixel is about 0.26mm. At 300 PPI (print), one pixel is 0.085mm. On a 460 PPI phone, one pixel is just 0.055mm."
+        "question": "What is a pixel?",
+        "answer": "A pixel (short for 'picture element') is the smallest addressable unit in a digital image or display. Every digital photo, icon, and video frame is built from a grid of millions of individual pixels, each storing color as red, green, and blue (RGB) values."
+      },
+      {
+        "question": "What is a CSS pixel vs a device pixel?",
+        "answer": "A CSS pixel is an abstract unit. On a standard 1x display, 1 CSS pixel = 1 physical pixel. On a 2x Retina display, 1 CSS pixel = 4 physical pixels (2x2). This is why images for Retina screens need twice the pixel dimensions of standard images."
+      },
+      {
+        "question": "How big is a pixel in real life?",
+        "answer": "A pixel has no fixed physical size -- it depends on display density (PPI). At 96 PPI (typical monitor), 1 pixel = 0.265 mm. At 300 PPI (print), 1 pixel = 0.085 mm. At 460 PPI (flagship phone), 1 pixel = 0.055 mm."
       },
       {
         "question": "What are subpixels?",
@@ -14,10 +22,6 @@ export const content: LocalizedDocMap = {
       {
         "question": "What does megapixel mean?",
         "answer": "One megapixel equals one million pixels. A 12-megapixel camera sensor captures images with roughly 12 million individual pixels, such as 4000 x 3000 pixels. More megapixels allows for larger prints and more cropping flexibility."
-      },
-      {
-        "question": "Are CSS pixels the same as device pixels?",
-        "answer": "No. CSS pixels are an abstract unit used in web design. On a 2x retina display, one CSS pixel equals four device pixels (2x2). This distinction is why images need to be 2x or 3x resolution for sharp rendering on HiDPI screens."
       }
     ],
     "sections": [

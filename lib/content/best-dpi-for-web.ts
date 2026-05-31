@@ -4,16 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "Should I save web images at 72 DPI?",
-        "answer": "It doesn't matter. Browsers ignore DPI metadata entirely. A 1200x800 image displays identically whether saved at 72, 96, or 300 DPI. Only the pixel dimensions and file format affect web display."
+        "question": "What DPI should I use for web images?",
+        "answer": "DPI doesn't matter for web images. Browsers ignore DPI metadata and display images based solely on pixel dimensions. Save web images at whatever pixel dimensions you need and ignore the DPI setting entirely."
       },
       {
-        "question": "Why do some people recommend 72 DPI for web?",
-        "answer": "This is a persistent myth from early Mac displays, which had 72 PPI screens. Setting images to 72 DPI made 'points' and 'pixels' match 1:1 in early design software. Modern browsers render by pixel count, not DPI."
+        "question": "Why do web images say 72 DPI?",
+        "answer": "72 DPI is a legacy convention from 1980s Mac monitors. It has no effect on web display. A 1920x1080 image at 72 DPI looks identical to the same image at 300 DPI in any browser. Only pixel dimensions affect web display quality."
       },
       {
-        "question": "How do I optimize images for web performance?",
-        "answer": "Use modern formats like WebP or AVIF. Resize to the actual display dimensions (no larger than needed). Compress with tools like Squoosh or ImageOptim. Use responsive images with srcset for different screen sizes."
+        "question": "What image format is best for web?",
+        "answer": "WebP for most web images (30-35% smaller than JPEG at same quality). JPEG for photos where WebP isn't supported. PNG for images requiring transparency. AVIF for next-generation compression where browser support exists. Never use TIFF or BMP on the web."
       },
       {
         "question": "What does 72 DPI mean for web images?",

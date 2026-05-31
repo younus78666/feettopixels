@@ -4,12 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What size is a 4x6 photo in pixels?",
-        "answer": "A 4x6 inch photo at 300 DPI is 1200 x 1800 pixels. At 150 DPI (acceptable quality), it is 600 x 900 pixels. Most smartphone cameras produce more than enough pixels for 4x6 prints."
+        "question": "What are standard photo print sizes in pixels?",
+        "answer": "At 300 DPI: 4x6 inches = 1,200x1,800 px. 5x7 inches = 1,500x2,100 px. 8x10 inches = 2,400x3,000 px. 11x14 inches = 3,300x4,200 px. 16x20 inches = 4,800x6,000 px."
       },
       {
         "question": "What resolution do I need for an 8x10 print?",
-        "answer": "For a high-quality 8x10 inch print at 300 DPI, you need an image of at least 2400 x 3000 pixels (7.2 megapixels). At 150 DPI (acceptable), you need 1200 x 1500 pixels."
+        "answer": "2,400 x 3,000 pixels at 300 DPI (professional quality). At 150 DPI: 1,200 x 1,500 pixels (acceptable for distance viewing). Most modern smartphones produce 12-48 MP — more than enough for 8x10."
+      },
+      {
+        "question": "What is the minimum megapixels for a 4x6 photo?",
+        "answer": "At 300 DPI: 1,200 x 1,800 pixels = 2.16 MP minimum. In practice, any camera above 3 MP easily handles 4x6 at 300 DPI. Even a 2 MP camera produces acceptable 4x6 prints."
       },
       {
         "question": "How many megapixels do I need for a 16x20 print?",

@@ -4,16 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
+        "question": "What is the difference between em and rem?",
+        "answer": "Em is relative to the parent element's font size. Rem is relative to the root (html) element's font size. Use rem for global consistency -- it won't compound through nested elements. Use em for component-level scaling where children should scale with their parent."
+      },
+      {
         "question": "Should I use em or rem for font sizes?",
-        "answer": "Use rem for font sizes in most cases. REM units are relative to the root font size (usually 16px), making them predictable and consistent. Use em only when you want font size to scale relative to the parent element."
+        "answer": "Rem for most font sizes. It gives global consistency and respects user browser preferences. Em is useful for specific component patterns where you want child elements to scale automatically when the component's font size changes."
       },
       {
-        "question": "What is 1rem in pixels?",
-        "answer": "By default, 1rem equals 16px because browsers set the root font size to 16px. If you change the root font size (e.g., html { font-size: 62.5%; }), then 1rem equals 10px."
-      },
-      {
-        "question": "When should I use em instead of rem?",
-        "answer": "Use em for padding and margins on components where spacing should scale proportionally with the element's own font size. For example, button padding in em units scales if the button text size changes."
+        "question": "What is 1em in pixels?",
+        "answer": "1em equals the parent element's font size in pixels. If the parent is 16px: 1em = 16px. If the parent is 20px: 1em = 20px. Top-level 1em is typically 16px (browser default), but this changes inside nested elements."
       },
       {
         "question": "Can I mix em and rem in the same project?",

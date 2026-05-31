@@ -3,8 +3,10 @@ import type { PageContentMap } from "./types";
 export const content: PageContentMap = {
   en: {
     faq: [
+      { question: "What is 1080p resolution?", answer: "1080p means 1920 x 1080 pixels. The '1080' refers to 1,080 horizontal lines of pixels. 'p' stands for progressive scan. This is Full HD (FHD) and the most common resolution for monitors, laptops, and streaming video." },
+      { question: "What is 4K resolution?", answer: "4K (UHD) is 3840 x 2160 pixels — exactly 4x the pixel count of 1080p. True cinema 4K is 4096 x 2160. Consumer 4K TVs and monitors use 3840 x 2160. This delivers 4x the detail of 1080p at the same screen size." },
+      { question: "What is the difference between 1440p and 4K?", answer: "1440p (QHD) is 2560 x 1440 pixels. 4K (UHD) is 3840 x 2160 pixels. 4K has 2.25x more pixels than 1440p. On a 27-inch monitor: 1440p = 108.8 PPI, 4K = 163 PPI. 1440p is often preferred for gaming (lower GPU load, high frame rates). 4K is better for design and content work." },
       { question: "What is the most common screen resolution?", answer: "StatCounter's March 2026 desktop screen-resolution data lists 1920 x 1080 (Full HD) as the top worldwide resolution at 21.16%. The next largest desktop buckets are 1536 x 864 at 9.22%, 1366 x 768 at 7.05%, 1280 x 720 at 4.06%, and 2560 x 1440 at 3.73%." },
-      { question: "What is 4K resolution in pixels?", answer: "4K (also called UHD) is 3840 x 2160 pixels, exactly four times the pixel count of Full HD (1920 x 1080). Cinema 4K (DCI 4K) is slightly wider at 4096 x 2160 pixels." },
       { question: "Is QHD the same as 2K?", answer: "Not exactly. QHD is 2560 x 1440 pixels. True 2K (DCI 2K) is 2048 x 1080 pixels. However, QHD is commonly (if inaccurately) marketed as '2K' because its horizontal resolution is close to 2560." },
       { question: "How many pixels does 8K have?", answer: "8K resolution (7680 x 4320) contains 33.2 million pixels - 16 times the pixel count of Full HD. 8K displays are primarily used for professional video production and large-format commercial displays." },
     ],

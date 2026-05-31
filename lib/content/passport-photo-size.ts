@@ -4,12 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What size is a US passport photo in pixels?",
-        "answer": "A US passport photo is 2 x 2 inches. At 300 DPI, that equals 600 x 600 pixels. The US State Department requires photos to be between 600 x 600 and 1200 x 1200 pixels for online submissions."
+        "question": "What size is a US passport photo?",
+        "answer": "2 x 2 inches (51 x 51 mm). At 300 DPI: 600 x 600 pixels. The head must be between 1 inch (25 mm) and 1.375 inches (35 mm) from chin to top of head."
       },
       {
-        "question": "What size is a UK passport photo in pixels?",
-        "answer": "A UK passport photo is 35 x 45 mm. At 300 DPI, that equals 413 x 531 pixels. For digital submissions, the UK government specifies at least 600 x 750 pixels."
+        "question": "What size is a UK passport photo?",
+        "answer": "35 x 45 mm. At 300 DPI: 413 x 531 pixels. The face must fill 29-34 mm of the 45 mm height. Background must be plain white or cream."
+      },
+      {
+        "question": "Can I take my own passport photo at home?",
+        "answer": "Yes, in most countries. Requirements: plain white or off-white background, neutral expression, eyes fully open and clearly visible, no glasses, printed at correct size. Use our tool to calculate exact pixel dimensions for your country's requirements."
       },
       {
         "question": "What DPI should I use for passport photos?",

@@ -4,12 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What is A4 size in pixels at 300 DPI?",
-        "answer": "A4 paper (210 x 297 mm or 8.27 x 11.69 inches) at 300 DPI is 2480 x 3508 pixels. This is the standard resolution for professional print-quality A4 documents."
+        "question": "What is A4 in pixels at 300 DPI?",
+        "answer": "2,480 x 3,508 pixels. A4 is 210 x 297 mm. At 300 DPI: 210 x 300 / 25.4 = 2,480 px wide, 297 x 300 / 25.4 = 3,508 px tall."
       },
       {
-        "question": "What is US Letter size in pixels at 300 DPI?",
-        "answer": "US Letter (8.5 x 11 inches) at 300 DPI is 2550 x 3300 pixels. This is the standard for print-ready documents in North America."
+        "question": "What is US Letter in pixels at 300 DPI?",
+        "answer": "2,550 x 3,300 pixels. US Letter is 8.5 x 11 inches. At 300 DPI: 8.5 x 300 = 2,550 px wide, 11 x 300 = 3,300 px tall."
+      },
+      {
+        "question": "What is the difference between A4 and US Letter?",
+        "answer": "A4 (210 x 297 mm) is taller and narrower than US Letter (8.5 x 11 inches / 215.9 x 279.4 mm). At 300 DPI: A4 = 2,480 x 3,508 px, Letter = 2,550 x 3,300 px. A4 is the standard in Europe, Asia, and most of the world. US Letter is standard in the US and Canada."
       },
       {
         "question": "What DPI should I use for paper size conversions?",

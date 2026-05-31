@@ -4,24 +4,24 @@ export const content: PageContentMap = {
   en: {
     faq: [
       {
-        question: "What size should an Instagram post be?",
+        question: "What is the best Instagram post size?",
         answer:
-          "The recommended size for an Instagram feed post is 1080 x 1080 pixels (square), 1080 x 1350 pixels (portrait, 4:5 ratio), or 1080 x 566 pixels (landscape). Portrait posts take up more screen space and tend to perform best.",
+          "1080 x 1080 pixels for square posts. 1080 x 1350 pixels for portrait posts (4:5 ratio — best reach). 1080 x 566 pixels for landscape. All images are compressed to ~92 KB by Instagram. Upload at maximum quality and let Instagram handle compression.",
       },
       {
-        question: "What is the ideal YouTube thumbnail size?",
+        question: "What size is a Facebook cover photo?",
         answer:
-          "YouTube now recommends uploading thumbnails as large as possible, with 3840 x 2160 pixels as the high-resolution 16:9 target and 640 pixels as the minimum width. The older 1280 x 720 size is still a common working size, but 4K thumbnails give YouTube more source detail.",
+          "820 x 312 pixels on desktop, 640 x 360 pixels on mobile. Upload at 820 x 462 pixels to cover both. Facebook compresses images below 100 KB, so upload JPEGs at maximum quality.",
+      },
+      {
+        question: "What is the best YouTube thumbnail size?",
+        answer:
+          "1280 x 720 pixels (16:9 aspect ratio). This is the minimum recommended. YouTube displays thumbnails as small as 120 x 68 pixels in search, so use large, bold text and high contrast for readability at small sizes.",
       },
       {
         question: "What resolution should I use for social media images?",
         answer:
           "DPI does not matter for social media. Pixel dimensions, aspect ratio, file format, and compression matter more because platforms resample uploads for screen delivery regardless of DPI metadata.",
-      },
-      {
-        question: "What size is a Facebook cover photo?",
-        answer:
-          "Facebook cover photos should be 820 x 312 pixels on desktop and 640 x 360 pixels on mobile. Upload at 851 x 315 pixels for the best cross-device display.",
       },
     ],
     body: {

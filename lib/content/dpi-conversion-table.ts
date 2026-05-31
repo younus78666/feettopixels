@@ -4,6 +4,18 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
+        "question": "How many pixels is an inch at 300 DPI?",
+        "answer": "300 pixels. At 300 DPI, 1 inch = 300 pixels. This is why a 10-inch print at 300 DPI needs 3,000 pixels of width."
+      },
+      {
+        "question": "How many pixels is an inch at 96 DPI?",
+        "answer": "96 pixels. 96 DPI is the web/screen reference standard. 1 CSS inch = 96 CSS pixels. A 10-inch layout at 96 DPI = 960 pixels."
+      },
+      {
+        "question": "What DPI is best for business cards?",
+        "answer": "300 DPI. A standard business card is 3.5 x 2 inches. At 300 DPI: 1,050 x 600 pixels. Include a 0.125-inch (37.5 pixel) bleed on all sides, giving a total canvas of 1,125 x 675 pixels."
+      },
+      {
         "question": "Why are there so many standard DPI values?",
         "answer": "Each DPI value maps to a specific use case. 72 DPI is legacy screen resolution, 96 DPI is the modern Windows default, 150 DPI is standard for newspaper print and large posters, 300 DPI is the professional photo and magazine standard, 600 DPI is for fine art and archival work, and 1,200+ DPI is for laser printers reproducing small text or technical drawings."
       },
