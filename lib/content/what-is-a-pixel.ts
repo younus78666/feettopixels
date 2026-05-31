@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -22,146 +22,146 @@ export const content: LocalizedDocMap = {
     ],
     "sections": [
       {
-        “id”: “pixel-definition”,
-        “title”: “Pixel Definition”,
-        “paragraphs”: [
-          “A pixel (short for \”picture element\”) is the smallest addressable unit of a raster image or digital display. Every photo you view, every icon on your screen, and every frame of video is composed of thousands or millions of individual pixels arranged in a rectangular grid.”,
-          “Each pixel stores color information as a combination of red, green, and blue values (RGB). In an 8-bit-per-channel image, each channel ranges from 0 to 255, giving each pixel the ability to represent one of over 16.7 million colors. Pixels are discrete color units: they divide a continuous visual scene into a fixed grid of addressable points, which is what makes digital images editable, scalable, and transmittable.”
+        "id": "pixel-definition",
+        "title": "Pixel Definition",
+        "paragraphs": [
+          "A pixel (short for \"picture element\") is the smallest addressable unit of a raster image or digital display. Every photo you view, every icon on your screen, and every frame of video is composed of thousands or millions of individual pixels arranged in a rectangular grid.",
+          "Each pixel stores color information as a combination of red, green, and blue values (RGB). In an 8-bit-per-channel image, each channel ranges from 0 to 255, giving each pixel the ability to represent one of over 16.7 million colors. Pixels are discrete color units: they divide a continuous visual scene into a fixed grid of addressable points, which is what makes digital images editable, scalable, and transmittable."
         ]
       },
       {
-        “id”: “subpixels”,
-        “title”: “Subpixels (RGB)”,
-        “paragraphs”: [
-          “On LCD and OLED screens, each visible pixel is composed of three subpixels: one red, one green, and one blue. These subpixels are too small to see individually at normal viewing distance. The display adjusts the brightness of each subpixel independently to create the full color range you perceive.”,
-          “Some display technologies use different subpixel arrangements. Samsung’s PenTile layout uses an RGBG pattern, while some LCDs add a white subpixel (RGBW) to improve brightness efficiency.”
+        "id": "subpixels",
+        "title": "Subpixels (RGB)",
+        "paragraphs": [
+          "On LCD and OLED screens, each visible pixel is composed of three subpixels: one red, one green, and one blue. These subpixels are too small to see individually at normal viewing distance. The display adjusts the brightness of each subpixel independently to create the full color range you perceive.",
+          "Some display technologies use different subpixel arrangements. Samsung's PenTile layout uses an RGBG pattern, while some LCDs add a white subpixel (RGBW) to improve brightness efficiency."
         ]
       },
       {
-        “id”: “megapixels”,
-        “title”: “Megapixels”,
-        “paragraphs”: [
-          “One megapixel (MP) equals one million pixels. Camera sensors and image files are rated in megapixels to indicate their total resolution. A 48 MP smartphone camera captures images of roughly 8000 x 6000 pixels. More megapixels provide greater detail and allow for larger prints or more aggressive cropping.”
+        "id": "megapixels",
+        "title": "Megapixels",
+        "paragraphs": [
+          "One megapixel (MP) equals one million pixels. Camera sensors and image files are rated in megapixels to indicate their total resolution. A 48 MP smartphone camera captures images of roughly 8000 x 6000 pixels. More megapixels provide greater detail and allow for larger prints or more aggressive cropping."
         ],
-        “table”: {
-          “headers”: [
-            “Megapixels”,
-            “Typical Dimensions”,
-            “Max Print Size (300 DPI)”
+        "table": {
+          "headers": [
+            "Megapixels",
+            "Typical Dimensions",
+            "Max Print Size (300 DPI)"
           ],
-          “rows”: [
+          "rows": [
             [
-              “2 MP”,
-              “1600 x 1200”,
-              “5.3 x 4\””
+              "2 MP",
+              "1600 x 1200",
+              "5.3 x 4\""
             ],
             [
-              “8 MP”,
-              “3264 x 2448”,
-              “10.9 x 8.2\””
+              "8 MP",
+              "3264 x 2448",
+              "10.9 x 8.2\""
             ],
             [
-              “12 MP”,
-              “4000 x 3000”,
-              “13.3 x 10\””
+              "12 MP",
+              "4000 x 3000",
+              "13.3 x 10\""
             ],
             [
-              “24 MP”,
-              “6000 x 4000”,
-              “20 x 13.3\””
+              "24 MP",
+              "6000 x 4000",
+              "20 x 13.3\""
             ],
             [
-              “48 MP”,
-              “8000 x 6000”,
-              “26.7 x 20\””
+              "48 MP",
+              "8000 x 6000",
+              "26.7 x 20\""
             ]
           ]
         }
       },
       {
-        “id”: “pixel-size”,
-        “title”: “Pixel Size at Different DPIs”,
-        “paragraphs”: [
-          “A pixel has no inherent physical size. Its real-world dimensions depend entirely on display or print density. Here is the physical size of one pixel at common DPI/PPI values:”
+        "id": "pixel-size",
+        "title": "Pixel Size at Different DPIs",
+        "paragraphs": [
+          "A pixel has no inherent physical size. Its real-world dimensions depend entirely on display or print density. Here is the physical size of one pixel at common DPI/PPI values:"
         ],
-        “list”: [
-          “72 PPI: 0.353 mm (0.0139\”)”,
-          “96 PPI: 0.265 mm (0.0104\”)”,
-          “150 PPI: 0.169 mm (0.0067\”)”,
-          “300 PPI: 0.085 mm (0.0033\”)”,
-          “460 PPI: 0.055 mm (0.0022\”)”
+        "list": [
+          "72 PPI: 0.353 mm (0.0139\")",
+          "96 PPI: 0.265 mm (0.0104\")",
+          "150 PPI: 0.169 mm (0.0067\")",
+          "300 PPI: 0.085 mm (0.0033\")",
+          "460 PPI: 0.055 mm (0.0022\")"
         ]
       },
       {
-        “id”: “history”,
-        “title”: “History of Pixels”,
-        “paragraphs”: [
-          “The concept of a pixel dates back to the 1960s, with the term first appearing in the context of early digital image processing. Frederic Billingsley of JPL is credited with popularizing the word \”pixel\” in 1965. Early digital displays had very low pixel counts: the Apple II (1977) displayed 280 x 192 pixels, while modern 8K displays render over 33 million pixels.”,
-          “Pixel technology keeps evolving. Micro-LED displays, foldable screens, and VR headsets exceeding 1000 PPI are pushing what the format can do. The pixel remains the fundamental unit of every digital visual experience. Explore how pixels map to physical units with our Pixel Converter.”
+        "id": "history",
+        "title": "History of Pixels",
+        "paragraphs": [
+          "The concept of a pixel dates back to the 1960s, with the term first appearing in the context of early digital image processing. Frederic Billingsley of JPL is credited with popularizing the word \"pixel\" in 1965. Early digital displays had very low pixel counts: the Apple II (1977) displayed 280 x 192 pixels, while modern 8K displays render over 33 million pixels.",
+          "Pixel technology keeps evolving. Micro-LED displays, foldable screens, and VR headsets exceeding 1000 PPI are pushing what the format can do. The pixel remains the fundamental unit of every digital visual experience. Explore how pixels map to physical units with our Pixel Converter."
         ]
       },
       {
-        “id”: “css-vs-device-pixels”,
-        “title”: “CSS Pixels vs Device Pixels”,
-        “paragraphs”: [
-          “CSS pixels and device pixels are not the same thing. Understanding the difference prevents blurry images on high-density screens.”,
-          “A CSS pixel is an abstract unit used in CSS and HTML. When you write width: 300px in CSS, you’re specifying 300 CSS pixels, not 300 physical screen pixels. On a standard 1x display, one CSS pixel equals one device pixel. On a 2x retina display, one CSS pixel maps to four device pixels (2 wide by 2 tall), so the browser needs four times the image data to keep the result sharp.”,
-          “The ratio between device pixels and CSS pixels is the device pixel ratio (DPR). A MacBook Pro Retina has a DPR of 2. An iPhone 15 Pro has a DPR of 3. You can check this in JavaScript with window.devicePixelRatio.”,
-          “This distinction matters for images. Displaying a 300 CSS pixel-wide image on a 2x display requires 600 device pixels of actual image data for a sharp result. Serve a 300-pixel image there and the browser upscales it, producing a blurry appearance.”
+        "id": "css-vs-device-pixels",
+        "title": "CSS Pixels vs Device Pixels",
+        "paragraphs": [
+          "CSS pixels and device pixels are not the same thing. Understanding the difference prevents blurry images on high-density screens.",
+          "A CSS pixel is an abstract unit used in CSS and HTML. When you write width: 300px in CSS, you're specifying 300 CSS pixels, not 300 physical screen pixels. On a standard 1x display, one CSS pixel equals one device pixel. On a 2x retina display, one CSS pixel maps to four device pixels (2 wide by 2 tall), so the browser needs four times the image data to keep the result sharp.",
+          "The ratio between device pixels and CSS pixels is the device pixel ratio (DPR). A MacBook Pro Retina has a DPR of 2. An iPhone 15 Pro has a DPR of 3. You can check this in JavaScript with window.devicePixelRatio.",
+          "This distinction matters for images. Displaying a 300 CSS pixel-wide image on a 2x display requires 600 device pixels of actual image data for a sharp result. Serve a 300-pixel image there and the browser upscales it, producing a blurry appearance."
         ],
-        “table”: {
-          “headers”: [“DPR”, “Device Type”, “CSS px 100x100”, “Device pixels needed”],
-          “rows”: [
-            [“1x”, “Standard monitor”, “100 x 100”, “100 x 100”],
-            [“2x”, “MacBook Retina, most iPhones”, “100 x 100”, “200 x 200”],
-            [“3x”, “iPhone 15 Pro, Galaxy S24”, “100 x 100”, “300 x 300”],
-            [“4x”, “Some Android flagships”, “100 x 100”, “400 x 400”]
+        "table": {
+          "headers": ["DPR", "Device Type", "CSS px 100x100", "Device pixels needed"],
+          "rows": [
+            ["1x", "Standard monitor", "100 x 100", "100 x 100"],
+            ["2x", "MacBook Retina, most iPhones", "100 x 100", "200 x 200"],
+            ["3x", "iPhone 15 Pro, Galaxy S24", "100 x 100", "300 x 300"],
+            ["4x", "Some Android flagships", "100 x 100", "400 x 400"]
           ]
         }
       },
       {
-        “id”: “pixel-types”,
-        “title”: “Types of Pixels in Practice”,
-        “list”: [
-          “Raster pixels: the individual color squares in images like JPEG, PNG, WebP, and BMP. Image editing software (Photoshop, GIMP) works at this level.”,
-          “Screen pixels (device pixels): the physical light-emitting elements on a display. Each screen pixel contains RGB subpixels. The total count determines native screen resolution.”,
-          “CSS pixels: the abstract unit used in web browsers. Defined by the W3C and scaled by device pixel ratio to maintain consistent perceived sizes across screens.”,
-          “Print pixels: in a print context, each pixel is defined by DPI. At 300 DPI, each pixel is 1/300 of an inch. The same image file can produce very different physical sizes at different DPI settings.”,
-          “Video pixels: in video production, pixels follow frame size standards. 1080p is 1920 x 1080 pixels per frame, while 4K UHD is 3840 x 2160 pixels per frame.”
+        "id": "pixel-types",
+        "title": "Types of Pixels in Practice",
+        "list": [
+          "Raster pixels: the individual color squares in images like JPEG, PNG, WebP, and BMP. Image editing software (Photoshop, GIMP) works at this level.",
+          "Screen pixels (device pixels): the physical light-emitting elements on a display. Each screen pixel contains RGB subpixels. The total count determines native screen resolution.",
+          "CSS pixels: the abstract unit used in web browsers. Defined by the W3C and scaled by device pixel ratio to maintain consistent perceived sizes across screens.",
+          "Print pixels: in a print context, each pixel is defined by DPI. At 300 DPI, each pixel is 1/300 of an inch. The same image file can produce very different physical sizes at different DPI settings.",
+          "Video pixels: in video production, pixels follow frame size standards. 1080p is 1920 x 1080 pixels per frame, while 4K UHD is 3840 x 2160 pixels per frame."
         ]
       },
       {
-        “id”: “pixel-type-comparison”,
-        “title”: “Physical Pixel vs CSS Pixel vs Device Pixel: How They Differ”,
-        “paragraphs”: [
-          “Three different things go by the word \”pixel\” depending on context, and confusing them causes practical problems.”
+        "id": "pixel-type-comparison",
+        "title": "Physical Pixel vs CSS Pixel vs Device Pixel: How They Differ",
+        "paragraphs": [
+          "Three different things go by the word \"pixel\" depending on context, and confusing them causes practical problems."
         ],
-        “table”: {
-          “headers”: [“Pixel Type”, “Where It Lives”, “Fixed Physical Size?”, “You Control It?”],
-          “rows”: [
-            [“Physical (device) pixel”, “The screen hardware”, “Yes, set by the panel”, “No”],
-            [“CSS pixel”, “Browser layout engine”, “No, scales with DPR”, “Yes, via CSS units”],
-            [“Raster (image) pixel”, “Image file”, “No, depends on PPI/DPI”, “Yes, via image dimensions”]
+        "table": {
+          "headers": ["Pixel Type", "Where It Lives", "Fixed Physical Size?", "You Control It?"],
+          "rows": [
+            ["Physical (device) pixel", "The screen hardware", "Yes, set by the panel", "No"],
+            ["CSS pixel", "Browser layout engine", "No, scales with DPR", "Yes, via CSS units"],
+            ["Raster (image) pixel", "Image file", "No, depends on PPI/DPI", "Yes, via image dimensions"]
           ]
         }
       },
       {
-        “id”: “pixel-causation”,
-        “title”: “What Goes Wrong When Pixel Types Are Confused”,
-        “paragraphs”: [
-          “Mixing up pixel types produces visible quality failures. Serving a 1x image on a 2x retina screen results in blurry text and soft edges because the browser must stretch each image pixel across four device pixels. The fix is to supply a 2x image (double the pixel dimensions) using srcset.”,
-          “Sending a 72 PPI image to a print shop expecting photo quality produces a pixelated result, because 72 pixels per inch gives each pixel a physical size of 0.35 mm, far larger than the 0.085 mm at 300 PPI. The pixelation is visible at arm’s length. You need enough raster pixels to fill the print area at 300 pixels per inch.”,
-          “Resizing a raster image beyond its native pixel count (upscaling) forces the software to invent pixel data, which blurs or creates artifacts. Scaling down (downsampling) discards data and is generally safe. These problems don’t apply to vector graphics, which store shapes mathematically and render at any pixel count without loss.”
+        "id": "pixel-causation",
+        "title": "What Goes Wrong When Pixel Types Are Confused",
+        "paragraphs": [
+          "Mixing up pixel types produces visible quality failures. Serving a 1x image on a 2x retina screen results in blurry text and soft edges because the browser must stretch each image pixel across four device pixels. The fix is to supply a 2x image (double the pixel dimensions) using srcset.",
+          "Sending a 72 PPI image to a print shop expecting photo quality produces a pixelated result, because 72 pixels per inch gives each pixel a physical size of 0.35 mm, far larger than the 0.085 mm at 300 PPI. The pixelation is visible at arm's length. You need enough raster pixels to fill the print area at 300 pixels per inch.",
+          "Resizing a raster image beyond its native pixel count (upscaling) forces the software to invent pixel data, which blurs or creates artifacts. Scaling down (downsampling) discards data and is generally safe. These problems don't apply to vector graphics, which store shapes mathematically and render at any pixel count without loss."
         ]
       },
       {
-        “id”: “pixel-evaluation”,
-        “title”: “What Pixel Size Actually Means for Your Work”,
-        “paragraphs”: [
-          “Pixel count and pixel size answer different questions. Pixel count (megapixels, resolution) determines how much detail your image can hold and how large you can print or crop it. Pixel size (set by PPI or DPI) determines how that detail maps to physical inches on screen or paper.”,
-          “For screen work: design in CSS pixels and let the browser handle DPR scaling. Supply 2x assets for retina screens using srcset or image-set().”,
-          “For print work: calculate your required pixel count by multiplying the print dimensions by 300 (e.g., an 8 x 10 inch print needs 2400 x 3000 pixels). The megapixel count of your camera or file sets the ceiling for print size at professional quality.”,
-          “For photography: more megapixels give you cropping room and larger print potential, but sensor quality and lens sharpness matter more than raw pixel count above about 24 MP for most uses.”
+        "id": "pixel-evaluation",
+        "title": "What Pixel Size Actually Means for Your Work",
+        "paragraphs": [
+          "Pixel count and pixel size answer different questions. Pixel count (megapixels, resolution) determines how much detail your image can hold and how large you can print or crop it. Pixel size (set by PPI or DPI) determines how that detail maps to physical inches on screen or paper.",
+          "For screen work: design in CSS pixels and let the browser handle DPR scaling. Supply 2x assets for retina screens using srcset or image-set().",
+          "For print work: calculate your required pixel count by multiplying the print dimensions by 300 (e.g., an 8 x 10 inch print needs 2400 x 3000 pixels). The megapixel count of your camera or file sets the ceiling for print size at professional quality.",
+          "For photography: more megapixels give you cropping room and larger print potential, but sensor quality and lens sharpness matter more than raw pixel count above about 24 MP for most uses."
         ]
       }
     ]
@@ -190,7 +190,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Definición de píxeles",
         "paragraphs": [
-          "Un píxel (abreviatura de “elemento de imagen”) es la unidad direccionable más pequeña de una imagen rasterizada o pantalla digital. Cada foto que ves, cada ícono en tu pantalla y cada cuadro de video se compone de miles o millones de píxeles individuales dispuestos en una cuadrícula rectangular.",
+          "Un píxel (abreviatura de "elemento de imagen") es la unidad direccionable más pequeña de una imagen rasterizada o pantalla digital. Cada foto que ves, cada ícono en tu pantalla y cada cuadro de video se compone de miles o millones de píxeles individuales dispuestos en una cuadrícula rectangular.",
           "Cada píxel almacena información de color, generalmente como una combinación de valores de rojo, verde y azul (RGB). En una imagen de 8 bits por canal, cada canal varía de 0 a 255, lo que le da a cada píxel la capacidad de representar uno de más de 16,7 millones de colores."
         ]
       },
@@ -275,7 +275,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Que sont les sous-pixels ?",
-        "answer": "Chaque pixel d'un écran LCD ou OLED est composé de trois sous-pixels : rouge, vert et bleu (RVB). En faisant varier l’intensité de chaque sous-pixel, le pixel peut produire des millions de couleurs différentes. Certains écrans utilisent des dispositions de sous-pixels RGBW (ajout de blanc)."
+        "answer": "Chaque pixel d'un écran LCD ou OLED est composé de trois sous-pixels : rouge, vert et bleu (RVB). En faisant varier l'intensité de chaque sous-pixel, le pixel peut produire des millions de couleurs différentes. Certains écrans utilisent des dispositions de sous-pixels RGBW (ajout de blanc)."
       },
       {
         "question": "Que signifie mégapixel ?",
@@ -299,7 +299,7 @@ export const content: LocalizedDocMap = {
         "id": "subpixels",
         "title": "Sous-pixels (RVB)",
         "paragraphs": [
-          "Sur les écrans LCD et OLED, chaque pixel visible est en réalité composé de trois sous-pixels : un rouge, un vert et un bleu. Ces sous-pixels sont trop petits pour être vus individuellement à une distance de visualisation normale. En ajustant indépendamment la luminosité de chaque sous-pixel, l’écran crée toute la gamme de couleurs que vous percevez.",
+          "Sur les écrans LCD et OLED, chaque pixel visible est en réalité composé de trois sous-pixels : un rouge, un vert et un bleu. Ces sous-pixels sont trop petits pour être vus individuellement à une distance de visualisation normale. En ajustant indépendamment la luminosité de chaque sous-pixel, l'écran crée toute la gamme de couleurs que vous percevez.",
           "Certaines technologies d'affichage utilisent différentes dispositions de sous-pixels. La disposition PenTile de Samsung utilise un motif RGBG, tandis que certains écrans LCD ajoutent un sous-pixel blanc (RGBW) pour améliorer l'efficacité de la luminosité."
         ]
       },
@@ -307,7 +307,7 @@ export const content: LocalizedDocMap = {
         "id": "megapixels",
         "title": "Mégapixels",
         "paragraphs": [
-          "Un mégapixel (MP) équivaut à un million de pixels. Les capteurs de caméra et les fichiers d'images sont classés en mégapixels pour indiquer leur résolution totale. L’appareil photo d’un smartphone de 48 MP capture des images d’environ 8 000 × 6 000 pixels. Plus de mégapixels fournissent plus de détails et permettent des impressions plus grandes ou un recadrage plus agressif."
+          "Un mégapixel (MP) équivaut à un million de pixels. Les capteurs de caméra et les fichiers d'images sont classés en mégapixels pour indiquer leur résolution totale. L'appareil photo d'un smartphone de 48 MP capture des images d'environ 8 000 × 6 000 pixels. Plus de mégapixels fournissent plus de détails et permettent des impressions plus grandes ou un recadrage plus agressif."
         ],
         "table": {
           "headers": [
@@ -348,7 +348,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-size",
         "title": "Taille des pixels à différents DPI",
         "paragraphs": [
-          "Un pixel n’a pas de taille physique inhérente : ses dimensions réelles dépendent de la densité d’affichage ou d’impression. Voici la taille physique d'un pixel aux valeurs DPI/PPI courantes :"
+          "Un pixel n'a pas de taille physique inhérente : ses dimensions réelles dépendent de la densité d'affichage ou d'impression. Voici la taille physique d'un pixel aux valeurs DPI/PPI courantes :"
         ],
         "list": [
           "72 PPP : 0,353 mm (0,0139\")",
@@ -363,7 +363,7 @@ export const content: LocalizedDocMap = {
         "title": "Histoire des pixels",
         "paragraphs": [
           "Le concept de pixel remonte aux années 1960, le terme étant utilisé pour la première fois dans le contexte des premiers traitements d'images numériques. On attribue souvent à Frederic Billingsley du JPL la popularisation du mot « pixel » en 1965. Les premiers écrans numériques avaient un nombre de pixels très faible : l'Apple II (1977) affichait 280 × 192 pixels, tandis que les écrans 8K modernes restituent plus de 33 millions de pixels.",
-          "Aujourd'hui, la technologie des pixels continue d'évoluer avec des écrans micro-LED, des écrans pliables et des écrans dépassant 1 000 PPI pour les casques VR. Le pixel reste l’élément fondamental de toute expérience visuelle numérique. Découvrez comment les pixels correspondent aux unités physiques avec notre Pixel Converter."
+          "Aujourd'hui, la technologie des pixels continue d'évoluer avec des écrans micro-LED, des écrans pliables et des écrans dépassant 1 000 PPI pour les casques VR. Le pixel reste l'élément fondamental de toute expérience visuelle numérique. Découvrez comment les pixels correspondent aux unités physiques avec notre Pixel Converter."
         ]
       }
     ]
@@ -392,7 +392,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Pixeldefinition",
         "paragraphs": [
-          "Ein Pixel (kurz für „Bildelement“) ist die kleinste adressierbare Einheit eines Rasterbilds oder einer digitalen Anzeige. Jedes Foto, das Sie ansehen, jedes Symbol auf Ihrem Bildschirm und jedes Videobild besteht aus Tausenden oder Millionen einzelner Pixel, die in einem rechteckigen Raster angeordnet sind.",
+          "Ein Pixel (kurz für „Bildelement") ist die kleinste adressierbare Einheit eines Rasterbilds oder einer digitalen Anzeige. Jedes Foto, das Sie ansehen, jedes Symbol auf Ihrem Bildschirm und jedes Videobild besteht aus Tausenden oder Millionen einzelner Pixel, die in einem rechteckigen Raster angeordnet sind.",
           "Jedes Pixel speichert Farbinformationen, normalerweise als Kombination aus Rot-, Grün- und Blauwerten (RGB). In einem 8-Bit-pro-Kanal-Bild reicht jeder Kanal von 0 bis 255, wodurch jedes Pixel eine von über 16,7 Millionen Farben darstellen kann."
         ]
       },
@@ -463,7 +463,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Geschichte der Pixel",
         "paragraphs": [
-          "Das Konzept eines Pixels reicht bis in die 1960er Jahre zurück, wobei der Begriff erstmals im Zusammenhang mit der frühen digitalen Bildverarbeitung verwendet wurde. Frederic Billingsley vom JPL wird oft zugeschrieben, dass er das Wort „Pixel“ im Jahr 1965 populär gemacht hat. Frühe digitale Displays hatten eine sehr geringe Pixelzahl - der Apple II (1977) zeigte 280 × 192 Pixel an, während moderne 8K-Displays über 33 Millionen Pixel rendern.",
+          "Das Konzept eines Pixels reicht bis in die 1960er Jahre zurück, wobei der Begriff erstmals im Zusammenhang mit der frühen digitalen Bildverarbeitung verwendet wurde. Frederic Billingsley vom JPL wird oft zugeschrieben, dass er das Wort „Pixel" im Jahr 1965 populär gemacht hat. Frühe digitale Displays hatten eine sehr geringe Pixelzahl - der Apple II (1977) zeigte 280 × 192 Pixel an, während moderne 8K-Displays über 33 Millionen Pixel rendern.",
           "Heute entwickelt sich die Pixeltechnologie mit Mikro-LED-Displays, faltbaren Bildschirmen und Displays mit mehr als 1000 PPI für VR weiter Headsets. Der Pixel bleibt der grundlegende Baustein jedes digitalen visuellen Erlebnisses. Entdecken Sie mit unserem Pixelkonverter, wie Pixel physikalischen Einheiten zugeordnet werden."
         ]
       }
@@ -493,7 +493,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Definição de pixels",
         "paragraphs": [
-          "Um pixel (abreviação de “elemento de imagem”) é a menor unidade endereçável de uma imagem raster ou display digital. Cada foto que você visualiza, cada ícone na tela e cada quadro de vídeo é composto de milhares ou milhões de pixels individuais organizados em uma grade retangular.",
+          "Um pixel (abreviação de "elemento de imagem") é a menor unidade endereçável de uma imagem raster ou display digital. Cada foto que você visualiza, cada ícone na tela e cada quadro de vídeo é composto de milhares ou milhões de pixels individuais organizados em uma grade retangular.",
           "Cada pixel armazena informações de cores, normalmente como uma combinação de valores de vermelho, verde e azul (RGB). Em uma imagem de 8 bits por canal, cada canal varia de 0 a 255, dando a cada pixel a capacidade de representar uma entre mais de 16,7 milhões de cores."
         ]
       },
@@ -564,7 +564,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "História dos Pixels",
         "paragraphs": [
-          "O conceito de pixel remonta à década de 1960, com o termo usado pela primeira vez no contexto do processamento inicial de imagens digitais. Frederic Billingsley, do JPL, é frequentemente creditado por popularizar a palavra “pixel” em 1965. Os primeiros monitores digitais tinham contagens de pixels muito baixas - o Apple II (1977) exibia 280 × 192 pixels, enquanto os monitores modernos de 8K renderizavam mais de 33 milhões de pixels.",
+          "O conceito de pixel remonta à década de 1960, com o termo usado pela primeira vez no contexto do processamento inicial de imagens digitais. Frederic Billingsley, do JPL, é frequentemente creditado por popularizar a palavra "pixel" em 1965. Os primeiros monitores digitais tinham contagens de pixels muito baixas - o Apple II (1977) exibia 280 × 192 pixels, enquanto os monitores modernos de 8K renderizavam mais de 33 milhões de pixels.",
           "Hoje, a tecnologia de pixel continua a evoluir com telas micro-LED, telas dobráveis ​​e telas que excedem 1.000 PPI para fones de ouvido VR. O pixel continua sendo o alicerce fundamental de toda experiência visual digital. Explore como os pixels são mapeados para unidades físicas com nosso Pixel Converter."
         ]
       }
@@ -969,7 +969,7 @@ export const content: LocalizedDocMap = {
         "title": "Storia dei pixel",
         "paragraphs": [
           "Il concetto di pixel risale agli anni '60, con il termine utilizzato per la prima volta nel contesto della prima elaborazione delle immagini digitali. A Frederic Billingsley di JPL viene spesso attribuito il merito di aver reso popolare la parola \"pixel\" nel 1965. I primi display digitali avevano un numero di pixel molto basso: l'Apple II (1977) visualizzava 280 × 192 pixel, mentre i moderni display 8K riproducono oltre 33 milioni di pixel.",
-          "Oggi, la tecnologia dei pixel continua ad evolversi con display micro-LED, schermi pieghevoli e display che superano i 1000 PPI per la realtà virtuale. cuffie. Il pixel resta l’elemento fondamentale di ogni esperienza visiva digitale. Scopri come i pixel vengono mappati in unità fisiche con il nostro Pixel Converter."
+          "Oggi, la tecnologia dei pixel continua ad evolversi con display micro-LED, schermi pieghevoli e display che superano i 1000 PPI per la realtà virtuale. cuffie. Il pixel resta l'elemento fondamentale di ogni esperienza visiva digitale. Scopri come i pixel vengono mappati in unità fisiche con il nostro Pixel Converter."
         ]
       }
     ]
@@ -998,7 +998,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Pixeldefinitie",
         "paragraphs": [
-          "Een pixel (afkorting van “picture element”) is de kleinste adresseerbare eenheid van een rasterafbeelding of digitaal display. Elke foto die je bekijkt, elk pictogram op je scherm en elk videoframe bestaat uit duizenden of miljoenen individuele pixels, gerangschikt in een rechthoekig raster.",
+          "Een pixel (afkorting van "picture element") is de kleinste adresseerbare eenheid van een rasterafbeelding of digitaal display. Elke foto die je bekijkt, elk pictogram op je scherm en elk videoframe bestaat uit duizenden of miljoenen individuele pixels, gerangschikt in een rechthoekig raster.",
           "Elke pixel slaat kleurinformatie op, meestal als een combinatie van rode, groene en blauwe waarden (RGB). In een afbeelding met 8 bits per kanaal varieert elk kanaal van 0 tot 255, waardoor elke pixel een van de meer dan 16,7 miljoen kleuren kan vertegenwoordigen."
         ]
       },
@@ -1301,7 +1301,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Definicja piksela",
         "paragraphs": [
-          "Piksel (skrót od „element obrazu”) to najmniejsza adresowalna jednostka obrazu rastrowego lub wyświetlacza cyfrowego. Każde oglądane zdjęcie, każda ikona na ekranie i każda klatka wideo składają się z tysięcy lub milionów pojedynczych pikseli ułożonych w prostokątną siatkę.",
+          "Piksel (skrót od „element obrazu") to najmniejsza adresowalna jednostka obrazu rastrowego lub wyświetlacza cyfrowego. Każde oglądane zdjęcie, każda ikona na ekranie i każda klatka wideo składają się z tysięcy lub milionów pojedynczych pikseli ułożonych w prostokątną siatkę.",
           "Każdy piksel przechowuje informacje o kolorze, zazwyczaj w postaci kombinacji wartości koloru czerwonego, zielonego i niebieskiego (RGB). W obrazie 8-bitowym na kanał każdy kanał ma zakres od 0 do 255, dzięki czemu każdy piksel może reprezentować jeden z ponad 16,7 miliona kolorów."
         ]
       },
@@ -1372,7 +1372,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Historia pikseli",
         "paragraphs": [
-          "Pojęcie piksela sięga lat 60. XX wieku, a termin ten został po raz pierwszy użyty w kontekście wczesnego cyfrowego przetwarzania obrazu. Fredericowi Billingsleyowi z JPL często przypisuje się spopularyzowanie słowa „piksel” w 1965 r. Wczesne wyświetlacze cyfrowe miały bardzo małą liczbę pikseli - Apple II (1977) wyświetlał obraz w rozdzielczości 280 × 192 piksele, podczas gdy nowoczesne wyświetlacze 8K renderują ponad 33 miliony pikseli.",
+          "Pojęcie piksela sięga lat 60. XX wieku, a termin ten został po raz pierwszy użyty w kontekście wczesnego cyfrowego przetwarzania obrazu. Fredericowi Billingsleyowi z JPL często przypisuje się spopularyzowanie słowa „piksel" w 1965 r. Wczesne wyświetlacze cyfrowe miały bardzo małą liczbę pikseli - Apple II (1977) wyświetlał obraz w rozdzielczości 280 × 192 piksele, podczas gdy nowoczesne wyświetlacze 8K renderują ponad 33 miliony pikseli.",
           "Obecnie technologia pikseli stale ewoluuje dzięki wyświetlaczom mikro-LED, składanym ekranom i wyświetlaczom o rozdzielczości przekraczającej 1000 PPI dla gogli VR. Piksel pozostaje podstawowym elementem każdego cyfrowego doświadczenia wizualnego. Odkryj, w jaki sposób piksele są odwzorowywane na jednostki fizyczne, dzięki naszemu konwerterowi pikseli."
         ]
       }
@@ -1402,7 +1402,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Definisi Piksel",
         "paragraphs": [
-          "Piksel (kependekan dari “elemen gambar”) adalah unit terkecil yang dapat dialamatkan pada gambar raster atau tampilan digital. Setiap foto yang Anda lihat, setiap ikon di layar, dan setiap bingkai video terdiri dari ribuan atau jutaan piksel individual yang disusun dalam kotak persegi panjang.",
+          "Piksel (kependekan dari "elemen gambar") adalah unit terkecil yang dapat dialamatkan pada gambar raster atau tampilan digital. Setiap foto yang Anda lihat, setiap ikon di layar, dan setiap bingkai video terdiri dari ribuan atau jutaan piksel individual yang disusun dalam kotak persegi panjang.",
           "Setiap piksel menyimpan informasi warna, biasanya dalam bentuk kombinasi nilai merah, hijau, dan biru (RGB). Dalam gambar 8-bit per saluran, setiap saluran berkisar dari 0 hingga 255, sehingga setiap piksel memiliki kemampuan untuk mewakili salah satu dari lebih dari 16,7 juta warna."
         ]
       },
@@ -1473,7 +1473,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Sejarah Piksel",
         "paragraphs": [
-          "Konsep piksel sudah ada sejak tahun 1960-an, dengan istilah ini pertama kali digunakan dalam konteks pemrosesan gambar digital awal. Frederic Billingsley dari JPL sering dianggap mempopulerkan kata “piksel” pada tahun 1965. Layar digital awal memiliki jumlah piksel yang sangat rendah - Apple II (1977) menampilkan 280 × 192 piksel, sedangkan layar 8K modern menampilkan lebih dari 33 juta piksel.",
+          "Konsep piksel sudah ada sejak tahun 1960-an, dengan istilah ini pertama kali digunakan dalam konteks pemrosesan gambar digital awal. Frederic Billingsley dari JPL sering dianggap mempopulerkan kata "piksel" pada tahun 1965. Layar digital awal memiliki jumlah piksel yang sangat rendah - Apple II (1977) menampilkan 280 × 192 piksel, sedangkan layar 8K modern menampilkan lebih dari 33 juta piksel.",
           "Saat ini, teknologi piksel terus berkembang dengan layar mikro-LED, layar yang dapat dilipat, dan layar yang melebihi 1000 PPI untuk headset VR. Piksel tetap menjadi elemen dasar dari setiap pengalaman visual digital. Jelajahi bagaimana piksel dipetakan ke unit fisik dengan Pixel Converter kami."
         ]
       }

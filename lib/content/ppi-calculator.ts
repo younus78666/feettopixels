@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -121,7 +121,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Qu'est-ce que le PPI et en quoi diffère-t-il du DPI ?",
-        "answer": "Le PPI (pixels par pouce) mesure la densité de pixels d'un écran d'affichage. DPI (points par pouce) fait traditionnellement référence à la résolution d’impression. Pour les écrans, PPI et DPI sont souvent utilisés de manière interchangeable, bien que PPI soit le terme techniquement correct pour désigner les écrans."
+        "answer": "Le PPI (pixels par pouce) mesure la densité de pixels d'un écran d'affichage. DPI (points par pouce) fait traditionnellement référence à la résolution d'impression. Pour les écrans, PPI et DPI sont souvent utilisés de manière interchangeable, bien que PPI soit le terme techniquement correct pour désigner les écrans."
       },
       {
         "question": "Qu'est-ce que le PPI rend un écran « Retina » ?",
@@ -155,7 +155,7 @@ export const content: LocalizedDocMap = {
         "answer": "PPI (Pixel pro Zoll) misst die Pixeldichte eines Bildschirms. DPI (Punkte pro Zoll) bezieht sich traditionell auf die Druckauflösung. Für Bildschirme werden PPI und DPI häufig synonym verwendet, obwohl PPI der technisch korrekte Begriff für Displays ist."
       },
       {
-        "question": "Welcher PPI macht ein Display zu „Retina“?",
+        "question": "Welcher PPI macht ein Display zu „Retina"?",
         "answer": "Der Retina-Standard von Apple bedeutet, dass Pixel bei normalem Betrachtungsabstand nicht unterscheidbar sind. Bei Telefonen (bei 10 - 12 Zoll gehalten) sind dies etwa 300+ PPI. Für Laptops (18 - 24 Zoll) etwa 220+ PPI. Für Desktop-Monitore (24 - 30 Zoll) etwa 110+ PPI."
       },
       {
@@ -434,7 +434,7 @@ export const content: LocalizedDocMap = {
         "answer": "PPI (piksele na cal) mierzy gęstość pikseli na ekranie wyświetlacza. DPI (punkty na cal) tradycyjnie odnosi się do rozdzielczości druku. W przypadku ekranów terminy PPI i DPI są często używane zamiennie, chociaż PPI jest technicznie poprawnym określeniem wyświetlaczy."
       },
       {
-        "question": "Jaki PPI sprawia, że ​​wyświetlacz nazywa się „Retina”?",
+        "question": "Jaki PPI sprawia, że ​​wyświetlacz nazywa się „Retina"?",
         "answer": "Standard Apple Retina oznacza, że ​​piksele są nie do odróżnienia przy typowej odległości oglądania. W przypadku telefonów (o przekątnej 10 - 12 cali) jest to około 300+ PPI. Dla laptopów (18-24 cali), około 220+ PPI. W przypadku monitorów stacjonarnych (24 - 30 cali) około 110+ PPI."
       },
       {

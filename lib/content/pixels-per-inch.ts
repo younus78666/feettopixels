@@ -1,4 +1,4 @@
-import type { PageContentMap } from "./types";
+﻿import type { PageContentMap } from "./types";
 
 export const content: PageContentMap = {
   en: {
@@ -155,7 +155,7 @@ export const content: PageContentMap = {
       td5_1: "300", td5_2: "300", td5_3: "118,11", td5_4: "11,81", td5_5: "Professioneller Druck",
       td6_1: "600", td6_2: "600", td6_3: "236,22", td6_4: "23,62", td6_5: "Kunstdruck, med. Bildgebung",
       heading4: "Retina- und HiDPI-Displays",
-      p7: "Apple prägte den Begriff Retina-Display für Bildschirme, auf denen einzelne Pixel bei typischem Betrachtungsabstand nicht unterscheidbar sind. Retina-MacBooks laufen bei 220+ PPI, iPhones erreichen 326 - 460 PPI. Android-Geräte mit „HiDPI“-Bildschirmen bieten ähnliche Dichten.",
+      p7: "Apple prägte den Begriff Retina-Display für Bildschirme, auf denen einzelne Pixel bei typischem Betrachtungsabstand nicht unterscheidbar sind. Retina-MacBooks laufen bei 220+ PPI, iPhones erreichen 326 - 460 PPI. Android-Geräte mit „HiDPI"-Bildschirmen bieten ähnliche Dichten.",
       p8: "Für Webentwickler bedeuten HiDPI-Bildschirme, dass Bilder in 2x- oder 3x-Auflösung bereitgestellt werden müssen. Ein 100 x 100 CSS-Pixel-Bild sollte auf diesen Geräten 200 x 200 oder 300 x 300 tatsächliche Pixel haben.",
       heading5: "PPI nach Anwendungsfall",
       li1: "Web- und UI-Design: 72 - 96 PPI. CSS-Pixel sind die Referenzeinheit; der tatsächliche Geräte-PPI variiert stark.",

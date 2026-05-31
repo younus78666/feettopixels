@@ -1,4 +1,4 @@
-import type { PageContentMap } from "./types";
+﻿import type { PageContentMap } from "./types";
 
 export const content: PageContentMap = {
   en: {
@@ -254,11 +254,11 @@ export const content: PageContentMap = {
       td7_3: "Nein (nur Metadaten)",
       heading3: "Wann DPI relevant ist",
       p2: "DPI ist relevant beim Drucken. Die DPI-Einstellung Ihres Druckers bestimmt, wie fein er die Bilddaten reproduzieren kann. Ein 1200-DPI-Laserdrucker kann Tintenpunkte viel präziser aufbringen als ein 300-DPI-Drucker und erzeugt so glattere Verläufe und feineren Text.",
-      p3: "Wenn jemand sagt „dieses Bild bei 300 DPI speichern“, meint er normalerweise 300 PPI - er möchte 300 Pixel pro Zoll bei der vorgesehenen Druckgröße. Der tatsächliche DPI des Druckers ist eine separate Hardware-Spezifikation.",
+      p3: "Wenn jemand sagt „dieses Bild bei 300 DPI speichern", meint er normalerweise 300 PPI - er möchte 300 Pixel pro Zoll bei der vorgesehenen Druckgröße. Der tatsächliche DPI des Druckers ist eine separate Hardware-Spezifikation.",
       heading4: "Wann PPI relevant ist",
       p4: "PPI ist relevant für Bildschirme und Bilddateien. Ihr Monitor hat einen festen PPI, der durch seine Auflösung und physische Größe bestimmt wird. Bei der Vorbereitung von Bildern für eine bestimmte Druckgröße sagt Ihnen PPI, wie viele Pixel Sie brauchen. Bei 300 PPI benötigt ein 10x8-Zoll-Druck ein 3000x2400-Pixel-Bild.",
       heading5: "Häufige Verwirrung",
-      p5: "Die Verwirrung entsteht, weil Software wie Photoshop die Bildauflösung als „DPI“ bezeichnet, obwohl es technisch PPI ist. Die Bilddatei speichert Pixel, keine Punkte. Die Punkte existieren erst, wenn das Bild gedruckt wird. In der Praxis löst das Verständnis, dass Pixelmaße das Entscheidende sind - sowohl für Bildschirm als auch für Druck - die meiste Verwirrung.",
+      p5: "Die Verwirrung entsteht, weil Software wie Photoshop die Bildauflösung als „DPI" bezeichnet, obwohl es technisch PPI ist. Die Bilddatei speichert Pixel, keine Punkte. Die Punkte existieren erst, wenn das Bild gedruckt wird. In der Praxis löst das Verständnis, dass Pixelmaße das Entscheidende sind - sowohl für Bildschirm als auch für Druck - die meiste Verwirrung.",
       p6: "Verwenden Sie unseren DPI-Rechner zur Bestimmung der Druckdimensionen oder den PPI-Rechner zur Ermittlung der Pixeldichte jedes Bildschirms.",
     },
   },

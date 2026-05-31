@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -63,7 +63,7 @@ export const content: LocalizedDocMap = {
         "id": "what-is-em",
         "title": "What Is EM?",
         "paragraphs": [
-          "The em unit is relative to the font size of the element itself (for properties like padding and margin) or the parent element’s font size (for the font-size property). Because em values compound when elements are nested, sizing can become unpredictable in deep component trees.",
+          "The em unit is relative to the font size of the element itself (for properties like padding and margin) or the parent element's font size (for the font-size property). Because em values compound when elements are nested, sizing can become unpredictable in deep component trees.",
           "For example, if a parent has font-size: 20px and a child has font-size: 1.5em, the child renders at 30px. If that child also contains an element with font-size: 1.5em, it renders at 45px."
         ]
       },
@@ -71,7 +71,7 @@ export const content: LocalizedDocMap = {
         "id": "what-is-rem",
         "title": "What Is REM?",
         "paragraphs": [
-          "The rem unit (root em) is always relative to the root element’s font size (<html>), which defaults to 16px in all major browsers. Unlike em, rem does not compound with nesting. 1.5rem is always 24px (assuming the default root), regardless of where it appears in the DOM tree."
+          "The rem unit (root em) is always relative to the root element's font size (<html>), which defaults to 16px in all major browsers. Unlike em, rem does not compound with nesting. 1.5rem is always 24px (assuming the default root), regardless of where it appears in the DOM tree."
         ]
       },
       {
@@ -85,7 +85,7 @@ export const content: LocalizedDocMap = {
         "list": [
           "Use rem for font sizes to maintain a consistent typographic scale across your entire site.",
           "Use rem for layout spacing (margins, grid gaps) for predictable, global consistency.",
-          "Use em for component padding when you want spacing to scale proportionally with the component’s own font size.",
+          "Use em for component padding when you want spacing to scale proportionally with the component's own font size.",
           "Avoid deep em nesting - compounding makes values hard to predict and debug.",
           "Set a clear root font size - either keep the browser default (16px) or use the 62.5% trick for easier math."
         ],
@@ -373,7 +373,7 @@ export const content: LocalizedDocMap = {
         "id": "what-is-em",
         "title": "Was ist EM?",
         "paragraphs": [
-          "Die em-Einheit ist relativ zur Schriftgröße des Elements selbst (für Eigenschaften wie Innenabstand und Rand) oder zur Schriftgröße des übergeordneten Elements (für die Eigenschaft „font-size“). Da sich die em-Werte bei der Verschachtelung von Elementen summieren, kann die Größenbestimmung in tiefen Komponentenbäumen unvorhersehbar werden.",
+          "Die em-Einheit ist relativ zur Schriftgröße des Elements selbst (für Eigenschaften wie Innenabstand und Rand) oder zur Schriftgröße des übergeordneten Elements (für die Eigenschaft „font-size"). Da sich die em-Werte bei der Verschachtelung von Elementen summieren, kann die Größenbestimmung in tiefen Komponentenbäumen unvorhersehbar werden.",
           "Wenn beispielsweise ein übergeordnetes Element die Schriftgröße 20 Pixel und ein untergeordnetes Element die Schriftgröße 1,5 em hat, wird das untergeordnete Element mit 30 px gerendert. Wenn dieses untergeordnete Element auch ein Element mit der Schriftgröße 1,5em enthält, wird es mit 45 Pixel gerendert."
         ]
       },

@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -255,7 +255,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Warum empfehlen manche Leute 72 DPI für das Web?",
-        "answer": "Dies ist ein hartnäckiger Mythos von frühen Mac-Displays, die 72 PPI-Bildschirme hatten. Durch die Einstellung von Bildern auf 72 DPI stimmten „Punkte“ und „Pixel“ in früher Designsoftware 1:1 überein. Moderne Browser rendern nach Pixelanzahl, nicht nach DPI."
+        "answer": "Dies ist ein hartnäckiger Mythos von frühen Mac-Displays, die 72 PPI-Bildschirme hatten. Durch die Einstellung von Bildern auf 72 DPI stimmten „Punkte" und „Pixel" in früher Designsoftware 1:1 überein. Moderne Browser rendern nach Pixelanzahl, nicht nach DPI."
       },
       {
         "question": "Wie optimiere ich Bilder für die Webleistung?",
@@ -278,7 +278,7 @@ export const content: LocalizedDocMap = {
           "Pixelabmessungen: Stellen Sie Bilder in der Größe bereit, in der sie angezeigt werden (oder 2× für Retina). Ein mit 1200 CSS-Pixeln angezeigtes Heldenbild sollte 1200 Pixel (Standard) oder 2400 Pixel (Retina) groß sein.",
           "Dateiformat: Verwenden Sie WebP für breite Kompatibilität mit hervorragender Komprimierung. Verwenden Sie AVIF für eine noch bessere Komprimierung, sofern dies unterstützt wird. Greifen Sie für Fotos auf JPEG und für Grafiken mit Transparenz auf PNG zurück.",
           "Komprimierung: Ein gut komprimiertes WebP-Bild kann 25 - 35 % kleiner als ein entsprechendes JPEG sein, ohne sichtbaren Qualitätsverlust.",
-          "Verzögertes Laden: Fügen Sie „lazy“ zu Bildern unterhalb der Falte hinzu, um das Laden zu verzögern, bis sie in das Ansichtsfenster gelangen."
+          "Verzögertes Laden: Fügen Sie „lazy" zu Bildern unterhalb der Falte hinzu, um das Laden zu verzögern, bis sie in das Ansichtsfenster gelangen."
         ]
       },
       {
@@ -795,7 +795,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Dlaczego niektórzy zalecają 72 DPI w Internecie?",
-        "answer": "To utrzymujący się mit z wczesnych wyświetlaczy Mac, które miały ekrany 72 PPI. Ustawienie obrazów na 72 DPI sprawiło, że „punkty” i „piksele” odpowiadały 1:1 we wczesnym oprogramowaniu do projektowania. Nowoczesne przeglądarki renderują według liczby pikseli, a nie DPI."
+        "answer": "To utrzymujący się mit z wczesnych wyświetlaczy Mac, które miały ekrany 72 PPI. Ustawienie obrazów na 72 DPI sprawiło, że „punkty" i „piksele" odpowiadały 1:1 we wczesnym oprogramowaniu do projektowania. Nowoczesne przeglądarki renderują według liczby pikseli, a nie DPI."
       },
       {
         "question": "Jak zoptymalizować obrazy pod kątem wydajności w Internecie?",
