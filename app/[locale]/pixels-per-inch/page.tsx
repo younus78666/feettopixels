@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       url: `${siteConfig.url}/pixels-per-inch`,
       siteName: "FeetToPixels",
-      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageTitle }],
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: pageTitle }],
     },
     twitter: {
       card: "summary_large_image",

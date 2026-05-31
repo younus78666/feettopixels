@@ -84,6 +84,30 @@ export const content: LocalizedDocMap = {
         "paragraphs": [
           "Once the concepts are clear, the Pixel Converter hub gives you interactive tools for every unit conversion: feet, inches, centimeters, millimeters, rem, em, pt, and vw all to and from pixels. The DPI Calculator, PPI Calculator, and Image DPI Checker handle specific density questions from your current inputs."
         ]
+      },
+      {
+        "id": "print-workflow",
+        "title": "Print Design Workflow",
+        "paragraphs": [
+          "For anyone preparing files for physical output -- brochures, posters, banners, photo prints, business cards, or packaging -- the workflow starts with DPI. The physical size and the DPI setting together determine the pixel count you need.",
+          "A 4x6 photo at 300 DPI needs 1,200 x 1,800 pixels minimum. A 2 x 8 foot trade show banner at 150 DPI needs 2,880 x 14,400 pixels. Use the Inches to Pixels converter to calculate canvas size before you start, and the Image DPI Checker after you have source files to confirm they meet the required resolution."
+        ]
+      },
+      {
+        "id": "web-css-workflow",
+        "title": "Web and CSS Workflow",
+        "paragraphs": [
+          "For web and front-end development, DPI metadata in image files is irrelevant -- only pixel dimensions matter. The CSS unit tools (PX to REM, PX to EM, PX to VW) handle the conversion between design mockup values in pixels and the relative units used in production CSS.",
+          "Designers typically spec components in pixels (matching a Figma or Sketch artboard). Developers translate those to rem or em for accessibility and scalability. The PX to REM converter handles this instantly: at 16px root, 24px = 1.5rem, 32px = 2rem."
+        ]
+      },
+      {
+        "id": "screen-density-workflow",
+        "title": "Screen Density and Retina Workflow",
+        "paragraphs": [
+          "For designers preparing assets for multiple screen densities -- standard, Retina (2x), and high-DPI (3x) -- the key measurement is device pixel ratio (DPR). A button displayed at 48px CSS needs a 96px asset for 2x screens and a 144px asset for 3x screens.",
+          "The DPI Calculator and PPI Calculator tell you the pixel density of any display from its resolution and diagonal. The Screen Resolution Checker reads your own screen specs directly. Use these together when optimizing image export for different device categories."
+        ]
       }
     ]
   },

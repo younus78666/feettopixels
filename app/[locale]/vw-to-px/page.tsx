@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: buildAlternates(locale, "vw-to-px"),
-    openGraph: { title, description, locale: ogLocaleMap[locale], images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: title }] },
+    openGraph: { title, description, locale: ogLocaleMap[locale], images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: title }] },
   };
 }
 
@@ -54,6 +54,21 @@ const faq = [
     question: "Is VH different from VW?",
     answer:
       "Yes, VH is based on viewport HEIGHT, VW on viewport WIDTH. 50vh on a 1080px-tall window = 540px. VH is useful for full-screen sections; VW for horizontal layout. Most designs use VW more often because width-based responsiveness is more common than height-based.",
+  },
+  {
+    question: "What is the difference between VW and viewport percentage units?",
+    answer:
+      "VW is viewport width relative. 1vw = 1% of viewport width. There are also VH (viewport height), VMIN (smaller of VW/VH), and VMAX (larger). In CSS Viewport Units Level 4, there are also SVW (small viewport), LVW (large viewport), and DVW (dynamic viewport) to handle mobile browser chrome correctly. For most desktop web work, VW is sufficient.",
+  },
+  {
+    question: "How do I convert VW to pixels in JavaScript?",
+    answer:
+      "Use window.innerWidth: multiply vw value by window.innerWidth and divide by 100. Example: const px = (10 / 100) * window.innerWidth converts 10vw to pixels at runtime. For server-side rendering, you need to detect viewport width via CSS custom properties or media query matching.",
+  },
+  {
+    question: "What viewport width should I use when converting VW for a responsive design?",
+    answer:
+      "Use your primary design breakpoint. For desktop-first: 1440px or 1920px. For mobile-first: 375px (iPhone SE/base) or 390px (iPhone 15). Also test at 768px (tablet). Since VW is fluid, the px value changes at every viewport width — convert at the sizes that matter most for your layout decisions.",
   },
 ];
 
@@ -133,6 +148,19 @@ export default async function VwToPxPage({ params }: PageProps) {
             3440px ultra-wide monitor. CSS clamp() keeps the fluid behavior while
             setting practical bounds, for example clamp(2rem, 5vw, 4.5rem).
           </p>
+          <h3 id="vw-in-responsive-design">VW in modern responsive design patterns</h3>
+          <p>
+            Modern responsive layouts combine VW with other CSS features for maximum
+            flexibility. Container queries check parent width instead of viewport width,
+            while fluid typography patterns use clamp() with VW to scale type smoothly
+            between breakpoints without media query jumps.
+          </p>
+          <ul>
+            <li>Hero text: clamp(2.5rem, 6vw, 5rem) scales from mobile to ultra-wide.</li>
+            <li>Full-bleed sections: width: 100vw with a negative margin offset centers content.</li>
+            <li>Sticky sidebars: calc(100vw - 640px) lets a sidebar fill remaining space.</li>
+            <li>Responsive gaps: gap: clamp(1rem, 3vw, 3rem) scales spacing with screen width.</li>
+          </ul>
         </>
       }
       breadcrumbs={breadcrumbs}

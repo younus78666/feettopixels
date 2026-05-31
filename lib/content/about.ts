@@ -2,7 +2,32 @@
 
 export const content: LocalizedDocMap = {
   "en": {
-    "faq": [],
+    "faq": [
+      {
+        "question": "What is FeetToPixels?",
+        "answer": "FeetToPixels is a free collection of DPI-aware pixel conversion tools for designers, developers, and print professionals. It converts between pixels and physical units (inches, cm, mm, feet) and CSS units (rem, em, pt, vw). Every tool keeps DPI as a first-class input because pixels only have a physical size when resolution is defined."
+      },
+      {
+        "question": "Are the calculators accurate?",
+        "answer": "Yes. All formulas use exact, standard measurement constants: 1 inch = 25.4 mm exactly, 1 foot = 12 inches, 1 CSS inch = 96 CSS pixels. The DPI and PPI calculators use the Pythagorean theorem for diagonal pixel counts. Results can be verified by hand using the formulas shown on each page."
+      },
+      {
+        "question": "Is FeetToPixels free to use?",
+        "answer": "Completely free. Every tool requires no signup, no subscription, and no account. All conversion tools run in the browser. No files or values are uploaded to a server."
+      },
+      {
+        "question": "Who uses FeetToPixels?",
+        "answer": "Graphic designers sizing images for print and banners. Front-end developers converting between px, rem, em, and vw for responsive CSS. Photographers checking whether a camera file has enough pixels for a given print size. Students working on design projects, document layouts, or CSS assignments. Print shops and sign makers calculating large-format file dimensions."
+      },
+      {
+        "question": "How many tools does FeetToPixels include?",
+        "answer": "Over 25 free tools across four categories: physical unit converters (pixels to inches, cm, mm, feet and back), screen and density tools (DPI calculator, PPI calculator, screen resolution checker, image DPI checker, pixel ruler), CSS unit converters (px to rem, em, pt, vw and reverse directions), and reference guides covering print DPI, paper sizes, social media dimensions, and screen resolutions."
+      },
+      {
+        "question": "How is the content kept accurate?",
+        "answer": "Each conversion formula is based on exact measurement constants and verified against known values. For example, an A4 page at 300 DPI must equal 2480 x 3508 pixels -- that is checkable against any print specification. Reference pages like social media image sizes and common screen resolutions are updated when platform specifications change."
+      }
+    ],
     "sections": [
       {
         "id": "about-feettopixels",

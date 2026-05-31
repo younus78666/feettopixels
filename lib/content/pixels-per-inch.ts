@@ -3,6 +3,8 @@
 export const content: PageContentMap = {
   en: {
     faq: [
+      { question: "What PPI do I target when exporting assets for web?", answer: "Export at 1x (72-96 PPI CSS reference) for standard displays and 2x for Retina/HiDPI screens. Most web projects use srcset to serve both: the 1x image for 90-110 PPI monitors, the 2x image for 220+ PPI displays. Do not rely on DPI metadata -- only pixel dimensions matter for web rendering." },
+      { question: "How does PPI affect image file size?", answer: "PPI metadata does not affect file size -- only pixel dimensions and compression do. A 1920x1080 JPEG at 72 PPI and the same image at 300 PPI are identical in file size if pixel dimensions match. Where PPI matters for file size is in print workflows: higher PPI for a given print size requires more total pixels, which increases the source file size." },
       { question: "What is a good PPI for printing?", answer: "300 PPI is the standard for high-quality photo printing. For large-format posters viewed from a distance, 150 PPI is often sufficient. Newspapers typically use 150-170 PPI." },
       { question: "How do I find the PPI of my screen?", answer: "Divide the screen's horizontal pixel count by its physical width in inches. For example, a 24-inch monitor with 1920 horizontal pixels has approximately 92 PPI (1920 / 20.9 inches of width)." },
       { question: "Is PPI the same as DPI?", answer: "Not exactly. PPI (pixels per inch) refers to screen pixel density, while DPI (dots per inch) refers to print resolution. They are often used interchangeably, but technically PPI applies to screens and DPI applies to printers." },
@@ -18,12 +20,22 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "What Is PPI?",
-      p1: "PPI stands for pixels per inch. It measures the pixel density per inch of a digital screen or image: how many individual pixels are packed into each linear inch. A higher PPI means smaller pixels, producing sharper, more detailed images. PPI is the primary metric for evaluating display sharpness on monitors, phones, and tablets, and it serves as the web pixel density standard that browsers and design tools rely on.",
-      p2: "For web design, the digital density standard is 96 PPI (Windows default). For print workflows, 300 PPI is the standard for photo-quality output. Knowing your target print pixel density before you start a project saves you from having to scale up later, which always costs image quality.",
+      p1: "Pixels per inch is the density standard that connects digital pixel counts to physical size. This page is your quick reference: exact PPI values for web (96), print (300), and screens, plus the formula to calculate PPI for any display.",
+      p2: "PPI measures how many individual pixels are packed into each linear inch of a screen or image file. Higher PPI means smaller pixels and sharper output. The web standard is 96 PPI (Windows CSS reference). The print standard for photo-quality output is 300 PPI. Use the sections below to look up exact values or calculate PPI for any device.",
       heading2: "How to Calculate PPI",
       p3: "The formula for PPI is:",
       p4: "PPI = Diagonal pixels / Diagonal screen size (inches)",
       p5: "To find diagonal pixels, apply the Pythagorean theorem: diagonal px = sqrt(width squared + height squared). A 27-inch monitor at 2560 x 1440 resolution has a diagonal of 2938 pixels, giving it 108.8 PPI.",
+      heading2b: "PPI Reference by Device Type",
+      p5b: "PPI varies dramatically by device category. Use this table when deciding image asset sizes for different screen targets.",
+      devicePpiTh1: "Device Type", devicePpiTh2: "Typical PPI Range", devicePpiTh3: "Example", devicePpiTh4: "Asset Multiplier",
+      devicePpiR1c1: "Standard desktop monitor", devicePpiR1c2: "90-110 PPI", devicePpiR1c3: "27-inch 1440p = 108 PPI", devicePpiR1c4: "1x",
+      devicePpiR2c1: "Entry laptop screen", devicePpiR2c2: "120-140 PPI", devicePpiR2c3: "15.6-inch 1080p = 141 PPI", devicePpiR2c4: "1x",
+      devicePpiR3c1: "Modern laptop / MacBook", devicePpiR3c2: "220-260 PPI", devicePpiR3c3: "13-inch Retina = 227 PPI", devicePpiR3c4: "2x",
+      devicePpiR4c1: "iPad / large tablet", devicePpiR4c2: "260-270 PPI", devicePpiR4c3: "iPad Pro 11-inch = 264 PPI", devicePpiR4c4: "2x",
+      devicePpiR5c1: "Flagship phone", devicePpiR5c2: "400-460 PPI", devicePpiR5c3: "iPhone 15 Pro = 460 PPI", devicePpiR5c4: "3x",
+      devicePpiR6c1: "Mid-range phone", devicePpiR6c2: "300-380 PPI", devicePpiR6c3: "Pixel 7a = 429 PPI", devicePpiR6c4: "2x-3x",
+      devicePpiR7c1: "Budget phone", devicePpiR7c2: "200-280 PPI", devicePpiR7c3: "200-280 PPI range", devicePpiR7c4: "1x-2x",
       heading3: "PPI Reference Table",
       p6: "This table shows how many pixels fit in common physical measurements at standard PPI values:",
       th1: "PPI",

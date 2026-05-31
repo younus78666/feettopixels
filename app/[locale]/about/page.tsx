@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { locales, isValidLocale, ogLocaleMap } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { buildAlternates, localizedPath, localizeHref } from "@/lib/alternates";
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: pageDict?.title || "About FeetToPixels",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
-      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: "About FeetToPixels" }],
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "About FeetToPixels" }],
     },
   };
 }

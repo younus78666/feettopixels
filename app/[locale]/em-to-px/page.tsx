@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: buildAlternates(locale, "em-to-px"),
-    openGraph: { title, description, locale: ogLocaleMap[locale], images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: title }] },
+    openGraph: { title, description, locale: ogLocaleMap[locale], images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: title }] },
   };
 }
 

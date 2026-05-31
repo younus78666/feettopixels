@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EditorialMeta } from "@/components/seo/EditorialMeta";
@@ -38,7 +38,7 @@ export async function generateMetadata({
       title: pageDict?.title || "pixel-converter",
       description: pageDict?.description || "",
       locale: ogLocaleMap[locale],
-      images: [{ url: "/og-default.svg", width: 1200, height: 630, alt: pageDict?.title || "pixel-converter" }],
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: pageDict?.title || "pixel-converter" }],
     },
   };
 }
