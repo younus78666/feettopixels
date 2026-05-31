@@ -6,12 +6,17 @@ export const content: PageContentMap = {
       {
         question: "How do I convert pixels to centimeters?",
         answer:
-          "Multiply the pixel count by 2.54, then divide by DPI. For example, 378 pixels at 96 DPI equals approximately 10 cm (378 x 2.54 / 96 = 10.0).",
+          "Multiply pixels by 2.54 then divide by DPI. Formula: cm = pixels x 2.54 / DPI. At 96 DPI: 96 pixels = 2.54 cm. At 300 DPI: 300 pixels = 2.54 cm.",
       },
       {
         question: "How many centimeters is 1920 pixels at 96 DPI?",
         answer:
-          "At 96 DPI, 1920 pixels equals approximately 50.8 cm (1920 x 2.54 / 96 = 50.8). This is the width of a standard 1080p display measured in centimeters.",
+          "1920 x 2.54 / 96 = 50.8 cm (20 inches). At 300 DPI: 1920 x 2.54 / 300 = 16.26 cm.",
+      },
+      {
+        question: "How many cm is 2480 pixels at 300 DPI?",
+        answer:
+          "2480 x 2.54 / 300 = 21 cm -- exactly the width of A4 paper. This is a common calculation for print design.",
       },
       {
         question: "How many centimeters is 100 pixels?",
@@ -31,7 +36,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "How Pixel to Centimeter Conversion Works",
-      p1: "Converting pixels to centimeters requires knowing the DPI and the relationship between inches and centimeters. The formula is:",
+      p1: "To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. Formula: cm = pixels x 2.54 / DPI. At 96 DPI: 96 pixels = 2.54 cm. At 300 DPI: 300 pixels = 2.54 cm, and 2480 pixels = 21 cm (A4 width). The constant 2.54 converts inches to centimeters, since DPI is defined as dots per inch.",
       formula: "Centimeters = (Pixels x 2.54) / DPI",
       p2: "This formula first converts pixels to inches (pixels / DPI), then converts inches to centimeters (inches x 2.54).",
       heading2: "Common Use Cases",

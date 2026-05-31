@@ -132,30 +132,30 @@ export const en = {
     "pixels-to-cm": {
       title: "Pixels to CM Converter - DPI-Aware Calculator",
       description:
-        "Convert pixels to centimeters with DPI support. Free online PX to CM calculator.",
+        "Convert pixels to centimeters at any DPI. At 300 DPI: 300 px = 2.54 cm, 2480 px = 21 cm (A4 width). Formula: cm = pixels x 2.54 / DPI. Free PX to CM calculator.",
       extractive:
-        "To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 96 DPI, 960 pixels equals 25.4 cm.",
+        "To convert pixels to centimeters, multiply pixels by 2.54 and divide by DPI. At 300 DPI: 300 pixels = 2.54 cm, 2480 pixels = 21 cm (A4 width). At 96 DPI: 96 pixels = 2.54 cm. Formula: cm = pixels x 2.54 / DPI.",
     },
     "cm-to-pixels": {
       title: "CM to Pixels Converter - Centimeters to PX Calculator",
       description:
-        "Convert centimeters to pixels with DPI control. Free online CM to PX calculator.",
+        "Convert centimeters to pixels at any DPI. At 300 DPI: 1 cm = 118 px, A4 width (21 cm) = 2,480 px. Formula: pixels = cm x DPI / 2.54. Free CM to PX calculator.",
       extractive:
-        "To convert centimeters to pixels, multiply cm by DPI and divide by 2.54. At 96 DPI, 10 cm equals approximately 378 pixels.",
+        "To convert centimeters to pixels, multiply cm by DPI and divide by 2.54. At 300 DPI: 1 cm = 118.1 pixels, 21 cm (A4 width) = 2,480 pixels. At 96 DPI: 1 cm = 37.8 pixels. Formula: pixels = cm x DPI / 2.54.",
     },
     "pixels-to-mm": {
       title: "Pixels to MM Converter - PX to Millimeters Calculator",
       description:
-        "Convert pixels to millimeters with adjustable DPI. Free online PX to MM calculator.",
+        "Convert pixels to millimeters at any DPI. At 300 DPI: 300 px = 25.4 mm, 2480 px = 210 mm (A4). Formula: mm = pixels x 25.4 / DPI. Free PX to MM calculator.",
       extractive:
-        "To convert pixels to millimeters, multiply pixels by 25.4 and divide by DPI. At 96 DPI, 96 pixels equals 25.4 mm.",
+        "To convert pixels to millimeters, multiply pixels by 25.4 and divide by DPI. At 300 DPI: 300 pixels = 25.4 mm, 2480 pixels = 210 mm (A4 width). At 96 DPI: 96 pixels = 25.4 mm. Formula: mm = pixels x 25.4 / DPI.",
     },
     "mm-to-pixels": {
       title: "MM to Pixels Converter - Millimeters to PX Calculator",
       description:
-        "Convert millimeters to pixels at any DPI. Free online MM to PX calculator.",
+        "Convert millimeters to pixels at any DPI. At 300 DPI: 1 mm = 11.81 px, 210 mm (A4) = 2,480 px. Formula: pixels = mm x DPI / 25.4. Free MM to PX calculator.",
       extractive:
-        "To convert millimeters to pixels, multiply mm by DPI and divide by 25.4. At 96 DPI, 25.4 mm equals 96 pixels.",
+        "To convert millimeters to pixels, multiply mm by DPI and divide by 25.4. At 300 DPI: 1 mm = 11.81 pixels, 210 mm (A4 width) = 2,480 pixels. At 96 DPI: 1 mm = 3.78 pixels. Formula: pixels = mm x DPI / 25.4.",
     },
     "feet-to-pixels": {
       title: "Feet to Pixels Converter - FT to PX at Any DPI",
@@ -167,9 +167,9 @@ export const en = {
     "pixels-to-feet": {
       title: "Pixels to Feet Converter - PX to FT Calculator",
       description:
-        "Convert pixels to feet for large-format output. Free online PX to FT calculator.",
+        "Convert pixels to feet for large-format output. At 96 DPI: 1,152 px = 1 foot. At 150 DPI: 1,800 px = 1 foot. Formula: feet = pixels / (DPI x 12). Free PX to feet calculator.",
       extractive:
-        "To convert pixels to feet, divide pixels by DPI and then by 12. At 96 DPI, 1152 pixels equals 1 foot.",
+        "To convert pixels to feet, divide pixels by DPI then by 12. At 96 DPI: 1,152 pixels = 1 foot. At 150 DPI: 1,800 pixels = 1 foot. At 300 DPI: 3,600 pixels = 1 foot. Formula: feet = pixels / (DPI x 12).",
     },
     "px-to-rem": {
       title: "PX to REM Converter - Responsive CSS Unit Calculator",

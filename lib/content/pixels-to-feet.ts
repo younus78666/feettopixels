@@ -6,33 +6,32 @@ export const content: PageContentMap = {
       {
         question: "How do I convert pixels to feet?",
         answer:
-          "Divide the pixel count by DPI, then divide by 12. For example, 3,456 pixels at 96 DPI equals 3 feet (3,456 / 96 / 12 = 3).",
+          "Divide pixels by DPI, then divide by 12. Formula: feet = pixels / (DPI x 12). At 96 DPI: 1,152 pixels = 1 foot. At 150 DPI: 1,800 pixels = 1 foot. At 300 DPI: 3,600 pixels = 1 foot.",
       },
       {
-        question: "How many feet is a 1920-pixel wide image?",
+        question: "How many pixels is 1 foot?",
         answer:
-          "At 96 DPI, a 1920-pixel wide image spans approximately 1.67 feet (about 20 inches). At 300 DPI, it spans about 0.53 feet (about 6.4 inches). The physical size depends on the DPI.",
+          "It depends on DPI. At 72 DPI: 864 pixels. At 96 DPI: 1,152 pixels. At 150 DPI: 1,800 pixels. At 300 DPI: 3,600 pixels.",
       },
       {
-        question: "Can I print a web image as a large banner?",
+        question: "How do I find the physical print size of a digital file?",
         answer:
-          "It depends on the pixel count. A 1920 x 1080 image at 150 DPI would print at about 12.8 x 7.2 inches, which is only about 1 foot wide. For a 4-foot banner, you would need at least 7,200 pixels wide at 150 DPI.",
+          "Divide pixel width by DPI to get inches, then divide by 12 for feet. A 3,600-pixel-wide file at 300 DPI = 3,600 / 300 = 12 inches = 1 foot wide.",
       },
       {
-        question: "What resolution do I need for a readable print at 3 feet?",
+        question: "What is 1920 pixels in feet at 96 DPI?",
         answer:
-          "For a print viewed from 3-5 feet away, 150 DPI is sufficient. A 3-foot wide print at 150 DPI needs 5,400 pixels wide. For closer viewing, use 300 DPI which requires 10,800 pixels.",
+          "1,920 pixels at 96 DPI = 1,920 / 96 = 20 inches = 1.67 feet.",
       },
       {
-        question:
-          "How do I calculate the maximum print size of my image?",
+        question: "How many pixels per foot for a banner?",
         answer:
-          "Divide the image width in pixels by your target DPI, then divide by 12 to get feet. For example, a 6000-pixel image at 150 DPI can print up to 3.33 feet wide (6000 / 150 / 12 = 3.33).",
+          "Depends on viewing distance. For banners seen from 6-10 feet: 1,200-1,800 pixels per foot (100-150 DPI). For stage backdrops at 15+ feet: 864-1,200 pixels per foot (72-100 DPI).",
       },
     ],
     body: {
       heading1: "How Pixel to Feet Conversion Works",
-      p1: "Converting pixels to feet helps you understand the physical scale of digital designs, especially for large-format projects. The formula is:",
+      p1: "To convert pixels to feet, divide pixel count by DPI then divide by 12. Formula: feet = pixels / (DPI x 12).",
       formula: "Feet = Pixels / (DPI x 12)",
       p2: "This first converts pixels to inches (pixels / DPI), then inches to feet (inches / 12).",
       heading2: "Common Use Cases",

@@ -6,12 +6,22 @@ export const content: PageContentMap = {
       {
         question: "How do I convert pixels to millimeters?",
         answer:
-          "Multiply the pixel count by 25.4, then divide by DPI. For example, 378 pixels at 96 DPI equals approximately 100 mm (378 x 25.4 / 96 = 100.01).",
+          "Multiply pixels by 25.4 then divide by DPI. Formula: mm = pixels x 25.4 / DPI. At 300 DPI: 300 pixels = 25.4 mm (1 inch). At 96 DPI: 96 pixels = 25.4 mm.",
       },
       {
         question: "How many millimeters is 1 pixel?",
         answer:
           "At 96 DPI, 1 pixel equals approximately 0.265 mm. At 300 DPI, 1 pixel equals approximately 0.085 mm. The physical size of a pixel depends entirely on the DPI setting.",
+      },
+      {
+        question: "How many mm is 1200 pixels at 300 DPI?",
+        answer:
+          "1200 x 25.4 / 300 = 101.6 mm (about 10.16 cm). This is close to standard A6 postcard width (105 mm).",
+      },
+      {
+        question: "How many mm is 2480 pixels at 300 DPI?",
+        answer:
+          "2480 x 25.4 / 300 = 210 mm -- exactly A4 paper width. 3508 pixels at 300 DPI = 297 mm (A4 height).",
       },
       {
         question: "How do I find the size of a pixel on my screen?",

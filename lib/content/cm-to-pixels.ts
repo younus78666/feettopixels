@@ -6,7 +6,7 @@ export const content: PageContentMap = {
       {
         question: "How do I convert centimeters to pixels?",
         answer:
-          "Multiply the centimeters by DPI, then divide by 2.54 (since there are 2.54 cm per inch). For example, 10 cm at 96 DPI equals about 378 pixels (10 x 96 / 2.54 = 377.95).",
+          "Multiply centimeters by DPI then divide by 2.54. Formula: pixels = cm x DPI / 2.54. At 96 DPI: 1 cm = 37.8 pixels. At 300 DPI: 1 cm = 118.1 pixels.",
       },
       {
         question: "How many pixels is 1 cm at 96 DPI?",
@@ -16,7 +16,17 @@ export const content: PageContentMap = {
       {
         question: "How many pixels is 1 cm at 300 DPI?",
         answer:
-          "At 300 DPI, 1 centimeter equals approximately 118.1 pixels (300 / 2.54 = 118.11). This resolution is standard for professional print output.",
+          "118.1 pixels. Formula: 1 x 300 / 2.54 = 118.1. At 96 DPI: 1 cm = 37.8 pixels.",
+      },
+      {
+        question: "How many pixels is A4 (21 x 29.7 cm) at 300 DPI?",
+        answer:
+          "2,480 x 3,508 pixels. Formula: 21 x 300 / 2.54 = 2,480. 29.7 x 300 / 2.54 = 3,508.",
+      },
+      {
+        question: "What is 2.54 cm in pixels at 96 DPI?",
+        answer:
+          "96 pixels. Because 1 inch = 2.54 cm, and at 96 DPI, 1 inch = 96 pixels. So 2.54 cm = 96 pixels at 96 DPI.",
       },
       {
         question: "Why do I need to know the DPI for this conversion?",
@@ -31,7 +41,7 @@ export const content: PageContentMap = {
     ],
     body: {
       heading1: "How CM to Pixel Conversion Works",
-      p1: "Converting centimeters to pixels requires an intermediate step through inches, since DPI is defined as dots per inch. The formula is:",
+      p1: "To convert centimeters to pixels, multiply cm by DPI and divide by 2.54. Formula: pixels = cm x DPI / 2.54. At 96 DPI: 1 cm = 37.8 pixels. At 300 DPI: 1 cm = 118.1 pixels. The constant 2.54 converts centimeters to inches, since DPI is defined as dots per inch.",
       formula: "Pixels = (CM x DPI) / 2.54",
       p2: "The constant 2.54 represents the number of centimeters in one inch. This conversion helps designers working in metric specs create digital assets at specific physical sizes.",
       heading2: "Common Use Cases",

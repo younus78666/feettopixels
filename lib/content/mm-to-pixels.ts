@@ -6,7 +6,7 @@ export const content: PageContentMap = {
       {
         question: "How do I convert millimeters to pixels?",
         answer:
-          "Multiply the millimeters by DPI and divide by 25.4 (since there are 25.4 mm per inch). For example, 100 mm at 96 DPI equals about 378 pixels (100 x 96 / 25.4 = 377.95).",
+          "Multiply millimeters by DPI then divide by 25.4. Formula: pixels = mm x DPI / 25.4. At 300 DPI: 1 mm = 11.81 pixels. At 96 DPI: 1 mm = 3.78 pixels.",
       },
       {
         question: "How many pixels is 1 mm at 96 DPI?",
@@ -16,7 +16,17 @@ export const content: PageContentMap = {
       {
         question: "How many pixels is 1 mm at 300 DPI?",
         answer:
-          "At 300 DPI, 1 millimeter equals approximately 11.81 pixels (300 / 25.4 = 11.81). This precision is standard for high-quality print output.",
+          "11.81 pixels. Formula: 1 x 300 / 25.4 = 11.81. Use this for European print specs, business cards, and packaging that use millimeter measurements.",
+      },
+      {
+        question: "How many pixels is 85 mm (business card width) at 300 DPI?",
+        answer:
+          "85 x 300 / 25.4 = 1,004 pixels. A standard business card (85 x 55 mm) at 300 DPI = 1,004 x 650 pixels.",
+      },
+      {
+        question: "How many pixels is 210 mm (A4 width) at 300 DPI?",
+        answer:
+          "210 x 300 / 25.4 = 2,480 pixels. A full A4 page (210 x 297 mm) at 300 DPI = 2,480 x 3,508 pixels.",
       },
       {
         question: "When would I need mm to pixel conversion?",
