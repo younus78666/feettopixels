@@ -40,6 +40,22 @@ function convertFromPixels(px: number, unit: UnitKey, dpi: number): number {
   }
 }
 
+function convertToAllUnits(px: number, dpi: number) {
+  if (!px || px <= 0 || dpi <= 0) return null;
+  return {
+    inches: px / dpi,
+    cm: (px * 2.54) / dpi,
+    mm: (px * 25.4) / dpi,
+    feet: px / (dpi * 12),
+    pt: (px * 72) / 96,
+    rem: px / 16,
+  };
+}
+
+function fmt(n: number, decimals = 4): string {
+  return n.toFixed(decimals).replace(/\.?0+$/, "");
+}
+
 export function PixelConverterHub({ locale = "en" }: { locale?: Locale }) {
   const dict = getDictionary(locale);
   const toolUi = getToolUi(locale);
@@ -227,6 +243,36 @@ export function PixelConverterHub({ locale = "en" }: { locale?: Locale }) {
           />
         </div>
       </div>
+
+      {(() => {
+        const pxVal = parseFloat(fromUnit === "px" ? fromValue : toValue);
+        const allUnits = convertToAllUnits(isNaN(pxVal) ? 0 : pxVal, dpi);
+        if (!allUnits || isNaN(pxVal) || pxVal <= 0) return null;
+        return (
+          <div className="border-t border-neutral-100 pt-4">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-400">
+              All units at {dpi} DPI
+            </p>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              {[
+                { label: "Inches", value: fmt(allUnits.inches, 4), unit: "in" },
+                { label: "Centimeters", value: fmt(allUnits.cm, 3), unit: "cm" },
+                { label: "Millimeters", value: fmt(allUnits.mm, 2), unit: "mm" },
+                { label: "Feet", value: fmt(allUnits.feet, 4), unit: "ft" },
+                { label: "Points", value: fmt(allUnits.pt, 2), unit: "pt" },
+                { label: "REM (16px)", value: fmt(allUnits.rem, 4), unit: "rem" },
+              ].map(({ label, value, unit }) => (
+                <div key={unit} className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2">
+                  <p className="text-xs text-neutral-500">{label}</p>
+                  <p className="mono-display mt-0.5 text-sm font-semibold text-neutral-900">
+                    {value} <span className="text-xs font-normal text-neutral-400">{unit}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

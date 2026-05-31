@@ -13,11 +13,28 @@ interface Preset {
   diagonal: number;
 }
 
+function getDpiQuality(dpi: number): { label: string; color: string } {
+  if (dpi >= 400) return { label: "Ultra-dense (flagship phone)", color: "text-violet-700" };
+  if (dpi >= 300) return { label: "High-res phone / tablet", color: "text-purple-700" };
+  if (dpi >= 220) return { label: "Retina / HiDPI display", color: "text-emerald-700" };
+  if (dpi >= 140) return { label: "Sharp laptop screen", color: "text-blue-700" };
+  if (dpi >= 90) return { label: "Good desktop monitor", color: "text-primary-700" };
+  return { label: "Basic desktop display", color: "text-neutral-500" };
+}
+
 const presets: Preset[] = [
   { label: '24" 1080p', width: 1920, height: 1080, diagonal: 24 },
+  { label: '27" 1440p', width: 2560, height: 1440, diagonal: 27 },
   { label: '27" 4K', width: 3840, height: 2160, diagonal: 27 },
-  { label: '13" MacBook', width: 2560, height: 1600, diagonal: 13.3 },
-  { label: '6.1" iPhone', width: 2556, height: 1179, diagonal: 6.1 },
+  { label: '32" 4K', width: 3840, height: 2160, diagonal: 32 },
+  { label: '13" MacBook Air', width: 2560, height: 1664, diagonal: 13.6 },
+  { label: '14" MacBook Pro', width: 3024, height: 1964, diagonal: 14.2 },
+  { label: 'iPad Pro 11"', width: 2388, height: 1668, diagonal: 11 },
+  { label: 'iPad Air 11"', width: 2360, height: 1640, diagonal: 11 },
+  { label: 'iPhone 15 (6.1")', width: 2556, height: 1179, diagonal: 6.1 },
+  { label: 'iPhone 15 Pro Max', width: 2796, height: 1290, diagonal: 6.7 },
+  { label: 'Galaxy S24 (6.2")', width: 2340, height: 1080, diagonal: 6.2 },
+  { label: 'Pixel 8 (6.2")', width: 2400, height: 1080, diagonal: 6.2 },
 ];
 
 export function DpiCalculator({ locale = "en" }: { locale?: Locale }) {
@@ -138,6 +155,11 @@ export function DpiCalculator({ locale = "en" }: { locale?: Locale }) {
             <p className="mono-display mt-1 text-3xl font-bold text-primary-800">
               {dpi !== null ? formatNumber(dpi, 2) : "-"}
             </p>
+            {dpi !== null && (
+              <p className={`mt-1 text-sm font-medium ${getDpiQuality(dpi).color}`}>
+                {getDpiQuality(dpi).label}
+              </p>
+            )}
           </div>
           <button
             onClick={handleCopy}

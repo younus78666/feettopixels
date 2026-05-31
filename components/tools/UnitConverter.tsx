@@ -106,7 +106,7 @@ export function UnitConverter({
   showConversionTable = true,
   defaultValue = "100",
   defaultDpi = 96,
-  dpiPresets = [72, 96, 150, 300],
+  dpiPresets = [72, 96, 150, 300, 600],
   commonValues = [1, 10, 50, 100, 250, 500, 1000],
   locale = "en",
   className,
@@ -149,6 +149,13 @@ export function UnitConverter({
     ) => {
       const num = parseFloat(val);
       if (isNaN(num)) {
+        if (fromSide === "from") setToValue("");
+        else setFromValue("");
+        return;
+      }
+
+      // Guard: prevent division by zero or negative DPI
+      if (currentDpi <= 0) {
         if (fromSide === "from") setToValue("");
         else setFromValue("");
         return;
