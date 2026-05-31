@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -156,7 +156,7 @@ export const content: LocalizedDocMap = {
           "Convertissez entre les pixels et les unités physiques telles que les pouces, les centimètres, les millimètres et les pieds.",
           "Calculez la densité de l'écran avec les outils DPI et PPI.",
           "Convertissez les unités CSS telles que px, rem, em, pt et vw pour un travail frontal réactif.",
-          "Utilisez des guides de référence pour le dimensionnement de l’impression, la résolution de l’écran et la préparation des images."
+          "Utilisez des guides de référence pour le dimensionnement de l'impression, la résolution de l'écran et la préparation des images."
         ]
       },
       {

@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -129,7 +129,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Quelle est la différence entre DPI et PPI ?",
-        "answer": "DPI (points par pouce) fait traditionnellement référence à la résolution d'impression, tandis que PPI (pixels par pouce) fait référence à la résolution d'écran. En pratique, ces termes sont souvent utilisés de manière interchangeable lorsqu’on parle d’affichages. Les deux mesurent la densité des pixels."
+        "answer": "DPI (points par pouce) fait traditionnellement référence à la résolution d'impression, tandis que PPI (pixels par pouce) fait référence à la résolution d'écran. En pratique, ces termes sont souvent utilisés de manière interchangeable lorsqu'on parle d'affichages. Les deux mesurent la densité des pixels."
       },
       {
         "question": "Pourquoi le DPI est-il important pour le travail de conception ?",

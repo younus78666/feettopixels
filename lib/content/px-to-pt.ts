@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -123,7 +123,7 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "Comment convertir des pixels en points ?",
-        "answer": "Multipliez la valeur du pixel par 72/96 (ce qui équivaut à 0,75). Par exemple, 16 px x 0,75 = 12 pt. Cela suppose la résolution d’écran standard de 96 DPI. Les points mesurent 1/72 de pouce, tandis que les pixels CSS mesurent 1/96 de pouce."
+        "answer": "Multipliez la valeur du pixel par 72/96 (ce qui équivaut à 0,75). Par exemple, 16 px x 0,75 = 12 pt. Cela suppose la résolution d'écran standard de 96 DPI. Les points mesurent 1/72 de pouce, tandis que les pixels CSS mesurent 1/96 de pouce."
       },
       {
         "question": "Pourquoi les pixels et les points sont-ils de tailles différentes ?",

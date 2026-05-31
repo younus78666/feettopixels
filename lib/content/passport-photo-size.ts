@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -109,7 +109,7 @@ export const content: LocalizedDocMap = {
               "600 × 600"
             ],
             [
-              "Driver’s License (US)",
+              "Driver's License (US)",
               "Varies by state",
               "Typically 600 × 600+"
             ]
@@ -467,7 +467,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Quel DPI dois-je utiliser pour les photos d'identité ?",
-        "answer": "Utilisez 300 DPI pour les photos d'identité. Il s’agit de la norme pour toutes les soumissions de photos gouvernementales. Un DPI inférieur peut entraîner une photo floue ou rejetée."
+        "answer": "Utilisez 300 DPI pour les photos d'identité. Il s'agit de la norme pour toutes les soumissions de photos gouvernementales. Un DPI inférieur peut entraîner une photo floue ou rejetée."
       },
       {
         "question": "Quelle est la taille standard d'une carte de visite en pixels ?",

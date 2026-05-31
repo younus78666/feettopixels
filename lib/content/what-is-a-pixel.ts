@@ -291,7 +291,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Définition des pixels",
         "paragraphs": [
-          "Un pixel (abréviation de « élément d'image ») est la plus petite unité adressable d'une image raster ou d'un affichage numérique. Chaque photo que vous visualisez, chaque icône sur votre écran et chaque image vidéo est composée de milliers ou de millions de pixels individuels disposés dans une grille rectangulaire.",
+          "Un pixel (abréviation de " élément d'image ") est la plus petite unité adressable d'une image raster ou d'un affichage numérique. Chaque photo que vous visualisez, chaque icône sur votre écran et chaque image vidéo est composée de milliers ou de millions de pixels individuels disposés dans une grille rectangulaire.",
           "Chaque pixel stocke des informations de couleur, généralement sous la forme d'une combinaison de valeurs de rouge, de vert et de bleu (RVB). Dans une image de 8 bits par canal, chaque canal va de 0 à 255, donnant à chaque pixel la capacité de représenter l'une des plus de 16,7 millions de couleurs."
         ]
       },
@@ -362,7 +362,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Histoire des pixels",
         "paragraphs": [
-          "Le concept de pixel remonte aux années 1960, le terme étant utilisé pour la première fois dans le contexte des premiers traitements d'images numériques. On attribue souvent à Frederic Billingsley du JPL la popularisation du mot « pixel » en 1965. Les premiers écrans numériques avaient un nombre de pixels très faible : l'Apple II (1977) affichait 280 × 192 pixels, tandis que les écrans 8K modernes restituent plus de 33 millions de pixels.",
+          "Le concept de pixel remonte aux années 1960, le terme étant utilisé pour la première fois dans le contexte des premiers traitements d'images numériques. On attribue souvent à Frederic Billingsley du JPL la popularisation du mot " pixel " en 1965. Les premiers écrans numériques avaient un nombre de pixels très faible : l'Apple II (1977) affichait 280 × 192 pixels, tandis que les écrans 8K modernes restituent plus de 33 millions de pixels.",
           "Aujourd'hui, la technologie des pixels continue d'évoluer avec des écrans micro-LED, des écrans pliables et des écrans dépassant 1 000 PPI pour les casques VR. Le pixel reste l'élément fondamental de toute expérience visuelle numérique. Découvrez comment les pixels correspondent aux unités physiques avec notre Pixel Converter."
         ]
       }
@@ -392,7 +392,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Pixeldefinition",
         "paragraphs": [
-          "Ein Pixel (kurz für „Bildelement") ist die kleinste adressierbare Einheit eines Rasterbilds oder einer digitalen Anzeige. Jedes Foto, das Sie ansehen, jedes Symbol auf Ihrem Bildschirm und jedes Videobild besteht aus Tausenden oder Millionen einzelner Pixel, die in einem rechteckigen Raster angeordnet sind.",
+          "Ein Pixel (kurz für 'Bildelement') ist die kleinste adressierbare Einheit eines Rasterbilds oder einer digitalen Anzeige. Jedes Foto, das Sie ansehen, jedes Symbol auf Ihrem Bildschirm und jedes Videobild besteht aus Tausenden oder Millionen einzelner Pixel, die in einem rechteckigen Raster angeordnet sind.",
           "Jedes Pixel speichert Farbinformationen, normalerweise als Kombination aus Rot-, Grün- und Blauwerten (RGB). In einem 8-Bit-pro-Kanal-Bild reicht jeder Kanal von 0 bis 255, wodurch jedes Pixel eine von über 16,7 Millionen Farben darstellen kann."
         ]
       },
@@ -463,7 +463,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Geschichte der Pixel",
         "paragraphs": [
-          "Das Konzept eines Pixels reicht bis in die 1960er Jahre zurück, wobei der Begriff erstmals im Zusammenhang mit der frühen digitalen Bildverarbeitung verwendet wurde. Frederic Billingsley vom JPL wird oft zugeschrieben, dass er das Wort „Pixel" im Jahr 1965 populär gemacht hat. Frühe digitale Displays hatten eine sehr geringe Pixelzahl - der Apple II (1977) zeigte 280 × 192 Pixel an, während moderne 8K-Displays über 33 Millionen Pixel rendern.",
+          "Das Konzept eines Pixels reicht bis in die 1960er Jahre zurück, wobei der Begriff erstmals im Zusammenhang mit der frühen digitalen Bildverarbeitung verwendet wurde. Frederic Billingsley vom JPL wird oft zugeschrieben, dass er das Wort 'Pixel' im Jahr 1965 populär gemacht hat. Frühe digitale Displays hatten eine sehr geringe Pixelzahl - der Apple II (1977) zeigte 280 × 192 Pixel an, während moderne 8K-Displays über 33 Millionen Pixel rendern.",
           "Heute entwickelt sich die Pixeltechnologie mit Mikro-LED-Displays, faltbaren Bildschirmen und Displays mit mehr als 1000 PPI für VR weiter Headsets. Der Pixel bleibt der grundlegende Baustein jedes digitalen visuellen Erlebnisses. Entdecken Sie mit unserem Pixelkonverter, wie Pixel physikalischen Einheiten zugeordnet werden."
         ]
       }
@@ -1301,7 +1301,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Definicja piksela",
         "paragraphs": [
-          "Piksel (skrót od „element obrazu") to najmniejsza adresowalna jednostka obrazu rastrowego lub wyświetlacza cyfrowego. Każde oglądane zdjęcie, każda ikona na ekranie i każda klatka wideo składają się z tysięcy lub milionów pojedynczych pikseli ułożonych w prostokątną siatkę.",
+          "Piksel (skrót od 'element obrazu') to najmniejsza adresowalna jednostka obrazu rastrowego lub wyświetlacza cyfrowego. Każde oglądane zdjęcie, każda ikona na ekranie i każda klatka wideo składają się z tysięcy lub milionów pojedynczych pikseli ułożonych w prostokątną siatkę.",
           "Każdy piksel przechowuje informacje o kolorze, zazwyczaj w postaci kombinacji wartości koloru czerwonego, zielonego i niebieskiego (RGB). W obrazie 8-bitowym na kanał każdy kanał ma zakres od 0 do 255, dzięki czemu każdy piksel może reprezentować jeden z ponad 16,7 miliona kolorów."
         ]
       },
@@ -1372,7 +1372,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "Historia pikseli",
         "paragraphs": [
-          "Pojęcie piksela sięga lat 60. XX wieku, a termin ten został po raz pierwszy użyty w kontekście wczesnego cyfrowego przetwarzania obrazu. Fredericowi Billingsleyowi z JPL często przypisuje się spopularyzowanie słowa „piksel" w 1965 r. Wczesne wyświetlacze cyfrowe miały bardzo małą liczbę pikseli - Apple II (1977) wyświetlał obraz w rozdzielczości 280 × 192 piksele, podczas gdy nowoczesne wyświetlacze 8K renderują ponad 33 miliony pikseli.",
+          "Pojęcie piksela sięga lat 60. XX wieku, a termin ten został po raz pierwszy użyty w kontekście wczesnego cyfrowego przetwarzania obrazu. Fredericowi Billingsleyowi z JPL często przypisuje się spopularyzowanie słowa 'piksel' w 1965 r. Wczesne wyświetlacze cyfrowe miały bardzo małą liczbę pikseli - Apple II (1977) wyświetlał obraz w rozdzielczości 280 × 192 piksele, podczas gdy nowoczesne wyświetlacze 8K renderują ponad 33 miliony pikseli.",
           "Obecnie technologia pikseli stale ewoluuje dzięki wyświetlaczom mikro-LED, składanym ekranom i wyświetlaczom o rozdzielczości przekraczającej 1000 PPI dla gogli VR. Piksel pozostaje podstawowym elementem każdego cyfrowego doświadczenia wizualnego. Odkryj, w jaki sposób piksele są odwzorowywane na jednostki fizyczne, dzięki naszemu konwerterowi pikseli."
         ]
       }
@@ -1503,7 +1503,7 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Определение пикселя",
         "paragraphs": [
-          "Пиксель (сокращение от «элемент изображения») - это наименьшая адресуемая единица растрового изображения или цифрового дисплея. Каждая фотография, которую вы просматриваете, каждый значок на экране и каждый кадр видео состоят из тысяч или миллионов отдельных пикселей, расположенных в прямоугольной сетке.",
+          "Пиксель (сокращение от "элемент изображения") - это наименьшая адресуемая единица растрового изображения или цифрового дисплея. Каждая фотография, которую вы просматриваете, каждый значок на экране и каждый кадр видео состоят из тысяч или миллионов отдельных пикселей, расположенных в прямоугольной сетке.",
           "Каждый пиксель хранит информацию о цвете, обычно в виде комбинации значений красного, зеленого и синего (RGB). В 8-битном изображении каждый канал находится в диапазоне от 0 до 255, что дает каждому пикселю возможность представлять один из более чем 16,7 миллионов цветов."
         ]
       },
@@ -1574,7 +1574,7 @@ export const content: LocalizedDocMap = {
         "id": "history",
         "title": "История пикселей",
         "paragraphs": [
-          "Понятие пикселя восходит к 1960-м годам, и этот термин впервые использовался в контексте ранней цифровой обработки изображений. Фредерику Биллингсли из JPL часто приписывают популяризацию слова «пиксель» в 1965 году. Ранние цифровые дисплеи имели очень низкое количество пикселей - Apple II (1977) отображал 280 × 192 пикселей, тогда как современные дисплеи 8K отображают более 33 миллионов пикселей.",
+          "Понятие пикселя восходит к 1960-м годам, и этот термин впервые использовался в контексте ранней цифровой обработки изображений. Фредерику Биллингсли из JPL часто приписывают популяризацию слова "пиксель" в 1965 году. Ранние цифровые дисплеи имели очень низкое количество пикселей - Apple II (1977) отображал 280 × 192 пикселей, тогда как современные дисплеи 8K отображают более 33 миллионов пикселей.",
           "Сегодня пиксельная технология продолжает развиваться с появлением микро-LED-дисплеев, складных экранов и дисплеев с разрешением более 1000 пикселей на дюйм. для VR-гарнитур. Пиксель остается фундаментальным строительным блоком любого цифрового визуального опыта. Узнайте, как пиксели сопоставляются с физическими единицами с помощью нашего конвертера пикселей."
         ]
       }

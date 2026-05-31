@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -132,11 +132,11 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Quelle est la différence entre 16:9 et 21:9 ?",
-        "answer": "16:9 est le format grand écran standard utilisé par la plupart des moniteurs et des téléviseurs. Le format 21:9 (ultra-large) est plus large, offrant plus d’espace d’écran horizontal. Les moniteurs ultra-larges au format 21:9 sont populaires pour la productivité et les jeux immersifs."
+        "answer": "16:9 est le format grand écran standard utilisé par la plupart des moniteurs et des téléviseurs. Le format 21:9 (ultra-large) est plus large, offrant plus d'espace d'écran horizontal. Les moniteurs ultra-larges au format 21:9 sont populaires pour la productivité et les jeux immersifs."
       },
       {
         "question": "Comment redimensionner une image tout en conservant les proportions ?",
-        "answer": "Verrouillez les proportions et modifiez une dimension. La calculatrice calculera automatiquement l’autre dimension. Par exemple, si vous définissez un rapport 16:9 et entrez 1 280 comme largeur, la hauteur sera calculée comme 720."
+        "answer": "Verrouillez les proportions et modifiez une dimension. La calculatrice calculera automatiquement l'autre dimension. Par exemple, si vous définissez un rapport 16:9 et entrez 1 280 comme largeur, la hauteur sera calculée comme 720."
       }
     ],
     "sections": [

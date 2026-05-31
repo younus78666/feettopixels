@@ -160,7 +160,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Soll ich vw für Schriftgrößen verwenden?",
-        "answer": "Reine vw-Schriftgrößen können auf Mobilgeräten zu klein oder auf breiten Bildschirmen zu groß sein. Die beste Vorgehensweise ist die Verwendung von CSS „clamp()": „clamp(1rem, 2.5vw, 2rem)". Dadurch werden minimale und maximale Größen festgelegt, während zwischen Haltepunkten fließend skaliert wird."
+        "answer": "Reine vw-Schriftgrößen können auf Mobilgeräten zu klein oder auf breiten Bildschirmen zu groß sein. Die beste Vorgehensweise ist die Verwendung von CSS 'clamp()': 'clamp(1rem, 2.5vw, 2rem)'. Dadurch werden minimale und maximale Größen festgelegt, während zwischen Haltepunkten fließend skaliert wird."
       },
       {
         "question": "Was ist der Unterschied zwischen vw und Prozentsatz?",

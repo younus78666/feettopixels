@@ -373,7 +373,7 @@ export const content: LocalizedDocMap = {
         "id": "what-is-em",
         "title": "Was ist EM?",
         "paragraphs": [
-          "Die em-Einheit ist relativ zur Schriftgröße des Elements selbst (für Eigenschaften wie Innenabstand und Rand) oder zur Schriftgröße des übergeordneten Elements (für die Eigenschaft „font-size"). Da sich die em-Werte bei der Verschachtelung von Elementen summieren, kann die Größenbestimmung in tiefen Komponentenbäumen unvorhersehbar werden.",
+          "Die em-Einheit ist relativ zur Schriftgröße des Elements selbst (für Eigenschaften wie Innenabstand und Rand) oder zur Schriftgröße des übergeordneten Elements (für die Eigenschaft 'font-size'). Da sich die em-Werte bei der Verschachtelung von Elementen summieren, kann die Größenbestimmung in tiefen Komponentenbäumen unvorhersehbar werden.",
           "Wenn beispielsweise ein übergeordnetes Element die Schriftgröße 20 Pixel und ein untergeordnetes Element die Schriftgröße 1,5 em hat, wird das untergeordnete Element mit 30 px gerendert. Wenn dieses untergeordnete Element auch ein Element mit der Schriftgröße 1,5em enthält, wird es mit 45 Pixel gerendert."
         ]
       },

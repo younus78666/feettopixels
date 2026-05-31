@@ -1,4 +1,4 @@
-import type { LocalizedDocMap } from "./doc-types";
+﻿import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
@@ -150,7 +150,7 @@ export const content: LocalizedDocMap = {
       },
       {
         "question": "Comment puis-je vérifier la résolution réelle de mon écran ?",
-        "answer": "Cet outil détecte la résolution indiquée par votre navigateur. Pour connaître la véritable résolution physique, vérifiez les spécifications de votre moniteur ou les paramètres d’affichage du système d’exploitation. Si une mise à l'échelle est appliquée, multipliez la résolution CSS par le rapport de pixels de l'appareil."
+        "answer": "Cet outil détecte la résolution indiquée par votre navigateur. Pour connaître la véritable résolution physique, vérifiez les spécifications de votre moniteur ou les paramètres d'affichage du système d'exploitation. Si une mise à l'échelle est appliquée, multipliez la résolution CSS par le rapport de pixels de l'appareil."
       }
     ],
     "sections": [
