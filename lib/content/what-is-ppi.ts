@@ -4,24 +4,48 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
+        "question": "What does PPI stand for?",
+        "answer": "PPI stands for pixels per inch. It measures how densely packed the pixels are on a screen or inside a digital image. Higher PPI means sharper, more detailed display output."
+      },
+      {
         "question": "What does PPI mean in simple terms?",
         "answer": "PPI stands for pixels per inch. It measures how densely packed the pixels are on a screen or inside a digital image. A 400 PPI smartphone screen has 400 pixels in every linear inch of its display. Higher PPI means finer detail, smoother curves, and crisper text."
+      },
+      {
+        "question": "What is a good PPI for a phone screen?",
+        "answer": "400+ PPI is the flagship standard and delivers invisible pixels at normal use distance. 300+ PPI is acceptable for most users and looks clean at arm\'s length. Below 250 PPI, individual pixels become visible at close range, and text edges look jagged. For tablets, 260+ PPI is sharp at typical reading distance. Desktop monitors run 90-165 PPI, which is fine because you sit farther away."
       },
       {
         "question": "What is a good PPI for a modern display?",
         "answer": "For phones, 400+ PPI is the professional standard. Anything below 300 looks pixelated up close. For tablets, 260+ PPI feels sharp at typical reading distance. For laptop screens, 200-250 PPI is excellent. External 4K monitors at 27 inches deliver about 163 PPI, which is the floor for comfortable long-session work. For TVs viewed from 8+ feet, 80-100 PPI is plenty because the viewing distance hides pixels."
       },
       {
+        "question": "What is PPI vs DPI?",
+        "answer": "PPI (pixels per inch) applies to screens and digital images. DPI (dots per inch) applies to printers and physical output. Both measure density per inch, but in different contexts. A phone screen has PPI. A laser printer has DPI. Confusion happens because image editing software labels both fields as DPI, but in any technical conversation about displays or digital files, PPI is the correct term."
+      },
+      {
+        "question": "How do I calculate PPI of any screen?",
+        "answer": "Use the formula: PPI = square root of (width squared + height squared), divided by diagonal inches. For a 1920 x 1080 display at 27 inches: 1920 squared is 3,686,400 and 1080 squared is 1,166,400, giving a total of 4,852,800. The square root is approximately 2203 diagonal pixels. Divide 2203 by 27 and you get about 81.6 PPI. For a 2560 x 1440 monitor at the same 27 inches, the result is roughly 109 PPI. Our PPI Calculator does this instantly for any resolution and screen size."
+      },
+      {
+        "question": "What is Retina display PPI?",
+        "answer": "Retina is Apple\'s marketing term for a display where pixels are dense enough to be invisible at the typical viewing distance. It is not a fixed PPI number. The iPhone needs 326+ PPI because you hold it 10-12 inches away. The iPad needs 264+ PPI at its typical viewing distance. The iMac qualifies at 218+ PPI because monitors sit farther from your eyes. All three hit the same perceptual threshold: pixels you cannot see under normal use."
+      },
+      {
         "question": "Is Retina the same as high PPI?",
         "answer": "Retina is Apple\'s marketing term for a display whose pixels are small enough that a person with normal vision cannot resolve individual pixels at typical viewing distance. It does not map to a fixed PPI number. It depends on how close you sit. An iPhone needs 326+ PPI to qualify. An iPad Pro viewed farther away needs 264 PPI. A 5K iMac monitor needs only 218 PPI. All are Retina because viewing distance matches the pixel density."
       },
       {
-        "question": "How do I calculate PPI of any screen?",
-        "answer": "Use the formula PPI = square root of (width squared + height squared) divided by diagonal inches. For a 2560 x 1440 monitor at 27 inches diagonal: the square root of (2560 squared + 1440 squared) equals the square root of 8,627,200, which is approximately 2938. Then 2938 divided by 27 gives roughly 108.8 PPI. The square root captures the true diagonal pixel count, which is then divided by the physical diagonal. Our PPI Calculator does this instantly for any resolution and size."
+        "question": "Does higher PPI always mean better display quality?",
+        "answer": "No. Past the point where your eye can no longer resolve individual pixels at your viewing distance, extra PPI adds no visible sharpness. At 12 inches, the eye tops out around 300 PPI. At 24 inches (desk distance), 150 PPI is sufficient. Beyond those thresholds, you pay in battery life, GPU load, and cost for pixels you cannot see. Contrast ratio, color accuracy, refresh rate, and HDR support often have more impact on perceived quality than chasing a higher PPI number."
       },
       {
         "question": "Does higher PPI always mean a better screen?",
         "answer": "Not necessarily. Beyond a certain PPI, the human eye can\'t resolve additional detail at typical viewing distance. The benefit disappears. At 12 inches from a screen, the eye tops out around 300 PPI. Above that, you pay in battery life, GPU load, and cost for pixels you can\'t see. Contrast, color accuracy, refresh rate, and HDR often matter more than chasing the highest possible PPI."
+      },
+      {
+        "question": "What PPI do I need for sharp photo prints?",
+        "answer": "300 PPI at the final print size is the professional standard for photo printing. A 4x6 inch print at 300 PPI requires a 1200 x 1800 pixel image. A 5x7 at 300 PPI needs 1500 x 2100 pixels. An 8x10 at 300 PPI needs 2400 x 3000 pixels. For large-format prints viewed from a distance, 150-200 PPI is acceptable because viewing distance hides the lower density."
       },
       {
         "question": "Why do two screens of the same resolution look different?",

@@ -160,9 +160,9 @@ export const en = {
     "feet-to-pixels": {
       title: "Feet to Pixels Converter - FT to PX at Any DPI",
       description:
-        "Convert feet to pixels for large-format and signage design. Free online FT to PX calculator.",
+        "Convert feet to pixels for banners, signage, and large-format design. Formula: pixels = feet x 12 x DPI. At 150 DPI: 1 ft = 1,800 px. Free calculator.",
       extractive:
-        "To convert feet to pixels, multiply feet by 12 and then by DPI. At 96 DPI, 1 foot equals 1152 pixels. At 300 DPI, 1 foot equals 3600 pixels.",
+        "To convert feet to pixels, multiply feet by 12 then by DPI. At 96 DPI: 1 foot = 1,152 pixels. At 150 DPI: 1 foot = 1,800 pixels. At 300 DPI: 1 foot = 3,600 pixels. Formula: pixels = feet x 12 x DPI.",
     },
     "pixels-to-feet": {
       title: "Pixels to Feet Converter - PX to FT Calculator",
@@ -279,9 +279,9 @@ export const en = {
     "what-is-ppi": {
       title: "What Is PPI? - Pixels Per Inch for Screens",
       description:
-        "Learn what PPI (pixels per inch) means for screen displays and how it differs from DPI.",
+        "PPI (pixels per inch) measures screen and image pixel density. Flagship phones run 400+ PPI. 300 PPI is the print standard. Calculate PPI for any display using our free PPI calculator.",
       extractive:
-        "PPI (pixels per inch) measures screen pixel density. Higher PPI means sharper displays. Modern phones have 400+ PPI while desktop monitors typically have 90-160 PPI.",
+        "PPI stands for pixels per inch. It measures pixel density on screens and in images. Modern phones run 400-500 PPI. Desktop monitors average 90-110 PPI. For print, 300 PPI is the professional standard.",
     },
     "what-is-a-pixel": {
       title: "What Is a Pixel? - Digital Display Basics Explained",
@@ -293,9 +293,9 @@ export const en = {
     "dpi-vs-ppi": {
       title: "DPI vs PPI - Key Differences Explained (2026)",
       description:
-        "Understand the key differences between DPI and PPI, when to use each term, and why it matters.",
+        "DPI is the print metric (ink dots per inch). PPI is the screen/image metric (pixels per inch). Both measure density per inch: learn when to use each.",
       extractive:
-        "DPI (dots per inch) refers to print resolution while PPI (pixels per inch) refers to screen resolution. For conversions, they function identically.",
+        "DPI (dots per inch) measures printer ink dot density. PPI (pixels per inch) measures screen pixel density and image file resolution. In everyday use, both terms describe the same concept: density per inch. But they apply to different physical media.",
     },
     "pixels-per-inch": {
       title: "Pixels Per Inch (PPI) - Complete Reference Guide",

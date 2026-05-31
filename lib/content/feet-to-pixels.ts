@@ -6,33 +6,42 @@ export const content: PageContentMap = {
       {
         question: "How do I convert feet to pixels?",
         answer:
-          "Multiply the feet by 12 (to get inches), then multiply by DPI. For example, 3 feet at 96 DPI equals 3,456 pixels (3 x 12 x 96 = 3,456).",
+          "Multiply feet by 12 (to get inches), then multiply by DPI. Formula: pixels = feet x 12 x DPI. At 96 DPI: 1 foot = 1,152 pixels. At 150 DPI: 1 foot = 1,800 pixels. At 300 DPI: 1 foot = 3,600 pixels.",
       },
       {
         question: "How many pixels is 1 foot at 96 DPI?",
         answer:
-          "At 96 DPI, 1 foot equals 1,152 pixels (12 inches x 96 pixels per inch = 1,152). This is the standard for web-resolution large-format design.",
+          "1,152 pixels. Formula: 1 foot x 12 inches x 96 DPI = 1,152 pixels. 96 DPI is the web/screen standard used for layout planning.",
       },
       {
         question: "How many pixels is 1 foot at 300 DPI?",
         answer:
-          "At 300 DPI, 1 foot equals 3,600 pixels (12 inches x 300 pixels per inch = 3,600). This high resolution is used for print-quality large-format output.",
+          "3,600 pixels. Formula: 1 foot x 12 inches x 300 DPI = 3,600 pixels. Use 300 DPI for professional print quality.",
       },
       {
-        question: "What DPI should I use for large-format printing?",
+        question: "How many pixels is 1 foot at 150 DPI?",
         answer:
-          "Large-format prints viewed from a distance (banners, billboards) can use 72-150 DPI. Prints viewed up close (trade show displays, posters) should use 150-300 DPI for sharp details.",
+          "1,800 pixels. 150 DPI works well for trade show displays and posters viewed from 3-10 feet away.",
       },
       {
-        question:
-          "How large of a file do I need for a 4-foot banner at 150 DPI?",
+        question: "What DPI should I use for a banner?",
         answer:
-          "A 4-foot wide banner at 150 DPI requires 7,200 pixels wide (4 x 12 x 150 = 7,200). For a 4 x 8 foot banner, the file would be 7,200 x 14,400 pixels.",
+          "For banners viewed from 6-10 feet: 100-150 DPI. For banners viewed from 10-20 feet: 72-100 DPI. For billboards at 50+ feet: 20-40 DPI. Higher DPI creates larger file sizes with no visible quality improvement at distance.",
+      },
+      {
+        question: "How do I convert a 4-foot banner to pixels?",
+        answer:
+          "At 150 DPI: 4 x 12 x 150 = 7,200 pixels wide. At 100 DPI: 4 x 12 x 100 = 4,800 pixels wide. For a 4x8 foot banner at 150 DPI: 7,200 x 14,400 pixels.",
+      },
+      {
+        question: "Why do large-format prints use lower DPI?",
+        answer:
+          "Because viewing distance hides pixel detail. The human eye resolves about 1 arc minute of detail. At 10 feet viewing distance, 100 DPI looks identical to 300 DPI. Lower DPI means smaller, more manageable file sizes.",
       },
     ],
     body: {
       heading1: "How Feet to Pixel Conversion Works",
-      p1: "Designers use feet to pixels conversion for large-format projects such as banners, signage, wall graphics, and room-scale mockups. The formula is:",
+      p1: "Feet to pixels conversion uses the formula: pixels = feet x 12 x DPI. Multiply feet by 12 to convert to inches, then multiply by the DPI value.",
       formula: "Pixels = Feet x 12 x DPI",
       p2: "Since there are 12 inches in a foot, you first convert feet to inches, then multiply by DPI to get the pixel count.",
       heading2: "Common Use Cases",

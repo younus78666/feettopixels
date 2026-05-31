@@ -4,6 +4,26 @@ export const content: PageContentMap = {
   en: {
     faq: [
       {
+        question: "Is DPI the same as PPI?",
+        answer:
+          "For practical purposes, yes. When you save a file at '300 DPI' in Photoshop, you're actually setting PPI. Both describe density per inch. The technical difference: DPI is printer ink dots, PPI is screen/image pixels. In professional print specs, use PPI for files and DPI for printer settings.",
+      },
+      {
+        question: "Which is more important, DPI or PPI?",
+        answer:
+          "Neither is universally more important. They apply to different contexts. DPI matters when specifying printer output quality. PPI matters when sizing images for screens or preparing files for print. For web design, neither matters: only pixel dimensions count.",
+      },
+      {
+        question: "Why do image editors call it DPI when they mean PPI?",
+        answer:
+          "Historical convention. Adobe Photoshop and most image editors label their resolution field 'DPI' even though image files contain pixels, not ink dots. The industry adopted DPI terminology before the distinction mattered. When software says 'save at 300 DPI,' it means 300 PPI.",
+      },
+      {
+        question: "What is 300 DPI equivalent to in PPI?",
+        answer:
+          "They are equal in this context. 300 DPI and 300 PPI describe the same pixel density: 300 pixels (or dots) per linear inch. The difference is which medium: a 300 DPI printer produces 300 ink dots per inch, while a 300 PPI image file contains 300 pixels per inch at the intended print size.",
+      },
+      {
         question: "Can I use DPI and PPI interchangeably?",
         answer:
           "In casual use, many people swap the terms. However, DPI technically applies to printers (ink dots per inch), while PPI applies to screens and digital images (pixels per inch). Using the correct term avoids ambiguity in professional settings.",
@@ -11,7 +31,7 @@ export const content: PageContentMap = {
       {
         question: "Is 300 DPI the same as 300 PPI?",
         answer:
-          "When referring to an image file, '300 DPI' usually means 300 PPI - the image has 300 pixels per inch at its intended print size. The printer's actual DPI (often 720-2880) determines how finely those pixels are reproduced with ink dots.",
+          "When referring to an image file, '300 DPI' usually means 300 PPI. The image has 300 pixels per inch at its intended print size. The printer's actual DPI (often 720-2880) determines how finely those pixels are reproduced with ink dots.",
       },
       {
         question: "Which matters more for web design, DPI or PPI?",
@@ -21,12 +41,7 @@ export const content: PageContentMap = {
       {
         question: "Why do image editors default to 72 or 96 DPI?",
         answer:
-          "72 DPI was the legacy Mac screen resolution, and 96 DPI is the Windows default. These defaults have no impact on how the image appears on screen - they only affect the default print size calculation.",
-      },
-      {
-        question: "Is 300 DPI the same as 300 PPI?",
-        answer:
-          "For practical purposes, yes. When you set 300 DPI in Photoshop or Illustrator, you're actually setting 300 PPI (pixels per inch) in the image metadata. The printer then uses its own DPI (often 1200-4800) to reproduce each pixel using multiple ink dots. Technically, DPI belongs to printers and PPI belongs to images and screens — but both describe density in the same unit (per inch) and the numbers are equivalent when specifying image resolution.",
+          "72 DPI was the legacy Mac screen resolution, and 96 DPI is the Windows default. These defaults have no impact on how the image appears on screen. They only affect the default print size calculation.",
       },
       {
         question: "When should I use DPI vs PPI?",
@@ -34,14 +49,14 @@ export const content: PageContentMap = {
           "Use PPI when talking about screens, monitors, phone displays, and image file resolution. Use DPI when talking about physical printer output and ink dot density. In practice, most designers use DPI for both because image editing software labels the resolution field 'DPI' even when it technically means PPI. For professional print specs, use PPI. For casual conversation, either term works.",
       },
       {
-        question: "What is 72 DPI vs 300 DPI — what is the difference?",
+        question: "What is 72 DPI vs 300 DPI: what is the difference?",
         answer:
-          "72 DPI and 300 DPI differ in pixel density per inch. At 72 DPI, a 720-pixel-wide image prints at 10 inches. At 300 DPI, the same 720 pixels prints at 2.4 inches. The pixel data is identical — only the print size changes. For screen display, neither matters because browsers ignore DPI metadata. For print, 300 DPI produces sharper output at reading distance while 72 DPI is only appropriate for large-format work viewed from a distance.",
+          "72 DPI and 300 DPI differ in pixel density per inch. At 72 DPI, a 720-pixel-wide image prints at 10 inches. At 300 DPI, the same 720 pixels prints at 2.4 inches. The pixel data is identical. Only the print size changes. For screen display, neither matters because browsers ignore DPI metadata. For print, 300 DPI produces sharper output at reading distance while 72 DPI is only appropriate for large-format work viewed from a distance.",
       },
     ],
     body: {
       heading1: "Quick Answer",
-      p1: "DPI (dots per inch) is a printer metric. It measures how many tiny ink dots a printer deposits per inch. PPI (pixels per inch) is a screen and image metric. It measures how many pixels are packed into each inch of a display or digital file. Both describe density per inch, but they apply to different contexts.",
+      p1: "DPI (dots per inch) belongs to printing. PPI (pixels per inch) belongs to screens and digital images. DPI measures how many tiny ink dots a printer deposits per inch. PPI measures how many pixels are packed into each inch of a display or digital file. Both describe density per inch, but they apply to different contexts.",
       heading2: "Side-by-Side Comparison",
       th1: "Attribute",
       th2: "DPI (Dots Per Inch)",
