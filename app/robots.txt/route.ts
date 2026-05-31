@@ -11,20 +11,6 @@ function buildRobotsTxt() {
     "Disallow: /*?*",
     "Disallow: /search",
   ];
-  const blockedAgents = [
-    "AhrefsBot",
-    "SemrushBot",
-    "MJ12bot",
-    "DotBot",
-    "BLEXBot",
-    "rogerbot",
-    "ia_archiver",
-    "MauiBot",
-    "Xenu",
-    "Bytespider",
-    "CCBot",
-    "FacebookBot",
-  ];
   const aiDiscoveryAgents = [
     "GPTBot",
     "ChatGPT-User",
@@ -44,10 +30,6 @@ function buildRobotsTxt() {
     ...aiDiscoveryAgents.map((agent) => ({
       agents: [agent],
       rules: [...sharedAllowRules, ...sharedDisallowRules],
-    })),
-    ...blockedAgents.map((agent) => ({
-      agents: [agent],
-      rules: ["Disallow: /"],
     })),
   ];
 
