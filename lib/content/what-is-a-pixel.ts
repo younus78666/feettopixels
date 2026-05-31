@@ -190,8 +190,8 @@ export const content: LocalizedDocMap = {
         "id": "pixel-definition",
         "title": "Definición de píxeles",
         "paragraphs": [
-          "Un píxel (abreviatura de \"elemento de imagen") es la unidad direccionable más pequeña de una imagen rasterizada o pantalla digital. Cada foto que ves, cada ícono en tu pantalla y cada cuadro de video se compone de miles o millones de píxeles individuales dispuestos en una cuadrícula rectangular.",
-          \"Cada píxel almacena información de color, generalmente como una combinación de valores de rojo, verde y azul (RGB). En una imagen de 8 bits por canal, cada canal varía de 0 a 255, lo que le da a cada píxel la capacidad de representar uno de más de 16,7 millones de colores."
+          "Un píxel (abreviatura de 'elemento de imagen') es la unidad direccionable más pequeña de una imagen rasterizada o pantalla digital. Cada foto que ves, cada ícono en tu pantalla y cada cuadro de video se compone de miles o millones de píxeles individuales dispuestos en una cuadrícula rectangular.",
+          "Cada píxel almacena información de color, generalmente como una combinación de valores de rojo, verde y azul (RGB). En una imagen de 8 bits por canal, cada canal varía de 0 a 255, lo que le da a cada píxel la capacidad de representar uno de más de 16,7 millones de colores."
         ]
       },
       {
