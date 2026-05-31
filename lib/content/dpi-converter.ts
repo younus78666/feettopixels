@@ -4,12 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What happens when I convert from 72 DPI to 300 DPI?",
-        "answer": "The pixel count stays the same, but the physical print size decreases. A 10-inch wide image at 72 DPI (720 pixels) becomes only 2.4 inches wide at 300 DPI, because more pixels are packed into each inch."
+        "question": "How do I change the DPI of an image?",
+        "answer": "Use the Image Size dialog in Photoshop (Image > Image Size), uncheck Resample, and change the Resolution field. The pixel count stays fixed -- only the print size changes. To truly change print quality you need to resample and change pixel dimensions."
       },
       {
-        "question": "Can I increase DPI without losing quality?",
-        "answer": "Simply changing the DPI metadata does not add pixels - it only changes how densely existing pixels are printed. To maintain print size at a higher DPI, you would need to upscale the image, which may reduce quality unless done with AI upscaling tools."
+        "question": "What happens when I change DPI from 72 to 300?",
+        "answer": "Without resampling: the print size shrinks from 26.6 inches to 6.4 inches for a 1920px image. The pixels do not change. With resampling: new pixels are added (upscaling), which produces soft results since detail cannot be recovered."
+      },
+      {
+        "question": "Does changing DPI change file size?",
+        "answer": "No. DPI is metadata stored in the file header. Changing it has zero effect on file size, pixel count, or visual quality on screen. File size depends on pixel dimensions and compression, not DPI."
       },
       {
         "question": "What DPI should I use for printing?",

@@ -14,6 +14,18 @@ export const content: LocalizedDocMap = {
       {
         "question": "How do I convert cm to pixels?",
         "answer": "Multiply the centimeter value by (DPI / 2.54). For example, 10 cm at 300 DPI = 10 × 118.11 = 1181 pixels."
+      },
+      {
+        "question": "How many pixels are in 1 centimeter?",
+        "answer": "It depends on DPI. At 96 DPI: 37.8 pixels per cm. At 300 DPI: 118.1 pixels per cm. Formula: pixels per cm = DPI / 2.54."
+      },
+      {
+        "question": "What is pixels per cm at 300 DPI?",
+        "answer": "118.1 pixels per centimeter. For print: a 1 cm wide element at 300 DPI needs 118 pixels. An A4 page (21 cm wide) at 300 DPI needs 2,480 pixels."
+      },
+      {
+        "question": "When do I need to think in pixels per cm?",
+        "answer": "When working with European or international print specs, business cards, packaging, or any design where dimensions are given in centimeters. Most print shops outside the US specify dimensions in mm or cm."
       }
     ],
     "sections": [

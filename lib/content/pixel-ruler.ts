@@ -4,16 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "How accurate is the on-screen ruler?",
-        "answer": "Without calibration, accuracy depends on your operating system's reported PPI, which may not match the physical pixel density of your screen. After calibrating with a credit card or other known-size object, accuracy improves to within 1-2% for most displays."
+        "question": "What is a pixel ruler?",
+        "answer": "A pixel ruler is an on-screen overlay that displays measurements in pixels, overlaid directly on your display. It lets you measure UI elements, screen gaps, and layouts without leaving the browser -- useful for front-end development and design QA."
       },
       {
-        "question": "How do I calibrate the ruler?",
-        "answer": "Place a standard credit card (3.375 inches / 85.6mm wide) against your screen. Adjust the calibration slider until the colored bar matches the card's width exactly, then click Calibrate. This calculates your screen's true PPI and corrects the ruler's physical unit readings."
+        "question": "How do I calibrate the pixel ruler?",
+        "answer": "Hold a standard credit card (85.6 mm or 3.37 inches wide) against your screen. Adjust the ruler's calibration slider until the ruler matches the card width exactly. This calibrates for your screen's actual physical pixel density."
       },
       {
-        "question": "Why do pixels not correspond to real-world measurements?",
-        "answer": "Pixels are digital units with no fixed physical size. Their physical size depends on the screen's PPI (pixels per inch). A pixel on a 27-inch 4K monitor is much smaller than one on a 24-inch 1080p monitor, so the same number of pixels covers a different physical distance on each screen."
+        "question": "How accurate is a browser-based pixel ruler?",
+        "answer": "Accurate in CSS pixels, which may differ from physical pixels on HiDPI screens. On a 2x Retina display, 1 CSS pixel = 2 physical pixels. The ruler measures CSS pixels by default. Enable DPR correction in the settings to measure physical device pixels."
       },
       {
         "question": "Can I use this ruler to measure physical objects?",

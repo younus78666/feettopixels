@@ -22,6 +22,18 @@ export const content: LocalizedDocMap = {
       {
         "question": "Do cameras record pixel density in mm terms?",
         "answer": "Sometimes. EXIF metadata usually stores resolution as DPI, but scientific cameras and microscope cameras often record pixel density in pixels/micrometer (pixels/um) or pixels/mm because their work is metric. Converting: 1 pixel/um = 1,000 pixels/mm = 25,400 DPI, which is typical for high-magnification microscopy."
+      },
+      {
+        "question": "How many pixels per mm at 300 DPI?",
+        "answer": "11.81 pixels per millimeter. Formula: DPI / 25.4. At 96 DPI: 3.78 pixels/mm. At 150 DPI: 5.91 pixels/mm. At 300 DPI: 11.81 pixels/mm."
+      },
+      {
+        "question": "Why is 25.4 the conversion factor?",
+        "answer": "25.4 is the exact number of millimeters in one inch (1 inch = 25.4 mm). Since DPI measures dots per inch, dividing by 25.4 converts to dots (or pixels) per millimeter."
+      },
+      {
+        "question": "What is 1mm in pixels for print?",
+        "answer": "At 300 DPI: 1 mm = 11.81 pixels. At 96 DPI: 1 mm = 3.78 pixels. A standard business card is 85 x 55 mm, which at 300 DPI = 1,004 x 650 pixels."
       }
     ],
     "sections": [

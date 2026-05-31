@@ -4,20 +4,20 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "Can this tool read the DPI metadata from an image?",
-        "answer": "Yes, for common formats. This tool reads embedded DPI or density metadata from JPEG, PNG, WebP, and BMP files when that metadata is present. If a file has no usable physical-density metadata, the tool falls back to pixel dimensions and shows print size at common target DPI settings."
+        "question": "What DPI does my image need to be?",
+        "answer": "For standard photo prints: 300 DPI. For large posters and banners viewed from 3+ feet: 150 DPI. For billboards and displays viewed from 50+ feet: 20-75 DPI. The minimum acceptable DPI is pixels / print size in inches."
       },
       {
-        "question": "What resolution is needed for quality printing?",
-        "answer": "Professional printing requires 300 DPI. For a 4x6 inch print, you need at least 1200x1800 pixels. For an 8x10 print, you need 2400x3000 pixels. Images below these thresholds will appear pixelated when printed."
+        "question": "How do I check the DPI of an image on Windows?",
+        "answer": "Right-click the image, select Properties, go to the Details tab, and look for Horizontal resolution and Vertical resolution. These show the embedded DPI value."
+      },
+      {
+        "question": "How do I check the DPI of an image on Mac?",
+        "answer": "Open the image in Preview, go to Tools > Show Inspector (or press Cmd+I). The Image tab shows DPI under Resolution."
       },
       {
         "question": "Is my image good enough for a specific print size?",
         "answer": "Upload your image and check the maximum print size table at 300 DPI. If the listed dimensions are larger than your desired print size, the image has sufficient resolution. If smaller, the print may appear blurry."
-      },
-      {
-        "question": "What is the difference between web and print quality images?",
-        "answer": "Web images typically need only 72-96 pixels per inch since screens display at fixed pixel density. Print images need 300 pixels per inch for sharp output. A 1000x1000 web image prints at only 3.3x3.3 inches at professional quality."
       },
       {
         "question": "Does this tool upload my image to a server?",

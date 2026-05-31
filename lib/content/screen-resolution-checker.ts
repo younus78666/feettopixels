@@ -4,16 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What is the difference between screen resolution and CSS pixels?",
-        "answer": "Screen resolution is the physical pixel count of your display. CSS pixels are the logical pixels used by browsers. On a device with a 2x pixel ratio (like Retina displays), 1 CSS pixel equals 4 physical pixels (2x2). That's why CSS pixel dimensions are often half the physical resolution number you see in your OS display settings."
+        "question": "What screen resolution do I have?",
+        "answer": "This tool detects your screen resolution automatically using the browser's screen API. The most common desktop resolutions are 1920x1080 (Full HD), 2560x1440 (QHD), and 3840x2160 (4K UHD)."
       },
       {
-        "question": "What is Device Pixel Ratio (DPR)?",
-        "answer": "Device Pixel Ratio is the ratio between physical pixels and CSS pixels. A DPR of 1 means each CSS pixel maps to one physical pixel. A DPR of 2 (Retina) means each CSS pixel uses a 2x2 grid of physical pixels for sharper rendering. High-DPR screens look cleaner but require larger image assets to stay crisp."
+        "question": "What is device pixel ratio (DPR)?",
+        "answer": "Device pixel ratio (DPR) is the ratio of physical pixels to CSS pixels. A DPR of 2 means the display uses 2 physical pixels for every 1 CSS pixel (common on Retina screens). At DPR 2, a 1920x1080 CSS layout is actually rendered at 3840x2160 physical pixels."
       },
       {
-        "question": "Why does my screen show a different resolution than expected?",
-        "answer": "Your operating system is most likely using display scaling (such as 125% or 150% on Windows). Scaling changes the effective CSS resolution while the physical resolution stays the same. The values this tool reports reflect your current scaling settings, not the raw hardware resolution."
+        "question": "What is the difference between screen resolution and viewport?",
+        "answer": "Screen resolution is the total pixel count of your physical display (e.g., 2560x1440). Viewport is the visible browser area excluding OS chrome, toolbars, and scrollbars. A 2560x1440 screen may have a 1280x700 viewport after the browser UI is accounted for."
       },
       {
         "question": "What is color depth?",

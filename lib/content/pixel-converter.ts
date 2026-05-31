@@ -2,7 +2,20 @@ import type { LocalizedDocMap } from "./doc-types";
 
 export const content: LocalizedDocMap = {
   "en": {
-    "faq": [],
+    "faq": [
+      {
+        "question": "What units can I convert between?",
+        "answer": "This hub converts between pixels and all common design units: inches, centimeters, millimeters, feet, rem, em, pt, and vw. Every tool is DPI-aware so you can specify 72, 96, 150, 300, or any custom DPI."
+      },
+      {
+        "question": "Which converter should I use for print design?",
+        "answer": "Use Pixels to Inches for converting image dimensions to print size. Use Inches to Pixels to calculate pixel requirements for a target print size. Use the DPI Calculator to verify image resolution before sending to a print shop."
+      },
+      {
+        "question": "Which converter should I use for web/CSS development?",
+        "answer": "Use PX to REM for typography and spacing that should scale with user font preferences. Use PX to EM for component-level scaling. Use PX to VW for fluid layouts that scale with viewport width."
+      }
+    ],
     "sections": [
       {
         "id": "about-pixel-conversion",

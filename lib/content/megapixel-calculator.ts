@@ -4,16 +4,16 @@ export const content: LocalizedDocMap = {
   "en": {
     "faq": [
       {
-        "question": "What is a megapixel?",
-        "answer": "A megapixel (MP) equals one million pixels. A 12 MP camera produces images with 12 million total pixels. The actual dimensions depend on the aspect ratio - a 12 MP image at 4:3 is 4000x3000 pixels, while at 16:9 it is 4619x2598 pixels."
+        "question": "What does megapixel mean?",
+        "answer": "One megapixel equals one million pixels. A 12 MP camera captures roughly 12 million pixels per photo, typically at 4000x3000 resolution. More megapixels allow larger prints and more aggressive cropping without visible loss."
       },
       {
-        "question": "Do more megapixels mean better photo quality?",
-        "answer": "Not necessarily. Megapixels determine resolution (detail and print size), but image quality also depends on sensor size, lens quality, image processing, and dynamic range. A 12 MP full-frame sensor often produces better images than a 48 MP phone sensor."
+        "question": "How many megapixels do I need for a 16x20 inch print at 300 DPI?",
+        "answer": "At 300 DPI: 16 x 300 = 4,800 pixels wide, 20 x 300 = 6,000 pixels tall. Total: 4,800 x 6,000 = 28.8 million pixels = 28.8 MP. At 150 DPI (acceptable for poster viewing): only 7.2 MP needed."
       },
       {
-        "question": "How many megapixels do I need for printing?",
-        "answer": "At 300 DPI (professional quality): 2 MP for a 4x6 print, 7 MP for an 8x10 print, 14 MP for an 11x14 print, and 29 MP for a 16x20 print. For large posters at 150 DPI, you need roughly half the megapixels."
+        "question": "Is more megapixels always better?",
+        "answer": "Not necessarily. Sensor size, lens quality, and low-light performance matter more than megapixel count above 12-16 MP for most uses. A 48 MP phone with a small sensor often produces worse low-light photos than a 12 MP camera with a large sensor."
       },
       {
         "question": "Why does aspect ratio affect pixel dimensions?",

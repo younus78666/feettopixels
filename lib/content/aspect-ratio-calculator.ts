@@ -5,11 +5,15 @@ export const content: LocalizedDocMap = {
     "faq": [
       {
         "question": "What is aspect ratio?",
-        "answer": "Aspect ratio is the proportional relationship between width and height. It is expressed as two numbers separated by a colon (e.g., 16:9). An image with a 16:9 aspect ratio is 16 units wide for every 9 units tall, regardless of actual pixel dimensions."
+        "answer": "Aspect ratio is the proportional relationship between width and height, expressed as W:H. 16:9 means for every 16 units of width there are 9 units of height. Common ratios: 16:9 (widescreen video), 4:3 (classic TV), 1:1 (square), 9:16 (portrait mobile)."
       },
       {
-        "question": "How do I calculate aspect ratio from pixel dimensions?",
-        "answer": "Divide both the width and height by their greatest common divisor (GCD). For example, 1920x1080: GCD is 120, so 1920/120 = 16 and 1080/120 = 9, giving a 16:9 ratio."
+        "question": "What is 1920x1080 aspect ratio?",
+        "answer": "16:9. Divide both by their GCD (120): 1920/120 = 16, 1080/120 = 9. This is the standard widescreen format for HD and 4K video, most monitors, and horizontal social media content."
+      },
+      {
+        "question": "How do I resize an image without distorting it?",
+        "answer": "Keep the same aspect ratio. If the original is 1920x1080 (16:9) and you want it 1280 wide: 1280 / 16 x 9 = 720. The resized image is 1280x720. Changing only one dimension without adjusting the other stretches the image."
       },
       {
         "question": "What aspect ratio should I use for YouTube videos?",
@@ -18,10 +22,6 @@ export const content: LocalizedDocMap = {
       {
         "question": "What is the difference between 16:9 and 21:9?",
         "answer": "16:9 is the standard widescreen format used by most monitors and TVs. 21:9 (ultrawide) is wider, providing more horizontal screen space. Ultrawide monitors at 21:9 are popular for productivity and immersive gaming."
-      },
-      {
-        "question": "How do I resize an image while maintaining aspect ratio?",
-        "answer": "Lock the aspect ratio and change one dimension. The calculator will compute the other dimension automatically. For example, if you set a 16:9 ratio and enter 1280 as width, the height will be calculated as 720."
       }
     ],
     "sections": [

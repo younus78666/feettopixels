@@ -22,6 +22,14 @@ export const content: LocalizedDocMap = {
       {
         "question": "Can I print a small image on a huge banner without quality loss?",
         "answer": "Sometimes, yes, if the viewing distance is far enough. A 1,920 x 1,080 image stretched across a 20-foot wide billboard prints at about 8 PPI, which looks terrible up close but perfectly sharp from 100+ feet away. The eye can't resolve detail smaller than 1/60th of a degree at typical viewing angles, so ultra-large prints can use surprisingly low PPI and still look clean."
+      },
+      {
+        "question": "How many pixels per foot at 150 DPI?",
+        "answer": "1,800 pixels per foot. Formula: 12 (inches/foot) x 150 DPI = 1,800. Use this for trade show displays and retail signage viewed from 6-10 feet."
+      },
+      {
+        "question": "How many pixels per foot do I need for a banner?",
+        "answer": "For banners viewed from 6-10 feet: 1,200-1,800 pixels per foot (100-150 DPI). For stage backdrops at 15+ feet: 864-1,200 pixels per foot (72-100 DPI). For billboards at 50+ feet: 240-720 pixels per foot (20-60 DPI)."
       }
     ],
     "sections": [

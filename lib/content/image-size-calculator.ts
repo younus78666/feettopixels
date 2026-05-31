@@ -4,6 +4,16 @@ export const content: PageContentMap = {
   en: {
     faq: [
       {
+        question: "How do I calculate image file size?",
+        answer:
+          "For uncompressed images: file size = width x height x color depth / 8. A 1920x1080 24-bit (RGB) image = 1920 x 1080 x 3 bytes = 6.2 MB. JPEG compression typically reduces this to 0.5-2 MB depending on quality setting.",
+      },
+      {
+        question: "What is the maximum print size for a 12MP camera?",
+        answer:
+          "At 300 DPI: about 13.3 x 10 inches (a 12MP sensor delivers roughly 4000x3000 pixels). At 150 DPI: about 26.7 x 20 inches -- suitable for large posters.",
+      },
+      {
         question: "How do I calculate the physical size of an image?",
         answer:
           "Divide the pixel dimensions by the DPI. For example, a 1920x1080 image at 300 DPI is 6.4 x 3.6 inches. At 96 DPI (screen), the same image is 20 x 11.25 inches.",
@@ -17,16 +27,6 @@ export const content: PageContentMap = {
         question: "What does bit depth mean for image size?",
         answer:
           "Bit depth determines how many bits store each pixel. 8-bit stores 256 shades (grayscale), 24-bit stores 16.7 million colors (RGB), and 32-bit adds transparency (RGBA). Higher bit depth means larger file sizes.",
-      },
-      {
-        question: "What resolution do I need for a specific print size?",
-        answer:
-          "Multiply the desired print size in inches by the target DPI. For a 10x8 inch print at 300 DPI, you need 3000x2400 pixels. For web display at 96 DPI, a 10x8 area only requires 960x768 pixels.",
-      },
-      {
-        question: "Why does the same image look different sizes on different screens?",
-        answer:
-          "Screens have different pixel densities (PPI). A 1920px wide image fills a 24-inch 1080p monitor entirely, but only half of a 27-inch 4K monitor. The physical size depends on the screen's PPI, not the image's DPI metadata.",
       },
     ],
     body: {
